@@ -146,12 +146,12 @@ var torbutton_unique_pref_observer =
               m_tb_prefs.getBoolPref("extensions.torbutton.confirm_plugins")) {
              torbutton_log(3, "Got plugin enabled notification: "+subject);
 
-             /* We need to protect this call with a flag becuase we can
-              * get multiple observer events for each mime type a plugin
-              * registers. Thankfully, these notifications arrive only on
-              * the main thread, *however*, our confirmation dialog suspends
-              * execution and allows more events to arrive until it is answered
-              */ 
+             // We need to protect this call with a flag becuase we can
+             // get multiple observer events for each mime type a plugin
+             // registers. Thankfully, these notifications arrive only on
+             // the main thread, *however*, our confirmation dialog suspends
+             // execution and allows more events to arrive until it is answered
+             // 
              if (!m_tb_confirming_plugins) {
                m_tb_confirming_plugins = true;
                torbutton_confirm_plugins();
@@ -359,15 +359,15 @@ function torbutton_init_toolbutton()
     try {
       torbutton_log(3, "Initializing the Torbutton button.");
       // Prevent the FF4 status bar from making our menu invisible...
-      /* Not needed
-      var o_toolbutton = torbutton_get_toolbutton();
-      if (o_toolbutton) {
-        var context = document.getElementById('torbutton-context-menu');
-        context.style.visibility = "visible";
-        context.hidden = false;
-        torbutton_log(3, "Set new context menu.");
-      }
-      */
+      ////// Not needed: ///////////
+      //var o_toolbutton = torbutton_get_toolbutton();
+      //if (o_toolbutton) {
+      //  var context = document.getElementById('torbutton-context-menu');
+      //  context.style.visibility = "visible";
+      //  context.hidden = false;
+      //  torbutton_log(3, "Set new context menu.");
+      //}
+      //////////////////////////////
       torbutton_update_toolbutton(torbutton_check_status());
     } catch(e) {
       torbutton_log(4, "Error Initializing Torbutton button: "+e);
@@ -1311,9 +1311,9 @@ function torbutton_update_statusbar(mode)
 
 // Bug 1506 P4: Timezone spoofing is pretty important
 function torbutton_set_timezone(mode, startup) {
-    /* Windows doesn't call tzset() automatically.. Linux and MacOS
-     * both do though.. FF3.5 now calls _tzset() for us on windows.
-     */
+    // Windows doesn't call tzset() automatically.. Linux and MacOS
+    // both do though.. FF3.5 now calls _tzset() for us on windows.
+
     // FIXME: Test:
     //  1. odd timezones like IST and IST+13:30
     //  2. negative offsets
@@ -1489,25 +1489,25 @@ function torbutton_new_identity() {
   }
 }
 
-/* The "New Identity" implementation does the following:
- *   1. Disables Javascript and plugins on all tabs
- *   2. Clears state:
- *      a. OCSP
- *      b. Cache + image cache
- *      c. Site-specific zoom
- *      d. Cookies+DOM Storage+safe browsing key
- *      e. google wifi geolocation token
- *      f. http auth
- *      g. SSL Session IDs
- *      h. last open location url
- *      i. clear content prefs
- *      j. permissions
- *   3. Sends tor the NEWNYM signal to get a new circuit
- *   4. Opens a new window with the default homepage
- *   5. Closes this window
- *
- * XXX: intermediate SSL certificates are not cleared.
- */
+// The "New Identity" implementation does the following:
+//   1. Disables Javascript and plugins on all tabs
+//   2. Clears state:
+//      a. OCSP
+//      b. Cache + image cache
+//      c. Site-specific zoom
+//      d. Cookies+DOM Storage+safe browsing key
+//      e. google wifi geolocation token
+//      f. http auth
+//      g. SSL Session IDs
+//      h. last open location url
+//      i. clear content prefs
+//      j. permissions
+//   3. Sends tor the NEWNYM signal to get a new circuit
+//   4. Opens a new window with the default homepage
+//   5. Closes this window
+//
+// XXX: intermediate SSL certificates are not cleared.
+//
 // Bug 1506 P4: Needed for New Identity.
 function torbutton_do_new_identity() {
   var obsSvc = Components.classes["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
@@ -2260,13 +2260,13 @@ function torbutton_jar_cookies(mode) {
                     .getService(Components.interfaces.nsISupports)
                     .wrappedJSObject;
 
-    /*
-    if(m_tb_ff3) {
-        var o_stringbundle = torbutton_get_stringbundle();
-        var warning = torbutton_get_property_string("torbutton.popup.ff3.cookie_warning");
-        window.alert(warning);
-        return;
-    }*/
+    
+    //if(m_tb_ff3) {
+    //    var o_stringbundle = torbutton_get_stringbundle();
+    //    var warning = torbutton_get_property_string("torbutton.popup.ff3.cookie_warning");
+    //    window.alert(warning);
+    //    return;
+    //}
     var protectcookies = m_tb_prefs.getBoolPref('extensions.torbutton.cookie_protections');
     if(mode) {
         if (protectcookies)
@@ -2290,7 +2290,7 @@ function torbutton_jar_cookies(mode) {
 function torbutton_disable_browser_js(browser) {
     var eventSuppressor = null;
 
-    /* Solution from: https://bugzilla.mozilla.org/show_bug.cgi?id=409737 */
+    // Solution from: https://bugzilla.mozilla.org/show_bug.cgi?id=409737 
     // XXX: This kills the entire window. We need to redirect
     // focus and inform the user via a lightbox.
     try {
@@ -2542,7 +2542,7 @@ function torbutton_new_tab(event)
     //var browser = event.currentTarget;
     var browser = gBrowser.getBrowserForTab(event.target);
 
-    /* Perform the version check on new tab, module timer */
+    // Perform the version check on new tab, module timer
     if (!tor_tag) { // tor is enabled...
       torbutton_do_async_versioncheck();
     }
@@ -2930,7 +2930,8 @@ var torbutton_weblistener =
   onSecurityChange: function() {return 0;},
   
   onLinkIconAvailable: function() 
-  { /*torbutton_eclog(1, 'called linkIcon'); */ return 0; }
+  { //torbutton_eclog(1, 'called linkIcon'); 
+    return 0; }
 }
 
 // Bug 1506 P1/P3: Setting a fixed window size is important, but
