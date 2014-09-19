@@ -46,15 +46,9 @@ function CookieJarSelector() {
 
   this.logger.log(3, "Component Load 5: New CookieJarSelector "+kMODULE_CONTRACTID);
 
-  this.prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
-
   var getProfileFile = function(filename) {
     var loc = "ProfD";  // profile directory
-    var file = 
-      Cc["@mozilla.org/file/directory_service;1"]
-      .getService(Ci.nsIProperties)
-      .get(loc, Ci.nsILocalFile)
-      .clone();
+    var file = Services.dirsvc.get(loc, Ci.nsILocalFile).clone();
     file.append(filename); 
     return file;
   };
@@ -93,19 +87,14 @@ function CookieJarSelector() {
 
   this.clearCookies = function() {
     try {
-        Cc["@mozilla.org/cookiemanager;1"]
-            .getService(Ci.nsICookieManager)
-            .removeAll();
+      Services.cookies.removeAll();
     } catch(e) {
-        this.logger.log(4, "Cookie clearing exception: "+e);
+      this.logger.log(4, "Cookie clearing exception: "+e);
     }
   };
 
   this._cookiesToJS = function(getSession) {
-    var cookieManager =
-      Cc["@mozilla.org/cookiemanager;1"]
-      .getService(Ci.nsICookieManager);
-    var cookiesEnum = cookieManager.enumerator;
+    var cookiesEnum = Services.cookies.enumerator;
     var cookiesAsJS = [];
     var count = 0;
     while (cookiesEnum.hasMoreElements()) {
@@ -126,14 +115,10 @@ function CookieJarSelector() {
         if (typeof(cookiesAsJS) == "undefined" || !cookiesAsJS)
             return;
 
-        var cookieManager =
-            Cc["@mozilla.org/cookiemanager;1"]
-            .getService(Ci.nsICookieManager2);
-
         for (var i = 0; i < cookiesAsJS.length; i++) {
             var cookie = cookiesAsJS[i];
             //this.logger.log(2, "Loading cookie: "+host+":"+cname+" until: "+expiry);
-            cookieManager.add(cookie.host, cookie.path, cookie.name, cookie.value,
+            Services.cookies.add(cookie.host, cookie.path, cookie.name, cookie.value,
                               cookie.isSecure, cookie.isHttpOnly, cookie.isSession,
                               cookie.expires);
         }
@@ -161,7 +146,7 @@ function CookieJarSelector() {
   };
 
   this.addProtectedCookie = function(cookie) {
-    var tor_enabled = this.prefs.getBoolPref("extensions.torbutton.tor_enabled");
+    var tor_enabled = Services.prefs.getBoolPref("extensions.torbutton.tor_enabled");
     var name = tor_enabled? "tor" : "nontor";
     var cookies = this.getProtectedCookies(name);
 
@@ -178,7 +163,7 @@ function CookieJarSelector() {
     cookies.push(cookie);
     this["protected-" + name] = cookies;
 
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!Services.prefs.getBoolPref("extensions.torbutton.block_disk")) {
       // save protected cookies to file
       this._protectedCookiesToFile(name);
     } else {
@@ -229,10 +214,10 @@ function CookieJarSelector() {
   };
 
   this.protectCookies = function(cookies) {
-    var tor_enabled = this.prefs.getBoolPref("extensions.torbutton.tor_enabled");
+    var tor_enabled = Services.prefs.getBoolPref("extensions.torbutton.tor_enabled");
     var name = tor_enabled? "tor" : "nontor";
     this._writeProtectCookies(cookies,name);
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!Services.prefs.getBoolPref("extensions.torbutton.block_disk")) {
       // save protected cookies to file
       this._protectedCookiesToFile(name);
     } else {
@@ -309,7 +294,7 @@ function CookieJarSelector() {
     this["session-cookiesobj-" + name] = this._cookiesToJS(true);
     this["cookiesobj-" + name] = this._cookiesToJS(false);
 
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!Services.prefs.getBoolPref("extensions.torbutton.block_disk")) {
         // save cookies to file
         this._cookiesToFile(name);
     } else {
@@ -339,11 +324,8 @@ function CookieJarSelector() {
         this.clearCookies();
         return;
       }
-      var cookiemanager =
-        Cc["@mozilla.org/cookiemanager;1"]
-        .getService(Ci.nsICookieManager2);
 
-      var enumerator = cookiemanager.enumerator;
+      var enumerator = Services.cookies.enumerator;
       var count = 0;
       var protcookie = false;
 
@@ -369,8 +351,7 @@ function CookieJarSelector() {
       }
       // Emit cookie-changed event. This instructs other components to clear their identifiers
       // (Specifically DOM storage and safe browsing, but possibly others)
-      var obsSvc = Components.classes["@mozilla.org/observer-service;1"].getService(nsIObserverService);
-      obsSvc.notifyObservers(this, "cookie-changed", "cleared");
+      Services.obs.notifyObservers(this, "cookie-changed", "cleared");
     } catch (e) {
       this.logger.log(5, "Error deleting unprotected cookies: " + e);
     }
@@ -381,7 +362,7 @@ function CookieJarSelector() {
     // remove cookies before loading old ones
     this.clearCookies();
 
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!Services.prefs.getBoolPref("extensions.torbutton.block_disk")) {
         // load cookies from file
         this["cookiesobj-" + name] = this._cookiesFromFile(name);
     }
@@ -408,10 +389,13 @@ function CookieJarSelector() {
   };
 
   // Check firefox version to know filename
-  var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
-      .getService(Components.interfaces.nsIXULAppInfo);
-  var versionChecker = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
-      .getService(Components.interfaces.nsIVersionComparator);
+  // TODO: The following variables (appInfo and versionChecker)
+  // don't seem to be used in this code. What are they for?
+  // Also, seems to duplicate stuff in torbutton.js
+  //   var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
+  //       .getService(Components.interfaces.nsIXULAppInfo);
+  //   var versionChecker = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
+  //       .getService(Components.interfaces.nsIVersionComparator);
 
   // This JSObject is exported directly to chrome
   this.wrappedJSObject = this;
@@ -439,10 +423,10 @@ function CookieJarSelector() {
        }
        jarThis.logger.log(3, "Got timer update. Saving changed cookies to jar.");
        var tor_enabled = 
-           jarThis.prefs.getBoolPref("extensions.torbutton.tor_enabled");
+           Services.prefs.getBoolPref("extensions.torbutton.tor_enabled");
 
        if(tor_enabled !=
-           jarThis.prefs.getBoolPref("extensions.torbutton.settings_applied")) {
+           Services.prefs.getBoolPref("extensions.torbutton.settings_applied")) {
            jarThis.logger.log(3, "Neat. Timer fired during transition.");
            return;
        }
@@ -506,17 +490,15 @@ CookieJarSelector.prototype =
   observe : function(aSubject, aTopic, aData) {
        switch(aTopic) { 
         case "cookie-changed":
-            var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);          
             this.timerCallback.cookie_changed = true;
     
-            if (aData == "added" && prefs.getBoolPref("extensions.torbutton.cookie_auto_protect") && ((!prefs.getBoolPref("extensions.torbutton.tor_memory_jar") && prefs.getBoolPref("extensions.torbutton.tor_enabled")) || (!prefs.getBoolPref("extensions.torbutton.nontor_memory_jar") && !prefs.getBoolPref("extensions.torbutton.tor_enabled"))))
+            if (aData == "added" && Services.prefs.getBoolPref("extensions.torbutton.cookie_auto_protect") && ((!Services.prefs.getBoolPref("extensions.torbutton.tor_memory_jar") && Services.prefs.getBoolPref("extensions.torbutton.tor_enabled")) || (!Services.prefs.getBoolPref("extensions.torbutton.nontor_memory_jar") && !Services.prefs.getBoolPref("extensions.torbutton.tor_enabled"))))
             {
               this.addProtectedCookie(aSubject.QueryInterface(Components.interfaces.nsICookie2));//protect the new cookie!    
             }
             break;
         case "profile-after-change":
-            var obsSvc = Components.classes["@mozilla.org/observer-service;1"].getService(nsIObserverService);
-            obsSvc.addObserver(this, "cookie-changed", false);
+            Services.obs.addObserver(this, "cookie-changed", false);
             // after profil loading, initialize a timer to call timerCallback
             // at a specified interval
             this.timer.initWithCallback(this.timerCallback, 60 * 1000, nsITimer.TYPE_REPEATING_SLACK); // 1 minute

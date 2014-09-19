@@ -18,17 +18,11 @@ const Cc = Components.classes;
 const Ci = Components.interfaces;
 
 function TorbuttonLogger() {
-    this.prefs = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefBranch);
-
     // Register observer
-    var pref_service = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefBranchInternal);
-    this._branch = pref_service.QueryInterface(Components.interfaces.nsIPrefBranchInternal);
-    this._branch.addObserver("extensions.torbutton", this, false);
+    Services.prefs.addObserver("extensions.torbutton", this, false);
 
-    this.loglevel = this.prefs.getIntPref("extensions.torbutton.loglevel");
-    this.logmethod = this.prefs.getIntPref("extensions.torbutton.logmethod");
+    this.loglevel = Services.prefs.getIntPref("extensions.torbutton.loglevel");
+    this.logmethod = Services.prefs.getIntPref("extensions.torbutton.logmethod");
 
     try {
         var logMngr = Components.classes["@mozmonkey.com/debuglogger/manager;1"]
@@ -37,8 +31,6 @@ function TorbuttonLogger() {
     } catch (exErr) {
         this._debuglog = false;
     }
-    this._console = Components.classes["@mozilla.org/consoleservice;1"]
-        .getService(Components.interfaces.nsIConsoleService);
 
     // This JSObject is exported directly to chrome
     this.wrappedJSObject = this;
@@ -110,7 +102,7 @@ TorbuttonLogger.prototype =
               break;
           default: // errorconsole
               if(this.loglevel <= level)
-                  this._console.logStringMessage(this.formatLog(str,level));
+                  Services.console.logStringMessage(this.formatLog(str,level));
               break;
       }
   },
@@ -139,7 +131,7 @@ TorbuttonLogger.prototype =
               dump("Bad log method: "+this.logmethod);
           case 1: // errorconsole
               if(this.loglevel <= level)
-                  this._console.logStringMessage(this.formatLog(str,level));
+                  Services.console.logStringMessage(this.formatLog(str,level));
               break;
       }
   },
@@ -154,10 +146,10 @@ TorbuttonLogger.prototype =
       if (topic != "nsPref:changed") return;
       switch (data) {
           case "extensions.torbutton.logmethod":
-              this.logmethod = this.prefs.getIntPref("extensions.torbutton.logmethod");
+              this.logmethod = Services.prefs.getIntPref("extensions.torbutton.logmethod");
               break;
           case "extensions.torbutton.loglevel":
-              this.loglevel = this.prefs.getIntPref("extensions.torbutton.loglevel");
+              this.loglevel = Services.prefs.getIntPref("extensions.torbutton.loglevel");
               break;
       }
   }

@@ -7,21 +7,17 @@ var m_tb_torlog = Components.classes["@torproject.org/torbutton-logger;1"]
 .getService(Components.interfaces.nsISupports).wrappedJSObject;
 
 // This is sort of hacky and random..
-var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
-    .getService(Components.interfaces.nsIXULAppInfo);
-var versionChecker = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
-    .getService(Components.interfaces.nsIVersionComparator);
 var m_tb_ff5 = false;
 var m_tb_ff4 = false;
 
 var m_tb_string_bundle = torbutton_get_stringbundle();
 
-if(versionChecker.compare(appInfo.version, "4.0a1") >= 0) {
+if(Services.vc.compare(Services.appinfo.version, "4.0a1") >= 0) {
     m_tb_ff4 = true;
 } else {
     m_tb_ff4 = false;
 }
-if(versionChecker.compare(appInfo.version, "5.0a1") >= 0) {
+if(Services.vc.compare(Services.appinfo.version, "5.0a1") >= 0) {
     m_tb_ff5 = true;
 } else {
     m_tb_ff5 = false;
@@ -50,19 +46,10 @@ function torbutton_log(nLevel, sMsg) {
 // get a preferences branch object
 // FIXME: this is lame.
 function torbutton_get_prefbranch(branch_name) {
-    var o_prefs = false;
     var o_branch = false;
 
     torbutton_log(1, "called get_prefbranch()");
-    o_prefs = Components.classes["@mozilla.org/preferences-service;1"]
-                        .getService(Components.interfaces.nsIPrefService);
-    if (!o_prefs)
-    {
-        torbutton_log(5, "Failed to get preferences-service!");
-        return false;
-    }
-
-    o_branch = o_prefs.getBranch(branch_name);
+    o_branch = Services.prefs.getBranch(branch_name);
     if (!o_branch)
     {
         torbutton_log(5, "Failed to get prefs branch!");
@@ -237,9 +224,7 @@ function torbutton_get_stringbundle()
     var o_stringbundle = false;
 
     try {
-        var oBundle = Components.classes["@mozilla.org/intl/stringbundle;1"]
-                                .getService(Components.interfaces.nsIStringBundleService);
-        o_stringbundle = oBundle.createBundle("chrome://torbutton/locale/torbutton.properties");
+        o_stringbundle = Services.strings.createBundle("chrome://torbutton/locale/torbutton.properties");
     } catch(err) {
         o_stringbundle = false;
     }

@@ -80,9 +80,7 @@ TBTorCheckService.prototype =
     let req = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"]
                       .createInstance(Ci.nsIXMLHttpRequest);
     //let req = new XMLHttpRequest(); Blocked by content policy
-    let prefs =  Cc["@mozilla.org/preferences-service;1"]
-                   .getService(Ci.nsIPrefBranch);
-    let url = prefs.getCharPref("extensions.torbutton.test_url");
+    let url = Services.prefs.getCharPref("extensions.torbutton.test_url");
     req.open('GET', url, aAsync);
     req.channel.loadFlags |= Ci.nsIRequest.LOAD_BYPASS_CACHE;
     req.overrideMimeType("text/xml");

@@ -37,9 +37,7 @@ AboutTor.prototype =
   // nsIAboutModule implementation:
   newChannel: function(aURI)
   {
-    let ioSvc = Cc["@mozilla.org/network/io-service;1"]
-                  .getService(Ci.nsIIOService);
-    let channel = ioSvc.newChannel(kAboutTorURL, null, null);
+    let channel = Services.io.newChannel(kAboutTorURL, null, null);
     channel.originalURI = aURI;
 
     return channel;
