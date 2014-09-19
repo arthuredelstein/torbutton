@@ -7,6 +7,8 @@
  * about:tor component
  *************************************************************************/
 
+Components.utils.import("resource://gre/modules/Services.jsm");
+
 // Module specific constants
 const kMODULE_NAME = "about:tor";
 const kMODULE_CONTRACTID = "@mozilla.org/network/protocol/about;1?what=tor";
@@ -37,9 +39,7 @@ AboutTor.prototype =
   // nsIAboutModule implementation:
   newChannel: function(aURI)
   {
-    let ioSvc = Cc["@mozilla.org/network/io-service;1"]
-                  .getService(Ci.nsIIOService);
-    let channel = ioSvc.newChannel(kAboutTorURL, null, null);
+    let channel = Services.io.newChannel(kAboutTorURL, null, null);
     channel.originalURI = aURI;
 
     return channel;

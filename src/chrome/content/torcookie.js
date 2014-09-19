@@ -1,13 +1,16 @@
 // Bug 1506 P2: I think cookie protections is a neat feature.
 
+if (!window.hasOwnProperty("Services")) {
+  Components.utils.import("resource://gre/modules/Services.jsm"); 
+}
+
+
 var cookiesTree = null;
-var prefs = null;
 var cookies = [];
 var protectedCookies = [];
 var deletedCookies       = [];
 var lastCookieSortColumn = "";
 var lastCookieSortAscending = false;
-var cookiemanager = null;
 var selector = null;
 //custom tree view, this is how we dynamically add the cookies
 var cookiesTreeView = {
@@ -54,16 +57,11 @@ function Cookie(number,name,value,isDomain,host,rawHost,HttpOnly,path,isSecure,i
 
 function initDialog() {
   cookiesTree = document.getElementById("cookiesTree");
-  prefs =Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefBranch);
   selector = Components.classes["@torproject.org/cookie-jar-selector;1"]
                     .getService(Components.interfaces.nsISupports)
                     .wrappedJSObject;
-  var tor_enabled = prefs.getBoolPref("extensions.torbutton.tor_enabled");
-  //init cookie manager
-  cookiemanager = Components.classes["@mozilla.org/cookiemanager;1"].getService();
-    cookiemanager = cookiemanager.QueryInterface(Components.interfaces.nsICookieManager);
-  var enumerator = cookiemanager.enumerator;
+  var tor_enabled = Services.prefs.getBoolPref("extensions.torbutton.tor_enabled");
+  var enumerator = Services.cookies.enumerator;
   var count = 0;
   getProtectedCookies();
   while (enumerator.hasMoreElements()) {
@@ -82,7 +80,7 @@ function initDialog() {
   //apply custom view
   cookiesTreeView.rowCount = cookies.length;
   cookiesTree.treeBoxObject.view = cookiesTreeView;    
-  document.getElementById('defaultCookieGroup').selectedIndex = prefs.getBoolPref("extensions.torbutton.cookie_auto_protect")? 0 : 1;
+  document.getElementById('defaultCookieGroup').selectedIndex = Services.prefs.getBoolPref("extensions.torbutton.cookie_auto_protect")? 0 : 1;
 }
 function protectCookie()
 {
@@ -135,7 +133,7 @@ function acceptDialog() {
   }
   selector.protectCookies(protcookies);
   //output protected cookies
-  prefs.setBoolPref("extensions.torbutton.cookie_auto_protect",document.getElementById('saveAllCookies').selected);
+  Services.prefs.setBoolPref("extensions.torbutton.cookie_auto_protect",document.getElementById('saveAllCookies').selected);
 }
 function CookieColumnSort(column) {
   lastCookieSortAscending =
@@ -221,10 +219,10 @@ function SortTree(tree, view, table, column, lastSortColumn, lastSortAscending, 
 }
 function FinalizeCookieDeletions() {
   for (var c=0; c<deletedCookies.length; c++) {
-    cookiemanager.remove(deletedCookies[c].host,
-                         deletedCookies[c].name,
-                         deletedCookies[c].path,
-                         false);
+    Services.cookies.remove(deletedCookies[c].host,
+                            deletedCookies[c].name,
+                            deletedCookies[c].path,
+                            false);
   }
   deletedCookies.length = 0;
 }

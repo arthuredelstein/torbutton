@@ -10,6 +10,8 @@
  *
  *************************************************************************/
 
+Components.utils.import("resource://gre/modules/Services.jsm");
+
 // Module specific constants
 const kMODULE_NAME = "Torbutton Session Store Blocker";
 const kMODULE_CONTRACTID = "@torproject.org/torbutton-ss-blocker;1";
@@ -25,12 +27,7 @@ function TBSessionBlocker() {
         .getService(Components.interfaces.nsISupports).wrappedJSObject;
     this.logger.log(3, "Torbutton Session Store Blocker initialized");
 
-    var obsSvc = Components.classes["@mozilla.org/observer-service;1"]
-        .getService(Ci.nsIObserverService);
-    obsSvc.addObserver(this, "sessionstore-state-write", false);
-    this.prefs = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefBranch);
-
+    Services.obs.addObserver(this, "sessionstore-state-write", false);
     this.wrappedJSObject = this;
 }
 
@@ -100,7 +97,7 @@ TBSessionBlocker.prototype =
       // 
       // Simply block sessionstore writes entirely in Tor Browser
       try {
-        if (this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+        if (Services.prefs.getBoolPref("extensions.torbutton.block_disk")) {
           this.logger.log(3, "Blocking SessionStore write in Tor Browser");
           subject.data = null;
           return;

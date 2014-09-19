@@ -196,10 +196,7 @@ function torbutton_prefs_save(doc) {
     torbutton_log(2, "called prefs_save()");
     var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
     var o_customprefs = torbutton_get_prefbranch('extensions.torbutton.custom.');
-
-    var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-        .getService(Components.interfaces.nsIWindowMediator);
-    var enumerator = wm.getEnumerator("navigator:browser");
+    var enumerator = Services.wm.getEnumerator("navigator:browser");
     while(enumerator.hasMoreElements()) {
         var win = enumerator.getNext();
         if(win != window && win.m_tb_is_main_window) {
@@ -233,9 +230,7 @@ function torbutton_prefs_save(doc) {
 
     o_torprefs.setBoolPref('saved.transparentTor', doc.getElementById('torbutton_transparentTor').selected);
     if (o_torprefs.getBoolPref('saved.transparentTor')) {
-        var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-            .getService(Components.interfaces.nsIWindowMediator);
-        var chrome = wm.getMostRecentWindow("navigator:browser");
+        var chrome = Services.wm.getMostRecentWindow("navigator:browser");
         var ret = chrome.torbutton_test_settings();
         if (ret != 4) {
             var warning = chrome.torbutton_get_property_string("torbutton.popup.test.failure");
@@ -285,9 +280,7 @@ function torbutton_prefs_save(doc) {
 function torbutton_prefs_test_settings() {
 
     // Reset Tor state to disabled.
-    var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-        .getService(Components.interfaces.nsIWindowMediator);
-    var chrome = wm.getMostRecentWindow("navigator:browser");
+    var chrome = Services.wm.getMostRecentWindow("navigator:browser");
 
     if(chrome.m_tb_ff3) {
         // FIXME: This is kind of ghetto.. can we make a progress 
@@ -357,9 +350,7 @@ function torbutton_prefs_reset_defaults() {
     //  4. Enable tor if was previously enabled
 
     // Reset Tor state to disabled.
-    var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-        .getService(Components.interfaces.nsIWindowMediator);
-    var chrome = wm.getMostRecentWindow("navigator:browser");
+    var chrome = Services.wm.getMostRecentWindow("navigator:browser");
 
     // XXX Warning: The only reason this works is because of Firefox's 
     // threading model. As soon as a pref is changed, all observers
@@ -417,7 +408,5 @@ function torbutton_prefs_reset_defaults() {
     torbutton_prefs_init(window.document);
 
     // In all cases, force prefs to be synced to disk
-    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefService);
-    prefService.savePrefFile(null);
+    Services.prefs.savePrefFile(null);
 }

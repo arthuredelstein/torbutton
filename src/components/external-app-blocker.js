@@ -8,6 +8,8 @@
  * due to Firefox Bug https://bugzilla.mozilla.org/show_bug.cgi?id=440892
  *************************************************************************/
 
+Components.utils.import("resource://gre/modules/Services.jsm");
+
 // Module specific constants
 const kMODULE_NAME = "Torbutton External App Handler";
 
@@ -30,11 +32,7 @@ const Cr = Components.results;
 const Cc = Components.classes;
 const Ci = Components.interfaces;
 
-var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
-                .getService(Components.interfaces.nsIXULAppInfo);
-var versionChecker = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
-                       .getService(Components.interfaces.nsIVersionComparator);
-var is_ff3 = (versionChecker.compare(appInfo.version, "3.0a1") >= 0);
+var is_ff3 = (Services.vc.compare(Services.appinfo.version, "3.0a1") >= 0);
 
 function ExternalWrapper() {
   this.logger = Components.classes["@torproject.org/torbutton-logger;1"]
@@ -43,10 +41,6 @@ function ExternalWrapper() {
 
   this._real_external = Components.classesByID[kREAL_EXTERNAL_CID];
   this._interfaces = kExternalInterfaces;
-
-  this._prefs = Components.classes["@mozilla.org/preferences-service;1"]
-      .getService(Components.interfaces.nsIPrefBranch);
-
   this._external = function() {
     var external = this._real_external.getService();
     for (var i = 0; i < this._interfaces.length; i++) {
@@ -108,7 +102,7 @@ ExternalWrapper.prototype =
 
   /* Determine whether we should ask the user to run the app */
   blockApp: function() {
-    return this._prefs.getBoolPref("extensions.torbutton.tor_enabled");
+    return Services.prefs.getBoolPref("extensions.torbutton.tor_enabled");
   },
 
   /* Copies methods from the true object we are wrapping */
@@ -155,16 +149,13 @@ ExternalWrapper.prototype =
   // loadUrl calls loadURI
 
   _confirmLaunch: function(urispec, check) {
-    if (!this._prefs.getBoolPref("extensions.torbutton.launch_warning")) {
+    if (!Services.prefs.getBoolPref("extensions.torbutton.launch_warning")) {
       return 0;
     }
 
-    var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-               .getService(Components.interfaces.nsIWindowMediator);
-    var chrome = wm.getMostRecentWindow("navigator:browser");
+    var chrome = Services.wm.getMostRecentWindow("navigator:browser");
 
-    var prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
-                            .getService(Components.interfaces.nsIPromptService);
+    var prompts = Services.prompt;
     var flags = prompts.BUTTON_POS_0 * prompts.BUTTON_TITLE_IS_STRING +
                 prompts.BUTTON_POS_1 * prompts.BUTTON_TITLE_IS_STRING +
                 prompts.BUTTON_DELAY_ENABLE +
@@ -185,7 +176,7 @@ ExternalWrapper.prototype =
     //                               flags, launch, cancel, "", dontask, check);
 
     if (check.value) {
-      this._prefs.setBoolPref("extensions.torbutton.launch_warning", false);
+      Services.prefs.setBoolPref("extensions.torbutton.launch_warning", false);
     }
 
     return result;

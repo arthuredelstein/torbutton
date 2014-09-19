@@ -385,19 +385,17 @@ SSC_RequestListener.prototype =
  * Master control object. Adds and removes the RequestListener
  */
 function SSC_Controller() {
-  this.prefs = Components.classes["@mozilla.org/preferences-service;1"]
-                           .getService(Components.interfaces.nsIPrefService);
   this.addListener(new SSC_RequestListener(this));
 }
 
 SSC_Controller.prototype = {
 
   getEnabled: function() {
-    return (this.prefs.getIntPref(kSSC_ENABLED_PREF));
+    return (Services.prefs.getIntPref(kSSC_ENABLED_PREF));
   },
 
   getSafeCookieEnabled: function() {
-    return (this.prefs.getBoolPref(kSSC_SC_ENABLED_PREF));
+    return (Services.prefs.getBoolPref(kSSC_SC_ENABLED_PREF));
   },
 
   getBlockThirdPartyCache: function() {
@@ -406,32 +404,26 @@ SSC_Controller.prototype = {
   },
 
   getTorButton: function() {
-    return (this.prefs.getBoolPref(kSSC_TORBUTTON_PREF));  
+    return (Services.prefs.getBoolPref(kSSC_TORBUTTON_PREF));  
   },
   
   getCookieJS: function() {
-      return (this.prefs.getBoolPref(kSSC_COOKIE_JS_PREF));  
+      return (Services.prefs.getBoolPref(kSSC_COOKIE_JS_PREF));  
   },
 
   addListener: function(listener) {
     this.listener = listener;
-    var observerService = 
-      Components.classes["@mozilla.org/observer-service;1"]
-        .getService(Components.interfaces.nsIObserverService);
-    observerService.addObserver(listener, "http-on-modify-request", false);
+    Services.obs.addObserver(listener, "http-on-modify-request", false);
     // XXX: We need an observer to add this listener when the pref gets set
     if (this.getSafeCookieEnabled()) {
-      observerService.addObserver(listener, "http-on-examine-response", false);
+      Services.obs.addObserver(listener, "http-on-examine-response", false);
     }
   },
 
   removeListener: function() {
-    var observerService = 
-      Components.classes["@mozilla.org/observer-service;1"]
-        .getService(Components.interfaces.nsIObserverService);
-    observerService.removeObserver(this.listener, "http-on-modify-request");
+    Services.obs.removeObserver(this.listener, "http-on-modify-request");
     if (this.getSafeCookieEnabled()) {
-      observerService.removeObserver(this.listener, "http-on-examine-response");
+      Services.obs.removeObserver(this.listener, "http-on-examine-response");
     }
   },
 }

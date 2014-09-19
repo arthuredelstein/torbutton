@@ -16,6 +16,8 @@
  *
  *************************************************************************/
 
+Components.utils.import("resource://gre/modules/Services.jsm");
+
 const Cc = Components.classes;
 const Ci = Components.interfaces;
 const Cr = Components.results;
@@ -30,16 +32,12 @@ function StartupObserver() {
     this._uninstall = false;
     this.logger = Components.classes["@torproject.org/torbutton-logger;1"]
          .getService(Components.interfaces.nsISupports).wrappedJSObject;
-    this._prefs = Components.classes["@mozilla.org/preferences-service;1"]
-         .getService(Components.interfaces.nsIPrefBranch);
     this.logger.log(3, "Startup Observer created");
 
-    var observerService = Cc["@mozilla.org/observer-service;1"].
-            getService(Ci.nsIObserverService);
-    observerService.addObserver(this, "quit-application-granted", false);
+    Services.obs.addObserver(this, "quit-application-granted", false);
 
     try {
-      var test = this._prefs.getCharPref("torbrowser.version");
+      var test = Services.prefs.getCharPref("torbrowser.version");
       this.is_tbb = true;
       this.logger.log(3, "This is a Tor Browser's XPCOM");
     } catch(e) {
@@ -106,49 +104,47 @@ StartupObserver.prototype = {
                  .getService(Components.interfaces.nsIEnvironment);
 
       if (environ.exists("TOR_SOCKS_PORT")) {
-        this._prefs.setIntPref('extensions.torbutton.socks_port',
+        Services.prefs.setIntPref('extensions.torbutton.socks_port',
                 parseInt(environ.get("TOR_SOCKS_PORT")));
         if (this.is_tbb) {
-            this._prefs.setIntPref('network.proxy.socks_port', parseInt(environ.get("TOR_SOCKS_PORT")));
+            Services.prefs.setIntPref('network.proxy.socks_port', parseInt(environ.get("TOR_SOCKS_PORT")));
 
             // XXX: Hack for TBB people who alternate between transproxy and non
-            this._prefs.setCharPref('extensions.torbutton.settings_method', 'recommended');
-            this._prefs.setBoolPref('extensions.torbutton.saved.transparentTor', false);
-            this._prefs.setBoolPref('network.proxy.socks_remote_dns', true);
-            this._prefs.setIntPref('network.proxy.type', 1);
+            Services.prefs.setCharPref('extensions.torbutton.settings_method', 'recommended');
+            Services.prefs.setBoolPref('extensions.torbutton.saved.transparentTor', false);
+            Services.prefs.setBoolPref('network.proxy.socks_remote_dns', true);
+            Services.prefs.setIntPref('network.proxy.type', 1);
         }
         this.logger.log(3, "Reset socks port to "+environ.get("TOR_SOCKS_PORT"));
-      } else if (this._prefs.getCharPref('extensions.torbutton.settings_method') == 'recommended') {
-        this._prefs.setIntPref('extensions.torbutton.socks_port', 9150);
+      } else if (Services.prefs.getCharPref('extensions.torbutton.settings_method') == 'recommended') {
+        Services.prefs.setIntPref('extensions.torbutton.socks_port', 9150);
       }
 
       if (environ.exists("TOR_SOCKS_HOST")) {
-        this._prefs.setCharPref('extensions.torbutton.socks_host', environ.get("TOR_SOCKS_HOST"));
+        Services.prefs.setCharPref('extensions.torbutton.socks_host', environ.get("TOR_SOCKS_HOST"));
         if (this.is_tbb) {
-            this._prefs.setCharPref('network.proxy.socks', environ.get("TOR_SOCKS_HOST"));
+            Services.prefs.setCharPref('network.proxy.socks', environ.get("TOR_SOCKS_HOST"));
         }
-      } else if (this._prefs.getCharPref('extensions.torbutton.settings_method') == 'recommended') {
-        this._prefs.setCharPref('extensions.torbutton.socks_host', '127.0.0.1');
+      } else if (Services.prefs.getCharPref('extensions.torbutton.settings_method') == 'recommended') {
+        Services.prefs.setCharPref('extensions.torbutton.socks_host', '127.0.0.1');
       }
 
       if (environ.exists("TOR_TRANSPROXY")) {
         this.logger.log(3, "Resetting Tor settings to transproxy");
-        this._prefs.setCharPref('extensions.torbutton.settings_method', 'transparent');
-        this._prefs.setBoolPref('extensions.torbutton.saved.transparentTor', true);
-        this._prefs.setIntPref('extensions.torbutton.socks_port', 0);
-        this._prefs.setCharPref('extensions.torbutton.socks_host', "");
+        Services.prefs.setCharPref('extensions.torbutton.settings_method', 'transparent');
+        Services.prefs.setBoolPref('extensions.torbutton.saved.transparentTor', true);
+        Services.prefs.setIntPref('extensions.torbutton.socks_port', 0);
+        Services.prefs.setCharPref('extensions.torbutton.socks_host', "");
         if (this.is_tbb) {
-            this._prefs.setBoolPref('network.proxy.socks_remote_dns', false);
-            this._prefs.setIntPref('network.proxy.type', 0);
-            this._prefs.setIntPref('network.proxy.socks_port', 0);
-            this._prefs.setCharPref('network.proxy.socks', "");
+            Services.prefs.setBoolPref('network.proxy.socks_remote_dns', false);
+            Services.prefs.setIntPref('network.proxy.type', 0);
+            Services.prefs.setIntPref('network.proxy.socks_port', 0);
+            Services.prefs.setCharPref('network.proxy.socks', "");
         }
       }
 
       // Force prefs to be synced to disk
-      var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-          .getService(Components.interfaces.nsIPrefService);
-      prefService.savePrefFile(null);
+      Services.prefs.savePrefFile(null);
     
       this.logger.log(3, "Synced network settings to environment.");
     },
@@ -157,7 +153,7 @@ StartupObserver.prototype = {
       if(topic == "profile-after-change") {
         // Bug 1506 P1: We listen to these prefs as signals for startup,
         // but only for hackish reasons.
-        this._prefs.setBoolPref("extensions.torbutton.startup", true);
+        Services.prefs.setBoolPref("extensions.torbutton.startup", true);
 
         this.setProxySettings();
       } else if (topic == "quit-application-granted") {
@@ -166,9 +162,7 @@ StartupObserver.prototype = {
         this.logger.log(3, "Got firefox quit event.");
         var chrome = null;
         try {
-            var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-                         .getService(Components.interfaces.nsIWindowMediator);
-            var chrome = wm.getMostRecentWindow("navigator:browser");
+            var chrome = Services.wm.getMostRecentWindow("navigator:browser");
         } catch(e) {
             this.logger.log(3, "Exception on shutdown window: "+e);
         }
@@ -189,9 +183,7 @@ StartupObserver.prototype = {
       }
 
       // In all cases, force prefs to be synced to disk
-      var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-          .getService(Components.interfaces.nsIPrefService);
-      prefService.savePrefFile(null);
+      Services.prefs.savePrefFile(null);
     },
 
   QueryInterface: function(iid) {
