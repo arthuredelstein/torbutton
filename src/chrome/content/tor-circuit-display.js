@@ -15,9 +15,12 @@
 /* global document, gBrowser, Components */
 
 // ### Main function
-// __runTorCircuitDisplay(host, port, password)__.
-// The single function we run to activate automatic display of the Tor circuit..
-let runTorCircuitDisplay = (function () {
+// __createTorCircuitDisplay(host, port, password, enablePrefName)__.
+// The single function that prepares tor circuit display. Connects to a tor
+// control port with the given host, port, and password, and binds to
+// a named bool pref whose value determines whether the circuit display
+// is enabled or disabled.
+let createTorCircuitDisplay = (function () {
 
 "use strict";
 
@@ -100,6 +103,13 @@ let nodeLines = function (nodeData) {
   return result;
 };
 
+// __showCircuitDisplay(show)__.
+// If show === true, makes the circuit display visible.
+let showCircuitDisplay = function (show) {
+  document.querySelector("svg#tor-circuit").style.display = show ?
+							    'block' : 'none';
+};
+
 // __updateCircuitDisplay()__.
 // Updates the Tor circuit display SVG, showing the current domain
 // and the relay nodes for that domain.
@@ -130,8 +140,7 @@ let updateCircuitDisplay = function () {
       }
     }
     // Only show the Tor circuit if we have a domain and node data.
-    document.querySelector("svg#tor-circuit").style.display = (domain && nodeData) ?
-							      'block' : 'none';
+    showCircuitDisplay(domain && nodeData);
   }
 };
 
@@ -176,39 +185,106 @@ let collectIsolationData = function (aController) {
     });
 };
 
-// __syncDisplayWithSelectedTab()__.
+// __syncDisplayWithSelectedTab(syncOn)__.
 // We may have multiple tabs, but there is only one instance of TorButton's popup
 // panel for displaying the Tor circuit UI. Therefore we need to update the display
 // to show the currently selected tab at its current location.
-let syncDisplayWithSelectedTab = function () {
-  // Whenever a different tab is selected, change the circuit display
-  // to show the circuit for that tab's domain.
-  gBrowser.tabContainer.addEventListener("TabSelect", function (event) {
-    updateCircuitDisplay();
-  });
-  // If the currently selected tab has been sent to a new location,
-  // update the circuit to reflect that.
-  gBrowser.addTabsProgressListener({ onLocationChange : function (aBrowser) {
-    if (aBrowser == gBrowser.selectedBrowser) {
+let syncDisplayWithSelectedTab = (function() {
+  let listener1 = event => { updateCircuitDisplay(); },
+      listener2 = { onLocationChange : function (aBrowser) {
+                      if (aBrowser === gBrowser.selectedBrowser) {
+                        updateCircuitDisplay();
+                      }
+                    } };
+  return function (syncOn) {
+    if (syncOn) {
+      // Whenever a different tab is selected, change the circuit display
+      // to show the circuit for that tab's domain.
+      gBrowser.tabContainer.addEventListener("TabSelect", listener1);
+      // If the currently selected tab has been sent to a new location,
+      // update the circuit to reflect that.
+      gBrowser.addTabsProgressListener(listener2);
+      // Get started with a correct display.
       updateCircuitDisplay();
+    } else {
+      // Stop syncing.
+      gBrowser.tabContainer.removeEventListener("TabSelect", listener1);
+      gBrowser.removeTabsProgressListener(listener2);
+      // Hide the display.
+      showCircuitDisplay(false);
     }
-  } });
+  };
+})();
 
-  // Get started with a correct display.
-  updateCircuitDisplay();
+// ## Pref utils
+
+// __prefs__. A shortcut to Mozilla Services.prefs.
+let prefs = Services.prefs;
+
+// __getPrefValue(prefName)__
+// Returns the current value of a preference, regardless of its type.
+let getPrefValue = function (prefName) {
+  switch(prefs.getPrefType(prefName)) {
+    case prefs.PREF_BOOL: return prefs.getBoolPref(prefName);
+    case prefs.PREF_INT: return prefs.getIntPref(prefName);
+    case prefs.PREF_STRING: return prefs.getCharPref(prefName);
+    default: return null;
+  }
 };
 
-// __display(host, port, password)__.
-// The main function for activating automatic display of the Tor circuit.
-// A reference to this function (called runTorCircuitDisplay) is exported as a global.
-let display = function (host, port, password) {
-  let myController = controller(host, port || 9151, password, function (x) { logger.eclog(5, x); });
-  syncDisplayWithSelectedTab();
-  collectIsolationData(myController);
+// __bindPrefAndInit(prefName, prefHandler)__
+// Applies prefHandler to the current value of pref specified by prefName.
+// Re-applies prefHandler whenever the value of the pref changes.
+// Returns a zero-arg function that unbinds the pref.
+let bindPrefAndInit = function (prefName, prefHandler) {
+  let update = () => { prefHandler(getPrefValue(prefName)); },
+      observer = { observe : function (subject, topic, data) {
+                     logger.eclog(5, "observer " + data);
+                     if (data === prefName) {
+                         update();
+                     }
+                   } };
+  prefs.addObserver(prefName, observer, false);
+  update();
+  return () => { prefs.removeObserver(prefName, observer); };
 };
 
-return display;
+// setupDisplay(host, port, password, enablePrefName)__.
+// Returns a function that lets you start/stop automatic display of the Tor circuit.
+// A reference to this function (called createTorCircuitDisplay) is exported as a global.
+let setupDisplay = function (host, port, password, enablePrefName) {
+  logger.eclog(5, "setupDisplay");
+  let myController = null,
+      stop = function() {
+        if (myController) {
+          syncDisplayWithSelectedTab(false);
+          myController = null;
+        }
+      },
+      start = function () {
+        logger.eclog(5, "start circuit display");
+        if (!myController) {
+          myController = controller(host, port || 9151, password, function (err) {
+            // An error has occurred.
+            logger.eclog(5, err);
+            logger.eclog(5, "Disabling tor display circuit because of an error.");
+            stop();
+          });
+          syncDisplayWithSelectedTab(true);
+          collectIsolationData(myController);
+       }
+     };
+  try {
+    let unbindPref = bindPrefAndInit(enablePrefName, on => { if (on) start(); else stop(); });
+    // When this chrome window is unloaded, we need to unbind the pref.
+    window.addEventListener("unload", function (event) { stop(); unbindPref(); });
+  } catch (e) {
+    logger.eclog(5, "Error: " + e.message + "\n" + e.stack);
+  }
+};
 
-// Finish runTorCircuitDisplay()
+return setupDisplay;
+
+// Finish createTorCircuitDisplay()
 })();
 
