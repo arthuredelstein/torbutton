@@ -107,7 +107,8 @@ let bindPrefAndInit = function (prefName, prefHandler) {
   return () => { prefs.removeObserver(prefName, observer); };
 };
 
-EXPORTS = [newUUID, enumeratorToArray, browserWindows, frontBrowserWindow,
-           currentTabBrowser, selectedBrowser, activateForAllWindows,
-           getPrefValue, bindPrefAndInit];
+let EXPORTED_SYMBOLS =
+  [newUUID, enumeratorToArray, browserWindows, frontBrowserWindow,
+   currentTabBrowser, selectedBrowser, activateForAllWindows,
+   getPrefValue, bindPrefAndInit];
 
