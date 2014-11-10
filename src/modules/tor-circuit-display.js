@@ -103,22 +103,26 @@ let nodeLines = function (nodeData) {
   return result;
 };
 
+// __selectAll(selector)__
+// Selects all matching elements in the XULDocument in the front Chrome Window.
+let selectAll = frontBrowserWindow().document.querySelectorAll;
+
 // __showCircuitDisplay(show)__.
 // If show === true, makes the circuit display visible.
 let showCircuitDisplay = function (show) {
-  document.querySelector("svg#tor-circuit").style.display = show ?
-							    'block' : 'none';
+  selectAll("svg#tor-circuit").style.display = show ? 'block' : 'none';
 };
+
 
 // __updateCircuitDisplay()__.
 // Updates the Tor circuit display SVG, showing the current domain
 // and the relay nodes for that domain.
 let updateCircuitDisplay = function () {
-  let selectedBrowser = gBrowser.selectedBrowser;
-  if (selectedBrowser) {
-    let URI = selectedBrowser.currentURI,
-	domain = null,
-	nodeData = null;
+  let theBrowser = selectedBrowser();
+  if (theBrowser) {
+    let URI = theBrowser.currentURI,
+	      domain = null,
+	      nodeData = null;
     // Try to get a domain for this URI. Otherwise it remains null.
     try {
       domain = URI.host;
@@ -127,16 +131,16 @@ let updateCircuitDisplay = function () {
     // Check if we have anything to show for this domain.
       nodeData = domainToNodeDataMap[domain];
       if (nodeData) {
-	// Update the displayed domain.
-	document.querySelector("svg#tor-circuit text#domain").innerHTML = "(" + domain + "):";
-	// Update the displayed information for the relay nodes.
-	let diagramNodes = document.querySelectorAll("svg#tor-circuit text.node-text"),
-            //diagramCircles = document.querySelectorAll("svg#tor-circuit .node-circule"),
+	      // Update the displayed domain.
+	      selectAll("svg#tor-circuit text#domain").innerHTML = "(" + domain + "):";
+	      // Update the displayed information for the relay nodes.
+	      let diagramNodes = selectAll("svg#tor-circuit text.node-text"),
+            //diagramCircles = selectAll("svg#tor-circuit .node-circle"),
             lines = nodeLines(nodeData);
-	for (let i = 0; i < diagramNodes.length; ++i) {
+	      for (let i = 0; i < diagramNodes.length; ++i) {
           let line = lines[i];
           diagramNodes[i].innerHTML = line ? line : "";
-	}
+	      }
       }
     }
     // Only show the Tor circuit if we have a domain and node data.
@@ -216,39 +220,6 @@ let syncDisplayWithSelectedTab = (function() {
   };
 })();
 
-// ## Pref utils
-
-// __prefs__. A shortcut to Mozilla Services.prefs.
-let prefs = Services.prefs;
-
-// __getPrefValue(prefName)__
-// Returns the current value of a preference, regardless of its type.
-let getPrefValue = function (prefName) {
-  switch(prefs.getPrefType(prefName)) {
-    case prefs.PREF_BOOL: return prefs.getBoolPref(prefName);
-    case prefs.PREF_INT: return prefs.getIntPref(prefName);
-    case prefs.PREF_STRING: return prefs.getCharPref(prefName);
-    default: return null;
-  }
-};
-
-// __bindPrefAndInit(prefName, prefHandler)__
-// Applies prefHandler to the current value of pref specified by prefName.
-// Re-applies prefHandler whenever the value of the pref changes.
-// Returns a zero-arg function that unbinds the pref.
-let bindPrefAndInit = function (prefName, prefHandler) {
-  let update = () => { prefHandler(getPrefValue(prefName)); },
-      observer = { observe : function (subject, topic, data) {
-                     logger.eclog(5, "observer " + data);
-                     if (data === prefName) {
-                         update();
-                     }
-                   } };
-  prefs.addObserver(prefName, observer, false);
-  update();
-  return () => { prefs.removeObserver(prefName, observer); };
-};
-
 // setupDisplay(host, port, password, enablePrefName)__.
 // Returns a function that lets you start/stop automatic display of the Tor circuit.
 // A reference to this function (called createTorCircuitDisplay) is exported as a global.
@@ -258,6 +229,7 @@ let setupDisplay = function (host, port, password, enablePrefName) {
       stop = function() {
         if (myController) {
           syncDisplayWithSelectedTab(false);
+          myController.close();
           myController = null;
         }
       },
@@ -277,7 +249,6 @@ let setupDisplay = function (host, port, password, enablePrefName) {
   try {
     let unbindPref = bindPrefAndInit(enablePrefName, on => { if (on) start(); else stop(); });
     // When this chrome window is unloaded, we need to unbind the pref.
-    window.addEventListener("unload", function (event) { stop(); unbindPref(); });
   } catch (e) {
     logger.eclog(5, "Error: " + e.message + "\n" + e.stack);
   }

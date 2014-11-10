@@ -23,7 +23,7 @@ let {classes: Cc, interfaces: Ci, results: Cr, Constructor: CC, utils: Cu } = Co
 // ### Import Mozilla Services
 Cu.import("resource://gre/modules/Services.jsm");
 
-// ## torbutton logger
+// ### torbutton logger
 let logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Components.interfaces.nsISupports).wrappedJSObject,
     log = x => logger.eclog(3, x);
