@@ -2060,6 +2060,9 @@ function torbutton_update_disk_prefs() {
         m_tb_prefs.setIntPref("browser.download.manager.retention", 2);
     }
 
+    // XXX: Bug 14632: The cookie dialog is useless in private browsing mode in FF31ESR :(
+    document.getElementById("torbutton-cookie-protector").hidden = mode;
+
     // Force prefs to be synced to disk
     var prefService = Components.classes["@mozilla.org/preferences-service;1"]
         .getService(Components.interfaces.nsIPrefService);
