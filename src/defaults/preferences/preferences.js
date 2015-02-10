@@ -224,6 +224,7 @@ pref("extensions.torbutton.dual_key_cookies",false);
 pref("extensions.torbutton.cookie_js_allow", true);
 pref("extensions.torbutton.prompt_torbrowser", true);
 pref("extensions.torbutton.confirm_plugins", true);
+pref("extensions.torbutton.confirm_newnym", true);
 
 // Browser home page, spell checker dictionary, and search engine overrides:
 pref("browser.startup.homepage", "chrome://torbutton/locale/browser.properties");
