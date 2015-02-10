@@ -473,3 +473,48 @@ function torbutton_toggle_slider(doc, pos) {
         sec_custom.checked = false;
     }
 }
+
+function torbutton_prefs_check_disk() {
+    var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
+    var old_mode = o_torprefs.getBoolPref('block_disk');
+    var mode = document.getElementById('torbutton_blockDisk').checked;
+
+    if (mode === old_mode) {
+        // Either revert, or uncheck.
+        return;
+    }
+
+    const Cc = Components.classes, Ci = Components.interfaces;
+
+
+    var sb = Components.classes["@mozilla.org/intl/stringbundle;1"]
+        .getService(Components.interfaces.nsIStringBundleService);
+    var bundle = sb.createBundle("chrome://browser/locale/preferences/preferences.properties");
+    let brandName = sb.createBundle("chrome://branding/locale/brand.properties").GetStringFromName("brandShortName");
+
+    let msg = bundle.formatStringFromName(mode ?
+                                        "featureEnableRequiresRestart" : "featureDisableRequiresRestart",
+                                        [brandName], 1);
+    let title = bundle.formatStringFromName("shouldRestartTitle", [brandName], 1);
+    let prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
+    let shouldProceed = prompts.confirm(window, title, msg)
+    if (shouldProceed) {
+      let cancelQuit = Cc["@mozilla.org/supports-PRBool;1"]
+                         .createInstance(Ci.nsISupportsPRBool);
+      var obsSvc = Cc["@mozilla.org/observer-service;1"]
+                    .getService(Ci.nsIObserverService);
+      obsSvc.notifyObservers(cancelQuit, "quit-application-requested",
+                                   "restart");
+      shouldProceed = !cancelQuit.data;
+
+      if (shouldProceed) {
+        document.documentElement.acceptDialog();
+        let appStartup = Cc["@mozilla.org/toolkit/app-startup;1"]
+                           .getService(Ci.nsIAppStartup);
+        appStartup.quit(Ci.nsIAppStartup.eAttemptQuit |  Ci.nsIAppStartup.eRestart);
+        return;
+      }
+    }
+
+    document.getElementById('torbutton_blockDisk').checked = old_mode;
+}
