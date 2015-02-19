@@ -84,10 +84,10 @@ let flush = function* (target, eventType, useCapture) {
 };
 
 let fixWindow = function* (window) {
-        shrinkwrap(window);
-        yield flush(window, "resize", true);
-        rebuild(window);
-        yield flush(window, "resize", true);
+  shrinkwrap(window);
+  yield flush(window, "resize", true);
+  rebuild(window);
+  yield flush(window, "resize", true);
 };
 
 let autoresize = function (window, stepMs) {
@@ -95,15 +95,7 @@ let autoresize = function (window, stepMs) {
   Task.spawn(function* () {
     while (!stop) {
       // Do nothing until the user starts to resize window.
-      yield listen(window, "resize", true);
-      // Wait for resizing to pause or (hopefully) end
-      while (true) {
-        try {
-          yield listen(window, "resize", true, stepMs);
-        } catch (e) {
-          break;
-        }
-      }
+      let event = yield listen(window, "resize", true);
       // Here we wrestle with the window size. If the user has released the 
       // mouse cursor on the window's drag/resize handle, then fixWindow
       // will resize the window on its first call. Unfortunately, on some
@@ -112,20 +104,16 @@ let autoresize = function (window, stepMs) {
       // only way to know that the user no longer has the mouse down
       // on the window's drag/resize handle is if we detect the mouse
       // cursor inside the window. So until the window fires a mousemove
-      // event, we repeatedly calling fixWindow every stepMs.
-      while (true) {
-        yield fixWindow(window);
-        try {
-          yield listen(window, "mousemove", true, stepMs);
-          // We have received a mousemove event; stop loop.
-          break;
-        } catch (e) {
-          // No mousemove detected before timeout; continue loop.
+      // event, we repeatedly call fixWindow every stepMs.
+      while (event.type !== "mousemove") {
+        event = yield Promise.race(
+                 [listen(window, "resize", true),
+                  listen(window, "mousemove", true),
+                  sleep(stepMs)]);
+        if (event.type !== "resize") {
+          yield fixWindow(window);
         }
       }
-      // It's possible that we still need to fix window after
-      // the mousemove event. So run once more.
-      yield fixWindow(window);
     }
   });
   return () => { stop = true; };
