@@ -1,10 +1,13 @@
 // The purpose of this file is to ensure that window.innerWidth and window.innerHeight
 // always return rounded values.
 
+// This file is formatted for docco.js. Later functions call earlier ones.
+
 // TODO: Handle situation where user zooms the page.
 
 /* jshint esnext: true */
 
+// User Task.jsm to avoid callback hell.
 Cu.import("resource://gre/modules/Task.jsm");
 
 // Utility function
