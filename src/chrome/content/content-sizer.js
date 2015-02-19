@@ -17,32 +17,6 @@ let largestMultipleLessThan = function (factor, max) {
   return Math.max(1, Math.floor(max / factor, 1)) * factor;
 };
 
-let rebuild = function(window) {
-  //console.log("rebuild");
-  let w = window.outerWidth,
-      h = window.outerHeight;
-  window.resizeTo(w + 1, h + 1);
-  window.resizeTo(w, h);
-};
-
-// __shrinkwrap(window)__.
-// Shrinks the window so that it encloses the gBrowser with no gaps.
-let shrinkwrap2 = function (window) {
-  let gBrowser = window.gBrowser,
-      container = gBrowser.parentElement,
-      deltaWidth = gBrowser.clientWidth - container.clientWidth,
-      deltaHeight = gBrowser.clientHeight - container.clientHeight;
-//  console.log("shrinkwrap: " + deltaWidth + "," + deltaHeight);
-  if (deltaWidth !== 0 || deltaHeight !== 0) {
-    window.resizeBy(deltaWidth, deltaHeight);
-    return true;
-  } else {
-    return false;
-  }
-};
-
-let shrinkwrap = (window) => shrinkwrap2(window);
-
 // __sleep(time_ms)__.
 // Returns a Promise that sleeps for the specified time interval,
 // and returns an Event object of type "wake".
@@ -73,6 +47,9 @@ let listen = function (target, eventType, useCapture, timeoutMs) {
   });
 };
 
+// __flush(target, eventType, useCapture)__.
+// Wait for the specified target to fire an event of eventType,
+// up to 100 ms.
 let flush = function* (target, eventType, useCapture) {
   while (true) {
     try {
@@ -83,6 +60,31 @@ let flush = function* (target, eventType, useCapture) {
   }
 };
 
+// __rebuild(window)__.
+// Jog the size of the window slightly, to remind the window manager
+// to redraw the window.
+let rebuild = function(window) {
+  let w = window.outerWidth,
+      h = window.outerHeight;
+  window.resizeTo(w + 1, h + 1);
+  window.resizeTo(w, h);
+};
+
+// __shrinkwrap(window)__.
+// Shrinks the window so that it encloses the gBrowser with no gaps.
+let shrinkwrap = function (window) {
+  let gBrowser = window.gBrowser,
+      container = gBrowser.parentElement,
+      deltaWidth = gBrowser.clientWidth - container.clientWidth,
+      deltaHeight = gBrowser.clientHeight - container.clientHeight;
+  if (deltaWidth !== 0 || deltaHeight !== 0) {
+    window.resizeBy(deltaWidth, deltaHeight);
+  }
+};
+
+// __fixWindow(window)__.
+// An async function for Task.jsm. Call shrinkwrap, and then after that
+// is done, call rebuild.
 let fixWindow = function* (window) {
   shrinkwrap(window);
   yield flush(window, "resize", true);
@@ -90,6 +92,10 @@ let fixWindow = function* (window) {
   yield flush(window, "resize", true);
 };
 
+// __autoresize(window, stepMs)__.
+// Do what it takes to eliminate the gray margin around the gBrowser inside
+// window. Periodically (stepMs) attempt to shrink the window. Runs
+// as a Task.jsm coroutine.
 let autoresize = function (window, stepMs) {
   let stop = false;
   Task.spawn(function* () {
@@ -122,7 +128,6 @@ let autoresize = function (window, stepMs) {
 // __updateDimensions(gBrowser, xStep, yStep)__.
 // Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
 let updateDimensions = function (gBrowser, xStep, yStep) {
-  //log("updateDimensions");
   let outerWidth = gBrowser.parentElement.clientWidth,
       outerHeight = gBrowser.parentElement.clientHeight;
   // Because gBrowser is inside a vbox, width and height behave differently. It turns
