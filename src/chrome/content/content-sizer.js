@@ -5,6 +5,8 @@
 
 /* jshint esnext: true */
 
+Cu.import("resource://gre/modules/Task.jsm");
+
 // Utility function
 let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js");
 
@@ -15,36 +17,118 @@ let largestMultipleLessThan = function (factor, max) {
   return Math.max(1, Math.floor(max / factor, 1)) * factor;
 };
 
-// __pinger(timeout, onTimeout)__.
-// Listens for pings, and, if a ping is not followed by another ping by
-// timeout_ms, then runs onTimeout().
-let pinger = function (timeout_ms, onTimeout) {
-  let pingCount = 0;
-  return function ping () {
-    // Record this ping.
-    let thisPing = pingCount + 1;
-    // The total number of pings has increased.
-    pingCount = thisPing;
-    // Wait the timeout time, and if no new pings have been
-    // received during the wait interval, then fire onTimeout().
-    setTimeout(function () {
-      if (pingCount === thisPing) {
-        onTimeout();
-      }
-    }, timeout_ms);
-  };
+let rebuild = function(window) {
+  //console.log("rebuild");
+  let w = window.outerWidth,
+      h = window.outerHeight;
+  window.resizeTo(w + 1, h + 1);
+  window.resizeTo(w, h);
 };
 
 // __shrinkwrap(window)__.
 // Shrinks the window so that it encloses the gBrowser with no gaps.
-let shrinkwrap = function (window) {
+let shrinkwrap2 = function (window) {
   let gBrowser = window.gBrowser,
       container = gBrowser.parentElement,
       deltaWidth = gBrowser.clientWidth - container.clientWidth,
       deltaHeight = gBrowser.clientHeight - container.clientHeight;
+//  console.log("shrinkwrap: " + deltaWidth + "," + deltaHeight);
   if (deltaWidth !== 0 || deltaHeight !== 0) {
     window.resizeBy(deltaWidth, deltaHeight);
+    return true;
+  } else {
+    return false;
   }
+};
+
+let shrinkwrap = (window) => shrinkwrap2(window);
+
+// __sleep(time_ms)__.
+// Returns a Promise that sleeps for the specified time interval,
+// and returns an Event object of type "wake".
+let sleep = function (time_ms) {
+  return new Promise(function (resolve, reject) {
+                       window.setTimeout(() => resolve(new Event("wake")),
+                                         time_ms);
+                     });
+};
+
+// __listen(target, eventType, useCapture, timeoutMs)__.
+// Listens for a single event of eventType on target.
+// Returns a Promise that resolves to an Event object, if the event fires.
+// If a timeout occurs, then Promise is rejected with a "Timed out" error.
+let listen = function (target, eventType, useCapture, timeoutMs) {
+  return new Promise(function (resolve, reject) {
+    let listenFunction = function (event) {
+      target.removeEventListener(eventType, listenFunction, useCapture);
+      resolve(event);
+    };
+    target.addEventListener(eventType, listenFunction, useCapture);
+    if (timeoutMs !== undefined && timeoutMs !== null) {
+      window.setTimeout(function () {
+        target.removeEventListener(eventType, listenFunction, useCapture);
+        reject(new Error("Timed out"));
+      }, timeoutMs);
+    }
+  });
+};
+
+let flush = function* (target, eventType, useCapture) {
+  while (true) {
+    try {
+      yield listen(target, eventType, useCapture, 100);
+    } catch (e) {
+      break;
+    }
+  }
+};
+
+let fixWindow = function* (window) {
+        shrinkwrap(window);
+        yield flush(window, "resize", true);
+        rebuild(window);
+        yield flush(window, "resize", true);
+};
+
+let autoresize = function (window) {
+  let stop = false;
+  Task.spawn(function* () {
+    while (!stop) {
+      // Do nothing until the user starts to resize window.
+      yield listen(window, "resize", true);
+      // Wait for resizing to pause or (hopefully) end
+      while (true) {
+        try {
+          yield listen(window, "resize", true, 500);
+        } catch (e) {
+          break;
+        }
+      }
+      // Here we wrestle with the window size. If the user has released the 
+      // mouse cursor on the window's drag/resize handle, then fixWindow
+      // will resize the window on its first call. Unfortunately, on some
+      // OSs, the window resize fails if the user is still holding on
+      // to the drag-resize handle. Even more unfortunately, the
+      // only way to know that the user no longer has the mouse down
+      // on the window's drag/resize handle is if we detect the mouse
+      // cursor inside the window. So until the window fires a mousemove
+      // event, we repeatedly calling fixWindow every stepMs.
+      while (true) {
+        yield fixWindow(window);
+        try {
+          yield listen(window, "mousemove", true, stepMs);
+          // We have received a mousemove event; stop loop.
+          break;
+        } catch (e) {
+          // No mousemove detected before timeout; continue loop.
+        }
+      }
+      // It's possible that we still need to fix window after
+      // the mousemove event. So run once more.
+      yield fixWindow(window);
+    }
+  });
+  return () => { stop = true; };
 };
 
 // __updateDimensions(gBrowser, xStep, yStep)__.
@@ -65,10 +149,10 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
 let quantizeBrowserSizeNow = function (window, xStep, yStep) {
   let gBrowser = window.gBrowser,
       container = window.gBrowser.parentElement,
-      ping = pinger(500, () => shrinkwrap(window)),
-      updater = event => { updateDimensions(gBrowser, xStep, yStep); ping(); },
+      updater = event => updateDimensions(gBrowser, xStep, yStep),
       originalMinWidth = gBrowser.minWidth,
       originalMinHeight = gBrowser.minHeight,
+      stopAutoresizing,
       activate = function (on) {
         // Don't let the browser shrink below a single xStep x yStep size.
         gBrowser.minWidth = on ? xStep : originalMinWidth;
@@ -86,12 +170,14 @@ let quantizeBrowserSizeNow = function (window, xStep, yStep) {
           shrinkwrap(window);
           // Quantize browser size at subsequent resize events.
           window.addEventListener("resize", updater, false);
+          stopAutoresizing = autoresize(window);
         } else {
           // Ignore future resize events.
           window.removeEventListener("resize", updater, false);
           // Let gBrowser expand with its parent vbox.
           gBrowser.width = "";
           gBrowser.maxHeight = "";
+          if (stopAutoresizing) stopAutoresizing();
         }
      };
   bindPrefAndInit("extensions.torbutton.resize_windows", activate);
@@ -105,4 +191,3 @@ let quantizeBrowserSizeOnLoad = function (window, xStep, yStep) {
   window.gBrowser.addEventListener("load", onLoad, true);
   return () => window.gBrowser.removeEventListener("load", onLoad, true);
 };
-
