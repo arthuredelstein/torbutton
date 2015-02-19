@@ -90,7 +90,7 @@ let fixWindow = function* (window) {
         yield flush(window, "resize", true);
 };
 
-let autoresize = function (window) {
+let autoresize = function (window, stepMs) {
   let stop = false;
   Task.spawn(function* () {
     while (!stop) {
@@ -99,7 +99,7 @@ let autoresize = function (window) {
       // Wait for resizing to pause or (hopefully) end
       while (true) {
         try {
-          yield listen(window, "resize", true, 500);
+          yield listen(window, "resize", true, stepMs);
         } catch (e) {
           break;
         }
@@ -170,7 +170,7 @@ let quantizeBrowserSizeNow = function (window, xStep, yStep) {
           shrinkwrap(window);
           // Quantize browser size at subsequent resize events.
           window.addEventListener("resize", updater, false);
-          stopAutoresizing = autoresize(window);
+          stopAutoresizing = autoresize(window, 500);
         } else {
           // Ignore future resize events.
           window.removeEventListener("resize", updater, false);
