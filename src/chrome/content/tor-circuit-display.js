@@ -173,15 +173,16 @@ let localizedCountryNameFromCode = function (countryCode) {
 // __showCircuitDisplay(show)__.
 // If show === true, makes the circuit display visible.
 let showCircuitDisplay = function (show) {
-  document.querySelector("svg#tor-circuit").style.display = show ?
+  document.getElementById("circuit-display-container").style.display = show ?
 							    'block' : 'none';
 };
 
 // __nodeLines(nodeData)__.
-// Takes a nodeData array of three items each like
+// Takes a nodeData array of node items, each like
 // `{ ip : "12.34.56.78", country : "fr" }`
 // and converts each node data to text, as
-// `"France (12.34.56.78)"`.
+// `"France (12.34.56.78)"`, prepended by "This browser"
+// and appended by "Internet".
 let nodeLines = function (nodeData) {
   let result = [uiString("this_browser")];
   for (let {ip, countryCode, type, bridgeType} of nodeData) {
@@ -192,7 +193,7 @@ let nodeLines = function (nodeData) {
                                    ((bridgeType !== "vanilla") ? (": " + bridgeType) : ""))
                                : (ip || uiString("ip_unknown"))) + ")");
   }
-  result[4] = uiString("internet");
+  result.push(uiString("internet"));
   return result;
 };
 
@@ -228,14 +229,14 @@ let updateCircuitDisplay = function () {
       if (nodeData) {
 	// Update the displayed domain.
         let domain = credentials.split(":")[0];
-	document.querySelector("svg#tor-circuit text#domain").innerHTML = "(" + domain + "):";
+	document.getElementById("domain").innerHTML = "(" + domain + "):";
 	// Update the displayed information for the relay nodes.
-	let diagramNodes = document.querySelectorAll("svg#tor-circuit text.node-text"),
-            lines = nodeLines(nodeData);
-	for (let i = 0; i < diagramNodes.length; ++i) {
-          let line = lines[i];
-          diagramNodes[i].innerHTML = line ? line : "";
+        let lines = nodeLines(nodeData),
+            nodeInnerHTML = "";
+	for (let line of lines) {
+          nodeInnerHTML += "<li>" + line + "</li>";
 	}
+        document.getElementById("circuit-nodes").innerHTML = nodeInnerHTML;
       }
     }
     // Only show the Tor circuit if we have credentials and node data.
