@@ -221,7 +221,14 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 
 #middle p {
   font-size: 1.35em;
+}
+
+#middle p:-moz-dir(ltr) {
   text-align: left;
+}
+
+#middle p:-moz-dir(rtl) {
+  text-align: right;
 }
 
 #middle a {
@@ -234,8 +241,16 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 }
 
 #middle ul {
-  text-align: left;
+}
+
+#middle ul:-moz-dir(ltr) {
   padding: 5px 0 0 22px;
+  text-align: left;
+}
+
+#middle ul:-moz-dir(rtl) {
+  padding: 5px 22px 0 0;
+  text-align: right;
 }
 
 #middle li {
