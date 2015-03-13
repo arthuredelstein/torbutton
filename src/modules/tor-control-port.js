@@ -265,7 +265,7 @@ io.controlSocket = function (host, port, password, onError) {
   // Log in to control port.
   sendCommand("authenticate " + (password || ""));
   // Activate needed events.
-  sendCommand("setevents stream");
+  sendCommand("setevents stream hs_desc");
   return { close : socket.close, sendCommand : sendCommand,
            addNotificationCallback : notificationDispatcher.addCallback,
            removeNotificationCallback : notificationDispatcher.removeCallback };
@@ -441,6 +441,21 @@ info.circuitStatusParser = function (line) {
   return data;
 };
 
+// __info.hsDescriptorEventParser(line)__.
+// Parse the output of a hidden service descriptor event.
+info.hsDescriptorEventParser = function(line) {
+  let keyNames = ["action", "address", "authType",
+                  "hsDir", "descriptorID"],
+      firstAttempt = utils.listMapData(line, keyNames);
+  // Unfortunately, descriptorID is optional, and we may end up
+  // value of descriptorID = 'REASON=...', which is wrong:
+  let result = (firstAttempt.descriptorID && !firstAttempt.descriptorID.contains("=")) ?
+               firstAttempt :
+               utils.listMapData(line, keyNames.slice(0,-1));
+  result.address = result.address ? result.address.toLowerCase() : null;
+  return result;
+};
+
 // __info.streamStatusParser(line)__.
 // Parse the output of a stream status line.
 info.streamStatusParser = function (text) {
@@ -461,7 +476,6 @@ info.configTextParser = function(text) {
   });
   return result;
 };
-
 
 // __info.bridgeParser(bridgeLine)__.
 // Takes a single line from a `getconf bridge` result and returns
@@ -596,7 +610,8 @@ let event = event || {};
 // data.
 event.parsers = {
   "stream" : info.streamStatusParser,
-  "circ" : info.circuitStatusParser
+  "circ" : info.circuitStatusParser,
+  "hs_desc" : info.hsDescriptorEventParser
 };
 
 // __event.messageToData(type, message)__.
@@ -619,6 +634,23 @@ event.watchEvent = function (controlSocket, type, filter, onData) {
     });
 };
 
+// ## configure
+// Configuring tor on the fly.
+let configure = configure || {};
+
+// __configure.setConf__.
+// Sends a SETCONF command to the control port and returns a promise on the
+// response. The `key` must be a string; if `value` is an array considered
+// to be a list of arguments. If `value` is a string it is considered to
+// be a single argument.
+configure.setConf = function (controlSocket, key, value) {
+  let valueString = Array.isArray(value) ?
+                      "\"" + value.join(" ") + "\"" :
+                      value,
+      commandLine = "setconf " + key + "=" + valueString;
+  return controlSocket.sendCommand(commandLine);
+};
+
 // ## tor
 // Things related to the main controller.
 let tor = tor || {};
@@ -637,6 +669,7 @@ tor.controller = function (host, port, password, onError) {
   return { getInfo : key => info.getInfo(socket, key),
            getInfoMultiple : keys => info.getInfoMultiple(socket, keys),
            getConf : key => info.getConf(socket, key),
+           setConf : (key, value) => configure.setConf(socket, key, value),
            watchEvent : function (type, filter, onData) {
              event.watchEvent(socket, type, filter, onData);
            },
