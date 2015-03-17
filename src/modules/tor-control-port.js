@@ -462,7 +462,6 @@ info.configTextParser = function(text) {
   return result;
 };
 
-
 // __info.bridgeParser(bridgeLine)__.
 // Takes a single line from a `getconf bridge` result and returns
 // a map containing the bridge's type, address, and ID.
@@ -479,11 +478,31 @@ info.bridgeParser = function(bridgeLine) {
     if (["fte", "obfs3", "obfs4", "scramblesuit"]
                .indexOf(result.type) >= 0) {
       [result.address, result.ID] = tokens.slice(1);
-    } else if (result.type === "meek") {
-      // do nothing for now
+    } else if (result.type === "meek" || result.type === "flashproxy") {
+      result.address = tokens[1];
     }
   }
   return result.type ? result : null;
+};
+
+// __info.descriptorAnnotationsParser(annotationsText)__
+// Parses the results from a "desc-annotations/id/*" query.
+// Takes multiple lines of annotations, that look something like
+//     @downloaded-at 2015-03-17 04:16:27
+//     @source "0.0.2.0"
+//     @purpose bridge
+// And returns a map, like { "downloaded-at", "2015-03-17 04:16:27" ...}.
+info.descriptorAnnotationsParser = function (annotationsText) {
+  let result = {};
+  utils.splitLines(annotationsText).map(function(line) {
+    let [name, value] = utils.splitAtFirst(line, /\s/);
+    if (name && name.startsWith("@")) {
+      // Remove surrounding whitespace and quotation marks, if present.
+      let valueTrimmed = value.trim().match(/^"?(.*?)"?$|(.*)/)[1];
+      result[name.substring(1)] = valueTrimmed;
+    }
+  });
+  return result;
 };
 
 // __info.parsers__.
@@ -499,7 +518,8 @@ info.parsers = {
   "ip-to-country/" : utils.identity,
   "circuit-status" : info.applyPerLine(info.circuitStatusParser),
   "stream-status" : info.applyPerLine(info.streamStatusParser),
-  "bridge" : info.bridgeParser
+  "bridge" : info.bridgeParser,
+  "desc-annotations/id/" : info.descriptorAnnotationsParser,
 };
 
 // __info.getParser(key)__.
