@@ -53,10 +53,27 @@ let trimQuotes = s => s ? s.match(/^\"(.*)\"$/)[1] : undefined;
 // Gets the bridge parameters for a given node ID. If the node
 // is not currently used as a bridge, returns null.
 let getBridge = function* (controller, id) {
-  let bridges = yield controller.getConf("bridge");
+  let bridges = yield controller.getConf("bridge"),
+      descriptorAnnotations;
+  try {
+    descriptorAnnotations = yield controller.getInfo("desc-annotations/id/" + id);
+    // We may get an error if there are no annotations for this node; ignore.
+  } catch (e) { }
   if (bridges) {
     for (let bridge of bridges) {
       if (bridge.ID && bridge.ID.toUpperCase() === id.toUpperCase()) {
+        return bridge;
+      }
+      // In the case of meek, we don't have an ID (fingerprint) in the
+      // bridge line in the configuration, but we can match the dummy
+      // IP address meek supplies to its "@source" in the descriptor
+      // annotation. May work for other bridges too.
+      if (!bridge.ID &&
+          descriptorAnnotations &&
+          bridge.address &&
+          bridge.address.split(":")[0] === descriptorAnnotations.source &&
+          descriptorAnnotations.purpose === "bridge") {
+        bridge.ID = id;
         return bridge;
       }
     }
@@ -89,7 +106,8 @@ let nodeDataForID = function* (controller, id) {
   if (result.ip) {
     // Get the country code for the node's IP address.
     try {
-      result.countryCode = yield controller.getInfo("ip-to-country/" + result.ip);
+      let countryCode = yield controller.getInfo("ip-to-country/" + result.ip);
+      result.countryCode = countryCode === "??" ? null : countryCode;
     } catch (e) { }
   }
   return result;
@@ -190,22 +208,23 @@ let showCircuitDisplay = function (show) {
 let nodeLines = function (nodeData) {
   let result = [];
   for (let {ip, countryCode, type, bridgeType} of nodeData) {
-    let bridge = type === "bridge";
+    let bridge = type === "bridge",
+        country = countryCode ? localizedCountryNameFromCode(countryCode) : null;
     result.push(
-                // For each relay, show its apparent host country.
-                (countryCode ? localizedCountryNameFromCode(countryCode)
-                             : uiString("unknown_country")) +
-                (bridge ?
-                          // As we have a bridge, don't show the IP address
-                          // but show the bridge type.
-                          " (" + uiString("tor_bridge") +
-                          ((bridgeType !== "vanilla") ? (": " + bridgeType) : "") + ")"
-                        :
-                          // As we don't have a bridge, show the IP address
-                          // of the node. Use unicode escapes to ensure that
-                          // parentheses behave properly in both left-to-right
-                          // and right-to-left languages.
-                          " &#x202D; (" + (ip || uiString("ip_unknown")) + ")&#x202C;"));
+      bridge ?
+               // As we have a bridge, don't show the IP address
+               // but show the bridge type.
+               (uiString("tor_bridge") +
+                ((bridgeType !== "vanilla") ? (": " + bridgeType) : "") +
+                 (country ? " (" + country + ")" : ""))
+             :
+               // For each non-bridge relay, show its host country and IP.
+               (country || uiString("unknown_country")) +
+               // As we don't have a bridge, show the IP address
+               // of the node. Use unicode escapes to ensure that
+               // parentheses behave properly in both left-to-right
+               // and right-to-left languages.
+               " &#x202D; (" + (ip || uiString("ip_unknown")) + ")&#x202C;"  );
   }
   return result;
 };
