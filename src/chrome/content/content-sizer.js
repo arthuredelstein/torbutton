@@ -210,8 +210,9 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   gBrowser.width = largestMultipleLessThan(xStep, outerWidth);
   gBrowser.maxHeight = largestMultipleLessThan(yStep, outerHeight);
   console.log("gBrowser.contentWindow.innerWidthxHeight: " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
-  console.log("window.outerWidthxHeight: " + window.outerWidth + "x" +  window.outerHeight);
-  console.log("gBrowser.clientWidthxHeight: " + gBrowser.clientWidth + "x" +  gBrowser.clientHeight);
+  console.log("" + window.outerWidth + "x" +  window.outerHeight
+	      " " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
+              " " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
 };
 
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
