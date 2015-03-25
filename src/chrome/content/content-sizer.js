@@ -209,6 +209,7 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
   gBrowser.width = largestMultipleLessThan(xStep, outerWidth);
   gBrowser.maxHeight = largestMultipleLessThan(yStep, outerHeight);
+  console.log("content window.innerWidthxHeight: " + window.innerWidth + "x" +  window.innerHeight);
 };
 
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
@@ -234,7 +235,7 @@ let quantizeBrowserSizeNow = function (window, xStep, yStep) {
           shrinkwrap(window);
           // Quantize browser size at subsequent resize events.
           window.addEventListener("resize", updater, false);
-//          stopAutoresizing = autoresize(window, 250);
+          stopAutoresizing = autoresize(window, 250);
         } else {
           if (stopAutoresizing) stopAutoresizing();
           // Ignore future resize events.
