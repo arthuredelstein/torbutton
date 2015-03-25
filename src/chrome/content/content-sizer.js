@@ -234,7 +234,7 @@ let quantizeBrowserSizeNow = function (window, xStep, yStep) {
           shrinkwrap(window);
           // Quantize browser size at subsequent resize events.
           window.addEventListener("resize", updater, false);
-          stopAutoresizing = autoresize(window, 250);
+//          stopAutoresizing = autoresize(window, 250);
         } else {
           if (stopAutoresizing) stopAutoresizing();
           // Ignore future resize events.
