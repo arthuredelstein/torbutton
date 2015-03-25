@@ -209,7 +209,7 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
   gBrowser.width = largestMultipleLessThan(xStep, outerWidth);
   gBrowser.maxHeight = largestMultipleLessThan(yStep, outerHeight);
-  console.log("content window.innerWidthxHeight: " + window.innerWidth + "x" +  window.innerHeight);
+  console.log("gBrowser.contentWindow.innerWidthxHeight: " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
 };
 
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
