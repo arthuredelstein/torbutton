@@ -15,6 +15,10 @@ let quantizeBrowserSizeOnLoad = function (window, xStep, yStep) {
 // Use Task.jsm to avoid callback hell.
 Cu.import("resource://gre/modules/Task.jsm");
 
+// Make the TorButton logger available.
+let logger = Cc["@torproject.org/torbutton-logger;1"]
+               .getService(Components.interfaces.nsISupports).wrappedJSObject;
+
 // Utility function
 let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js");
 
@@ -203,28 +207,32 @@ let autoresize = function (window, stepMs) {
 // __updateDimensions(gBrowser, xStep, yStep)__.
 // Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
 let updateDimensions = function (gBrowser, xStep, yStep) {
-  let zoom = gBrowser.fullZoom,
+  // Measure the zoom, because gBrowser.fullZoom is wrong.
+  let zoom = gBrowser.clientWidth / gBrowser.contentWindow.innerWidth,
       parentWidth = gBrowser.parentElement.clientWidth,
       parentHeight = gBrowser.parentElement.clientHeight,
-      targetWidth = largestMultipleLessThan(xStep, parentWidth / zoom) * zoom,
-      targetHeight = largestMultipleLessThan(yStep, parentHeight / zoom) * zoom;
+      targetContentWidth = largestMultipleLessThan(xStep, parentWidth / zoom),
+      targetContentHeight = largestMultipleLessThan(yStep, parentHeight / zoom),
+      targetBrowserWidth = targetContentWidth * zoom,
+      targetBrowserHeight = targetContentHeight * zoom;
   // Because gBrowser is inside a vbox, width and height behave differently. It turns
   // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
-  gBrowser.width = targetWidth;
-  gBrowser.maxHeight = targetHeight;
+  gBrowser.width = targetBrowserWidth;
+  gBrowser.maxHeight = targetBrowserHeight;
   // If the content window's innerWidth/innerHeight failed to updated correctly,
   // then jog the gBrowser width/height.
-  if (gBrowser.contentWindow.innerWidth !== targetWidth ||
-      gBrowser.contentWindow.innerHeight !== targetHeight) {
-    gBrowser.width = targetWidth + 1;
-    gBrowser.maxHeight = gBrowser.targetHeight + 1;
-    gBrowser.width = targetWidth;
-    gBrowser.maxHeight = targetHeight;    
+  if (gBrowser.contentWindow.innerWidth !== targetContentWidth ||
+      gBrowser.contentWindow.innerHeight !== targetContentHeight) {
+    gBrowser.width = targetBrowserWidth + 1;
+    gBrowser.maxHeight = gBrowser.targetBrowserHeight + 1;
+    gBrowser.width = targetBrowserWidth;
+    gBrowser.maxHeight = targetBrowserHeight;    
   }
-  console.log(" " + window.outerWidth + "x" +  window.outerHeight +
-              " " + parentWidth + "x" + parentHeight +
-	      " " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
-              " " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
+  logger.eclog(3, "zoom " + zoom + "X" +
+               " chromeWin " + window.outerWidth + "x" +  window.outerHeight +
+               " container " + parentWidth + "x" + parentHeight +
+	       " gBrowser " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
+               " content " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
 };
 
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
