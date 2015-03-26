@@ -137,12 +137,6 @@ let shrinkwrap = function* (window) {
                    height : (window.outerHeight - currentGaps.deltaHeight)},
                   500);
   }
-  if (gBrowser.contentWindow.innerWidth > gBrowser.clientWidth ||
-      gBrowser.contentWindow.innerHeight > gBrowser.clientHeight) {
-    yield reshape(window,
-		 {width : (window.outerWidth + 1),
-		  height : window.outHeight}, 500);
-  }
 };
 
 // __updateContainerAppearance(container, on)__.
