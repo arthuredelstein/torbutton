@@ -219,7 +219,6 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
               " " + parentWidth + "x" + parentHeight +
 	      " " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
               " " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
-  if (gBrowser.contentWindow.
 };
 
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
