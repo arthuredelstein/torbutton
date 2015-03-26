@@ -210,11 +210,22 @@ let autoresize = function (window, stepMs) {
 // Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
 let updateDimensions = function (gBrowser, xStep, yStep) {
   let parentWidth = gBrowser.parentElement.clientWidth,
-      parentHeight = gBrowser.parentElement.clientHeight;
+      parentHeight = gBrowser.parentElement.clientHeight,
+      targetWidth = largestMultipleLessThan(xStep, parentWidth),
+      targetHeight = largestMultipleLessThan(yStep, parentHeight);
   // Because gBrowser is inside a vbox, width and height behave differently. It turns
   // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
-  gBrowser.width = largestMultipleLessThan(xStep, parentWidth);
-  gBrowser.maxHeight = largestMultipleLessThan(yStep, parentHeight);
+  gBrowser.width = targetWidth;
+  gBrowser.maxHeight = targetHeight;
+  // If the content window's innerWidth/innerHeight failed to updated correctly,
+  // then jog the gBrowser width/height.
+  if (gBrowser.contentWindow.innerWidth !== targetWidth ||
+      gBrowser.contentWindow.innerHeight !== targetHeight) {
+    gBrowser.width = targetWidth + 1;
+    gBrowser.maxHeight = gBrowser.targetHeight + 1;
+    gBrowser.width = targetWidth;
+    gBrowser.maxHeight = targetHeight;    
+  }
   console.log(" " + window.outerWidth + "x" +  window.outerHeight +
               " " + parentWidth + "x" + parentHeight +
 	      " " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
