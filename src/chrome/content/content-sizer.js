@@ -133,15 +133,13 @@ let shrinkwrap = function* (window) {
   if (currentGaps) {
     // Now resize to close the gaps.
     yield reshape(window,
-                  {left : window.screenX,
-		   top : window.screenY,
-		   width : (window.outerWidth - currentGaps.deltaWidth),
+                  {width : (window.outerWidth - currentGaps.deltaWidth),
                    height : (window.outerHeight - currentGaps.deltaHeight)},
                   500);
   }
   if (gBrowser.contentWindow.innerWidth > gBrowser.clientWidth ||
       gBrowser.contentWindow.innerHeight > gBrowser.clientHeight) {
-    yield rehape(window,
+    yield reshape(window,
 		 {width : (window.outerWidth + 1),
 		  height : window.outHeight}, 500);
   }
