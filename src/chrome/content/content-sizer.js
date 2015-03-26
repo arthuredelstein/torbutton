@@ -107,7 +107,7 @@ let gaps = function (window) {
       container = gBrowser.parentElement,
       deltaWidth = Math.max(0, container.clientWidth - gBrowser.clientWidth - 1),
       deltaHeight = Math.max(0, container.clientHeight - gBrowser.clientHeight - 1);
-  logger.eclog(3, "gaps " + deltaWidth + "," + deltaHeight);
+  //logger.eclog(3, "gaps " + deltaWidth + "," + deltaHeight);
   return (deltaWidth === 0 && deltaHeight === 0) ? null
            : { deltaWidth : deltaWidth, deltaHeight : deltaHeight };
 };
@@ -221,7 +221,8 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   gBrowser.width = targetBrowserWidth;
   gBrowser.maxHeight = targetBrowserHeight;
   // If the content window's innerWidth/innerHeight failed to updated correctly,
-  // then jog the gBrowser width/height.
+  // then jog the gBrowser width/height. (With zoom there may also be a rounding
+  // error, but we can't do much about that.)
   if (gBrowser.contentWindow.innerWidth !== targetContentWidth ||
       gBrowser.contentWindow.innerHeight !== targetContentHeight) {
     gBrowser.width = targetBrowserWidth + 1;
