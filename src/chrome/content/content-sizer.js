@@ -107,6 +107,7 @@ let gaps = function (window) {
       container = gBrowser.parentElement,
       deltaWidth = container.clientWidth - gBrowser.clientWidth - 2,
       deltaHeight = container.clientHeight - gBrowser.clientHeight - 2;
+  logger.eclog(3, "gaps " + deltaWidth + "," + deltaHeight);
   return (deltaWidth === 0 && deltaHeight === 0) ? null
            : { deltaWidth : deltaWidth, deltaHeight : deltaHeight };
 };
