@@ -206,8 +206,8 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   let zoom = gBrowser.fullZoom,
       parentWidth = gBrowser.parentElement.clientWidth,
       parentHeight = gBrowser.parentElement.clientHeight,
-      targetWidth = largestMultipleLessThan(xStep * zoom, parentWidth),
-      targetHeight = largestMultipleLessThan(yStep * zoom, parentHeight);
+      targetWidth = largestMultipleLessThan(xStep, parentWidth / zoom) * zoom,
+      targetHeight = largestMultipleLessThan(yStep, parentHeight / zoom) * zoom;
   // Because gBrowser is inside a vbox, width and height behave differently. It turns
   // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
   gBrowser.width = targetWidth;
