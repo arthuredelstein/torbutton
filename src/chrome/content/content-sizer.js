@@ -26,7 +26,7 @@ let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js");
 // Returns the largest number that is a multiple of factor
 // and is less or equal to max.
 let largestMultipleLessThan = function (factor, max) {
-  return Math.max(1, Math.floor(max / factor, 1)) * factor;
+  return Math.max(1, Math.floor((1 + max) / factor, 1)) * factor;
 };
 
 // __listen(target, eventType, useCapture, timeoutMs)__.
@@ -105,8 +105,8 @@ let rebuild = function* (window) {
 let gaps = function (window) {
   let gBrowser = window.gBrowser,
       container = gBrowser.parentElement,
-      deltaWidth = Math.max(0, container.clientWidth - gBrowser.clientWidth - 2),
-      deltaHeight = Math.max(0, container.clientHeight - gBrowser.clientHeight - 2);
+      deltaWidth = Math.max(0, container.clientWidth - gBrowser.clientWidth - 1),
+      deltaHeight = Math.max(0, container.clientHeight - gBrowser.clientHeight - 1);
   logger.eclog(3, "gaps " + deltaWidth + "," + deltaHeight);
   return (deltaWidth === 0 && deltaHeight === 0) ? null
            : { deltaWidth : deltaWidth, deltaHeight : deltaHeight };
