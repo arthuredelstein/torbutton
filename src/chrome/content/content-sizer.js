@@ -105,8 +105,8 @@ let rebuild = function* (window) {
 let gaps = function (window) {
   let gBrowser = window.gBrowser,
       container = gBrowser.parentElement,
-      deltaWidth = container.clientWidth - gBrowser.clientWidth - 2,
-      deltaHeight = container.clientHeight - gBrowser.clientHeight - 2;
+      deltaWidth = Math.min(0, container.clientWidth - gBrowser.clientWidth - 2),
+      deltaHeight = Math.min(0, container.clientHeight - gBrowser.clientHeight - 2);
   logger.eclog(3, "gaps " + deltaWidth + "," + deltaHeight);
   return (deltaWidth === 0 && deltaHeight === 0) ? null
            : { deltaWidth : deltaWidth, deltaHeight : deltaHeight };
