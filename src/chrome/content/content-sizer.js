@@ -101,8 +101,8 @@ let rebuild = function* (window) {
 let gaps = function (window) {
   let gBrowser = window.gBrowser,
       container = gBrowser.parentElement,
-      deltaWidth = container.clientWidth - gBrowser.clientWidth,
-      deltaHeight = container.clientHeight - gBrowser.clientHeight;
+      deltaWidth = container.clientWidth - gBrowser.clientWidth - 1,
+      deltaHeight = container.clientHeight - gBrowser.clientHeight - 1;
   return (deltaWidth === 0 && deltaHeight === 0) ? null
            : { deltaWidth : deltaWidth, deltaHeight : deltaHeight };
 };
@@ -133,8 +133,8 @@ let shrinkwrap = function* (window) {
   if (currentGaps) {
     // Now resize to close the gaps.
     yield reshape(window,
-                  {width : (window.outerWidth - (currentGaps.deltaWidth - 1)),
-                   height : (window.outerHeight - (currentGaps.deltaHeight - 1))},
+                  {width : (window.outerWidth - currentGaps.deltaWidth),
+                   height : (window.outerHeight - currentGaps.deltaHeight)},
                   500);
   }
   if (gBrowser.contentWindow.innerWidth > gBrowser.clientWidth ||
