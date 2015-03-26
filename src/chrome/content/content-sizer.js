@@ -133,7 +133,9 @@ let shrinkwrap = function* (window) {
   if (currentGaps) {
     // Now resize to close the gaps.
     yield reshape(window,
-                  {width : (window.outerWidth - currentGaps.deltaWidth),
+                  {left : window.screenX,
+		   top : window.screenY,
+		   width : (window.outerWidth - currentGaps.deltaWidth),
                    height : (window.outerHeight - currentGaps.deltaHeight)},
                   500);
   }
