@@ -137,6 +137,12 @@ let shrinkwrap = function* (window) {
                    height : (window.outerHeight - currentGaps.deltaHeight)},
                   500);
   }
+  if (gBrowser.contentWindow.innerWidth > gBrowser.clientWidth ||
+      gBrowser.contentWindow.innerHeight > gBrowser.clientHeight) {
+    yield rehape(window,
+		 {width : (window.outerWidth + 1),
+		  height : window.outHeight}, 500);
+  }
 };
 
 // __updateContainerAppearance(container, on)__.
@@ -203,15 +209,17 @@ let autoresize = function (window, stepMs) {
 // __updateDimensions(gBrowser, xStep, yStep)__.
 // Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
 let updateDimensions = function (gBrowser, xStep, yStep) {
-  let outerWidth = gBrowser.parentElement.clientWidth,
-      outerHeight = gBrowser.parentElement.clientHeight;
+  let parentWidth = gBrowser.parentElement.clientWidth,
+      parentHeight = gBrowser.parentElement.clientHeight;
   // Because gBrowser is inside a vbox, width and height behave differently. It turns
   // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
-  gBrowser.width = largestMultipleLessThan(xStep, outerWidth);
-  gBrowser.maxHeight = largestMultipleLessThan(yStep, outerHeight);
-  console.log("" + window.outerWidth + "x" +  window.outerHeight +
+  gBrowser.width = largestMultipleLessThan(xStep, parentWidth);
+  gBrowser.maxHeight = largestMultipleLessThan(yStep, parentHeight);
+  console.log(" " + window.outerWidth + "x" +  window.outerHeight +
+              " " + parentWidth + "x" + parentHeight +
 	      " " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
               " " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
+  if (gBrowser.contentWindow.
 };
 
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
