@@ -18,7 +18,20 @@ let logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Components.interfaces.nsISupports).wrappedJSObject;
 
 // Utility function
-let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js");
+let { bindPrefAndInit, getEnv } = Cu.import("resource://torbutton/modules/utils.js");
+
+// __isTilingWindowManager__.
+// Constant, set to true if we are using a (known) tiling window
+// manager in linux.
+let isTilingWindowManager = (function () {
+  let gdmSession = getEnv("GDMSESSION").toLowerCase();
+  return ["9wm","alopex","awesome","bspwm","catwm","dswm","dwm",
+          "echinus","euclid-wm","frankenwm","herbstluftwm","i3",
+          "i3wm","ion","larswm","monsterwm","musca","notion",
+          "qtile","ratpoison","snapwm","spectrwm","stumpwm",
+          "subtle","tinywm","ttwm","wingo","wmfs","wmii","xmonad"]
+            .filter(x => x.startsWith(gdmSession)).length > 0;
+})();
 
 // __largestMultipleLessThan(factor, max)__.
 // Returns the largest number that is a multiple of factor
@@ -148,8 +161,11 @@ let shrinkwrap = function* (window) {
 let updateContainerAppearance = function (container, on) {
   // Align the browser at top left, so any gray margin will be visible
   // at right and bottom. Except in fullscreen, where we have black
-  // margins and gBrowser in top center.
-  container.align = on ? (window.fullScreen ? "center" : "start")
+  // margins and gBrowser in top center, and when using a tiling
+  // window manager, when we have gray margins and gBrowser in top
+  // center.
+  container.align = on ? ((window.fullScreen || isTilingWindowManager) ?
+			  "center" : "start")
                        : "";
   container.pack = on ? "start" : "";
   container.style.backgroundColor = on ? (window.fullScreen ? "Black"
@@ -265,7 +281,9 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           shrinkwrap(window);
           // Quantize browser size at subsequent resize events.
           window.addEventListener("resize", updater, false);
-          stopAutoresizing = autoresize(window, 250);
+	  if (!isTilingWindowManager) {
+            stopAutoresizing = autoresize(window, 250);
+          }
         } else {
           if (stopAutoresizing) stopAutoresizing();
           // Ignore future resize events.
