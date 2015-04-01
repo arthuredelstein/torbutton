@@ -636,7 +636,7 @@ function torbutton_init() {
     createTorCircuitDisplay(m_tb_control_host, m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
 
-    quantizeBrowserSize(window, 200, 100);
+    quantizeBrowserSize(window, 100, 100);
 
     torbutton_log(3, 'init completed');
 }
@@ -2943,8 +2943,8 @@ function torbutton_new_tab(event)
 // Returns true if the window wind is neither maximized, full screen,
 // ratpoisioned/evilwmed, nor minimized.
 function torbutton_is_windowed(wind) {
-    torbutton_log(3, "Window: ("+wind.outerHeight+","+wind.outerWidth+") ?= ("
-            +wind.screen.availHeight+","+wind.screen.availWidth+")");
+    torbutton_log(3, "Window: (" + wind.outerWidth + "," + wind.outerHeight + ") ?= ("
+                     + wind.screen.availWidth + "," + wind.screen.availHeight + ")");
     if(wind.windowState == Components.interfaces.nsIDOMChromeWindow.STATE_MINIMIZED
       || wind.windowState == Components.interfaces.nsIDOMChromeWindow.STATE_MAXIMIZED) {
         torbutton_log(2, "Window is minimized/maximized");
@@ -3334,7 +3334,8 @@ var torbutton_resizelistener =
       var progress =
         Components.classes["@mozilla.org/docloaderservice;1"].
         getService(Components.interfaces.nsIWebProgress);
-      var win = getBrowser().contentWindow;
+      var win = getBrowser().contentWindow,
+          container = getBrowser().parentElement;
       if (!win || typeof(win) == "undefined") {
         torbutton_log(5, "No initial browser content window?");
         progress.removeProgressListener(this);
@@ -3359,8 +3360,8 @@ var torbutton_resizelistener =
                     " Available: " + availWidth.value + "x" +
                     availHeight.value);
 
-      var diff_height = window.outerHeight - win.innerHeight;
-      var diff_width = window.outerWidth - win.innerWidth;
+      var diff_width = window.outerWidth - container.clientWidth;
+      var diff_height = window.outerHeight - container.clientHeight;
       var delta_fix = 0;
 
       // The following block tries to cope with funny corner cases where the
@@ -3424,6 +3425,14 @@ var torbutton_resizelistener =
         height = Math.floor(maxHeight/100.0)*100;
       }
 
+      let resizeInnerWindowTo = function (width, height) {
+        window.resizeBy(width - container.clientWidth,
+                        height - container.clientHeight);
+        torbutton_log(3, "Resized new window from: " + container.clientWidth + "x" +
+                      container.clientHeight + " to " + width + "x" + height +
+                      " in state " + window.windowState);
+      }
+
       m_tb_resize_handler = function() {
         if (window.windowState === 1) {
           if (m_tb_prefs.
@@ -3480,7 +3489,7 @@ var torbutton_resizelistener =
                 getBoolPref(k_tb_tor_resize_warn_pref)) {
             window.addEventListener("resize",
               function() {
-                win.resizeBy(width - win.innerWidth, height - win.innerHeight);
+                resizeInnerWindowTo(width, height);
                 var calling_function = arguments.callee;
                 setTimeout(function() {
                              torbutton_log(3, "Removing resize listener..");
@@ -3518,10 +3527,7 @@ var torbutton_resizelistener =
       // This is fun. any attempt to directly set the inner window actually
       // resizes the outer width to that value instead. Must use resizeBy()
       // instead of assignment or resizeTo()
-      win.resizeBy(width - win.innerWidth, height - win.innerHeight);
-      torbutton_log(3, "Resized new window from: " + win.innerWidth + "x" +
-                    win.innerHeight + " to " + width + "x" + height +
-                    " in state " + window.windowState);
+      resizeInnerWindowTo(width, height);
 
       // Resizing within this progress listener does not always work as overlays
       // of other extensions might still influence the height/width of the
@@ -3535,14 +3541,8 @@ var torbutton_resizelistener =
         function(mutations) {
           mutations.forEach(
             function(mutation) {
-              torbutton_log(3, "Mutation observer: Window dimensions are: " +
-                win.innerWidth + " x " + win.innerHeight);
               setTimeout(function() {
-                           win.resizeBy(width - win.innerWidth,
-                                        height - win.innerHeight);
-                           torbutton_log(3, "Mutation observer: Window " +
-                             "dimensions are (after resizing again): " + win.
-                             innerWidth + " x " + win.innerHeight);
+                           resizeInnerWindowTo(width, height);
                          }, 0);
               mut_observer.disconnect();
             }
