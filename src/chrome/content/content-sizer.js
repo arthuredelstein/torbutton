@@ -171,7 +171,7 @@ let updateContainerAppearance = function (container, on) {
                        : "";
   container.pack = on ? "start" : "";
   container.style.backgroundColor = on ? (window.fullScreen ? "Black"
-                                                            : "DimGray")
+                                                            : "LightGray")
                                        : "";
 };
 
@@ -225,6 +225,9 @@ let autoresize = function (window, stepMs) {
 };
 
 // __trueZoom(gBrowser)__.
+// Returns the true magnification of the content in the gBrowser
+// object. (In contrast, `gBrowser.fullZoom`value is only approximated
+// by the display zoom.)
 let trueZoom = function (gBrowser) {
   return gBrowser.contentWindow
                  .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
@@ -247,17 +250,13 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
       parentHeight = container.clientHeight,
       targetContentWidth = largestMultipleLessThan(xStep, parentWidth),
       targetContentHeight = largestMultipleLessThan(yStep, parentHeight);
-  gBrowser.fullZoom = 0.991 * Math.min(parentHeight / targetContentHeight,
+  // We set `gBrowser.fullZoom` to 99% of the needed zoom. That's because
+  // the "true zoom" is sometimes larger than fullZoom, and we need to
+  // ensure the gBrowser width and height do not exceed the container size.
+  gBrowser.fullZoom = 0.99 * Math.min(parentHeight / targetContentHeight,
 	                              parentWidth / targetContentWidth);
-  let zoom = trueZoom(gBrowser);
-  /*
-  while (zoom > gBrowser.fullZoom) {
-      gBrowser.fullZoom = gBrowser.fullZoom * 0.99;
-      zoom = trueZoom(gBrowser);
-      console.log(zoom, gBrowser.fullZoom);
-  }
-  */
-  let targetBrowserWidth = Math.round(targetContentWidth * zoom),
+  let zoom = trueZoom(gBrowser),
+      targetBrowserWidth = Math.round(targetContentWidth * zoom),
       targetBrowserHeight = Math.round(targetContentHeight * zoom);
   // Because gBrowser is inside a vbox, width and height behave differently. It turns
   // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
@@ -291,7 +290,7 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
 // whether the window is full screen.
 let updateBackground = function (window) {
   window.gBrowser.parentElement.style
-        .backgroundColor = window.fullScreen ? "Black" : "DimGray";
+        .backgroundColor = window.fullScreen ? "Black" : "LightGray";
 };
 
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
