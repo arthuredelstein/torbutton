@@ -24,20 +24,22 @@ let { bindPrefAndInit, getEnv } = Cu.import("resource://torbutton/modules/utils.
 // Constant, set to true if we are using a (known) tiling window
 // manager in linux.
 let isTilingWindowManager = (function () {
-  let gdmSession = getEnv("GDMSESSION").toLowerCase();
+  let gdmSession = getEnv("GDMSESSION");
+  if (!gdmSession) return false;
+  let gdmSessionLower = gdmSession.toLowerCase();
   return ["9wm","alopex","awesome","bspwm","catwm","dswm","dwm",
           "echinus","euclid-wm","frankenwm","herbstluftwm","i3",
           "i3wm","ion","larswm","monsterwm","musca","notion",
           "qtile","ratpoison","snapwm","spectrwm","stumpwm",
           "subtle","tinywm","ttwm","wingo","wmfs","wmii","xmonad"]
-            .filter(x => x.startsWith(gdmSession)).length > 0;
+            .filter(x => x.startsWith(gdmSessionLower)).length > 0;
 })();
 
 // __largestMultipleLessThan(factor, max)__.
 // Returns the largest number that is a multiple of factor
 // and is less or equal to max.
 let largestMultipleLessThan = function (factor, max) {
-  return Math.max(1, Math.floor((1 + max) / factor, 1)) * factor;
+  return Math.max(1, Math.floor(max / factor, 1)) * factor;
 };
 
 // __listen(target, eventType, useCapture, timeoutMs)__.
@@ -164,8 +166,8 @@ let updateContainerAppearance = function (container, on) {
   // margins and gBrowser in top center, and when using a tiling
   // window manager, when we have gray margins and gBrowser in top
   // center.
-  container.align = on ? ((window.fullScreen || isTilingWindowManager) ?
-			  "center" : "start")
+  container.align = on ? "center" //((window.fullScreen || isTilingWindowManager) ?
+			  //"center" : "start")
                        : "";
   container.pack = on ? "start" : "";
   container.style.backgroundColor = on ? (window.fullScreen ? "Black"
@@ -222,6 +224,14 @@ let autoresize = function (window, stepMs) {
   return () => { stop = true; };
 };
 
+// __trueZoom(gBrowser)__.
+let trueZoom = function (gBrowser) {
+  return gBrowser.contentWindow
+                 .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                 .getInterface(Components.interfaces.nsIDOMWindowUtils)
+                 .screenPixelsPerCSSPixel;
+};
+
 // __updateDimensions(gBrowser, xStep, yStep)__.
 // Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
 let updateDimensions = function (gBrowser, xStep, yStep) {
@@ -232,13 +242,23 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   //                 .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
   //                 .getInterface(Components.interfaces.nsIDOMWindowUtils),
   //    zoom = winUtils.screenPixelsPerCSSPixel,
-  let zoom = 1,
-      parentWidth = gBrowser.parentElement.clientWidth,
-      parentHeight = gBrowser.parentElement.clientHeight,
-      targetContentWidth = largestMultipleLessThan(xStep, parentWidth / zoom),
-      targetContentHeight = largestMultipleLessThan(yStep, parentHeight / zoom),
-      targetBrowserWidth = targetContentWidth * zoom,
-      targetBrowserHeight = targetContentHeight * zoom;
+  let container = gBrowser.parentElement,
+      parentWidth = container.clientWidth,
+      parentHeight = container.clientHeight,
+      targetContentWidth = largestMultipleLessThan(xStep, parentWidth),
+      targetContentHeight = largestMultipleLessThan(yStep, parentHeight);
+  gBrowser.fullZoom = 0.991 * Math.min(parentHeight / targetContentHeight,
+	                              parentWidth / targetContentWidth);
+  let zoom = trueZoom(gBrowser);
+  /*
+  while (zoom > gBrowser.fullZoom) {
+      gBrowser.fullZoom = gBrowser.fullZoom * 0.99;
+      zoom = trueZoom(gBrowser);
+      console.log(zoom, gBrowser.fullZoom);
+  }
+  */
+  let targetBrowserWidth = Math.round(targetContentWidth * zoom),
+      targetBrowserHeight = Math.round(targetContentHeight * zoom);
   // Because gBrowser is inside a vbox, width and height behave differently. It turns
   // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
   gBrowser.width = targetBrowserWidth;
@@ -246,18 +266,32 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   // If the content window's innerWidth/innerHeight failed to updated correctly,
   // then jog the gBrowser width/height. (With zoom there may also be a rounding
   // error, but we can't do much about that.)
+/*
   if (gBrowser.contentWindow.innerWidth !== targetContentWidth ||
       gBrowser.contentWindow.innerHeight !== targetContentHeight) {
-    gBrowser.width = targetBrowserWidth + 1;
-    gBrowser.maxHeight = gBrowser.targetBrowserHeight + 1;
+    gBrowser.width = targetBrowserWidth;
+    gBrowser.maxHeight = gBrowser.targetBrowserHeight;
     gBrowser.width = targetBrowserWidth;
     gBrowser.maxHeight = targetBrowserHeight;
   }
-  logger.eclog(3, "zoom " + zoom + "X" +
+*/
+  logger.eclog(3,
                " chromeWin " + window.outerWidth + "x" +  window.outerHeight +
                " container " + parentWidth + "x" + parentHeight +
+               " targetContent " + targetContentWidth + "x" + targetContentHeight +
+               " gBrowser.fullZoom " + gBrowser.fullZoom + "X" +
+               " zoom " + zoom + "X" +
+               " targetBrowser " + targetBrowserWidth + "x" + targetBrowserHeight +
 	       " gBrowser " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
                " content " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
+};
+
+// __updateBackground(window)__.
+// Sets the margin background to black or dim gray, depending on
+// whether the window is full screen.
+let updateBackground = function (window) {
+  window.gBrowser.parentElement.style
+        .backgroundColor = window.fullScreen ? "Black" : "DimGray";
 };
 
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
@@ -267,13 +301,14 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
   let gBrowser = window.gBrowser,
       container = window.gBrowser.parentElement,
       updater = event => updateDimensions(gBrowser, xStep, yStep),
-      originalMinWidth = gBrowser.minWidth,
-      originalMinHeight = gBrowser.minHeight,
+      fullscreenHandler = event => updateBackground(window),
+      originalMinWidth = container.minWidth,
+      originalMinHeight = container.minHeight,
       stopAutoresizing,
       activate = function (on) {
         // Don't let the browser shrink below a single xStep x yStep size.
-        gBrowser.minWidth = on ? xStep : originalMinWidth;
-        gBrowser.minHeight = on ? yStep : originalMinHeight;
+        container.minWidth = on ? xStep : originalMinWidth;
+        container.minHeight = on ? yStep : originalMinHeight;
         updateContainerAppearance(container, on);
         if (on) {
           // Quantize browser size on activation.
@@ -281,13 +316,15 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           shrinkwrap(window);
           // Quantize browser size at subsequent resize events.
           window.addEventListener("resize", updater, false);
+          window.addEventListener("sizemodechange", fullscreenHandler, false);
 	  if (!isTilingWindowManager) {
-            stopAutoresizing = autoresize(window, 250);
+            //stopAutoresizing = autoresize(window, 250);
           }
         } else {
           if (stopAutoresizing) stopAutoresizing();
           // Ignore future resize events.
           window.removeEventListener("resize", updater, false);
+          window.removeEventListener("sizemodechange", fullscreenHandler, false);
           // Let gBrowser expand with its parent vbox.
           gBrowser.width = "";
           gBrowser.maxHeight = "";
