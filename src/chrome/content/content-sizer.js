@@ -276,7 +276,7 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   // the "true zoom" is sometimes larger than fullZoom, and we need to
   // ensure the gBrowser width and height do not exceed the container size.
   gBrowser.fullZoom = 0.99 * Math.min(parentHeight / targetContentHeight,
-	                              parentWidth / targetContentWidth);
+                                      parentWidth / targetContentWidth);
   let zoom = trueZoom(gBrowser),
       targetBrowserWidth = Math.round(targetContentWidth * zoom),
       targetBrowserHeight = Math.round(targetContentHeight * zoom);
@@ -339,7 +339,7 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           window.addEventListener("resize", updater, false);
           window.addEventListener("sizemodechange", fullscreenHandler, false);
 	  if (!isTilingWindowManager) {
-            stopAutoresizing = autoresize(window, 250);
+            //stopAutoresizing = autoresize(window, 250);
           }
         } else {
           if (stopAutoresizing) stopAutoresizing();
