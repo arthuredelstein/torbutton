@@ -120,8 +120,8 @@ let rebuild = function* (window) {
 let gaps = function (window) {
   let gBrowser = window.gBrowser,
       container = gBrowser.parentElement,
-      deltaWidth = Math.max(0, container.clientWidth - gBrowser.clientWidth - 1),
-      deltaHeight = Math.max(0, container.clientHeight - gBrowser.clientHeight - 1);
+      deltaWidth = Math.max(0, container.clientWidth - gBrowser.clientWidth - 5),
+      deltaHeight = Math.max(0, container.clientHeight - gBrowser.clientHeight - 5);
   //logger.eclog(3, "gaps " + deltaWidth + "," + deltaHeight);
   return (deltaWidth === 0 && deltaHeight === 0) ? null
            : { deltaWidth : deltaWidth, deltaHeight : deltaHeight };
@@ -235,6 +235,28 @@ let trueZoom = function (gBrowser) {
                  .screenPixelsPerCSSPixel;
 };
 
+// __sortBy(array, scoreFn)__.
+// Returns a copy of the array, sorted from least to best
+// according to scoreFn.
+let sortBy = function (array, scoreFn) {
+  compareFn = (a, b) => scoreFn(a) - scoreFn(b);
+  return array.slice().sort(compareFn);
+};
+
+let targetSize = function (parentWidth, parentHeight, xStep, yStep) {
+  let parentAspectRatio = parentWidth / parentHeight,
+      w0 = largestMultipleLessThan(xStep, parentWidth),
+      h0 = largestMultipleLessThan(yStep, parentHeight),
+      possibilities = [[w0, h0],
+		       [Math.min(w0, w0 - xStep), h0],
+		       [w0, Math.min(h0 - yStep)]],
+      score = ([w, h]) => Math.abs(Math.log(w / h / parentAspectRatio));
+   //   console.log(JSON.stringify(possibilities), possibilities.map(score));
+   // Choose the target content width and height for the closest possible
+   // aspect ratio to the parent.
+   return sortBy(possibilities, score)[0];
+};
+
 // __updateDimensions(gBrowser, xStep, yStep)__.
 // Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
 let updateDimensions = function (gBrowser, xStep, yStep) {
@@ -248,8 +270,8 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   let container = gBrowser.parentElement,
       parentWidth = container.clientWidth,
       parentHeight = container.clientHeight,
-      targetContentWidth = largestMultipleLessThan(xStep, parentWidth),
-      targetContentHeight = largestMultipleLessThan(yStep, parentHeight);
+      [targetContentWidth, targetContentHeight] =
+        targetSize(parentWidth, parentHeight, xStep, yStep);
   // We set `gBrowser.fullZoom` to 99% of the needed zoom. That's because
   // the "true zoom" is sometimes larger than fullZoom, and we need to
   // ensure the gBrowser width and height do not exceed the container size.
@@ -317,7 +339,7 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           window.addEventListener("resize", updater, false);
           window.addEventListener("sizemodechange", fullscreenHandler, false);
 	  if (!isTilingWindowManager) {
-            //stopAutoresizing = autoresize(window, 250);
+            stopAutoresizing = autoresize(window, 250);
           }
         } else {
           if (stopAutoresizing) stopAutoresizing();
