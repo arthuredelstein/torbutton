@@ -9,7 +9,7 @@ TODO:
 * Consider separate prefs for (1) margins/autozoom and (2) autoresizing.
 * Maybe don't use shrinking?
 * Only allow shrinking when the window dimensions have actually changed in a resize event (compare to dimensions after previous resize event) -- fixes ALT menu problem.
-* Tooltip on margins.
+x Tooltip on margins.
 * Confirm that youtube fullscreen is maximally large.
 * Implement manual zooming.
 * Ensure no shrinking when window is maximized, fullscreen, or in a tiled window manager
@@ -187,6 +187,7 @@ let updateContainerAppearance = function (container, on) {
 			  //"center" : "start")
                        : "";
   container.pack = on ? "start" : "";
+  container.tooltipText = on ? "Tor Browser adds this margin to make the width and height of your window less distinctive." : "";
   container.style.backgroundColor = on ? (window.fullScreen ? "Black"
                                                             : "LightGray")
                                        : "";
@@ -260,6 +261,9 @@ let sortBy = function (array, scoreFn) {
   return array.slice().sort(compareFn);
 };
 
+// __targetSize(parentWidth, parentHeight, xStep, yStep, fillHeight)__.
+// Given a parent width and height for gBrowser's container, returns the
+// desired [width, height, zoom] the content window.
 let targetSize = function (parentWidth, parentHeight, xStep, yStep, fillHeight) {
   if (fillHeight) {
     let h = largestMultipleLessThan(yStep, parentHeight),
@@ -297,7 +301,7 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   let container = gBrowser.parentElement,
       parentWidth = container.clientWidth,
       parentHeight = container.clientHeight,
-      longPage = gBrowser.contentWindow.scrollMaxY > 0,
+      longPage = !gBrowser.contentWindow.fullScreen, // || gBrowser.contentWindow.scrollMaxY > 0,
       [targetContentWidth, targetContentHeight, targetZoom] =
         targetSize(parentWidth, parentHeight, xStep, yStep, longPage);
   // We set `gBrowser.fullZoom` to 99% of the needed zoom. That's because
@@ -342,6 +346,28 @@ let updateBackground = function (window) {
         .backgroundColor = window.fullScreen ? "Black" : "LightGray";
 };
 
+// __listenForLocationChange(gBrowser, onLocationChange)__.
+// Whenver the location changes in gBrowser, calls 
+// `onLocationChange(tabOrWindow, request, URI)`.
+// Returns a zero-argument function to stop listening.
+let listenForLocationChange = function (gBrowser, onLocationChange) {
+  let listener = {
+    QueryInterface: XPCOMUtils.generateQI(["nsIWebProgressListener",
+                                           "nsISupportsWeakReference"]),
+    onLocationChange: function(aProgress, aRequest, aURI) {
+      console.log("onLocationChange", aProgress, aRequest, aURI);
+      onLocationChange(aProgress.DOMWindow, aRequest, aURI);
+    },
+    // Ignore these irrelevant callbacks.
+    onStateChange: function(aWebProgress, aRequest, aFlag, aStatus) { },
+    onProgressChange: function(aWebProgress, aRequest, curSelf, maxSelf, curTot, maxTot) {},
+    onStatusChange: function(aWebProgress, aRequest, aStatus, aMessage) {},
+    onSecurityChange: function(aWebProgress, aRequest, aState) {}
+  };
+  gBrowser.addProgressListener(listener);
+  return function () { gBrowser.removeProgressListener(listener); };
+};
+
 // __quantizeBrowserSizeNow(window, xStep, yStep)__.
 // Ensures that gBrowser width and height are multiples of xStep and yStep, and always as
 // large as possible inside the chrome window.
@@ -353,6 +379,7 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
       originalMinWidth = container.minWidth,
       originalMinHeight = container.minHeight,
       stopAutoresizing,
+      stopUpdatingOnLocationChange,
       activate = function (on) {
         // Don't let the browser shrink below a single xStep x yStep size.
         container.minWidth = on ? xStep : originalMinWidth;
@@ -364,6 +391,8 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           shrinkwrap(window);
           // Quantize browser size at subsequent resize events.
           window.addEventListener("resize", updater, false);
+          stopUpdatingOnLocationChange = listenForLocationChange(gBrowser, updater);
+          gBrowser.addEventListener("load", updater, true);
           window.addEventListener("sizemodechange", fullscreenHandler, false);
 	  if (!isTilingWindowManager) {
             stopAutoresizing = autoresize(window, 250);
@@ -372,6 +401,8 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           if (stopAutoresizing) stopAutoresizing();
           // Ignore future resize events.
           window.removeEventListener("resize", updater, false);
+	  stopUpdatingOnLocationChange();
+          gBrowser.removeEventListener("load", updater, true);
           window.removeEventListener("sizemodechange", fullscreenHandler, false);
           // Let gBrowser expand with its parent vbox.
           gBrowser.width = "";
