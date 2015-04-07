@@ -160,6 +160,16 @@ let gaps = function (window) {
            : { deltaWidth : deltaWidth, deltaHeight : deltaHeight };
 };
 
+// __canBeResized(window)__.
+// Returns true iff the window is in a state that can
+// be resized. Namely, not fullscreen, not maximized,
+// and not running in a tiling window manager.
+let canBeResized = function (window) {
+  return !isTilingWindowManager &&
+         window.windowState !== window.STATE_FULLSCREEN &&
+         window.windowState !== window.STATE_MAXIMIZED;
+};
+
 // __shrinkwrap(window)__.
 // Shrinks the window so that it encloses the gBrowser with no gaps.
 let shrinkwrap = function* (window) {
@@ -172,16 +182,6 @@ let shrinkwrap = function* (window) {
                    height : (window.outerHeight - currentGaps.deltaHeight)},
                   500);
   }
-};
-
-// __canBeResized(window)__.
-// Returns true iff the window is in a state that can
-// be resized. Namely, not fullscreen, not maximized,
-// and not running in a tiling window manager.
-let canBeResized = function (window) {
-  return !isTilingWindowManager &&
-         window.windowState !== window.STATE_FULLSCREEN &&
-         window.windowState !== window.STATE_MAXIMIZED;
 };
 
 // __updateContainerAppearance(container, on)__.
@@ -212,8 +212,9 @@ let rebuild = function* (window) {
 // An async function for Task.jsm. Makes sure the window looks okay
 // given the quantized browser element.
 let fixWindow = function* (window) {
+  logger.eclog(3, "fixWindow");
+  updateContainerAppearance(window.gBrowser.parentElement, true);
   if (canBeResized(window)) {
-    updateContainerAppearance(window.gBrowser.parentElement, true);
     yield shrinkwrap(window);
     if (!isMac && !isWindows) {
       // Unfortunately, on some linux desktops,
@@ -230,7 +231,8 @@ let fixWindow = function* (window) {
            listen(window, "keydown", true),
            listen(window, "resize", true)]);
         if (event !== "resize") {
-          yield rebuild(window);
+          //yield rebuild(window);
+          window.resizeTo(window.innerWidth, window.innerHeight);
         }
       });
     }
@@ -241,17 +243,19 @@ let fixWindow = function* (window) {
 // Do what it takes to eliminate the gray margin around the gBrowser inside
 // window. Periodically (stepMs) attempt to shrink the window. Runs
 // as a Task.jsm coroutine.
-let autoresize = function (window, stepMs) {
+let autoresize = function (window, stepMs, xStep, yStep) {
   let stop = false;
   Task.spawn(function* () {
     while (!stop) {
       // Do nothing until the user starts to resize window.
+      updateDimensions(window.gBrowser, xStep, yStep);
       let event = yield listenForTrueResize(window);
       // Here we wrestle with the window size. If the user has released the
       // mouse cursor on the window's drag/resize handle, then fixWindow
       // will resize the window on its first call.
       while (event.type !== "timeout") {
-        event = yield listen(window, "resize", true, stepMs);
+        updateDimensions(window.gBrowser, xStep, yStep);
+        event = yield listenForTrueResize(window);
       }
       yield fixWindow(window);
     }
@@ -338,7 +342,7 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
   if (gBrowser.contentWindow.innerWidth !== targetContentWidth ||
       gBrowser.contentWindow.innerHeight !== targetContentHeight) {
     gBrowser.width = targetBrowserWidth;
-    gBrowser.maxHeight = gBrowser.targetBrowserHeight;
+    gBrowser.maxHeight = targetBrowserHeight;
     gBrowser.width = targetBrowserWidth;
     gBrowser.maxHeight = targetBrowserHeight;
   }
@@ -390,7 +394,7 @@ let listenForLocationChange = function (gBrowser, onLocationChange) {
 let quantizeBrowserSizeMain = function (window, xStep, yStep) {
   let gBrowser = window.gBrowser,
       container = window.gBrowser.parentElement,
-      updater = event => updateDimensions(gBrowser, xStep, yStep),
+    //  updater = event => updateDimensions(gBrowser, xStep, yStep),
       fullscreenHandler = event => updateBackground(window, true),
       originalMinWidth = container.minWidth,
       originalMinHeight = container.minHeight,
@@ -404,23 +408,24 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
         updateBackground(window, on);
         if (on) {
           // Quantize browser size on activation.
-          updateDimensions(gBrowser, xStep, yStep);
+     //     updateDimensions(gBrowser, xStep, yStep);
           shrinkwrap(window);
           // Quantize browser size at subsequent resize events.
-          window.addEventListener("resize", updater, false);
-          stopUpdatingOnLocationChange = listenForLocationChange(gBrowser, updater);
-          gBrowser.addEventListener("load", updater, true);
+   //       window.addEventListener("resize", updater, false);
+//          stopUpdatingOnLocationChange = listenForLocationChange(gBrowser, updater);
+//          gBrowser.addEventListener("load", updater, true);
           window.addEventListener("sizemodechange", fullscreenHandler, false);
           if (!isTilingWindowManager) {
             stopAutoresizing = autoresize(window,
-                                 (isMac || isWindows) ? 250 : 1000);
+                                 (isMac || isWindows) ? 250 : 1000,
+                                 xStep, yStep);
           }
         } else {
           if (stopAutoresizing) stopAutoresizing();
           // Ignore future resize events.
-          window.removeEventListener("resize", updater, false);
-          stopUpdatingOnLocationChange();
-          gBrowser.removeEventListener("load", updater, true);
+       //   window.removeEventListener("resize", updater, false);
+       //   stopUpdatingOnLocationChange();
+//          gBrowser.removeEventListener("load", updater, true);
           window.removeEventListener("sizemodechange", fullscreenHandler, false);
           // Let gBrowser expand with its parent vbox.
           gBrowser.width = "";
