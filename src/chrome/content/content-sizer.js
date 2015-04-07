@@ -11,6 +11,7 @@ x Tooltip on margins.
 x Ensure no shrinking when window is maximized, fullscreen, or in a tiled window manager
 x Use canBeResized everywhere
 x Deal with rebuilding on linux. Maybe just do it once after shrink, and then once later on mouseover/keypress?
+x Make sure tiling window managers work
 * Confirm that youtube fullscreen is maximally large.
 * Implement manual zooming.
 * Understand gBrowser.contentWindow.document.body.getBoundingClientRect(). Does this leak some useful information?
@@ -339,9 +340,11 @@ let autoresize = function (window, stepMs, xStep, yStep) {
       let event = yield listenForTrueResize(window);
       // If the user has released the mouse cursor on the window's drag/resize handle,
       // then fixWindow will resize the window.
-      while (event.type !== "timeout") {
-        updateDimensions(window.gBrowser, xStep, yStep);
-        event = yield listenForTrueResize(window, stepMs);
+      if (!isTilingWindowManager) {
+        while (event.type !== "timeout") {
+          updateDimensions(window.gBrowser, xStep, yStep);
+          event = yield listenForTrueResize(window, stepMs);
+        }
       }
       yield fixWindow(window);
     }
