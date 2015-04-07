@@ -101,7 +101,7 @@ let listenForTrueResize = function* (window, timeoutMs) {
   do {
     event = yield listen(window, "resize", true,
 			 finishTime ? finishTime - Date.now() : undefined);
-  } while (event === "resize" &&
+  } while (event.type === "resize" &&
 	         originalWidth === window.outerWidth &&
            originalHeight === window.outerHeight);
   return event;
