@@ -1,4 +1,4 @@
-// The purpose of this file is to ensure that window.innerWidth and window.innerHeight
+./// The purpose of this file is to ensure that window.innerWidth and window.innerHeight
 // always return rounded values.
 
 // This file is formatted for docco.js. Later functions call earlier ones.
@@ -232,7 +232,7 @@ let reshape = function* (window, {left, top, width, height}, timeoutMs) {
          h !== window.outerHeight) {
     let timeLeft = finishTime - Date.now();
     if (timeLeft <= 0) break;
-    yield listen(window, "resize", true, timeLeft);
+    yield listenForTrueResize(window, timeLeft);
   }
 };
 
@@ -315,16 +315,13 @@ let fixWindow = function* (window) {
       // user presses a key. So we spin up an extra coroutine
       // and, after the first mousemove, or keydown event occurs, we
       // rebuild the window.
-      Task.spawn(function* () {
-        let event = yield Promise.race(
-          [listen(window, "mousemove", true),
-           listen(window, "keydown", true),
-           listen(window, "resize", true)]);
-        if (event !== "resize") {
-          //yield rebuild(window);
-          window.resizeTo(window.innerWidth, window.innerHeight);
-        }
-      });
+      let event = yield Promise.race(
+        [listen(window, "mousemove", true),
+         listen(window, "keydown", true),
+         listen(window, "resize", true)]);
+      if (event !== "resize") {
+        yield rebuild(window);
+      }
     }
   }
 };
