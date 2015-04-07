@@ -6,18 +6,16 @@
 /*
 TODO:
 x Fix bug causing horizontal repeated shrink.
-* Only allow shrinking when the window dimensions have actually changed in a resize event (compare to dimensions after previous resize event) -- fixes ALT menu problem.
+x Only allow shrinking when the window dimensions have actually changed in a resize event (compare to dimensions after previous resize event) -- fixes ALT menu problem.
 x Tooltip on margins.
+x Ensure no shrinking when window is maximized, fullscreen, or in a tiled window manager
+x Use canBeResized everywhere
+x Deal with rebuilding on linux. Maybe just do it once after shrink, and then once later on mouseover/keypress?
 * Confirm that youtube fullscreen is maximally large.
 * Implement manual zooming.
-x Ensure no shrinking when window is maximized, fullscreen, or in a tiled window manager
-* Use canBeResized everywhere
-* Consider separate prefs for (1) margins/autozoom and (2) autoresizing.
-* Maybe don't use shrinking?
 * Understand gBrowser.contentWindow.document.body.getBoundingClientRect(). Does this leak some useful information?
 * Decide on quantization amount. 100x100? 200x100? Maybe gradually increase, like 50, 100, 150, 200, 300, 500, 600, 800, etc.?
-* Match margin color to window background color?
-* Deal with rebuilding on linux. Maybe just do it once after shrink, and then once later on mouseover/keypress?
+
 * Cleanup comments and code.
 */
 
