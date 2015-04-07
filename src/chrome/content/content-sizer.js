@@ -102,7 +102,7 @@ let listenForTrueResize = function* (window, timeoutMs) {
     event = yield listen(window, "resize", true,
 			 finishTime ? finishTime - Date.now() : undefined);
   } while (event === "resize" &&
-	   originalWidth === window.outerWidth &&
+	         originalWidth === window.outerWidth &&
            originalHeight === window.outerHeight);
   return event;
 };
@@ -345,12 +345,12 @@ let autoresize = function (window, stepMs, xStep, yStep) {
   let stop = false;
   Task.spawn(function* () {
     while (!stop) {
-      // Do nothing until the user starts to resize window.
       updateDimensions(window.gBrowser, xStep, yStep);
+      // Do nothing until the user starts to resize window.
       let event = yield listenForTrueResize(window);
       // Here we wrestle with the window size. If the user has released the
       // mouse cursor on the window's drag/resize handle, then fixWindow
-      // will resize the window on its first call.
+      // will resize the window.
       while (event.type !== "timeout") {
         updateDimensions(window.gBrowser, xStep, yStep);
         event = yield listenForTrueResize(window, stepMs);
