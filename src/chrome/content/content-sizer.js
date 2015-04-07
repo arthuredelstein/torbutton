@@ -94,12 +94,15 @@ let listen = function (target, eventType, useCapture, timeoutMs) {
 // wait until the window changes its outer dimensions. Ignores
 // resize events where window dimensions are unchanged. Returns
 // the resize event object.
-let listenForTrueResize = function* (window) {
+let listenForTrueResize = function* (window, timeoutMs) {
   let [originalWidth, originalHeight] = [window.outerWidth, window.outerHeight],
-      event;
+      event,
+      finishTime = timeoutMs ? Date.now() + timeoutMs : null;
   do {
-    event = yield listen(window, "resize", true);
-  } while (originalWidth === window.outerWidth &&
+    event = yield listen(window, "resize", true,
+			 finishTime ? finishTime - Date.now() : undefined);
+  } while (event === "resize" &&
+	   originalWidth === window.outerWidth &&
            originalHeight === window.outerHeight);
   return event;
 };
@@ -118,6 +121,101 @@ let sleep = function (timeoutMs) {
 // __isNumber(value)__.
 // Returns true iff the value is a number.
 let isNumber = x => typeof x === "number";
+
+// __trueZoom(gBrowser)__.
+// Returns the true magnification of the content in the gBrowser
+// object. (In contrast, `gBrowser.fullZoom`value is only approximated
+// by the display zoom.)
+let trueZoom = function (gBrowser) {
+  return gBrowser.contentWindow
+                 .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+                 .getInterface(Components.interfaces.nsIDOMWindowUtils)
+                 .screenPixelsPerCSSPixel;
+};
+
+// __sortBy(array, scoreFn)__.
+// Returns a copy of the array, sorted from least to best
+// according to scoreFn.
+let sortBy = function (array, scoreFn) {
+  compareFn = (a, b) => scoreFn(a) - scoreFn(b);
+  return array.slice().sort(compareFn);
+};
+
+// __computeTargetZoom(parentWidth, parentHeight, xStep, yStep, fillHeight)__.
+// Given a parent width and height for gBrowser's container, returns the
+// desired zoom for the content window.
+let computeTargetZoom = function (parentWidth, parentHeight, xStep, yStep, fillHeight) {
+  if (fillHeight) {
+    // Return the estimated zoom need to fill the height of the browser.
+    let h = largestMultipleLessThan(yStep, parentHeight);
+    return parentHeight / h;
+  } else {
+    let w = largestMultipleLessThan(xStep, parentWidth),
+        h = largestMultipleLessThan(yStep, parentHeight),
+        parentAspectRatio = parentWidth / parentHeight,
+        possibilities = [[w, h],
+              //           [Math.min(w, w - xStep), h],
+              //           [w, Math.min(h - yStep)]
+                           ],
+        score = ([w, h]) => Math.abs(Math.log(w / h / parentAspectRatio)),
+        // Choose the target content width and height for the closest possible
+        // aspect ratio to the parent.
+        [W, H] = sortBy(possibilities, score)[0];
+    // Return the estimated zoom.
+    return Math.min(parentHeight / H, parentWidth / W);
+  }
+};
+
+// __updateDimensions(gBrowser, xStep, yStep)__.
+// Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
+let updateDimensions = function (gBrowser, xStep, yStep) {
+  // TODO: Get zooming to work such that it doesn't cause the window
+  // to continuously shrink.
+  // We'll use something like:
+  // let winUtils = gBrowser.contentWindow
+  //                 .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
+  //                 .getInterface(Components.interfaces.nsIDOMWindowUtils),
+  //    zoom = winUtils.screenPixelsPerCSSPixel,
+  let container = gBrowser.parentElement,
+      parentWidth = container.clientWidth,
+      parentHeight = container.clientHeight,
+      longPage = !gBrowser.contentWindow.fullScreen, // || gBrowser.contentWindow.scrollMaxY > 0,
+      targetZoom = computeTargetZoom(parentWidth, parentHeight, xStep, yStep, longPage);
+  // We set `gBrowser.fullZoom` to 99% of the needed zoom. That's because
+  // the "true zoom" is sometimes larger than fullZoom, and we need to
+  // ensure the gBrowser width and height do not exceed the container size.
+  gBrowser.fullZoom = 0.99 * targetZoom;
+  let zoom = trueZoom(gBrowser),
+      targetContentWidth = largestMultipleLessThan(xStep, parentWidth / zoom),
+      targetContentHeight = largestMultipleLessThan(yStep, parentHeight / zoom),
+      targetBrowserWidth = Math.round(targetContentWidth * zoom),
+      targetBrowserHeight = Math.round(targetContentHeight * zoom);
+  // Because gBrowser is inside a vbox, width and height behave differently. It turns
+  // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
+  gBrowser.width = targetBrowserWidth;
+  gBrowser.maxHeight = targetBrowserHeight;
+  // If the content window's innerWidth/innerHeight failed to updated correctly,
+  // then jog the gBrowser width/height. (With zoom there may also be a rounding
+  // error, but we can't do much about that.)
+/*
+  if (gBrowser.contentWindow.innerWidth !== targetContentWidth ||
+      gBrowser.contentWindow.innerHeight !== targetContentHeight) {
+    gBrowser.width = targetBrowserWidth;
+    gBrowser.maxHeight = targetBrowserHeight;
+    gBrowser.width = targetBrowserWidth;
+    gBrowser.maxHeight = targetBrowserHeight;
+  }
+*/
+  logger.eclog(3,
+               " chromeWin " + window.outerWidth + "x" +  window.outerHeight +
+               " container " + parentWidth + "x" + parentHeight +
+               " targetContent " + targetContentWidth + "x" + targetContentHeight +
+               " gBrowser.fullZoom " + gBrowser.fullZoom + "X" +
+               " zoom " + zoom + "X" +
+               " targetBrowser " + targetBrowserWidth + "x" + targetBrowserHeight +
+               " gBrowser " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
+               " content " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
+};
 
 // __reshape(window, {left, top, width, height}, timeoutMs)__.
 // Reshapes the window to rectangle {left, top, width, height} and yields
@@ -255,107 +353,12 @@ let autoresize = function (window, stepMs, xStep, yStep) {
       // will resize the window on its first call.
       while (event.type !== "timeout") {
         updateDimensions(window.gBrowser, xStep, yStep);
-        event = yield listenForTrueResize(window);
+        event = yield listenForTrueResize(window, stepMs);
       }
       yield fixWindow(window);
     }
   });
   return () => { stop = true; };
-};
-
-// __trueZoom(gBrowser)__.
-// Returns the true magnification of the content in the gBrowser
-// object. (In contrast, `gBrowser.fullZoom`value is only approximated
-// by the display zoom.)
-let trueZoom = function (gBrowser) {
-  return gBrowser.contentWindow
-                 .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
-                 .getInterface(Components.interfaces.nsIDOMWindowUtils)
-                 .screenPixelsPerCSSPixel;
-};
-
-// __sortBy(array, scoreFn)__.
-// Returns a copy of the array, sorted from least to best
-// according to scoreFn.
-let sortBy = function (array, scoreFn) {
-  compareFn = (a, b) => scoreFn(a) - scoreFn(b);
-  return array.slice().sort(compareFn);
-};
-
-// __computeTargetZoom(parentWidth, parentHeight, xStep, yStep, fillHeight)__.
-// Given a parent width and height for gBrowser's container, returns the
-// desired zoom for the content window.
-let computeTargetZoom = function (parentWidth, parentHeight, xStep, yStep, fillHeight) {
-  if (fillHeight) {
-    // Return the estimated zoom need to fill the height of the browser.
-    let h = largestMultipleLessThan(yStep, parentHeight);
-    return parentHeight / h;
-  } else {
-    let w = largestMultipleLessThan(xStep, parentWidth),
-        h = largestMultipleLessThan(yStep, parentHeight),
-        parentAspectRatio = parentWidth / parentHeight,
-        possibilities = [[w, h],
-              //           [Math.min(w, w - xStep), h],
-              //           [w, Math.min(h - yStep)]
-                           ],
-        score = ([w, h]) => Math.abs(Math.log(w / h / parentAspectRatio)),
-        // Choose the target content width and height for the closest possible
-        // aspect ratio to the parent.
-        [W, H] = sortBy(possibilities, score)[0];
-    // Return the estimated zoom.
-    return Math.min(parentHeight / H, parentWidth / W);
-  }
-};
-
-// __updateDimensions(gBrowser, xStep, yStep)__.
-// Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
-let updateDimensions = function (gBrowser, xStep, yStep) {
-  // TODO: Get zooming to work such that it doesn't cause the window
-  // to continuously shrink.
-  // We'll use something like:
-  // let winUtils = gBrowser.contentWindow
-  //                 .QueryInterface(Components.interfaces.nsIInterfaceRequestor)
-  //                 .getInterface(Components.interfaces.nsIDOMWindowUtils),
-  //    zoom = winUtils.screenPixelsPerCSSPixel,
-  let container = gBrowser.parentElement,
-      parentWidth = container.clientWidth,
-      parentHeight = container.clientHeight,
-      longPage = !gBrowser.contentWindow.fullScreen, // || gBrowser.contentWindow.scrollMaxY > 0,
-      targetZoom = computeTargetZoom(parentWidth, parentHeight, xStep, yStep, longPage);
-  // We set `gBrowser.fullZoom` to 99% of the needed zoom. That's because
-  // the "true zoom" is sometimes larger than fullZoom, and we need to
-  // ensure the gBrowser width and height do not exceed the container size.
-  gBrowser.fullZoom = 0.99 * targetZoom;
-  let zoom = trueZoom(gBrowser),
-      targetContentWidth = largestMultipleLessThan(xStep, parentWidth / zoom),
-      targetContentHeight = largestMultipleLessThan(yStep, parentHeight / zoom),
-      targetBrowserWidth = Math.round(targetContentWidth * zoom),
-      targetBrowserHeight = Math.round(targetContentHeight * zoom);
-  // Because gBrowser is inside a vbox, width and height behave differently. It turns
-  // out we need to set `gBrowser.width` and `gBrowser.maxHeight`.
-  gBrowser.width = targetBrowserWidth;
-  gBrowser.maxHeight = targetBrowserHeight;
-  // If the content window's innerWidth/innerHeight failed to updated correctly,
-  // then jog the gBrowser width/height. (With zoom there may also be a rounding
-  // error, but we can't do much about that.)
-/*
-  if (gBrowser.contentWindow.innerWidth !== targetContentWidth ||
-      gBrowser.contentWindow.innerHeight !== targetContentHeight) {
-    gBrowser.width = targetBrowserWidth;
-    gBrowser.maxHeight = targetBrowserHeight;
-    gBrowser.width = targetBrowserWidth;
-    gBrowser.maxHeight = targetBrowserHeight;
-  }
-*/
-  logger.eclog(3,
-               " chromeWin " + window.outerWidth + "x" +  window.outerHeight +
-               " container " + parentWidth + "x" + parentHeight +
-               " targetContent " + targetContentWidth + "x" + targetContentHeight +
-               " gBrowser.fullZoom " + gBrowser.fullZoom + "X" +
-               " zoom " + zoom + "X" +
-               " targetBrowser " + targetBrowserWidth + "x" + targetBrowserHeight +
-               " gBrowser " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
-               " content " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
 };
 
 // __updateBackground(window)__.
