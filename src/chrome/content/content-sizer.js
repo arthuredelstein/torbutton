@@ -38,10 +38,19 @@ let logger = Cc["@torproject.org/torbutton-logger;1"]
 // Utility function
 let { bindPrefAndInit, getEnv } = Cu.import("resource://torbutton/modules/utils.js");
 
+// __isMac__.
+// Constant, set to true if we are using a Mac (Darwin).
+let isMac = Services.appinfo.OS === "Darwin";
+
+// __isWindows__.
+// Constant, set to true if we are using Windows.
+let isWindows = Services.appinfo.OS === "WINNT";
+
 // __isTilingWindowManager__.
 // Constant, set to true if we are using a (known) tiling window
 // manager in linux.
 let isTilingWindowManager = (function () {
+  if (isMac || isWindows) return false;
   let gdmSession = getEnv("GDMSESSION");
   if (!gdmSession) return false;
   let gdmSessionLower = gdmSession.toLowerCase();
@@ -81,7 +90,7 @@ let listen = function (target, eventType, useCapture, timeoutMs) {
 };
 
 // __listenForTrueResize(window)__.
-// Task.jsm function. Call `yield listenForTrueResize(window)` to 
+// Task.jsm function. Call `yield listenForTrueResize(window)` to
 // wait until the window changes its outer dimensions. Ignores
 // resize events where window dimensions are unchanged. Returns
 // the resize event object.
@@ -139,15 +148,6 @@ let reshape = function* (window, {left, top, width, height}, timeoutMs) {
   }
 };
 
-// __rebuild(window)__.
-// Jog the size of the window slightly, to remind the window manager
-// to redraw the window.
-let rebuild = function* (window) {
-  let h = window.outerHeight;
-  yield reshape(window, {height : (h + 1)}, 300);
-  yield reshape(window, {height : h}, 300);
-};
-
 // __gaps(window)__.
 // Deltas between gBrowser and its container. Returns null if there is no gap.
 let gaps = function (window) {
@@ -175,12 +175,12 @@ let shrinkwrap = function* (window) {
 };
 
 // __canBeResized(window)__.
-// Returns true iff the window is in a state that can 
+// Returns true iff the window is in a state that can
 // be resized. Namely, not fullscreen, not maximized,
 // and not running in a tiling window manager.
 let canBeResized = function (window) {
   return !isTilingWindowManager &&
-	 window.windowState !== window.STATE_FULLSCREEN &&
+         window.windowState !== window.STATE_FULLSCREEN &&
          window.windowState !== window.STATE_MAXIMIZED;
 };
 
@@ -193,23 +193,46 @@ let updateContainerAppearance = function (container, on) {
   // window manager, when we have gray margins and gBrowser in top
   // center.
   container.align = on ?
-	               (canBeResized(window) ? "start" : "center")
+                       (canBeResized(window) ? "start" : "center")
                        : "";
   container.pack = on ? "start" : "";
   container.tooltipText = on ? "Tor Browser adds this margin to make the width and height of your window less distinctive." : "";
+};
+
+// __rebuild(window)__.
+// Jog the size of the window slightly, to remind the window manager
+// to redraw the window.
+let rebuild = function* (window) {
+  let h = window.outerHeight;
+  yield reshape(window, {height : (h + 1)}, 300);
+  yield reshape(window, {height : h}, 300);
 };
 
 // __fixWindow(window)__.
 // An async function for Task.jsm. Makes sure the window looks okay
 // given the quantized browser element.
 let fixWindow = function* (window) {
-  updateContainerAppearance(window.gBrowser.parentElement, true);
   if (canBeResized(window)) {
+    updateContainerAppearance(window.gBrowser.parentElement, true);
     yield shrinkwrap(window);
-    if (Services.appinfo.OS !== "Darwin" && Services.appinfo.OS !== "WINNT") {
-      // Linux tends to require us to rebuild the window, or we might be
-      // left with a large useless white area on the screen.
-      yield rebuild(window);
+    if (!isMac && !isWindows) {
+      // Unfortunately, on some linux desktops,
+      // the window resize fails if the user is still holding on
+      // to the drag-resize handle. Even more unfortunately, the
+      // only way to know that the user if finished dragging
+      // if we detect the mouse cursor inside the window or the
+      // user presses a key. So we spin up an extra coroutine
+      // and, after the first mousemove, or keydown event occurs, we
+      // rebuild the window.
+      Task.spawn(function* () {
+        let event = yield Promise.race(
+          [listen(window, "mousemove", true),
+           listen(window, "keydown", true),
+           listen(window, "resize", true)]);
+        if (event !== "resize") {
+          yield rebuild(window);
+        }
+      });
     }
   }
 };
@@ -226,23 +249,11 @@ let autoresize = function (window, stepMs) {
       let event = yield listenForTrueResize(window);
       // Here we wrestle with the window size. If the user has released the
       // mouse cursor on the window's drag/resize handle, then fixWindow
-      // will resize the window on its first call. Unfortunately, on some
-      // OSs, the window resize fails if the user is still holding on
-      // to the drag-resize handle. Even more unfortunately, the
-      // only way to know that the user no longer has the mouse down
-      // on the window's drag/resize handle is if we detect the mouse
-      // cursor inside the window. So until the window fires a mousemove
-      // event, we repeatedly call fixWindow every stepMs.
-      while (event.type !== "mousemove") {
-        event = yield Promise.race(
-                 [listen(window, "resize", true, stepMs),
-                  listen(window, "mousemove", true, stepMs)]);
-        // If the user has stopped resizing the window after `stepMs`, then we can resize
-        // the window so no gray margin is visible.
-        if (event.type === "timeout" || event.type === "mousemove") {
-          yield fixWindow(window);
-        }
+      // will resize the window on its first call.
+      while (event.type !== "timeout") {
+        event = yield listen(window, "resize", true, stepMs);
       }
+      yield fixWindow(window);
     }
   });
   return () => { stop = true; };
@@ -339,7 +350,7 @@ let updateDimensions = function (gBrowser, xStep, yStep) {
                " gBrowser.fullZoom " + gBrowser.fullZoom + "X" +
                " zoom " + zoom + "X" +
                " targetBrowser " + targetBrowserWidth + "x" + targetBrowserHeight +
-	       " gBrowser " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
+               " gBrowser " + gBrowser.clientWidth + "x" + gBrowser.clientHeight +
                " content " + gBrowser.contentWindow.innerWidth + "x" +  gBrowser.contentWindow.innerHeight);
 };
 
@@ -352,7 +363,7 @@ let updateBackground = function (window) {
 };
 
 // __listenForLocationChange(gBrowser, onLocationChange)__.
-// Whenver the location changes in gBrowser, calls 
+// Whenver the location changes in gBrowser, calls
 // `onLocationChange(tabOrWindow, request, URI)`.
 // Returns a zero-argument function to stop listening.
 let listenForLocationChange = function (gBrowser, onLocationChange) {
@@ -400,14 +411,15 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           stopUpdatingOnLocationChange = listenForLocationChange(gBrowser, updater);
           gBrowser.addEventListener("load", updater, true);
           window.addEventListener("sizemodechange", fullscreenHandler, false);
-	  if (!isTilingWindowManager) {
-            stopAutoresizing = autoresize(window, 250);
+          if (!isTilingWindowManager) {
+            stopAutoresizing = autoresize(window,
+                                 (isMac || isWindows) ? 250 : 1000);
           }
         } else {
           if (stopAutoresizing) stopAutoresizing();
           // Ignore future resize events.
           window.removeEventListener("resize", updater, false);
-	  stopUpdatingOnLocationChange();
+          stopUpdatingOnLocationChange();
           gBrowser.removeEventListener("load", updater, true);
           window.removeEventListener("sizemodechange", fullscreenHandler, false);
           // Let gBrowser expand with its parent vbox.
