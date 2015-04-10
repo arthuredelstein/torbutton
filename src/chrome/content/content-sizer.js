@@ -23,6 +23,11 @@ let quantizeBrowserSize = function (window, xStep, yStep) {
 // except if the user has pressed zoom+ or zoom-. Stateful.
 let currentDefaultZoom = 1;
 
+// __trueOuterWidth, trueOuterHeight__.
+// State of the window after each resize. Takes into account
+// titlebar, even on linux. Stateful.
+let trueOuterWidth, trueOuterHeight = [0, 0];
+
 // ## Utilities
 
 // Mozilla abbreviations.
@@ -42,6 +47,11 @@ let torbuttonBundle = Services.strings.createBundle(
 
 // Import utility functions
 let { bindPrefAndInit, getEnv } = Cu.import("resource://torbutton/modules/utils.js");
+
+// __windowUtils(window)__.
+// See nsIDOMWindowUtils on MDN.
+let windowUtils = window => window.QueryInterface(Ci.nsIInterfaceRequestor)
+                                  .getInterface(Ci.nsIDOMWindowUtils);
 
 // __isNumber(value)__.
 // Returns true iff the value is a number.
@@ -119,6 +129,20 @@ let listen = function (target, eventType, useCapture, timeoutMs) {
   });
 };
 
+// __getTrueOuterDimensions(window)__.
+// Reads the outer dimensions of a window by faking a mouse move event.
+// This gets around a bug in window.outerWidth in linux which ignores
+// the title bar. Use with Task.jsm only.
+let getTrueOuterDimensions = function* (window) {
+  let mouseMovePromise = listen(window, "mousemove", true, 50);
+  windowUtils(window).sendMouseEventToWindow("mousemove", 0, 0, 0, 0, 0, false);
+  let mouseMoveEvent = yield mouseMovePromise;
+  return [window.outerWidth + mouseMoveEvent.screenX -
+          window.screenX - mouseMoveEvent.clientX,
+          window.outerHeight + mouseMoveEvent.screenY -
+          window.screenY - mouseMoveEvent.clientY];
+};
+
 // __listenForTrueResize(window, timeoutMs)__.
 // Task.jsm function. Call `yield listenForTrueResize(window)` to
 // wait until the window changes its outer dimensions. Ignores
@@ -134,6 +158,7 @@ let listenForTrueResize = function* (window, timeoutMs) {
   } while (event.type === "resize" &&
 	   originalWidth === window.outerWidth &&
            originalHeight === window.outerHeight);
+  [trueOuterWidth, trueOuterHeight] = yield getTrueOuterDimensions(window);
   return event;
 };
 
@@ -143,11 +168,7 @@ let listenForTrueResize = function* (window, timeoutMs) {
 // Returns the true magnification of the content in the window
 // object. (In contrast, the `gBrowser.fullZoom` value is only approximated
 // by the display zoom.)
-let trueZoom = function (window) {
-  return window.QueryInterface(Ci.nsIInterfaceRequestor)
-               .getInterface(Ci.nsIDOMWindowUtils)
-               .screenPixelsPerCSSPixel;
-};
+let trueZoom = window => windowUtils(window).screenPixelsPerCSSPixel;
 
 // __systemZoom__.
 // On Windows, if the user sets the DPI to be 125% or 150% (instead of 100%),
@@ -171,7 +192,7 @@ let canBeResized = function (window) {
 // On Windows and some linux desktops, you can "dock" a window
 // at the right or left, so that it is maximized only in height.
 // Returns true in this case.
-let isDocked = window => (window.outerHeight >= window.screen.availHeight) &&
+let isDocked = window => ((window.screenY + trueOuterHeight) >= window.screen.availHeight) &&
                          (window.screenY <= window.screen.availTop);
 
 // ## Window appearance
