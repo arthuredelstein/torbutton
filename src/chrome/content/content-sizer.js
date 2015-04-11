@@ -339,6 +339,9 @@ let reshape = function* (window, {left, top, width, height}, timeoutMs) {
       h = isNumber(height) ? height : window.outerHeight;
   // Make sure we are in a new event.
   yield sleep(0);
+  // Sometimes we get a race condition in linux when maximizing,
+  // so check again at the last minute that resizing is allowed.
+  if (!canBeResized(window)) return;
   if (w !== window.outerWidth || h !== window.outerWidth) {
     window.resizeTo(w, h);
   }
