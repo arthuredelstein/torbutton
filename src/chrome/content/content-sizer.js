@@ -23,10 +23,10 @@ let quantizeBrowserSize = function (window, xStep, yStep) {
 // except if the user has pressed zoom+ or zoom-. Stateful.
 let currentDefaultZoom = 1;
 
-// __trueOuterWidth, trueOuterHeight__.
+// __extraWindowWidth, extraWindowHeight__.
 // State of the window after each resize. Takes into account
 // titlebar, even on linux. Stateful.
-let trueOuterWidth, trueOuterHeight = [0, 0];
+let extraWindowWidth, extraWindowHeight = [0, 0];
 
 // ## Utilities
 
@@ -129,18 +129,17 @@ let listen = function (target, eventType, useCapture, timeoutMs) {
   });
 };
 
-// __getTrueOuterDimensions(window)__.
-// Reads the outer dimensions of a window by faking a mouse move event.
-// This gets around a bug in window.outerWidth in linux which ignores
+// __getExtraOuterSize(window)__.
+// Figures out any extra parts of a window not included in
+// [window.outerWidth, window.outerHeight] by faking a mouse move event.
+// This gets around a bug in window.outerHeight in linux which ignores
 // the title bar. Use with Task.jsm only.
-let getTrueOuterDimensions = function* (window) {
-  let mouseMovePromise = listen(window, "mousemove", true, 50);
+let getExtraOuterSize = function* (window) {
+  let mouseMovePromise = listen(window, "mousemove", true, 500);
   windowUtils(window).sendMouseEventToWindow("mousemove", 0, 0, 0, 0, 0, false);
   let mouseMoveEvent = yield mouseMovePromise;
-  return [window.outerWidth + mouseMoveEvent.screenX -
-          window.screenX - mouseMoveEvent.clientX,
-          window.outerHeight + mouseMoveEvent.screenY -
-          window.screenY - mouseMoveEvent.clientY];
+  return [mouseMoveEvent.screenX - window.screenX - mouseMoveEvent.clientX,
+          mouseMoveEvent.screenY - window.screenY - mouseMoveEvent.clientY];
 };
 
 // __listenForTrueResize(window, timeoutMs)__.
@@ -158,7 +157,7 @@ let listenForTrueResize = function* (window, timeoutMs) {
   } while (event.type === "resize" &&
 	   originalWidth === window.outerWidth &&
            originalHeight === window.outerHeight);
-  [trueOuterWidth, trueOuterHeight] = yield getTrueOuterDimensions(window);
+  [extraWindowWidth, extraWindowHeight] = yield getExtraOuterSize(window);
   return event;
 };
 
@@ -192,7 +191,8 @@ let canBeResized = function (window) {
 // On Windows and some linux desktops, you can "dock" a window
 // at the right or left, so that it is maximized only in height.
 // Returns true in this case.
-let isDocked = window => ((window.screenY + trueOuterHeight) >= window.screen.availHeight) &&
+let isDocked = window => ((window.screenY + window.outerHeight +
+                           extraWindowHeight) >= window.screen.availHeight) &&
                          (window.screenY <= window.screen.availTop);
 
 // ## Window appearance
