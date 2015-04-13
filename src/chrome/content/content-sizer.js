@@ -389,10 +389,10 @@ let shrinkwrap = function* (window) {
                    height : !isDocked(window) ?
                               (window.outerHeight -
                                currentGaps.deltaHeight) : null,
-                   left : (isDocked(window)
-                           && (windowRightEdge >= screenRightEdge))
-                          ? (window.screenX + currentGaps.deltaWidth)
-                          : null },
+                   left : (isDocked(window) &&
+                           (windowRightEdge >= screenRightEdge)) ?
+                             (window.screenX + currentGaps.deltaWidth)
+                             : null },
                   500);
   }
 };
