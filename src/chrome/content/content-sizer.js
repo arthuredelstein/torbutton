@@ -486,7 +486,7 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           shrinkwrap(window);
           window.addEventListener("sizemodechange", fullscreenHandler, false);
           stopAutoresizing = autoresize(window,
-                                        (isMac || isWindows) ? 250 : 1000,
+                                        (isMac || isWindows) ? 250 : 500,
                                         xStep, yStep);
         } else {
           if (stopAutoresizing) stopAutoresizing();
