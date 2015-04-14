@@ -636,7 +636,7 @@ function torbutton_init() {
     createTorCircuitDisplay(m_tb_control_host, m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
 
-    quantizeBrowserSize(window, 100, 100);
+//    quantizeBrowserSize(window, 100, 100);
 
     torbutton_log(3, 'init completed');
 }
@@ -3360,8 +3360,8 @@ var torbutton_resizelistener =
                     " Available: " + availWidth.value + "x" +
                     availHeight.value);
 
-      var diff_width = window.outerWidth - container.clientWidth;
-      var diff_height = window.outerHeight - container.clientHeight;
+      var diff_width = window.outerWidth - win.innerWidth;
+      var diff_height = window.outerHeight - win.innerHeight;
       var delta_fix = 0;
 
       // The following block tries to cope with funny corner cases where the
@@ -3426,8 +3426,8 @@ var torbutton_resizelistener =
       }
 
       let resizeInnerWindowTo = function (width, height) {
-        window.resizeBy(width - container.clientWidth,
-                        height - container.clientHeight);
+        window.resizeBy(width - win.innerWidth,
+                        height - win.innerHeight);
         torbutton_log(3, "Resized new window from: " + container.clientWidth + "x" +
                       container.clientHeight + " to " + width + "x" + height +
                       " in state " + window.windowState);
@@ -3543,6 +3543,7 @@ var torbutton_resizelistener =
             function(mutation) {
               setTimeout(function() {
                            resizeInnerWindowTo(width, height);
+                           quantizeBrowserSize(window, 100, 100);
                          }, 0);
               mut_observer.disconnect();
             }
