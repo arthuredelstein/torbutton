@@ -410,7 +410,6 @@ let rebuild = function* (window) {
 // An async function for Task.jsm. Makes sure the window looks okay
 // given the quantized browser element.
 let fixWindow = function* (window) {
-  updateContainerAppearance(window.gBrowser.parentElement, true);
   if (canBeResized(window)) {
     yield shrinkwrap(window);
     if (!isMac && !isWindows) {
@@ -439,23 +438,22 @@ let fixWindow = function* (window) {
 let autoresize = function (window, stepMs, xStep, yStep) {
   let stop = false;
   Task.spawn(function* () {
-    // Fix the content dimensions once at startup.
-    updateDimensions(window, xStep, yStep);
-    yield fixWindow(window);
-    // Keep updating the dimensions whenever the user resizes
+    // Fix the content dimensions once at startup, and
+    // keep updating the dimensions whenever the user resizes
     // the window.
     while (!stop) {
+      updateContainerAppearance(window.gBrowser.parentElement, true);
       updateDimensions(window, xStep, yStep);
       // Do nothing until the user starts to resize window.
       let event = yield listenForTrueResize(window);
-      // If the user has released the mouse cursor on the window's drag/resize handle,
-      // then fixWindow will resize the window.
       if (!isTilingWindowManager) {
         while (event.type !== "timeout") {
           updateDimensions(window, xStep, yStep);
           event = yield listenForTrueResize(window, stepMs);
         }
       }
+      // The user has likely released the mouse cursor on the window's drag/resize handle,
+      // so call fixWindow to fix the window size, and then loop.
       yield fixWindow(window);
     }
   });
