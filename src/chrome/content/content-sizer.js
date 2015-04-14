@@ -155,7 +155,7 @@ let listenForTrueResize = function* (window, timeoutMs) {
     event = yield listen(window, "resize", true,
 			 finishTime ? finishTime - Date.now() : undefined);
   } while (event.type === "resize" &&
-	   originalWidth === window.outerWidth &&
+	         originalWidth === window.outerWidth &&
            originalHeight === window.outerHeight);
   [extraWindowWidth, extraWindowHeight] = yield getExtraOuterSize(window);
   return event;
@@ -429,6 +429,7 @@ let fixWindow = function* (window) {
       if (event !== "resize") {
         yield rebuild(window);
       }
+      return event;
     }
   }
 };
@@ -444,9 +445,11 @@ let autoresize = function (window, stepMs, xStep, yStep) {
     // the window.
     while (!stop) {
       updateDimensions(window, xStep, yStep);
-      yield fixWindow(window);
+      let event = yield fixWindow(window);
       // Do nothing until the user starts to resize window.
-      let event = yield listenForTrueResize(window);
+      if (!event || event.type !== "resize") {
+        event = yield listenForTrueResize(window);
+      }
       if (!isTilingWindowManager) {
         while (event.type !== "timeout") {
           updateDimensions(window, xStep, yStep);
