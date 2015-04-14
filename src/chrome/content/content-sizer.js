@@ -368,7 +368,7 @@ let gaps = function (window) {
       container = gBrowser.parentElement,
       // We need an extra margin of safety on Windows because
       // of possible DPI settings.
-      safetyMargin = isWindows ? 5 : 2,
+      safetyMargin = isWindows ? 5 : 0,
       deltaWidth = Math.max(0, container.clientWidth - gBrowser.clientWidth - safetyMargin),
       deltaHeight = Math.max(0, container.clientHeight - gBrowser.clientHeight - safetyMargin);
   return (deltaWidth === 0 && deltaHeight === 0) ? null
