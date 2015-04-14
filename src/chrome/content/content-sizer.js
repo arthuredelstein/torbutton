@@ -366,11 +366,8 @@ let reshape = function* (window, {left, top, width, height}, timeoutMs) {
 let gaps = function (window) {
   let gBrowser = window.gBrowser,
       container = gBrowser.parentElement,
-      // We need an extra margin of safety on Windows because
-      // of possible DPI settings.
-      safetyMargin = isWindows ? 5 : 0,
-      deltaWidth = Math.max(0, container.clientWidth - gBrowser.clientWidth - safetyMargin),
-      deltaHeight = Math.max(0, container.clientHeight - gBrowser.clientHeight - safetyMargin);
+      deltaWidth = Math.max(0, container.clientWidth - gBrowser.clientWidth),
+      deltaHeight = Math.max(0, container.clientHeight - gBrowser.clientHeight);
   return (deltaWidth === 0 && deltaHeight === 0) ? null
            : { deltaWidth : deltaWidth, deltaHeight : deltaHeight };
 };
