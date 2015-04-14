@@ -255,8 +255,9 @@ let computeTargetZoom = function (parentWidth, parentHeight, xStep, yStep, fillH
 // Changes the width and height of the gBrowser XUL element to be a multiple of x/yStep.
 let updateDimensions = function (window, xStep, yStep) {
   let gBrowser = window.gBrowser,
-      container = gBrowser.parentElement,
-      parentWidth = container.clientWidth,
+      container = gBrowser.parentElement;
+  updateContainerAppearance(container, true);
+  let parentWidth = container.clientWidth,
       parentHeight = container.clientHeight,
       longPage = !gBrowser.contentWindow.fullScreen,
       targetZoom = (canBeResized(window) && !isDocked(window)) ?
@@ -442,8 +443,8 @@ let autoresize = function (window, stepMs, xStep, yStep) {
     // keep updating the dimensions whenever the user resizes
     // the window.
     while (!stop) {
-      updateContainerAppearance(window.gBrowser.parentElement, true);
       updateDimensions(window, xStep, yStep);
+      yield fixWindow(window);
       // Do nothing until the user starts to resize window.
       let event = yield listenForTrueResize(window);
       if (!isTilingWindowManager) {
@@ -453,8 +454,7 @@ let autoresize = function (window, stepMs, xStep, yStep) {
         }
       }
       // The user has likely released the mouse cursor on the window's drag/resize handle,
-      // so call fixWindow to fix the window size, and then loop.
-      yield fixWindow(window);
+      // so loop and call fix window to fix the window size.
     }
   });
   return () => { stop = true; };
