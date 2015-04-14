@@ -444,13 +444,15 @@ let autoresize = function (window, stepMs, xStep, yStep) {
       updateDimensions(window, xStep, yStep);
       let event = yield fixWindow(window);
       // Do nothing until the user starts to resize window.
-      if (!event || event.type !== "resize") {
+      if ((!event || event.type !== "resize") && !stop) {
         event = yield listenForTrueResize(window);
       }
       if (!isTilingWindowManager) {
-        while (event.type !== "timeout") {
-          updateDimensions(window, xStep, yStep);
-          event = yield listenForTrueResize(window, stepMs);
+        while (event.type !== "timeout" && !stop) {
+          if (!stop) {
+            updateDimensions(window, xStep, yStep);
+            event = yield listenForTrueResize(window, stepMs);
+          }
         }
       }
       // The user has likely released the mouse cursor on the window's
@@ -476,6 +478,7 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
       originalMinHeight = container.minHeight,
       stopAutoresizing,
       activate = function (on) {
+        console.log("activate:", on);
         // Don't let the browser shrink below a single xStep x yStep size.
         container.minWidth = on ? xStep : originalMinWidth;
         container.minHeight = on ? yStep : originalMinHeight;
@@ -488,6 +491,7 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           stopAutoresizing = autoresize(window,
                                         (isMac || isWindows) ? 250 : 500,
                                         xStep, yStep);
+          console.log("activated");
         } else {
           if (stopAutoresizing) stopAutoresizing();
           // Ignore future resize events.
@@ -495,6 +499,7 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
           // Let gBrowser expand with its parent vbox.
           gBrowser.width = "";
           gBrowser.maxHeight = "";
+          console.log("deactivated");
         }
      };
   let unbind = bindPrefAndInit("extensions.torbutton.resize_windows", activate);
