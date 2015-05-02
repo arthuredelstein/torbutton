@@ -24,6 +24,22 @@ let createTorCircuitDisplay = (function () {
 
 "use strict";
 
+// ## Mutable state
+// The state stored in the following objects contains all information needed
+// to display the tor circuit display.
+
+// A mutable map that stores the current nodes for each
+// SOCKS username/password pair.
+let credentialsToNodeDataMap = {},
+    // A mutable map that reports `true` for IDs of "mature" circuits
+    // (those that have conveyed a stream).
+    knownCircuitIDs = {},
+    // A mutable map that records the latest credentials for each
+    // browser object (corresponding to a tab).
+    browserToCredentialsMap = new Map();
+
+// ## Utility functions
+
 // Mozilla utilities
 const Cu = Components.utils;
 Cu.import("resource://gre/modules/Services.jsm");
@@ -39,14 +55,151 @@ let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js");
 let logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Components.interfaces.nsISupports).wrappedJSObject;
 
-// ## Circuit/stream credentials and node monitoring
+// ## User interface
 
-// A mutable map that stores the current nodes for each
-// SOCKS username/password pair.
-let credentialsToNodeDataMap = {},
-    // A mutable map that reports `true` for IDs of "mature" circuits
-    // (those that have conveyed a stream).
-    knownCircuitIDs = {};
+// __torbuttonBundle__.
+// Bundle of localized strings for torbutton UI.
+let torbuttonBundle = Services.strings.createBundle(
+                        "chrome://torbutton/locale/torbutton.properties");
+
+// __uiString__.
+// Read the localized strings for this UI.
+let uiString = function (shortName) {
+  return torbuttonBundle.GetStringFromName("torbutton.circuit_display." + shortName);
+};
+
+// __regionBundle__.
+// A list of localized region (country) names.
+let regionBundle = Services.strings.createBundle(
+                     "chrome://global/locale/regionNames.properties");
+
+// __localizedCountryNameFromCode(countryCode)__.
+// Convert a country code to a localized country name.
+// Example: `'de'` -> `'Deutschland'` in German locale.
+let localizedCountryNameFromCode = function (countryCode) {
+  if (typeof(countryCode) === "undefined") return undefined;
+  try {
+    return regionBundle.GetStringFromName(countryCode.toLowerCase());
+  } catch (e) {
+    return countryCode.toUpperCase();
+  }
+};
+
+// __showCircuitDisplay(show)__.
+// If show === true, makes the circuit display visible.
+let showCircuitDisplay = function (show) {
+  document.getElementById("circuit-display-container").style.display = show ?
+							    'block' : 'none';
+};
+
+// __nodeLines(nodeData)__.
+// Takes a nodeData array of node items, each like
+// `{ ip : "12.34.56.78", country : "fr" }`
+// and converts each node data to text, as
+// `"France (12.34.56.78)"`.
+let nodeLines = function (nodeData) {
+  let result = [];
+  for (let {ip, countryCode, type, bridgeType} of nodeData) {
+    let bridge = type === "bridge",
+        country = countryCode ? localizedCountryNameFromCode(countryCode) : null;
+    result.push(
+      bridge ?
+               // As we have a bridge, don't show the IP address
+               // but show the bridge type.
+               (uiString("tor_bridge") +
+                ((bridgeType !== "vanilla") ? (": " + bridgeType) : "") +
+                 (country ? " (" + country + ")" : ""))
+             :
+               // For each non-bridge relay, show its host country and IP.
+               (country || uiString("unknown_country")) +
+               // As we don't have a bridge, show the IP address
+               // of the node. Use unicode escapes to ensure that
+               // parentheses behave properly in both left-to-right
+               // and right-to-left languages.
+               " &#x202D; (" + (ip || uiString("ip_unknown")) + ")&#x202C;"
+    );
+  }
+  return result;
+};
+
+// __getSOCKSCredentialsForChannel(channel)__.
+// Reads the SOCKS credentials for the corresponding channel object.
+let getSOCKSCredentialsForChannel = function (channel) {
+  if (channel === null) return null;
+  try {
+    channel.QueryInterface(Ci.nsIProxiedChannel);
+  } catch (e) {
+    return null;
+  }
+  let proxyInfo = channel.proxyInfo;
+  if (proxyInfo === null) return null;
+  return proxyInfo.username + ":" + proxyInfo.password;
+};
+
+// __onionSiteRelayLine__.
+// When we have an onion site, we simply show the word '(relay)'.
+let onionSiteRelayLine = "<li class='relay'>(" + uiString("relay") + ")</li>";
+
+// __updateCircuitDisplay()__.
+// Updates the Tor circuit display, showing the current domain
+// and the relay nodes for that domain.
+let updateCircuitDisplay = function () {
+  let selectedBrowser = gBrowser.selectedBrowser;
+  if (selectedBrowser) {
+    let credentials = browserToCredentialsMap.get(selectedBrowser),
+        nodeData = null;
+    if (credentials) {
+    // Check if we have anything to show for these credentials.
+      nodeData = credentialsToNodeDataMap[credentials];
+      if (nodeData) {
+	// Update the displayed domain.
+        let domain = credentials.split(":")[0];
+	document.getElementById("domain").innerHTML = "(" + domain + "):";
+	// Update the displayed information for the relay nodes.
+        let lines = nodeLines(nodeData),
+            nodeInnerHTML = "<li>" + uiString("this_browser") + "</li>";
+	for (let line of lines) {
+          nodeInnerHTML += "<li>" + line + "</li>";
+	}
+        nodeInnerHTML += domain.endsWith(".onion") ?
+                           (onionSiteRelayLine +
+                            onionSiteRelayLine +
+                            onionSiteRelayLine +
+                            "<li>" + uiString("onion_site") + "</li>") :
+                           "<li>" + uiString("internet") + "</li>";
+        document.getElementById("circuit-nodes").innerHTML = nodeInnerHTML;
+      }
+    }
+    // Only show the Tor circuit if we have credentials and node data.
+    showCircuitDisplay(credentials && nodeData);
+  }
+};
+
+// __syncDisplayWithSelectedTab(syncOn)__.
+// We may have multiple tabs, but there is only one instance of TorButton's popup
+// panel for displaying the Tor circuit UI. Therefore we need to update the display
+// to show the currently selected tab at its current location.
+let syncDisplayWithSelectedTab = (function() {
+  let listener = event => { updateCircuitDisplay(); };
+  return function (syncOn) {
+    if (syncOn) {
+      // Whenever a different tab is selected, change the circuit display
+      // to show the circuit for that tab's domain.
+      gBrowser.tabContainer.addEventListener("TabSelect", listener);
+      // Show the display.
+      updateCircuitDisplay();
+    } else {
+      // Stop syncing.
+      if (gBrowser.tabContainer) {
+        gBrowser.tabContainer.removeEventListener("TabSelect", listener);
+      }
+      // Hide the display.
+      showCircuitDisplay(false);
+    }
+  };
+})();
+
+// ## Circuit/stream credentials and node monitoring
 
 // __trimQuotes(s)__.
 // Removes quotation marks around a quoted string.
@@ -144,167 +297,42 @@ let collectIsolationData = function (aController) {
         if (credentials) {
           let nodeData = yield nodeDataForCircuit(aController, circuitStatus);
           credentialsToNodeDataMap[credentials] = nodeData;
+          updateCircuitDisplay();
         }
       }
     }).then(null, Cu.reportError));
 };
 
-// ## User interface
-
-// __torbuttonBundle__.
-// Bundle of localized strings for torbutton UI.
-let torbuttonBundle = Services.strings.createBundle(
-                        "chrome://torbutton/locale/torbutton.properties");
-
-// __uiString__.
-// Read the localized strings for this UI.
-let uiString = function (shortName) {
-  return torbuttonBundle.GetStringFromName("torbutton.circuit_display." + shortName);
-};
-
-// __regionBundle__.
-// A list of localized region (country) names.
-let regionBundle = Services.strings.createBundle(
-                     "chrome://global/locale/regionNames.properties");
-
-// __localizedCountryNameFromCode(countryCode)__.
-// Convert a country code to a localized country name.
-// Example: `'de'` -> `'Deutschland'` in German locale.
-let localizedCountryNameFromCode = function (countryCode) {
-  if (typeof(countryCode) === "undefined") return undefined;
-  try {
-    return regionBundle.GetStringFromName(countryCode.toLowerCase());
-  } catch (e) {
-    return countryCode.toUpperCase();
-  }
-};
-
-// __showCircuitDisplay(show)__.
-// If show === true, makes the circuit display visible.
-let showCircuitDisplay = function (show) {
-  document.getElementById("circuit-display-container").style.display = show ?
-							    'block' : 'none';
-};
-
-// __nodeLines(nodeData)__.
-// Takes a nodeData array of node items, each like
-// `{ ip : "12.34.56.78", country : "fr" }`
-// and converts each node data to text, as
-// `"France (12.34.56.78)"`.
-let nodeLines = function (nodeData) {
-  let result = [];
-  for (let {ip, countryCode, type, bridgeType} of nodeData) {
-    let bridge = type === "bridge",
-        country = countryCode ? localizedCountryNameFromCode(countryCode) : null;
-    result.push(
-      bridge ?
-               // As we have a bridge, don't show the IP address
-               // but show the bridge type.
-               (uiString("tor_bridge") +
-                ((bridgeType !== "vanilla") ? (": " + bridgeType) : "") +
-                 (country ? " (" + country + ")" : ""))
-             :
-               // For each non-bridge relay, show its host country and IP.
-               (country || uiString("unknown_country")) +
-               // As we don't have a bridge, show the IP address
-               // of the node. Use unicode escapes to ensure that
-               // parentheses behave properly in both left-to-right
-               // and right-to-left languages.
-               " &#x202D; (" + (ip || uiString("ip_unknown")) + ")&#x202C;"
-    );
-  }
-  return result;
-};
-
-// __getSOCKSCredentials(browser)__.
-// Reads the SOCKS credentials for the corresponding browser object.
-let getSOCKSCredentialsForBrowser = function (browser) {
-  if (browser === null) return null;
-  let docShell = browser.docShell;
-  if (docShell === null) return null;
-  let channel = docShell.currentDocumentChannel;
-  if (channel === null) return null;
-  try {
-    channel.QueryInterface(Ci.nsIProxiedChannel);
-  } catch (e) {
-    return null;
-  }
-  let proxyInfo = channel.proxyInfo;
-  if (proxyInfo === null) return null;
-  return proxyInfo.username + ":" + proxyInfo.password;
-};
-
-// __onionSiteRelayLine__.
-// When we have an onion site, we simply show the word '(relay)'.
-let onionSiteRelayLine = "<li class='relay'>(" + uiString("relay") + ")</li>";
-
-// __updateCircuitDisplay()__.
-// Updates the Tor circuit display, showing the current domain
-// and the relay nodes for that domain.
-let updateCircuitDisplay = function () {
-  let selectedBrowser = gBrowser.selectedBrowser;
-  if (selectedBrowser) {
-    let credentials = getSOCKSCredentialsForBrowser(selectedBrowser),
-        nodeData = null;
-    if (credentials) {
-    // Check if we have anything to show for these credentials.
-      nodeData = credentialsToNodeDataMap[credentials];
-      if (nodeData) {
-	// Update the displayed domain.
-        let domain = credentials.split(":")[0];
-	document.getElementById("domain").innerHTML = "(" + domain + "):";
-	// Update the displayed information for the relay nodes.
-        let lines = nodeLines(nodeData),
-            nodeInnerHTML = "<li>" + uiString("this_browser") + "</li>";
-	for (let line of lines) {
-          nodeInnerHTML += "<li>" + line + "</li>";
-	}
-        nodeInnerHTML += domain.endsWith(".onion") ?
-                           (onionSiteRelayLine +
-                            onionSiteRelayLine +
-                            onionSiteRelayLine +
-                            "<li>" + uiString("onion_site") + "</li>") :
-                           "<li>" + uiString("internet") + "</li>";
-        document.getElementById("circuit-nodes").innerHTML = nodeInnerHTML;
+// __listenForConnectionStart(gBrowser, callback)__.
+// Whenever a tab starts a new connection, calls
+// `callback(browser, webProgress, request)`.
+// Returns a zero-arg function that stops listening.
+let listenForConnectionStart = function (gBrowser, callback) {
+  let listener = {
+    onStateChange: function (browser, webProgress, request, stateFlags, status) {
+      if (stateFlags & Ci.nsIWebProgressListener.STATE_START) {
+        callback(browser, webProgress, request);
       }
-    }
-    // Only show the Tor circuit if we have credentials and node data.
-    showCircuitDisplay(credentials && nodeData);
-  }
-};
-
-// __syncDisplayWithSelectedTab(syncOn)__.
-// We may have multiple tabs, but there is only one instance of TorButton's popup
-// panel for displaying the Tor circuit UI. Therefore we need to update the display
-// to show the currently selected tab at its current location.
-let syncDisplayWithSelectedTab = (function() {
-  let listener1 = event => { updateCircuitDisplay(); },
-      listener2 = { onLocationChange : function (aBrowser) {
-                      if (aBrowser === gBrowser.selectedBrowser) {
-                        updateCircuitDisplay();
-                      }
-                    } };
-  return function (syncOn) {
-    if (syncOn) {
-      // Whenever a different tab is selected, change the circuit display
-      // to show the circuit for that tab's domain.
-      gBrowser.tabContainer.addEventListener("TabSelect", listener1);
-      // If the currently selected tab has been sent to a new location,
-      // update the circuit to reflect that.
-      gBrowser.addTabsProgressListener(listener2);
-      // Get started with a correct display.
-      updateCircuitDisplay();
-    } else {
-      // Stop syncing.
-      if (gBrowser.tabContainer) {
-        gBrowser.tabContainer.removeEventListener("TabSelect", listener1);
-      }
-      gBrowser.removeTabsProgressListener(listener2);
-      // Hide the display.
-      showCircuitDisplay(false);
     }
   };
-})();
+  gBrowser.addTabsProgressListener(listener);
+  return () => gBrowser.removeTabsProgressListener(listener);
+};
+
+// __collectCredentials(gBrowser)__.
+// Whenever a tab starts a new connection, the SOCKS credentials
+// will be read from the new channel's proxyInfo. Credentials for
+// each tab are stored, and the circuit display is updated for the
+// currently selected tab.
+let collectCredentials = function (gBrowser) {
+  return listenForConnectionStart(gBrowser, function (browser, webProgress, request) {
+    setTimeout(function () {
+      let credentials = getSOCKSCredentialsForChannel(request);
+      browserToCredentialsMap.set(browser, credentials);
+      updateCircuitDisplay();
+    });
+  });
+};
 
 // ## Main function
 
@@ -314,11 +342,15 @@ let syncDisplayWithSelectedTab = (function() {
 let setupDisplay = function (host, port, password, enablePrefName) {
   let myController = null,
       stopCollectingIsolationData = null,
+      stopCollectingCredentials = null,
       stop = function() {
         if (myController) {
           syncDisplayWithSelectedTab(false);
           if (stopCollectingIsolationData) {
 	    stopCollectingIsolationData();
+          }
+          if (stopCollectingCredentials) {
+            stopCollectingCredentials();
           }
           myController = null;
         }
@@ -334,6 +366,7 @@ let setupDisplay = function (host, port, password, enablePrefName) {
           });
           syncDisplayWithSelectedTab(true);
           stopCollectingIsolationData = collectIsolationData(myController);
+          stopCollectingCredentials = collectCredentials(gBrowser);
        }
      };
   try {
