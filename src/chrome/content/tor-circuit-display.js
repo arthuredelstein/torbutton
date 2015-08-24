@@ -144,6 +144,7 @@ let collectIsolationData = function (aController) {
         if (credentials) {
           let nodeData = yield nodeDataForCircuit(aController, circuitStatus);
           credentialsToNodeDataMap[credentials] = nodeData;
+          updateCircuitDisplay();
         }
       }
     }).then(null, Cu.reportError));
