@@ -128,7 +128,7 @@ let getCircuitStatusByID = function* (aController, circuitID) {
 // we assume isolation settings (SOCKS username+password) are now fixed for the
 // corresponding circuit. Whenever the first stream on a new circuit is seen,
 // looks up u+p and records the node data in the credentialsToNodeDataMap.
-let collectIsolationData = function (aController) {
+let collectIsolationData = function (aController, updateUI) {
   return aController.watchEvent(
     "STREAM",
     streamEvent => streamEvent.StreamStatus === "SENTCONNECT",
@@ -144,6 +144,7 @@ let collectIsolationData = function (aController) {
         if (credentials) {
           let nodeData = yield nodeDataForCircuit(aController, circuitStatus);
           credentialsToNodeDataMap[credentials] = nodeData;
+          updateUI();
         }
       }
     }).then(null, Cu.reportError));
@@ -274,32 +275,28 @@ let updateCircuitDisplay = function () {
 };
 
 // __syncDisplayWithSelectedTab(syncOn)__.
-// We may have multiple tabs, but there is only one instance of TorButton's popup
-// panel for displaying the Tor circuit UI. Therefore we need to update the display
-// to show the currently selected tab at its current location.
+// Whenever user starts to open the popup menu, make sure the display
+// is the correct one for this tab.
+// It's also possible that a new site can be loaded while popup menu is open.
+// Update the display if this happens.
 let syncDisplayWithSelectedTab = (function() {
-  let listener1 = event => { updateCircuitDisplay(); },
-      listener2 = { onLocationChange : function (aBrowser) {
+  let listener = { onLocationChange : function (aBrowser) {
                       if (aBrowser === gBrowser.selectedBrowser) {
                         updateCircuitDisplay();
                       }
                     } };
   return function (syncOn) {
+    let popupMenu = document.getElementById("torbutton-context-menu");
     if (syncOn) {
-      // Whenever a different tab is selected, change the circuit display
-      // to show the circuit for that tab's domain.
-      gBrowser.tabContainer.addEventListener("TabSelect", listener1);
+      // Update the circuit display just before popup menu is shown.
+      popupMenu.addEventListener("popupshowing", updateCircuitDisplay);
       // If the currently selected tab has been sent to a new location,
       // update the circuit to reflect that.
-      gBrowser.addTabsProgressListener(listener2);
-      // Get started with a correct display.
-      updateCircuitDisplay();
+      gBrowser.addTabsProgressListener(listener);
     } else {
       // Stop syncing.
-      if (gBrowser.tabContainer) {
-        gBrowser.tabContainer.removeEventListener("TabSelect", listener1);
-      }
-      gBrowser.removeTabsProgressListener(listener2);
+      gBrowser.removeTabsProgressListener(listener);
+      popupMenu.removeEventListener("popupshowing", updateCircuitDisplay);
       // Hide the display.
       showCircuitDisplay(false);
     }
@@ -333,7 +330,7 @@ let setupDisplay = function (host, port, password, enablePrefName) {
             stop();
           });
           syncDisplayWithSelectedTab(true);
-          stopCollectingIsolationData = collectIsolationData(myController);
+          stopCollectingIsolationData = collectIsolationData(myController, updateCircuitDisplay);
        }
      };
   try {
