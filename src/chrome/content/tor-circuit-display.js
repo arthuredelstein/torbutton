@@ -220,13 +220,19 @@ let nodeLines = function (nodeData) {
   return result;
 };
 
-// __getSOCKSCredentials(browser)__.
-// Reads the SOCKS credentials for the corresponding browser object.
-let getSOCKSCredentialsForBrowser = function (browser) {
+// __getDocumentChannelForBrowser(browser)__.
+// For the given browser (tab) object, returns the
+// channel that loaded the document.
+let getDocumentChannelForBrowser = function (browser) {
   if (browser === null) return null;
   let docShell = browser.docShell;
   if (docShell === null) return null;
   let channel = docShell.currentDocumentChannel;
+  return channel;
+}
+// __getSOCKSCredentialsForChannel(channel)__.
+// Reads the SOCKS credentials for a given nsIChannel.
+let getSOCKSCredentialsForChannel = function (channel) {
   if (channel === null) return null;
   try {
     channel.QueryInterface(Ci.nsIProxiedChannel);
@@ -248,7 +254,8 @@ let onionSiteRelayLine = "<li class='relay'>(" + uiString("relay") + ")</li>";
 let updateCircuitDisplay = function () {
   let selectedBrowser = gBrowser.selectedBrowser;
   if (selectedBrowser) {
-    let credentials = getSOCKSCredentialsForBrowser(selectedBrowser),
+    let channel = getDocumentChannelForBrowser(selectedBrowser),
+        credentials = getSOCKSCredentialsForChannel(channel),
         nodeData = null;
     if (credentials) {
     // Check if we have anything to show for these credentials.
