@@ -41,12 +41,60 @@ let logger = Cc["@torproject.org/torbutton-logger;1"]
 
 // ## Circuit/stream credentials and node monitoring
 
-// A mutable map that stores the current nodes for each
-// SOCKS username/password pair.
-let credentialsToNodeDataMap = {},
-    // A mutable map that reports `true` for IDs of "mature" circuits
-    // (those that have conveyed a stream).
-    knownCircuitIDs = {};
+// The latest channel for each browser object.
+let browserToChannelMap = new Map(),
+    // A mutable set that records document channels as they are created.
+    documentChannels = new Set(),
+    // A mutable map that stores the node data for each channel.
+    channelsToNodeDataMap = new Map();
+
+// __getDocumentChannelForBrowser(browser)__.
+// For the given browser (tab) object, returns the
+// channel that loaded the document.
+let getDocumentChannelForBrowser = function (browser) {
+  if (browser === null) return null;
+  let docShell = browser.docShell;
+  if (docShell === null) return null;
+  let channel = docShell.currentDocumentChannel;
+  return channel;
+};
+
+// __getSOCKSCredentialsForChannel(channel)__.
+// Reads the SOCKS credentials for a given nsIChannel.
+let getSOCKSCredentialsForChannel = function (channel) {
+  if (channel === null) return null;
+  try {
+    channel.QueryInterface(Ci.nsIProxiedChannel);
+  } catch (e) {
+    return null;
+  }
+  let proxyInfo = channel.proxyInfo;
+  if (proxyInfo === null) return null;
+  return proxyInfo.username + ":" + proxyInfo.password;
+};
+
+// __listenForConnectionStart(gBrowser, callback)__.
+// Whenever a tab starts a new connection, calls
+// `callback(browser, webProgress, request)`.
+// Returns a zero-arg function that stops listening.
+let listenForConnectionStart = function (gBrowser, callback) {
+  let listener = {
+    onStateChange: function (browser, webProgress, request, stateFlags, status) {
+      if (stateFlags & Ci.nsIWebProgressListener.STATE_START) {
+        callback(browser, webProgress, request);
+      }
+    }
+  };
+  gBrowser.addTabsProgressListener(listener);
+  return () => gBrowser.removeTabsProgressListener(listener);
+};
+
+let monitorRequests = function () {
+  return listenForConnectionStart(gBrowser, function (browser, progress, request) {
+    browserToChannelMap.set(browser, request);
+    documentChannels.add(request);
+  });
+};
 
 // __trimQuotes(s)__.
 // Removes quotation marks around a quoted string.
@@ -132,13 +180,16 @@ let getCircuitStatusByID = function* (aController, circuitID) {
 // is received. So the `updateUI` callback will be called at that point.
 // See https://trac.torproject.org/projects/tor/ticket/15493
 let collectIsolationData = function (aController, updateUI) {
+  // A mutable Set that records IDs of "mature" circuits
+  // (those that have conveyed a stream).
+  let knownCircuitIDs = new Set();
   return aController.watchEvent(
     "STREAM",
     streamEvent => streamEvent.StreamStatus === "SENTCONNECT",
     streamEvent => Task.spawn(function* () {
-      if (!knownCircuitIDs[streamEvent.CircuitID]) {
+      if (!knownCircuitIDs.has(streamEvent.CircuitID)) {
         logger.eclog(3, "streamEvent.CircuitID: " + streamEvent.CircuitID);
-        knownCircuitIDs[streamEvent.CircuitID] = true;
+        knownCircuitIDs.add(streamEvent.CircuitID);
         let circuitStatus = yield getCircuitStatusByID(aController, streamEvent.CircuitID),
             credentials = circuitStatus ?
                             (trimQuotes(circuitStatus.SOCKS_USERNAME) + ":" +
@@ -146,7 +197,12 @@ let collectIsolationData = function (aController, updateUI) {
                             null;
         if (credentials) {
           let nodeData = yield nodeDataForCircuit(aController, circuitStatus);
-          credentialsToNodeDataMap[credentials] = nodeData;
+          for (let documentChannel of documentChannels) {
+            if (getSOCKSCredentialsForChannel(documentChannel) == credentials) {
+              channelsToNodeDataMap.set(documentChannel, [credentials, nodeData]);
+              documentChannels.delete(documentChannel);
+            }
+          }
           updateUI();
         }
       }
@@ -220,30 +276,6 @@ let nodeLines = function (nodeData) {
   return result;
 };
 
-// __getDocumentChannelForBrowser(browser)__.
-// For the given browser (tab) object, returns the
-// channel that loaded the document.
-let getDocumentChannelForBrowser = function (browser) {
-  if (browser === null) return null;
-  let docShell = browser.docShell;
-  if (docShell === null) return null;
-  let channel = docShell.currentDocumentChannel;
-  return channel;
-}
-// __getSOCKSCredentialsForChannel(channel)__.
-// Reads the SOCKS credentials for a given nsIChannel.
-let getSOCKSCredentialsForChannel = function (channel) {
-  if (channel === null) return null;
-  try {
-    channel.QueryInterface(Ci.nsIProxiedChannel);
-  } catch (e) {
-    return null;
-  }
-  let proxyInfo = channel.proxyInfo;
-  if (proxyInfo === null) return null;
-  return proxyInfo.username + ":" + proxyInfo.password;
-};
-
 // __onionSiteRelayLine__.
 // When we have an onion site, we simply show the word '(relay)'.
 let onionSiteRelayLine = "<li class='relay'>(" + uiString("relay") + ")</li>";
@@ -254,32 +286,29 @@ let onionSiteRelayLine = "<li class='relay'>(" + uiString("relay") + ")</li>";
 let updateCircuitDisplay = function () {
   let selectedBrowser = gBrowser.selectedBrowser;
   if (selectedBrowser) {
-    let channel = getDocumentChannelForBrowser(selectedBrowser),
-        credentials = getSOCKSCredentialsForChannel(channel),
+    let channel = browserToChannelMap.get(selectedBrowser),
+        credentials = null,
         nodeData = null;
-    if (credentials) {
-    // Check if we have anything to show for these credentials.
-      nodeData = credentialsToNodeDataMap[credentials];
-      if (nodeData) {
-	// Update the displayed domain.
-        let domain = credentials.split(":")[0];
-	document.getElementById("domain").innerHTML = "(" + domain + "):";
-	// Update the displayed information for the relay nodes.
-        let lines = nodeLines(nodeData),
-            nodeInnerHTML = "<li>" + uiString("this_browser") + "</li>";
-	for (let line of lines) {
-          nodeInnerHTML += "<li>" + line + "</li>";
-	}
-        nodeInnerHTML += domain.endsWith(".onion") ?
-                           (onionSiteRelayLine +
-                            onionSiteRelayLine +
-                            onionSiteRelayLine +
-                            "<li>" + uiString("onion_site") + "</li>") :
-                           "<li>" + uiString("internet") + "</li>";
-        document.getElementById("circuit-nodes").innerHTML = nodeInnerHTML;
+    // Check if we have anything to show for this channel.
+    if (channel && channelsToNodeDataMap.has(channel)) {
+      [credentials, nodeData] = channelsToNodeDataMap.get(channel);
+      // Update the displayed domain.
+      let domain = credentials.split(":")[0];
+      document.getElementById("domain").innerHTML = "(" + domain + "):";
+      // Update the displayed information for the relay nodes.
+      let lines = nodeLines(nodeData),
+          nodeInnerHTML = "<li>" + uiString("this_browser") + "</li>";
+      for (let line of lines) {
+        nodeInnerHTML += "<li>" + line + "</li>";
       }
+      nodeInnerHTML += domain.endsWith(".onion") ?
+                         (onionSiteRelayLine +
+                          onionSiteRelayLine +
+                          onionSiteRelayLine +
+                          "<li>" + uiString("onion_site") + "</li>") :
+                          "<li>" + uiString("internet") + "</li>";
+      document.getElementById("circuit-nodes").innerHTML = nodeInnerHTML;
     }
-    // Only show the Tor circuit if we have credentials and node data.
     showCircuitDisplay(credentials && nodeData);
   }
 };
@@ -340,6 +369,7 @@ let setupDisplay = function (host, port, password, enablePrefName) {
             stop();
           });
           syncDisplayWithSelectedTab(true);
+          monitorRequests();
           stopCollectingIsolationData = collectIsolationData(myController, updateCircuitDisplay);
        }
      };
