@@ -1,11 +1,14 @@
 // # Utils.js
 // Various helpful utility functions.
 
-// ### Shortcut
-const Cu = Components.utils;
+/* jshint esnext:true */
+
+// ### Mozilla Abbreviations
+let {classes: Cc, interfaces: Ci, results: Cr, Constructor: CC, utils: Cu } = Components;
 
 // ### Import Mozilla Services
 Cu.import("resource://gre/modules/Services.jsm");
+const XMLHttpRequest = Components.Constructor("@mozilla.org/xmlextras/xmlhttprequest;1", "nsIXMLHttpRequest");
 
 // ## Pref utils
 
@@ -54,3 +57,69 @@ let getEnv = function (name) {
 
 // Export utility functions for external use.
 let EXPORTED_SYMBOLS = ["bindPrefAndInit", "getPrefValue", "getEnv"];
+
+// ## Observers
+
+// __addObserverFunction__.
+// Attach an observerFunction for the given notification type.
+// When notification is triggered, the observerFunction will
+// be called with arguments (subject, data). Returns an
+// zero-arg anonymous function that detaches the observer.
+let addObserverFunction = function(notification, observerFunction) {
+  let observer = {
+    observe: function (subject, topic, data) {
+      if (topic === notification) {
+        observerFunction(subject, data);
+      }
+    }
+  };
+  Services.obs.addObserver(observer, notification, false);
+  return function () {
+    Services.obs.removeObserver(observer, notification);
+  };
+};
+
+// ## Script injection
+
+// __injectedScripts__.
+// Keeps track of scripts that have been injected into content documents,
+// to make sure we don't injected the same script more than once.
+// A map from the script URL to the cancel function.
+let injectedScripts = new Map();
+
+// __getSource__.
+// Uses an XMLHttpRequest to obtain the text at url.
+let getSource = function (url, onReceive) {
+  let request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = function () {
+    onReceive(request.responseText);
+  };
+  request.overrideMimeType('text/plain;charset=UTF-8');
+  request.send();
+};
+
+// __runScriptFirstInEachContentWindow__.
+// In each future new content document (such as a new tab or iframe),
+// run the script at scriptURL in the content's global "window" scope
+// before any content is loaded. Returns a zero-arg function that
+// cancels the behavior.
+let runScriptFirstInEachContentWindow = function (scriptURL) {
+  if (!injectedScripts.has(scriptURL)) {
+    let cancel;
+    getSource(scriptURL, function (scriptContents) {
+      cancel = addObserverFunction("content-document-global-created",
+        function (subject, data) {
+          if (subject instanceof Ci.nsIDOMWindow && subject.eval) {
+            subject.eval(scriptContents);
+          }
+        });
+    });
+    injectedScripts.set(scriptURL, function () {
+      if (cancel) { cancel(); }
+      injectedScripts.delete(scriptURL);
+    });
+  }
+  return injectedScripts.get(scriptURL);
+};
+
