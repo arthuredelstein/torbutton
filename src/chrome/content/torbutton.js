@@ -21,6 +21,7 @@ XPCOMUtils.defineLazyModuleGetter(this, "WebConsoleUtils",
 
 let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm');
 let { Services } = Cu.import("resource://gre/modules/Services.jsm");
+let { runScriptFirstInEachContentWindow } = Cu.import("resource://torbutton/modules/utils.js");
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -646,6 +647,11 @@ function torbutton_init() {
 
     createTorCircuitDisplay(m_tb_control_host, m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
+
+    // Inject Intl.js polyfill for Windows
+    if (Services.appinfo.OS === "WINNT") {
+      runScriptFirstInEachContentWindow("resource://torbutton/chrome/content/Intl.js");
+    }
 
     torbutton_log(3, 'init completed');
 }
