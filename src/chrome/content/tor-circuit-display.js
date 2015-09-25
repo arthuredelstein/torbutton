@@ -194,28 +194,29 @@ let showCircuitDisplay = function (show) {
 // Takes a nodeData array of node items, each like
 // `{ ip : "12.34.56.78", country : "fr" }`
 // and converts each node data to text, as
-// `"France (12.34.56.78)"`.
+// `"France (12.34.56.78)"`. Guard/bridge IP
+// address and country remains hidden.
 let nodeLines = function (nodeData) {
-  let result = [];
+  let result = [], lineIndex = 0;
   for (let {ip, countryCode, type, bridgeType} of nodeData) {
-    let bridge = type === "bridge",
-        country = countryCode ? localizedCountryNameFromCode(countryCode) : null;
-    result.push(
-      bridge ?
-               // As we have a bridge, don't show the IP address
-               // but show the bridge type.
-               (uiString("tor_bridge") +
-                ((bridgeType !== "vanilla") ? (": " + bridgeType) : "") +
-                 (country ? " (" + country + ")" : ""))
-             :
-               // For each non-bridge relay, show its host country and IP.
-               (country || uiString("unknown_country")) +
-               // As we don't have a bridge, show the IP address
-               // of the node. Use unicode escapes to ensure that
-               // parentheses behave properly in both left-to-right
-               // and right-to-left languages.
-               " &#x202D; (" + (ip || uiString("ip_unknown")) + ")&#x202C;"
-    );
+    if (lineIndex === 0) {
+      // For extra protection, don't show the IP address
+      // or country for guard or bridge.
+      if (type === "bridge") {
+        result.push(
+          uiString("tor_bridge") +
+            ((bridgeType !== "vanilla") ? (": " + bridgeType) : ""));
+      } else {
+        result.push(uiString("tor_guard"));
+      }
+    } else {
+      let country = countryCode ? localizedCountryNameFromCode(countryCode)
+          : uiString("unknown_country");
+      result.push(
+        (country || uiString("unknown_country")) +
+          " &#x202D; (" + (ip || uiString("ip_unknown")) + ")&#x202C;");
+    }
+    ++lineIndex;
   }
   return result;
 };
