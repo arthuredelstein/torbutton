@@ -18,7 +18,7 @@ body {
   margin: 0px auto;
   padding: 0px 0px;
   font-size: 62.5%;
-  font-family: "Liberation Serif", "Times New Roman", Times, serif;
+  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
   font-weight: normal;
   color: #4d4d4d;
   background-color: #FFFFFF;
@@ -40,7 +40,6 @@ body[toron] {
   right: 6px;
   height: 30px;
   width: 200px;
-  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
   font-size: 1.4em;
   white-space: pre-wrap;
   text-align: right;
@@ -56,6 +55,8 @@ body[toron] #torstatus-image {
   height: 128px;
   width: 128px;
   background-image: url('chrome://torbutton/content/aboutTor/tor-off.png');
+  background-repeat: no-repeat;
+  background-position: center;
   z-index: -1;
 }
 
@@ -127,7 +128,11 @@ body:not([toron]) .hideIfTorOff {
   display: none;
 }
 
-body[toron] .top h1, body[toron] .top h2 {
+body[toron] .top h1 {
+  color: #600060;
+}
+
+body[toron] .top h2 {
   color: #008000;
 }
 
@@ -151,7 +156,7 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 }
 
 .top h1 {
-  font-size: 4.14em;
+  font-size: 4.00em;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -167,9 +172,9 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 }
 
 .top h3 {
-  font-size: 2.04em;
-  font-style: italic;
+  font-size: 1.8em;
   font-weight: normal;
+  color: #3B503C;
 }
 
 #middle {
@@ -179,6 +184,7 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
   border-spacing: 100px 0px;
   border-collapse: separate;
   text-align: center;
+  font-size: 1.6em;
 }
 
 .bubbleRow {
@@ -189,29 +195,27 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
   display: table-cell;
   width: 50%;
   height: 100%;
-  padding: 10px 10px;
-  color: #222222;
+  padding: 20px 30px;
+  color: #3B503C;
   background-color: #FFFFFF;
-  border: 1px solid #008000;
+  border: none;
   border-radius: 16px;
-  text-align: center;
+  text-align: initial;
   vertical-align: top;
 }
 
 #middle h1 {
-  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
-  font-size: 1.9em;
+  font-size: 1.2em;
   margin-bottom: 10px;
 }
 
 #middle h2 {
-  font-size: 1.4em;
+  font-size: 1.1em;
   margin: 9px 0px 3px 0px;
   font-weight: 500;
 }
 
 #middle h6 {
-  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1em;
   font-style: italic;
@@ -220,30 +224,20 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 }
 
 #middle p {
-  font-size: 1.35em;
-  text-align: left;
-}
-
-#middle p:-moz-dir(rtl) {
-  text-align: right;
-}
-
-#middle a {
-  font-size: 1.35em;
+  text-align: initial;
 }
 
 #middle a.tips {
   display: block;
-  margin-top: 1.35em;
+  margin-top: 1.6em;
 }
 
 #middle ul {
-  text-align: left;
+  text-align: initial;
   padding: 5px 0 0 22px;
 }
 
 #middle ul:-moz-dir(rtl) {
-  text-align: right;
   padding: 5px 22px 0 0;
 }
 
@@ -252,14 +246,14 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 }
 
 #bottom {
-  margin: 0px auto;
+  margin: 30px 0px 0px 0px;
   padding-bottom: 40px;
   float: left;
 }
 
 #bottom p {
-  font-size: 1.8em;
-  text-align: justify;
+  font-size: 1.6em;
+  text-align: initial;
   margin: 10px 125px 0px 125px;
 }
 
@@ -276,7 +270,6 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 #bottom h4 {
   margin-top: 50px;
   line-height: 1em;
-  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: normal;
   text-align: center;
@@ -285,7 +278,6 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 #bottom p.lang {
   max-width: 620px;
   margin: 10px auto;
-  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: normal;
   text-align: center;
@@ -312,7 +304,7 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 }
 
 #sbutton input {
-  height: 32px;
+  height: 34px;
   width: 33px;
   border: 0;
   background: url('chrome://torbutton/content/aboutTor/search.png') no-repeat top left;
@@ -321,25 +313,20 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 
 /* #sxw is the container div for the search field and button */
 #sxw {
-  border-top: rgb(31,119,45) solid 1px;
-  border-left: rgb(31,119,45) solid 1px;
-  border-bottom: rgb(94,213,99) solid 1px;
-  border-right: none;
-  border-radius: 3px 0 0 3px;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-  border-top-left-radius: 3px 3px;
-  border-bottom-left-radius: 3px 3px;
+  border: none;
 }
 
 /* #sx is the search input (text) field */
 #sx {
+  border-color: lightgray;
+  border-style: solid;
+  border-width: 1px 0px 1px 1px;
   width: 350px;
   min-height: 23px;
   padding: 4px 6px 5px 6px;
   margin: 0;
   outline: none;
   color: #222;
-  border: none;
   font-family: "Segoe UI","Arial",sans-serif;
   font-size: 18px;
 }
