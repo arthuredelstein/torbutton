@@ -209,7 +209,7 @@ io.callbackDispatcher = function () {
 
 // __io.matchRepliesToCommands(asyncSend, dispatcher)__.
 // Takes asyncSend(message), an asynchronous send function, and the callback
-// displatcher, and returns a function Promise<response> sendCommand(command).
+// dispatcher, and returns a function Promise<response> sendCommand(command).
 io.matchRepliesToCommands = function (asyncSend, dispatcher) {
   let commandQueue = [],
       sendCommand = function (command, replyCallback, errorCallback) {
@@ -254,7 +254,7 @@ io.controlSocket = function (host, port, password, onError) {
                               io.onDataFromOnLine(
                                    io.onLineFromOnMessage(mainDispatcher.pushMessage)),
                               onError),
-      // Tor expects any commands to be terminated by CRLF.
+      // Controllers should send commands terminated by CRLF.
       writeLine = function (text) { socket.write(text + "\r\n"); },
       // Create a sendCommand method from writeLine.
       sendCommand = io.matchRepliesToCommands(writeLine, mainDispatcher),
@@ -371,6 +371,10 @@ utils.listMapData = function (parameterString, listNames) {
   return dataMap;
 };
 
+// __utils.rejectPromise(errorMessage)__.
+// Returns a rejected promise with the given error message.
+utils.rejectPromise = errorMessage => Promise.reject(new Error(errorMessage));
+
 // ## info
 // A namespace for functions related to tor's GETINFO and GETCONF command.
 let info = info || {};
@@ -387,7 +391,7 @@ let info = info || {};
 // or single-line (with a `250-` or `250 ` prefix):
 //
 //     250-version=0.2.6.0-alpha-dev (git-b408125288ad6943)
-info.keyValueStringsFromMessage = utils.extractor(/^(250\+[\s\S]+?^\.|250[-\ ].+?)$/gmi);
+info.keyValueStringsFromMessage = utils.extractor(/^(250\+[\s\S]+?^\.|250[- ].+?)$/gmi);
 
 // __info.applyPerLine(transformFunction)__.
 // Returns a function that splits text into lines,
@@ -400,7 +404,7 @@ info.applyPerLine = function (transformFunction) {
 
 // __info.routerStatusParser(valueString)__.
 // Parses a router status entry as, described in
-// https://gitweb.torproject.org/torspec.git/blob/HEAD:/dir-spec.txt
+// https://gitweb.torproject.org/torspec.git/tree/dir-spec.txt
 // (search for "router status entry")
 info.routerStatusParser = function (valueString) {
   let lines = utils.splitLines(valueString),
@@ -418,7 +422,6 @@ info.routerStatusParser = function (valueString) {
           "v" : data => ({ "version" : data }),
           "w" : data => utils.listMapData(data, []),
           "p" : data => ({ "portList" : data.split(",") }),
-          "m" : data => utils.listMapData(data, [])
         }[line.charAt(0)];
     if (dataFun !== undefined) {
       objects.push(dataFun(myData));
@@ -448,21 +451,6 @@ info.streamStatusParser = function (text) {
                                   "CircuitID", "Target"]);
 };
 
-// __info.configTextParser(text)__.
-// Parse the output of a `getinfo config-text`.
-info.configTextParser = function(text) {
-  let result = {};
-  utils.splitLines(text).map(function(line) {
-    let [name, value] = utils.splitAtFirst(line, /\s/);
-    if (name) {
-      if (!result.hasOwnProperty(name)) result[name] = [];
-      result[name].push(value);
-    }
-  });
-  return result;
-};
-
-
 // __info.bridgeParser(bridgeLine)__.
 // Takes a single line from a `getconf bridge` result and returns
 // a map containing the bridge's type, address, and ID.
@@ -488,16 +476,15 @@ info.bridgeParser = function(bridgeLine) {
 // A map of GETINFO and GETCONF keys to parsing function, which convert
 // result strings to JavaScript data.
 info.parsers = {
-  "version" : utils.identity,
-  "config-file" : utils.identity,
-  "config-defaults-file" : utils.identity,
-  "config-text" : info.configTextParser,
   "ns/id/" : info.routerStatusParser,
-  "ns/name/" : info.routerStatusParser,
   "ip-to-country/" : utils.identity,
   "circuit-status" : info.applyPerLine(info.circuitStatusParser),
-  "stream-status" : info.applyPerLine(info.streamStatusParser),
-  "bridge" : info.bridgeParser
+  "bridge" : info.bridgeParser,
+  // Currently unused parsers:
+  //  "ns/name/" : info.routerStatusParser,
+  //  "stream-status" : info.applyPerLine(info.streamStatusParser),
+  //  "version" : utils.identity,
+  //  "config-file" : utils.identity,
 };
 
 // __info.getParser(key)__.
@@ -512,13 +499,14 @@ info.getParser = function(key) {
 // Converts a key-value string as from GETINFO or GETCONF to a value.
 info.stringToValue = function (string) {
   // key should look something like `250+circuit-status=` or `250-circuit-status=...`
-  // or `250 circuit-status...`
-  let matchForKey = string.match(/^250[ +-](.+?)=/mi),
+  // or `250 circuit-status=...`
+  let matchForKey = string.match(/^250[ +-](.+?)=/),
       key = matchForKey ? matchForKey[1] : null;
   if (key === null) return null;
-  // matchResult finds a single-line result for `250-` or a multi-line one for `250+`.
-  let matchResult = string.match(/^250[ -].+?=(.*?)$/mi) ||
-                    string.match(/^250\+.+?=([\s\S]*?)^\.$/mi),
+  // matchResult finds a single-line result for `250-` or `250 `,
+  // or a multi-line one for `250+`.
+  let matchResult = string.match(/^250[ -].+?=(.*)$/) ||
+                    string.match(/^250\+.+?=([\s\S]*?)^\.$/m),
       // Retrieve the captured group (the text of the value in the key-value pair)
       valueString = matchResult ? matchResult[1] : null,
       // Get the parser function for the key found.
@@ -538,48 +526,27 @@ info.getMultipleResponseValues = function (message) {
              .filter(utils.identity);
 };
 
-// __info.getInfoMultiple(aControlSocket, keys)__.
-// Sends GETINFO for an array of keys. Returns a promise with an array of results.
-info.getInfoMultiple = function (aControlSocket, keys) {
-  /*
-  if (!(keys instanceof Array)) {
-    throw new Error("keys argument should be an array");
-  }
-  if (!(onData instanceof Function)) {
-    throw new Error("onData argument should be a function");
-  }
-  let parsers = keys.map(info.getParser);
-  if (parsers.indexOf("unknown") !== -1) {
-    throw new Error("unknown key");
-  }
-  if (parsers.indexOf("not supported") !== -1) {
-    throw new Error("unsupported key");
-  }
-  */
-  return aControlSocket.sendCommand("getinfo " + keys.join(" "))
-                       .then(info.getMultipleResponseValues);
-};
-
 // __info.getInfo(controlSocket, key)__.
 // Sends GETINFO for a single key. Returns a promise with the result.
 info.getInfo = function (aControlSocket, key) {
-  /*
   if (!utils.isString(key)) {
-    throw new Error("key argument should be a string");
+    return utils.rejectPromise("key argument should be a string");
   }
-  if (!(onValue instanceof Function)) {
-    throw new Error("onValue argument should be a function");
-  }
-  */
-  return info.getInfoMultiple(aControlSocket, [key]).then(data => data[0]);
+  return aControlSocket
+    .sendCommand("getinfo " + key)
+    .then(response => info.getMultipleResponseValues(response)[0]);
 };
 
 // __info.getConf(aControlSocket, key)__.
 // Sends GETCONF for a single key. Returns a promise with the result.
 info.getConf = function (aControlSocket, key) {
-  // GETCONF with a single argument returns results that look like
-  // results from GETINFO with multiple arguments.
-  // So we can use the same kind of parsing for
+  // GETCONF with a single argument returns results with
+  // one or more lines that look like `250[- ]key=value`.
+  // Any GETCONF lines that contain a single keyword only are currently dropped.
+  // So we can use similar parsing to that for getInfo.
+  if (!utils.isString(key)) {
+    return utils.rejectPromise("key argument should be a string");
+  }
   return aControlSocket.sendCommand("getconf " + key)
                        .then(info.getMultipleResponseValues);
 };
@@ -600,7 +567,7 @@ event.parsers = {
 // __event.messageToData(type, message)__.
 // Extract the data from an event.
 event.messageToData = function (type, message) {
-  let dataText = message.match(/^650 \S+?\s(.*?)$/mi)[1];
+  let dataText = message.match(/^650[ \+-]\S+?\s(.*)/m)[1];
   return dataText ? event.parsers[type.toLowerCase()](dataText) : null;
 };
 
@@ -609,7 +576,7 @@ event.messageToData = function (type, message) {
 // data is passed to the onData callback. Returns a zero arg function that
 // stops watching the event.
 event.watchEvent = function (controlSocket, type, filter, onData) {
-  return controlSocket.addNotificationCallback(new RegExp("^650." + type, "i"),
+  return controlSocket.addNotificationCallback(new RegExp("^650[ \+-]" + type),
     function (message) {
       let data = event.messageToData(type, message);
       if (filter === null || filter(data)) {
@@ -634,7 +601,6 @@ tor.controller = function (host, port, password, onError) {
   let socket = io.controlSocket(host, port, password, onError),
       isOpen = true;
   return { getInfo : key => info.getInfo(socket, key),
-           getInfoMultiple : keys => info.getInfoMultiple(socket, keys),
            getConf : key => info.getConf(socket, key),
            watchEvent : (type, filter, onData) =>
                           event.watchEvent(socket, type, filter, onData),
@@ -655,8 +621,8 @@ tor.controller = function (host, port, password, onError) {
 //     // Get the controller
 //     let c = controller("127.0.0.1", 9151, "MyPassw0rd",
 //                    function (error) { console.log(error.message || error); });
-//     // Send command and receive `250` reply or error message
-//     c.getInfo("ip-to-country/16.16.16.16", console.log);
+//     // Send command and receive `250` reply or error message in a promise:
+//     let replyPromise = c.getInfo("ip-to-country/16.16.16.16");
 //     // Close the controller permanently
 //     c.close();
 let controller = function (host, port, password, onError) {
