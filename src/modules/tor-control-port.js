@@ -209,7 +209,7 @@ io.callbackDispatcher = function () {
 
 // __io.matchRepliesToCommands(asyncSend, dispatcher)__.
 // Takes asyncSend(message), an asynchronous send function, and the callback
-// displatcher, and returns a function Promise<response> sendCommand(command).
+// dispatcher, and returns a function Promise<response> sendCommand(command).
 io.matchRepliesToCommands = function (asyncSend, dispatcher) {
   let commandQueue = [],
       sendCommand = function (command, replyCallback, errorCallback) {
@@ -371,6 +371,10 @@ utils.listMapData = function (parameterString, listNames) {
   return dataMap;
 };
 
+// __utils.rejectPromise(errorMessage)__.
+// Returns a rejected promise with the given error message.
+utils.rejectPromise = errorMessage => Promise.reject(new Error(errorMessage));
+
 // ## info
 // A namespace for functions related to tor's GETINFO and GETCONF command.
 let info = info || {};
@@ -512,13 +516,14 @@ info.getParser = function(key) {
 // Converts a key-value string as from GETINFO or GETCONF to a value.
 info.stringToValue = function (string) {
   // key should look something like `250+circuit-status=` or `250-circuit-status=...`
-  // or `250 circuit-status...`
-  let matchForKey = string.match(/^250[ +-](.+?)=/mi),
+  // or `250 circuit-status=...`
+  let matchForKey = string.match(/^250[ +-](.+?)=/),
       key = matchForKey ? matchForKey[1] : null;
   if (key === null) return null;
-  // matchResult finds a single-line result for `250-` or a multi-line one for `250+`.
-  let matchResult = string.match(/^250[ -].+?=(.*?)$/mi) ||
-                    string.match(/^250\+.+?=([\s\S]*?)^\.$/mi),
+  // matchResult finds a single-line result for `250-` or `250 `,
+  // or a multi-line one for `250+`.
+  let matchResult = string.match(/^250[ -].+?=(.*)$/) ||
+                    string.match(/^250\+.+?=([\s\S]*?)^\.$/m),
       // Retrieve the captured group (the text of the value in the key-value pair)
       valueString = matchResult ? matchResult[1] : null,
       // Get the parser function for the key found.
@@ -541,21 +546,16 @@ info.getMultipleResponseValues = function (message) {
 // __info.getInfoMultiple(aControlSocket, keys)__.
 // Sends GETINFO for an array of keys. Returns a promise with an array of results.
 info.getInfoMultiple = function (aControlSocket, keys) {
-  /*
   if (!(keys instanceof Array)) {
-    throw new Error("keys argument should be an array");
-  }
-  if (!(onData instanceof Function)) {
-    throw new Error("onData argument should be a function");
+    return utils.rejectPromise("keys argument should be an array");
   }
   let parsers = keys.map(info.getParser);
   if (parsers.indexOf("unknown") !== -1) {
-    throw new Error("unknown key");
+    return utils.rejectPromise("unknown key");
   }
   if (parsers.indexOf("not supported") !== -1) {
-    throw new Error("unsupported key");
+    return utils.rejectPromise("unsupported key");
   }
-  */
   return aControlSocket.sendCommand("getinfo " + keys.join(" "))
                        .then(info.getMultipleResponseValues);
 };
@@ -563,23 +563,20 @@ info.getInfoMultiple = function (aControlSocket, keys) {
 // __info.getInfo(controlSocket, key)__.
 // Sends GETINFO for a single key. Returns a promise with the result.
 info.getInfo = function (aControlSocket, key) {
-  /*
   if (!utils.isString(key)) {
-    throw new Error("key argument should be a string");
+    return utils.rejectPromise("key argument should be a string");
   }
-  if (!(onValue instanceof Function)) {
-    throw new Error("onValue argument should be a function");
-  }
-  */
   return info.getInfoMultiple(aControlSocket, [key]).then(data => data[0]);
 };
 
 // __info.getConf(aControlSocket, key)__.
 // Sends GETCONF for a single key. Returns a promise with the result.
 info.getConf = function (aControlSocket, key) {
-  // GETCONF with a single argument returns results that look like
-  // results from GETINFO with multiple arguments.
-  // So we can use the same kind of parsing for
+  // GETCONF with a single argument returns results that look similar to
+  // results from GETINFO with multiple arguments. Namely,
+  // one or more lines that look like `250[+ ]key=value`.
+  // Any getconf lines that contain a single keyword only are currently dropped.
+  // So we can use the same kind of parsing.
   return aControlSocket.sendCommand("getconf " + key)
                        .then(info.getMultipleResponseValues);
 };
@@ -600,7 +597,7 @@ event.parsers = {
 // __event.messageToData(type, message)__.
 // Extract the data from an event.
 event.messageToData = function (type, message) {
-  let dataText = message.match(/^650 \S+?\s(.*?)$/mi)[1];
+  let dataText = message.match(/^650 \S+?\s(.*?)$/m)[1];
   return dataText ? event.parsers[type.toLowerCase()](dataText) : null;
 };
 
