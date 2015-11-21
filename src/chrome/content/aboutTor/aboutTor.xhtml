@@ -23,9 +23,15 @@
         href="chrome://torbutton/skin/aboutTor.css"/>
 <script type="text/javascript;version=1.7">
  <![CDATA[
+let kPropertiesURL = "chrome://torbutton/locale/aboutTor.properties";
+Components.utils.import("resource://gre/modules/Services.jsm");
+let gStringBundle = Services.strings.createBundle(kPropertiesURL);
+
 function onLoad()
 {
   insertPropertyStrings();
+
+  setupDonationBanner();
 
   document.addEventListener("AboutTorAdjustArrow", function() {
     adjustToolbarIconArrow();
@@ -144,10 +150,6 @@ function adjustToolbarIconArrow()
 function insertPropertyStrings()
 {
   try {
-    let kPropertiesURL = "chrome://torbutton/locale/aboutTor.properties";
-
-    Components.utils.import("resource://gre/modules/Services.jsm");
-    let gStringBundle = Services.strings.createBundle(kPropertiesURL);
     let s1 = gStringBundle.GetStringFromName("aboutTor.searchDC.privacy.link");
     let s2 = gStringBundle.GetStringFromName("aboutTor.searchDC.search.link");
     let result = gStringBundle.formatStringFromName("aboutTor.searchDC.privacy",
@@ -165,11 +167,83 @@ window.addEventListener("pageshow", function() {
   document.dispatchEvent(evt);
 });
 
+// Donation banner constants
+let gBannerAlternates = ["lp", "cd", "rd"],
+    gBannerSuffixes = ["quote", "who", "speciality"],
+    populateBannerText = (suffix, alternate) =>
+      document.getElementById("donation-banner-" + suffix).innerHTML
+        = gStringBundle.GetStringFromName("aboutTor.donationBanner." +
+                                          alternate + "." + suffix);
+
+// This function takes care of the donation banner.
+function setupDonationBanner() {
+  try {
+    // Only show banner for US English
+    let browserLocale = Services.prefs.getCharPref("general.useragent.locale");
+    if (browserLocale !== "en-US") {
+      return;
+    }
+    // Only show banner until 2016 Jan 25.
+    let now = new Date();
+    let expiration = new Date(2016,0,26);
+    if (now > expiration) {
+      return;
+    }
+    // Only show banner 10 times.
+    let showCountPref = "extensions.torbutton.donation_banner.shown_count";
+    if (Services.prefs.prefHasUserValue(showCountPref)) {
+      count = Services.prefs.getIntPref(showCountPref);
+    } else {
+      count = 0;
+    }
+    if (count >= 10) {
+      return;
+    }
+    Services.prefs.setIntPref(showCountPref, count+1);
+
+    // Decide which champion we are using.
+    let alternate = gBannerAlternates[
+                      Math.floor(Math.random() * gBannerAlternates.length)];
+    // Show the champion.
+    document.getElementById("donation-banner-image").src =
+      "chrome://torbutton/content/aboutTor/donation-banner-" + alternate + ".jpg";
+    // Populate banner with associated text.
+    for (let suffix of gBannerSuffixes) {
+      populateBannerText(suffix, alternate);
+    }
+  } catch (e) {
+    // Something has gone wrong! Don't show the banner, and don't propagate
+    // any errors that will interfere with other code.
+    return;
+  }
+  // Now we can show the banner.
+  document.getElementById("donation-banner").style.display = "inline";
+}
 ]]>
 </script>
 </head>
 <body dir="&locale.dir;" onload="onLoad();">
-<div id="torstatus" class="top">
+
+  <div id="donation-banner" class="top">
+    <a href="https://www.torproject.org/donate/donate-tbb">
+      <div id="donation-banner-inner">
+        <img id="donation-banner-image" width="700" />
+        <div id="donation-banner-text">
+          <div id="donation-banner-quote"></div>
+          <div id="donation-banner-credit">
+            <div id="donation-banner-who"></div>
+            <div id="donation-banner-speciality"></div>
+          </div>
+        </div>
+        <div id="donation-banner-plea">&aboutTor.donate.supportTor;</div>
+      </div>
+    </a>
+    <a href="https://www.torproject.org/donate/donate-tbb">
+      <div id="donate-button">&aboutTor.donate.donate;</div>
+    </a>
+  </div>
+
+  <div id="torstatus" class="top">
   <div id="torstatus-version"/>
   <div id="torstatus-image"/>
   <div id="torstatus-on-container" class="hideIfTorOff torstatus-container">

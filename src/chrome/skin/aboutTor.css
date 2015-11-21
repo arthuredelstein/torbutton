@@ -344,3 +344,78 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
   font-size: 18px;
 }
 
+#donation-banner {
+  margin: 0px auto;
+  position: relative;
+  width: 700px;
+  display: none;
+}
+
+#donation-banner-inner {
+  margin: 0px auto;
+  position: relative;
+  text-align: left;
+  width: 700px;
+  z-index: -1;
+}
+
+#donation-banner-text {
+  height: 120px;
+  left: 245px;
+  position: absolute;
+  top: 23px;
+  width: 420px;
+}
+
+#donation-banner-quote {
+  color: darkgreen;
+  font-size: 18px;
+  text-align: start;
+  white-space: normal;
+}
+
+#donation-banner-credit {
+  color: rgb(17, 17, 17);
+  padding: 10px;
+  position: absolute;
+}
+
+#donation-banner-who {
+  font-size: 19px;
+  font-style: bold;
+}
+
+#donation-banner-speciality {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+#donation-banner-plea {
+  background-color: yellow;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: darkgreen;
+  left: 250px;
+  padding: 10px;
+  position: absolute;
+  top: 144px;
+}
+
+#donate-button {
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  left: 600px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 153px;
+  vertical-align: middle;
+  width: 110px;
+}
+
+#donate-button:hover {
+  filter: brightness(1.2);
+}
