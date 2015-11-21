@@ -169,7 +169,32 @@ window.addEventListener("pageshow", function() {
 </script>
 </head>
 <body dir="&locale.dir;" onload="onLoad();">
-<div id="torstatus" class="top">
+
+  <div id="donation-banner" class="top" style="position: relative; width:700px; margin: 0px auto;">
+    <a href="https://www.torproject.org/donate/donate-tbb">
+      <div style="text-align: left; width: 700px; position: relative; margin: 0px auto; z-index: -1;">
+        <img width="700" src="chrome://torbutton/content/aboutTor/donation-banner.png" />
+        <div style="font-size: 19px; position: absolute; white-space: normal; top: 26px; left: 220px; text-align: left; width: 460px; height: 100px; color: darkgreen;">
+          Edward Snowden would not have been able to contact me without Tor and other free software encryption projects.
+          Journalists need Tor to protect their sources
+          and do research freely. It is an essential tool, and it needs our support.</div>
+        <div style="position: absolute; left: 240px; top: 130px; color: rgb(17, 17, 17);">
+          <div style="font-size:22px;">— Laura Poitras</div>
+          <div style="font-size: 13px; text-transform: uppercase;">Oscar-Winning Documentary Filmmaker, <i>CitizenFour</i></div>
+        </div>
+        <div style="padding: 5px; font-family: sans-serif; font-size: 25px; position: absolute; left: 300px; top: 205px; background-color: yellow;">
+          Please support Tor!
+        </div>
+      </div>
+    </a>
+    <a href="https://www.torproject.org/donate/donate-tbb">
+      <div id="donate-button" style="position: absolute; left: 500px; font-family: sans-serif; color: white; background-repeat: no-repeat; background-image: url(&quot;chrome://torbutton/content/aboutTor/donate-button.png&quot;); width: 160px; text-align: center; background-position: center center; background-size: 130px auto; padding: 10px; top: 197px; font-size: 30px; vertical-align: middle;">
+        Donate
+      </div>
+    </a>
+  </div>
+
+  <div id="torstatus" class="top">
   <div id="torstatus-version"/>
   <div id="torstatus-image"/>
   <div id="torstatus-on-container" class="hideIfTorOff torstatus-container">

@@ -344,3 +344,26 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
   font-size: 18px;
 }
 
+#donation-banner {
+    animation-name: drop-banner;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.4s;
+}
+
+@keyframes drop-banner {
+    0% {
+        transform: translateY(-300px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#donate-button:hover {
+    filter: brightness(1.2);
+}
+
+#donate-button:active {
+    transform: translateX(3px);
+}
