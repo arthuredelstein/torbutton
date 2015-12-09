@@ -6,14 +6,14 @@
 
 <!ENTITY aboutTor.title "Torについて">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "しかし、このブラウザは古いバージョンです。">
+<!ENTITY aboutTor.outOfDateTorOn.label "WARNING: this browser is out of date.">
 <!ENTITY aboutTor.outOfDateTorOff.label "また、このブラウザは古いバージョンです。">
 <!ENTITY aboutTor.outOfDate2.label "Onion をクリックして Tor Browser のアップデートを確認してください。">
 
 <!ENTITY aboutTor.check.label "Torのネットワーク設定をテストする">
 
-<!ENTITY aboutTor.success.label "おめでとうございます!">
-<!ENTITY aboutTor.success2.label "このブラウザは、Torを使用するように設定されています。">
+<!ENTITY aboutTor.success.label "Welcome to Tor Browser">
+<!ENTITY aboutTor.success2.label "Connected to the Tor network.">
 <!ENTITY aboutTor.success3.label "現在、自由に匿名でインターネットをブラウズ出来ます。">
 <!ENTITY aboutTor.failure.label "何かが間違っています！">
 <!ENTITY aboutTor.failure2.label "Torは、このブラウザでは動作しません。">
@@ -47,3 +47,6 @@
 <!ENTITY aboutTor.footer.label "Tor Projectは、オンラインの匿名性とプライバシーの研究・開発・教育を専門に行う米国の501(c)(3)非営利団体です。">
 <!ENTITY aboutTor.learnMore.label "Tor Projectに関する詳細  »">
 <!ENTITY aboutTor.learnMore.link "https://www.torproject.org/about/overview.html.en">
+
+<!ENTITY aboutTor.donate.donate "寄付">
+<!ENTITY aboutTor.donate.supportTor "Please support Tor!">

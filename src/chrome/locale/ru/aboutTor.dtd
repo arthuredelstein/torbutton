@@ -6,14 +6,14 @@
 
 <!ENTITY aboutTor.title "О проекте Tor">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "ТЕМ НЕ МЕНЕЕ, данный браузер устарел.">
+<!ENTITY aboutTor.outOfDateTorOn.label "ВНИМАНИЕ: этот обозреватель устарел.">
 <!ENTITY aboutTor.outOfDateTorOff.label "КРОМЕ ТОГО, данный браузер устарел.">
 <!ENTITY aboutTor.outOfDate2.label "Нажмите на &quot;луковицу&quot;и затем выберите &quot;Проверить обновления браузера Tor&quot;">
 
 <!ENTITY aboutTor.check.label "Проверить настройки сети Tor">
 
-<!ENTITY aboutTor.success.label "Поздравляем!">
-<!ENTITY aboutTor.success2.label "Данный браузер настроен для использования Tor.">
+<!ENTITY aboutTor.success.label "Добро пожаловать в обозреватель Tor">
+<!ENTITY aboutTor.success2.label "Соединены с сетью Tor">
 <!ENTITY aboutTor.success3.label "Теперь Вы можете просматривать интернет-сайты в анонимном режиме.">
 <!ENTITY aboutTor.failure.label "Что-то пошло не так!">
 <!ENTITY aboutTor.failure2.label "Tor не работает в этом браузере.">
@@ -48,3 +48,6 @@
 <!ENTITY aboutTor.learnMore.label "Узнайте больше о проекте Tor »">
 <!ENTITY aboutTor.learnMore.link "https://www.torproject.org/about/overview.html#ru
 ">
+
+<!ENTITY aboutTor.donate.donate "Пожертвовать">
+<!ENTITY aboutTor.donate.supportTor "Пожалуйста, поддержите Tor!">

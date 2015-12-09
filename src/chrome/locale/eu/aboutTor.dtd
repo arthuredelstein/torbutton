@@ -6,14 +6,14 @@
 
 <!ENTITY aboutTor.title "Tori buruz">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "HALA ERE, nabigatzaile hau zaharkituta dago.">
+<!ENTITY aboutTor.outOfDateTorOn.label "WARNING: this browser is out of date.">
 <!ENTITY aboutTor.outOfDateTorOff.label "BAITA, nabigatzaile hau zaharkituta dago.">
 <!ENTITY aboutTor.outOfDate2.label "Tipulan sakatu eta ondoren Tor Browser Bundlea egiaztatu hautatu">
 
 <!ENTITY aboutTor.check.label "Tor sare ezarpenak frogatu">
 
-<!ENTITY aboutTor.success.label "Zorionak!">
-<!ENTITY aboutTor.success2.label "Nabigatzaile hau Tor erabiltzeko konfiguratuta dago.">
+<!ENTITY aboutTor.success.label "Welcome to Tor Browser">
+<!ENTITY aboutTor.success2.label "Connected to the Tor network.">
 <!ENTITY aboutTor.success3.label "Aske zara orain Internet anonimotasunez nabigatzeko.">
 <!ENTITY aboutTor.failure.label "Zerbait gaizki joan da!">
 <!ENTITY aboutTor.failure2.label "Tor ez da nabigatzaile honetan funtzionatzen ari.">
@@ -47,3 +47,6 @@
 <!ENTITY aboutTor.footer.label "The Tor Project irabazi asmorik gabeko US 501(c)(3) bat da, ikerketara, garapenera, eta onlineko anonimotasuna eta pribatutasunaren hezkuntzara zuzendutakoa.">
 <!ENTITY aboutTor.learnMore.label "The Tor Projecti buruz gehiago ikasi »">
 <!ENTITY aboutTor.learnMore.link "https://www.torproject.org/about/overview.html.en">
+
+<!ENTITY aboutTor.donate.donate "Egizu dohaintza">
+<!ENTITY aboutTor.donate.supportTor "Please support Tor!">

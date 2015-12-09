@@ -24,7 +24,7 @@
 <!ENTITY torbutton.pref_connection_more_info.text "Torbutton이 현재 활성화되었습니다. 만약 Tor 프록시가 아닌 일반 프록시 서버 설정을 하시려면, Torbutton을 비활성화하고 이 창으로 돌아오십시오. 혹시 Tor 프록시 설정을 바꾸고 싶으시다면, Torbutton 설정 화면을 사용해 주세요.">
 <!ENTITY torbutton.context_menu.new_identity "새로운 신원">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.new_circuit "New Tor Circuit for this Site">
+<!ENTITY torbutton.context_menu.new_circuit "Tor 서킷 재구축">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.toggle "Tor 작동 상태">
 <!ENTITY torbutton.context_menu.toggle.key "T">
@@ -154,22 +154,22 @@
 <!ENTITY torbutton.prefs.sec_low "낮음 (기본)">
 <!ENTITY torbutton.prefs.sec_low_usable_desc "This provides the most usable experience.">
 <!ENTITY torbutton.prefs.sec_low_desc "At this security level, all browser features are enabled.">
-<!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "The SVG OpenType font rendering mechanism is disabled.">
+<!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "SVG 폰트 렌터링 체계가 비활성화되었습니다.">
 <!ENTITY torbutton.prefs.sec_med_low "중간 낮음">
 <!ENTITY torbutton.prefs.sec_gen_desc "At this security level, the following changes apply (mouseover for details):">
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 video and audio media become click-to-play via NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "On some sites, you might need to use the NoScript toolbar button to enable these media objects.">
-<!ENTITY torbutton.prefs.sec_some_jit_desc "Some JavaScript performance optimizations are disabled.">
+<!ENTITY torbutton.prefs.sec_some_jit_desc "일부 JavaScript 의 성능 최적화가 비활성화되었습니다.">
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline (베이스라인) JIT.">
-<!ENTITY torbutton.prefs.sec_jit_slower_desc "Scripts on some sites may run slower.">
+<!ENTITY torbutton.prefs.sec_jit_slower_desc "일부 사이트의 스크립트 동작이 느려질 수 있습니다.">
 <!ENTITY torbutton.prefs.sec_jar_desc "Remote JAR files are blocked.">
 <!ENTITY torbutton.prefs.sec_jar_tooltip "JAR files are extremely rare on the web, but can be a source of XSS and other attacks.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Some mechanisms of displaying math equations are disabled.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML가 비활성화 되었습니다.">
 <!ENTITY torbutton.prefs.sec_med_high "중간 높음">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "All JavaScript performance optimizations are disabled.">
-<!ENTITY torbutton.prefs.sec_font_rend_desc "Some font rendering features are disabled.">
+<!ENTITY torbutton.prefs.sec_all_jit_desc "모든 JavaScript 의 성능 최적화가 비활성화되었습니다.">
+<!ENTITY torbutton.prefs.sec_font_rend_desc "일부 폰트의 렌터링이 비활성화되었습니다.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "The Graphite font rendering mechanism is disabled.">
 <!ENTITY torbutton.prefs.sec_svg_desc "몇몇 종류의 이미지가 비활성화 되었습니다.">
 <!ENTITY torbutton.prefs.sec_svg_desc_tooltip "SVG images가 비활성화 되었습니다.">
@@ -180,7 +180,7 @@
 <!ENTITY torbutton.prefs.sec_audio_video_desc "대다수 포맷의 음성, 영상 파일이 비활성화 되었습니다.">
 <!ENTITY torbutton.prefs.sec_audio_video_desc_tooltip "WebM is the only codec that remains enabled.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc "어떤 글씨체나 아이콘은 올바르지 않게 표시될 수 있습니다.">
-<!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Website-provided font files are blocked.">
+<!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "사이트 내장 폰트가 차단되었습니다.">
 <!ENTITY torbutton.prefs.sec_custom "맞춤 값">
 <!ENTITY torbutton.circuit_display.title "Tor circuit for this site">
 

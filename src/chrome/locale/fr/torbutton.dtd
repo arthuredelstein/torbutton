@@ -4,24 +4,24 @@
 <!ENTITY torbutton.prefs.use_privoxy "Utiliser Privoxy">
 <!ENTITY torbutton.prefs.use_polipo "Utiliser Polipo">
 <!ENTITY torbutton.prefs.custom_settings "Utiliser des paramètres de proxy personnalisés">
-<!ENTITY torbutton.prefs.proxy.host.http "Proxy HTTP:">
-<!ENTITY torbutton.prefs.proxy.host.https "Proxy SSL:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "Proxy FTP:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Proxy Gopher:">
-<!ENTITY torbutton.prefs.proxy.host.socks "Hôte SOCKS:">
-<!ENTITY torbutton.prefs.proxy.port "Port:">
+<!ENTITY torbutton.prefs.proxy.host.http "Proxy HTTP :">
+<!ENTITY torbutton.prefs.proxy.host.https "Proxy SSL :">
+<!ENTITY torbutton.prefs.proxy.host.ftp "Proxy FTP :">
+<!ENTITY torbutton.prefs.proxy.host.gopher "Proxy Gopher :">
+<!ENTITY torbutton.prefs.proxy.host.socks "Hôte SOCKS :">
+<!ENTITY torbutton.prefs.proxy.port "Port :">
 <!ENTITY torbutton.about.title "À propos de Torbutton">
 <!ENTITY torbutton.about.version "Version :">
 <!ENTITY torbutton.about.summary "Protège l'anonymat de votre navigation avec Tor.">
 <!ENTITY torbutton.about.code "Contributeurs au code :">
 <!ENTITY torbutton.about.maintainer "Mainteneur :">
-<!ENTITY torbutton.about.security_review "Revue de sécurité :">
+<!ENTITY torbutton.about.security_review "Mise à jour de sécurité :">
 <!ENTITY torbutton.about.donate "Si vous aimez Tor, vous devriez considérer">
 <!ENTITY torbutton.about.make_donation "faire une donation.">
 <!ENTITY torbutton.pref_connection.notice "Désactiver Torbutton pour modifier ces paramètres.">
 <!ENTITY torbutton.pref_connection.more_info "Plus d'informations">
 <!ENTITY torbutton.pref_connection_more_info.title "Aide">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton est actuellement activé.  Si vous souhaitez modifier vos paramètres proxy non-Tor, veuillez désactiver Torbutton et revenir à cette fenêtre.  Si vous souhaitez modifier vos paramètres Tor, veuillez utiliser la fenêtre des préférences Torbutton.">
+<!ENTITY torbutton.pref_connection_more_info.text "Torbutton est actuellement activé. Si vous souhaitez modifier vos paramètres proxy non-Tor, veuillez désactiver Torbutton et revenir à cette fenêtre. Si vous souhaitez modifier vos paramètres Tor, veuillez utiliser la fenêtre des préférences Torbutton.">
 <!ENTITY torbutton.context_menu.new_identity "Nouvelle identité">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nouveau circuit Tor pour ce site">

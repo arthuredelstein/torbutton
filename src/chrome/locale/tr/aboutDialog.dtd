@@ -8,7 +8,7 @@
 <!ENTITY help.donateLink         "Bağışta bulunun">
 <!ENTITY help.or                 " ya da ">
 <!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
-<!ENTITY help.getInvolvedLink    "çalışmalarımızda yer alın">
+<!ENTITY help.getInvolvedLink    "çalışmalarımıza katılın">
 <!ENTITY help.end                "!">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
 <!ENTITY bottomLinks.questions   "Sorularınız mı var?">

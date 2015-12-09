@@ -6,14 +6,14 @@
 
 <!ENTITY aboutTor.title "Acerca de Tor">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "SIN EMBARGO, este navegador no está actualizado.">
+<!ENTITY aboutTor.outOfDateTorOn.label "WARNING: this browser is out of date.">
 <!ENTITY aboutTor.outOfDateTorOff.label "ADEMÁS, este navegador tampoco está actualizado.">
 <!ENTITY aboutTor.outOfDate2.label "Haga clic en la cebolla y luego seleccione Comprobar actualizaciones del Navegador Tor.">
 
 <!ENTITY aboutTor.check.label "Probar las preferencias de red Tor">
 
-<!ENTITY aboutTor.success.label "¡Felicidades!">
-<!ENTITY aboutTor.success2.label "Este navegador está configurado para usar Tor.">
+<!ENTITY aboutTor.success.label "Welcome to Tor Browser">
+<!ENTITY aboutTor.success2.label "Connected to the Tor network.">
 <!ENTITY aboutTor.success3.label "Ahora es libre de navegar por Internet anónimamente.">
 <!ENTITY aboutTor.failure.label "¡Algo fue mal!">
 <!ENTITY aboutTor.failure2.label "Tor no está funcionando en este navegador.">
@@ -47,3 +47,6 @@
 <!ENTITY aboutTor.footer.label "El Projecto Tor es una US 501(c)(3) sin ánimo de lucro dedicada a la investigación, desarrollo y educación sobre anonimidad y privacidad en línea.">
 <!ENTITY aboutTor.learnMore.label "Aprenda más acerca del El Proyecto Tor »">
 <!ENTITY aboutTor.learnMore.link "https://www.torproject.org/about/overview.html.en">
+
+<!ENTITY aboutTor.donate.donate "Donar">
+<!ENTITY aboutTor.donate.supportTor "Por favor ayuda a Tor!">

@@ -3,7 +3,7 @@
 <!ENTITY project.tpoLink         "das &vendorShortName;">
 <!ENTITY project.end             ", eine gemeinnützige Organisation, um Ihre Privatsphäre und Freiheit im Internet zu verteidigen.">
 
-<!ENTITY help.start              "Möchten Sie helfen? ">
+<!ENTITY help.start              "Sie wollen helfen? ">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
 <!ENTITY help.donateLink         "Spenden">
 <!ENTITY help.or                 "oder">
