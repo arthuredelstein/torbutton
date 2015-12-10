@@ -169,18 +169,63 @@ window.addEventListener("pageshow", function() {
 
 // Donation banner constants
 let gBannerAlternates = ["lp", "cd", "rd"],
-    gBannerSuffixes = ["quote", "who", "speciality"],
-    populateBannerText = (suffix, alternate) =>
-      document.getElementById("donation-banner-" + suffix).innerHTML
-        = gStringBundle.GetStringFromName("aboutTor.donationBanner." +
-                                          alternate + "." + suffix);
+    gBannerSuffixes = ["quote", "who", "speciality"];
+
+// Change the font size of text in element by ratio.
+let scaleFontBy = function (element, ratio) {
+    let style = window.getComputedStyle(element),
+        originalFontSize = parseFloat(style.fontSize),
+        targetFontSize = originalFontSize * ratio;
+    element.style.fontSize = targetFontSize + "px";
+};
+
+// Shrink the font size if the text in the given element is overflowing.
+let fitTextInElement = function(element) {
+  let style = window.getComputedStyle(element);
+  if (style.whiteSpace === "nowrap") {
+    // Look for horizontal overflow.
+    let elementWidth = element.getBoundingClientRect().width,
+        paddingWidth = parseFloat(style.paddingLeft) +
+                       parseFloat(style.paddingRight),
+        targetWidth = elementWidth - paddingWidth,
+        textWidth = element.scrollWidth;
+    // Compute the appropriate font size to make the text fit.
+    let ratio = targetWidth / textWidth;
+    scaleFontBy(element, ratio);
+  } else {
+    // Look for vertical overflow.
+    let elementHeight = element.getBoundingClientRect().height,
+        paddingHeight = parseFloat(style.paddingTop) +
+                        parseFloat(style.paddingBottom),
+        targetHeight = elementHeight - paddingHeight;
+    // Wrapping causes somewhat difficult-to-predict overflow.
+    // So shrink slightly and repeat.
+    let ratio = 0;
+    for (let i = 0; i < 100 && ratio < 1; ++i) {
+      let textHeight = element.scrollHeight;
+      ratio = targetHeight < textHeight ? 0.99 : 1;
+      if (ratio < 1) {
+        scaleFontBy(element, ratio);
+      }
+    }
+  }
+};
+
+// Put text of the appropriate locale into donation banner elements.
+let populateBannerText = function (suffix, alternate) {
+  let text = gStringBundle.GetStringFromName("aboutTor.donationBanner." +
+                                             alternate + "." + suffix),
+      div = document.getElementById("donation-banner-" + suffix);
+  div.innerHTML = text;
+};
 
 // This function takes care of the donation banner.
 function setupDonationBanner() {
   try {
-    // Only show banner for US English
+    // Only show banner for locales for which we have translations.
     let browserLocale = Services.prefs.getCharPref("general.useragent.locale");
-    if (browserLocale !== "en-US") {
+    if (!["en", "de", "fa", "fr", "nl", "ru", "sv", "tr", "zh"]
+           .some(code => browserLocale.startsWith(code))) {
       return;
     }
     // Only show banner until 2016 Jan 25.
@@ -218,6 +263,13 @@ function setupDonationBanner() {
   }
   // Now we can show the banner.
   document.getElementById("donation-banner").style.display = "block";
+  for (let id of ["donation-banner-quote",
+                  "donate-button",
+                  "donation-banner-who",
+                  "donation-banner-speciality",
+                  "donation-banner-plea"]) {
+    fitTextInElement(document.getElementById(id));
+  }
 }
 ]]>
 </script>
