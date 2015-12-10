@@ -338,6 +338,7 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
   color: darkgreen;
   font-family: serif;
   font-size: 18px;
+  max-height: 64px;
   text-align: start;
   white-space: normal;
 }
@@ -351,11 +352,13 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
 #donation-banner-who {
   font-size: 19px;
   font-style: bold;
+  width: 420px;
 }
 
 #donation-banner-speciality {
   font-size: 13px;
   text-transform: uppercase;
+  width: 420px;
 }
 
 #donation-banner-plea {
@@ -364,9 +367,13 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
   font-size: 20px;
   color: darkgreen;
   left: 250px;
-  padding: 10px;
+  line-height: 42px;
+  height: 42px;
+  padding: 0px 5px 0px 5px;
   position: absolute;
+  text-align: center;
   top: 144px;
+  width: 200px;
 }
 
 #donate-button {
@@ -375,8 +382,10 @@ body .top div.hideIfTorIsUpToDate h1.hideIfTorOff {
   color: white;
   font-family: sans-serif;
   font-size: 20px;
+  height: 42px;
   left: 490px;
-  padding: 10px;
+  line-height: 42px;
+  padding: 0px 5px 0px 5px;
   position: absolute;
   text-align: center;
   top: 144px;
