@@ -23,9 +23,15 @@
         href="chrome://torbutton/skin/aboutTor.css"/>
 <script type="text/javascript;version=1.7">
  <![CDATA[
+let kPropertiesURL = "chrome://torbutton/locale/aboutTor.properties";
+Components.utils.import("resource://gre/modules/Services.jsm");
+let gStringBundle = Services.strings.createBundle(kPropertiesURL);
+
 function onLoad()
 {
   insertPropertyStrings();
+
+  setupDonationBanner();
 
   document.addEventListener("AboutTorAdjustArrow", function() {
     adjustToolbarIconArrow();
@@ -144,10 +150,6 @@ function adjustToolbarIconArrow()
 function insertPropertyStrings()
 {
   try {
-    let kPropertiesURL = "chrome://torbutton/locale/aboutTor.properties";
-
-    Components.utils.import("resource://gre/modules/Services.jsm");
-    let gStringBundle = Services.strings.createBundle(kPropertiesURL);
     let s1 = gStringBundle.GetStringFromName("aboutTor.searchDC.privacy.link");
     let s2 = gStringBundle.GetStringFromName("aboutTor.searchDC.search.link");
     let result = gStringBundle.formatStringFromName("aboutTor.searchDC.privacy",
@@ -165,11 +167,135 @@ window.addEventListener("pageshow", function() {
   document.dispatchEvent(evt);
 });
 
+// Donation banner constants
+let gBannerAlternates = ["lp", "cd", "rd"],
+    gBannerSuffixes = ["quote", "who", "speciality"];
+
+// Change the font size of text in element by ratio.
+let scaleFontBy = function (element, ratio) {
+    let style = window.getComputedStyle(element),
+        originalFontSize = parseFloat(style.fontSize),
+        targetFontSize = originalFontSize * ratio;
+    element.style.fontSize = targetFontSize + "px";
+};
+
+// Shrink the font size if the text in the given element is overflowing.
+let fitTextInElement = function(element) {
+  let style = window.getComputedStyle(element);
+  if (style.whiteSpace === "nowrap") {
+    // Look for horizontal overflow.
+    let elementWidth = element.getBoundingClientRect().width,
+        paddingWidth = parseFloat(style.paddingLeft) +
+                       parseFloat(style.paddingRight),
+        targetWidth = elementWidth - paddingWidth,
+        textWidth = element.scrollWidth;
+    // Compute the appropriate font size to make the text fit.
+    let ratio = targetWidth / textWidth;
+    scaleFontBy(element, ratio);
+  } else {
+    // Look for vertical overflow.
+    let elementHeight = element.getBoundingClientRect().height,
+        paddingHeight = parseFloat(style.paddingTop) +
+                        parseFloat(style.paddingBottom),
+        targetHeight = elementHeight - paddingHeight;
+    // Wrapping causes somewhat difficult-to-predict overflow.
+    // So shrink slightly and repeat.
+    let ratio = 0;
+    for (let i = 0; i < 100 && ratio < 1; ++i) {
+      let textHeight = element.scrollHeight;
+      ratio = targetHeight < textHeight ? 0.99 : 1;
+      if (ratio < 1) {
+        scaleFontBy(element, ratio);
+      }
+    }
+  }
+};
+
+// Put text of the appropriate locale into donation banner elements.
+let populateBannerText = function (suffix, alternate) {
+  let text = gStringBundle.GetStringFromName("aboutTor.donationBanner." +
+                                             alternate + "." + suffix),
+      div = document.getElementById("donation-banner-" + suffix);
+  div.innerHTML = text;
+};
+
+// This function takes care of the donation banner.
+function setupDonationBanner() {
+  try {
+    // Only show banner for locales for which we have translations.
+    let browserLocale = Services.prefs.getCharPref("general.useragent.locale");
+    if (!["en", "de", "fa", "fr", "nl", "ru", "sv", "tr", "zh"]
+           .some(code => browserLocale.startsWith(code))) {
+      return;
+    }
+    // Only show banner until 2016 Jan 25.
+    let now = new Date();
+    let expiration = new Date(2016,0,26);
+    if (now > expiration) {
+      return;
+    }
+    // Only show banner 10 times.
+    let showCountPref = "extensions.torbutton.donation_banner.shown_count";
+    if (Services.prefs.prefHasUserValue(showCountPref)) {
+      count = Services.prefs.getIntPref(showCountPref);
+    } else {
+      count = 0;
+    }
+    if (count >= 10) {
+      return;
+    }
+    Services.prefs.setIntPref(showCountPref, count+1);
+
+    // Decide which champion we are using.
+    let alternate = gBannerAlternates[
+                      Math.floor(Math.random() * gBannerAlternates.length)];
+    // Show the champion.
+    document.getElementById("donation-banner-image").src =
+      "chrome://torbutton/content/aboutTor/donation-banner-" + alternate + ".jpg";
+    // Populate banner with associated text.
+    for (let suffix of gBannerSuffixes) {
+      populateBannerText(suffix, alternate);
+    }
+  } catch (e) {
+    // Something has gone wrong! Don't show the banner, and don't propagate
+    // any errors that will interfere with other code.
+    return;
+  }
+  // Now we can show the banner.
+  document.getElementById("donation-banner").style.display = "block";
+  for (let id of ["donation-banner-quote",
+                  "donate-button",
+                  "donation-banner-who",
+                  "donation-banner-speciality",
+                  "donation-banner-plea"]) {
+    fitTextInElement(document.getElementById(id));
+  }
+}
 ]]>
 </script>
 </head>
 <body dir="&locale.dir;" onload="onLoad();">
-<div id="torstatus" class="top">
+
+  <div id="donation-banner" class="top">
+    <a href="https://www.torproject.org/donate/donate-tbb">
+      <div id="donation-banner-inner">
+        <img id="donation-banner-image" width="700" />
+        <div id="donation-banner-text">
+          <div id="donation-banner-quote"></div>
+          <div id="donation-banner-credit">
+            <div id="donation-banner-who"></div>
+            <div id="donation-banner-speciality"></div>
+          </div>
+        </div>
+        <div id="donation-banner-plea">&aboutTor.donate.supportTor;</div>
+      </div>
+    </a>
+    <a href="https://www.torproject.org/donate/donate-tbb">
+      <div id="donate-button">&aboutTor.donate.donate;</div>
+    </a>
+  </div>
+
+  <div id="torstatus" class="top">
   <div id="torstatus-version"/>
   <div id="torstatus-image"/>
   <div id="torstatus-on-container" class="hideIfTorOff torstatus-container">
