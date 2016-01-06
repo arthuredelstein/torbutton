@@ -228,11 +228,11 @@ let getSOCKSCredentialsForBrowser = function (browser) {
   if (docShell === null) return null;
   let channel = docShell.currentDocumentChannel;
   if (channel === null) return null;
-  try {
-    channel.QueryInterface(Ci.nsIProxiedChannel);
-  } catch (e) {
-    return null;
+  if (channel instanceof Ci.nsIMultiPartChannel) {
+    channel = channel.baseChannel;
   }
+  if (channel === null) return null;
+  if (!(channel instanceof Ci.nsIProxiedChannel)) return null;
   let proxyInfo = channel.proxyInfo;
   if (proxyInfo === null) return null;
   return proxyInfo.username + ":" + proxyInfo.password;
@@ -271,6 +271,8 @@ let updateCircuitDisplay = function () {
                            "<li>" + uiString("internet") + "</li>";
         document.getElementById("circuit-nodes").innerHTML = nodeInnerHTML;
       }
+    } else {
+      logger.eclog(5, "no SOCKS credentials found for current document.");
     }
     // Only show the Tor circuit if we have credentials and node data.
     showCircuitDisplay(credentials && nodeData);
