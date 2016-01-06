@@ -141,7 +141,7 @@ let collectIsolationData = function (aController, updateUI) {
         knownCircuitIDs[streamEvent.CircuitID] = true;
         let circuitStatus = yield getCircuitStatusByID(aController, streamEvent.CircuitID),
             credentials = circuitStatus ?
-                            (trimQuotes(circuitStatus.SOCKS_USERNAME) + ":" +
+                            (trimQuotes(circuitStatus.SOCKS_USERNAME) + "|" +
                              trimQuotes(circuitStatus.SOCKS_PASSWORD)) :
                             null;
         if (credentials) {
@@ -235,7 +235,7 @@ let getSOCKSCredentialsForBrowser = function (browser) {
   if (!(channel instanceof Ci.nsIProxiedChannel)) return null;
   let proxyInfo = channel.proxyInfo;
   if (proxyInfo === null) return null;
-  return proxyInfo.username + ":" + proxyInfo.password;
+  return [proxyInfo.username, proxyInfo.password];
 };
 
 // __onionSiteRelayLine__.
@@ -251,11 +251,12 @@ let updateCircuitDisplay = function () {
     let credentials = getSOCKSCredentialsForBrowser(selectedBrowser),
         nodeData = null;
     if (credentials) {
-    // Check if we have anything to show for these credentials.
-      nodeData = credentialsToNodeDataMap[credentials];
+      let [SOCKS_username, SOCKS_password] = credentials;
+      // Check if we have anything to show for these credentials.
+      nodeData = credentialsToNodeDataMap[SOCKS_username + "|" + SOCKS_password];
       if (nodeData) {
 	// Update the displayed domain.
-        let domain = credentials.split(":")[0];
+        let domain = SOCKS_username;
 	document.getElementById("domain").innerHTML = "(" + domain + "):";
 	// Update the displayed information for the relay nodes.
         let lines = nodeLines(nodeData),
@@ -310,8 +311,9 @@ let syncDisplayWithSelectedTab = (function() {
 
 // ## Main function
 
-// setupDisplay(host, port, password, enablePrefName)__.
-// Returns a function that lets you start/stop automatic display of the Tor circuit.
+// __setupDisplay(host, port, password, enablePrefName)__.
+// Once called, the Tor circuit display will be started whenever
+// the "enablePref" is set to true, and stopped when it is set to false.
 // A reference to this function (called createTorCircuitDisplay) is exported as a global.
 let setupDisplay = function (host, port, password, enablePrefName) {
   let myController = null,
