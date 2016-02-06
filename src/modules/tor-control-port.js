@@ -113,7 +113,7 @@ io.asyncSocket = function (host, port, onInputData, onError) {
                  let totalString = pendingWrites.join("");
                    try {
                      outputStream.write(totalString, totalString.length);
-                     log("controlPort << " + aString + "\n");
+                     log("controlPort << " + aString);
                    } catch (err) {
                      onError(err);
                    }
@@ -156,13 +156,26 @@ io.onDataFromOnLine = function (onLine) {
 // callback that expects individual lines.
 io.onLineFromOnMessage = function (onMessage) {
   // A private variable that stores the last unfinished line.
-  let pendingLines = [];
+  let pendingLines = [],
+      // A private variable to monitor whether we have a multiline
+      // command, beginning with ###+ and ending with a single ".".
+      multilineCommandInProgress = false;
   // Return a callback that expects individual lines.
   return function (line) {
     // Add to the list of pending lines.
     pendingLines.push(line);
+    // 'Multiline commands' are possible. We avoid interrupting one by detecting it
+    // and waiting for its terminating "." on its own line.
+    // (See control-spec section 2.2 and https://trac.torproject.org/16990#comment:28
+    if (line.match(/^\d\d\d\+.+?=$/) && pendingLines.length === 1) {
+      multilineCommandInProgress = true;
+    }
+    if (multilineCommandInProgress && line.match(/^\.$/)) {
+      multilineCommandInProgress = false;
+    }
     // If line is the last in a message, then pass on the full multiline message.
-    if (line.match(/^\d\d\d /) &&
+    if (!multilineCommandInProgress &&
+        line.match(/^\d\d\d /) &&
         (pendingLines.length === 1 ||
          pendingLines[0].substring(0,3) === line.substring(0,3))) {
       // Combine pending lines to form message.
