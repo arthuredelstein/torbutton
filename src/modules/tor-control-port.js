@@ -39,7 +39,7 @@ log("Loading tor-control-port.js\n");
 
 // ## io
 // I/O utilities namespace
-let io = io || {};
+let io = {};
 
 // __io.asyncSocketStreams(host, port)__.
 // Creates a pair of asynchronous input and output streams for a socket at the
@@ -286,7 +286,7 @@ io.controlSocket = function (host, port, password, onError) {
 
 // ## utils
 // A namespace for utility functions
-let utils = utils || {};
+let utils = {};
 
 // __utils.identity(x)__.
 // Returns its argument unchanged.
@@ -390,7 +390,7 @@ utils.rejectPromise = errorMessage => Promise.reject(new Error(errorMessage));
 
 // ## info
 // A namespace for functions related to tor's GETINFO and GETCONF command.
-let info = info || {};
+let info = {};
 
 // __info.keyValueStringsFromMessage(messageText)__.
 // Takes a message (text) response to GETINFO or GETCONF and provides
@@ -567,7 +567,7 @@ info.getConf = function (aControlSocket, key) {
 // ## event
 // Handlers for events
 
-let event = event || {};
+let event = {};
 
 // __event.parsers__.
 // A map of EVENT keys to parsing functions, which convert result strings to JavaScript
@@ -603,7 +603,7 @@ event.watchEvent = function (controlSocket, type, filter, onData) {
 
 // ## tor
 // Things related to the main controller.
-let tor = tor || {};
+let tor = {};
 
 // __tor.controllerCache__.
 // A map from "host:port" to controller objects. Prevents redundant instantiation
