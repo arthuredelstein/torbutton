@@ -18,7 +18,7 @@ let logger = Cc["@torproject.org/torbutton-logger;1"]
 
 // ## mozilla namespace.
 // Useful functionality for interacting with Mozilla services.
-let mozilla = mozilla || {};
+let mozilla = {};
 
 // __mozilla.protocolProxyService__.
 // Mozilla's protocol proxy service, useful for managing proxy connections made
@@ -47,7 +47,7 @@ mozilla.registerProxyChannelFilter = function (filterFunction, positionIndex) {
 };
 
 // ## tor functionality.
-let tor = tor || {};
+let tor = {};
 
 // __tor.noncesForDomains__.
 // A mutable map that records what nonce we are using for each domain.
@@ -69,13 +69,14 @@ tor.socksProxyCredentials = function (originalProxy, domain) {
   }
   let proxy = originalProxy.QueryInterface(Ci.nsIProxyInfo);
   return mozilla.protocolProxyService
-           .newSOCKSProxyInfo(proxy.host,
-                              proxy.port,
-                              domain, // username
-                              tor.noncesForDomains[domain].toString(), // password
-                              proxy.flags,
-                              proxy.failoverTimeout,
-                              proxy.failoverProxy);
+    .newProxyInfoWithAuth("socks",
+                          proxy.host,
+                          proxy.port,
+                          domain, // username
+                          tor.noncesForDomains[domain].toString(), // password
+                          proxy.flags,
+                          proxy.failoverTimeout,
+                          proxy.failoverProxy);
 };
 
 tor.newCircuitForDomain = function(domain) {
