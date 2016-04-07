@@ -641,7 +641,7 @@ tor.controller = function (host, port, password, onError) {
 //     let replyPromise = c.getInfo("ip-to-country/16.16.16.16");
 //     // Close the controller permanently
 //     c.close();
-let controller = function (host, port, password, onError) {
+var controller = function (host, port, password, onError) {
   let dest = host + ":" + port,
       maybeController = tor.controllerCache[dest];
   return (tor.controllerCache[dest] =

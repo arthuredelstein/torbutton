@@ -14,7 +14,7 @@ let prefs = Services.prefs;
 
 // __getPrefValue(prefName)__
 // Returns the current value of a preference, regardless of its type.
-let getPrefValue = function (prefName) {
+var getPrefValue = function (prefName) {
   switch(prefs.getPrefType(prefName)) {
     case prefs.PREF_BOOL: return prefs.getBoolPref(prefName);
     case prefs.PREF_INT: return prefs.getIntPref(prefName);
@@ -27,7 +27,7 @@ let getPrefValue = function (prefName) {
 // Applies prefHandler to the current value of pref specified by prefName.
 // Re-applies prefHandler whenever the value of the pref changes.
 // Returns a zero-arg function that unbinds the pref.
-let bindPrefAndInit = function (prefName, prefHandler) {
+var bindPrefAndInit = function (prefName, prefHandler) {
   let update = () => { prefHandler(getPrefValue(prefName)); },
       observer = { observe : function (subject, topic, data) {
                      if (data === prefName) {
@@ -48,7 +48,7 @@ let env = Components.classes["@mozilla.org/process/environment;1"]
 
 // __getEnv(name)__.
 // Reads the environment variable of the given name.
-let getEnv = function (name) {
+var getEnv = function (name) {
   return env.exists(name) ? env.get(name) : undefined;
 };
 

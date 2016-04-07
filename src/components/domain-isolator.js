@@ -30,7 +30,7 @@ mozilla.protocolProxyService = Cc["@mozilla.org/network/protocol-proxy-service;1
 // Mozilla's Thirdy Party Utilities, for figuring out first party domain.
 mozilla.thirdPartyUtil = Cc["@mozilla.org/thirdpartyutil;1"]
                            .getService(Ci.mozIThirdPartyUtil);
-                           
+
 // __mozilla.registerProxyChannelFilter(filterFunction, positionIndex)__.
 // Registers a proxy channel filter with the Mozilla Protocol Proxy Service,
 // which will help to decide the proxy to be used for a given channel.
@@ -63,7 +63,7 @@ tor.unknownDirtySince = Date.now();
 
 // __tor.socksProxyCredentials(originalProxy, domain)__.
 // Takes a proxyInfo object (originalProxy) and returns a new proxyInfo
-// object with the same properties, except the username is set to the 
+// object with the same properties, except the username is set to the
 // the domain, and the password is a nonce.
 tor.socksProxyCredentials = function (originalProxy, domain) {
   // Check if we already have a nonce. If not, create
@@ -113,7 +113,7 @@ tor.isolateCircuitsByDomain = function () {
           proxy = aProxy.QueryInterface(Ci.nsIProxyInfo),
           replacementProxy = tor.socksProxyCredentials(aProxy, firstPartyDomain);
       logger.eclog(3, "tor SOCKS: " + channel.URI.spec + " via " +
-                      replacementProxy.username + ":" + replacementProxy.password); 
+                      replacementProxy.username + ":" + replacementProxy.password);
       return replacementProxy;
     } catch (err) {
       logger.eclog(3, err.message);
