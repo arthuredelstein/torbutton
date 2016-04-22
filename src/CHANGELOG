@@ -1,3 +1,7 @@
+1.9.5.3
+ * Bug 18466: Make Torbutton compatible with Firefox ESR 45
+ * Translation updates
+
 1.9.5.2
  * Bug 18557: Exempt Graphite preference from Security Slider
 
