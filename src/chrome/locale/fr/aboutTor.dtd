@@ -8,11 +8,11 @@
 
 <!ENTITY aboutTor.outOfDateTorOn.label "ATTENTION : ce navigateur n'est pas à jour.">
 <!ENTITY aboutTor.outOfDateTorOff.label "DE PLUS, ce navigateur n'est pas à jour.">
-<!ENTITY aboutTor.outOfDate2.label "Cliquez sur l'oignon et choisissez ensuite Vérifier les mises à jour du navigateur Tor">
+<!ENTITY aboutTor.outOfDate2.label "Cliquez sur l'oignon et choisissez ensuite Vérifier les mises à jour du Navigateur Tor">
 
 <!ENTITY aboutTor.check.label "Tester les paramètres du réseau Tor">
 
-<!ENTITY aboutTor.success.label "Bienvenue dans le navigateur Tor">
+<!ENTITY aboutTor.success.label "Bienvenue dans le Navigateur Tor">
 <!ENTITY aboutTor.success2.label "Connecté au réseau Tor.">
 <!ENTITY aboutTor.success3.label "Vous pouvez maintenant naviguer sur Internet de manière anonyme.">
 <!ENTITY aboutTor.failure.label "Une erreur s'est produite !">

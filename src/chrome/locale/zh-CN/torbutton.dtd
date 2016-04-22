@@ -22,9 +22,9 @@
 <!ENTITY torbutton.pref_connection.more_info "更多信息">
 <!ENTITY torbutton.pref_connection_more_info.title "帮助">
 <!ENTITY torbutton.pref_connection_more_info.text "Torbutton 当前已启用。如需对 Tor 之外的代理设置进行更改，请禁用 Torbutton 后再返回这里。如需更改 Tor 的设置，请在 Torbutton 首选项窗口中进行设置。">
-<!ENTITY torbutton.context_menu.new_identity "新标识">
+<!ENTITY torbutton.context_menu.new_identity "新身份">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.new_circuit "为该站点新建 Tor 线路">
+<!ENTITY torbutton.context_menu.new_circuit "为此站点使用新 Tor 线路">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.toggle "切换 Tor 状态">
 <!ENTITY torbutton.context_menu.toggle.key "T">
@@ -181,5 +181,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "某些字体和图标可能无法正确显示。">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "禁用网站提供的字体文件。">
 <!ENTITY torbutton.prefs.sec_custom "自定义">
-<!ENTITY torbutton.circuit_display.title "该站点所用的 Tor 线路">
+<!ENTITY torbutton.circuit_display.title "为此站点使用的 Tor 线路">
 

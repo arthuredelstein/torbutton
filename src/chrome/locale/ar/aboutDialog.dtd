@@ -1,4 +1,4 @@
-<!ENTITY project.start           "&brandShortName; is developed by ">
+<!ENTITY project.start           "مطوْر من طرف &brandShortName;">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "the &vendorShortName;">
 <!ENTITY project.end             "لاتهدف للربح تعمل على حماية خصوصيتك وحريتك على الأنترنت">

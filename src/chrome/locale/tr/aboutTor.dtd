@@ -33,7 +33,7 @@
 <!ENTITY aboutTor.torInfo4.label "Bu sunucu ziyaretçiler hakkında herhangi bir bilgi toplamaz.">
 <!ENTITY aboutTor.whatnextQuestion.label "Şimdi ne olacak?">
 <!ENTITY aboutTor.whatnextAnswer.label "Tor, anonim kalmanız için gerek duyacağınız her şeyi sağlamaz! Kimliğinizin güvende kalması için bazı İnternet alışkanlıklarınızı değiştirmeniz gerekebilir.">
-<!ENTITY aboutTor.whatnext.label "Anonim Kalma İp Uçları »">
+<!ENTITY aboutTor.whatnext.label "Anonim Kalma İpuçları »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.helpInfo1.label "Yardım Edebilirsiniz!">
 <!ENTITY aboutTor.helpInfo2.label "Tor ağını daha hızlı güçlü kılmaya yardımcı olabilmenin çeşitli yolları var:">

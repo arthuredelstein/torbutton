@@ -170,7 +170,7 @@
 <!ENTITY torbutton.prefs.sec_all_jit_desc "Tüm JavaScript başarım iyileştirmeleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Bazı yazı tipi işleme özellikleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Graphite yazı tipi görüntüleme düzeneği devre dışı bırakılır.">
-<!ENTITY torbutton.prefs.sec_svg_desc "Bazı görsel tipleri devre dışı bırakılır.">
+<!ENTITY torbutton.prefs.sec_svg_desc "Bazı görsel türleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_svg_desc_tooltip "SVG görselleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_js_https_desc "HTTPS kullanılmayan sitelerde JavaScript varsayılan olarak devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_js_desc_tooltip "JavaScript, NoScript araç çubuğu düğmesi kullanılarak her site için ayrı ayrı etkinleştirilebilir.">

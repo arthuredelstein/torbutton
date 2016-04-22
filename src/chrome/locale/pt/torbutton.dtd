@@ -115,7 +115,7 @@
 <!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
 <!ENTITY torbutton.prefs.no_proxies_on "Nenhum proxy para: ">
 <!ENTITY torbutton.prefs.no_proxy_warning "Aviso: evite utilizar quaisquer nomes de hospedeiro acima">
-<!ENTITY torbutton.prefs.spoofreresh "Spoof Refresh">
+<!ENTITY torbutton.prefs.spoofreresh "Refrescamento da falsificação">
 <!ENTITY torbutton.prefs.refereroptions "Opções de falsificação do referente">
 <!ENTITY torbutton.prefs.nospoof "No referer spoof during Tor usage (sends referers as normal)">
 <!ENTITY torbutton.prefs.spoofroot "Enganar a pasta da página">
