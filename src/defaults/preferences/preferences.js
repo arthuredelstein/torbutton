@@ -9,6 +9,7 @@ pref("extensions.torbutton.display_panel",true);
 pref("extensions.torbutton.panel_style",'text');
 pref("extensions.torbutton@torproject.org.description", "chrome://torbutton/locale/torbutton.properties");
 pref("extensions.torbutton.updateNeeded", false);
+pref("extensions.torbutton.hide_sync_ui", true);
 
 // proxy prefs
 pref("extensions.torbutton.settings_method",'recommended');
