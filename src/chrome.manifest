@@ -12,6 +12,9 @@ override chrome://branding/locale/brand.dtd chrome://torbutton/locale/brand.dtd
 override chrome://branding/locale/brand.properties chrome://torbutton/locale/brand.properties
 overlay chrome://browser/content/aboutDialog.xul chrome://torbutton/content/aboutDialog.xul
 
+# UI customization
+overlay chrome://browser/content/baseMenuOverlay.xul chrome://torbutton/content/menu-overlay.xul
+
 # Strings for the about:tbupdate page
 override chrome://browser/locale/aboutTBUpdate.dtd chrome://torbutton/locale/aboutTBUpdate.dtd
 
