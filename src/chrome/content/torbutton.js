@@ -243,6 +243,9 @@ var torbutton_unique_pref_observer =
             case "extensions.torbutton.restrict_thirdparty":
                 torbutton_update_thirdparty_prefs();
                 break;
+            case "extensions.torbutton.hide_sync_ui":
+                torbutton_update_sync_ui();
+                break;
             case "gfx.font_rendering.opentype_svg.enabled":
             case "javascript.options.ion.content":
             case "javascript.options.typeinference":
@@ -645,6 +648,7 @@ function torbutton_init() {
     torbutton_update_toolbutton(mode);
     torbutton_update_statusbar(mode);
     torbutton_notify_if_update_needed();
+    torbutton_update_sync_ui();
 
     createTorCircuitDisplay(m_tb_control_host, m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
@@ -3584,6 +3588,13 @@ function torbutton_is_homepage_url(aURI)
 
   let urls = homePageURLs.split('|');
   return (urls.indexOf(aURI.spec) >= 0);
+}
+
+// Check if "extensions.torbutton.hide_sync_ui" is enabled, and if so,
+// hide the "Sign in to Sync" button on the hamburger menu.
+function torbutton_update_sync_ui()
+{
+  document.getElementById("PanelUI-footer-fxa").style.display = getBoolPref("extensions.torbutton.hide_sync_ui") ? "none" : "";
 }
 
 //vim:set ts=4
