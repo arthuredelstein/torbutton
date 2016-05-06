@@ -7,13 +7,6 @@
 // TODO: Double-check there are no strange exploits to defeat:
 //       http://kb.mozillazine.org/Links_to_local_pages_don%27t_work
 
-// TODO: Remove the following HUDService loading code once TBB-ESR24 has
-// been retired.
-if (!window.hasOwnProperty("HUDService")) {
-  XPCOMUtils.defineLazyModuleGetter(this, "HUDService",
-    "resource:///modules/HUDService.jsm");
-}
-
 XPCOMUtils.defineLazyModuleGetter(this, "ConsoleServiceListener",
   "resource://gre/modules/devtools/WebConsoleUtils.jsm");
 XPCOMUtils.defineLazyModuleGetter(this, "WebConsoleUtils",
@@ -610,27 +603,14 @@ function torbutton_init() {
     if (!m_tb_prefs.getBoolPref("extensions.torbutton.inserted_button")) {
       torbutton_log(3, 'Adding button');
       try {
-        if (CustomizableUI) {
-          // ESR31-style toolbar is handled by the existing compiled-in pref.
-          // We also need to prevent first-run toolbar reorg (#13378), so we
-          // reset this toolbar state on first-run.
-          try {
-            m_tb_prefs.clearUserPref("browser.uiCustomization.state");
-          } catch(e) {}
-          CustomizableUI.reset();
-          CustomizableUI.undoReset();
-        } else {
-          // ESR24-style toolbar
-          // TODO: Remove this branch once TBB-ESR24 has been retired.
-          var toolbutton = torbutton_get_button_from_toolbox();
-          var navbar = document.getElementById("nav-bar");
-          // XXX: Will probably fail on fennec. Also explicitly forbidden
-          // by MDC style guides (for good reason). Fix later..
-          var urlbar = document.getElementById("urlbar-container");
-          navbar.insertBefore(toolbutton, urlbar);
-          navbar.setAttribute("currentset", navbar.currentSet);
-          document.persist("nav-bar", "currentset");
-        }
+        // ESR31-style toolbar is handled by the existing compiled-in pref.
+        // We also need to prevent first-run toolbar reorg (#13378), so we
+        // reset this toolbar state on first-run.
+        try {
+          m_tb_prefs.clearUserPref("browser.uiCustomization.state");
+        } catch(e) {}
+        CustomizableUI.reset();
+        CustomizableUI.undoReset();
         torbutton_log(3, 'Button added');
         m_tb_prefs.setBoolPref("extensions.torbutton.inserted_button", true);
       } catch(e) {
