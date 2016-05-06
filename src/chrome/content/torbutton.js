@@ -21,6 +21,7 @@ XPCOMUtils.defineLazyModuleGetter(this, "WebConsoleUtils",
 
 let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm');
 let { Services } = Cu.import("resource://gre/modules/Services.jsm");
+let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js");
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -645,6 +646,7 @@ function torbutton_init() {
     torbutton_update_toolbutton(mode);
     torbutton_update_statusbar(mode);
     torbutton_notify_if_update_needed();
+    torbutton_bind_pocket_ui_to_pref();
 
     createTorCircuitDisplay(m_tb_control_host, m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
@@ -3584,6 +3586,33 @@ function torbutton_is_homepage_url(aURI)
 
   let urls = homePageURLs.split('|');
   return (urls.indexOf(aURI.spec) >= 0);
+}
+
+// Ensure that Pocket button and menu items are only visible the
+// "browser.pocket.enabled" pref is true.
+function torbutton_bind_pocket_ui_to_pref()
+{
+  try {
+    let pocketMenuItem = document.getElementById("menu_pocket"),
+        pocketMenuSeparator = document.getElementById("menu_pocketSeparator"),
+        menu = pocketMenuItem.parentElement,
+        nextMenuItem = pocketMenuSeparator.nextSibling,
+        pocketButton = document.getElementById("pocket-button");
+    bindPrefAndInit("browser.pocket.enabled", function (enabled) {
+      if (enabled) {
+        menu.insertBefore(pocketMenuItem, nextMenuItem);
+        menu.insertBefore(pocketMenuSeparator, nextMenuItem);
+      } else {
+        menu.removeChild(pocketMenuItem);
+        menu.removeChild(pocketMenuSeparator);
+      }
+      if (pocketButton !== null) {
+        pocketButton.hidden = !enabled;
+      }
+    });
+  } catch (e) {
+    torbutton_log(5, 'ERROR: failed to bind Pocket UI to "browser.pocket.enabled" pref');
+  }
 }
 
 //vim:set ts=4
