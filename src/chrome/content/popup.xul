@@ -19,11 +19,13 @@
         <menuitem id="torbutton-new-identity"
                   label="&torbutton.context_menu.new_identity;"
                   accesskey="&torbutton.context_menu.new_identity_key;"
+                  key="torbutton-new-identity-key"
                   insertafter="context-stop"
                   oncommand="torbutton_new_identity()"/>
         <menuitem id="torbutton-new-circuit"
                   label="&torbutton.context_menu.new_circuit;"
                   accesskey="&torbutton.context_menu.new_circuit_key;"
+                  key="torbutton-new-circuit-key"
                   insertafter="context-stop"
                   oncommand="torbutton_new_circuit()"/>
         <menuseparator/>
