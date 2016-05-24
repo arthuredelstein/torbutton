@@ -77,7 +77,7 @@
 <!ENTITY torbutton.prefs.refererspoofing "Verwijzer spoofing">
 <!ENTITY torbutton.prefs.spoofblank "Spoof blank referer during Tor usage (may break some sites)">
 <!ENTITY torbutton.prefs.smartspoof "Slimme verwijzer spoofing tijdens Tor gebruik (spoofs cross-domain verwijzers)">
-<!ENTITY torbutton.prefs.nospoof "No referer spoof during Tor usage (sends referers as normal)">
+<!ENTITY torbutton.prefs.nospoof "Geen verwijzer spoof tijdens Tor gebruik (verstuurd verwijzing als normaal)">
 <!ENTITY torbutton.prefs.disable_domstorage "Verhinder DOM opslag tijdens Tor gebruik (cruciaal)">
 <!ENTITY torbutton.prefs.forms "Formulieren">
 <!ENTITY torbutton.prefs.block_tforms "Blokkeer het opslaan van het formulierpaswoord tijdens Tor gebruik (aanbevolen)">
@@ -105,7 +105,7 @@
 <!ENTITY torbutton.prefs.restore_defaults "Terugzetten op begintoestand">
 <!ENTITY torbutton.prefs.test_settings "Testen van de instellingen">
 <!ENTITY torbutton.prefs.test_auto "Testen van de Tor-instellingen de eerste wissel na elke Firefoxstart">
-<!ENTITY torbutton.prefs.disable_livemarks "Disable livemarks updates during Tor usage">
+<!ENTITY torbutton.prefs.disable_livemarks "Deactiveren livemarks updates tijdend Tor gebruik">
 <!ENTITY torbutton.prefs.tor_memory_jar "Geen Tor cookies op de schijf opslaan">
 <!ENTITY torbutton.prefs.nontor_memory_jar "Geen niet-Tor cookies op de schijf opslaan">
 <!ENTITY torbutton.prefs.session_restore "Volgende tabs door sessiebeheer opslaan en herstellen : ">
@@ -117,7 +117,7 @@
 <!ENTITY torbutton.prefs.no_proxy_warning "Opgelet: gebruik van bovenstaande hostnamen vermijden">
 <!ENTITY torbutton.prefs.spoofreresh "Spoof Vernieuwen">
 <!ENTITY torbutton.prefs.refereroptions "Verwijzer Spoof instellingen">
-<!ENTITY torbutton.prefs.nospoof "No referer spoof during Tor usage (sends referers as normal)">
+<!ENTITY torbutton.prefs.nospoof "Geen verwijzer spoof tijdens Tor gebruik (verstuurd verwijzing als normaal)">
 <!ENTITY torbutton.prefs.spoofroot "Spoof de bovenliggende folder van de pagina">
 <!ENTITY torbutton.prefs.spoofdomain "Spoof het domein als verwijzer">
 <!ENTITY torbutton.prefs.spoofblank "Spoof blank referer during Tor usage (may break some sites)">
@@ -132,7 +132,7 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Verwijder alle behalve beveiligde">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beveilig nieuwe Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beveilig nieuwe Cookies niet">
-<!ENTITY torbutton.prefs.disable_livemarks "Disable livemarks updates during Tor usage">
+<!ENTITY torbutton.prefs.disable_livemarks "Deactiveren livemarks updates tijdend Tor gebruik">
 <!ENTITY torbutton.prefs.dtd_recommended "(aanbevolen)">
 <!ENTITY torbutton.prefs.dtd_optional "(optioneel)">
 <!ENTITY torbutton.prefs.dtd_crucial "(cruciaal)">
@@ -157,7 +157,7 @@
 <!ENTITY torbutton.prefs.sec_med_low "Medium-Laag">
 <!ENTITY torbutton.prefs.sec_gen_desc "Op dit beveiligingsniveau gelden de volgende wijzigingen (beweeg de muis over de items voor meer informatie)">
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 video en audio media geworden click-to-play via NoScript.">
-<!ENTITY torbutton.prefs.sec_html5_tooltip "Op sommige sites , zou je  de NoScript werkbalk knop moeten  gebruiken om deze media -objecten mogelijk te maken.">
+<!ENTITY torbutton.prefs.sec_html5_tooltip "Op sommige sites zou je de NoScript werkbalk knop moeten gebruiken om deze media -objecten mogelijk te maken.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Sommige JavaScript-prestatieverbeteringen zijn uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
