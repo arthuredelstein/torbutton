@@ -1,7 +1,5 @@
-<!ENTITY torbutton.prefs.title "Налаштування Torbutton">
 <!ENTITY torbutton.prefs.tor_settings "Параметри проксі">
 <!ENTITY torbutton.prefs.recommended_settings "Використовувати рекомендовані параметри для моєї версії Firefox">
-<!ENTITY torbutton.prefs.use_privoxy "Використовувати Privoxy">
 <!ENTITY torbutton.prefs.use_polipo "Використовувати Polipo">
 <!ENTITY torbutton.prefs.custom_settings "Використовувати звичайні налаштування проксі">
 <!ENTITY torbutton.prefs.proxy.host.http "HTTP проксі:">
@@ -10,115 +8,27 @@
 <!ENTITY torbutton.prefs.proxy.host.gopher "Gopher проксі:">
 <!ENTITY torbutton.prefs.proxy.host.socks "Вузол SOCKS:">
 <!ENTITY torbutton.prefs.proxy.port "Порт:">
-<!ENTITY torbutton.about.title "Про Torbutton">
-<!ENTITY torbutton.about.version "Версія:">
-<!ENTITY torbutton.about.summary "Захищає приватність вашого блукання тенетами з Tor.">
-<!ENTITY torbutton.about.code "Учасники:">
-<!ENTITY torbutton.about.maintainer "Супроводжувач:">
-<!ENTITY torbutton.about.security_review "Огляд Безпеки:">
-<!ENTITY torbutton.about.donate "Якщо вам подобається Tor – ви могли б">
-<!ENTITY torbutton.about.make_donation "зробити пожертву.">
 <!ENTITY torbutton.pref_connection.notice "Вимкніть Torbutton, щоб змінити ці налаштування">
 <!ENTITY torbutton.pref_connection.more_info "Більше інформації">
 <!ENTITY torbutton.pref_connection_more_info.title "Довідка">
 <!ENTITY torbutton.pref_connection_more_info.text "Torbutton зараз увімкнено. Якщо Ви бажаєте змінити налаштування проксі (не Tor-проксі), прошу вимкнути Torbutton та повернутися сюди. Якщо ж бажана зміна торкатиметься Tor-проксі, прошу це робити через вікно налаштування Torbutton.">
 <!ENTITY torbutton.context_menu.new_identity "Нова особистість">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.toggle "Змінити стан Tor">
-<!ENTITY torbutton.context_menu.toggle.key "T">
 <!ENTITY torbutton.context_menu.preferences "Налаштування...">
 <!ENTITY torbutton.context_menu.preferences.key "P">
-<!ENTITY torbutton.context_menu.about "Про Torbutton...">
-<!ENTITY torbutton.context_menu.about.key "A">
 <!ENTITY torbutton.context_menu.networksettings "Відкрити Налаштування Мережі...">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Завантажити пакет оновлень переглядача Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Захист куки">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.context_menu.copyTor "Копіювати адресу Tor">
-<!ENTITY torbutton.context_menu.copyTor.key "p">
-<!ENTITY torbutton.context_menu.openTorTab "Відкрити адресу Tor у новій вкладці">
-<!ENTITY torbutton.context_menu.openTorTab.key "r">
-<!ENTITY torbutton.context_menu.openTorWindow "Відкрити адресу Tor у новому вікні">
-<!ENTITY torbutton.context_menu.openTorWindow.key "d">
-<!ENTITY torbutton.button.label "Torbutton">
 <!ENTITY torbutton.button.tooltip "Клацніть для запуску Torbutton">
-<!ENTITY torbutton.prefs.sec_settings "Параметри безпеки">
-<!ENTITY torbutton.prefs.block_thread "Блокувати читання історії під час використання Tor (критично)">
-<!ENTITY torbutton.prefs.block_thwrite "Блокувати запис історії під час використання Tor (рекомендовано)">
-<!ENTITY torbutton.prefs.block_nthread "Блокувати читання історії без використання Tor (на Ваш вибір)">
-<!ENTITY torbutton.prefs.block_nthwrite "Блокувати запис історії без використання Tor (на Ваш вибір)">
-<!ENTITY torbutton.prefs.clear_history "Очищувати історію при зміні стану Tor (на Ваш вибір)">
-<!ENTITY torbutton.prefs.clear_cache "Блокувати дисковий кеш та чистити кеш при зміні стану Tor">
-<!ENTITY torbutton.prefs.block_cache "Блокувати доступ до дискового та кешу у пам’яті при використанні Tor">
-<!ENTITY torbutton.prefs.cookie_jars "Зберігати не-Tor куки у захищеному стані">
-<!ENTITY torbutton.prefs.cookie_protection "Використовувати для вибору діалог захисту куків">
-<!ENTITY torbutton.prefs.mmm_cookies "Я хочу сам керувати своїми куками (небезпечно)">
-<!ENTITY torbutton.prefs.clear_cookies "Чистити куки при зміні стану Tor">
-<!ENTITY torbutton.prefs.disable_plugins "Вимикати модулі протягом використання Tor (критично)">
-<!ENTITY torbutton.prefs.kill_bad_js "Захоплювати небезпеки у javascript (критично)">
-<!ENTITY torbutton.prefs.isolate_content "Ізолювати динамічний вміст до одного стану Tor (критично)">
-<!ENTITY torbutton.prefs.no_updates "Вимкнути оновлення протягом використання Tor">
-<!ENTITY torbutton.prefs.set_uagent "Встановити юзер агент для використання Tor (критично)">
-<!ENTITY torbutton.prefs.dynamic "Динамічний вміст">
-<!ENTITY torbutton.prefs.cookies "Куки">
-<!ENTITY torbutton.prefs.cache "Кеш">
-<!ENTITY torbutton.prefs.history "Історія">
-<!ENTITY torbutton.prefs.no_search "Вимкнути підказки при пошуку під час використання Tor (рекомендовано)">
-<!ENTITY torbutton.prefs.shutdown "Вимкнути">
-<!ENTITY torbutton.prefs.tor_shutdown "Чистити куки Tor при вимкненні переглядача із Tor увімкненим">
-<!ENTITY torbutton.prefs.all_shutdown "Чистити куки Tor при вимкненні переглядача">
-<!ENTITY torbutton.prefs.no_shutdown "Не чистити куків при вимкненні переглядача">
-<!ENTITY torbutton.prefs.disable_sessionstore "Не дозволяти збереження сесій (рекомендовано)">
-<!ENTITY torbutton.prefs.headers "Заголовки">
-<!ENTITY torbutton.prefs.refererspoofing "Підстановка реферер">
-<!ENTITY torbutton.prefs.spoofblank "Spoof blank referer during Tor usage (may break some sites)">
-<!ENTITY torbutton.prefs.smartspoof "Розумна підстановка реферера під час використання Tor (підміна перехресних доменних реферерів)">
-<!ENTITY torbutton.prefs.nospoof "No referer spoof during Tor usage (sends referers as normal)">
-<!ENTITY torbutton.prefs.disable_domstorage "Вимкнути збереження DOM при використанні Tor (критично)">
-<!ENTITY torbutton.prefs.forms "Форми">
-<!ENTITY torbutton.prefs.block_tforms "Блокувати збереження паролів та форм при використанні Tor (рекомендовано)">
-<!ENTITY torbutton.prefs.block_ntforms "Блокувати збереження паролів та форм (на Ваш вибір)">
-<!ENTITY torbutton.prefs.tor "Tor">
-<!ENTITY torbutton.prefs.non_tor "не-Tor">
-<!ENTITY torbutton.prefs.restore_tor "При відновленні сесії, встановлювати стан Tor як:">
-<!ENTITY torbutton.prefs.startup_tor "При запуску веб-оглядача, встановлювати стан Tor у:">
-<!ENTITY torbutton.prefs.reload_crashed_jar "Перевантажити куки/очистити куки при падінні Фірефоху (рекомендовано)">
-<!ENTITY torbutton.prefs.dual_cookie_jars "Зберігати як Tor, так і не-Tor куки у захищеному стані (небезпечно)">
-<!ENTITY torbutton.prefs.clear_http_auth "Очистити сесії HTTP аутентифікації (рекомендовано)">
-<!ENTITY torbutton.prefs.block_js_history "Виділити доступ до історії навігації до Tor (важливо)">
-<!ENTITY torbutton.prefs.resize_on_toggle "Масштабувати вікна кратно 50 пікселям при використанні Tor (рекомендовано)">
-<!ENTITY torbutton.prefs.close_tor "Закрити усі вікна та вкладки Tor при перемиканні (не обов’зково)">
-<!ENTITY torbutton.prefs.close_nontor "Закрити усі не Tor вікна та вкладки при перемиканні (не обов’зково)">
-<!ENTITY torbutton.prefs.block_links "Блокувати клацання по посиланнях і перезавантаження сторінок з різних режимів Tor (необов'язково)">
-<!ENTITY torbutton.prefs.jar_certs "Зберігати сертифікати SSL у різних jar`ах для Tor/не Tor (рекомендовано)">
-<!ENTITY torbutton.prefs.jar_ca_certs "Зберігати сертифікати CA у різних jar`ах для Tor/не Tor (рекомендовано)">
-<!ENTITY torbutton.prefs.locked_mode "Вимкнути Кнопку і Гарячі клавіші для запобігання випадкового перемикання режиму">
-<!ENTITY torbutton.prefs.startup_state "При нормальному запуску — встановлювати стан Tor у:">
-<!ENTITY torbutton.prefs.shutdown_state "Вимкнений стан">
-<!ENTITY torbutton.prefs.startup "Запуск">
-<!ENTITY torbutton.prefs.block_tor_file_net "Блокувати доступ до мережі в режимі Tor від адрес типу file:// (рекомендовано)">
-<!ENTITY torbutton.prefs.block_nontor_file_net "Блокувати доступ до мережі в режимі Не-Tor від адрес типу file://">
 <!ENTITY torbutton.prefs.restore_defaults "За Замовчуванням">
 <!ENTITY torbutton.prefs.test_settings "Перевірити Настройки">
-<!ENTITY torbutton.prefs.test_auto "Перевіряти налаштування Tor, після того, як я вперше перемикаю цей режим при кожному запуску Firefox">
-<!ENTITY torbutton.prefs.disable_livemarks "Disable livemarks updates during Tor usage">
-<!ENTITY torbutton.prefs.tor_memory_jar "Не записувати куки Tor на диск">
-<!ENTITY torbutton.prefs.nontor_memory_jar "Не записувати не Tor куки на диск">
-<!ENTITY torbutton.prefs.session_restore "Чи може сесія міститись, зберігатись і відновлюватись з наступними вкладками:">
-<!ENTITY torbutton.prefs.nontor_tabs "Закладки завантажені не в Tor">
-<!ENTITY torbutton.prefs.tor_tabs "Закладки завантажені в Tor">
 <!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
 <!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
 <!ENTITY torbutton.prefs.no_proxies_on "Не використовувати проксі для: ">
 <!ENTITY torbutton.prefs.no_proxy_warning "Увага: Уникайте використання будь якого з нищезазначених хостів">
-<!ENTITY torbutton.prefs.spoofreresh "Оновити правила підстановки">
-<!ENTITY torbutton.prefs.refereroptions "Опції підстановок реферерів">
-<!ENTITY torbutton.prefs.nospoof "Не підміняти реферер">
-<!ENTITY torbutton.prefs.spoofroot "Підміна сторінок, які містять папки">
-<!ENTITY torbutton.prefs.spoofdomain "Підмінити домен в якості реферера">
-<!ENTITY torbutton.prefs.spoofblank "Зробити реферер порожнім">
 <!ENTITY torbutton.cookiedialog.title "Керувати Захистом Куків">
 <!ENTITY torbutton.cookiedialog.lockCol "Захищено">
 <!ENTITY torbutton.cookiedialog.domainCol "Хост">
@@ -130,17 +40,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Видалити Усі, Окрім Захищених">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Захищати Нові Куки">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не Захищати Нові Куки">
-<!ENTITY torbutton.prefs.disable_livemarks "Відключити оновлення Livemarks під час роботи в Tor">
-<!ENTITY torbutton.prefs.dtd_recommended "(рекомендовано)">
-<!ENTITY torbutton.prefs.dtd_optional "(не обов’зково)">
-<!ENTITY torbutton.prefs.dtd_crucial "(критично)">
-<!ENTITY torbutton.prefs.update_torbutton_via_tor "Перенаправляти поновлення Torbutton через Tor">
-<!ENTITY torbutton.prefs.dodge_google_captcha "Автоматично використовувати альтернативну пошукову систему при показі Google Captcha:">
-<!ENTITY torbutton.prefs.engine1 "ixquick.com">
-<!ENTITY torbutton.prefs.engine2 "Bing.com">
-<!ENTITY torbutton.prefs.engine3 "Yahoo.com">
-<!ENTITY torbutton.prefs.engine4 "startpage.com">
-<!ENTITY torbutton.prefs.engine5 "duckduckgo.com">
 <!ENTITY torbutton.prefs.transparentTor "Прозора Торіфікація (Вимагає користувацьких transproxy або Tor-маршрутизатора)">
 <!ENTITY torbutton.prefs.block_disk "Не зберігати історію переглядів або дані з відвідуваних сайтів (активує функцію приватного перегляду)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Блокувати сторонні куки та інші дані відстеження">

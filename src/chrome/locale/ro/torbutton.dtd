@@ -1,7 +1,5 @@
-<!ENTITY torbutton.prefs.title "Preferințe Torbutton">
 <!ENTITY torbutton.prefs.tor_settings "Setările pentru proxy">
 <!ENTITY torbutton.prefs.recommended_settings "Folosește setările pentru proxy recomandate pentru versiunea mea de Firefox">
-<!ENTITY torbutton.prefs.use_privoxy "Folosește Privoxy">
 <!ENTITY torbutton.prefs.use_polipo "Folosește Polipo">
 <!ENTITY torbutton.prefs.custom_settings "Folosește setări individualizate pentru proxy">
 <!ENTITY torbutton.prefs.proxy.host.http "Proxy HTTP:">
@@ -10,115 +8,27 @@
 <!ENTITY torbutton.prefs.proxy.host.gopher "Proxy Gopher:">
 <!ENTITY torbutton.prefs.proxy.host.socks "Host SOCKS:">
 <!ENTITY torbutton.prefs.proxy.port "Portul:">
-<!ENTITY torbutton.about.title "Despre Torbutton">
-<!ENTITY torbutton.about.version "Versiune:">
-<!ENTITY torbutton.about.summary "Protects the privacy of your Tor browsing.">
-<!ENTITY torbutton.about.code "Contribuitori Cod:">
-<!ENTITY torbutton.about.maintainer "Maintainer:">
-<!ENTITY torbutton.about.security_review "Revizie Securitate:">
-<!ENTITY torbutton.about.donate "Daca va place sa utiliuzati Tor, ati putea considera:">
-<!ENTITY torbutton.about.make_donation "faceti o donatie.">
 <!ENTITY torbutton.pref_connection.notice "Dezactivaţi Torbutton pentru a schimba aceste setări.">
 <!ENTITY torbutton.pref_connection.more_info "Informatii suplimentare">
 <!ENTITY torbutton.pref_connection_more_info.title "Ajutor">
 <!ENTITY torbutton.pref_connection_more_info.text "Torbutton este activată în acest moment. Dacă doriţi să schimbaţi setările non-proxy Tor, dezactivaţi Torbutton şi vă rugăm să reveniţi aici. Dacă doriţi să vă schimbaţi setările Tor, vă rugăm să folosiţi fereastra de preferinţă Torbutton.">
 <!ENTITY torbutton.context_menu.new_identity "Identitate noua">
 <!ENTITY torbutton.context_menu.new_identity_key "l">
-<!ENTITY torbutton.context_menu.toggle "Comutarea starii Tor">
-<!ENTITY torbutton.context_menu.toggle.key "T">
 <!ENTITY torbutton.context_menu.preferences "Preferințe...">
 <!ENTITY torbutton.context_menu.preferences.key "P">
-<!ENTITY torbutton.context_menu.about "Despre Torbutton...">
-<!ENTITY torbutton.context_menu.about.key "A">
 <!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "A">
 <!ENTITY torbutton.context_menu.cookieProtections "Protectii Cookie-uri.">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.context_menu.copyTor "Copiaza URL-ul Tor">
-<!ENTITY torbutton.context_menu.copyTor.key "p">
-<!ENTITY torbutton.context_menu.openTorTab "Deschide URL-ul Tor intr-o noua fila.">
-<!ENTITY torbutton.context_menu.openTorTab.key "r">
-<!ENTITY torbutton.context_menu.openTorWindow "Deschide URL-ul Tor intr-o noua fereastra.">
-<!ENTITY torbutton.context_menu.openTorWindow.key "d">
-<!ENTITY torbutton.button.label "Butonul Tor">
 <!ENTITY torbutton.button.tooltip "Apasă pentru pornirea Torbutton">
-<!ENTITY torbutton.prefs.sec_settings "Setări de securitate">
-<!ENTITY torbutton.prefs.block_thread "Blochează citirea istoricului în timpul Tor (esenţial)">
-<!ENTITY torbutton.prefs.block_thwrite "Blochează scrierea istoriei in timpul Tor (recomandat)">
-<!ENTITY torbutton.prefs.block_nthread "Blochează citirea istoricului in timpul non-Tor(opţional)">
-<!ENTITY torbutton.prefs.block_nthwrite "Blochează scrierea istoriei in timpul non-Tor(opţional)">
-<!ENTITY torbutton.prefs.clear_history "Şterge istoricul când comuţ Tor(opţional)">
-<!ENTITY torbutton.prefs.clear_cache "Blochează Tor cache si sterge toate chache-urile când  comuţ Tor">
-<!ENTITY torbutton.prefs.block_cache "Blocheaza accesarea discului so memoriei când Tor este pornit">
-<!ENTITY torbutton.prefs.cookie_jars "Păstrează cookie-urile non-Tor într-o cutie protejate">
-<!ENTITY torbutton.prefs.cookie_protection "Foloseşte fereastra Protecţii Cookie pentru a alege">
-<!ENTITY torbutton.prefs.mmm_cookies "Eu voi gestiona manual cookie-urile mele (periculos)">
-<!ENTITY torbutton.prefs.clear_cookies "Şterge cookie-urile când comut Tor">
-<!ENTITY torbutton.prefs.disable_plugins "Opreşte plugin-urile in timpul funcţionări lui Tor(esenţial)">
-<!ENTITY torbutton.prefs.kill_bad_js "Agăţa javascript-urile periculoase (esenţial)">
-<!ENTITY torbutton.prefs.isolate_content "Izolează conţinutul dinamic pentru star lui Tor(esenţial)">
-<!ENTITY torbutton.prefs.no_updates "Opreşte actualizările in timpul funcţionări lui Tor">
-<!ENTITY torbutton.prefs.set_uagent "Setează user agentul pentru funcţionarea lui Tor(esenţial)">
-<!ENTITY torbutton.prefs.dynamic "Conţinut dinamic ">
-<!ENTITY torbutton.prefs.cookies "Cookies">
-<!ENTITY torbutton.prefs.cache "Cache">
-<!ENTITY torbutton.prefs.history "Istoric">
-<!ENTITY torbutton.prefs.no_search "Opreşte căutarea sugestilor in timpul fucţionări lui Tor (recomandat)">
-<!ENTITY torbutton.prefs.shutdown "Inchide">
-<!ENTITY torbutton.prefs.tor_shutdown "Șterge cookie-urile Tor la închiderea browser-ului cu o sesiune Tor activă">
-<!ENTITY torbutton.prefs.all_shutdown "Șterge cookie-urile la oricare închidere a browser-ului ">
-<!ENTITY torbutton.prefs.no_shutdown "Nu șterge cookie-urile mele la închidere">
-<!ENTITY torbutton.prefs.disable_sessionstore "Dezactivați salvarea sesiunilor (recomandat)">
-<!ENTITY torbutton.prefs.headers "Antete">
-<!ENTITY torbutton.prefs.refererspoofing "Referer spoofing">
-<!ENTITY torbutton.prefs.spoofblank "Spoof blank referer during Tor usage (may break some sites)">
-<!ENTITY torbutton.prefs.smartspoof "Smart referer spoof during Tor usage (spoofs cross domain referers)">
-<!ENTITY torbutton.prefs.nospoof "No referer spoof during Tor usage (sends referers as normal)">
-<!ENTITY torbutton.prefs.disable_domstorage "Oprește DOM Storage în timpul funcționării Tor (important)">
-<!ENTITY torbutton.prefs.forms "Forme">
-<!ENTITY torbutton.prefs.block_tforms "Blochează salvarea parolelor și datele pentru completări în timpul utilizării Tor (recomandat)">
-<!ENTITY torbutton.prefs.block_ntforms "Blochează salvarea parolelor și datelor pentru auto-completări în timpul utilizării Non-Tor (opțional)">
-<!ENTITY torbutton.prefs.tor "Tor">
-<!ENTITY torbutton.prefs.non_tor "Non-Tor">
-<!ENTITY torbutton.prefs.restore_tor "La înițierea sesiunii restaurate, fixează statutul Tor la:">
-<!ENTITY torbutton.prefs.startup_tor "La pornirea browserului, seteaza starea Tor la:">
-<!ENTITY torbutton.prefs.reload_crashed_jar "Restaurează/șterge cookie-urile după avarierea Firefox">
-<!ENTITY torbutton.prefs.dual_cookie_jars "Salvează cookie-urile Tor și Non-Tor în fișiere protejate (periculos)">
-<!ENTITY torbutton.prefs.clear_http_auth "Șterge sesiunile de autentificare HTTP (recomandat)">
-<!ENTITY torbutton.prefs.block_js_history "Izolați accesul la istoricul navigărilor al statutul Tor (important)">
-<!ENTITY torbutton.prefs.resize_on_toggle "Redimensionează fereastra de lucru cu multiplul a 50px în timpul utilizării Tor (recomandat)">
-<!ENTITY torbutton.prefs.close_tor "Închide toate ferestrele și filele Tor la pornire/oprire (opțional)">
-<!ENTITY torbutton.prefs.close_nontor "Închide toate ferestrele și filele Non-Tor la oprire/pornire (opțional)">
-<!ENTITY torbutton.prefs.block_links "Blochează accesarea link-urilor și reîncărcarea paginilor din diferite statute Tor (opțional)">
-<!ENTITY torbutton.prefs.jar_certs "Păstrează certificare SSL în fișiere jar separate pentru Tor/Non-Tor (recomandat)">
-<!ENTITY torbutton.prefs.jar_ca_certs "Păstrează certificate CA în fișiere jar separate pentru Tor/Non-Tor (recomandat)">
-<!ENTITY torbutton.prefs.locked_mode "Dezactivează Butonul și Combinațiile de Taste pentru a preveni oprirea accidentală">
-<!ENTITY torbutton.prefs.startup_state "La pornire normală, stabilește statutul Tor la:">
-<!ENTITY torbutton.prefs.shutdown_state "Nu porniți Tor">
-<!ENTITY torbutton.prefs.startup "Pornește">
-<!ENTITY torbutton.prefs.block_tor_file_net "Blochează accesul Tor la rețea din adrese file:// (recomandat)">
-<!ENTITY torbutton.prefs.block_nontor_file_net "Blochează accesul Non-Tor la rețea din adrese file:// ">
 <!ENTITY torbutton.prefs.restore_defaults "Restaurează setările implicite">
 <!ENTITY torbutton.prefs.test_settings "Setările pentru testări">
-<!ENTITY torbutton.prefs.test_auto "Testează setările mele pentru Tor după prima pornire/oprire la fiecare demarare Firefox">
-<!ENTITY torbutton.prefs.disable_livemarks "Disable livemarks updates during Tor usage">
-<!ENTITY torbutton.prefs.tor_memory_jar "Nu scrie cookie-urile Tor pe disc">
-<!ENTITY torbutton.prefs.nontor_memory_jar "Nu scrie cookie-urile Non-Tor pe disc">
-<!ENTITY torbutton.prefs.session_restore "Fă ca sesiunea să salveze și să restaureze următoarele file: ">
-<!ENTITY torbutton.prefs.nontor_tabs "File încărcate în Non-Tor">
-<!ENTITY torbutton.prefs.tor_tabs "File încărcate în Tor">
 <!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
 <!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
 <!ENTITY torbutton.prefs.no_proxies_on "Nici un proxy pentru:">
 <!ENTITY torbutton.prefs.no_proxy_warning "ATENȚIE: Evitați să folosiți unul din hostname-le de mai sus">
-<!ENTITY torbutton.prefs.spoofreresh "Spoof Refresh">
-<!ENTITY torbutton.prefs.refereroptions "Referer Spoofing Options">
-<!ENTITY torbutton.prefs.nospoof "Do not spoof referer">
-<!ENTITY torbutton.prefs.spoofroot "Spoof the containing folder of the page">
-<!ENTITY torbutton.prefs.spoofdomain "Spoof the domain as referer">
-<!ENTITY torbutton.prefs.spoofblank "Make referer blank">
 <!ENTITY torbutton.cookiedialog.title "Gestionează Protecţii Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "Protejat">
 <!ENTITY torbutton.cookiedialog.domainCol "Gazda">
@@ -130,17 +40,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Indeparteaza tot, mai putin protejat">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protejeaza Cookie-urile noi">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nu proteja Cookie-urile noi">
-<!ENTITY torbutton.prefs.disable_livemarks "Opreşte actualizările Livemark în timpul funcţionări lui Tor">
-<!ENTITY torbutton.prefs.dtd_recommended "(recomandat)">
-<!ENTITY torbutton.prefs.dtd_optional "(opțional)">
-<!ENTITY torbutton.prefs.dtd_crucial "(crucial)">
-<!ENTITY torbutton.prefs.update_torbutton_via_tor "Redirecționează actualizările Torbutton prin intermediul Tor">
-<!ENTITY torbutton.prefs.dodge_google_captcha "Folosește automat un alt motor de căutare cînd apare Google Captcha:">
-<!ENTITY torbutton.prefs.engine1 "ixquick.com">
-<!ENTITY torbutton.prefs.engine2 "Bing.com">
-<!ENTITY torbutton.prefs.engine3 "Yahoo.com">
-<!ENTITY torbutton.prefs.engine4 "startpage.com">
-<!ENTITY torbutton.prefs.engine5 "duckduckgo.com">
 <!ENTITY torbutton.prefs.transparentTor "Torificare transparentă (Necesită transproy sau Tor modificat)">
 <!ENTITY torbutton.prefs.block_disk "Don't record browsing history or website data (enables Private Browsing Mode)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
