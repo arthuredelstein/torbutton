@@ -4,6 +4,7 @@
  * Bug 18905: Hide unusable items from help menu
  * Bug 16017: Allow users to more easily set a non-tor SSH proxy
  * Bug 17599: Provide shortcuts for New Identity and New Circuit
+ * Bug 18980: Remove obsolete toolbar button code
  * Bug 14429: Make sure the automatic resizing is disabled
  * Translation updates
  * Code clean-up
