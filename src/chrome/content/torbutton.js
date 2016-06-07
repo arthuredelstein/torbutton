@@ -1872,6 +1872,13 @@ function torbutton_do_new_identity() {
            getService(Ci.nsIPermissionManager);
   pm.removeAll();
 
+  // Clear the domain isolation state.
+  torbutton_log(3, "New Identity: Clearing domain isolator");
+
+  let domainIsolator = Cc["@torproject.org/domain-isolator;1"]
+      .getService(Ci.nsISupports).wrappedJSObject;
+  domainIsolator.clearIsolation();
+
   torbutton_log(3, "New Identity: Sending NEWNYM");
 
   // We only support TBB for newnym.

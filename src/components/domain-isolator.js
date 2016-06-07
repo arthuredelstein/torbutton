@@ -110,6 +110,18 @@ tor.newCircuitForDomain = function(domain) {
   logger.eclog(3, "New domain isolation for " + domain + ": " + tor.noncesForDomains[domain]);
 }
 
+// __tor.clearIsolation()_.
+// Clear the isolation state cache, forcing new circuits to be used for all
+// subsequent requests.
+tor.clearIsolation = function () {
+  // Per-domain nonces are stored in a map, so simply re-initialize the map.
+  tor.noncesForDomains = {};
+
+  // Force a rotation on the next catch-all circuit use by setting the creation
+  // time to the epoch.
+  tor.unknownDirtySince = 0;
+}
+
 // __tor.isolateCircuitsByDomain()__.
 // For every HTTPChannel, replaces the default SOCKS proxy with one that authenticates
 // to the SOCKS server (the tor client process) with a username (the first party domain)
@@ -188,6 +200,10 @@ DomainIsolator.prototype = {
 
   disableIsolation: function() {
     tor.isolationEnabled = false;
+  },
+
+  clearIsolation: function() {
+    tor.clearIsolation();
   },
 
   wrappedJSObject: null
