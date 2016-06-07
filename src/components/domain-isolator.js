@@ -16,6 +16,9 @@ const Cc = Components.classes, Ci = Components.interfaces, Cu = Components.utils
 let logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Components.interfaces.nsISupports).wrappedJSObject;
 
+// Import crypto object (FF 37+).
+Cu.importGlobalProperties(["crypto"]);
+
 // ## mozilla namespace.
 // Useful functionality for interacting with Mozilla services.
 let mozilla = {};
@@ -69,7 +72,7 @@ tor.socksProxyCredentials = function (originalProxy, domain) {
   // Check if we already have a nonce. If not, create
   // one for this domain.
   if (!tor.noncesForDomains.hasOwnProperty(domain)) {
-    tor.noncesForDomains[domain] = 0;
+    tor.noncesForDomains[domain] = tor.nonce();
   }
   let proxy = originalProxy.QueryInterface(Ci.nsIProxyInfo);
   return mozilla.protocolProxyService
@@ -77,21 +80,34 @@ tor.socksProxyCredentials = function (originalProxy, domain) {
                           proxy.host,
                           proxy.port,
                           domain, // username
-                          tor.noncesForDomains[domain].toString(), // password
+                          tor.noncesForDomains[domain], // password
                           proxy.flags,
                           proxy.failoverTimeout,
                           proxy.failoverProxy);
 };
 
-tor.newCircuitForDomain = function(domain) {
-  // Check if we already have a nonce. If not, create
-  // one for this domain.
-  if (!tor.noncesForDomains.hasOwnProperty(domain)) {
-    tor.noncesForDomains[domain] = 0;
-  } else {
-    tor.noncesForDomains[domain] += 1;
+tor.nonce = function() {
+  // Generate a new 128 bit random tag.  Strictly speaking both using a
+  // cryptographic entropy source and using 128 bits of entropy for the
+  // tag are likely overkill, as correct behavior only depends on how
+  // unlikely it is for there to be a collision.
+  let tag = new Uint8Array(16);
+  crypto.getRandomValues(tag);
+
+  // Convert the tag to a hex string.
+  let tagStr = "";
+  for (var i = 0; i < tag.length; i++) {
+    tagStr += (tag[i] >>> 4).toString(16);
+    tagStr += (tag[i] & 0x0F).toString(16);
   }
-  logger.eclog(3, "New domain isolation count " +tor.noncesForDomains[domain] + " for " + domain);
+
+  return tagStr;
+}
+
+tor.newCircuitForDomain = function(domain) {
+  // Re-generate the nonce for the domain.
+  tor.noncesForDomains[domain] = tor.nonce();
+  logger.eclog(3, "New domain isolation for " + domain + ": " + tor.noncesForDomains[domain]);
 }
 
 // __tor.isolateCircuitsByDomain()__.
