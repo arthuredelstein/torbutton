@@ -170,6 +170,10 @@ category profile-after-change CookieJarSelector @torproject.org/cookie-jar-selec
 component {65be2be0-ceb4-44c2-91a5-9c75c53430bf} components/torRefSpoofer.js
 contract @torproject.org/torRefSpoofer;1 {65be2be0-ceb4-44c2-91a5-9c75c53430bf}
 
+component {4c03be7d-492f-990e-f0da-f3689e564898} components/content-policy.js
+contract @torproject.org/content-policy;1 {4c03be7d-492f-990e-f0da-f3689e564898}
+category content-policy ContentPolicy @torproject.org/content-policy;1
+
 category profile-after-change RefSpoofer @torproject.org/torRefSpoofer;1
 category profile-after-change StartupObserver @torproject.org/startup-observer;1
 category profile-after-change DomainIsolator @torproject.org/domain-isolator;1
