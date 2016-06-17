@@ -1,3 +1,6 @@
+1.9.5.5
+ * Bug 19417: Clear asmjscache
+
 1.9.5.4
  * Bug 18466: Make Torbutton compatible with Firefox ESR 45
  * Bug 18743: Pref to hide 'Sign in to Sync' button in hamburger menu
