@@ -24,12 +24,12 @@ ContentPolicy.prototype = {
   _xpcom_categories: [{category: "content-policy"}],
 
   shouldLoad: function(aContentType, aContentLocation, aRequestOrigin, aContext, aMimeTypeGuess, aExtra) {
-    // Accept if no content URI or scheme is not a resource.
-    if (!aContentLocation || !aContentLocation.schemeIs('resource'))
+    // Accept if no content URI or scheme is not a resource/chrome.
+    if (!aContentLocation || !(aContentLocation.schemeIs('resource') || aContentLocation.schemeIs('chrome')))
       return Ci.nsIContentPolicy.ACCEPT;
 
-    // Accept if no origin URI, or if the origin URI scheme is chrome/resource.
-    if (!aRequestOrigin || aRequestOrigin.schemeIs('resource') || aRequestOrigin.schemeIs('chrome'))
+    // Accept if no origin URI or if origin scheme is chrome/resource/about.
+    if (!aRequestOrigin || aRequestOrigin.schemeIs('resource') || aRequestOrigin.schemeIs('chrome') || aRequestOrigin.schemeIs('about'))
       return Ci.nsIContentPolicy.ACCEPT;
 
     // Accept if resource directly loaded into a tab.
