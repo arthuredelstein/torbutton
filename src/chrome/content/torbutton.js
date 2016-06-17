@@ -578,6 +578,23 @@ function torbutton_init() {
       torbutton_update_security_slider();
     }
 
+    // XXX: Get rid of the cached asmjs (or IndexedDB) files on disk in case we
+    // don't allow things saved to disk. This is an ad-hoc fix to work around
+    // #19417. Once this is properly solved we should remove this code again.
+    if (m_tb_prefs.getBoolPref("extensions.torbutton.block_disk")) {
+      let orig_quota_test = m_tb_prefs.getBoolPref("dom.quotaManager.testing");
+      try {
+        // This works only by setting the pref to `true` otherwise we get an
+        // exception and nothing is happening.
+        m_tb_prefs.setBoolPref("dom.quotaManager.testing", true);
+        Cc["@mozilla.org/dom/quota-manager-service;1"]
+          .getService(Ci.nsIQuotaManagerService).clear();
+      } catch(e) {
+      } finally {
+        m_tb_prefs.setBoolPref("dom.quotaManager.testing", orig_quota_test);
+      }
+    }
+
     // set panel style from preferences
     torbutton_set_panel_style();
 
@@ -1677,6 +1694,7 @@ function torbutton_new_identity() {
  *      h. last open location url
  *      i. clear content prefs
  *      j. permissions
+ *      k. IndexedDB and asmjscache storage
  *   3. Sends tor the NEWNYM signal to get a new circuit
  *   4. Opens a new window with the default homepage
  *   5. Closes this window
@@ -1822,6 +1840,21 @@ function torbutton_do_new_identity() {
   } catch(e) {
       torbutton_log(5, "Exception on cache clearing: "+e);
       window.alert("Torbutton: Unexpected error during cache clearing: "+e);
+  }
+
+  torbutton_log(3, "New Identity: Clearing storage");
+
+  let orig_quota_test = m_tb_prefs.getBoolPref("dom.quotaManager.testing");
+  try {
+      // This works only by setting the pref to `true` otherwise we get an
+      // exception and nothing is happening.
+      m_tb_prefs.setBoolPref("dom.quotaManager.testing", true);
+      Cc["@mozilla.org/dom/quota-manager-service;1"]
+          .getService(Ci.nsIQuotaManagerService).clear();
+  } catch(e) {
+      torbutton_log(5, "Exception on storage clearing: "+e);
+  } finally {
+      m_tb_prefs.setBoolPref("dom.quotaManager.testing", orig_quota_test);
   }
 
   torbutton_log(3, "New Identity: Clearing Cookies and DOM Storage");
