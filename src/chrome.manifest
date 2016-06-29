@@ -143,9 +143,7 @@ style chrome://global/content/customizeToolbar.xul chrome://torbutton/skin/torbu
 
 # Firefox 4-style component registration
 component {3da0269f-fc29-4e9e-a678-c3b1cafcf13f} components/external-app-blocker.js
-contract @mozilla.org/mime;1 {3da0269f-fc29-4e9e-a678-c3b1cafcf13f}
-contract @mozilla.org/uriloader/external-protocol-service;1 {3da0269f-fc29-4e9e-a678-c3b1cafcf13f}
-contract @mozilla.org/uriloader/external-helper-app-service;1 {3da0269f-fc29-4e9e-a678-c3b1cafcf13f}
+contract @torproject.org/torbutton-extAppBlockerService;1 {3da0269f-fc29-4e9e-a678-c3b1cafcf13f}
 
 component {06322def-6fde-4c06-aef6-47ae8e799629} components/startup-observer.js
 contract @torproject.org/startup-observer;1 {06322def-6fde-4c06-aef6-47ae8e799629}
@@ -173,3 +171,4 @@ contract @torproject.org/torRefSpoofer;1 {65be2be0-ceb4-44c2-91a5-9c75c53430bf}
 category profile-after-change RefSpoofer @torproject.org/torRefSpoofer;1
 category profile-after-change StartupObserver @torproject.org/startup-observer;1
 category profile-after-change DomainIsolator @torproject.org/domain-isolator;1
+category profile-after-change ExtAppBlockerService @torproject.org/torbutton-extAppBlockerService;1
