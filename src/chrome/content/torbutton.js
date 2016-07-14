@@ -242,7 +242,6 @@ var torbutton_unique_pref_observer =
             case "gfx.font_rendering.opentype_svg.enabled":
             case "javascript.options.ion.content":
             case "javascript.options.typeinference":
-            case "javascript.options.asmjs":
             case "noscript.forbidMedia":
             case "media.webaudio.enabled":
             case "network.jar.block-remote-files":
@@ -2344,7 +2343,6 @@ function torbutton_update_thirdparty_prefs() {
 var torbutton_sec_ml_bool_prefs = {
   "javascript.options.ion.content" : false,
   "javascript.options.typeinference" : false,
-  "javascript.options.asmjs" : false,
   "noscript.forbidMedia" : true,
   "media.webaudio.enabled" : false,
   "network.jar.block-remote-files" : true,
