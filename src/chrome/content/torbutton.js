@@ -710,7 +710,10 @@ function torbutton_confirm_plugins() {
   var askAgainText = torbutton_get_property_string("torbutton.popup.never_ask_again");
   var askAgain = {value: false};
 
-  var no_plugins = (prompts.confirmEx(null, "", message, flags, null, null, null,
+  var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
+             .getService(Components.interfaces.nsIWindowMediator);
+  var win = wm.getMostRecentWindow("navigator:browser");
+  var no_plugins = (prompts.confirmEx(win, "", message, flags, null, null, null,
       askAgainText, askAgain) == 1);
 
   m_tb_prefs.setBoolPref("extensions.torbutton.confirm_plugins", !askAgain.value);
