@@ -7,11 +7,6 @@
 // TODO: Double-check there are no strange exploits to defeat:
 //       http://kb.mozillazine.org/Links_to_local_pages_don%27t_work
 
-XPCOMUtils.defineLazyModuleGetter(this, "ConsoleServiceListener",
-  "resource://gre/modules/devtools/WebConsoleUtils.jsm");
-XPCOMUtils.defineLazyModuleGetter(this, "WebConsoleUtils",
-  "resource://gre/modules/devtools/WebConsoleUtils.jsm");
-
 let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm');
 let { Services } = Cu.import("resource://gre/modules/Services.jsm");
 
