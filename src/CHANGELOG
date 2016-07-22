@@ -1,3 +1,7 @@
+1.9.5.6
+ * Bug 19417: Disable asmjs for now
+ * Bug 19689: Use proper parent windows for plugin prompt
+
 1.9.5.5
  * Bug 19417: Clear asmjscache
 
