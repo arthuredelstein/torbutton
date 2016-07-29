@@ -1,3 +1,10 @@
+1.9.6.1
+ * Bug 19206: Avoid SOCKS auth and NEWNYM collisions when sharing a tor client
+ * Bug 19417: Disable asm.js (but add code to clear on New Identity if enabled)
+ * Bug 19689: Plugin usage prompt is parented to wrong window
+ * Bug 19273: Improve external app launch handling and associated warnings
+ * Bug 8725: Block addon resource and url fingerprinting with nsIContentPolicy
+
 1.9.6
  * Bug 18743: Pref to hide 'Sign in to Sync' button in hamburger menu
  * Bug 18905: Hide unusable items from help menu
