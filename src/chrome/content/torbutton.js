@@ -3280,6 +3280,12 @@ var torbutton_resizelistener =
           if (m_tb_prefs.
               getIntPref("extensions.torbutton.maximize_warnings_remaining") > 0) {
 
+            // Do not add another notification if one is already showing.
+            const kNotificationName = "torbutton-maximize-notification";
+            let box = gBrowser.getNotificationBox();
+            if (box.getNotificationWithValue(kNotificationName))
+              return;
+
             // Rate-limit showing our notification if needed.
             if (m_tb_resize_date === null) {
               m_tb_resize_date = Date.now();
@@ -3301,7 +3307,6 @@ var torbutton_resizelistener =
             let bundle = sbSvc.
               createBundle("chrome://global/locale/commonDialogs.properties");
             let button_label = bundle.GetStringFromName("OK");
-            let box = gBrowser.getNotificationBox();
 
             let buttons = [{
               label: button_label,
@@ -3318,9 +3323,8 @@ var torbutton_resizelistener =
             let message =
               torbutton_get_property_string("torbutton.maximize_warning");
 
-            box.appendNotification(message, 'new-menu-notification', null,
+            box.appendNotification(message, kNotificationName, null,
                                    priority, buttons);
-
             return;
           }
           // This is for some weird OS-specific behavior on start-up where,
