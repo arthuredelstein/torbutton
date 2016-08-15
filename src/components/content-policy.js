@@ -21,7 +21,26 @@ ContentPolicy.prototype = {
   contractID: "@torproject.org/content-policy;1",
   QueryInterface: XPCOMUtils.generateQI([Ci.nsIContentPolicy]),
 
+  uriWhitelist: {
+    // Video playback.
+    "chrome://global/content/TopLevelVideoDocument.js": Ci.nsIContentPolicy.TYPE_SCRIPT,
+    "resource://gre/res/TopLevelVideoDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
+    "chrome://global/skin/media/TopLevelVideoDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
+    "chrome://global/content/bindings/videocontrols.xml": Ci.nsIContentPolicy.TYPE_XBL,
+    "chrome://global/content/bindings/scale.xml": Ci.nsIContentPolicy.TYPE_XBL,
+    "chrome://global/content/bindings/progressmeter.xml": Ci.nsIContentPolicy.TYPE_XBL,
+
+    // Image display.
+    "resource://gre/res/ImageDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
+    "resource://gre/res/TopLevelImageDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
+    "chrome://global/skin/media/TopLevelImageDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
+
+    // Resizing text boxes.
+    "chrome://global/content/bindings/resizer.xml": Ci.nsIContentPolicy.TYPE_XBL,
+  },
+
   shouldLoad: function(aContentType, aContentLocation, aRequestOrigin, aContext, aMimeTypeGuess, aExtra) {
+
     // Accept if no content URI or scheme is not a resource/chrome.
     if (!aContentLocation || !(aContentLocation.schemeIs('resource') || aContentLocation.schemeIs('chrome')))
       return Ci.nsIContentPolicy.ACCEPT;
@@ -33,6 +52,16 @@ ContentPolicy.prototype = {
     // Accept if resource directly loaded into a tab.
     if (Ci.nsIContentPolicy.TYPE_DOCUMENT === aContentType)
       return Ci.nsIContentPolicy.ACCEPT;
+
+    // There's certain things that break horribly if they aren't allowed to
+    // access URIs with proscribed schemes, with `aContentOrigin` basically
+    // set to arbibrary URIs.
+    //
+    // XXX: Feature gate this behind the security slider or something, I don't
+    // give a fuck.
+    if (aContentLocation.spec in this.uriWhitelist)
+      if (this.uriWhitelist[aContentLocation.spec] == aContentType)
+        return Ci.nsIContentPolicy.ACCEPT;
 
     return Ci.nsIContentPolicy.REJECT_REQUEST;
   },
