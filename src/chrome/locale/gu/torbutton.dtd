@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "પ્રોક્સી ગોઠવણીઓ">
-<!ENTITY torbutton.prefs.recommended_settings "મારી ફાયરફોક્સ આવૃત્તિ માટે સૂચવેલ પ્રોક્સી ગોઠવણીઓ વાપરો">
-<!ENTITY torbutton.prefs.use_polipo "પોલિપો વાપરો">
-<!ENTITY torbutton.prefs.custom_settings "પોતાની પ્રોક્સી ગોઠવણીઓ વાપરો">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP પ્રોક્સી:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL પ્રોક્સી:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP પ્રોક્સી:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher પ્રોક્સી:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS યજમાન:">
-<!ENTITY torbutton.prefs.proxy.port "પોર્ટ:">
-<!ENTITY torbutton.pref_connection.notice "આ ગોઠવણીઓ બદલવા માટે ટોરબટન નિષ્ક્રિય કરો.">
-<!ENTITY torbutton.pref_connection.more_info "વધુ માહિતી">
-<!ENTITY torbutton.pref_connection_more_info.title "મદદ">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton is currently enabled.  If you would like to change your non-Tor proxy settings, please disable Torbutton and return here.  If you would like to change your Tor settings, please use the Torbutton preference window.">
 <!ENTITY torbutton.context_menu.new_identity "New Identity">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "પ્રાથમિકતાઓ...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "ટોરબટન શરુ કરવા ક્લિક કરો">
 <!ENTITY torbutton.prefs.restore_defaults "મૂળભૂત પાછું લાવો">
-<!ENTITY torbutton.prefs.test_settings "ચકાસણી ગોઠવણીઓ">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "આ માટે પ્રોક્સી નહી:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Warning: Avoid using any hostnames above">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.transparentTor "Transparent Torification (Requires custom transproxy or Tor router)">
 <!ENTITY torbutton.prefs.block_disk "Don't record browsing history or website data (enables Private Browsing Mode)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
 <!ENTITY torbutton.prefs.block_plugins "Disable browser plugins (such as Flash)">

@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "프록시 설정">
-<!ENTITY torbutton.prefs.recommended_settings "현재 추천된 프록시 설정 사용">
-<!ENTITY torbutton.prefs.use_polipo "Polipo 사용">
-<!ENTITY torbutton.prefs.custom_settings "사용자 지정 프록시 설정 사용">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP 프록시 주소:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL 프록시 주소:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP 프록시 주소:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher 프록시 주소:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS :">
-<!ENTITY torbutton.prefs.proxy.port "포트  : ">
-<!ENTITY torbutton.pref_connection.notice "Torbutton이 다음의 설정들을 바꾸지 못하게 합니다.">
-<!ENTITY torbutton.pref_connection.more_info "추가 정보">
-<!ENTITY torbutton.pref_connection_more_info.title "도움말">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton이 현재 활성화되었습니다. 만약 Tor 프록시가 아닌 일반 프록시 서버 설정을 하시려면, Torbutton을 비활성화하고 이 창으로 돌아오십시오. 혹시 Tor 프록시 설정을 바꾸고 싶으시다면, Torbutton 설정 화면을 사용해 주세요.">
 <!ENTITY torbutton.context_menu.new_identity "새로운 신원">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Tor 서킷 재구축">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Torbutton 설정 초기화">
 <!ENTITY torbutton.prefs.privacy_security_settings "개인 정보와 보안 설정">
 <!ENTITY torbutton.prefs.restore_defaults "설정 초기화">
-<!ENTITY torbutton.prefs.test_settings "설정 테스트">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "다음 주소에서는 프록시를 사용하지 않음 :">
-<!ENTITY torbutton.prefs.no_proxy_warning "주의 : 어떤 호스트네임을 아래에서 사용하는 것을 피하십시오.">
 <!ENTITY torbutton.cookiedialog.title "쿠키 보호 관리">
 <!ENTITY torbutton.cookiedialog.lockCol "보호됨">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "보호된 것 빼고 모두 지우기">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "새로운 쿠키 보호">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "새로운 쿠키를 보호하지 않음">
-<!ENTITY torbutton.prefs.transparentTor "투명 Toritication (사용자 transproxy나 Tor 라우터 필요)">
 <!ENTITY torbutton.prefs.priv_caption "개인 정보 설정">
 <!ENTITY torbutton.prefs.block_disk "브라우징 히스토리나 웹사이트 데이터를 기록하지 마십시오 (Private Browsing 모드 활성화)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "제 3자 쿠키와 다른 추적 데이터 제한">

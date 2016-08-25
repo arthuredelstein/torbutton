@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "تنظيمات پراکسی">
-<!ENTITY torbutton.prefs.recommended_settings "بکاربردن تنظيمات پراکسی توصيه شده برای نسخه فايرفاکس من">
-<!ENTITY torbutton.prefs.use_polipo "استفاده از پوليپو (Polipo)">
-<!ENTITY torbutton.prefs.custom_settings "بکاربردن تنظيمات سفارشی برای پراکسی">
-<!ENTITY torbutton.prefs.proxy.host.http "پراکسی HTTP:">
-<!ENTITY torbutton.prefs.proxy.host.https "پراکسی SSL:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "پراکسی FTP:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "پراکسی Gopher:">
-<!ENTITY torbutton.prefs.proxy.host.socks "ميزبان SOCKS:">
-<!ENTITY torbutton.prefs.proxy.port "درگاه (Port):">
-<!ENTITY torbutton.pref_connection.notice "غيرفعال کردن دکمه تُر جهت تغيير دراين تنظيمات.">
-<!ENTITY torbutton.pref_connection.more_info "اطلاعات بيشتر">
-<!ENTITY torbutton.pref_connection_more_info.title "راهنما">
-<!ENTITY torbutton.pref_connection_more_info.text "دکمه تُرهم اکنون فعال شده است.اگر می‌خواهيد تنظيمات پراکسی غيرمرتبط با تُر را تغيير دهيد، لطفا دکمه تُر را غيرفعال کنيد و دوباره به اينجا بازگرديد. اگر ميخواهيد تنظيمات تُر را تغيير دهيد، از پنجره تنظيمات دکمه تُر استفاده کنيد.">
 <!ENTITY torbutton.context_menu.new_identity "هویت جدید">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "شبکه جدید Tor برای این سایت">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "جهت شروع دكمه تُرکليک کنيد">
 <!ENTITY torbutton.prefs.privacy_security_settings "حفظ حریم خصوصی و تنظیمات امنیتی">
 <!ENTITY torbutton.prefs.restore_defaults "بازگرداندن تنظیمات به حالت پیش‌فرض">
-<!ENTITY torbutton.prefs.test_settings "تنظیمات آزمودن  ">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCK v5">
-<!ENTITY torbutton.prefs.no_proxies_on "عدم استفاده از پراکسی برای:">
-<!ENTITY torbutton.prefs.no_proxy_warning "هشدار: از به کار بردن هر گونه نام ميزبان (hostname) در بالا بپرهيزيد">
 <!ENTITY torbutton.cookiedialog.title "مديريت حفاظت کلوچک‌ها">
 <!ENTITY torbutton.cookiedialog.lockCol "حفاظت شده">
 <!ENTITY torbutton.cookiedialog.domainCol "ميزبان">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "حذف تمام کلوچک‌های حفاظت نشده">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "حفاظت از کلوچک‌های جديد">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "عدم حفاظت از کلوچک‌های جديد">
-<!ENTITY torbutton.prefs.transparentTor "سازگارسازی با تُر به صورت شفاف (نياز به رهياب تُر يا Tor router و يا transproxy سفارشی دارد)">
 <!ENTITY torbutton.prefs.priv_caption "تنظیمات حریم خصوصی">
 <!ENTITY torbutton.prefs.block_disk "ثبت‌نكردن تاريخچه يا داده‌هاى وب‌گاه (گشت و گذار ‌خصوصى فعال مى‌كند)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "محدود‌كردن كوكى‌هاى طرف سوم و داده‌هاى پيگردى ديگر">

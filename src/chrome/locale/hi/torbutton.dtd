@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "प्रोक्सी सेटींग">
-<!ENTITY torbutton.prefs.recommended_settings "मेरे फ़ायर फ़ाक्स कथन के लिये सुझायी प्रोक्सी सेटिंग उपयोग करे ">
-<!ENTITY torbutton.prefs.use_polipo "Use Polipo">
-<!ENTITY torbutton.prefs.custom_settings "व्यवाहारिक प्रोक्सी सेटिंग का उपयोग करे">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP प्रोक्सी:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL प्रोक्सी:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP प्रोक्सी:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "गोफ़र प्रोक्सी ">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS आतिथेय :">
-<!ENTITY torbutton.prefs.proxy.port "पोर्ट/द्वार :">
-<!ENTITY torbutton.pref_connection.notice "इन सेटिंग को बदलने के लिये टोर बटन को असमर्थ करे ">
-<!ENTITY torbutton.pref_connection.more_info "अधिक जानकारी के लिए ">
-<!ENTITY torbutton.pref_connection_more_info.title "सहायता">
-<!ENTITY torbutton.pref_connection_more_info.text "टोर बटन अभी समर्थकृत है । अगर आप आपने अन्य (टोर के अलावा) प्रोक्सी सेटिंग को बदलना चाहते है तो टोर को असमर्थ करके इधर प्रतिगमन करे । अगर आप अपने टोर सेटिंग को बदलना चाहते है तो कृपिया टोर बटन के प्रिफ़रेन्स खिड़की का उपयोग करे ।">
 <!ENTITY torbutton.context_menu.new_identity "New Identity">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "प्रिफ़रेन्सस ...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "टोर बटन को आरंभित करने के लिये क्लिक करे">
 <!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.prefs.test_settings "Test Settings">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "No Proxies for: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Warning: Avoid using any hostnames above">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.transparentTor "Transparent Torification (Requires custom transproxy or Tor router)">
 <!ENTITY torbutton.prefs.block_disk "Don't record browsing history or website data (enables Private Browsing Mode)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
 <!ENTITY torbutton.prefs.block_plugins "Disable browser plugins (such as Flash)">

@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Параметри проксі">
-<!ENTITY torbutton.prefs.recommended_settings "Використовувати рекомендовані параметри для моєї версії Firefox">
-<!ENTITY torbutton.prefs.use_polipo "Використовувати Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Використовувати звичайні налаштування проксі">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP проксі:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL проксі:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP проксі:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher проксі:">
-<!ENTITY torbutton.prefs.proxy.host.socks "Вузол SOCKS:">
-<!ENTITY torbutton.prefs.proxy.port "Порт:">
-<!ENTITY torbutton.pref_connection.notice "Вимкніть Torbutton, щоб змінити ці налаштування">
-<!ENTITY torbutton.pref_connection.more_info "Більше інформації">
-<!ENTITY torbutton.pref_connection_more_info.title "Довідка">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton зараз увімкнено. Якщо Ви бажаєте змінити налаштування проксі (не Tor-проксі), прошу вимкнути Torbutton та повернутися сюди. Якщо ж бажана зміна торкатиметься Tor-проксі, прошу це робити через вікно налаштування Torbutton.">
 <!ENTITY torbutton.context_menu.new_identity "Нова особистість">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "Налаштування...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Клацніть для запуску Torbutton">
 <!ENTITY torbutton.prefs.restore_defaults "За Замовчуванням">
-<!ENTITY torbutton.prefs.test_settings "Перевірити Настройки">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Не використовувати проксі для: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Увага: Уникайте використання будь якого з нищезазначених хостів">
 <!ENTITY torbutton.cookiedialog.title "Керувати Захистом Куків">
 <!ENTITY torbutton.cookiedialog.lockCol "Захищено">
 <!ENTITY torbutton.cookiedialog.domainCol "Хост">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Видалити Усі, Окрім Захищених">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Захищати Нові Куки">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не Захищати Нові Куки">
-<!ENTITY torbutton.prefs.transparentTor "Прозора Торіфікація (Вимагає користувацьких transproxy або Tor-маршрутизатора)">
 <!ENTITY torbutton.prefs.block_disk "Не зберігати історію переглядів або дані з відвідуваних сайтів (активує функцію приватного перегляду)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Блокувати сторонні куки та інші дані відстеження">
 <!ENTITY torbutton.prefs.block_plugins "Вимкнути розширення переглядача (такі як Flash)">

@@ -38,14 +38,6 @@
             context="torbutton-context-menu"/>
     </toolbarpalette>
 
-    <statusbar id="status-bar">
-        <statusbarpanel id="torbutton-panel"
-            insertbefore="statusbar-updates"
-                        menu="torbutton-context-menu"
-                        context="torbutton-context-menu" />
-<!--        <statusbarpanel context="clipmenu" class="statusbarpanel-iconic" id="plugins-status" tooltip="plugin-tooltip" onclick="torbutton_toggle_plugins();"/> -->
-   </statusbar>
-
 <!-- Global keyboard shortcuts for new identity and new circuit. -->
    <keyset>
         <key id="torbutton-new-identity-key" modifiers="accel shift" key="U" oncommand="torbutton_new_identity()"/>

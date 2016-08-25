@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Pengaturan proxy">
-<!ENTITY torbutton.prefs.recommended_settings "Gunakan pengaturan proxy yang disarankan untuk versi Firefox saya">
-<!ENTITY torbutton.prefs.use_polipo "Gunakan Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Gunakan pengaturan proxy yang disesuaikan">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS Host:">
-<!ENTITY torbutton.prefs.proxy.port "Port:">
-<!ENTITY torbutton.pref_connection.notice "Nonaktifkan Torbutton mengubah pengaturan ini.">
-<!ENTITY torbutton.pref_connection.more_info "Informasi lebih lanjut">
-<!ENTITY torbutton.pref_connection_more_info.title "Bantuan">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton sedang aktif.  Apabila Anda ingin mengubah pengaturan proxy selain proxy Tor, Silahkan nonaktifkan Torbutton dan kembali ke sini.  Apabila Anda ingin mengubah pengaturan Tor, silahkan gunakan jendela preferensi Torbutton.">
 <!ENTITY torbutton.context_menu.new_identity "Identitas Baru">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "Preferensi...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik untuk mengaktifkan Torbutton">
 <!ENTITY torbutton.prefs.restore_defaults "Kembalikan ke asal">
-<!ENTITY torbutton.prefs.test_settings "Uji pengaturan">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS V4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS V5">
-<!ENTITY torbutton.prefs.no_proxies_on "Jangan gunakan proxy untuk: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Peringatan: Hindari penggunaan hostname di atas">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.transparentTor "Transparent Torification (Requires custom transproxy or Tor router)">
 <!ENTITY torbutton.prefs.block_disk "Don't record browsing history or website data (enables Private Browsing Mode)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
 <!ENTITY torbutton.prefs.block_plugins "Disable browser plugins (such as Flash)">

@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "プロキシ設定">
-<!ENTITY torbutton.prefs.recommended_settings "Firefoxのプロキシ設定を使う">
-<!ENTITY torbutton.prefs.use_polipo "Polipoを使う">
-<!ENTITY torbutton.prefs.custom_settings "カスタム設定のプロキシを使う">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTPプロキシ">
-<!ENTITY torbutton.prefs.proxy.host.https "SSLプロキシ">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTPプロキシ">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopherプロキシ">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKSホスト">
-<!ENTITY torbutton.prefs.proxy.port "ポート">
-<!ENTITY torbutton.pref_connection.notice "これらの設定を変更するにはTorbuttonをオフにしてください">
-<!ENTITY torbutton.pref_connection.more_info "詳細情報">
-<!ENTITY torbutton.pref_connection_more_info.title "ヘルプ">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbuttonは現在オンになっています。もし、非Torの設定を変更する場合は、まずTorbuttonをオフにしてください。Torの設定を変更する場合にはTorbutton設定ウィンドウを使ってください。">
 <!ENTITY torbutton.context_menu.new_identity "新しい匿名">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "このサイト用の新しい Tor サーキット">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Torbuttonを初期状態に戻す">
 <!ENTITY torbutton.prefs.privacy_security_settings "プライバシーとセキュリティーの設定">
 <!ENTITY torbutton.prefs.restore_defaults "デフォルト設定に戻す">
-<!ENTITY torbutton.prefs.test_settings "設定をテストする">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "プロキシを用いない:">
-<!ENTITY torbutton.prefs.no_proxy_warning "警告: 以上のどんなホストネームの使用も避けてください">
 <!ENTITY torbutton.cookiedialog.title "Cookie保護を管理">
 <!ENTITY torbutton.cookiedialog.lockCol "保護済み">
 <!ENTITY torbutton.cookiedialog.domainCol "ホスト">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "保護されているもの以外削除">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "新しいCookieを保護">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "新しいCookieを保護しない">
-<!ENTITY torbutton.prefs.transparentTor "透過型Tor化 (カスタム透過型プロキシかTorのルーターが必要)">
 <!ENTITY torbutton.prefs.priv_caption "プライバシー設定">
 <!ENTITY torbutton.prefs.block_disk "ブラウジング履歴やウェブサイトのデータを記録しない (プライベートブラウジングモードを有効化)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "サードパーティーのCookieやその他のトラッキングデータを制限">

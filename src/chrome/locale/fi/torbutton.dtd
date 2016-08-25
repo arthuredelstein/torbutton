@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Välityspalvelin Asetukset">
-<!ENTITY torbutton.prefs.recommended_settings "Käytä suositeltuja välityspalvelin asetuksia minun Firefox versiolleni.">
-<!ENTITY torbutton.prefs.use_polipo "Käytä Polipoa">
-<!ENTITY torbutton.prefs.custom_settings "Aseta välityspalvelinasetukset käsin">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP-välityspalvelin:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL-välityspalvelin:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP-välityspalvelin:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher-välityspalvelin:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS-palvelin:">
-<!ENTITY torbutton.prefs.proxy.port "Portti:">
-<!ENTITY torbutton.pref_connection.notice "Poista Torbutton käytöstä muuttaaksesi asetuksia.">
-<!ENTITY torbutton.pref_connection.more_info "Lisää tietoja">
-<!ENTITY torbutton.pref_connection_more_info.title "Apua">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton on tällähetkellä käytössä. Jos haluat muuttaa välityspalvelinasetuksia joita käytät silloin kun Torbutton ei ole käytössä, ota ensin Torbutton pois päältä (Tor Disabled) ja palaa sitten tänne. Jos haluat muuttaa Tor asetuksia, käytä Torbutton asetukset ikkunaa.">
 <!ENTITY torbutton.context_menu.new_identity "Uusi identiteetti">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "Asetukset...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "E">
 <!ENTITY torbutton.button.tooltip "Klikkaa Torbutton aktiiviseksi">
 <!ENTITY torbutton.prefs.restore_defaults "Palauta Oletukset">
-<!ENTITY torbutton.prefs.test_settings "Testaa Asetukset">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Ei välityspalvelimia osoitteille:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Varoitus: Vältä yllä olevia osoitteita">
 <!ENTITY torbutton.cookiedialog.title "Hallitse evästeiden suojauksia">
 <!ENTITY torbutton.cookiedialog.lockCol "Suojaus">
 <!ENTITY torbutton.cookiedialog.domainCol "Palvelin">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Poista kaikki paitsi suojatut">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Suojaa uudet evästeet">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Älä suojaa uusia evästeitä">
-<!ENTITY torbutton.prefs.transparentTor "Käytä Toria läpinäkyvästi (edellyttää mukautetun transproxyn tai Tor-reitittimen käyttöä)">
 <!ENTITY torbutton.prefs.block_disk "Älä säilytä selaushistoriaa tai verkkosivuston tietoa (käynnistää yksityisen selauksen)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Estä kolmannen osapuolen evästeet ja muut seurantatiedot">
 <!ENTITY torbutton.prefs.block_plugins "Poista liitännäiset (Flash yms.) käytöstä">

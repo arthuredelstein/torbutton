@@ -29,12 +29,6 @@ var m_tb_confirming_plugins = false;
 var m_tb_window_height = window.outerHeight;
 var m_tb_window_width = window.outerWidth;
 
-var m_tb_ff3 = false;
-var m_tb_ff35 = false;
-var m_tb_ff36 = false;
-var m_tb_ff4 = false;
-var m_tb_ff15 = false;
-var m_tb_ff10_8 = false;
 var m_tb_tbb = false;
 
 var m_tb_control_port = null;
@@ -72,24 +66,6 @@ var torbutton_window_pref_observer =
     {
         if (topic != "nsPref:changed") return;
         switch (data) {
-            // These two need to be per-window:
-            case "extensions.torbutton.display_panel":
-                torbutton_set_panel_view();
-                break;
-            case "extensions.torbutton.panel_style":
-                torbutton_set_panel_style();
-                break;
-
-            // FIXME: Maybe make a intermediate state with a yellow 
-            // icon?
-            case "extensions.torbutton.settings_applied":
-                var mode = m_tb_prefs.getBoolPref("extensions.torbutton.settings_applied");
-                torbutton_update_toolbutton(mode);
-                torbutton_update_statusbar(mode);
-
-                // Update all open about:tor pages.
-                torbutton_update_all_abouttor_pages(undefined, undefined);
-                break;
             case k_tb_browser_update_needed_pref:
                 torbutton_notify_if_update_needed();
                 break;
@@ -99,8 +75,7 @@ var torbutton_window_pref_observer =
 
 // Bug 1506 P2: This object keeps Firefox prefs in sync with Torbutton prefs.
 // It probably could stand some simplification (See #3100). It also belongs
-// in a component, not the XUL overlay. There also are a lot of toggle-triggering
-// prefs here..
+// in a component, not the XUL overlay.
 var torbutton_unique_pref_observer =
 {
     register: function()
@@ -108,10 +83,8 @@ var torbutton_unique_pref_observer =
         this.forced_ua = false;
         var pref_service = Components.classes["@mozilla.org/preferences-service;1"]
                                      .getService(Components.interfaces.nsIPrefBranchInternal);
-        this.did_toggle_warning = false;
         this._branch = pref_service.QueryInterface(Components.interfaces.nsIPrefBranchInternal);
         this._branch.addObserver("extensions.torbutton", this, false);
-        this._branch.addObserver("network.proxy", this, false);
         this._branch.addObserver("network.cookie", this, false);
         this._branch.addObserver("network.jar", this, false);
         this._branch.addObserver("browser.privatebrowsing.autostart", this, false);
@@ -132,7 +105,6 @@ var torbutton_unique_pref_observer =
     {
         if (!this._branch) return;
         this._branch.removeObserver("extensions.torbutton", this);
-        this._branch.removeObserver("network.proxy", this);
         this._branch.removeObserver("network.cookie", this);
         this._branch.removeObserver("network.jar", this);
         this._branch.removeObserver("browser.privatebrowsing.autostart", this);
@@ -181,24 +153,6 @@ var torbutton_unique_pref_observer =
         if (topic != "nsPref:changed") return;
 
         switch (data) {
-            case "network.proxy.http":
-            case "network.proxy.http_port":
-            case "network.proxy.ssl":
-            case "network.proxy.ssl_port":
-            case "network.proxy.ftp":
-            case "network.proxy.ftp_port":
-            case "network.proxy.gopher":
-            case "network.proxy.gopher_port":
-            case "network.proxy.socks":
-            case "network.proxy.socks_port":
-            case "network.proxy.socks_version":
-            case "network.proxy.share_proxy_settings":
-            case "network.proxy.socks_remote_dns":
-            case "network.proxy.type":
-                torbutton_log(1, "Got update message, setting status");
-                torbutton_set_status();
-                break;
-
             case "browser.privatebrowsing.autostart":
                 var mode = m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart");
                 var ourmode = m_tb_prefs.getBoolPref("extensions.torbutton.block_disk");
@@ -293,8 +247,7 @@ var torbutton_tor_check_observer = {
     {
       if (topic == k_tb_tor_check_failed_topic) {
         // Update toolbar icon and tooltip.
-        var mode = m_tb_prefs.getBoolPref("extensions.torbutton.tor_enabled");
-        torbutton_update_toolbutton(mode);
+        torbutton_update_toolbutton();
 
         // Update all open about:tor pages. If the user does not have an
         // about:tor page open in the front most window, open one.
@@ -310,123 +263,11 @@ var torbutton_tor_check_observer = {
     }
 };
 
-// Bug 1506 P1
-function torbutton_set_panel_view() {
-    var o_statuspanel = false;
-    var o_prefbranch = false;
-
-    o_statuspanel = torbutton_get_statuspanel();
-    o_prefbranch = torbutton_get_prefbranch('extensions.torbutton.');
-    if (!o_statuspanel || !o_prefbranch) return;
-
-    // Firefox 4 has no toolbar panel
-    var display_panel = o_prefbranch.getBoolPref('display_panel')
-        && !m_tb_ff4;
-    torbutton_log(2, 'setting panel visibility');
-    o_statuspanel.setAttribute('collapsed', !display_panel);
-}
-
-// Bug 1506 P1
-function torbutton_set_panel_style() {
-    var o_statuspanel = false;
-    var o_prefbranch = false;
-
-    o_statuspanel = torbutton_get_statuspanel();
-    o_prefbranch = torbutton_get_prefbranch('extensions.torbutton.');
-    if (!o_statuspanel || !o_prefbranch) return;
-
-    var panel_style = o_prefbranch.getCharPref('panel_style');
-    torbutton_log(2, 'setting panel style: ' + panel_style);
-    o_statuspanel.setAttribute('class','statusbarpanel-' + panel_style);
-}
-
-// Bug 1506 P0: Die toggle, die! 
-function torbutton_toggle(force) {
-    torbutton_log(5, "Somehow we received a toggle request. Refusing to honor it. (force="+force+")");
-}
-
-// Bug 1506 P0: Die toggle, die!
-function torbutton_set_status() {
-    var state = false;
-    if (torbutton_check_status()) {
-        state = true;
-        try {
-            torbutton_update_status(true);
-        } catch(e) {
-            torbutton_log(5,'Error applying tor settings: '+e);
-            var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-                .getService(Components.interfaces.nsIWindowMediator);
-            var chrome = wm.getMostRecentWindow("navigator:browser");
-            var warning1 = torbutton_get_property_string("torbutton.popup.pref_error");
-
-            if (e.result == 0x80520015 || e.result == 0x80520013) { // NS_ERROR_FILE_ACCESS_DENIED/NS_ERROR_FILE_READ_ONLY
-                var warning2 = torbutton_get_property_string("torbutton.popup.permission_denied");
-                chrome.alert(warning1+"\n\n"+warning2);
-            } else if (e.result == 0x80520010) { // NS_ERROR_FILE_NO_DEVICE_SPACE
-                var o_stringbundle = torbutton_get_stringbundle();
-                var warning2 = torbutton_get_property_string("torbutton.popup.device_full");
-                chrome.alert(warning1+"\n\n"+warning2);
-            } else {
-                // This should never happen.. 
-                chrome.alert(warning1+"\n\n"+e);
-            }
-            // Setting these prefs should avoid ininite recursion
-            // because torbutton_update_status should return immediately
-            // on the next call.
-            m_tb_prefs.setBoolPref("extensions.torbutton.tor_enabled", false);
-            m_tb_prefs.setBoolPref("extensions.torbutton.proxies_applied", false);
-            m_tb_prefs.setBoolPref("extensions.torbutton.settings_applied", false);
-            torbutton_disable_tor();
-        }
-    } else {
-        state = false;
-        try {
-            torbutton_update_status(false);
-        } catch(e) {
-            torbutton_log(5,'Error applying nontor settings: '+e);
-
-            var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-                .getService(Components.interfaces.nsIWindowMediator);
-            var chrome = wm.getMostRecentWindow("navigator:browser");
-            var warning1 = torbutton_get_property_string("torbutton.popup.pref_error");
-
-            if (e.result == 0x80520015 || e.result == 0x80520013) { // NS_ERROR_FILE_ACCESS_DENIED/NS_ERROR_FILE_READ_ONLY
-                var warning2 = torbutton_get_property_string("torbutton.popup.permission_denied");
-                chrome.alert(warning1+"\n\n"+warning2);
-            } else if (e.result == 0x80520010) { // NS_ERROR_FILE_NO_DEVICE_SPACE
-                var warning2 = torbutton_get_property_string("torbutton.popup.device_full");
-                chrome.alert(warning1+"\n\n"+warning2);
-            } else {
-                // This should never happen.. 
-                chrome.alert(warning1+"\n\n"+e);
-            }
-            // Setting these prefs should avoid infinite recursion
-            // because torbutton_update_status should return immediately
-            // on the next call.
-            m_tb_prefs.setBoolPref("extensions.torbutton.tor_enabled", true);
-            m_tb_prefs.setBoolPref("extensions.torbutton.proxies_applied", true);
-            m_tb_prefs.setBoolPref("extensions.torbutton.settings_applied", true);
-            torbutton_enable_tor(true);
-        }
-    }
-}
-
-// Bug 1506 P0: Die toggle die
 function torbutton_init_toolbutton()
 {
     try {
       torbutton_log(3, "Initializing the Torbutton button.");
-      // Prevent the FF4 status bar from making our menu invisible...
-      /* Not needed
-      var o_toolbutton = torbutton_get_toolbutton();
-      if (o_toolbutton) {
-        var context = document.getElementById('torbutton-context-menu');
-        context.style.visibility = "visible";
-        context.hidden = false;
-        torbutton_log(3, "Set new context menu.");
-      }
-      */
-      torbutton_update_toolbutton(torbutton_check_status());
+      torbutton_update_toolbutton();
     } catch(e) {
       torbutton_log(4, "Error Initializing Torbutton button: "+e);
     }
@@ -446,49 +287,7 @@ function torbutton_init() {
     m_tb_prefs =  Components.classes["@mozilla.org/preferences-service;1"]
         .getService(Components.interfaces.nsIPrefBranch);
 
-    // Determine if we are firefox 3 or not.
-    var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
-        .getService(Components.interfaces.nsIXULAppInfo);
-    var versionChecker = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
-        .getService(Components.interfaces.nsIVersionComparator);
-
-    if(versionChecker.compare(appInfo.version, "15.0a1") >= 0) {
-        m_tb_ff15 = true;
-    } else {
-        m_tb_ff15 = false;
-    }
-
-    if(versionChecker.compare(appInfo.version, "10.0.8") >= 0
-       && versionChecker.compare(appInfo.version, "11.0a1") < 0) {
-        m_tb_ff10_8 = true;
-    } else {
-        m_tb_ff10_8 = false;
-    }
-
-    if(versionChecker.compare(appInfo.version, "4.0a1") >= 0) {
-        m_tb_ff4 = true;
-    } else {
-        m_tb_ff4 = false;
-    }
-
-    if(versionChecker.compare(appInfo.version, "3.0a1") >= 0) {
-        m_tb_ff3 = true;
-    } else {
-        m_tb_ff3 = false;
-    }
-
-    if(versionChecker.compare(appInfo.version, "3.5a1") >= 0) {
-        m_tb_ff35 = true;
-    } else {
-        m_tb_ff35 = false;
-    }
-
-    if(versionChecker.compare(appInfo.version, "3.6a1") >= 0) {
-        m_tb_ff36 = true;
-    } else {
-        m_tb_ff36 = false;
-    }
-
+    // Determine if we are running inside Tor Browser.
     var cur_version;
     try {
       cur_version = m_tb_prefs.getCharPref("torbrowser.version");
@@ -564,8 +363,6 @@ function torbutton_init() {
       torbutton_on_abouttor_load(aEvent.target);
     }, false, true);
 
-    // initialize preferences before we start our prefs observer
-    torbutton_init_prefs();
     // Set some important security prefs according to the chosen security level
     // if there are no custom settings to respect.
     if (!m_tb_prefs.getBoolPref("extensions.torbutton.security_custom")) {
@@ -588,9 +385,6 @@ function torbutton_init() {
         m_tb_prefs.setBoolPref("dom.quotaManager.testing", orig_quota_test);
       }
     }
-
-    // set panel style from preferences
-    torbutton_set_panel_style();
 
     // listen for our toolbar button being added so we can initialize it
     torbutton_init_toolbutton();
@@ -632,12 +426,7 @@ function torbutton_init() {
       }
     }
 
-    torbutton_set_panel_view();
-    torbutton_log(1, 'setting torbutton status from proxy prefs');
-    torbutton_set_status();
-    var mode = m_tb_prefs.getBoolPref("extensions.torbutton.tor_enabled");
-    torbutton_update_toolbutton(mode);
-    torbutton_update_statusbar(mode);
+    torbutton_update_toolbutton();
     torbutton_notify_if_update_needed();
     torbutton_update_sync_ui();
 
@@ -764,76 +553,6 @@ function torbutton_inform_about_tbb() {
   m_tb_prefs.setBoolPref("extensions.torbutton.prompt_torbrowser", !checkbox.value);
 }
 
-// Bug 1506 P0: Our prefs should be handled by Tor Browser. Even if they're
-// not, they should be vastly simplified from this. See also #3100.
-//
-// this function duplicates a lot of code in preferences.js for deciding our
-// recommended settings.  figure out a way to eliminate the redundancy.
-// TODO: Move it to torbutton_util.js?
-function torbutton_init_prefs() {
-    var torprefs = false;
-    var proxy_port;
-    var proxy_host;
-    torbutton_log(2, "called init_prefs()");
-    torprefs = torbutton_get_prefbranch('extensions.torbutton.');
-
-    if (torprefs.getCharPref('settings_method') == 'recommended') {
-        torbutton_log(2, "using recommended settings");
-        if (torbutton_has_good_socks()) {
-            proxy_host = '';
-            proxy_port = 0;
-        } else {
-            // Privoxy is always recommended for Firefoxes not supporting socks_remote_dns
-            if (!torbutton_check_socks_remote_dns())
-                torprefs.setBoolPref('use_privoxy', true);
-
-            if (torprefs.getBoolPref('use_privoxy')) {
-                proxy_host = '127.0.0.1';
-                proxy_port = 8118;
-            } else {
-                proxy_host = '';
-                proxy_port = 0;
-            }
-        }
-
-        if (torbutton_check_socks_remote_dns()) {
-            torprefs.setCharPref('http_proxy', proxy_host);
-            torprefs.setCharPref('https_proxy', proxy_host);
-            torprefs.setCharPref('ftp_proxy', '');
-            torprefs.setIntPref('http_port', proxy_port);
-            torprefs.setIntPref('https_port', proxy_port);
-            torprefs.setIntPref('ftp_port', 0);
-            if (!m_tb_ff4) {
-                torprefs.setCharPref('gopher_proxy', '');
-                torprefs.setIntPref('gopher_port', 0);
-            }
-        } else {
-            torprefs.setCharPref('http_proxy', proxy_host);
-            torprefs.setCharPref('https_proxy', proxy_host);
-            torprefs.setCharPref('ftp_proxy', proxy_host);
-            if (!m_tb_ff4) {
-                torprefs.setCharPref('gopher_proxy', proxy_host);
-                torprefs.setIntPref('gopher_port', proxy_port);
-            }
-            torprefs.setIntPref('http_port', proxy_port);
-            torprefs.setIntPref('https_port', proxy_port);
-            torprefs.setIntPref('ftp_port', proxy_port);
-        }
-    }
-
-    torbutton_log(1, 'http_port='+torprefs.getIntPref('http_port'));
-}
-
-// Bug 1506 P2: It might be nice to let people move the button around, I guess?
-function torbutton_get_button_from_toolbox() {
-    var toolbox = document.getElementById("navigator-toolbox");
-    for (var child = toolbox.palette.firstChild; child; child = child.nextSibling)
-        if (child.id == "torbutton-button")
-            return child;
-    torbutton_log(3, "Could not find toolbox button, trying in window DOM");
-    return torbutton_get_toolbutton();
-}
-
 // Bug 1506 P2: It might be nice to let people move the button around, I guess?
 function torbutton_get_toolbutton() {
     var o_toolbutton = false;
@@ -850,19 +569,6 @@ function torbutton_get_toolbutton() {
     }
 
     return o_toolbutton;
-}
-
-function torbutton_get_statuspanel() {
-    var o_statuspanel = false;
-
-    torbutton_log(1, 'init_statuspanel(): looking for statusbar element');
-    if (document.getElementById("torbutton-panel")) {
-        o_statuspanel = document.getElementById("torbutton-panel");
-    } else {
-        torbutton_log(5, 'ERROR (init): failed to find torbutton-panel');
-    }
-
-    return o_statuspanel;
 }
 
 function torbutton_update_is_needed() {
@@ -1121,95 +827,6 @@ function torbutton_is_abouttor_doc(aDoc) {
   return (aDoc && /^about:tor$/i.test(aDoc.documentURI.toLowerCase()));
 }
 
-// Bug 1506 P0: Toggle. Kill kill kill.
-function torbutton_save_nontor_settings()
-{
-  var liveprefs = false;
-  var savprefs = false;
-
-  liveprefs = torbutton_get_prefbranch('network.proxy.');
-  savprefs = torbutton_get_prefbranch('extensions.torbutton.saved.');
-  if (!liveprefs || !savprefs) {
-      torbutton_log(4, 'Prefbranch error');
-      return;
-  }
-
-  torbutton_log(2, 'saving nontor settings');
-  savprefs.setIntPref('type',          liveprefs.getIntPref('type'));
-  savprefs.setCharPref('http_proxy',   liveprefs.getCharPref('http'));
-  savprefs.setIntPref('http_port',     liveprefs.getIntPref('http_port'));
-  savprefs.setCharPref('https_proxy',  liveprefs.getCharPref('ssl'));
-  savprefs.setIntPref('https_port',    liveprefs.getIntPref('ssl_port'));
-  savprefs.setCharPref('ftp_proxy',    liveprefs.getCharPref('ftp'));
-  torbutton_log(1, 'half-way');
-  savprefs.setIntPref('ftp_port',      liveprefs.getIntPref('ftp_port'));
-  savprefs.setCharPref('socks_host',   liveprefs.getCharPref('socks'));
-  savprefs.setIntPref('socks_port',    liveprefs.getIntPref('socks_port'));
-  savprefs.setIntPref('socks_version', liveprefs.getIntPref('socks_version'));
-  savprefs.setCharPref('no_proxies_on', liveprefs.getCharPref('no_proxies_on'));
-  if (!m_tb_ff4) {
-    savprefs.setCharPref('gopher_proxy', liveprefs.getCharPref('gopher'));
-    savprefs.setIntPref('gopher_port',   liveprefs.getIntPref('gopher_port'));
-  }
-  try { // ff-0.9 doesn't have share_proxy_settings
-    savprefs.setBoolPref('share_proxy_settings', liveprefs.getBoolPref('share_proxy_settings'));
-  } catch(e) {}
-  
-  torbutton_log(1, 'almost there');
-  if (torbutton_check_socks_remote_dns())
-    savprefs.setBoolPref('socks_remote_dns',     liveprefs.getBoolPref('socks_remote_dns'));
-  torbutton_log(2, 'Non-tor settings saved');
-}
-
-// Bug 1506 P0: Toggle. Kill kill kill.
-function torbutton_restore_nontor_settings()
-{
-  var liveprefs = false;
-  var savprefs = false;
-
-  liveprefs = torbutton_get_prefbranch('network.proxy.');
-  savprefs = torbutton_get_prefbranch('extensions.torbutton.saved.');
-  if (!liveprefs || !savprefs) {
-      torbutton_log(4, 'Prefbranch error');
-      return;
-  }
-
-  torbutton_log(2, 'restoring nontor settings');
-
-  m_tb_prefs.setBoolPref("extensions.torbutton.tor_enabled", false);
-  liveprefs.setIntPref('type',          savprefs.getIntPref('type'));
-  liveprefs.setCharPref('http',         savprefs.getCharPref('http_proxy'));
-  liveprefs.setIntPref('http_port',     savprefs.getIntPref('http_port'));
-  liveprefs.setCharPref('ssl',          savprefs.getCharPref('https_proxy'));
-  liveprefs.setIntPref('ssl_port',      savprefs.getIntPref('https_port'));
-  liveprefs.setCharPref('ftp',          savprefs.getCharPref('ftp_proxy'));
-  torbutton_log(1, 'half-way there');
-  liveprefs.setIntPref('ftp_port',      savprefs.getIntPref('ftp_port'));
-  if (!m_tb_ff4) {
-      liveprefs.setCharPref('gopher',       savprefs.getCharPref('gopher_proxy'));
-      liveprefs.setIntPref('gopher_port',   savprefs.getIntPref('gopher_port'));
-  }
-  liveprefs.setCharPref('socks',        savprefs.getCharPref('socks_host'));
-  liveprefs.setIntPref('socks_port',    savprefs.getIntPref('socks_port'));
-  liveprefs.setIntPref('socks_version', savprefs.getIntPref('socks_version'));
-  liveprefs.setCharPref('no_proxies_on',savprefs.getCharPref('no_proxies_on'));
-  try { // ff-0.9 doesn't have share_proxy_settings
-    liveprefs.setBoolPref('share_proxy_settings', savprefs.getBoolPref('share_proxy_settings'));
-  } catch(e) {}
-  
-  torbutton_log(1, 'almost there');
-  if (torbutton_check_socks_remote_dns())
-    liveprefs.setBoolPref('socks_remote_dns',     savprefs.getBoolPref('socks_remote_dns'));
-
-  // This is needed for torbrowser and other cases where the 
-  // proxy prefs are actually the same..
-  if(torbutton_check_status()) {
-      m_tb_prefs.setBoolPref("extensions.torbutton.tor_enabled", true);
-  }
-
-  torbutton_log(2, 'settings restored');
-}
-
 // Bug 1506 P4: Checking for Tor Browser updates is pretty important,
 // probably even as a fallback if we ever do get a working updater.
 function torbutton_do_async_versioncheck() {
@@ -1233,7 +850,7 @@ function torbutton_do_async_versioncheck() {
   m_tb_prefs.setCharPref(k_tb_last_update_check_pref, now);
 
   torbutton_log(3, "Checking version with socks port: "
-          +m_tb_prefs.getIntPref("extensions.torbutton.socks_port"));
+          +m_tb_prefs.getIntPref("network.proxy.socks_port"));
   try {
     var req = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"]
                             .createInstance(Components.interfaces.nsIXMLHttpRequest);
@@ -1287,224 +904,30 @@ function torbutton_do_async_versioncheck() {
 
 }
 
-// Bug 1506 P0: Deprecated by the async version.
-function torbutton_check_version() {
-  torbutton_log(3, "Checking version");
-  try {
-    var req = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"]
-                            .createInstance(Components.interfaces.nsIXMLHttpRequest);
-    //var req = new XMLHttpRequest(); Blocked by content policy
-    var url = m_tb_prefs.getCharPref("extensions.torbutton.versioncheck_url");
-    req.open('GET', url, false);
-    req.overrideMimeType("text/json");
-    req.send(null);
-  } catch(e) {
-    if(e.result == 0x80004005) { // NS_ERROR_FAILURE
-      torbutton_log(5, "Version check failed! Is tor running?");
-      return -1;
-    }
-    torbutton_log(5, "Version check failed! Tor internal error: "+e);
-    return -1;
-  }
-  if(req.status == 200) {
-    if(!req.responseText) {
-      torbutton_log(5, "Version check failed! No JSON present!");
-      return -1;
-    }
-    try {
-      var version_list = JSON.parse(req.responseText);
-      // torbrowser.version may not exist..
-      var my_version = m_tb_prefs.getCharPref("torbrowser.version");
-      for (var v in version_list) {
-        if (version_list[v] == my_version) {
-          return 1;
-        }
-      }
-      return 0;
-    } catch(e) {
-      torbutton_log(5, "Version check failed! JSON parsing error: "+e);
-      return -1;
-    }
-  } else if (req.status == 404) {
-    // We're going to assume 404 means the service is not implemented yet.
-    torbutton_log(3, "Version check failed. Versions file is 404.");
-    return -1;
-  }
-  torbutton_log(5, "Version check failed! Web server error: "+req.status);
-  return -1;
-}
-
-// Bug 1506 P2: Probably a good idea to have some way to test everything,
-// but will need to be decoupled from the toggle logic :/
-function torbutton_test_settings() {
-    var wasEnabled = true;
-    if(!torbutton_check_status()) {
-        wasEnabled = false;
-        torbutton_enable_tor(true);
-    }
-            
-    torbutton_log(3, "Testing Tor settings");
-
-    m_tb_prefs.setBoolPref("extensions.torbutton.test_failed", true);
-    try {
-        var checkSvc = Cc["@torproject.org/torbutton-torCheckService;1"]
-                         .getService(Ci.nsISupports).wrappedJSObject;
-        var req = checkSvc.createCheckRequest(false);
-        req.send(null);
-    } catch(e) {
-        // FIXME: This happens if this function is called from a browser
-        // window with tor disabled because the content policy will block us.
-        // Right now the check works because we get called from the 
-        // preference window. Sort of makes automatic testing a bit trickier..
-        if(!wasEnabled) torbutton_disable_tor();
-        if(e.result == 0x80004005) { // NS_ERROR_FAILURE
-            torbutton_log(5,
-                    "Test failed! HTTP proxy down or request blocked!");
-            return 8;
-        }
-        torbutton_log(5, "Test failed! Tor internal error: "+e);
-        return 0;
-    }
-
-    var ret = checkSvc.parseCheckResponse(req);
-    if (ret == 4)
-      m_tb_prefs.setBoolPref("extensions.torbutton.test_failed", false);
-    if(!wasEnabled) torbutton_disable_tor();
-    torbutton_log(3, "Done testing Tor settings. Result: "+ret);
-    return ret;
-}
-
-// Bug 1506 P0: Toggle must die.
-function torbutton_disable_tor()
+function torbutton_update_toolbutton()
 {
-  torbutton_log(3, 'called disable_tor()');
-  torbutton_restore_nontor_settings();
-}
-
-// Bug 1506 P0: Toggle must die.
-function torbutton_enable_tor(force)
-{
-  torbutton_log(3, 'called enable_tor()');
-
-  if(!force && m_tb_prefs.getBoolPref("extensions.torbutton.test_failed")) {
-      var warning = torbutton_get_property_string("torbutton.popup.test.confirm_toggle");
-      var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-                   .getService(Components.interfaces.nsIWindowMediator);
-      var chrome = wm.getMostRecentWindow("navigator:browser");
-      if(!chrome.confirm(warning)) {
-          return;
-      }
-  }
-
-  torbutton_save_nontor_settings();
-  torbutton_activate_tor_settings();
-}
-
-// Bug 1506 P0: Toggle must die.
-function torbutton_update_toolbutton(mode)
-{
-  var o_toolbutton = torbutton_get_toolbutton();
+  let o_toolbutton = torbutton_get_toolbutton();
   if (!o_toolbutton) return;
-  var tooltip = "";
 
-  if (mode && torbutton_tor_check_ok()) {
-      tooltip = torbutton_get_property_string("torbutton.panel.label.enabled");
-      o_toolbutton.setAttribute('tbstatus', 'on');
-      o_toolbutton.setAttribute('tooltiptext', tooltip);
-  } else {
-      tooltip = torbutton_get_property_string("torbutton.panel.label.disabled");
-      o_toolbutton.setAttribute('tbstatus', 'off');
-      o_toolbutton.setAttribute('tooltiptext', tooltip);
-  }
-}
+  let isOK = torbutton_tor_check_ok();
+  let tbstatus = isOK ? "on" : "off";
+  o_toolbutton.setAttribute("tbstatus", tbstatus);
 
-// Bug 1506 P0: Toggle must die.
-function torbutton_update_statusbar(mode)
-{
-    var o_statuspanel = torbutton_get_statuspanel();
-    if (!window.statusbar.visible) return;
-    var label = "";
-    var tooltip = "";
-
-    if (mode && torbutton_tor_check_ok()) {
-        label   = torbutton_get_property_string("torbutton.panel.label.enabled");
-        tooltip = torbutton_get_property_string("torbutton.panel.tooltip.enabled");
-        o_statuspanel.style.color = "#390";
-        o_statuspanel.setAttribute('label', label);
-        o_statuspanel.setAttribute('tooltiptext', tooltip);
-        o_statuspanel.setAttribute('tbstatus', 'on');
-    } else {
-        label   = torbutton_get_property_string("torbutton.panel.label.disabled");
-        tooltip = torbutton_get_property_string("torbutton.panel.tooltip.disabled");
-        o_statuspanel.style.color = "#F00";
-        o_statuspanel.setAttribute('label', label);
-        o_statuspanel.setAttribute('tooltiptext', tooltip);
-        o_statuspanel.setAttribute('tbstatus', 'off');
-    }
+  let tooltipKey = isOK ? "torbutton.panel.label.enabled"
+                        : "torbutton.panel.label.disabled";
+  o_toolbutton.setAttribute("tooltiptext",
+                            torbutton_get_property_string(tooltipKey));
 }
 
 // Bug 1506 P4: Timezone spoofing is pretty important
-function torbutton_set_timezone(mode, startup) {
+function torbutton_set_timezone() {
     /* Windows doesn't call tzset() automatically.. Linux and MacOS
      * both do though.. FF3.5 now calls _tzset() for us on windows.
      */
-    // FIXME: Test:
-    //  1. odd timezones like IST and IST+13:30
-    //  2. negative offsets
-    //  3. Windows-style spaced names
+    torbutton_log(3, "Setting timezone to UTC");
     var environ = Components.classes["@mozilla.org/process/environment;1"]
                    .getService(Components.interfaces.nsIEnvironment);
-        
-    torbutton_log(3, "Setting timezone at "+startup+" for mode "+mode);
-
-    // For TZ info, see:
-    // http://www-01.ibm.com/support/docview.wss?rs=0&uid=swg21150296
-    // and 
-    // http://msdn.microsoft.com/en-us/library/90s5c885.aspx
-    if(startup) {
-        // Save Date() string to pref
-        var d = new Date();
-        var offset = d.getTimezoneOffset();
-        var offStr = "";
-        if(d.getTimezoneOffset() < 0) {
-            offset = -offset;
-            offStr = "-";
-        } else {
-            offStr = "+";
-        }
-        
-        if(Math.floor(offset/60) < 10) {
-            offStr += "0";
-        }
-        offStr += Math.floor(offset/60)+":";
-        if((offset%60) < 10) {
-            offStr += "0";
-        }
-        offStr += (offset%60);
-
-        // Regex match for 3 letter code
-        var re = new RegExp('\\((\\S+)\\)', "gm");
-        var match = re.exec(d.toString());
-        // Parse parens. If parseable, use. Otherwise set TZ=""
-        var set = ""
-        if(match) {
-            set = match[1]+offStr;
-        } else {
-            torbutton_log(3, "Skipping timezone storage");
-        }
-        m_tb_prefs.setCharPref("extensions.torbutton.tz_string", set);
-    }
-
-    if(mode) {
-        torbutton_log(2, "Setting timezone to UTC");
-        environ.set("TZ", "UTC");
-    } else {
-        // 1. If startup TZ string, reset.
-        torbutton_log(2, "Unsetting timezone.");
-        // FIXME: Tears.. This will not update during daylight switch for linux+mac users
-        // Windows users will be fine though, because tz_string should be empty for them
-        environ.set("TZ", m_tb_prefs.getCharPref("extensions.torbutton.tz_string"));
-    }
+    environ.set("TZ", "UTC");
 }
 
 // Bug 1506 P3: Support code for language+uagent spoofing
@@ -1709,14 +1132,12 @@ function torbutton_do_new_identity() {
   m_tb_prefs.setBoolPref("browser.zoom.siteSpecific",
                          !m_tb_prefs.getBoolPref("browser.zoom.siteSpecific"));
 
-  if(m_tb_ff35) {
-      try {
-          if(m_tb_prefs.prefHasUserValue("geo.wifi.access_token")) {
-              m_tb_prefs.clearUserPref("geo.wifi.access_token");
-          }
-      } catch(e) {
-          torbutton_log(3, "Exception on wifi token clear: "+e);
+  try {
+      if(m_tb_prefs.prefHasUserValue("geo.wifi.access_token")) {
+          m_tb_prefs.clearUserPref("geo.wifi.access_token");
       }
+  } catch(e) {
+      torbutton_log(3, "Exception on wifi token clear: "+e);
   }
 
   try {
@@ -1729,7 +1150,7 @@ function torbutton_do_new_identity() {
 
   torbutton_log(3, "New Identity: Closing tabs and clearing searchbox");
 
-  torbutton_close_on_toggle(true, true);
+  torbutton_close_tabs_on_new_identity();
 
   // Bug #10800: Trying to clear search/find can cause exceptions
   // in unknown cases. Just log for now.
@@ -2067,10 +1488,11 @@ function torbutton_do_tor_check()
   // If we have a tor control port and transparent torification is off,
   // perform a check via the control port.
   const kEnvSkipControlPortTest = "TOR_SKIP_CONTROLPORTTEST";
+  const kEnvUseTransparentProxy = "TOR_TRANSPROXY";
   var env = Cc["@mozilla.org/process/environment;1"]
                  .getService(Ci.nsIEnvironment);
   if (m_tb_control_port &&
-      !m_tb_prefs.getBoolPref("extensions.torbutton.saved.transparentTor") &&
+      !env.exists(kEnvUseTransparentProxy) &&
       !env.exists(kEnvSkipControlPortTest) &&
       m_tb_prefs.getBoolPref("extensions.torbutton.local_tor_check")) {
     if (torbutton_local_tor_check())
@@ -2078,8 +1500,7 @@ function torbutton_do_tor_check()
     else {
       // The check failed.  Update toolbar icon and tooltip.
       checkSvc.statusOfTorCheck = checkSvc.kCheckFailed;
-      var mode = m_tb_prefs.getBoolPref("extensions.torbutton.tor_enabled");
-      torbutton_update_toolbutton(mode);
+      torbutton_update_toolbutton();
     }
   }
   else {
@@ -2558,54 +1979,11 @@ function torbutton_security_slider_custom_check(mode) {
   }
 }
 
-// Bug 1506 P0: This code is a toggle-relic. 
-//
-// It basically just enforces the three Torbutton prefs
-// so that the Torbutton state and button UI is consistent
-function torbutton_update_status(mode) {
-    var o_toolbutton = false;
-    var o_statuspanel = false;
-    var o_stringbundle = false;
-    var sPrefix;
-    var label;
-    var tooltip;
-   
-    var torprefs = torbutton_get_prefbranch('extensions.torbutton.');
-    var changed = (torprefs.getBoolPref('proxies_applied') != mode);
-
-    torbutton_log(2, 'called update_status: '+mode+","+changed);
-
-    if (!changed) return;
- 
-    torprefs.setBoolPref('proxies_applied', mode);
-    if(torprefs.getBoolPref("tor_enabled") != mode) {
-        torbutton_log(3, 'Got external update for: '+mode);
-        torprefs.setBoolPref("tor_enabled", mode);
-    }
-
-    m_tb_prefs.setBoolPref("extensions.torbutton.settings_applied", mode);
-
-    // Force prefs to be synced to disk
-    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefService);
-    prefService.savePrefFile(null);
-
-    torbutton_log(3, "Settings applied for mode: "+mode);
-}
-
-// Bug 1506 P4: Despite the name, it is used on new identity
-function torbutton_close_on_toggle(mode, newnym) {
-    var close_tor = m_tb_prefs.getBoolPref("extensions.torbutton.close_tor");
-    var close_nontor = m_tb_prefs.getBoolPref("extensions.torbutton.close_nontor");
+function torbutton_close_tabs_on_new_identity() {
     var close_newnym = m_tb_prefs.getBoolPref("extensions.torbutton.close_newnym");
-
-    if (newnym) {
-      if (!close_newnym) {
-        torbutton_log(3, "Not closing tabs");
-      }
-    } else if((mode && !close_nontor) || (!mode && !close_tor)) {
-        torbutton_log(3, "Not closing tabs");
-        return;
+    if (!close_newnym) {
+      torbutton_log(3, "Not closing tabs");
+      return;
     }
 
     // TODO: muck around with browser.tabs.warnOnClose.. maybe..
@@ -2713,36 +2091,6 @@ function torbutton_gecko_compare(aVersion) {
     return versionComparator.compare(aVersion, geckoVersion);
 }
 
-// Bug 1506 P0: Code to attempt to grey out browser proxy prefs. Doesn't
-// actually seem to work?
-function torbutton_browser_proxy_prefs_init()
-{
-  var _elementIDs = ["networkProxyType",
-                     "networkProxyFTP", "networkProxyFTP_Port",
-                     "networkProxyGopher", "networkProxyGopher_Port",
-                     "networkProxyHTTP", "networkProxyHTTP_Port",
-                     "networkProxySOCKS", "networkProxySOCKS_Port",
-                     "networkProxySOCKSVersion",
-                     "networkProxySOCKSVersion4", "networkProxySOCKSVersion5",
-                     "networkProxySSL", "networkProxySSL_Port",
-                     "networkProxyNone", "networkProxyAutoconfigURL", "shareAllProxies"];
-
-  torbutton_log(2, 'called torbutton_browser_proxy_prefs_init()');
-  if (!torbutton_check_status())
-  {
-    document.getElementById('torbutton-pref-connection-notice').hidden = true;
-    document.getElementById('torbutton-pref-connection-more-info').hidden = true;
-  }
-  else
-  {
-    document.getElementById('networkProxyType').disabled = true;
-    for (var i = 0; i < _elementIDs.length; i++)
-        document.getElementById(_elementIDs[i]).setAttribute( "disabled", "true" );
-  }
-
-  // window.sizeToContent();
-}
-
 // -------------- HISTORY & COOKIES ---------------------
 
 // Bug 1506 P4: Used by New Identity if cookie protections are
@@ -2753,38 +2101,6 @@ function torbutton_clear_cookies() {
                     .getService(Components.interfaces.nsICookieManager);
    
     cm.removeAll();
-}
-
-// Bug 1506 P0: Toggle-only. Kill it.
-function torbutton_jar_cookies(mode) {
-    var selector =
-          Components.classes["@torproject.org/cookie-jar-selector;1"]
-                    .getService(Components.interfaces.nsISupports)
-                    .wrappedJSObject;
-
-    /*
-    if(m_tb_ff3) {
-        var o_stringbundle = torbutton_get_stringbundle();
-        var warning = torbutton_get_property_string("torbutton.popup.ff3.cookie_warning");
-        window.alert(warning);
-        return;
-    }*/
-    var protectcookies = m_tb_prefs.getBoolPref('extensions.torbutton.cookie_protections');
-    if(mode) {
-        if (protectcookies)
-          selector.clearUnprotectedCookies("nontor");        
-        selector.saveCookies("nontor");
-        selector.clearCookies();
-        if(m_tb_prefs.getBoolPref('extensions.torbutton.dual_cookie_jars'))
-            selector.loadCookies("tor", false);
-    } else {
-        if (protectcookies)
-          selector.clearUnprotectedCookies("tor");          
-        if(m_tb_prefs.getBoolPref('extensions.torbutton.dual_cookie_jars'))
-            selector.saveCookies("tor");
-        selector.clearCookies();
-        selector.loadCookies("nontor", false);
-    }
 }
 
 // -------------- JS/PLUGIN HANDLING CODE ---------------------
@@ -2877,44 +2193,6 @@ function torbutton_disable_all_js() {
     }
 }
 
-// Bug 1506 P2: We may want to replace this with a XUl solution.
-// See #6096.
-function torbutton_reload_homepage() {
-    var homepage = m_tb_prefs.getComplexValue("browser.startup.homepage",
-                       Components.interfaces.nsIPrefLocalizedString).data;
-
-    torbutton_log(3, "Reloading homepage: "+homepage);
-    try {
-      gBrowser.loadURI(homepage, null, null);
-    } catch(e) {
-      torbutton_log(4, "Failure reloading homepage "+homepage+": "+e);
-    }
-}
-
-// Bug 1506 P0: Toggle, kill it.
-function torbutton_restore_cookies(tor_enabled)
-{
-    var selector =
-          Components.classes["@torproject.org/cookie-jar-selector;1"]
-                    .getService(Components.interfaces.nsISupports)
-                    .wrappedJSObject;
-    torbutton_log(4, "Restoring cookie status");
-    selector.clearCookies();
-    
-    if(tor_enabled) {
-        if(m_tb_prefs.getBoolPref('extensions.torbutton.dual_cookie_jars')) {
-            torbutton_log(4, "Loading tor jar after crash");
-            selector.loadCookies("tor", false);
-        }
-    } else {
-        if(m_tb_prefs.getBoolPref('extensions.torbutton.dual_cookie_jars')
-                || m_tb_prefs.getBoolPref('extensions.torbutton.cookie_jars')) {
-            torbutton_log(4, "Loading non-tor jar after crash");
-            selector.loadCookies("nontor", false);
-        }
-    }
-}
-
 // Bug 1506 P1: This function just cleans up prefs that got set badly in previous releases
 function torbutton_fixup_old_prefs()
 {
@@ -2976,7 +2254,7 @@ function torbutton_do_startup()
         torbutton_do_main_window_startup();
 
         // Bug 1506: Still want to do this
-        torbutton_set_timezone(true, true);
+        torbutton_set_timezone();
 
         // For charsets
         torbutton_update_fingerprinting_prefs();
@@ -3005,22 +2283,14 @@ function torbutton_do_startup()
     }
 }
 
-// Bug 1506 P0: Has some tagging code (can be removed) 
+// Bug 1506 P0: Perform version check when a new tab is opened.
 function torbutton_new_tab(event)
 {
     // listening for new tabs
     torbutton_log(3, "New tab");
 
-    var tor_tag = !m_tb_prefs.getBoolPref("extensions.torbutton.tor_enabled");
-    var no_plugins = m_tb_prefs.getBoolPref("extensions.torbutton.no_tor_plugins");
-    // Changed in FF4...
-    //var browser = event.currentTarget;
-    var browser = gBrowser.getBrowserForTab(event.target);
-
     /* Perform the version check on new tab, module timer */
-    if (!tor_tag) { // tor is enabled...
-      torbutton_do_async_versioncheck();
-    }
+    torbutton_do_async_versioncheck();
 }
 
 // Bug 1506 P3: Used to decide if we should resize the window.
@@ -3077,7 +2347,6 @@ function torbutton_new_window(event)
                      .getService(Ci.nsIWebProgress);
 
     if (m_tb_prefs.getBoolPref("extensions.torbutton.resize_new_windows")
-            && m_tb_prefs.getBoolPref("extensions.torbutton.tor_enabled")
             && torbutton_is_windowed(window)) {
       progress.addProgressListener(torbutton_resizelistener,
                                    Ci.nsIWebProgress.NOTIFY_STATE_DOCUMENT);

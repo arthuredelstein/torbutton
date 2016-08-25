@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Konfigurimi i Proxy">
-<!ENTITY torbutton.prefs.recommended_settings "Use the recommended proxy settings for my version of Firefox">
-<!ENTITY torbutton.prefs.use_polipo "Use Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Use custom proxy settings">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS Host:">
-<!ENTITY torbutton.prefs.proxy.port "Porta:">
-<!ENTITY torbutton.pref_connection.notice "Disable Torbutton to change these settings.">
-<!ENTITY torbutton.pref_connection.more_info "More information">
-<!ENTITY torbutton.pref_connection_more_info.title "Ndihmë">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton is currently enabled.  If you would like to change your non-Tor proxy settings, please disable Torbutton and return here.  If you would like to change your Tor settings, please use the Torbutton preference window.">
 <!ENTITY torbutton.context_menu.new_identity "Identitet i Ri">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "Preferences...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Click to initialize Torbutton">
 <!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.prefs.test_settings "Test Settings">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "No Proxies for: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Warning: Avoid using any hostnames above">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.transparentTor "Transparent Torification (Requires custom transproxy or Tor router)">
 <!ENTITY torbutton.prefs.block_disk "Don't record browsing history or website data (enables Private Browsing Mode)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
 <!ENTITY torbutton.prefs.block_plugins "Disable browser plugins (such as Flash)">

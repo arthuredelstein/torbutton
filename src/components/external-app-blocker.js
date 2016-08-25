@@ -1,4 +1,4 @@
-// Bug 1506 Android P1/TBB P5: This code providers users with notification
+// Bug 1506 Android P1/TBB P5: This code provides users with notification
 // in the event of external app launch. We want it to exist in the desktop
 // port, but it is probably useless for Android.
 
@@ -61,11 +61,6 @@ ExternalAppBlocker.prototype =
   // method of nsIClassInfo  
   getHelperForLanguage: function(count) { return null; },
 
-  /* Determine whether we should ask the user to run the app */
-  _blockApp: function() {
-    return this._prefs.getBoolPref("extensions.torbutton.tor_enabled");
-  },
-
   // Returns true if launch should proceed.
   _confirmLaunch: function() {
     if (!this._prefs.getBoolPref("extensions.torbutton.launch_warning")) {
@@ -106,7 +101,7 @@ ExternalAppBlocker.prototype =
     if (topic == "external-app-requested") {
       this.logger.log(3, "External app requested");
       // subject.data is true if the launch should be canceled.
-      if (this._blockApp() && (subject instanceof Ci.nsISupportsPRBool)
+      if ((subject instanceof Ci.nsISupportsPRBool)
           && !subject.data /* not canceled already */
           && !this._confirmLaunch()) {
         subject.data = true; // The user said to cancel the launch.

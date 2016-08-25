@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Proxy-instellingen">
-<!ENTITY torbutton.prefs.recommended_settings "De aanbevolen proxy-instellingen voor mijn versie van Firefox gebruiken">
-<!ENTITY torbutton.prefs.use_polipo "Polipo gebruiken">
-<!ENTITY torbutton.prefs.custom_settings "Aangepaste proxy-instellingen gebruiken">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP proxy:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL proxy:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP proxy:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher proxy:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS host:">
-<!ENTITY torbutton.prefs.proxy.port "Poort:">
-<!ENTITY torbutton.pref_connection.notice "Torbutton dient uitgeschakeld te worden om deze instellingen te kunnen wijzigen.">
-<!ENTITY torbutton.pref_connection.more_info "Meer informatie">
-<!ENTITY torbutton.pref_connection_more_info.title "Help">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton is momenteel ingeschakeld. Als u uw niet aan Tor gerelateerde proxy-instellingen wilt wijzigen dient u Torbutton uit te schakelen en dan hier terug te komen. Als u uw Tor instellingen wilt wijzigen, gebruik dan het Torbutton Voorkeuren-venster.">
 <!ENTITY torbutton.context_menu.new_identity "Nieuwe identiteit">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nieuw tor circuit voor deze website">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Klik hier om Torbutton te initialiseren">
 <!ENTITY torbutton.prefs.privacy_security_settings "Privacy- en beveiligingsinstellingen">
 <!ENTITY torbutton.prefs.restore_defaults "Terugzetten op begintoestand">
-<!ENTITY torbutton.prefs.test_settings "Testen van de instellingen">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Geen proxy voor: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Opgelet: gebruik van bovenstaande hostnamen vermijden">
 <!ENTITY torbutton.cookiedialog.title "Beheer Cookie Beveiligingen">
 <!ENTITY torbutton.cookiedialog.lockCol "Beveiligd">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Verwijder alle behalve beveiligde">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beveilig nieuwe Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beveilig nieuwe Cookies niet">
-<!ENTITY torbutton.prefs.transparentTor "Transparante Torificatie (Heeft aangepaste transparente proxy of Tor router nodig)">
 <!ENTITY torbutton.prefs.priv_caption "Privacyinstellingen">
 <!ENTITY torbutton.prefs.block_disk "Bewaar geen surfgeschiedenis of websitegegevens. (Schakelt Privénavigatie in.)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Beperk cookies en andere tracking-gegevens van derden">

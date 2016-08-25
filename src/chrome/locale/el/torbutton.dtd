@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Ρυθμίσεις διαμεσολαβητή">
-<!ENTITY torbutton.prefs.recommended_settings "Χρήση των προτεινόμενων ρυθμίσεων για την τρέχουσα έκδοση του Firefox">
-<!ENTITY torbutton.prefs.use_polipo "Χρήση Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Χρήση προσαρμοσμένων ρυθμίσεων διαμεσολαβητή">
-<!ENTITY torbutton.prefs.proxy.host.http "Διαμεσολαβητής HTTP :">
-<!ENTITY torbutton.prefs.proxy.host.https "Διαμεσολαβητής SSL :">
-<!ENTITY torbutton.prefs.proxy.host.ftp "Διαμεσολαβητής FTP :">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Διαμεσολαβητής Gopher :">
-<!ENTITY torbutton.prefs.proxy.host.socks "Κεντρικός υπολογιστής SOCKS :">
-<!ENTITY torbutton.prefs.proxy.port "Θύρα :">
-<!ENTITY torbutton.pref_connection.notice "Απενεργοποιήστε το Torbutton για να αλλάξετε αυτές τις ρυθμίσεις.">
-<!ENTITY torbutton.pref_connection.more_info "Περισσότερες πληροφορίες">
-<!ENTITY torbutton.pref_connection_more_info.title "Βοήθεια">
-<!ENTITY torbutton.pref_connection_more_info.text "Το Torbutton είναι ενεργοποιημένο.Αν θέλετε να αλλάξετε τις ρυθμίσεις διαμεσολαβητή, εκτός του Tor, απενεργοποιήστε το Torbutton και επιστρέψτε εδώ. Αν θέλετε να αλλάξετε τις ρυθμίσεις για τον διαμεσολαβητή Tor, χρησιμοποιήστε το παράθυρο επιλογών του Torbutton">
 <!ENTITY torbutton.context_menu.new_identity "Νέα Ταυτότητα">
 <!ENTITY torbutton.context_menu.new_identity_key "Τ">
 <!ENTITY torbutton.context_menu.preferences "Επιλογές...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Κάντε κλικ για να εκκίνηση του Torbutton">
 <!ENTITY torbutton.prefs.restore_defaults "Αποκατάσταση αρχικών ρυθμίσεων">
-<!ENTITY torbutton.prefs.test_settings "Έλεγχος ρυθμίσεων">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Δεν υπάρχουν πληρεξούσιοι διακομιστές proxy για:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Ειδοποίηση: Αποφύγετε την  χρήση hostnames πιο πάνω">
 <!ENTITY torbutton.cookiedialog.title "Διαχείριση Προστασίας Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "Προστατευμένα">
 <!ENTITY torbutton.cookiedialog.domainCol "Οικοδεσπότης">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Αφαίρεση Όλων Εκτός από των Προστατευμένων">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Προστασία Νέων Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Να Μη γίνεται Προστασία Νέων Cookie">
-<!ENTITY torbutton.prefs.transparentTor "Διαφανής Torification  (Απαιτεί προσαρμοσμένο  proxy ή Tor δρομολογητή)">
 <!ENTITY torbutton.prefs.block_disk "Καμμια καταγραφη του ιστορικυυ περιήγησης ή δεδομένων ιστοσελίδας (ενεργοποιηση της  κατάστασης ιδιωτικής περιήγησης) ">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Περιορισμος των cookies τριτων και αλλων δεδομενων παρακολουθησης">
 <!ENTITY torbutton.prefs.block_plugins "Απενεργοποίηση προσθέτων περιηγητή (σα το Flash)">

@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Proxy beállítások">
-<!ENTITY torbutton.prefs.recommended_settings "Az ajánlott proxy beállítások használata a Firefox verziómhoz">
-<!ENTITY torbutton.prefs.use_polipo "Polipo használata">
-<!ENTITY torbutton.prefs.custom_settings "Egyéni proxy beállítások használata">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher Proxy:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS állomásnév:">
-<!ENTITY torbutton.prefs.proxy.port "Port:">
-<!ENTITY torbutton.pref_connection.notice "Tiltsa le a Torbutton-t ezen beállítások megváltoztatásához">
-<!ENTITY torbutton.pref_connection.more_info "További információk">
-<!ENTITY torbutton.pref_connection_more_info.title "Súgó">
-<!ENTITY torbutton.pref_connection_more_info.text "A Torbutton jelenleg engedélyezett. Ha szeretné megváltoztatni a Tor nélküli proxy beállításokat, kapcsolja ki Torbutton-t és térjen vissza ide. Ha szeretné megváltoztatni a Tor beállításait, használja inkább a Torbutton Beállítások ablakát.">
 <!ENTITY torbutton.context_menu.new_identity "Új személyazonosság">
 <!ENTITY torbutton.context_menu.new_identity_key "S">
 <!ENTITY torbutton.context_menu.preferences "Beállítások...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "S">
 <!ENTITY torbutton.button.tooltip "Kattintson a Torbutton inicializálásához">
 <!ENTITY torbutton.prefs.restore_defaults "Alapértékek visszaállítása">
-<!ENTITY torbutton.prefs.test_settings "Beállítások tesztelése">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Nincs proxy ehhez:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Figyelem: Ne használja a lentebb látható hostneveket">
 <!ENTITY torbutton.cookiedialog.title "Süti védelem kezelése">
 <!ENTITY torbutton.cookiedialog.lockCol "Védett">
 <!ENTITY torbutton.cookiedialog.domainCol "Állomás">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "A védett kivételével az összes törlése">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Védje az új sütiket">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ne védje az új sütiket">
-<!ENTITY torbutton.prefs.transparentTor "Átlátszó Tor-osítás (Egyedi transproxy-t vagy Tor routert igényel)">
 <!ENTITY torbutton.prefs.block_disk "Ne rögzítsen böngésző előzményeket, vagy weboldal adatot (engedélyezi a Privát böngésző módot)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "A harmadik féltől származó sütik és nyomkövetési adatok korlátozása">
 <!ENTITY torbutton.prefs.block_plugins "Böngésző kiegészítők kikapcsolása (mint pl. a Flash)">

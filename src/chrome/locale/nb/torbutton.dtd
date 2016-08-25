@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Proxyinnstillinger">
-<!ENTITY torbutton.prefs.recommended_settings "Bruk anbefalte proxyinnstillinger for min versjon av Firefox">
-<!ENTITY torbutton.prefs.use_polipo "Bruk Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Bruk egne proxyinnstillinger">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP-proxy:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL-proxy:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP-proxy:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher-proxy:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS-vert:">
-<!ENTITY torbutton.prefs.proxy.port "Port:">
-<!ENTITY torbutton.pref_connection.notice "Deaktiver Torbutton for å endre på disse innstillingene.">
-<!ENTITY torbutton.pref_connection.more_info "Mer informasjon">
-<!ENTITY torbutton.pref_connection_more_info.title "Hjelp">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton er for øyeblikket aktivert. Hvis du vil endre på ikke-Tor-proxyinnstillinger, vennligst deaktiver Torbutton og returner hit. Hvis du vil endre på Tor-innstillingene, vennligst bruk Torbutton-innstillingsvinduet.">
 <!ENTITY torbutton.context_menu.new_identity "Ny Identitet">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "Innstillinger...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klikk for å initialisere Torbutton">
 <!ENTITY torbutton.prefs.restore_defaults "Gjenopprett standard">
-<!ENTITY torbutton.prefs.test_settings "Test innstillinger">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Ingen proxyer for:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Advarsel: Unngå å bruke noen av vertsnavnene ovenfor">
 <!ENTITY torbutton.cookiedialog.title "Administrér Informasjonskapslenes Beskyttelser">
 <!ENTITY torbutton.cookiedialog.lockCol "Beskyttet">
 <!ENTITY torbutton.cookiedialog.domainCol "Vert">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Fjern Alle Bortsett Fra Beskyttede">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beskytt Nye Informasjonskapsler">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ikke Beskytt Nye Informasjonskapsler">
-<!ENTITY torbutton.prefs.transparentTor "Transparent Torification (krever egendefinert transproxy eller Tor-router)">
 <!ENTITY torbutton.prefs.block_disk "Ikke lagre nettleserhistorikk eller nettsidedata (aktiverer privat nettleser økt)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Begrens tredjeparts informasjonskapsler og andre sporingsdata.">
 <!ENTITY torbutton.prefs.block_plugins "Deaktiver nettlesertillegg (som f.eks Flash)">

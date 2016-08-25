@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "ပရောက်ဇီ ချိန်ညှိချက်များ">
-<!ENTITY torbutton.prefs.recommended_settings "ကျွန်တော့် မီးလျှံမြေခွေး ဗားရှင်းအတွက် အကြံပြုထားသော ပရောက်ဇီ ချိန်ညှိချက်များကို အသုံးပြုရန်">
-<!ENTITY torbutton.prefs.use_polipo "Polipo ကို သုံးရန်">
-<!ENTITY torbutton.prefs.custom_settings "စိတ်ကြိုက် ပရောက်ဇီ ချိန်ညှိချက်များကို သုံးရန်">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP ပရောက်ဇီ -">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL ပရောက်ဇီ -">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP ပရောက်ဇီ -">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher ပရောက်ဇီ -">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS Host -">
-<!ENTITY torbutton.prefs.proxy.port "Port -">
-<!ENTITY torbutton.pref_connection.notice "အဲဒီ ချိန်ညှိချက်များကို ပြောင်းရန် Torbutton ကို ပိတ်ပါ။">
-<!ENTITY torbutton.pref_connection.more_info "နောက်ထပ် အချက်အလက်များ">
-<!ENTITY torbutton.pref_connection_more_info.title "အကူအညီ">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton ကို လောလောဆယ် ဖွင့်ထားသည်။ အကယ်၍ သင့် Tor ပရောက်ဇီ မသုံးသော ချိန်ညှိချက်များကို ပြောင်းလိုလျှင်၊ Torbutton ကို ပိတ်ပြီး ဤနေရာသို့ ပြန်လာပါ။ အကယ်၍ သင့် Tor ချိန်ညှိချက်များကို ပြောင်းလိုပါက၊ Torbutton ဦးစားပေးမှု ၀င်းဒိုးကို သုံးစွဲပါ။">
 <!ENTITY torbutton.context_menu.new_identity "အထောက်အထား အသစ်">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "ဦးစားပေးချက်များ...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbutton ကို အစပြုရန် နှိပ်ပါ။">
 <!ENTITY torbutton.prefs.restore_defaults " မူလအတိုင်း ပြန်ထားရန်">
-<!ENTITY torbutton.prefs.test_settings "စစ်ဆေးမှု ချိန်ညှိချက်များ">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "ပရောက်ဇီ မလိုအပ်သည့် အရာ -">
-<!ENTITY torbutton.prefs.no_proxy_warning "သတိပေးချက် - အထက်မှ host အမည်များ သုံးစွဲမှုကို ရှောင်ပါ">
 <!ENTITY torbutton.cookiedialog.title "ကွတ်ကီး ကာကွယ်မှုများကို စီမံခန့်ခွဲရန်">
 <!ENTITY torbutton.cookiedialog.lockCol "အကာအကွယ် လုပ်ထားသည်">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "အားလုံးကို ဖယ်ထုတ်ပါ။ သို့သော် အကာအကွယ် လုပ်ထားသည်">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "ကွတ်ကီးသစ်များကို ကာကွယ်ရန်">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "ကွတ်ကီးသစ်များကို ကာကွယ်ခြင်း မပြုရန်">
-<!ENTITY torbutton.prefs.transparentTor "ပွင့်လင်းမြင်သာသော Tor သုံးစွဲမှု (စိတ်ကြိုက် transproxy နှင့် Tor Router လိုအပ်သည်)">
 <!ENTITY torbutton.prefs.block_disk "Don't record browsing history or website data (enables Private Browsing Mode)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
 <!ENTITY torbutton.prefs.block_plugins "Disable browser plugins (such as Flash)">

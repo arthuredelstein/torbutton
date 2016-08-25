@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Starpnieka iestatījumi">
-<!ENTITY torbutton.prefs.recommended_settings "Lietot manai Firefox'a versijai ieteiktos starpnieka iestatījumus">
-<!ENTITY torbutton.prefs.use_polipo "Lietot Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Lietot starpnieka pielāgotus iestatījumus">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP starpnieks:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL starpnieks:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP starpnieks:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher starpnieks:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS'a viesotājs:">
-<!ENTITY torbutton.prefs.proxy.port "Ports:">
-<!ENTITY torbutton.pref_connection.notice "Atspējot Torbutton, lai mainītu šos iestatījumus.">
-<!ENTITY torbutton.pref_connection.more_info "Papildu informācija">
-<!ENTITY torbutton.pref_connection_more_info.title "Palīdzība">
-<!ENTITY torbutton.pref_connection_more_info.text "Šobrīd Torbutton ir iespējots.  Ja vēlaties mainīt savus ārpus-Tor starpnieka iestatījumus, lūdzu atspējojiet Torbutton un tad atgriezieties te.  Ja vēlaties mainīt savus Tor iestatījumus, lūdzu lietojiet Torbutton'a preferenču logu.">
 <!ENTITY torbutton.context_menu.new_identity "Jauna identitāte">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.preferences "Preferences...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Noklikšķināt, lai inicializētu Torbutton">
 <!ENTITY torbutton.prefs.restore_defaults "Atjaunot noklusējuma vērtības">
-<!ENTITY torbutton.prefs.test_settings "Pārbaudīt iestatījumus">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Nav starpnieku priekš: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Brīdinājums: Izvairieties lietot ikvienu no augstāk norādītajiem viesotājnosaukumiem">
 <!ENTITY torbutton.cookiedialog.title "Pārvaldīt aizsardzību no sīkdatnēm">
 <!ENTITY torbutton.cookiedialog.lockCol "Aizsargāts">
 <!ENTITY torbutton.cookiedialog.domainCol "Viesotājs">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Noņemt visas, izņemot aizsargātās">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Aizsargāt jaunās sīkdatnes">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neaizsargāt jaunās sīkdatnes">
-<!ENTITY torbutton.prefs.transparentTor "Pārredzama torifikācija (nepieciešams pielāgots pārstarpnieks jeb transproxy vai Tor'a maršrutētājs)">
 <!ENTITY torbutton.prefs.block_disk "Nereģistrēt pārlūkošanas vēsturi vai tīmekļa vietņu datus (iespējo Privātas pārlūkošanas režīmu)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Ierobežot trešo personu sīkdatnes un citus izsekošanas datus">
 <!ENTITY torbutton.prefs.block_plugins "Atspējot pārlūku spraudņus (tādus kā Flash)">

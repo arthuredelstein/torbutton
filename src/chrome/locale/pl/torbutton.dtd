@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Ustawienia proxy">
-<!ENTITY torbutton.prefs.recommended_settings "Użyj zalecanych ustawień proxy dla mojej wersji Firefoksa">
-<!ENTITY torbutton.prefs.use_polipo "Używaj Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Użyj spersonalizowanych ustawień proxy.">
-<!ENTITY torbutton.prefs.proxy.host.http "Serwer proxy HTTP:">
-<!ENTITY torbutton.prefs.proxy.host.https "Serwer proxy SSL:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "Serwer proxy FTP:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Serwer proxy Gopher:">
-<!ENTITY torbutton.prefs.proxy.host.socks "Host SOCKS:">
-<!ENTITY torbutton.prefs.proxy.port "Port:">
-<!ENTITY torbutton.pref_connection.notice "Aby zmienić te ustawienia wyłącz Torbutton.">
-<!ENTITY torbutton.pref_connection.more_info "Więcej informacji">
-<!ENTITY torbutton.pref_connection_more_info.title "Pomoc">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton jest włączony. Jeśli chcesz zmienić inne ustawienia proxy musisz wyłączyć Torbutton i powrócić tutaj. Jeśli chcesz zmienić ustawienia proxy Tor, zrób to tutaj.">
 <!ENTITY torbutton.context_menu.new_identity "Nowa Tożsamość">
 <!ENTITY torbutton.context_menu.new_identity_key "o">
 <!ENTITY torbutton.context_menu.new_circuit "Nowy obwód dla tej strony">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Kliknij tutaj, aby uruchomić Torbutton">
 <!ENTITY torbutton.prefs.privacy_security_settings "Ustawienia prywatności i bezpieczeństwa">
 <!ENTITY torbutton.prefs.restore_defaults "Ustawienia domyślne">
-<!ENTITY torbutton.prefs.test_settings "Testuj ustawienia">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Brak proxy dla: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Uwaga: Unikaj podawania nazw hostów powyżej">
 <!ENTITY torbutton.cookiedialog.title "Zarządzaj ochroną ciasteczek">
 <!ENTITY torbutton.cookiedialog.lockCol "Chronione">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Usuń wszystkie oprócz chronionych">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Chroń nowe ciasteczka">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nie chroń nowych ciasteczek">
-<!ENTITY torbutton.prefs.transparentTor "Przezroczysta toryfikacja (wymaga własnego transproxy lub routera Tora)">
 <!ENTITY torbutton.prefs.priv_caption "Ustawienia Prywatności">
 <!ENTITY torbutton.prefs.block_disk "Nie zapisuj historii przeglądania i danych o stronach (włącza Tryb Prywatny)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Ograniczaj ciasteczka firm trzecich i inne dane służące do śledzenia">

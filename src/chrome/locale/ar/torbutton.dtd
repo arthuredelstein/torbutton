@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "إعدادات البروكسي">
-<!ENTITY torbutton.prefs.recommended_settings "استخدم إعدادات البروكسي المحبّذة لهذه النسخة من فايرفكس">
-<!ENTITY torbutton.prefs.use_polipo "استخدم Polipo">
-<!ENTITY torbutton.prefs.custom_settings "استخدم إعدادات بروكسي مخصصة">
-<!ENTITY torbutton.prefs.proxy.host.http "بروكسي HTTP:">
-<!ENTITY torbutton.prefs.proxy.host.https "بروكسي SSL:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "بروكسي FTP:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "بروكسي Gopher:">
-<!ENTITY torbutton.prefs.proxy.host.socks "بروكسي SOCKS:">
-<!ENTITY torbutton.prefs.proxy.port "البوابة:">
-<!ENTITY torbutton.pref_connection.notice "عطّل زر تور لتغيير هذه الإعدادات.">
-<!ENTITY torbutton.pref_connection.more_info "مزيد من المعلومات">
-<!ENTITY torbutton.pref_connection_more_info.title "التعليمات">
-<!ENTITY torbutton.pref_connection_more_info.text "زر تور مفعّل حاليًا. إذا كنت تريد تغيير إعدادات البروكسي غير المتعلقة بتور، فضلاً عطل زر تور أولاً ثم عد إلى هنا. إن كنت تريد تعديل إعدادات زر تور فاستخدم نافذة تفضيلات زر تور.">
 <!ENTITY torbutton.context_menu.new_identity "هوية جديدة">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "دائرة تور جديدة لهذا الموقع">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "انقر لبدء زر تور">
 <!ENTITY torbutton.prefs.privacy_security_settings "إعدادات الأمان والخصوصيّة">
 <!ENTITY torbutton.prefs.restore_defaults "استعادة الافتراضيات">
-<!ENTITY torbutton.prefs.test_settings "فحص الإعدادات">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "لا وسيط ل:">
-<!ENTITY torbutton.prefs.no_proxy_warning "تحذير: تجنب استخدام أي من أسماء المضيف المذكورة أعلاه">
 <!ENTITY torbutton.cookiedialog.title "إدارة إعدادت الحماية لملفات تعريف الارتباط">
 <!ENTITY torbutton.cookiedialog.lockCol "محمية">
 <!ENTITY torbutton.cookiedialog.domainCol "استضافة">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "إزالة الكل لكن استمر في الحماية">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "احم ملفات تعريف الارتباط الجديدة">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "لا تحم ملفات تعريف الارتباط الجديدة">
-<!ENTITY torbutton.prefs.transparentTor "شفافية توريفكيشن (تحتاج موجه تور أو ترانسبوكسي مخصص)">
 <!ENTITY torbutton.prefs.priv_caption "إعدادات الخصوصية">
 <!ENTITY torbutton.prefs.block_disk "لا تسجل سجل التصفح أو بيانات المواقع الألكترونية (تفعيل التصفح الخصوصي)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "تقييد الـCookies الخاصة بالطرف الثالث و بيانات التتبع الأخري.">

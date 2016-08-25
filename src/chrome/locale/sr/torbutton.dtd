@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Поставке посредника">
-<!ENTITY torbutton.prefs.recommended_settings "Користи препоручене поставке посредника за моје издање фајерфокса">
-<!ENTITY torbutton.prefs.use_polipo "Користи Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Користи прилагођене поставке посредника">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP посредник:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL посредник:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP посредник:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher посредник:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS домаћин:">
-<!ENTITY torbutton.prefs.proxy.port "Порт:">
-<!ENTITY torbutton.pref_connection.notice "Забрани промену ових поставки.">
-<!ENTITY torbutton.pref_connection.more_info "Више информација">
-<!ENTITY torbutton.pref_connection_more_info.title "Помоћ">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton је тренутно омогућен. Ако желите да промените своје поставке посредника невезане за Tor, молимо Вас да онемогућите Torbutton и вратите се овде.  Ако желите да промените своје Tor поставке, молимо Вас да користите прозор за подешавања.">
 <!ENTITY torbutton.context_menu.new_identity "Нов идентитет">
 <!ENTITY torbutton.context_menu.new_identity_key "И">
 <!ENTITY torbutton.context_menu.preferences "Поставке...">
@@ -24,11 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "Ц">
 <!ENTITY torbutton.button.tooltip "Кликните да бисте покренули Torbutton">
 <!ENTITY torbutton.prefs.restore_defaults "Поврати подразумевано">
-<!ENTITY torbutton.prefs.test_settings "Провера поставки">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Без посредника за:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Упозорење: избегни коришћење изнад наведене називе домаћина">
 <!ENTITY torbutton.cookiedialog.title "Уреди заштиту колачића">
 <!ENTITY torbutton.cookiedialog.lockCol "Заштићен">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -40,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Уклони све осим заштићених">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Заштити нове колачиће">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не штити нове колачиће">
-<!ENTITY torbutton.prefs.transparentTor "Транспарента Торификација (захтева посебан Tor прокси или Tor рутер)">
 <!ENTITY torbutton.prefs.block_disk "Ne pamti moji istoriju pretrazivanja ili podatke sa web sajtova(Omogucava Private Browsing Mode)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Ogranici cookies i druge podatke o pracenju">
 <!ENTITY torbutton.prefs.block_plugins "Onemogući dodatke pretrazivaca (kao što su Flash )">

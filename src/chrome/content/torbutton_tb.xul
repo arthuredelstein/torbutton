@@ -23,8 +23,7 @@
             class="toolbarbutton-1" 
             label="Torbutton"
             tooltiptext="&torbutton.button.tooltip;" 
-            context="torbutton-context-menu"
-            oncommand="torbutton_toggle(false);" />
+            context="torbutton-context-menu" />
     </toolbarpalette>
 
     <toolbarpalette id="MsgComposeToolbarPalette">
@@ -33,16 +32,7 @@
             class="toolbarbutton-1" 
             label="Torbutton"
             tooltiptext="&torbutton.button.tooltip;" 
-            context="torbutton-context-menu"
-            oncommand="torbutton_toggle(false);" />
+            context="torbutton-context-menu" />
     </toolbarpalette>
 
-    <statusbar id="status-bar">
-        <statusbarpanel id="torbutton-panel"
-            insertbefore="statusbar-updates"
-                        context="torbutton-context-menu"
-            onclick="if (event.button == 0) torbutton_toggle(false)"/>
-
-        <menupopup id="torbutton-context-menu"/>
-   </statusbar>
 </overlay>

@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Настройки прокси">
-<!ENTITY torbutton.prefs.recommended_settings "Использовать параметры прокси, рекомендованные для данной версии Firefox">
-<!ENTITY torbutton.prefs.use_polipo "Использовать Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Установить параметры прокси вручную">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP-прокси:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL-прокси:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP-прокси:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher-прокси:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS-протокол:">
-<!ENTITY torbutton.prefs.proxy.port "Порт:">
-<!ENTITY torbutton.pref_connection.notice "Отключить Torbutton для изменения настроек необходимо.">
-<!ENTITY torbutton.pref_connection.more_info "Подробности">
-<!ENTITY torbutton.pref_connection_more_info.title "Помощь">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton включен.  Если вы хотите изменить настройки прокси, не являющегося частью сети Tor, необходимо сначала отключить Torbutton и затем вернуться сюда. Если вы хотите изменить настройки Tor, необходимо использовать окно настроек Torbutton.">
 <!ENTITY torbutton.context_menu.new_identity "Новая личность">
 <!ENTITY torbutton.context_menu.new_identity_key "Я">
 <!ENTITY torbutton.context_menu.new_circuit "Новая цепочка Tor для этого cайта">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Нажмите, чтобы инициализировать Torbutton">
 <!ENTITY torbutton.prefs.privacy_security_settings "Настройки конфиденциальности и безопасности">
 <!ENTITY torbutton.prefs.restore_defaults "Восстановить значения по умолчанию">
-<!ENTITY torbutton.prefs.test_settings "Проверить настройки">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS 4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS 5">
-<!ENTITY torbutton.prefs.no_proxies_on "Нет прокси для: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Внимание: Не вносите никаких имен доменов в поле выше">
 <!ENTITY torbutton.cookiedialog.title "Управление защитой куки-файлов">
 <!ENTITY torbutton.cookiedialog.lockCol "Защищено">
 <!ENTITY torbutton.cookiedialog.domainCol "Ведущий узел">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Удалить все, кроме защищённых">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Защищать новые куки-файлы">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не защищать новые куки-файлы">
-<!ENTITY torbutton.prefs.transparentTor "Прозрачная &quot;торификация&quot; (требует пользовательских transproxy или Tor-маршрутизатора)">
 <!ENTITY torbutton.prefs.priv_caption "Настройки конфиденциальности">
 <!ENTITY torbutton.prefs.block_disk "Не сохранять историю журнала посещений и данные с посещаемых сайтов (активирует функцию конфиденциального просмотра)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Блокировать сторонние куки-файлы и другие данные слежения">

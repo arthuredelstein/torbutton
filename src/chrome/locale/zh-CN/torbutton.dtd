@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "代理设置">
-<!ENTITY torbutton.prefs.recommended_settings "该版本的 Firefox 使用推荐代理设置">
-<!ENTITY torbutton.prefs.use_polipo "使用 Polipo">
-<!ENTITY torbutton.prefs.custom_settings "自定义代理设置">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP 代理：">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL 代理：">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP 代理：">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher 代理：">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS 代理：">
-<!ENTITY torbutton.prefs.proxy.port "端口：">
-<!ENTITY torbutton.pref_connection.notice "禁止 Torbutton 更改这些设置。">
-<!ENTITY torbutton.pref_connection.more_info "更多信息">
-<!ENTITY torbutton.pref_connection_more_info.title "帮助">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton 当前已启用。如需对 Tor 之外的代理设置进行更改，请禁用 Torbutton 后再返回这里。如需更改 Tor 的设置，请在 Torbutton 首选项窗口中进行设置。">
 <!ENTITY torbutton.context_menu.new_identity "新身份">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "为此站点使用新 Tor 线路">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "点此初始化 Torbutton">
 <!ENTITY torbutton.prefs.privacy_security_settings "隐私与安全设置">
 <!ENTITY torbutton.prefs.restore_defaults "恢复默认设置">
-<!ENTITY torbutton.prefs.test_settings "测试代理设置">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "不使用代理的地址:">
-<!ENTITY torbutton.prefs.no_proxy_warning "警告：请不要使用上述任何主机名。">
 <!ENTITY torbutton.cookiedialog.title "管理受保护的 Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "受保护">
 <!ENTITY torbutton.cookiedialog.domainCol "服务器">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "全部移除仅保留受保护的 Cookie">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "保护新的 Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "不保护新的 Cookie">
-<!ENTITY torbutton.prefs.transparentTor "Tor 强化透明代理（需要自设 TransProxy 或 Tor 路由）">
 <!ENTITY torbutton.prefs.priv_caption "隐私设置">
 <!ENTITY torbutton.prefs.block_disk "禁止记录浏览历史或网站数据（启用隐私浏览模式）">
 <!ENTITY torbutton.prefs.restrict_thirdparty "限制第三方 cookie 和其他数据跟踪程序">

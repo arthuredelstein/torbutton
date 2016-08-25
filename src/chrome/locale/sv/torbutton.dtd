@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Inställningar för proxy">
-<!ENTITY torbutton.prefs.recommended_settings "Använd rekommenderade proxy-inställningar för min version av Firefox">
-<!ENTITY torbutton.prefs.use_polipo "Använd Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Använd egen inställning för proxyn">
-<!ENTITY torbutton.prefs.proxy.host.http "Proxy för HTTP:">
-<!ENTITY torbutton.prefs.proxy.host.https "Proxy för SSL:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "Proxy för FTP:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Proxy för Gopher:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS värd:">
-<!ENTITY torbutton.prefs.proxy.port "Port:">
-<!ENTITY torbutton.pref_connection.notice "Inaktivera Torbutton för att ändra dessa inställningar.">
-<!ENTITY torbutton.pref_connection.more_info "Mer information">
-<!ENTITY torbutton.pref_connection_more_info.title "Hjälp">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton är aktiverad. Om du vill ändra inställningar för proxy utan Tor, inaktivera Tor och kom tillbaka hit. Om du vill ändra inställningar för Tor, använd Torbutton-inställningarna.">
 <!ENTITY torbutton.context_menu.new_identity "Ny identitet">
 <!ENTITY torbutton.context_menu.new_identity_key "N">
 <!ENTITY torbutton.context_menu.new_circuit "Ny Tor-krets för den här webbsidan">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Klicka för att installera Torbutton">
 <!ENTITY torbutton.prefs.privacy_security_settings "Integritet- och säkerhetsinställningar">
 <!ENTITY torbutton.prefs.restore_defaults "Återställ till standard">
-<!ENTITY torbutton.prefs.test_settings "Testa inställningar">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Ingen proxy för:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Varning: Undvik att använda värdnamn här ovan">
 <!ENTITY torbutton.cookiedialog.title "Hantera skyddade kakor">
 <!ENTITY torbutton.cookiedialog.lockCol "Skyddad">
 <!ENTITY torbutton.cookiedialog.domainCol "Värd">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Ta bort alla icke-skyddade">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Skydda nya kakor">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Skydda inte nya kakor">
-<!ENTITY torbutton.prefs.transparentTor "Transparent torifikation (Kräver skräddarsydd transproxy eller Tor router)">
 <!ENTITY torbutton.prefs.priv_caption "Sekretessinställningar">
 <!ENTITY torbutton.prefs.block_disk "Spara ingen historik eller webbplatsdata (aktiverar privat surfning)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Begränsa tredjepartskakor och annan tracking data">

@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Vekil Sunucu Ayarları">
-<!ENTITY torbutton.prefs.recommended_settings "Firefox sürümüm için önerilen vekil sunucu ayarları kullanılsın">
-<!ENTITY torbutton.prefs.use_polipo "Polipo Kullanılsın">
-<!ENTITY torbutton.prefs.custom_settings "Özel vekil sunucu ayarları kullanılsın">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP Vekil Sunucusu:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL Vekil Sunucusu:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP Vekil Sunucusu:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher Vekil Sunucusu:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS Sunucusu:">
-<!ENTITY torbutton.prefs.proxy.port "Kapı:">
-<!ENTITY torbutton.pref_connection.notice "Bu ayarları uygulamak için Torbutton devre dışı bırakılsın.">
-<!ENTITY torbutton.pref_connection.more_info "Ayrıntılı bilgiler">
-<!ENTITY torbutton.pref_connection_more_info.title "Yardım">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton şu anda etkin. Tor-Dışı vekil sunucu ayarlarını değiştirmek istiyorsanız, Torbutton uygulamasını devre dışı bırakıp buraya geri gelin. Tor ayarlarınızı değiştirmek istiyorsanız Torbutton ayarları penceresini kullanın.">
 <!ENTITY torbutton.context_menu.new_identity "Yeni Kimlik">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Bu site için Tor devresini yenile">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Torbutton uygulamasını başlatmak için tıklayın">
 <!ENTITY torbutton.prefs.privacy_security_settings "Gizlilik ve Güvenlik Ayarları">
 <!ENTITY torbutton.prefs.restore_defaults "Varsayılanları Yükle">
-<!ENTITY torbutton.prefs.test_settings "Ayarları Sına">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Şunun için vekil sunucu yok:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Uyarı: Yukarıdaki sunucu adlarını kullanmaktan kaçının">
 <!ENTITY torbutton.cookiedialog.title "Çerez Koruması Yönetimi">
 <!ENTITY torbutton.cookiedialog.lockCol "Korunmuş">
 <!ENTITY torbutton.cookiedialog.domainCol "Sunucu">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Korunanlar Dışında Tümünü Sil">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Yeni Çerezleri Koru">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Yeni Çerezleri Koruma">
-<!ENTITY torbutton.prefs.transparentTor "Saydam Tor İletişimi (özel transproxy yada Tor yönelticisi gerekir)">
 <!ENTITY torbutton.prefs.priv_caption "Gizlilik Ayarları">
 <!ENTITY torbutton.prefs.block_disk "Tarama geçmişini ve web sitesi bilgileri kaydedilmesin (Gizli Tarama Kipi kullanılır)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "3. taraf çerez ve diğer iz sürücü bilgiler engellensin">

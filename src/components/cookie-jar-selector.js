@@ -161,8 +161,7 @@ function CookieJarSelector() {
   };
 
   this.addProtectedCookie = function(cookie) {
-    var tor_enabled = this.prefs.getBoolPref("extensions.torbutton.tor_enabled");
-    var name = tor_enabled? "tor" : "nontor";
+    var name = "tor";
     var cookies = this.getProtectedCookies(name);
 
     if (typeof(cookies) == "undefined" || cookies == null
@@ -229,8 +228,7 @@ function CookieJarSelector() {
   };
 
   this.protectCookies = function(cookies) {
-    var tor_enabled = this.prefs.getBoolPref("extensions.torbutton.tor_enabled");
-    var name = tor_enabled? "tor" : "nontor";
+    var name = "tor";
     this._writeProtectCookies(cookies,name);
     if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
       // save protected cookies to file
@@ -438,22 +436,10 @@ function CookieJarSelector() {
            return;
        }
        jarThis.logger.log(3, "Got timer update. Saving changed cookies to jar.");
-       var tor_enabled = 
-           jarThis.prefs.getBoolPref("extensions.torbutton.tor_enabled");
-
-       if(tor_enabled !=
-           jarThis.prefs.getBoolPref("extensions.torbutton.settings_applied")) {
-           jarThis.logger.log(3, "Neat. Timer fired during transition.");
-           return;
-       }
 
        this.cookie_changed = false;
 
-       if(tor_enabled) {
-           jarThis.saveCookies("tor");
-       } else {
-           jarThis.saveCookies("nontor");
-       }
+       jarThis.saveCookies("tor");
        jarThis.logger.log(2, "Timer done. Cookies saved");
     }
   };
@@ -509,7 +495,9 @@ CookieJarSelector.prototype =
             var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);          
             this.timerCallback.cookie_changed = true;
     
-            if (aData == "added" && prefs.getBoolPref("extensions.torbutton.cookie_auto_protect") && ((!prefs.getBoolPref("extensions.torbutton.tor_memory_jar") && prefs.getBoolPref("extensions.torbutton.tor_enabled")) || (!prefs.getBoolPref("extensions.torbutton.nontor_memory_jar") && !prefs.getBoolPref("extensions.torbutton.tor_enabled"))))
+            if (aData == "added"
+                && prefs.getBoolPref("extensions.torbutton.cookie_auto_protect")
+                && !prefs.getBoolPref("extensions.torbutton.tor_memory_jar"))
             {
               this.addProtectedCookie(aSubject.QueryInterface(Components.interfaces.nsICookie2));//protect the new cookie!    
             }

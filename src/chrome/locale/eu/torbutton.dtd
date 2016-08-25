@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Proxy Ezarpenak">
-<!ENTITY torbutton.prefs.recommended_settings "Erabili nire Firefox bertsiorako proxy ezarpen gomendatuak">
-<!ENTITY torbutton.prefs.use_polipo "Erabili Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Erabili proxy ezarpen pertsonalizatuak">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP Proxya:">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL Proxya:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP Proxya:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher Proxya:">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS Ostalaria:">
-<!ENTITY torbutton.prefs.proxy.port "Portua:">
-<!ENTITY torbutton.pref_connection.notice "Torbutton ezgaitu ezarpen hauek aldatzeko">
-<!ENTITY torbutton.pref_connection.more_info "Informazio gehiago">
-<!ENTITY torbutton.pref_connection_more_info.title "Laguntza">
-<!ENTITY torbutton.pref_connection_more_info.text "Une honetan Torbutton gaituta dago. Zure ez-Tor proxy ezarpenak aldatu nahi badituzu, mesedez ezgaitu Torbutton eta hona bueltatu. Zure Tor ezarpenak aldatu nahi badituzu, mesedez erabili Torbutton ezarpen leihoa.">
 <!ENTITY torbutton.context_menu.new_identity "Nortasun berria">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Tor zirkuitu berria gune honetarako">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Sakatu Torbutton abiarazteko">
 <!ENTITY torbutton.prefs.privacy_security_settings "Pribatutasun eta segurtasun ezarpenak">
 <!ENTITY torbutton.prefs.restore_defaults "Lehenetsiak berrezarri">
-<!ENTITY torbutton.prefs.test_settings "Ezarpenak frogatu">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Proxyrik ez hauentzako:">
-<!ENTITY torbutton.prefs.no_proxy_warning "Kontuz: Ez erabili ostalari-izenik gainean">
 <!ENTITY torbutton.cookiedialog.title "Cookie Babesak kudeatu">
 <!ENTITY torbutton.cookiedialog.lockCol "Babestuta">
 <!ENTITY torbutton.cookiedialog.domainCol "Ostalaria">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Denak kendu babestutakoak izan ezik">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Cookie berriak babestu">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ez babestu cookie berririk">
-<!ENTITY torbutton.prefs.transparentTor "Torifikazio Gardena (transproxy pertsonalizatua edo Tor routerra behar du)">
 <!ENTITY torbutton.prefs.priv_caption "Pribatutasun ezarpenak">
 <!ENTITY torbutton.prefs.block_disk "Ez grabatu nabigatze historia edo webgune datuak (Nabigatze pribatu modua gaitzen du)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Hirugarrenen cookie-ak eta beste jarraipen datuak murriztu">

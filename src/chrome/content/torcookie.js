@@ -59,7 +59,6 @@ function initDialog() {
   selector = Components.classes["@torproject.org/cookie-jar-selector;1"]
                     .getService(Components.interfaces.nsISupports)
                     .wrappedJSObject;
-  var tor_enabled = prefs.getBoolPref("extensions.torbutton.tor_enabled");
   //init cookie manager
   cookiemanager = Components.classes["@mozilla.org/cookiemanager;1"].getService();
     cookiemanager = cookiemanager.QueryInterface(Components.interfaces.nsICookieManager);

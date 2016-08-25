@@ -1,17 +1,3 @@
-<!ENTITY torbutton.prefs.tor_settings "Configurações do Proxy">
-<!ENTITY torbutton.prefs.recommended_settings "Utilize as configurações recomendadas do proxy para a minha versão do Firefox">
-<!ENTITY torbutton.prefs.use_polipo "Utilizar Polipo">
-<!ENTITY torbutton.prefs.custom_settings "Utilizar as configurações do proxy personalizadas">
-<!ENTITY torbutton.prefs.proxy.host.http "Proxy HTTP:">
-<!ENTITY torbutton.prefs.proxy.host.https "Proxy SSL:">
-<!ENTITY torbutton.prefs.proxy.host.ftp "Proxy FTP:">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Proxy Gopher:">
-<!ENTITY torbutton.prefs.proxy.host.socks "Hospedeiro SOCKS:">
-<!ENTITY torbutton.prefs.proxy.port "Porta:">
-<!ENTITY torbutton.pref_connection.notice "Desativar o Torbutton para alterar estas configurações.">
-<!ENTITY torbutton.pref_connection.more_info "Mais informação">
-<!ENTITY torbutton.pref_connection_more_info.title "Ajuda">
-<!ENTITY torbutton.pref_connection_more_info.text "O Torbutton está ativado. Se desejar alterar as configurações proxy que não sejam do Tor, por favor, desative o Torbutton e volte aqui. Se desejar alterar as configurações do Tor, por favor, utilize a janela de preferências do Torbutton.">
 <!ENTITY torbutton.context_menu.new_identity "Nova Identidade">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Novo Circuito Tor para este Site">
@@ -27,11 +13,6 @@
 <!ENTITY torbutton.button.tooltip "Clique para inicializar o Torbutton">
 <!ENTITY torbutton.prefs.privacy_security_settings "Configurações de Privacidade e Segurança">
 <!ENTITY torbutton.prefs.restore_defaults "Restaurar Predefinições">
-<!ENTITY torbutton.prefs.test_settings "Testar Configurações">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "Nenhum proxy para: ">
-<!ENTITY torbutton.prefs.no_proxy_warning "Aviso: evite utilizar quaisquer nomes de hospedeiro acima">
 <!ENTITY torbutton.cookiedialog.title "Gerir Proteções dos Cookies">
 <!ENTITY torbutton.cookiedialog.lockCol "Protegido">
 <!ENTITY torbutton.cookiedialog.domainCol "Hospedeiro">
@@ -43,7 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remover Tudo Exceto Protegidos">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Proteger Novos Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Não Proteger Novos Cookies">
-<!ENTITY torbutton.prefs.transparentTor "Torrificação Transparente (requer transpoxy personalizado ou encaminhamento do Tor)">
 <!ENTITY torbutton.prefs.priv_caption "Configurações de Privacidade">
 <!ENTITY torbutton.prefs.block_disk "Não gravar o histórico de navegação ou os dados do site da Web (ativa o Modo de Navegação Privado)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restringir os cookies de terceiros e outros dados de rastreamento">

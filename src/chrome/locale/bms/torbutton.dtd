@@ -1,28 +1,9 @@
-<!ENTITY torbutton.prefs.tor_settings "Proxy ခ်ိန္ညႇိခ်က္မ်ား">
-<!ENTITY torbutton.prefs.recommended_settings "အၾကံျပဳ ေထာက္ခံေသာ proxy ခ်ိန္ညိႇခ်က္မ်ားကို မိမိ၏ Firefox version တြင္ အသံုးျပဳရန္">
-<!ENTITY torbutton.prefs.use_polipo "Polipo ကို အသံုးျပဳရန္">
-<!ENTITY torbutton.prefs.custom_settings "proxy ခ်ိန္ညိႇခ်က္မ်ားကို စိတ္ၾကိဳက္ျပဳျပင္၍ အသံုးျပဳရန္">
-<!ENTITY torbutton.prefs.proxy.host.http "HTTP ပေရာ့စီ :">
-<!ENTITY torbutton.prefs.proxy.host.https "SSL ပေရာ့စီ :">
-<!ENTITY torbutton.prefs.proxy.host.ftp "FTP ပေရာ့စီ :">
-<!ENTITY torbutton.prefs.proxy.host.gopher "Gopher ပေရာ့စီ">
-<!ENTITY torbutton.prefs.proxy.host.socks "SOCKS Host :">
-<!ENTITY torbutton.prefs.proxy.port "Port :">
-<!ENTITY torbutton.pref_connection.notice "၄င္းခ်ိန္ညႇိခ်က္မ်ားကို ေျပာင္းလဲရန္အတြက္ Torbutton ကုိ ပိတ္ထားရန္">
-<!ENTITY torbutton.pref_connection.more_info "ပိုမုိျပည့္စံုေသာ သတင္းအခ်က္အလက္မ်ားသို႕">
-<!ENTITY torbutton.pref_connection_more_info.title "ကူညီမႈရယူရန္">
-<!ENTITY torbutton.pref_connection_more_info.text "Torbutton ကုိ လက္ရွိတြင္ အသံုးျပဳႏုိင္ပါသည္။ Tor Proxy မဟုတ္ေသာ ခ်ိန္ညိႇခ်က္မ်ားကို ေျပာင္းလဲ အသံုးျပဳႏုိင္ရန္အတြက္ Torbutton ကုိ အသံုးမျပဳႏိုင္ေအာင္ ပိတ္၍ ယခုေနရာသို႕ ျပန္လာပါ။ Tor ခ်ိန္ညႇိခ်က္မ်ားကို ေျပာင္းလဲလိုပါက Torbutton ဦးစားေပးညႊန္ျပခ်က္မ်ားကို ကို အသံုးျပဳပါ။">
 <!ENTITY torbutton.context_menu.preferences "ဦးစားေပး ညႊန္ျပမႈမ်ား">
 <!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbutton စတင္ရန္ ကလစ္လုပ္ပါ">
 <!ENTITY torbutton.prefs.restore_defaults "မူလအေျခအေနသို႕ ျပန္လည္ ထည့္သြင္းရန္">
-<!ENTITY torbutton.prefs.test_settings "ခ်ိန္ညိႇမႈမ်ားကို စမ္းသပ္ရန္">
-<!ENTITY torbutton.prefs.socks_vfour "SOCKS v4">
-<!ENTITY torbutton.prefs.socks_vfive "SOCKS v5">
-<!ENTITY torbutton.prefs.no_proxies_on "၄င္းတို႔အတြက္ proxy မရွိပါ:">
-<!ENTITY torbutton.prefs.no_proxy_warning "သတိေပးခ်က္: အထက္ေဖာ္ျပပါ hostname မ်ားအသံုးမျပဳရန္">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -34,4 +15,3 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.transparentTor "Transparent Torification (Requires custom transproxy or Tor router)">
