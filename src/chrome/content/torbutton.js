@@ -1114,7 +1114,8 @@ function torbutton_new_identity() {
  *      h. last open location url
  *      i. clear content prefs
  *      j. permissions
- *      k. IndexedDB and asmjscache storage
+ *      k. site security settings (e.g. HSTS)
+ *      l. IndexedDB and asmjscache storage
  *   3. Sends tor the NEWNYM signal to get a new circuit
  *   4. Opens a new window with the default homepage
  *   5. Closes this window
@@ -1215,15 +1216,20 @@ function torbutton_do_new_identity() {
   m_tb_prefs.setIntPref("security.OCSP.enabled", 0);
   m_tb_prefs.setIntPref("security.OCSP.enabled", ocsp);
 
-  // This clears the STS cache and site permissions on Tor Browser
+  // This clears the site permissions on Tor Browser
   // XXX: Tie to some kind of disk-ok pref?
   try {
       Services.perms.removeAll();
   } catch(e) {
       // Actually, this catch does not appear to be needed. Leaving it in for
       // safety though.
-      torbutton_log(3, "Can't clear STS/Permissions: Not Tor Browser: "+e);
+      torbutton_log(3, "Can't clear permissions: Not Tor Browser: "+e);
   }
+
+   // Clear site security settings
+   let sss = Cc["@mozilla.org/ssservice;1"].
+     getService(Ci.nsISiteSecurityService);
+   sss.clearAll();
 
   // This clears the undo tab history.
   var tabs = m_tb_prefs.getIntPref("browser.sessionstore.max_tabs_undo");
