@@ -73,16 +73,12 @@ StartupObserver.prototype = {
             this._prefs.setIntPref('network.proxy.type', 1);
         }
         this.logger.log(3, "Reset socks port to "+environ.get("TOR_SOCKS_PORT"));
-      } else {
-        this._prefs.setIntPref('network.proxy.socks_port', 9150);
       }
 
       if (environ.exists("TOR_SOCKS_HOST")) {
         if (this.is_tbb) {
             this._prefs.setCharPref('network.proxy.socks', environ.get("TOR_SOCKS_HOST"));
         }
-      } else {
-        this._prefs.setCharPref('network.proxy.socks', '127.0.0.1');
       }
 
       if (environ.exists("TOR_TRANSPROXY")) {
