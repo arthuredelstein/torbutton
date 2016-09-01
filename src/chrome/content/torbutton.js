@@ -14,8 +14,6 @@ const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion"
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
 const k_tb_last_update_check_pref = "extensions.torbutton.lastUpdateCheck";
 const k_tb_tor_check_failed_topic = "Torbutton:TorCheckFailed";
-const k_tb_tor_resize_warn_pref =
-  "extensions.torbutton.startup_resize_period"
 
 // status
 var m_tb_wasinited = false;
@@ -432,6 +430,8 @@ function torbutton_init() {
 
     createTorCircuitDisplay(m_tb_control_host, m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
+
+    quantizeBrowserSize(window, 100, 100);
 
     torbutton_log(3, 'init completed');
 }
@@ -2451,103 +2451,11 @@ var torbutton_resizelistener =
       var progress =
         Components.classes["@mozilla.org/docloaderservice;1"].
         getService(Components.interfaces.nsIWebProgress);
-      var win = getBrowser().contentWindow,
-          container = getBrowser().parentElement;
+      var win = getBrowser().contentWindow;
       if (!win || typeof(win) == "undefined") {
         torbutton_log(5, "No initial browser content window?");
         progress.removeProgressListener(this);
         return;
-      }
-
-      // We need to set the inner width to an initial value because it has none
-      // at this point... Choosing "300" as this works even on Windows
-      // reliably.
-      win.innerWidth = 300;
-      win.innerHeight = 300;
-
-      var screenMan = Components.classes["@mozilla.org/gfx/screenmanager;1"].
-        getService(Components.interfaces.nsIScreenManager);
-      var junk = {}, availWidth = {}, availHeight = {};
-      screenMan.primaryScreen.GetAvailRect(junk, junk, availWidth, availHeight);
-
-      torbutton_log(3, "About to resize window: " +
-                    window.outerWidth + "x" + window.outerHeight +
-                    " inner: " + win.innerWidth + "x" + win.innerHeight +
-                    " in state " + window.windowState +
-                    " Available: " + availWidth.value + "x" +
-                    availHeight.value);
-
-      var diff_width = window.outerWidth - win.innerWidth;
-      var diff_height = window.outerHeight - win.innerHeight;
-      var delta_fix = 0;
-
-      // The following block tries to cope with funny corner cases where the
-      // title bar is not included in window.outerHeight. What could happen in
-      // this case? Well, assume the difference between window.outerHeight and
-      // win.innerHeight is 39. And lets further assume the available height is
-      // 725x539. If we resize the window in this case we get 600x500 for the
-      // inner window. And the outer window has a height of 539 *plus* the
-      // height of the titlebar (as it occupies some screen space at least
-      // after resizing) which probably leads to parts of the browser being not
-      // visible.
-      if (window.outerHeight == window.innerHeight) {
-          // XXX: Let's assume a reasonable safety margin.
-          // |delta_fix = Math.floor(window.mozInnerScreenY) - window.screenY;|
-          // is not working at this stage of the browser start-up. Although it
-          // would give us slightly better values. But calling it later makes
-          // the resizing visible even on fast computers which is bad for UX.
-          delta_fix = Math.floor(diff_height / 2);
-      }
-
-      // Check the DPI value and take it into acctount later when calculating
-      // the max* values.
-      var dpi = m_tb_domWindowUtils.screenPixelsPerCSSPixel;
-
-      // We can't use screen resolution here as it does not account for e.g.
-      // taskbars. We can't use window.screen.avail* either as it does not
-      // report correct values on some platforms when used at this stage in the
-      // startup process. Therefore, we resort to nsIScreenManager.
-      // XXX: Note though, there are probably still some OS/window manager
-      // configurations where this approach is not working. E.g. on a Debian
-      // with XFCE the available height is the same as the screen height.
-      // This is said to happen as well on Windows with Aero:
-      // https://stackoverflow.com/questions/3044230/
-      // difference-between-screen-availheight-and-window-height
-      var maxHeight = Math.floor(availHeight.value / dpi) -
-                     (diff_height + delta_fix);
-      var maxWidth = Math.floor(availWidth.value / dpi) - diff_width ;
-
-      var width;
-      var height;
-
-      // Allow the user to overwrite the Torbutton logic in case it is still
-      // wrong when resizing the window.
-      try {
-        width = m_tb_prefs.getIntPref("extensions.torbutton.window.innerWidth");
-      } catch(e) {
-        let cappedWidth = m_tb_prefs.getIntPref("extensions.torbutton.window.maxWidth");
-        if (maxWidth > cappedWidth) {
-          maxWidth = cappedWidth;
-        }
-        width = Math.floor(maxWidth/200.0)*200;
-      }
-
-      try {
-        height = m_tb_prefs.getIntPref("extensions.torbutton.window.innerHeight");
-      } catch(e) {
-        let cappedHeight = m_tb_prefs.getIntPref("extensions.torbutton.window.maxHeight");
-        if (maxHeight > cappedHeight) {
-          maxHeight = cappedHeight;
-        }
-        height = Math.floor(maxHeight/100.0)*100;
-      }
-
-      let resizeInnerWindowTo = function (width, height) {
-        window.resizeBy(width - win.innerWidth,
-                        height - win.innerHeight);
-        torbutton_log(3, "Resized new window from: " + container.clientWidth + "x" +
-                      container.clientHeight + " to " + width + "x" + height +
-                      " in state " + window.windowState);
       }
 
       m_tb_resize_handler = function() {
@@ -2602,25 +2510,8 @@ var torbutton_resizelistener =
                                    priority, buttons);
             return;
           }
-          // This is for some weird OS-specific behavior on start-up where,
-          // depending on the available screen size, the OS thinks it has to
-          // maximize the window. We don't want to do that AND don't want to
-          // show the user our notification in this case.
-          if (m_tb_prefs.
-                getBoolPref(k_tb_tor_resize_warn_pref)) {
-            window.addEventListener("resize",
-              function() {
-                resizeInnerWindowTo(width, height);
-                var calling_function = arguments.callee;
-                setTimeout(function() {
-                             torbutton_log(3, "Removing resize listener..");
-                             window.removeEventListener("resize",
-                               calling_function, false);
-                           }, 1000);
-              }, false);
-          }
         }
-      };
+      }; // m_tb_resize_handler
 
       // We need to handle OSes that auto-maximize windows depending on user
       // settings and/or screen resolution in the start-up phase and users that
@@ -2642,50 +2533,11 @@ var torbutton_resizelistener =
       // the window triggers more than one resize event the first being not the
       // one we need. Thus we can't remove the listener after the first resize
       // event got fired. Thus, we have the rather klunky setTimeout() call.
-      m_tb_prefs.setBoolPref(k_tb_tor_resize_warn_pref, true);
       window.addEventListener("sizemodechange", m_tb_resize_handler, false);
-
-      // This is fun. any attempt to directly set the inner window actually
-      // resizes the outer width to that value instead. Must use resizeBy()
-      // instead of assignment or resizeTo()
-      resizeInnerWindowTo(width, height);
-
-      // Resizing within this progress listener does not always work as overlays
-      // of other extensions might still influence the height/width of the
-      // chrome and therefore the height/width of the content window. Doing a
-      // fallback resize with setTimeout(0) from this progess listener does not
-      // work on some machines (probably due to race conditions which are all
-      // over the place). Thus we need a point later in the start-up process
-      // where we can do this... Please welcome the mutation observer.
-      let mut_target = document.getElementById("main-window");
-      let mut_observer = new MutationObserver(
-        function(mutations) {
-          mutations.forEach(
-            function(mutation) {
-              setTimeout(function() {
-                           resizeInnerWindowTo(width, height);
-                           quantizeBrowserSize(window, 100, 100);
-                           // OS-specific window maximization on start-up should
-                           // be done by now. Disable the respective preference
-                           // to make sure the user is seeing our notification.
-                           m_tb_prefs.setBoolPref(k_tb_tor_resize_warn_pref,
-                             false);
-                         }, 0);
-              mut_observer.disconnect();
-            }
-          );
-        }
-      );
-      // Configuration of the observer. Looking at added nodes is enough as
-      // DevTools related code is manipulating the DOM which we can capture.
-      // From that on we can start our fallback resizing.
-      let mut_config = { attributes: false, childList: true,
-        characterData: false };
-      mut_observer.observe(mut_target, mut_config);
 
       progress.removeProgressListener(this);
     }
-  },
+  }, // onStateChange
 
   onProgressChange: function(aProgress, aRequest, curSelfProgress,
                              maxSelfProgress, curTotalProgress,

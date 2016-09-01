@@ -501,7 +501,9 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
   window.addEventListener("unload", unbind, true);
 };
 
-quantizeBrowserSizeMain(window, xStep, yStep);
+// Run the main function. Use setTimeout(..., 0) to ensure this only runs after
+// the window is fully built.
+setTimeout(() => quantizeBrowserSizeMain(window, xStep, yStep), 0);
 
 // end of quantizeBrowserSize definition
 };
