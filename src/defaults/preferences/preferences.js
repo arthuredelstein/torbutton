@@ -26,7 +26,6 @@ pref("extensions.torbutton.prompted_language",false);
 // See #7255 for details. We display the warning three times to make sure the
 // user did not click on it by accident.
 pref("extensions.torbutton.maximize_warnings_remaining", 0);
-pref("extensions.torbutton.startup_resize_period", true);
 
 // Security prefs:
 pref("extensions.torbutton.no_tor_plugins",true);
