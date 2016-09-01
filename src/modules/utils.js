@@ -48,6 +48,24 @@ var bindPref = function (prefName, prefHandler, init = false) {
 var bindPrefAndInit = (prefName, prefHandler) =>
     bindPref(prefName, prefHandler, true);
 
+// ## Observers
+
+// __observe(topic, callback)__.
+// Observe the given topic. When notification of that topic
+// occurs, calls callback(subject, data). Returns a zero-arg
+// function that stops observing.
+var observe = function (topic, callback) {
+  let observer = {
+    observe: function (aSubject, aTopic, aData) {
+      if (topic === aTopic) {
+        callback(aSubject, aData);
+      }
+    },
+  };
+  Services.obs.addObserver(observer, topic, false);
+  return () => Services.obs.removeObserver(observer, topic);
+};
+
 // ## Environment variables
 
 // __env__.
@@ -183,4 +201,4 @@ var unescapeTorString = function(str) {
 
 // Export utility functions for external use.
 let EXPORTED_SYMBOLS = ["bindPref", "bindPrefAndInit", "getEnv", "getPrefValue",
-                        "showDialog", "unescapeTorString"];
+                        "observe", "showDialog", "unescapeTorString"];

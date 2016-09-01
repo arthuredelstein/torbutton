@@ -501,7 +501,13 @@ let quantizeBrowserSizeMain = function (window, xStep, yStep) {
   window.addEventListener("unload", unbind, true);
 };
 
-quantizeBrowserSizeMain(window, xStep, yStep);
+// Only start quantizing once the window has become visible.
+var stopObserving = observe("xul-window-visible", function () {
+  if (Services.wm.getMostRecentWindow("navigator:browser") === window) {
+    quantizeBrowserSizeMain(window, xStep, yStep);
+    stopObserving();
+  }
+});
 
 // end of quantizeBrowserSize definition
 };
