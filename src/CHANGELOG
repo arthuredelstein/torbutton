@@ -1,3 +1,7 @@
+1.9.5.7
+ * Bug 18589: Clear site security settings during New Identity
+ * Bug 19906: "Maximizing Tor Browser" Notification can exist multiple times
+
 1.9.5.6
  * Bug 19417: Disable asmjs for now
  * Bug 19689: Use proper parent windows for plugin prompt
