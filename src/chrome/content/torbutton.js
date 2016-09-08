@@ -1534,48 +1534,86 @@ function torbutton_local_tor_check()
   {
     if (!didLogError) {
       didLogError = true;
-      torbutton_log(5, "unexpected tor response: " + resp);
+      torbutton_log(5, "Local Tor check: unexpected GETINFO response: " + resp);
     }
+  }
+
+  function removeBrackets(aStr)
+  {
+    // Remove enclosing square brackets if present.
+    if (aStr.startsWith('[') && aStr.endsWith(']'))
+      return aStr.substr(1, aStr.length - 2);
+
+    return aStr;
   }
 
   // Sample response: net/listeners/socks="127.0.0.1:9149" "127.0.0.1:9150"
   // First, check for command argument prefix.
-  resp = resp.toLowerCase();
   if (0 != resp.indexOf(kCmdArg + '=')) {
     logUnexpectedResponse();
     return false;
   }
 
   // Retrieve configured proxy settings and check each listener against them.
+  // When a Unix domain socket is configured, a file URL should be present in
+  // network.proxy.socks.
+  // See: https://bugzilla.mozilla.org/show_bug.cgi?id=1211567
   let socksAddr = m_tb_prefs.getCharPref("network.proxy.socks");
   let socksPort = m_tb_prefs.getIntPref("network.proxy.socks_port");
+  let socketPath;
+  if (socksAddr && socksAddr.startsWith("file:")) {
+    // Convert the file URL to a file path.
+    try {
+      let ioService = Cc["@mozilla.org/network/io-service;1"]
+                        .getService(Ci.nsIIOService);
+      let fph = ioService.getProtocolHandler("file")
+                         .QueryInterface(Ci.nsIFileProtocolHandler);
+      socketPath = fph.getFileFromURLSpec(socksAddr).path;
+    } catch (e) {
+      torbutton_log(5, "Local Tor check: Unix domain socket error: " + e);
+      return false;
+    }
+  } else {
+    socksAddr = removeBrackets(socksAddr);
+  }
+
   let addrArray = resp.substr(kCmdArg.length + 1).split(' ');
   let foundSocksListener = false;
-  for (let i = 0; !foundSocksListener && (i < addrArray.length); ++i)
-  {
-    var addr = addrArray[i];
+  for (let i = 0; !foundSocksListener && (i < addrArray.length); ++i) {
+    let addr = addrArray[i];
 
     // Remove double quotes if present.
     let len = addr.length;
     if ((len > 2) && ('"' == addr.charAt(0)) && ('"' == addr.charAt(len - 1)))
       addr = addr.substring(1, len - 1);
 
-    // Check against the configured proxy.
-    let tokens = addr.split(':');
-    if (tokens.length < 2)
-      logUnexpectedResponse();
-    else
-    {
-      let torSocksAddr = tokens[0];
-      let torSocksPort = parseInt(tokens[1], 10);
-      if ((torSocksAddr.length < 1) || isNaN(torSocksPort))
+    if (addr.startsWith("unix:")) {
+      if (!socketPath)
+        continue;
+
+      // Check against the configured UNIX domain socket proxy.
+      let path = addr.substring(5);
+      torbutton_log(2, "Tor socks listener (socket): " + path);
+      foundSocksListener = (socketPath === path);
+    } else if (!socketPath) {
+      // Check against the configured TCP proxy. We expect addr:port where addr
+      // may be an IPv6 address; that is, it may contain colon characters.
+      // Also, we remove enclosing square brackets before comparing addresses
+      // because tor requires them but Firefox does not.
+      let idx = addr.lastIndexOf(':');
+      if (idx < 0) {
         logUnexpectedResponse();
-      else
-      {
-        torbutton_log(2, "Tor socks listener: " + torSocksAddr + ':'
-                         + torSocksPort);
-        foundSocksListener = ((socksAddr == torSocksAddr) &&
-                              (socksPort == torSocksPort));
+      } else {
+        let torSocksAddr = removeBrackets(addr.substring(0, idx));
+        let torSocksPort = parseInt(addr.substring(idx + 1), 10);
+        if ((torSocksAddr.length < 1) || isNaN(torSocksPort)) {
+          logUnexpectedResponse();
+        } else {
+          torbutton_log(2, "Tor socks listener: " + torSocksAddr + ':'
+                           + torSocksPort);
+          foundSocksListener = ((socksAddr === torSocksAddr) &&
+                                (socksPort === torSocksPort));
+        }
       }
     }
   }
