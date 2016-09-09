@@ -7,7 +7,7 @@
 <!ENTITY aboutTor.title "Thông tin về Tor">
 
 <!ENTITY aboutTor.outOfDateTorOn.label "WARNING: this browser is out of date.">
-<!ENTITY aboutTor.outOfDateTorOff.label "Ngoài ra, trình duyệt này đã lỗi thời.">
+<!ENTITY aboutTor.outOfDateTorOff.label "Thêm nữa, trình duyệt này đã lỗi thời.">
 <!ENTITY aboutTor.outOfDate2.label "Click on the onion and then choose Check for Tor Browser Update.">
 
 <!ENTITY aboutTor.check.label "Test Tor Network Settings">

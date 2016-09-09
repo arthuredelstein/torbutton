@@ -6,7 +6,7 @@
 
 <!ENTITY aboutTor.title "关于 Tor">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "警告：此浏览器版本较旧。">
+<!ENTITY aboutTor.outOfDateTorOn.label "警告：此浏览器版本过旧。">
 <!ENTITY aboutTor.outOfDateTorOff.label "另外，该浏览器并非最新版本。">
 <!ENTITY aboutTor.outOfDate2.label "点击洋葱图标，然后选择“Tor Browser 检查更新”。">
 

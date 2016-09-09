@@ -37,7 +37,7 @@
 <!ENTITY torbutton.prefs.sec_med_low "Medium-Laag">
 <!ENTITY torbutton.prefs.sec_gen_desc "Op dit beveiligingsniveau gelden de volgende wijzigingen (beweeg de muis over de items voor meer informatie)">
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 video en audio media geworden click-to-play via NoScript.">
-<!ENTITY torbutton.prefs.sec_html5_tooltip "Op sommige sites , zou je  de NoScript werkbalk knop moeten  gebruiken om deze media -objecten mogelijk te maken.">
+<!ENTITY torbutton.prefs.sec_html5_tooltip "Op sommige sites zou je de NoScript werkbalk knop moeten gebruiken om deze media -objecten mogelijk te maken.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Sommige JavaScript-prestatieverbeteringen zijn uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">

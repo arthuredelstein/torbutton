@@ -1,4 +1,4 @@
-<!ENTITY project.start           "&brandShortName; разработано">
+<!ENTITY project.start           "&brandShortName; разработки">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "&vendorShortName;">
 <!ENTITY project.end             ", проект, созданный, чтобы защитить вашу конфиденциальность и свободу в сети.">

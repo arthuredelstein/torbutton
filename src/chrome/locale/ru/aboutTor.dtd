@@ -13,7 +13,7 @@
 <!ENTITY aboutTor.check.label "Проверить настройки сети Tor">
 
 <!ENTITY aboutTor.success.label "Добро пожаловать в обозреватель Tor">
-<!ENTITY aboutTor.success2.label "Соединены с сетью Tor">
+<!ENTITY aboutTor.success2.label "Вы подключены к сети Tor.">
 <!ENTITY aboutTor.success3.label "Теперь Вы можете просматривать интернет-сайты в анонимном режиме.">
 <!ENTITY aboutTor.failure.label "Что-то пошло не так!">
 <!ENTITY aboutTor.failure2.label "Tor не работает в этом браузере.">

@@ -18,7 +18,7 @@
 <!ENTITY torbutton.cookiedialog.domainCol "Servidor (host)">
 <!ENTITY torbutton.cookiedialog.nameCol "Nombre">
 <!ENTITY torbutton.cookiedialog.pathCol "Ruta">
-<!ENTITY torbutton.cookiedialog.protectCookie "Proteger cookie">
+<!ENTITY torbutton.cookiedialog.protectCookie "Cookie protegida">
 <!ENTITY torbutton.cookiedialog.removeCookie "Eliminar cookie">
 <!ENTITY torbutton.cookiedialog.unprotectCookie "Desproteger cookie">
 <!ENTITY torbutton.cookiedialog.removeAllBut "Eliminar todas excepto las protegidas">
@@ -28,7 +28,7 @@
 <!ENTITY torbutton.prefs.block_disk "No registrar historial de navegación o datos del sitio web (habilita Modo de Navegación Privada)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restringir cookies de terceros y otros datos de seguimiento">
 <!ENTITY torbutton.prefs.block_plugins "Desactivar complementos del navegador (como Flash)">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Cambiar los detalles que le distinguen de otros usuarios de Navegador Tor">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Cambiar los detalles que le distinguen de otros usuarios del Navegador Tor">
 <!ENTITY torbutton.prefs.sec_caption "Nivel de Seguridad">
 <!ENTITY torbutton.prefs.sec_low "Bajo (por defecto)">
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Esto proporciona la mejor experiencia de usabilidad.">
@@ -37,7 +37,7 @@
 <!ENTITY torbutton.prefs.sec_med_low "Medio-Bajo">
 <!ENTITY torbutton.prefs.sec_gen_desc "En este nivel de seguridad, se aplican los siguientes cambios (ratón encima para detalles):">
 <!ENTITY torbutton.prefs.sec_html5_desc "Los medios de vídeo y audio HTML5 se vuelven tipo clic-para-reproducir mediante NoScript.">
-<!ENTITY torbutton.prefs.sec_html5_tooltip "En algunos sitios, podría necesitar usar el botón de barra de herramientas de NoScript para habilitar estos objetos de medios.">
+<!ENTITY torbutton.prefs.sec_html5_tooltip "En algunos sitios, podría necesitar usar el botón NoScript de barra de herramientas para habilitar estos objetos de medios.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Algunas optimizaciones de rendimiento de JavaScript están deshabilitadas.">
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT (compilador JS instantáneo optimizado), Type Inference (deducción del tipo de datos por el compilador), ASM.JS (JS intermedio para alto rendimiento de otros lenguajes)">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT (compilador JS instantáneo)">

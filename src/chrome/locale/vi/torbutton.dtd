@@ -1,4 +1,4 @@
-<!ENTITY torbutton.context_menu.new_identity "Giám định Mới">
+<!ENTITY torbutton.context_menu.new_identity "Định danh mới">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Vòng Tor mới cho trang này">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">

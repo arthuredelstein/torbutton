@@ -6,13 +6,13 @@
 
 <!ENTITY aboutTor.title "عن تور">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "هذا المتصفح خارج التحديث">
+<!ENTITY aboutTor.outOfDateTorOn.label "تحذير: هذه نسخة قديمة من المتصفح.">
 <!ENTITY aboutTor.outOfDateTorOff.label "أيضاً، هذه نسخة قديمة من المتصفح.">
 <!ENTITY aboutTor.outOfDate2.label "اضغط على رمز البصلة ثم اختر &quot;تحقق من تحديثات متصفح تور&quot;">
 
 <!ENTITY aboutTor.check.label "اختبر إعدادات شبكة تور.">
 
-<!ENTITY aboutTor.success.label "مرحبا بك في متصفح تور">
+<!ENTITY aboutTor.success.label "أهلاً بك في متصفح تور">
 <!ENTITY aboutTor.success2.label "تم الإتصال بشبكة تور">
 <!ENTITY aboutTor.success3.label "يمكنك الآن تصفح الانترنت بشكل يحمي هويتك.">
 <!ENTITY aboutTor.failure.label "حدث خطأ ما!">
