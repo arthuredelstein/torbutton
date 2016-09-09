@@ -7,9 +7,10 @@
 //
 // To import the module, use
 //
-//     let { controller } = Components.utils.import("path/to/controlPort.jsm");
+//  let { controller } = Components.utils.import("path/to/tor-control-port.js");
 //
-// See the last function defined in this file, controller(host, port, password, onError)
+// See the last function defined in this file:
+//   controller(socketFile, host, port, password, onError)
 // for usage of the controller function.
 
 /* jshint esnext: true */
@@ -41,17 +42,24 @@ log("Loading tor-control-port.js\n");
 // I/O utilities namespace
 let io = {};
 
-// __io.asyncSocketStreams(host, port)__.
+// __io.asyncSocketStreams(socketFile, host, port)__.
 // Creates a pair of asynchronous input and output streams for a socket at the
-// given host and port.
-io.asyncSocketStreams = function (host, port) {
-  let socketTransportService = Cc["@mozilla.org/network/socket-transport-service;1"]
-           .getService(Components.interfaces.nsISocketTransportService),
-      UNBUFFERED = Ci.nsITransport.OPEN_UNBUFFERED,
-      // Create an instance of a socket transport.
-      socketTransport = socketTransportService.createTransport(null, 0, host, port, null),
-      // Open unbuffered asynchronous outputStream.
-      outputStream = socketTransport.openOutputStream(UNBUFFERED, 1, 1)
+// given socketFile or host and port.
+io.asyncSocketStreams = function (socketFile, host, port) {
+  let sts = Cc["@mozilla.org/network/socket-transport-service;1"]
+              .getService(Components.interfaces.nsISocketTransportService),
+	  UNBUFFERED = Ci.nsITransport.OPEN_UNBUFFERED;
+
+  // Create an instance of a socket transport.
+  let socketTransport;
+  if (socketFile) {
+    socketTransport = sts.createUnixDomainTransport(socketFile);
+  } else {
+    socketTransport = sts.createTransport(null, 0, host, port, null);
+  }
+
+  // Open unbuffered asynchronous outputStream.
+  let outputStream = socketTransport.openOutputStream(UNBUFFERED, 1, 1)
                       .QueryInterface(Ci.nsIAsyncOutputStream),
       // Open unbuffered asynchronous inputStream.
       inputStream = socketTransport.openInputStream(UNBUFFERED, 1, 1)
@@ -91,14 +99,16 @@ io.pumpInputStream = function (inputStream, onInputData, onError) {
                    } }, null);
 };
 
-// __io.asyncSocket(host, port, onInputData, onError)__.
-// Creates an asynchronous, text-oriented TCP socket at host:port.
+// __io.asyncSocket(socketFile, host, port, onInputData, onError)__.
+// Creates an asynchronous, text-oriented UNIX domain socket (if socketFile
+// is defined) or TCP socket at host:port.
 // The onInputData callback should accept a single argument, which will be called
 // repeatedly, whenever incoming text arrives. Returns a socket object with two methods:
 // socket.write(text) and socket.close(). onError will be passed the error object
 // whenever a write fails.
-io.asyncSocket = function (host, port, onInputData, onError) {
-  let [inputStream, outputStream] = io.asyncSocketStreams(host, port),
+io.asyncSocket = function (socketFile, host, port, onInputData, onError) {
+  let [inputStream, outputStream] = io.asyncSocketStreams(socketFile, host,
+                                                          port),
       pendingWrites = [];
   // Run an input stream pump to send incoming data to the onInputData callback.
   io.pumpInputStream(inputStream, onInputData, onError);
@@ -243,13 +253,13 @@ io.matchRepliesToCommands = function (asyncSend, dispatcher) {
   });
 };
 
-// __io.controlSocket(host, port, password, onError)__.
-// Instantiates and returns a socket to a tor ControlPort at host:port,
-// authenticating with the given password. onError is called with an
+// __io.controlSocket(socketFile, host, port, password, onError)__.
+// Instantiates and returns a socket to a tor ControlPort at socketFile or
+// host:port, authenticating with the given password. onError is called with an
 // error object as its single argument whenever an error occurs. Example:
 //
 //     // Open the socket
-//     let socket = controlSocket("127.0.0.1", 9151, "MyPassw0rd",
+//     let socket = controlSocket(undefined, "127.0.0.1", 9151, "MyPassw0rd",
 //                    function (error) { console.log(error.message || error); });
 //     // Send command and receive "250" reply or error message
 //     socket.sendCommand(commandText, replyCallback, errorCallback);
@@ -259,11 +269,11 @@ io.matchRepliesToCommands = function (asyncSend, dispatcher) {
 //     socket.removeNotificationCallback(callback);
 //     // Close the socket permanently
 //     socket.close();
-io.controlSocket = function (host, port, password, onError) {
+io.controlSocket = function (socketFile, host, port, password, onError) {
   // Produce a callback dispatcher for Tor messages.
   let mainDispatcher = io.callbackDispatcher(),
       // Open the socket and convert format to Tor messages.
-      socket = io.asyncSocket(host, port,
+      socket = io.asyncSocket(socketFile, host, port,
                               io.onDataFromOnLine(
                                    io.onLineFromOnMessage(mainDispatcher.pushMessage)),
                               onError),
@@ -606,15 +616,16 @@ event.watchEvent = function (controlSocket, type, filter, onData) {
 let tor = {};
 
 // __tor.controllerCache__.
-// A map from "host:port" to controller objects. Prevents redundant instantiation
-// of control sockets.
+// A map from "unix:socketpath" or "host:port" to controller objects. Prevents
+// redundant instantiation of control sockets.
 tor.controllerCache = {};
 
-// __tor.controller(host, port, password, onError)__.
-// Creates a tor controller at the given host and port, with the given password.
+// __tor.controller(socketFile, host, port, password, onError)__.
+// Creates a tor controller at the given socketFile or host and port, with the
+// given password.
 // onError returns asynchronously whenever a connection error occurs.
-tor.controller = function (host, port, password, onError) {
-  let socket = io.controlSocket(host, port, password, onError),
+tor.controller = function (socketFile, host, port, password, onError) {
+  let socket = io.controlSocket(socketFile, host, port, password, onError),
       isOpen = true;
   return { getInfo : key => info.getInfo(socket, key),
            getConf : key => info.getConf(socket, key),
@@ -627,27 +638,28 @@ tor.controller = function (host, port, password, onError) {
 
 // ## Export
 
-// __controller(host, port, password, onError)__.
+// __controller(socketFile, host, port, password, onError)__.
 // Instantiates and returns a controller object connected to a tor ControlPort
-// at host:port, authenticating with the given password, if the controller doesn't yet
-// exist. Otherwise returns the existing controller to the given host:port.
+// on socketFile or at host:port, authenticating with the given password, if
+// the controller doesn't yet exist. Otherwise returns the existing controller
+// to the given socketFile or host:port.
 // onError is called with an error object as its single argument whenever
 // an error occurs. Example:
 //
 //     // Get the controller
-//     let c = controller("127.0.0.1", 9151, "MyPassw0rd",
+//     let c = controller(undefined, "127.0.0.1", 9151, "MyPassw0rd",
 //                    function (error) { console.log(error.message || error); });
 //     // Send command and receive `250` reply or error message in a promise:
 //     let replyPromise = c.getInfo("ip-to-country/16.16.16.16");
 //     // Close the controller permanently
 //     c.close();
-var controller = function (host, port, password, onError) {
-  let dest = host + ":" + port,
+var controller = function (socketFile, host, port, password, onError) {
+  let dest = (socketFile) ? "unix:" + socketFile.path : host + ":" + port,
       maybeController = tor.controllerCache[dest];
   return (tor.controllerCache[dest] =
            (maybeController && maybeController.isOpen()) ?
              maybeController :
-             tor.controller(host, port, password, onError));
+             tor.controller(socketFile, host, port, password, onError));
 };
 
 // Export the controller function for external use.
