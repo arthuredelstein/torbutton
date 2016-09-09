@@ -5,6 +5,7 @@
  * Bug 15852: Remove/synchronize Torbutton SOCKS pref logic
  * Bug 19733: GETINFO response parser doesn't handle AF_UNIX entries + IPv6
  * Bug 14271: Make Torbutton work with Unix Domain Socket option
+ * Translation updates
 
 1.9.6.1
  * Bug 19206: Avoid SOCKS auth and NEWNYM collisions when sharing a tor client
