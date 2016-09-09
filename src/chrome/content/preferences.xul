@@ -78,6 +78,10 @@
                   &torbutton.prefs.sec_gen_desc;
                 </description>
                 <description class="slider-text-size"
+                  tooltiptext="&torbutton.prefs.sec_js_desc_tooltip;">
+                  &torbutton.prefs.sec_all_js_desc;
+                </description>
+                <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_html5_tooltip;">
                   &torbutton.prefs.sec_html5_desc;
                 </description>
@@ -96,10 +100,6 @@
                 <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_font_rend_svg_tooltip;">
                   &torbutton.prefs.sec_font_rend_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_js_desc_tooltip;">
-                  &torbutton.prefs.sec_all_js_desc;
                 </description>
                 <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_svg_desc_tooltip;">
@@ -116,6 +116,10 @@
                   &torbutton.prefs.sec_gen_desc;
                 </description>
                 <description class="slider-text-size"
+                  tooltiptext="&torbutton.prefs.sec_js_desc_tooltip;">
+                  &torbutton.prefs.sec_js_https_desc;
+                </description>
+                <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_html5_tooltip;">
                   &torbutton.prefs.sec_html5_desc;
                 </description>
@@ -134,10 +138,6 @@
                 <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_font_rend_svg_tooltip;">
                   &torbutton.prefs.sec_font_rend_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_js_desc_tooltip;">
-                  &torbutton.prefs.sec_js_https_desc;
                 </description>
               </vbox>
              <vbox id="desc_medium_low" collapsed="true">
