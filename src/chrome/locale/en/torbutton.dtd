@@ -47,7 +47,7 @@
 <!ENTITY torbutton.prefs.sec_mathml_desc "Some mechanisms of displaying math equations are disabled.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML is disabled.">
 <!ENTITY torbutton.prefs.sec_med_high "Medium-High">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "All JavaScript performance optimizations are disabled.">
+<!ENTITY torbutton.prefs.sec_all_jit_desc "On sites where JavaScript is enabled, performance optimizations are disabled.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Some font rendering features are disabled.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "The Graphite font rendering mechanism is disabled.">
 <!ENTITY torbutton.prefs.sec_svg_desc "Some types of images are disabled.">
