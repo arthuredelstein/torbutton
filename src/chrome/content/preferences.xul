@@ -11,13 +11,15 @@
         buttons="accept,cancel,extra1"
         buttonlabelextra1="&torbutton.prefs.restore_defaults;"
         ondialogextra1="torbutton_prefs_reset_defaults();"
-        persist="screenX screenY"
+        persist="screenX screenY width height"
         onload="torbutton_prefs_init(document)"
+        align="stretch"
+        pack="center"
         ondialogaccept="torbutton_prefs_save(document)" >
 
     <script type="application/x-javascript" src="torbutton_util.js"/>
     <script type="application/x-javascript" src="preferences.js"/>
-      <vbox>
+    <vbox flex="1" align="stretch">
         <groupbox>
           <caption label="&torbutton.prefs.priv_caption;"
                    tooltiptext="&torbutton.prefs.priv_caption_tooltip;"/>
@@ -35,49 +37,58 @@
                     label="&torbutton.prefs.resist_fingerprinting;"
                     tooltiptext="&torbutton.prefs.resist_fingerprinting_tooltip;"/>
         </groupbox>
-        <spacer flex="1"/>
-        <groupbox>
-          <caption label="&torbutton.prefs.sec_caption;"
-                   tooltiptext="&torbutton.prefs.sec_caption_tooltip;"/>
-          <hbox>
-            <vbox height="200">
-              <scale id="torbutton_sec_slider" flex="1" min="1" max="4"
-                     movetoclick="true" orient="vertical"/>
+        <groupbox align="stretch" flex="1"> <!-- security settings container -->
+          <caption label="&torbutton.prefs.sec_caption;"/>
+          <hbox flex="1" align="stretch">
+            <vbox>
+              <hbox height="200">
+                <vbox>
+                  <scale id="torbutton_sec_slider" flex="1" min="1" max="4"
+                         movetoclick="true" orient="vertical"/>
+                </vbox>
+                <vbox>
+                  <hbox flex="1" align="start">
+                    <description id="torbutton_sec_high"
+                                 tooltip="high_preview"
+                                 onclick="torbutton_toggle_slider(document, 1);">
+                      &torbutton.prefs.sec_high;
+                    </description>
+                  </hbox>
+                  <hbox flex="1" align="center">
+                    <description id="torbutton_sec_med_high"
+                                 tooltip="mh_preview"
+                                 onclick="torbutton_toggle_slider(document, 2);">
+                      &torbutton.prefs.sec_med_high;
+                    </description>
+                  </hbox>
+                  <hbox flex="1" align="center">
+                    <description id="torbutton_sec_med_low"
+                                 tooltip="ml_preview"
+                                 onclick="torbutton_toggle_slider(document, 3);">
+                      &torbutton.prefs.sec_med_low;
+                    </description>
+                  </hbox>
+                  <hbox flex="1" align="end">
+                    <description id="torbutton_sec_low"
+                                 tooltip="low_preview"
+                                 onclick="torbutton_toggle_slider(document, 4);">
+                      &torbutton.prefs.sec_low;
+                    </description>
+                  </hbox>
+                </vbox>
+              </hbox>
+              <hbox>
+                <!-- We are using |oncommand| instead of |onclick| as the former does
+                     not fire if the checkbox is disabled and it does fire after the
+                     checkbox adapted its state. -->
+                <checkbox id="torbutton_sec_custom" flex="1"
+                          oncommand="torbutton_set_slider_text(document, event.target.checked);"
+                          label="&torbutton.prefs.sec_custom;"/>
+              </hbox>
             </vbox>
-            <vbox height="200">
-              <hbox flex="1" align="start">
-                <description id="torbutton_sec_high"
-                             tooltip="high_preview"
-                             onclick="torbutton_toggle_slider(document, 1);">
-                  &torbutton.prefs.sec_high;
-                </description>
-              </hbox>
-              <hbox flex="1" align="center">
-                <description id="torbutton_sec_med_high"
-                             tooltip="mh_preview"
-                             onclick="torbutton_toggle_slider(document, 2);">
-                  &torbutton.prefs.sec_med_high;
-                </description>
-              </hbox>
-              <hbox flex="1" align="center">
-                <description id="torbutton_sec_med_low"
-                             tooltip="ml_preview"
-                             onclick="torbutton_toggle_slider(document, 3);">
-                  &torbutton.prefs.sec_med_low;
-                </description>
-              </hbox>
-              <hbox flex="1" align="end">
-                <description id="torbutton_sec_low"
-                             tooltip="low_preview"
-                             onclick="torbutton_toggle_slider(document, 4);">
-                  &torbutton.prefs.sec_low;
-                </description>
-              </hbox>
-            </vbox>
-            <spacer flex="1"/>
             <!-- A width of 400 is already too much for OS X it seems. The above
                  spacer tag would basically be useless and the layout ugly. -->
-            <vbox flex="1" width="300">
+            <vbox flex="1" width="300" style="overflow: auto;">
               <vbox id="desc_high" collapsed="true">
                 <description
                   class="slider-text-size, slider-text-weight">
@@ -178,14 +189,6 @@
                 </description>
               </vbox>
             </vbox>
-          </hbox>
-          <hbox>
-            <!-- We are using |oncommand| instead of |onclick| as the former does
-               not fire if the checkbox is disabled and it does fire after the
-               checkbox adapted its state. -->
-            <checkbox id="torbutton_sec_custom" flex="1"
-               oncommand="torbutton_set_slider_text(document, event.target.checked);"
-               label="&torbutton.prefs.sec_custom;"/>
           </hbox>
         </groupbox>
       </vbox>
