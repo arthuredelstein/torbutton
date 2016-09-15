@@ -9,7 +9,6 @@ const Cc = Components.classes, Ci = Components.interfaces;
 
 function torbutton_prefs_init(doc) {
     torbutton_log(2, "called prefs_init()");
-    sizeToContent();
 
     var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
 
@@ -184,9 +183,6 @@ function torbutton_set_slider_text(doc, custom) {
       doc.getElementById("desc_high").collapsed = true;
       break;
   }
-  // It can happen that the descriptions of the slider settings consume more
-  // space than originally allocated. Adapt the dialog size accordingly.
-  sizeToContent();
 }
 
 function torbutton_prefs_check_disk() {
