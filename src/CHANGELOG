@@ -1,3 +1,7 @@
+1.9.6.3
+ * Bug 17334: Move referrer spoofing for .onion domains into tor-browser.git
+ * Bug 17767: Make "JavaScript disabled" more visible in Security Slider
+
 1.9.6.2
  * Bug 18589: Clear site security settings during New Identity
  * Bug 19906: "Maximizing Tor Browser" Notification can exist multiple times
