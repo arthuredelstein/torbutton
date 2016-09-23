@@ -19,20 +19,26 @@
     <script type="application/x-javascript" src="preferences.js"/>
       <vbox>
         <groupbox>
-          <caption label="&torbutton.prefs.priv_caption;"/>
+          <caption label="&torbutton.prefs.priv_caption;"
+                   tooltiptext="&torbutton.prefs.priv_caption_tooltip;"/>
           <checkbox id="torbutton_blockDisk"
                     label="&torbutton.prefs.block_disk;"
-                    oncommand="torbutton_prefs_check_disk();"/>
+                    oncommand="torbutton_prefs_check_disk();"
+                    tooltiptext="&torbutton.prefs.block_disk_tooltip;"/>
           <checkbox id="torbutton_blockPlugins"
-                    label="&torbutton.prefs.block_plugins;"/>
+                    label="&torbutton.prefs.block_plugins;"
+                    tooltiptext="&torbutton.prefs.block_plugins_tooltip;"/>
           <checkbox id="torbutton_restrictThirdParty"
-                    label="&torbutton.prefs.restrict_thirdparty;"/>
+                    label="&torbutton.prefs.restrict_thirdparty;"
+                    tooltiptext="&torbutton.prefs.restrict_thirdparty_tooltip;"/>
           <checkbox id="torbutton_resistFingerprinting"
-                    label="&torbutton.prefs.resist_fingerprinting;"/>
+                    label="&torbutton.prefs.resist_fingerprinting;"
+                    tooltiptext="&torbutton.prefs.resist_fingerprinting_tooltip;"/>
         </groupbox>
         <spacer flex="1"/>
         <groupbox>
-          <caption label="&torbutton.prefs.sec_caption;"/>
+          <caption label="&torbutton.prefs.sec_caption;"
+                   tooltiptext="&torbutton.prefs.sec_caption_tooltip;"/>
           <hbox>
             <vbox height="200">
               <scale id="torbutton_sec_slider" flex="1" min="1" max="4"
@@ -168,7 +174,7 @@
                   &torbutton.prefs.sec_low_desc;
                 </description>
                 <description class="slider-text-size">
-				  &torbutton.prefs.sec_low_usable_desc;
+                  &torbutton.prefs.sec_low_usable_desc;
                 </description>
               </vbox>
             </vbox>
