@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Базовый JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Сценарии на некоторых сайтах могут работать медленнее.">
-<!ENTITY torbutton.prefs.sec_jar_desc "Сторонние JAR файлы заблокированы.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "JAR файлы крайне редки в Интернете, но могут быть источником XSS и других атак.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Некоторые механизмы отображения математических уравнений отключены.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML отключен.">
 <!ENTITY torbutton.prefs.sec_med_high "Умеренно высокий">

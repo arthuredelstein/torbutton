@@ -107,10 +107,6 @@
                   &torbutton.prefs.sec_html5_desc;
                 </description>
                 <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_jar_tooltip;">
-                  &torbutton.prefs.sec_jar_desc;
-                </description>
-                <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_mathml_desc_tooltip;">
                   &torbutton.prefs.sec_mathml_desc;
                 </description>
@@ -145,10 +141,6 @@
                   &torbutton.prefs.sec_html5_desc;
                 </description>
                 <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_jar_tooltip;">
-                  &torbutton.prefs.sec_jar_desc;
-                </description>
-                <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_mathml_desc_tooltip;">
                   &torbutton.prefs.sec_mathml_desc;
                 </description>
@@ -169,10 +161,6 @@
                 <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_html5_tooltip;">
                   &torbutton.prefs.sec_html5_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_jar_tooltip;">
-                  &torbutton.prefs.sec_jar_desc;
                 </description>
                 <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_mathml_desc_tooltip;">
@@ -200,7 +188,6 @@
      <html:div>&torbutton.prefs.sec_all_js_desc;</html:div>
      <html:div>&torbutton.prefs.sec_all_jit_desc; &torbutton.prefs.sec_jit_slower_desc;</html:div>
      <html:div>&torbutton.prefs.sec_html5_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_jar_desc;</html:div>
      <html:div>&torbutton.prefs.sec_mathml_desc;</html:div>
      <html:div>&torbutton.prefs.sec_font_rend_desc;</html:div>
      <html:div>&torbutton.prefs.sec_svg_desc;</html:div>
@@ -213,7 +200,6 @@
      <html:div>&torbutton.prefs.sec_js_https_desc;</html:div>
      <html:div>&torbutton.prefs.sec_all_jit_desc; &torbutton.prefs.sec_jit_slower_desc;</html:div>
      <html:div>&torbutton.prefs.sec_html5_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_jar_desc;</html:div>
      <html:div>&torbutton.prefs.sec_mathml_desc;</html:div>
      <html:div>&torbutton.prefs.sec_font_rend_desc;</html:div>
    </tooltip>
@@ -223,7 +209,6 @@
      <html:br></html:br>
      <html:div>&torbutton.prefs.sec_some_jit_desc; &torbutton.prefs.sec_jit_slower_desc;</html:div>
      <html:div>&torbutton.prefs.sec_html5_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_jar_desc;</html:div>
      <html:div>&torbutton.prefs.sec_mathml_desc;</html:div>
    </tooltip>
    <tooltip id="low_preview">

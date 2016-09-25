@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Gli scripts su alcuni siti possono girare più lenti.">
-<!ENTITY torbutton.prefs.sec_jar_desc "I file JAR remoti sono bloccati.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "I file JAR sono molto rari nel web, ma possono essere fonte di XSS o altri attacchi.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Alcuni meccanismi di visualizzazione di equazioni matematiche sono disabilitati.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML è disabilitato.">
 <!ENTITY torbutton.prefs.sec_med_high "Medio-Alto">

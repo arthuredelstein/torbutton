@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "JIT در شروع مطالعه.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "اسکریپت هل در برخی از سایت ها ممکن است آهسته تر اجرا شود.">
-<!ENTITY torbutton.prefs.sec_jar_desc "فایل های JAR از راه دور مسدود.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "فایل ها با پسوند JAR به ندرت در وب استفاده می شوند ، ولی می توانند مبدایی برای هک به روش XSS و دیگر حملات هکری شوند.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "برخی مکانیسم ها نمایش معادلات ریاضی غیر فعال می باشد.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML غیر فعال است.">
 <!ENTITY torbutton.prefs.sec_med_high "متوسط ​​- بالا">

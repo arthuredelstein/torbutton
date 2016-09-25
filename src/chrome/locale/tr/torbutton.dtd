@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Sınır Çizgi JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Bazı sitelerde betikler daha yavaş çalışabilir.">
-<!ENTITY torbutton.prefs.sec_jar_desc "Uzak JAR dosyaları engellenir.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "JAR dosyalarına ağda oldukça ender rastlanır, ancak XSS ve diğer saldırıların kaynağı olabilir.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Matematik denklemlerini görüntüleyen bazı düzenekler devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_med_high "Orta-Yüksek">

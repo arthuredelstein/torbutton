@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline (베이스라인) JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "일부 사이트의 스크립트 동작이 느려질 수 있습니다.">
-<!ENTITY torbutton.prefs.sec_jar_desc "Remote JAR files are blocked.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "JAR files are extremely rare on the web, but can be a source of XSS and other attacks.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Some mechanisms of displaying math equations are disabled.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML가 비활성화 되었습니다.">
 <!ENTITY torbutton.prefs.sec_med_high "중간 높음">

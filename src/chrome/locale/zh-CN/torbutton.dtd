@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT、类型推断、ASM.JS。">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT。">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "一些网站脚本可能会暂缓执行。">
-<!ENTITY torbutton.prefs.sec_jar_desc "禁用远程 JAR 文件。">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "网站上很少出现 JAR 文件，但可能成为 XSS 及其他攻击的源头。">
 <!ENTITY torbutton.prefs.sec_mathml_desc "禁用数学方程式的某些显示机制。">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "禁用 MathML。">
 <!ENTITY torbutton.prefs.sec_med_high "中高">

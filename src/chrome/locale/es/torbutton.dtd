@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT (compilador JS instantáneo optimizado), Type Inference (deducción del tipo de datos por el compilador), ASM.JS (JS intermedio para alto rendimiento de otros lenguajes)">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT (compilador JS instantáneo)">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Los scripts en algunos sitios puede que se ejecuten más lentamente.">
-<!ENTITY torbutton.prefs.sec_jar_desc "Los ficheros JAR remotos están bloqueados.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "Los ficheros JAR son extremadamente raros en la web, pero pueden ser una fuente de ataques XSS y de otros tipos.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Algunos mecanismos de representación de ecuaciones matemáticas están deshabilitados.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML está deshabilitado.">
 <!ENTITY torbutton.prefs.sec_med_high "Medio-Alto">

@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Skrypty na niektórych stronach mogą działać wolniej.">
-<!ENTITY torbutton.prefs.sec_jar_desc "Zdalne pliki JAR są blokowane.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "Pliki JAR są bardzo rzadkim typem plików w internecie. Mogą być one źródłem ataków XSS i  innych.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Niektóre mechanizmy wyświetlania równań matematycznych są wyłączone.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML jest wyłączony.">
 <!ENTITY torbutton.prefs.sec_med_high "Średni-Wysoki">

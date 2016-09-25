@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Scripts kunnen op sommige websites trager zijn.">
-<!ENTITY torbutton.prefs.sec_jar_desc "Externe JAR bestanden worden geblokkeerd.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "JAR-bestanden zijn uiterst zeldzaam op het web, maar kan een bron van XSS en andere attacks">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Sommige mechanismen van het weergeven van wiskundige vergelijkingen zijn uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML is uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_med_high "Medium-Hoog">

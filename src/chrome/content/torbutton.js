@@ -88,7 +88,6 @@ var torbutton_unique_pref_observer =
         this._branch = pref_service.QueryInterface(Components.interfaces.nsIPrefBranchInternal);
         this._branch.addObserver("extensions.torbutton", this, false);
         this._branch.addObserver("network.cookie", this, false);
-        this._branch.addObserver("network.jar", this, false);
         this._branch.addObserver("browser.privatebrowsing.autostart", this, false);
         this._branch.addObserver("javascript", this, false);
         this._branch.addObserver("gfx", this, false);
@@ -108,7 +107,6 @@ var torbutton_unique_pref_observer =
         if (!this._branch) return;
         this._branch.removeObserver("extensions.torbutton", this);
         this._branch.removeObserver("network.cookie", this);
-        this._branch.removeObserver("network.jar", this);
         this._branch.removeObserver("browser.privatebrowsing.autostart", this);
         this._branch.removeObserver("javascript", this);
         this._branch.removeObserver("gfx", this);
@@ -195,7 +193,6 @@ var torbutton_unique_pref_observer =
             case "javascript.options.typeinference":
             case "noscript.forbidMedia":
             case "media.webaudio.enabled":
-            case "network.jar.block-remote-files":
             case "mathml.disabled":
             case "javascript.options.baselinejit.content":
             case "noscript.forbidFonts":
@@ -1835,7 +1832,6 @@ var torbutton_sec_ml_bool_prefs = {
   "javascript.options.typeinference" : false,
   "noscript.forbidMedia" : true,
   "media.webaudio.enabled" : false,
-  "network.jar.block-remote-files" : true,
   "mathml.disabled" : true
 };
 

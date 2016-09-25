@@ -42,8 +42,6 @@
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Scripts on some sites may run slower.">
-<!ENTITY torbutton.prefs.sec_jar_desc "Urruneko JAR fitxategiak blokeatuta daude.">
-<!ENTITY torbutton.prefs.sec_jar_tooltip "JAR fitxategiak oso bitxiak dira webean, baina XSS eta beste eraso batzuen jatorria izan daitezke.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Some mechanisms of displaying math equations are disabled.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML ezgaituta dago.">
 <!ENTITY torbutton.prefs.sec_med_high "Ertaina-altua">
