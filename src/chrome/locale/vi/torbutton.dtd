@@ -26,7 +26,6 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
 <!ENTITY torbutton.prefs.priv_caption "Cài đặt Riêng tư">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.block_plugins "Disable browser plugins (such as Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">
 <!ENTITY torbutton.prefs.sec_caption "Mức độ Bảo mật">
 <!ENTITY torbutton.prefs.sec_low "Thấp (mặc định)">

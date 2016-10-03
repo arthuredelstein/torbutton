@@ -26,7 +26,6 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Non proteggere i nuovi cookie">
 <!ENTITY torbutton.prefs.priv_caption "Impostazioni Privacy">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Limita i cookie di terze parti e altri dati di tracciamento">
-<!ENTITY torbutton.prefs.block_plugins "Disabilita i plugin del browser (come Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Cambia i dettagli che ti distinguono dagli altri utenti di Tor Browser">
 <!ENTITY torbutton.prefs.sec_caption "Livello di Sicurezza">
 <!ENTITY torbutton.prefs.sec_low "Basso (default)">

@@ -26,7 +26,6 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Yeni Çerezleri Koruma">
 <!ENTITY torbutton.prefs.priv_caption "Gizlilik Ayarları">
 <!ENTITY torbutton.prefs.restrict_thirdparty "3. taraf çerez ve diğer iz sürücü bilgiler engellensin">
-<!ENTITY torbutton.prefs.block_plugins "Tarayıcı eklentileri engellensin (Flash gibi)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Diğer Tor Browser kullanıcılarından sizi ayıran ayrıntılar değiştirilsin">
 <!ENTITY torbutton.prefs.sec_caption "Güvenlik Düzeyi">
 <!ENTITY torbutton.prefs.sec_low "Düşük (varsayılan)">

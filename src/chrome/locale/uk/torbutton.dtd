@@ -22,5 +22,4 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Захищати Нові Куки">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не Захищати Нові Куки">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Блокувати сторонні куки та інші дані відстеження">
-<!ENTITY torbutton.prefs.block_plugins "Вимкнути розширення переглядача (такі як Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Змінити відомості, що відрізняють вас від інших користувачів переглядача Tor">
