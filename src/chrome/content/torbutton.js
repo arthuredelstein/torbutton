@@ -153,12 +153,6 @@ var torbutton_unique_pref_observer =
         if (topic != "nsPref:changed") return;
 
         switch (data) {
-            case "browser.privatebrowsing.autostart":
-                var mode = m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart");
-                var ourmode = m_tb_prefs.getBoolPref("extensions.torbutton.block_disk");
-                if (mode != ourmode)
-                  m_tb_prefs.setBoolPref("extensions.torbutton.block_disk", mode);
-                break;
             case "network.cookie.cookieBehavior":
                 var val = m_tb_prefs.getIntPref("network.cookie.cookieBehavior");
                 var block_thirdparty = m_tb_prefs.getBoolPref("extensions.torbutton.restrict_thirdparty");
@@ -172,7 +166,7 @@ var torbutton_unique_pref_observer =
                 torbutton_toggle_plugins(
                         m_tb_prefs.getBoolPref("extensions.torbutton.no_tor_plugins"));
                 break;
-            case "extensions.torbutton.block_disk":
+            case "browser.privatebrowsing.autostart":
                 torbutton_update_disk_prefs();
                 break;
             case "extensions.torbutton.use_nontor_proxy":
@@ -392,7 +386,7 @@ function torbutton_init() {
     // XXX: Get rid of the cached asmjs (or IndexedDB) files on disk in case we
     // don't allow things saved to disk. This is an ad-hoc fix to work around
     // #19417. Once this is properly solved we should remove this code again.
-    if (m_tb_prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart")) {
       let orig_quota_test = m_tb_prefs.getBoolPref("dom.quotaManager.testing");
       try {
         // This works only by setting the pref to `true` otherwise we get an
@@ -1723,9 +1717,8 @@ function torbutton_toggle_plugins(disable_plugins) {
 }
 
 function torbutton_update_disk_prefs() {
-    var mode = m_tb_prefs.getBoolPref("extensions.torbutton.block_disk");
+    var mode = m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart");
 
-    m_tb_prefs.setBoolPref("browser.privatebrowsing.autostart", mode);
     m_tb_prefs.setBoolPref("browser.cache.disk.enable", !mode);
     m_tb_prefs.setBoolPref("places.history.enabled", !mode);
 
@@ -1746,6 +1739,15 @@ function torbutton_update_disk_prefs() {
         m_tb_prefs.setIntPref("network.cookie.lifetimePolicy", 0);
         m_tb_prefs.setIntPref("browser.download.manager.retention", 2);
     }
+
+    // If we have NoScript enabled we set `noscript.volatilePrivatePermissions`
+    // to `true` if we are blocking disk records and to `false` if we are
+    // enabling them.
+    try {
+      if ("@maone.net/noscript-service;1" in Components.classes) {
+        m_tb_prefs.setBoolPref("volatilePrivatePermissions", mode);
+      }
+    } catch (e) {}
 
     // Force prefs to be synced to disk
     var prefService = Components.classes["@mozilla.org/preferences-service;1"]
@@ -2120,7 +2122,7 @@ function torbutton_check_protections()
 
   // XXX: Bug 14632: The cookie dialog is useless in private browsing mode in FF31ESR
   // See https://trac.torproject.org/projects/tor/ticket/10353 for more info.
-  document.getElementById("torbutton-cookie-protector").hidden = m_tb_prefs.getBoolPref("extensions.torbutton.block_disk");
+  document.getElementById("torbutton-cookie-protector").hidden = m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart");
 
   if (!m_tb_control_pass || (!m_tb_control_socket_file && !m_tb_control_port)) {
     document.getElementById("torbutton-new-identity").disabled = true;

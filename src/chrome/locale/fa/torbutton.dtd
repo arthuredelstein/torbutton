@@ -25,7 +25,6 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "حفاظت از کلوچک‌های جديد">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "عدم حفاظت از کلوچک‌های جديد">
 <!ENTITY torbutton.prefs.priv_caption "تنظیمات حریم خصوصی">
-<!ENTITY torbutton.prefs.block_disk "ثبت‌نكردن تاريخچه يا داده‌هاى وب‌گاه (گشت و گذار ‌خصوصى فعال مى‌كند)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "محدود‌كردن كوكى‌هاى طرف سوم و داده‌هاى پيگردى ديگر">
 <!ENTITY torbutton.prefs.block_plugins "غيرفعال‌كردن افزايه‌هاى مرورگر (مثل فلش)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "تغييردادن جزئياتى كه شمارا از كاربران ديگر تُر تميزمى‌كند">
@@ -58,4 +57,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "فایل های فونتی که در وب سایت ارائه می شوند مسدود شده است.">
 <!ENTITY torbutton.prefs.sec_custom "تنظیم سفارشی">
 <!ENTITY torbutton.circuit_display.title "مدار Tor برای این سایت">
-

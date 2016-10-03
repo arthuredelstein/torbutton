@@ -25,7 +25,6 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "保护新的 Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "不保护新的 Cookie">
 <!ENTITY torbutton.prefs.priv_caption "隐私设置">
-<!ENTITY torbutton.prefs.block_disk "禁止记录浏览历史或网站数据（启用隐私浏览模式）">
 <!ENTITY torbutton.prefs.restrict_thirdparty "限制第三方 cookie 和其他数据跟踪程序">
 <!ENTITY torbutton.prefs.block_plugins "禁用浏览器插件（比如 Flash）">
 <!ENTITY torbutton.prefs.resist_fingerprinting "修改 Tor 浏览器中可区分你与其他 Tor 用户的细节信息">
@@ -58,4 +57,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "禁用网站提供的字体文件。">
 <!ENTITY torbutton.prefs.sec_custom "自定义">
 <!ENTITY torbutton.circuit_display.title "为此站点使用的 Tor 线路">
-

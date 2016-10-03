@@ -177,7 +177,7 @@ function CookieJarSelector() {
     cookies.push(cookie);
     this["protected-" + name] = cookies;
 
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!this.prefs.getBoolPref("browser.privatebrowsing.autostart")) {
       // save protected cookies to file
       this._protectedCookiesToFile(name);
     } else {

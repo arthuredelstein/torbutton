@@ -23,10 +23,6 @@
         <groupbox>
           <caption label="&torbutton.prefs.priv_caption;"
                    tooltiptext="&torbutton.prefs.priv_caption_tooltip;"/>
-          <checkbox id="torbutton_blockDisk"
-                    label="&torbutton.prefs.block_disk;"
-                    oncommand="torbutton_prefs_check_disk();"
-                    tooltiptext="&torbutton.prefs.block_disk_tooltip;"/>
           <checkbox id="torbutton_blockPlugins"
                     label="&torbutton.prefs.block_plugins;"
                     tooltiptext="&torbutton.prefs.block_plugins_tooltip;"/>
