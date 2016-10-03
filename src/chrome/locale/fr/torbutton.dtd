@@ -25,7 +25,6 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protéger les nouveaux cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ne pas protéger les nouveaux cookies">
 <!ENTITY torbutton.prefs.priv_caption "Paramètres de vie privée">
-<!ENTITY torbutton.prefs.block_disk "Ne pas sauvegarder l'historique de navigation et les données des sites webs (active le Mode de Navigation Privée)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Limiter les cookies tiers ainsi que les autres données de traçage">
 <!ENTITY torbutton.prefs.block_plugins "Désactiver les greffons du navigateur (tels que Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Modifier les détails qui vous distinguent des autres utilisateurs du Navigateur Tor">
@@ -58,4 +57,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Les fichiers de police de caractères fournis par des sites Web sont bloqués.">
 <!ENTITY torbutton.prefs.sec_custom "Valeurs personnalisées">
 <!ENTITY torbutton.circuit_display.title "Circuit Tor pour ce site">
-

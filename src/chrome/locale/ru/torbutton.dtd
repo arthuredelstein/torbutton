@@ -25,7 +25,6 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Защищать новые куки-файлы">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не защищать новые куки-файлы">
 <!ENTITY torbutton.prefs.priv_caption "Настройки конфиденциальности">
-<!ENTITY torbutton.prefs.block_disk "Не сохранять историю журнала посещений и данные с посещаемых сайтов (активирует функцию конфиденциального просмотра)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Блокировать сторонние куки-файлы и другие данные слежения">
 <!ENTITY torbutton.prefs.block_plugins "Отключить расширения браузера (такие как Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Изменить сведения, отличающие вас от других пользователей Tor Browser">
@@ -58,4 +57,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Файлы шрифтов, предоставленные сайтом, заблокированы">
 <!ENTITY torbutton.prefs.sec_custom "Собственные значения">
 <!ENTITY torbutton.circuit_display.title "Цепочка Tor для этого сайта">
-

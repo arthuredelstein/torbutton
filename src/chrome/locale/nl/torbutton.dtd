@@ -25,7 +25,6 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beveilig nieuwe Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beveilig nieuwe Cookies niet">
 <!ENTITY torbutton.prefs.priv_caption "Privacyinstellingen">
-<!ENTITY torbutton.prefs.block_disk "Bewaar geen surfgeschiedenis of websitegegevens. (Schakelt Privénavigatie in.)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Beperk cookies en andere tracking-gegevens van derden">
 <!ENTITY torbutton.prefs.block_plugins "Schakel browserplug-ins uit (zoals Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Verander details die je onderscheiden van andere Tor Browser gebruikers">
@@ -58,4 +57,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Door websites aangeleverde lettertypes worden geblokkeerd.">
 <!ENTITY torbutton.prefs.sec_custom "Aangepaste waarden">
 <!ENTITY torbutton.circuit_display.title "Tor circuit voor deze website">
-

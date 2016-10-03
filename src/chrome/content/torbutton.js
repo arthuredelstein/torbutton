@@ -1747,6 +1747,15 @@ function torbutton_update_disk_prefs() {
         m_tb_prefs.setIntPref("browser.download.manager.retention", 2);
     }
 
+    // If we have NoScript enabled we set `noscript.volatilePrivatePermissions`
+    // to `true` if we are blocking disk records and to `false` if we are
+    // enabling them.
+    try {
+      if ("@maone.net/noscript-service;1" in Components.classes) {
+        m_tb_prefs.setBoolPref("volatilePrivatePermissions", mode);
+      }
+    } catch (e) {}
+
     // Force prefs to be synced to disk
     var prefService = Components.classes["@mozilla.org/preferences-service;1"]
         .getService(Components.interfaces.nsIPrefService);
