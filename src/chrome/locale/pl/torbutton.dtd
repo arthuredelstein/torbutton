@@ -26,7 +26,6 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nie chroń nowych ciasteczek">
 <!ENTITY torbutton.prefs.priv_caption "Ustawienia Prywatności">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Ograniczaj ciasteczka firm trzecich i inne dane służące do śledzenia">
-<!ENTITY torbutton.prefs.block_plugins "Wyłącz wtyczki przeglądarki (takie jak Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Zmień szczegóły odróżniające Cię od innych użytkowników Przeglądarki Tora">
 <!ENTITY torbutton.prefs.sec_caption "Poziom bezpieczeństwa">
 <!ENTITY torbutton.prefs.sec_low "Niski (domyślny)">

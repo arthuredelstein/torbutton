@@ -29,7 +29,6 @@ pref("extensions.torbutton.maximize_warnings_remaining", 0);
 pref("extensions.torbutton.startup_resize_period", true);
 
 // Security prefs:
-pref("extensions.torbutton.no_tor_plugins",true);
 pref("extensions.torbutton.cookie_protections",true);
 pref("extensions.torbutton.cookie_auto_protect",false);
 pref("extensions.torbutton.spoof_english",true);
