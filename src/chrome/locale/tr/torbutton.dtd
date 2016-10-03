@@ -25,7 +25,6 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Yeni Çerezleri Koru">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Yeni Çerezleri Koruma">
 <!ENTITY torbutton.prefs.priv_caption "Gizlilik Ayarları">
-<!ENTITY torbutton.prefs.block_disk "Tarama geçmişini ve web sitesi bilgileri kaydedilmesin (Gizli Tarama Kipi kullanılır)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "3. taraf çerez ve diğer iz sürücü bilgiler engellensin">
 <!ENTITY torbutton.prefs.block_plugins "Tarayıcı eklentileri engellensin (Flash gibi)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Diğer Tor Browser kullanıcılarından sizi ayıran ayrıntılar değiştirilsin">
@@ -58,4 +57,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Web sitesi tarafından sunulan yazı tipi dosyaları engellenir.">
 <!ENTITY torbutton.prefs.sec_custom "Özel Değerler">
 <!ENTITY torbutton.circuit_display.title "Bu site için Tor devresi">
-

@@ -21,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "A védett kivételével az összes törlése">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Védje az új sütiket">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ne védje az új sütiket">
-<!ENTITY torbutton.prefs.block_disk "Ne rögzítsen böngésző előzményeket, vagy weboldal adatot (engedélyezi a Privát böngésző módot)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "A harmadik féltől származó sütik és nyomkövetési adatok korlátozása">
 <!ENTITY torbutton.prefs.block_plugins "Böngésző kiegészítők kikapcsolása (mint pl. a Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Változtassa meg a részleteket, amik megkülönböztetik a többi Tor böngésző felhasználótól">

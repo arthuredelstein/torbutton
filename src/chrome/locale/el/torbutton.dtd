@@ -21,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Αφαίρεση Όλων Εκτός από των Προστατευμένων">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Προστασία Νέων Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Να Μη γίνεται Προστασία Νέων Cookie">
-<!ENTITY torbutton.prefs.block_disk "Καμμια καταγραφη του ιστορικυυ περιήγησης ή δεδομένων ιστοσελίδας (ενεργοποιηση της  κατάστασης ιδιωτικής περιήγησης) ">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Περιορισμος των cookies τριτων και αλλων δεδομενων παρακολουθησης">
 <!ENTITY torbutton.prefs.block_plugins "Απενεργοποίηση προσθέτων περιηγητή (σα το Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Αλλάξτε τις λεπτομέρειες που σας διακρίνει από άλλους χρήστες του Tor Browser ">

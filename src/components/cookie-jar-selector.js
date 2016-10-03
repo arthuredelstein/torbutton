@@ -177,7 +177,7 @@ function CookieJarSelector() {
     cookies.push(cookie);
     this["protected-" + name] = cookies;
 
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!this.prefs.getBoolPref("browser.privatebrowsing.autostart")) {
       // save protected cookies to file
       this._protectedCookiesToFile(name);
     } else {
@@ -230,7 +230,7 @@ function CookieJarSelector() {
   this.protectCookies = function(cookies) {
     var name = "tor";
     this._writeProtectCookies(cookies,name);
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!this.prefs.getBoolPref("browser.privatebrowsing.autostart")) {
       // save protected cookies to file
       this._protectedCookiesToFile(name);
     } else {
@@ -307,7 +307,7 @@ function CookieJarSelector() {
     this["session-cookiesobj-" + name] = this._cookiesToJS(true);
     this["cookiesobj-" + name] = this._cookiesToJS(false);
 
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!this.prefs.getBoolPref("browser.privatebrowsing.autostart")) {
         // save cookies to file
         this._cookiesToFile(name);
     } else {
@@ -379,7 +379,7 @@ function CookieJarSelector() {
     // remove cookies before loading old ones
     this.clearCookies();
 
-    if (!this.prefs.getBoolPref("extensions.torbutton.block_disk")) {
+    if (!this.prefs.getBoolPref("browser.privatebrowsing.autostart")) {
         // load cookies from file
         this["cookiesobj-" + name] = this._cookiesFromFile(name);
     }

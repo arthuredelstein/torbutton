@@ -26,8 +26,6 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
 <!ENTITY torbutton.prefs.priv_caption "Privacy Settings">
 <!ENTITY torbutton.prefs.priv_caption_tooltip "When checked, the following settings help to keep your identity and browsing history private. We strongly recommend that you keep all privacy boxes checked for normal Tor Browser use.">
-<!ENTITY torbutton.prefs.block_disk "Don't record browsing history or website data (enables Private Browsing Mode)">
-<!ENTITY torbutton.prefs.block_disk_tooltip "Keep this box checked to avoid saving sensitive data to disk, including the browser cache, your browsing history, the cookie database, your download history, intermediate TLS certificates, and permissions you have granted to websites.">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Keep this box checked to prevent various browser features from being abused to track you as you browse the web. Modified features include blob URLs, broadcast channels, the browser cache, cookies, favicons, HTTP Auth headers, link preconnects, localStorage, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
 <!ENTITY torbutton.prefs.block_plugins "Disable browser plugins (such as Flash)">
@@ -64,4 +62,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Website-provided font files are blocked.">
 <!ENTITY torbutton.prefs.sec_custom "Custom Values">
 <!ENTITY torbutton.circuit_display.title "Tor circuit for this site">
-

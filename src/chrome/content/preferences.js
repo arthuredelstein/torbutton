@@ -13,7 +13,6 @@ function torbutton_prefs_init(doc) {
     var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
 
     // Privacy and security settings
-    doc.getElementById('torbutton_blockDisk').checked = o_torprefs.getBoolPref('block_disk');
     doc.getElementById('torbutton_resistFingerprinting').checked = o_torprefs.getBoolPref('resist_fingerprinting');
     doc.getElementById('torbutton_blockPlugins').checked = o_torprefs.getBoolPref('no_tor_plugins');
     doc.getElementById('torbutton_restrictThirdParty').checked = o_torprefs.getBoolPref('restrict_thirdparty');
@@ -46,20 +45,6 @@ function torbutton_prefs_save(doc) {
     var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
 
     // Privacy and Security Settings
-    o_torprefs.setBoolPref('block_disk', doc.getElementById('torbutton_blockDisk').checked);
-    // If we have NoScript enabled we set `noscript.volatilePrivatePermissions`
-    // to `true` if we are blocking disk records and to `false` if we are
-    // enabling them.
-    try {
-      if ("@maone.net/noscript-service;1" in Components.classes) {
-        let o_noscriptprefs = torbutton_get_prefbranch('noscript.');
-        if (o_torprefs.getBoolPref('block_disk')) {
-          o_noscriptprefs.setBoolPref('volatilePrivatePermissions', true);
-        } else {
-          o_noscriptprefs.setBoolPref('volatilePrivatePermissions', false);
-        }
-      }
-    } catch (e) {}
 
     o_torprefs.setBoolPref('resist_fingerprinting', doc.getElementById('torbutton_resistFingerprinting').checked);
     o_torprefs.setBoolPref('no_tor_plugins', doc.getElementById('torbutton_blockPlugins').checked);
@@ -183,46 +168,4 @@ function torbutton_set_slider_text(doc, custom) {
       doc.getElementById("desc_high").collapsed = true;
       break;
   }
-}
-
-function torbutton_prefs_check_disk() {
-    let o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
-    let old_mode = o_torprefs.getBoolPref('block_disk');
-    let mode = document.getElementById('torbutton_blockDisk').checked;
-
-    if (mode === old_mode) {
-        // Either revert, or uncheck.
-        return;
-    }
-
-    let sb = Cc["@mozilla.org/intl/stringbundle;1"]
-               .getService(Ci.nsIStringBundleService);
-    let bundle = sb.createBundle("chrome://browser/locale/preferences/preferences.properties");
-    let brandName = sb.createBundle("chrome://branding/locale/brand.properties").GetStringFromName("brandShortName");
-
-    let msg = bundle.formatStringFromName(mode ?
-                                        "featureEnableRequiresRestart" : "featureDisableRequiresRestart",
-                                        [brandName], 1);
-    let title = bundle.formatStringFromName("shouldRestartTitle", [brandName], 1);
-    let prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
-    let shouldProceed = prompts.confirm(window, title, msg)
-    if (shouldProceed) {
-      let cancelQuit = Cc["@mozilla.org/supports-PRBool;1"]
-                         .createInstance(Ci.nsISupportsPRBool);
-      let obsSvc = Cc["@mozilla.org/observer-service;1"]
-                    .getService(Ci.nsIObserverService);
-      obsSvc.notifyObservers(cancelQuit, "quit-application-requested",
-                                   "restart");
-      shouldProceed = !cancelQuit.data;
-
-      if (shouldProceed) {
-        document.documentElement.acceptDialog();
-        let appStartup = Cc["@mozilla.org/toolkit/app-startup;1"]
-                           .getService(Ci.nsIAppStartup);
-        appStartup.quit(Ci.nsIAppStartup.eAttemptQuit |  Ci.nsIAppStartup.eRestart);
-        return;
-      }
-    }
-
-    document.getElementById('torbutton_blockDisk').checked = old_mode;
 }

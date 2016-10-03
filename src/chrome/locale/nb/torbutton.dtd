@@ -21,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Fjern Alle Bortsett Fra Beskyttede">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beskytt Nye Informasjonskapsler">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ikke Beskytt Nye Informasjonskapsler">
-<!ENTITY torbutton.prefs.block_disk "Ikke lagre nettleserhistorikk eller nettsidedata (aktiverer privat nettleser økt)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Begrens tredjeparts informasjonskapsler og andre sporingsdata.">
 <!ENTITY torbutton.prefs.block_plugins "Deaktiver nettlesertillegg (som f.eks Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Endre detaljer som skiller deg fra andre Tor Browser brukere.">

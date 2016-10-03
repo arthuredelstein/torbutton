@@ -25,7 +25,6 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "新しいCookieを保護">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "新しいCookieを保護しない">
 <!ENTITY torbutton.prefs.priv_caption "プライバシー設定">
-<!ENTITY torbutton.prefs.block_disk "ブラウジング履歴やウェブサイトのデータを記録しない (プライベートブラウジングモードを有効化)">
 <!ENTITY torbutton.prefs.restrict_thirdparty "サードパーティーのCookieやその他のトラッキングデータを制限">
 <!ENTITY torbutton.prefs.block_plugins "ブラウザのプラグイン(フラッシュなど)を無効化">
 <!ENTITY torbutton.prefs.resist_fingerprinting "あなたとほかのTorブラウザのユーザーを区別する詳細を変更">
@@ -58,4 +57,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Web サイトが提供するフォントはブロックされます。">
 <!ENTITY torbutton.prefs.sec_custom "カスタム値">
 <!ENTITY torbutton.circuit_display.title "このサイト用の Tor サーキット">
-
