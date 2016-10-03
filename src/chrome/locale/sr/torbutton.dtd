@@ -22,5 +22,4 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Заштити нове колачиће">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не штити нове колачиће">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Ogranici cookies i druge podatke o pracenju">
-<!ENTITY torbutton.prefs.block_plugins "Onemogući dodatke pretrazivaca (kao što su Flash )">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Promenite detalje koji vas razlikuju od drugih korisnika Tor pretrazivaca.">

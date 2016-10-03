@@ -26,7 +26,6 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "لا تحم ملفات تعريف الارتباط الجديدة">
 <!ENTITY torbutton.prefs.priv_caption "إعدادات الخصوصية">
 <!ENTITY torbutton.prefs.restrict_thirdparty "تقييد الـCookies الخاصة بالطرف الثالث و بيانات التتبع الأخري.">
-<!ENTITY torbutton.prefs.block_plugins "تعطيل إضافات المتصفح (مثل فلاش)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "تغيير التفاصيل التي تميزك عن المستخدمين الآخرين لمتصفح تور">
 <!ENTITY torbutton.prefs.sec_caption "مستوى الأمان">
 <!ENTITY torbutton.prefs.sec_low "منخفض (افتراضي)">

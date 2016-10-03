@@ -95,6 +95,7 @@ var torbutton_unique_pref_observer =
         this._branch.addObserver("media", this, false);
         this._branch.addObserver("mathml", this, false);
         this._branch.addObserver("svg", this, false);
+        this._branch.addObserver("plugins.disable", this, false);
 
         // We observe xpcom-category-entry-added for plugins w/ Gecko-Content-Viewers
         var observerService = Cc["@mozilla.org/observer-service;1"].
@@ -168,9 +169,9 @@ var torbutton_unique_pref_observer =
                   m_tb_prefs.setBoolPref("extensions.torbutton.restrict_thirdparty", true);
                 break;
 
-            case "extensions.torbutton.no_tor_plugins":
+            case "plugins.disable":
                 torbutton_toggle_plugins(
-                        m_tb_prefs.getBoolPref("extensions.torbutton.no_tor_plugins"));
+                        m_tb_prefs.getBoolPref("plugins.disable"));
                 break;
             case "extensions.torbutton.block_disk":
                 torbutton_update_disk_prefs();
@@ -522,11 +523,11 @@ function torbutton_confirm_plugins() {
 
   m_tb_prefs.setBoolPref("extensions.torbutton.confirm_plugins", !askAgain.value);
 
-  // The pref observer for no_tor_plugins will set the appropriate plugin state.
+  // The pref observer for "plugins.disable" will set the appropriate plugin state.
   // So, we only touch the pref if it has changed.
   if (no_plugins != 
-      m_tb_prefs.getBoolPref("extensions.torbutton.no_tor_plugins"))
-    m_tb_prefs.setBoolPref("extensions.torbutton.no_tor_plugins", no_plugins);
+      m_tb_prefs.getBoolPref("plugins.disable"))
+    m_tb_prefs.setBoolPref("plugins.disable", no_plugins);
   else
     torbutton_toggle_plugins(no_plugins);
 
@@ -1703,8 +1704,6 @@ function torbutton_tor_check_ok()
 // toggles plugins: true for disabled, false for enabled
 function torbutton_toggle_plugins(disable_plugins) {
   if (m_tb_tbb) {
-    m_tb_prefs.setBoolPref("plugin.disable", disable_plugins);
-
     var PH=Cc["@mozilla.org/plugin/host;1"].getService(Ci.nsIPluginHost);
     var P=PH.getPluginTags({});
     for(var i=0; i<P.length; i++) {
@@ -2328,7 +2327,7 @@ function torbutton_do_startup()
     if(m_tb_prefs.getBoolPref("extensions.torbutton.startup")) {
         // Bug 1506: Still want to do this
         torbutton_toggle_plugins(
-                m_tb_prefs.getBoolPref("extensions.torbutton.no_tor_plugins"));
+                m_tb_prefs.getBoolPref("plugins.disable"));
 
         // Bug 1506: Should probably be moved to an XPCOM component
         torbutton_do_main_window_startup();
