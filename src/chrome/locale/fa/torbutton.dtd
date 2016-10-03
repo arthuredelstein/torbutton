@@ -26,7 +26,6 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "عدم حفاظت از کلوچک‌های جديد">
 <!ENTITY torbutton.prefs.priv_caption "تنظیمات حریم خصوصی">
 <!ENTITY torbutton.prefs.restrict_thirdparty "محدود‌كردن كوكى‌هاى طرف سوم و داده‌هاى پيگردى ديگر">
-<!ENTITY torbutton.prefs.block_plugins "غيرفعال‌كردن افزايه‌هاى مرورگر (مثل فلش)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "تغييردادن جزئياتى كه شمارا از كاربران ديگر تُر تميزمى‌كند">
 <!ENTITY torbutton.prefs.sec_caption "سطح امنیت">
 <!ENTITY torbutton.prefs.sec_low "پایین (به طور پیش فرض)">

@@ -26,7 +26,6 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Skydda inte nya kakor">
 <!ENTITY torbutton.prefs.priv_caption "Sekretessinställningar">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Begränsa tredjepartskakor och annan tracking data">
-<!ENTITY torbutton.prefs.block_plugins "Inaktivera insticksmoduler (så som Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Ändra detailjer som utmärker dig ifrån andra Tor Browser användare">
 <!ENTITY torbutton.prefs.sec_caption "Säkerhetsnivå">
 <!ENTITY torbutton.prefs.sec_low "Låg (förvald)">

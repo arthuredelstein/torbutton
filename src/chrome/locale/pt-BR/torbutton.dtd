@@ -22,5 +22,4 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Proteger Novos Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Não Prototeger Novos COOKIES">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restringir os cookies de terceiros e outros dados de controle">
-<!ENTITY torbutton.prefs.block_plugins "Desabilita plugins do browser (como o Flash)">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Alterar os dados que distinguem você de outros usuários do Tor Browser">
