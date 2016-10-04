@@ -1,7 +1,5 @@
 <!ENTITY torbutton.context_menu.new_identity "Új személyazonosság">
 <!ENTITY torbutton.context_menu.new_identity_key "S">
-<!ENTITY torbutton.context_menu.preferences "Beállítások...">
-<!ENTITY torbutton.context_menu.preferences.key "B">
 <!ENTITY torbutton.context_menu.networksettings "Hálózati beállítások megnyitása">
 <!ENTITY torbutton.context_menu.networksettings.key "M">
 <!ENTITY torbutton.context_menu.downloadUpdate "Tor Böngésző csomag frissítésének letöltése">

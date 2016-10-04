@@ -2,16 +2,16 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "New Tor Circuit for this Site">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Privacy and Security Settings…">
-<!ENTITY torbutton.context_menu.preferences.key "P">
+<!ENTITY torbutton.context_menu.preferences "Security Settings…">
+<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor Network Settings…">
-<!ENTITY torbutton.context_menu.networksettings.key "S">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Check for Tor Browser Update…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Click to initialize Torbutton">
-<!ENTITY torbutton.prefs.privacy_security_settings "Privacy and Security Settings">
+<!ENTITY torbutton.prefs.security_settings "Security Settings">
 <!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
@@ -24,8 +24,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.priv_caption "Privacy Settings">
-<!ENTITY torbutton.prefs.priv_caption_tooltip "When checked, the following settings help to keep your identity and browsing history private. We strongly recommend that you keep all privacy boxes checked for normal Tor Browser use.">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Keep this box checked to prevent various browser features from being abused to track you as you browse the web. Modified features include blob URLs, broadcast channels, the browser cache, cookies, favicons, HTTP Auth headers, link preconnects, localStorage, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">

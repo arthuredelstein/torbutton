@@ -1,7 +1,5 @@
 <!ENTITY torbutton.context_menu.new_identity "Nova Identidade">
 <!ENTITY torbutton.context_menu.new_identity_key "Eu">
-<!ENTITY torbutton.context_menu.preferences "Configurações...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Abrir Configurações de Rede">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Baixar atualização do pacote Tor para navegadores...">

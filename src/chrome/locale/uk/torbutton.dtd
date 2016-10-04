@@ -1,7 +1,5 @@
 <!ENTITY torbutton.context_menu.new_identity "Нова особистість">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.preferences "Налаштування...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Відкрити Налаштування Мережі...">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Завантажити пакет оновлень переглядача Tor...">

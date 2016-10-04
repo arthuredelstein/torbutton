@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nuevo circuito Tor para este sitio">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Configuración de privacidad y seguridad...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Configuración de red Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "G">
 <!ENTITY torbutton.context_menu.downloadUpdate "Comprobar actualización del Navegador Tor...">
@@ -11,7 +9,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Protecciones de cookie...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Haga clic para inicializar Torbutton">
-<!ENTITY torbutton.prefs.privacy_security_settings "Preferencias de Privacidad y Seguridad">
 <!ENTITY torbutton.prefs.restore_defaults "Restablecer valores predeterminados ">
 <!ENTITY torbutton.cookiedialog.title "Administrar protecciones de cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "Protegidas">
@@ -24,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Eliminar todas excepto las protegidas">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Proteger las nuevas cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "No proteger las nuevas cookies">
-<!ENTITY torbutton.prefs.priv_caption "Parámetros de privacidad">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restringir cookies de terceros y otros datos de seguimiento">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Cambiar los detalles que le distinguen de otros usuarios del Navegador Tor">
 <!ENTITY torbutton.prefs.sec_caption "Nivel de Seguridad">
