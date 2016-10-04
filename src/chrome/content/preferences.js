@@ -14,7 +14,6 @@ function torbutton_prefs_init(doc) {
 
     // Privacy and security settings
     doc.getElementById('torbutton_resistFingerprinting').checked = o_torprefs.getBoolPref('resist_fingerprinting');
-    doc.getElementById('torbutton_restrictThirdParty').checked = o_torprefs.getBoolPref('restrict_thirdparty');
     let sec_slider = doc.getElementById('torbutton_sec_slider');
     let sec_custom = doc.getElementById('torbutton_sec_custom');
     let custom_values = o_torprefs.getBoolPref('security_custom');
@@ -46,7 +45,6 @@ function torbutton_prefs_save(doc) {
     // Privacy and Security Settings
 
     o_torprefs.setBoolPref('resist_fingerprinting', doc.getElementById('torbutton_resistFingerprinting').checked);
-    o_torprefs.setBoolPref('restrict_thirdparty', doc.getElementById('torbutton_restrictThirdParty').checked);
     o_torprefs.setBoolPref('security_custom',
                            doc.getElementById('torbutton_sec_custom').checked);
     o_torprefs.setIntPref('security_slider',
