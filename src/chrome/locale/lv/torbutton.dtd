@@ -1,9 +1,6 @@
 <!ENTITY torbutton.context_menu.new_identity "Jauna identitāte">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.preferences "Preferences...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Atvērt tīkla iestatījumus...">
-<!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Lejuplādēt Pārlūka Tor pakotnes jauninājumu...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Aizsardzība no sīkdatnēm">

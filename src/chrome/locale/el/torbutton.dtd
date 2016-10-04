@@ -1,9 +1,6 @@
 <!ENTITY torbutton.context_menu.new_identity "Νέα Ταυτότητα">
 <!ENTITY torbutton.context_menu.new_identity_key "Τ">
-<!ENTITY torbutton.context_menu.preferences "Επιλογές...">
-<!ENTITY torbutton.context_menu.preferences.key "Ε">
 <!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Λυψη του Tor Browser Bundle Update...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Προστασία Cookies">

@@ -12,7 +12,6 @@ function torbutton_prefs_init(doc) {
 
     var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
 
-    // Privacy and security settings
     let sec_slider = doc.getElementById('torbutton_sec_slider');
     let sec_custom = doc.getElementById('torbutton_sec_custom');
     let custom_values = o_torprefs.getBoolPref('security_custom');
@@ -40,8 +39,6 @@ function torbutton_prefs_save(doc) {
     doc.documentElement.getButton("accept").disabled = true;
     torbutton_log(2, "called prefs_save()");
     var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
-
-    // Privacy and Security Settings
 
     o_torprefs.setBoolPref('security_custom',
                            doc.getElementById('torbutton_sec_custom').checked);

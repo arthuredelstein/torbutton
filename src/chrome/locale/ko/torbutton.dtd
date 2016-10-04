@@ -2,16 +2,12 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Tor 서킷 재구축">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "개인정보 및 보안 관련 설정...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "토르 네트워크 설정...">
-<!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "토르 브라우저 업데이트 체크하기...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "쿠키 보호....">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbutton 설정 초기화">
-<!ENTITY torbutton.prefs.privacy_security_settings "개인 정보와 보안 설정">
 <!ENTITY torbutton.prefs.restore_defaults "설정 초기화">
 <!ENTITY torbutton.cookiedialog.title "쿠키 보호 관리">
 <!ENTITY torbutton.cookiedialog.lockCol "보호됨">
@@ -24,7 +20,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "보호된 것 빼고 모두 지우기">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "새로운 쿠키 보호">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "새로운 쿠키를 보호하지 않음">
-<!ENTITY torbutton.prefs.priv_caption "개인 정보 설정">
 <!ENTITY torbutton.prefs.restrict_thirdparty "제 3자 쿠키와 다른 추적 데이터 제한">
 <!ENTITY torbutton.prefs.resist_fingerprinting "다른 Tor browser 사용자로부터 구별되는 세부 사항 변경">
 <!ENTITY torbutton.prefs.sec_caption "보안 등급">

@@ -2,16 +2,12 @@
 <!ENTITY torbutton.context_menu.new_identity_key "o">
 <!ENTITY torbutton.context_menu.new_circuit "Nowy obwód dla tej strony">
 <!ENTITY torbutton.context_menu.new_circuit_key "c">
-<!ENTITY torbutton.context_menu.preferences "Ustawienia Prywatności i Bezpieczeństwa...">
-<!ENTITY torbutton.context_menu.preferences.key "U">
 <!ENTITY torbutton.context_menu.networksettings "Ustawienia Sieci Tor...">
-<!ENTITY torbutton.context_menu.networksettings.key "s">
 <!ENTITY torbutton.context_menu.downloadUpdate "Sprawdź czy są aktualizacje Tor Browser...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "u">
 <!ENTITY torbutton.context_menu.cookieProtections "Ochrona plików cookie...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "c">
 <!ENTITY torbutton.button.tooltip "Kliknij tutaj, aby uruchomić Torbutton">
-<!ENTITY torbutton.prefs.privacy_security_settings "Ustawienia prywatności i bezpieczeństwa">
 <!ENTITY torbutton.prefs.restore_defaults "Ustawienia domyślne">
 <!ENTITY torbutton.cookiedialog.title "Zarządzaj ochroną ciasteczek">
 <!ENTITY torbutton.cookiedialog.lockCol "Chronione">
@@ -24,7 +20,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Usuń wszystkie oprócz chronionych">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Chroń nowe ciasteczka">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nie chroń nowych ciasteczek">
-<!ENTITY torbutton.prefs.priv_caption "Ustawienia Prywatności">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Ograniczaj ciasteczka firm trzecich i inne dane służące do śledzenia">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Zmień szczegóły odróżniające Cię od innych użytkowników Przeglądarki Tora">
 <!ENTITY torbutton.prefs.sec_caption "Poziom bezpieczeństwa">

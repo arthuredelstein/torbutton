@@ -2,16 +2,12 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "为此站点使用新 Tor 线路">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "隐私与安全设置…">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Tor 网络设置…">
-<!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Tor Browser 检查更新…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie 保护…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "点此初始化 Torbutton">
-<!ENTITY torbutton.prefs.privacy_security_settings "隐私与安全设置">
 <!ENTITY torbutton.prefs.restore_defaults "恢复默认设置">
 <!ENTITY torbutton.cookiedialog.title "管理受保护的 Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "受保护">
@@ -24,7 +20,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "全部移除仅保留受保护的 Cookie">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "保护新的 Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "不保护新的 Cookie">
-<!ENTITY torbutton.prefs.priv_caption "隐私设置">
 <!ENTITY torbutton.prefs.restrict_thirdparty "限制第三方 cookie 和其他数据跟踪程序">
 <!ENTITY torbutton.prefs.resist_fingerprinting "修改 Tor 浏览器中可区分你与其他 Tor 用户的细节信息">
 <!ENTITY torbutton.prefs.sec_caption "安全等级">

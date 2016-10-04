@@ -7,7 +7,7 @@
 <dialog id="torbutton-prefs"
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         xmlns:html="http://www.w3.org/1999/xhtml"
-        title="&torbutton.prefs.privacy_security_settings;"
+        title="&torbutton.prefs.security_settings;"
         buttons="accept,cancel,extra1"
         buttonlabelextra1="&torbutton.prefs.restore_defaults;"
         ondialogextra1="torbutton_prefs_reset_defaults();"
@@ -15,15 +15,13 @@
         onload="torbutton_prefs_init(document)"
         align="stretch"
         pack="center"
+        maxheight="350"
+        maxwidth="400"
         ondialogaccept="torbutton_prefs_save(document)" >
 
     <script type="application/x-javascript" src="torbutton_util.js"/>
     <script type="application/x-javascript" src="preferences.js"/>
     <vbox flex="1" align="stretch">
-        <groupbox>
-          <caption label="&torbutton.prefs.priv_caption;"
-                   tooltiptext="&torbutton.prefs.priv_caption_tooltip;"/>
-        </groupbox>
         <groupbox align="stretch" flex="1"> <!-- security settings container -->
           <caption label="&torbutton.prefs.sec_caption;"/>
           <hbox flex="1" align="stretch">

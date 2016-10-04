@@ -2,16 +2,12 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "このサイト用の新しい Tor サーキット">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "プライバシーとセキュリティー設定">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Torネットワークの設定...">
-<!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "TorBrowserのアップデートを確認">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie の防御">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbuttonを初期状態に戻す">
-<!ENTITY torbutton.prefs.privacy_security_settings "プライバシーとセキュリティーの設定">
 <!ENTITY torbutton.prefs.restore_defaults "デフォルト設定に戻す">
 <!ENTITY torbutton.cookiedialog.title "Cookie保護を管理">
 <!ENTITY torbutton.cookiedialog.lockCol "保護済み">
@@ -24,7 +20,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "保護されているもの以外削除">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "新しいCookieを保護">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "新しいCookieを保護しない">
-<!ENTITY torbutton.prefs.priv_caption "プライバシー設定">
 <!ENTITY torbutton.prefs.restrict_thirdparty "サードパーティーのCookieやその他のトラッキングデータを制限">
 <!ENTITY torbutton.prefs.resist_fingerprinting "あなたとほかのTorブラウザのユーザーを区別する詳細を変更">
 <!ENTITY torbutton.prefs.sec_caption "セキュリティレベル">

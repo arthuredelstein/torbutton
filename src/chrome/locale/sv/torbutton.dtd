@@ -2,16 +2,12 @@
 <!ENTITY torbutton.context_menu.new_identity_key "N">
 <!ENTITY torbutton.context_menu.new_circuit "Ny Tor-krets för den här webbsidan">
 <!ENTITY torbutton.context_menu.new_circuit_key "S">
-<!ENTITY torbutton.context_menu.preferences "Inställningar för privatliv och säkerhet...">
-<!ENTITY torbutton.context_menu.preferences.key "I">
 <!ENTITY torbutton.context_menu.networksettings "Tor nätverksinställningar...">
-<!ENTITY torbutton.context_menu.networksettings.key "Ö">
 <!ENTITY torbutton.context_menu.downloadUpdate "Sök efter uppdateringar för Tor webbläsare...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Skydd mot Cookies...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "S">
 <!ENTITY torbutton.button.tooltip "Klicka för att installera Torbutton">
-<!ENTITY torbutton.prefs.privacy_security_settings "Integritet- och säkerhetsinställningar">
 <!ENTITY torbutton.prefs.restore_defaults "Återställ till standard">
 <!ENTITY torbutton.cookiedialog.title "Hantera skyddade kakor">
 <!ENTITY torbutton.cookiedialog.lockCol "Skyddad">
@@ -24,7 +20,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Ta bort alla icke-skyddade">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Skydda nya kakor">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Skydda inte nya kakor">
-<!ENTITY torbutton.prefs.priv_caption "Sekretessinställningar">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Begränsa tredjepartskakor och annan tracking data">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Ändra detailjer som utmärker dig ifrån andra Tor Browser användare">
 <!ENTITY torbutton.prefs.sec_caption "Säkerhetsnivå">

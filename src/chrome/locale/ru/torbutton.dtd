@@ -2,16 +2,12 @@
 <!ENTITY torbutton.context_menu.new_identity_key "Я">
 <!ENTITY torbutton.context_menu.new_circuit "Новая цепочка Tor для этого cайта">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Настройки конфиденциальности и безопасности">
-<!ENTITY torbutton.context_menu.preferences.key "Н">
 <!ENTITY torbutton.context_menu.networksettings "Настройки сети Tor">
-<!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Проверить на наличие обновлений Tor Browser">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Защита куки-файла">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Нажмите, чтобы инициализировать Torbutton">
-<!ENTITY torbutton.prefs.privacy_security_settings "Настройки конфиденциальности и безопасности">
 <!ENTITY torbutton.prefs.restore_defaults "Восстановить значения по умолчанию">
 <!ENTITY torbutton.cookiedialog.title "Управление защитой куки-файлов">
 <!ENTITY torbutton.cookiedialog.lockCol "Защищено">
@@ -24,7 +20,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Удалить все, кроме защищённых">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Защищать новые куки-файлы">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не защищать новые куки-файлы">
-<!ENTITY torbutton.prefs.priv_caption "Настройки конфиденциальности">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Блокировать сторонние куки-файлы и другие данные слежения">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Изменить сведения, отличающие вас от других пользователей Tor Browser">
 <!ENTITY torbutton.prefs.sec_caption "Уровень безопасности">
