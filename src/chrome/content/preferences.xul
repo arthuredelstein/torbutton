@@ -23,9 +23,6 @@
         <groupbox>
           <caption label="&torbutton.prefs.priv_caption;"
                    tooltiptext="&torbutton.prefs.priv_caption_tooltip;"/>
-          <checkbox id="torbutton_resistFingerprinting"
-                    label="&torbutton.prefs.resist_fingerprinting;"
-                    tooltiptext="&torbutton.prefs.resist_fingerprinting_tooltip;"/>
         </groupbox>
         <groupbox align="stretch" flex="1"> <!-- security settings container -->
           <caption label="&torbutton.prefs.sec_caption;"/>

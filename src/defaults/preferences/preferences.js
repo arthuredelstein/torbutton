@@ -44,8 +44,6 @@ pref("extensions.torbutton.launch_warning",true);
 // https://developer.mozilla.org/en/Addons/Working_with_AMO
 pref("extensions.torbutton@torproject.org.getAddons.cache.enabled", false);
 
-pref("extensions.torbutton.resist_fingerprinting", true);
-
 // Security Slider
 pref("extensions.torbutton.security_slider", 4);
 pref("extensions.torbutton.security_custom", false);
