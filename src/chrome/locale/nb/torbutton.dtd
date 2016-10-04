@@ -1,7 +1,5 @@
 <!ENTITY torbutton.context_menu.new_identity "Ny Identitet">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.preferences "Innstillinger...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Åpne nettverksinnstillinger...">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Last ned Tor Browser Bundle oppdatering...">

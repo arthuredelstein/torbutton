@@ -1,7 +1,5 @@
 <!ENTITY torbutton.context_menu.new_identity "Identitate noua">
 <!ENTITY torbutton.context_menu.new_identity_key "l">
-<!ENTITY torbutton.context_menu.preferences "Preferințe...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">

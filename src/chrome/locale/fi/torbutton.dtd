@@ -1,7 +1,5 @@
 <!ENTITY torbutton.context_menu.new_identity "Uusi identiteetti">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.preferences "Asetukset...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Lataa Tor Browser Bundle -päivitys...">

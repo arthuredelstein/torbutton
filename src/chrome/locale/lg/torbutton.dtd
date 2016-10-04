@@ -1,5 +1,3 @@
-<!ENTITY torbutton.context_menu.preferences "Preferences...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Click to initialize Torbutton">
