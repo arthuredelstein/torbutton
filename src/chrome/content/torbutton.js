@@ -97,6 +97,7 @@ var torbutton_unique_pref_observer =
         this._branch.addObserver("svg", this, false);
         this._branch.addObserver("plugin.disable", this, false);
         this._branch.addObserver("privacy.thirdparty.isolate", this, false);
+        this._branch.addObserver("privacy.resistFingerprinting", this, false);
 
         // We observe xpcom-category-entry-added for plugins w/ Gecko-Content-Viewers
         var observerService = Cc["@mozilla.org/observer-service;1"].
@@ -174,7 +175,7 @@ var torbutton_unique_pref_observer =
             case "extensions.torbutton.use_nontor_proxy":
                 torbutton_use_nontor_proxy();
                 break;
-            case "extensions.torbutton.resist_fingerprinting":
+            case "privacy.resistFingerprinting":
             case "extensions.torbutton.spoof_english":
                 torbutton_update_fingerprinting_prefs();
                 break;
@@ -1756,7 +1757,7 @@ function torbutton_update_disk_prefs() {
 }
 
 function torbutton_update_fingerprinting_prefs() {
-    var mode = m_tb_prefs.getBoolPref("extensions.torbutton.resist_fingerprinting");
+    var mode = m_tb_prefs.getBoolPref("privacy.resistFingerprinting");
 
     if (m_tb_tbb) {
       if (mode) {
@@ -1791,7 +1792,6 @@ function torbutton_update_fingerprinting_prefs() {
     m_tb_prefs.setBoolPref("dom.enable_performance", !mode);
     m_tb_prefs.setBoolPref("plugin.expose_full_path", !mode);
     m_tb_prefs.setBoolPref("browser.zoom.siteSpecific", !mode);
-    m_tb_prefs.setBoolPref("privacy.resistFingerprinting", mode);
 
     m_tb_prefs.setBoolPref("extensions.torbutton.resize_new_windows", mode);
 
