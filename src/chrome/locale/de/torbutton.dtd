@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "N">
 <!ENTITY torbutton.context_menu.new_circuit "Neuer Kanal für diese Seite">
 <!ENTITY torbutton.context_menu.new_circuit_key "B">
-<!ENTITY torbutton.context_menu.preferences "Privatssphäre- und Sicherheits-Einstellungen...">
-<!ENTITY torbutton.context_menu.preferences.key "E">
 <!ENTITY torbutton.context_menu.networksettings "Tor-Netzwerk-Einstellungen...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Suche nach Tor-Browser-Aktualisierungen...">
@@ -11,7 +9,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie-Schutz...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klicken, um Torbutton zu aktivieren">
-<!ENTITY torbutton.prefs.privacy_security_settings "Privatsphäre- und Sicherheits-Einstellungen">
 <!ENTITY torbutton.prefs.restore_defaults "Vorgabeeinstellungen wiederherstellen">
 <!ENTITY torbutton.cookiedialog.title "Cookie-Schutz verwalten">
 <!ENTITY torbutton.cookiedialog.lockCol "Geschützt">
@@ -24,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Alle, außer die geschützten Cookies entfernen">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Neue Cookies schützen">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neue Cookies nicht schützen">
-<!ENTITY torbutton.prefs.priv_caption "Privatsphären-Einstellungen">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Profildateien (Cookies) von Drittanbietern und andere Überwachungsdaten einschränken">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Details ändern, die Sie von anderen Tor-Browser-Benutzern unterscheiden">
 <!ENTITY torbutton.prefs.sec_caption "Sicherheitslevel">

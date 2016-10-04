@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nieuw tor circuit voor deze website">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Privacy- en beveiligingsinstellingen...">
-<!ENTITY torbutton.context_menu.preferences.key "V">
 <!ENTITY torbutton.context_menu.networksettings "Tor netwerk instellingen">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Controleer op updates voor de Tor Browser...">
@@ -11,7 +9,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie beveiligingen...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik hier om Torbutton te initialiseren">
-<!ENTITY torbutton.prefs.privacy_security_settings "Privacy- en beveiligingsinstellingen">
 <!ENTITY torbutton.prefs.restore_defaults "Terugzetten op begintoestand">
 <!ENTITY torbutton.cookiedialog.title "Beheer Cookie Beveiligingen">
 <!ENTITY torbutton.cookiedialog.lockCol "Beveiligd">
@@ -24,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Verwijder alle behalve beveiligde">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beveilig nieuwe Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beveilig nieuwe Cookies niet">
-<!ENTITY torbutton.prefs.priv_caption "Privacyinstellingen">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Beperk cookies en andere tracking-gegevens van derden">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Verander details die je onderscheiden van andere Tor Browser gebruikers">
 <!ENTITY torbutton.prefs.sec_caption "Beveiligingsniveau">

@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "دائرة تور جديدة لهذا الموقع">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "إعدادات الخصوصية والأمان...">
-<!ENTITY torbutton.context_menu.preferences.key "P">
 <!ENTITY torbutton.context_menu.networksettings "إعدادات شبكة تور...">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "تحقق من تحديثات متصفح تور...">
@@ -11,7 +9,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "إعدادات أمان ملفات تعريف الارتباط...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "انقر لبدء زر تور">
-<!ENTITY torbutton.prefs.privacy_security_settings "إعدادات الأمان والخصوصيّة">
 <!ENTITY torbutton.prefs.restore_defaults "استعادة الافتراضيات">
 <!ENTITY torbutton.cookiedialog.title "إدارة إعدادت الحماية لملفات تعريف الارتباط">
 <!ENTITY torbutton.cookiedialog.lockCol "محمية">
@@ -24,7 +21,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "إزالة الكل لكن استمر في الحماية">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "احم ملفات تعريف الارتباط الجديدة">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "لا تحم ملفات تعريف الارتباط الجديدة">
-<!ENTITY torbutton.prefs.priv_caption "إعدادات الخصوصية">
 <!ENTITY torbutton.prefs.restrict_thirdparty "تقييد الـCookies الخاصة بالطرف الثالث و بيانات التتبع الأخري.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "تغيير التفاصيل التي تميزك عن المستخدمين الآخرين لمتصفح تور">
 <!ENTITY torbutton.prefs.sec_caption "مستوى الأمان">

@@ -1,7 +1,5 @@
 <!ENTITY torbutton.context_menu.new_identity "Нов идентитет">
 <!ENTITY torbutton.context_menu.new_identity_key "И">
-<!ENTITY torbutton.context_menu.preferences "Поставке...">
-<!ENTITY torbutton.context_menu.preferences.key "П">
 <!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Preuzmite Tor Browser Bundle Update...">

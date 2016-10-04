@@ -1,7 +1,5 @@
 <!ENTITY torbutton.context_menu.new_identity "Nova idento">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.preferences "Agordoj…">
-<!ENTITY torbutton.context_menu.preferences.key "A">
 <!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
 <!ENTITY torbutton.context_menu.networksettings.key "S">
 <!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
