@@ -96,6 +96,7 @@ var torbutton_unique_pref_observer =
         this._branch.addObserver("mathml", this, false);
         this._branch.addObserver("svg", this, false);
         this._branch.addObserver("plugin.disable", this, false);
+        this._branch.addObserver("privacy.thirdparty.isolate", this, false);
 
         // We observe xpcom-category-entry-added for plugins w/ Gecko-Content-Viewers
         var observerService = Cc["@mozilla.org/observer-service;1"].
@@ -156,11 +157,11 @@ var torbutton_unique_pref_observer =
         switch (data) {
             case "network.cookie.cookieBehavior":
                 var val = m_tb_prefs.getIntPref("network.cookie.cookieBehavior");
-                var block_thirdparty = m_tb_prefs.getBoolPref("extensions.torbutton.restrict_thirdparty");
+                var block_thirdparty = m_tb_prefs.getIntPref("privacy.thirdparty.isolate") !== 0;
                 if (val == 0 && block_thirdparty) // Allow all cookies
-                  m_tb_prefs.setBoolPref("extensions.torbutton.restrict_thirdparty", false);
+                  m_tb_prefs.setIntPref("privacy.thirdparty.isolate", 0);
                 else if (val == 1 && !block_thirdparty) // Block third party cookies
-                  m_tb_prefs.setBoolPref("extensions.torbutton.restrict_thirdparty", true);
+                  m_tb_prefs.setIntPref("privacy.thirdparty.isolate", 2);
                 break;
 
             case "plugin.disable":
@@ -177,7 +178,7 @@ var torbutton_unique_pref_observer =
             case "extensions.torbutton.spoof_english":
                 torbutton_update_fingerprinting_prefs();
                 break;
-            case "extensions.torbutton.restrict_thirdparty":
+            case "privacy.thirdparty.isolate":
                 torbutton_update_thirdparty_prefs();
                 break;
             case "extensions.torbutton.hide_sync_ui":
@@ -1803,24 +1804,16 @@ function torbutton_update_fingerprinting_prefs() {
 }
 
 function torbutton_update_thirdparty_prefs() {
-    var mode = m_tb_prefs.getBoolPref("extensions.torbutton.restrict_thirdparty");
+    let isolate = m_tb_prefs.getIntPref("privacy.thirdparty.isolate") !== 0;
 
-    try {
-        if (mode) {
-            m_tb_prefs.setIntPref("privacy.thirdparty.isolate", 2);
-        } else {
-            m_tb_prefs.setIntPref("privacy.thirdparty.isolate", 0);
-        }
-    } catch(e) {}
-
-    if (mode) {
+    if (isolate) {
       m_tb_prefs.setIntPref("network.cookie.cookieBehavior", 1);
     } else {
       m_tb_prefs.setIntPref("network.cookie.cookieBehavior", 0);
     }
 
-    m_tb_prefs.setBoolPref("dom.workers.sharedWorkers.enabled", !mode);
-    m_tb_prefs.setBoolPref("security.enable_tls_session_tickets", !mode);
+    m_tb_prefs.setBoolPref("dom.workers.sharedWorkers.enabled", !isolate);
+    m_tb_prefs.setBoolPref("security.enable_tls_session_tickets", !isolate);
 
     // Force prefs to be synced to disk
     var prefService = Components.classes["@mozilla.org/preferences-service;1"]

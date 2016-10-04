@@ -23,9 +23,6 @@
         <groupbox>
           <caption label="&torbutton.prefs.priv_caption;"
                    tooltiptext="&torbutton.prefs.priv_caption_tooltip;"/>
-          <checkbox id="torbutton_restrictThirdParty"
-                    label="&torbutton.prefs.restrict_thirdparty;"
-                    tooltiptext="&torbutton.prefs.restrict_thirdparty_tooltip;"/>
           <checkbox id="torbutton_resistFingerprinting"
                     label="&torbutton.prefs.resist_fingerprinting;"
                     tooltiptext="&torbutton.prefs.resist_fingerprinting_tooltip;"/>
