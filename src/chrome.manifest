@@ -14,6 +14,7 @@ overlay chrome://browser/content/aboutDialog.xul chrome://torbutton/content/abou
 
 # UI customization
 overlay chrome://browser/content/baseMenuOverlay.xul chrome://torbutton/content/menu-overlay.xul
+overlay about:preferences chrome://torbutton/content/privacy-prefs-overlay.xul
 
 # Strings for the about:tbupdate page
 override chrome://browser/locale/aboutTBUpdate.dtd chrome://torbutton/locale/aboutTBUpdate.dtd
