@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE page SYSTEM "chrome://torbutton/locale/torbutton.dtd">
+
+<overlay id="privacy-prefs-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <checkbox id="thirdpartyIsolateCB"
+            label="&torbutton.prefs.restrict_thirdparty;" />
+  <checkbox id="resistFingerprintingCB"
+            label="&torbutton.prefs.resist_fingerprinting;" />
+</overlay>
