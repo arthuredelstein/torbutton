@@ -57,63 +57,6 @@ function torbutton_prefs_save(doc) {
     }
 }
 
-function torbutton_prefs_reset_defaults() {
-    var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
-    var tmpcnt = new Object();
-    var children;
-    var i;
-    var loglevel = o_torprefs.getIntPref("loglevel");
-    var logmthd = o_torprefs.getIntPref("logmethod");
-    
-    torbutton_log(3, "Starting Pref reset");
-
-    //  1. Clear torbutton settings
-    //  2. Clear browser proxy settings
-    //  3. Reset Security Slider settings
-
-    // XXX Warning: The only reason this works is because of Firefox's 
-    // threading model. As soon as a pref is changed, all observers
-    // are notified by that same thread, immediately. Since torbutton's
-    // security state is driven by proxy pref observers, this
-    // causes everything to be reset in a linear order. If firefox 
-    // ever makes pref observers asynchonous, this will all break.
-    
-    children = o_torprefs.getChildList("" , tmpcnt);
-    for(i = 0; i < children.length; i++) {
-        if(o_torprefs.prefHasUserValue(children[i]))
-            o_torprefs.clearUserPref(children[i]);
-    }
-
-    // Keep logging the same.
-    o_torprefs.setIntPref("loglevel", loglevel);
-    o_torprefs.setIntPref("logmethod", logmthd);
-
-    torbutton_log(3, "Resetting browser prefs");
-
-    // Reset browser prefs that torbutton touches just in case
-    // they get horked. Better everything gets set back to default
-    // than some arcane pref gets wedged with no clear way to fix it.
-    // Technical users who tuned these by themselves will be able to fix it.
-    // It's the non-technical ones we should make it easy for
-    torbutton_reset_browser_prefs();
-
-    // Resetting the Security Slider preferences
-    var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-        .getService(Components.interfaces.nsIWindowMediator);
-    var win = wm.getMostRecentWindow("navigator:browser");
-    o_torprefs.setBoolPref('security_custom', false);
-    o_torprefs.setIntPref('security_slider', 4);
-    win.torbutton_update_security_slider();
-
-    torbutton_log(4, "Preferences reset to defaults");
-    torbutton_prefs_init(window.document);
-
-    // In all cases, force prefs to be synced to disk
-    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefService);
-    prefService.savePrefFile(null);
-}
-
 function torbutton_toggle_slider(doc, pos) {
     doc.getElementById("torbutton_sec_slider").value = pos;
     // Make sure the custom checkbox is unchecked as the user seems to want one
