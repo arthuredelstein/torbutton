@@ -10,7 +10,7 @@
 //  let { controller } = Components.utils.import("path/to/tor-control-port.js");
 //
 // See the last function defined in this file:
-//   controller(socketFile, host, port, password, onError)
+//   controller(ipcFile, host, port, password, onError)
 // for usage of the controller function.
 
 /* jshint esnext: true */
@@ -42,18 +42,18 @@ log("Loading tor-control-port.js\n");
 // I/O utilities namespace
 let io = {};
 
-// __io.asyncSocketStreams(socketFile, host, port)__.
+// __io.asyncSocketStreams(ipcFile, host, port)__.
 // Creates a pair of asynchronous input and output streams for a socket at the
-// given socketFile or host and port.
-io.asyncSocketStreams = function (socketFile, host, port) {
+// given ipcFile or host and port.
+io.asyncSocketStreams = function (ipcFile, host, port) {
   let sts = Cc["@mozilla.org/network/socket-transport-service;1"]
               .getService(Components.interfaces.nsISocketTransportService),
 	  UNBUFFERED = Ci.nsITransport.OPEN_UNBUFFERED;
 
   // Create an instance of a socket transport.
   let socketTransport;
-  if (socketFile) {
-    socketTransport = sts.createUnixDomainTransport(socketFile);
+  if (ipcFile) {
+    socketTransport = sts.createUnixDomainTransport(ipcFile);
   } else {
     socketTransport = sts.createTransport(null, 0, host, port, null);
   }
@@ -99,16 +99,15 @@ io.pumpInputStream = function (inputStream, onInputData, onError) {
                    } }, null);
 };
 
-// __io.asyncSocket(socketFile, host, port, onInputData, onError)__.
-// Creates an asynchronous, text-oriented UNIX domain socket (if socketFile
-// is defined) or TCP socket at host:port.
+// __io.asyncSocket(ipcFile, host, port, onInputData, onError)__.
+// Creates an asynchronous, text-oriented IPC socket (if ipcFile is defined)
+// or a TCP socket at host:port.
 // The onInputData callback should accept a single argument, which will be called
 // repeatedly, whenever incoming text arrives. Returns a socket object with two methods:
 // socket.write(text) and socket.close(). onError will be passed the error object
 // whenever a write fails.
-io.asyncSocket = function (socketFile, host, port, onInputData, onError) {
-  let [inputStream, outputStream] = io.asyncSocketStreams(socketFile, host,
-                                                          port),
+io.asyncSocket = function (ipcFile, host, port, onInputData, onError) {
+  let [inputStream, outputStream] = io.asyncSocketStreams(ipcFile, host, port),
       pendingWrites = [];
   // Run an input stream pump to send incoming data to the onInputData callback.
   io.pumpInputStream(inputStream, onInputData, onError);
@@ -253,8 +252,8 @@ io.matchRepliesToCommands = function (asyncSend, dispatcher) {
   });
 };
 
-// __io.controlSocket(socketFile, host, port, password, onError)__.
-// Instantiates and returns a socket to a tor ControlPort at socketFile or
+// __io.controlSocket(ipcFile, host, port, password, onError)__.
+// Instantiates and returns a socket to a tor ControlPort at ipcFile or
 // host:port, authenticating with the given password. onError is called with an
 // error object as its single argument whenever an error occurs. Example:
 //
@@ -269,11 +268,11 @@ io.matchRepliesToCommands = function (asyncSend, dispatcher) {
 //     socket.removeNotificationCallback(callback);
 //     // Close the socket permanently
 //     socket.close();
-io.controlSocket = function (socketFile, host, port, password, onError) {
+io.controlSocket = function (ipcFile, host, port, password, onError) {
   // Produce a callback dispatcher for Tor messages.
   let mainDispatcher = io.callbackDispatcher(),
       // Open the socket and convert format to Tor messages.
-      socket = io.asyncSocket(socketFile, host, port,
+      socket = io.asyncSocket(ipcFile, host, port,
                               io.onDataFromOnLine(
                                    io.onLineFromOnMessage(mainDispatcher.pushMessage)),
                               onError),
@@ -620,12 +619,12 @@ let tor = {};
 // redundant instantiation of control sockets.
 tor.controllerCache = {};
 
-// __tor.controller(socketFile, host, port, password, onError)__.
-// Creates a tor controller at the given socketFile or host and port, with the
+// __tor.controller(ipcFile, host, port, password, onError)__.
+// Creates a tor controller at the given ipcFile or host and port, with the
 // given password.
 // onError returns asynchronously whenever a connection error occurs.
-tor.controller = function (socketFile, host, port, password, onError) {
-  let socket = io.controlSocket(socketFile, host, port, password, onError),
+tor.controller = function (ipcFile, host, port, password, onError) {
+  let socket = io.controlSocket(ipcFile, host, port, password, onError),
       isOpen = true;
   return { getInfo : key => info.getInfo(socket, key),
            getConf : key => info.getConf(socket, key),
@@ -638,11 +637,11 @@ tor.controller = function (socketFile, host, port, password, onError) {
 
 // ## Export
 
-// __controller(socketFile, host, port, password, onError)__.
+// __controller(ipcFile, host, port, password, onError)__.
 // Instantiates and returns a controller object connected to a tor ControlPort
-// on socketFile or at host:port, authenticating with the given password, if
+// on ipcFile or at host:port, authenticating with the given password, if
 // the controller doesn't yet exist. Otherwise returns the existing controller
-// to the given socketFile or host:port.
+// to the given ipcFile or host:port.
 // onError is called with an error object as its single argument whenever
 // an error occurs. Example:
 //
@@ -653,13 +652,13 @@ tor.controller = function (socketFile, host, port, password, onError) {
 //     let replyPromise = c.getInfo("ip-to-country/16.16.16.16");
 //     // Close the controller permanently
 //     c.close();
-var controller = function (socketFile, host, port, password, onError) {
-  let dest = (socketFile) ? "unix:" + socketFile.path : host + ":" + port,
+var controller = function (ipcFile, host, port, password, onError) {
+  let dest = (ipcFile) ? "unix:" + ipcFile.path : host + ":" + port,
       maybeController = tor.controllerCache[dest];
   return (tor.controllerCache[dest] =
            (maybeController && maybeController.isOpen()) ?
              maybeController :
-             tor.controller(socketFile, host, port, password, onError));
+             tor.controller(ipcFile, host, port, password, onError));
 };
 
 // Export the controller function for external use.

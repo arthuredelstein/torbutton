@@ -10,6 +10,7 @@
 let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm');
 let { Services } = Cu.import("resource://gre/modules/Services.jsm");
 let { showDialog } = Cu.import("resource://torbutton/modules/utils.js");
+let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js");
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -33,9 +34,9 @@ var m_tb_window_width = window.outerWidth;
 
 var m_tb_tbb = false;
 
-var m_tb_control_socket_file = null; // Set if using a UNIX domain socket.
-var m_tb_control_port = null;        // Set if not using a socket.
-var m_tb_control_host = null;        // Set if not using a socket.
+var m_tb_control_ipc_file = null;    // Set if using IPC (UNIX domain socket).
+var m_tb_control_port = null;        // Set if using TCP.
+var m_tb_control_host = null;        // Set if using TCP.
 var m_tb_control_pass = null;
 var m_tb_control_desc = null;        // For logging.
 
@@ -327,15 +328,15 @@ function torbutton_init() {
         m_tb_control_pass = tlps.TorGetPassword(false);
     } catch(e) {}
 
-    // Try to get control port socket (an nsIFile) from Tor Launcher, since
-    // Tor Launcher knows how to handle its own preferences and how to
+    // Try to get the control port IPC file (an nsIFile) from Tor Launcher,
+    // since Tor Launcher knows how to handle its own preferences and how to
     // resolve relative paths.
     try {
-        m_tb_control_socket_file = tlps.TorGetControlSocketFile();
+        m_tb_control_ipc_file = tlps.TorGetControlIPCFile();
     } catch(e) {}
 
-    if (m_tb_control_socket_file) {
-        m_tb_control_desc = m_tb_control_socket_file.path;
+    if (m_tb_control_ipc_file) {
+        m_tb_control_desc = m_tb_control_ipc_file.path;
     } else {
         if (environ.exists("TOR_CONTROL_PORT")) {
             m_tb_control_port = environ.get("TOR_CONTROL_PORT");
@@ -438,7 +439,7 @@ function torbutton_init() {
     torbutton_notify_if_update_needed();
     torbutton_update_sync_ui();
 
-    createTorCircuitDisplay(m_tb_control_socket_file, m_tb_control_host,
+    createTorCircuitDisplay(m_tb_control_ipc_file, m_tb_control_host,
                             m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
 
@@ -1009,8 +1010,8 @@ function torbutton_send_ctrl_cmd(command) {
     let sts = Cc["@mozilla.org/network/socket-transport-service;1"]
         .getService(Ci.nsISocketTransportService);
     let socket;
-    if (m_tb_control_socket_file) {
-      socket = sts.createUnixDomainTransport(m_tb_control_socket_file);
+    if (m_tb_control_ipc_file) {
+      socket = sts.createUnixDomainTransport(m_tb_control_ipc_file);
     } else {
       socket = sts.createTransport(null, 0, m_tb_control_host,
                                    m_tb_control_port, null);
@@ -1350,7 +1351,7 @@ function torbutton_do_new_identity() {
   torbutton_log(3, "New Identity: Sending NEWNYM");
 
   // We only support TBB for newnym.
-  if (!m_tb_control_pass || (!m_tb_control_socket_file && !m_tb_control_port)) {
+  if (!m_tb_control_pass || (!m_tb_control_ipc_file && !m_tb_control_port)) {
     var warning = torbutton_get_property_string("torbutton.popup.no_newnym");
     torbutton_log(5, "Torbutton cannot safely newnym. It does not have access to the Tor Control Port.");
     window.alert(warning);
@@ -1508,7 +1509,7 @@ function torbutton_do_tor_check()
   const kEnvUseTransparentProxy = "TOR_TRANSPROXY";
   var env = Cc["@mozilla.org/process/environment;1"]
                  .getService(Ci.nsIEnvironment);
-  if ((m_tb_control_socket_file || m_tb_control_port) &&
+  if ((m_tb_control_ipc_file || m_tb_control_port) &&
       !env.exists(kEnvUseTransparentProxy) &&
       !env.exists(kEnvSkipControlPortTest) &&
       m_tb_prefs.getBoolPref("extensions.torbutton.local_tor_check")) {
@@ -1559,19 +1560,20 @@ function torbutton_local_tor_check()
   }
 
   // Sample response: net/listeners/socks="127.0.0.1:9149" "127.0.0.1:9150"
-  // First, check for command argument prefix.
+  // First, check for and remove the command argument prefix.
   if (0 != resp.indexOf(kCmdArg + '=')) {
     logUnexpectedResponse();
     return false;
   }
+  resp = resp.substr(kCmdArg.length + 1);
 
   // Retrieve configured proxy settings and check each listener against them.
-  // When a Unix domain socket is configured, a file URL should be present in
-  // network.proxy.socks.
+  // When the SOCKS prefs are set to use IPC (e.g., a Unix domain socket), a
+  // file URL should be present in network.proxy.socks.
   // See: https://bugzilla.mozilla.org/show_bug.cgi?id=1211567
   let socksAddr = m_tb_prefs.getCharPref("network.proxy.socks");
   let socksPort = m_tb_prefs.getIntPref("network.proxy.socks_port");
-  let socketPath;
+  let socksIPCPath;
   if (socksAddr && socksAddr.startsWith("file:")) {
     // Convert the file URL to a file path.
     try {
@@ -1579,19 +1581,29 @@ function torbutton_local_tor_check()
                         .getService(Ci.nsIIOService);
       let fph = ioService.getProtocolHandler("file")
                          .QueryInterface(Ci.nsIFileProtocolHandler);
-      socketPath = fph.getFileFromURLSpec(socksAddr).path;
+      socksIPCPath = fph.getFileFromURLSpec(socksAddr).path;
     } catch (e) {
-      torbutton_log(5, "Local Tor check: Unix domain socket error: " + e);
+      torbutton_log(5, "Local Tor check: IPC file error: " + e);
       return false;
     }
   } else {
     socksAddr = removeBrackets(socksAddr);
   }
 
-  let addrArray = resp.substr(kCmdArg.length + 1).split(' ');
+  // Split into quoted strings. This code is adapted from utils.splitAtSpaces()
+  // within tor-control-port.js; someday this code should use the entire
+  // tor-control-port.js framework.
+  let addrArray = [];
+  resp.replace(/((\S*?"(.*?)")+\S*|\S+)/g, function (a, captured) {
+    addrArray.push(captured);
+  });
+
   let foundSocksListener = false;
   for (let i = 0; !foundSocksListener && (i < addrArray.length); ++i) {
-    let addr = addrArray[i];
+    let addr;
+    try { addr = unescapeTorString(addrArray[i]); } catch (e) {}
+    if (!addr)
+      continue;
 
     // Remove double quotes if present.
     let len = addr.length;
@@ -1599,14 +1611,14 @@ function torbutton_local_tor_check()
       addr = addr.substring(1, len - 1);
 
     if (addr.startsWith("unix:")) {
-      if (!socketPath)
+      if (!socksIPCPath)
         continue;
 
       // Check against the configured UNIX domain socket proxy.
       let path = addr.substring(5);
-      torbutton_log(2, "Tor socks listener (socket): " + path);
-      foundSocksListener = (socketPath === path);
-    } else if (!socketPath) {
+      torbutton_log(2, "Tor socks listener (Unix domain socket): " + path);
+      foundSocksListener = (socksIPCPath === path);
+    } else if (!socksIPCPath) {
       // Check against the configured TCP proxy. We expect addr:port where addr
       // may be an IPv6 address; that is, it may contain colon characters.
       // Also, we remove enclosing square brackets before comparing addresses
@@ -2088,7 +2100,7 @@ function torbutton_check_protections()
   // See https://trac.torproject.org/projects/tor/ticket/10353 for more info.
   document.getElementById("torbutton-cookie-protector").hidden = m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart");
 
-  if (!m_tb_control_pass || (!m_tb_control_socket_file && !m_tb_control_port)) {
+  if (!m_tb_control_pass || (!m_tb_control_ipc_file && !m_tb_control_port)) {
     document.getElementById("torbutton-new-identity").disabled = true;
   }
 

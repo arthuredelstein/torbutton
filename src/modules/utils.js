@@ -74,5 +74,104 @@ var showDialog = function (parent, url, name, features) {
   }
 };
 
+// ## Tor control protocol utility functions
+
+let _torControl = {
+  // Unescape Tor Control string aStr (removing surrounding "" and \ escapes).
+  // Based on Vidalia's src/common/stringutil.cpp:string_unescape().
+  // Returns the unescaped string. Throws upon failure.
+  // Within Tor Launcher, the file components/tl-protocol.js also contains a
+  // copy of _strUnescape().
+  _strUnescape: function(aStr)
+  {
+    if (!aStr)
+      return aStr;
+
+    var len = aStr.length;
+    if ((len < 2) || ('"' != aStr.charAt(0)) || ('"' != aStr.charAt(len - 1)))
+      return aStr;
+
+    const kHexRE = /[0-9A-Fa-f]{2}/;
+    const kOctalRE = /[0-7]{3}/;
+    var rv = "";
+    var i = 1;
+    var lastCharIndex = len - 2;
+    while (i <= lastCharIndex)
+    {
+      var c = aStr.charAt(i);
+      if ('\\' == c)
+      {
+        if (++i > lastCharIndex)
+          throw new Error("missing character after \\");
+
+        c = aStr.charAt(i);
+        if ('n' == c)
+          rv += '\n';
+        else if ('r' == c)
+          rv += '\r';
+        else if ('t' == c)
+          rv += '\t';
+        else if ('x' == c)
+        {
+          if ((i + 2) > lastCharIndex)
+            throw new Error("not enough hex characters");
+
+          let s = aStr.substr(i + 1, 2);
+          if (!kHexRE.test(s))
+            throw new Error("invalid hex characters");
+
+          let val = parseInt(s, 16);
+          rv += String.fromCharCode(val);
+          i += 3;
+        }
+        else if (this._isDigit(c))
+        {
+          let s = aStr.substr(i, 3);
+          if ((i + 2) > lastCharIndex)
+            throw new Error("not enough octal characters");
+
+          if (!kOctalRE.test(s))
+            throw new Error("invalid octal characters");
+
+          let val = parseInt(s, 8);
+          rv += String.fromCharCode(val);
+          i += 3;
+        }
+        else // "\\" and others
+        {
+          rv += c;
+          ++i;
+        }
+      }
+      else if ('"' == c)
+        throw new Error("unescaped \" within string");
+      else
+      {
+        rv += c;
+        ++i;
+      }
+    }
+
+    // Convert from UTF-8 to Unicode. TODO: is UTF-8 always used in protocol?
+    return decodeURIComponent(escape(rv));
+  }, // _strUnescape()
+
+  // Within Tor Launcher, the file components/tl-protocol.js also contains a
+  // copy of _isDigit().
+  _isDigit: function(aChar)
+  {
+    const kRE = /^\d$/;
+    return aChar && kRE.test(aChar);
+  },
+}; // _torControl
+
+// __unescapeTorString(str, resultObj)__.
+// Unescape Tor Control string str (removing surrounding "" and \ escapes).
+// Returns the unescaped string. Throws upon failure.
+var unescapeTorString = function(str) {
+  return _torControl._strUnescape(str);
+};
+
 // Export utility functions for external use.
-let EXPORTED_SYMBOLS = ["bindPrefAndInit", "getPrefValue", "getEnv", "showDialog"];
+let EXPORTED_SYMBOLS = ["bindPrefAndInit", "getPrefValue", "getEnv",
+                        "showDialog", "unescapeTorString"];
