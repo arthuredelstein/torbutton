@@ -9,6 +9,7 @@
 
 let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm');
 let { Services } = Cu.import("resource://gre/modules/Services.jsm");
+let { showDialog } = Cu.import("resource://torbutton/modules/utils.js");
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -827,9 +828,7 @@ function torbutton_on_abouttor_load(aDoc) {
       label: button_label,
       accessKey: 'S',
       popup: null,
-      callback: function() {
-        window.openDialog("chrome://torbutton/content/preferences.xul",
-        "torbutton-preferences","chrome");}
+      callback: torbutton_open_prefs_dialog,
     }];
 
     let priority = box.PRIORITY_INFO_LOW;
@@ -2133,14 +2132,15 @@ function torbutton_check_protections()
 
 // Bug 1506 P2: I think cookie protections is a neat feature.
 function torbutton_open_cookie_dialog() {
-  window.openDialog('chrome://torbutton/content/torcookiedialog.xul','Cookie Protections',
-                                   'centerscreen,chrome,dialog,modal,resizable');
+  showDialog(window, 'chrome://torbutton/content/torcookiedialog.xul',
+             'Cookie Protections', 'centerscreen,chrome,dialog,modal,resizable');
 }
 
 // Bug 1506 P2/P3: Prefs are handled differently on android, I guess?
 function torbutton_open_prefs_dialog() {
-    window.openDialog("chrome://torbutton/content/preferences.xul","torbutton-preferences","centerscreen, chrome");
-    torbutton_log(2, 'opened preferences window');
+  showDialog(window, "chrome://torbutton/content/preferences.xul",
+             "torbutton-preferences","centerscreen, chrome");
+  torbutton_log(2, 'opened preferences window');
 }
 
 // Bug 1506 P0: Support code for checking Firefox versions. Not needed.

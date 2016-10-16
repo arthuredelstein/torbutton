@@ -52,5 +52,27 @@ var getEnv = function (name) {
   return env.exists(name) ? env.get(name) : undefined;
 };
 
+// ## Windows
+
+// __dialogsByName__.
+// Map of window names to dialogs.
+let dialogsByName = {};
+
+// __showDialog(parent, url, name, features, arg1, arg2, ...)__.
+// Like window.openDialog, but if the window is already
+// open, just focuses it instead of opening a new one.
+var showDialog = function (parent, url, name, features) {
+  let existingDialog = dialogsByName[name];
+  if (existingDialog && !existingDialog.closed) {
+    existingDialog.focus();
+    return existingDialog;
+  } else {
+    let newDialog = parent.openDialog.apply(parent,
+                                            Array.slice(arguments, 1));
+    dialogsByName[name] = newDialog;
+    return newDialog;
+  }
+};
+
 // Export utility functions for external use.
-let EXPORTED_SYMBOLS = ["bindPrefAndInit", "getPrefValue", "getEnv"];
+let EXPORTED_SYMBOLS = ["bindPrefAndInit", "getPrefValue", "getEnv", "showDialog"];
