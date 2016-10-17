@@ -18,9 +18,10 @@ const k_tb_tor_check_failed_topic = "Torbutton:TorCheckFailed";
 const k_tb_tor_resize_warn_pref =
   "extensions.torbutton.startup_resize_period"
 
+var m_tb_prefs = Services.prefs;
+
 // status
 var m_tb_wasinited = false;
-var m_tb_prefs = false;
 var m_tb_plugin_string = false;
 var m_tb_is_main_window = false;
 var m_tb_hidden_browser = false;
@@ -50,16 +51,12 @@ var torbutton_window_pref_observer =
 {
     register: function()
     {
-        var pref_service = Components.classes["@mozilla.org/preferences-service;1"]
-                                     .getService(Components.interfaces.nsIPrefBranchInternal);
-        this._branch = pref_service.QueryInterface(Components.interfaces.nsIPrefBranchInternal);
-        this._branch.addObserver("extensions.torbutton", this, false);
+        m_tb_prefs.addObserver("extensions.torbutton", this, false);
     },
 
     unregister: function()
     {
-        if (!this._branch) return;
-        this._branch.removeObserver("extensions.torbutton", this);
+        m_tb_prefs.removeObserver("extensions.torbutton", this);
     },
 
     // topic:   what event occurred
@@ -84,21 +81,18 @@ var torbutton_unique_pref_observer =
     register: function()
     {
         this.forced_ua = false;
-        var pref_service = Components.classes["@mozilla.org/preferences-service;1"]
-                                     .getService(Components.interfaces.nsIPrefBranchInternal);
-        this._branch = pref_service.QueryInterface(Components.interfaces.nsIPrefBranchInternal);
-        this._branch.addObserver("extensions.torbutton", this, false);
-        this._branch.addObserver("network.cookie", this, false);
-        this._branch.addObserver("browser.privatebrowsing.autostart", this, false);
-        this._branch.addObserver("javascript", this, false);
-        this._branch.addObserver("gfx", this, false);
-        this._branch.addObserver("noscript", this, false);
-        this._branch.addObserver("media", this, false);
-        this._branch.addObserver("mathml", this, false);
-        this._branch.addObserver("svg", this, false);
-        this._branch.addObserver("plugin.disable", this, false);
-        this._branch.addObserver("privacy.thirdparty.isolate", this, false);
-        this._branch.addObserver("privacy.resistFingerprinting", this, false);
+        m_tb_prefs.addObserver("extensions.torbutton", this, false);
+        m_tb_prefs.addObserver("network.cookie", this, false);
+        m_tb_prefs.addObserver("browser.privatebrowsing.autostart", this, false);
+        m_tb_prefs.addObserver("javascript", this, false);
+        m_tb_prefs.addObserver("gfx", this, false);
+        m_tb_prefs.addObserver("noscript", this, false);
+        m_tb_prefs.addObserver("media", this, false);
+        m_tb_prefs.addObserver("mathml", this, false);
+        m_tb_prefs.addObserver("svg", this, false);
+        m_tb_prefs.addObserver("plugin.disable", this, false);
+        m_tb_prefs.addObserver("privacy.thirdparty.isolate", this, false);
+        m_tb_prefs.addObserver("privacy.resistFingerprinting", this, false);
 
         // We observe xpcom-category-entry-added for plugins w/ Gecko-Content-Viewers
         var observerService = Cc["@mozilla.org/observer-service;1"].
@@ -108,16 +102,15 @@ var torbutton_unique_pref_observer =
 
     unregister: function()
     {
-        if (!this._branch) return;
-        this._branch.removeObserver("extensions.torbutton", this);
-        this._branch.removeObserver("network.cookie", this);
-        this._branch.removeObserver("browser.privatebrowsing.autostart", this);
-        this._branch.removeObserver("javascript", this);
-        this._branch.removeObserver("gfx", this);
-        this._branch.removeObserver("noscript", this);
-        this._branch.removeObserver("media", this);
-        this._branch.removeObserver("mathml", this);
-        this._branch.removeObserver("svg", this);
+        m_tb_prefs.removeObserver("extensions.torbutton", this);
+        m_tb_prefs.removeObserver("network.cookie", this);
+        m_tb_prefs.removeObserver("browser.privatebrowsing.autostart", this);
+        m_tb_prefs.removeObserver("javascript", this);
+        m_tb_prefs.removeObserver("gfx", this);
+        m_tb_prefs.removeObserver("noscript", this);
+        m_tb_prefs.removeObserver("media", this);
+        m_tb_prefs.removeObserver("mathml", this);
+        m_tb_prefs.removeObserver("svg", this);
 
         var observerService = Cc["@mozilla.org/observer-service;1"].
             getService(Ci.nsIObserverService);
@@ -280,9 +273,6 @@ function torbutton_init() {
         return;
     }
     m_tb_wasinited = true;
-
-    m_tb_prefs =  Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefBranch);
 
     // Determine if we are running inside Tor Browser.
     var cur_version;
@@ -1342,9 +1332,7 @@ function torbutton_do_new_identity() {
   torbutton_log(3, "New Identity: Syncing prefs");
 
   // Force prefs to be synced to disk
-  var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-      .getService(Components.interfaces.nsIPrefService);
-  prefService.savePrefFile(null);
+  m_tb_prefs.savePrefFile(null);
 
   torbutton_log(3, "New Identity: Clearing permissions");
 
@@ -1750,9 +1738,7 @@ function torbutton_update_disk_prefs() {
     } catch (e) {}
 
     // Force prefs to be synced to disk
-    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefService);
-    prefService.savePrefFile(null);
+    m_tb_prefs.savePrefFile(null);
 }
 
 function torbutton_update_fingerprinting_prefs() {
@@ -1797,9 +1783,7 @@ function torbutton_update_fingerprinting_prefs() {
     // XXX: How do we undo timezone?
 
     // Force prefs to be synced to disk
-    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefService);
-    prefService.savePrefFile(null);
+    m_tb_prefs.savePrefFile(null);
 }
 
 function torbutton_update_thirdparty_prefs() {
@@ -1815,9 +1799,7 @@ function torbutton_update_thirdparty_prefs() {
     m_tb_prefs.setBoolPref("security.enable_tls_session_tickets", !isolate);
 
     // Force prefs to be synced to disk
-    var prefService = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefService);
-    prefService.savePrefFile(null);
+    m_tb_prefs.savePrefFile(null);
 }
 
 var torbutton_sec_ml_bool_prefs = {
