@@ -1,105 +1,44 @@
-// Bug 1506 P1: Most of this code needs to go away. See also Bug 3100.
+// # Security Settings User Interface
 
-// PREFERences dialog functions
-//   torbutton_prefs_init() -- on dialog load
-//   torbutton_prefs_save() -- on dialog save
+// Utilities
+let { utils: Cu } = Components;
+let { getBoolPref, getIntPref, setBoolPref, setIntPref } =
+    Cu.import("resource://gre/modules/Services.jsm").Services.prefs;
 
-const Cc = Components.classes, Ci = Components.interfaces;
+// Description elements have the follow names.
+const descNames =
+      [, "desc_high", "desc_medium_high", "desc_medium_low", "desc_low"];
 
+// A single `state` object that reflects the user settings in this UI.
+let state = { slider : 0, custom : false};
 
-function torbutton_prefs_init(doc) {
-    torbutton_log(2, "called prefs_init()");
+// Set the desired slider value and update UI.
+function torbutton_set_slider(sliderPosition) {
+  state.slider = sliderPosition;
+  let slider = document.getElementById("torbutton_sec_slider");
+  slider.value = sliderPosition;
+  let descs = descNames.map(name => document.getElementById(name));
+  descs.forEach((desc, i) => desc.collapsed = sliderPosition !== i);
+};
 
-    var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
+// Set the desired custom value and update UI.
+function torbutton_set_custom(customValue) {
+  state.custom = customValue;
+  let sliderSettings = document.getElementById("torbutton_slider_settings");
+  let customSettings = document.getElementById("torbutton_custom_settings");
+  sliderSettings.hidden = customValue;
+  customSettings.hidden = !customValue;
+};
 
-    let sec_slider = doc.getElementById('torbutton_sec_slider');
-    let sec_custom = doc.getElementById('torbutton_sec_custom');
-    let custom_values = o_torprefs.getBoolPref('security_custom');
-    sec_slider.value = o_torprefs.getIntPref('security_slider');
-    sec_custom.checked = custom_values;
-    sec_custom.disabled = !custom_values;
-    torbutton_set_slider_text(doc, sec_custom.checked);
-    // If the custom checkbox is checked and the user is done with dragging
-    // uncheck the checkbox to allow setting the (newly) chosen security level.
-    sec_slider.dragStateChanged = function(isDragging) {
-        if (!isDragging && sec_custom.checked) {
-           sec_custom.checked = false;
-           sec_custom.disabled = true;
-        }
-    }
-    sec_slider.valueChanged = function(which, newValue, userChanged) {
-        torbutton_set_slider_text(doc, false);
-    }
-}
+// Read prefs 'extensions.torbutton.security_slider' and
+// 'extensions.torbutton.security_custom', and initialize the UI.
+function torbutton_init_security_ui() {
+  torbutton_set_slider(getIntPref("extensions.torbutton.security_slider"));
+  torbutton_set_custom(getBoolPref("extensions.torbutton.security_custom"));
+};
 
-function torbutton_prefs_save(doc) {
-    // Disable the Accept button once the user clicked on it as clicking on
-    // our active Accept button more than once can lead to all sort of weird
-    // behavior. See bug 11763 for an example.
-    doc.documentElement.getButton("accept").disabled = true;
-    torbutton_log(2, "called prefs_save()");
-    var o_torprefs = torbutton_get_prefbranch('extensions.torbutton.');
-
-    o_torprefs.setBoolPref('security_custom',
-                           doc.getElementById('torbutton_sec_custom').checked);
-    o_torprefs.setIntPref('security_slider',
-                          doc.getElementById('torbutton_sec_slider').value);
-
-    // If we have non-custom Security Slider settings update them now.
-    if (!o_torprefs.getBoolPref('security_custom')) {
-      let wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-                         .getService(Components.interfaces.nsIWindowMediator);
-      let win = wm.getMostRecentWindow("navigator:browser");
-      win.torbutton_update_security_slider();
-    }
-}
-
-function torbutton_toggle_slider(doc, pos) {
-    doc.getElementById("torbutton_sec_slider").value = pos;
-    // Make sure the custom checkbox is unchecked as the user seems to want one
-    // of the defined security levels.
-    let sec_custom = doc.getElementById("torbutton_sec_custom");
-    if (sec_custom.checked) {
-        sec_custom.checked = false;
-    }
-    torbutton_set_slider_text(doc, false);
-}
-
-function torbutton_set_slider_text(doc, custom) {
-  let level = doc.getElementById("torbutton_sec_slider").value;
-  if (custom) {
-    level = 5;
-  }
-  switch (level) {
-    case (1):
-      doc.getElementById("desc_low").collapsed = true;
-      doc.getElementById("desc_medium_low").collapsed = true;
-      doc.getElementById("desc_medium_high").collapsed = true;
-      doc.getElementById("desc_high").collapsed = false;
-      break;
-    case (2):
-      doc.getElementById("desc_low").collapsed = true;
-      doc.getElementById("desc_medium_low").collapsed = true;
-      doc.getElementById("desc_medium_high").collapsed = false;
-      doc.getElementById("desc_high").collapsed = true;
-      break;
-   case (3):
-      doc.getElementById("desc_low").collapsed = true;
-      doc.getElementById("desc_medium_low").collapsed = false;
-      doc.getElementById("desc_medium_high").collapsed = true;
-      doc.getElementById("desc_high").collapsed = true;
-      break;
-    case (4):
-      doc.getElementById("desc_low").collapsed = false;
-      doc.getElementById("desc_medium_low").collapsed = true;
-      doc.getElementById("desc_medium_high").collapsed = true;
-      doc.getElementById("desc_high").collapsed = true;
-      break;
-    case (5):
-      doc.getElementById("desc_low").collapsed = true;
-      doc.getElementById("desc_medium_low").collapsed = true;
-      doc.getElementById("desc_medium_high").collapsed = true;
-      doc.getElementById("desc_high").collapsed = true;
-      break;
-  }
-}
+// Write the two prefs from the current settings.
+function torbutton_save_security_settings() {
+  setIntPref("extensions.torbutton.security_slider", state.slider);
+  setBoolPref("extensions.torbutton.security_custom", state.custom);
+};
