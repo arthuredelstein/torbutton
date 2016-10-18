@@ -1,4 +1,4 @@
-// Bug 1506 P0-P3: These utility functions might be useful, but 
+// Bug 1506 P1-P3: These utility functions might be useful, but
 // you probably just want to rewrite them or use the underlying
 // code directly. I don't see any of them as essential for 1506,
 // really.
@@ -7,12 +7,6 @@ var m_tb_torlog = Components.classes["@torproject.org/torbutton-logger;1"]
 .getService(Components.interfaces.nsISupports).wrappedJSObject;
 
 var m_tb_string_bundle = torbutton_get_stringbundle();
-
-// Bug 1506 P0: Use the log service directly
-function torbutton_eclog(nLevel, sMsg) {
-    m_tb_torlog.eclog(nLevel, sMsg);
-    return true;
-}
 
 function torbutton_safelog(nLevel, sMsg, scrub) {
     m_tb_torlog.safe_log(nLevel, sMsg, scrub);
