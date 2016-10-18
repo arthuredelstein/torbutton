@@ -1,4 +1,4 @@
-// Bug 1506 P0-P5: This is the main Torbutton overlay file. Much needs to be
+// Bug 1506 P1-P5: This is the main Torbutton overlay file. Much needs to be
 // preserved here, but in an ideal world, most of this code should perhaps be
 // moved into an XPCOM service, and much can also be tossed. See also
 // individual 1506 comments for details.
@@ -2119,25 +2119,6 @@ function torbutton_open_prefs_dialog() {
   torbutton_log(2, 'opened preferences window');
 }
 
-// Bug 1506 P0: Support code for checking Firefox versions. Not needed.
-function torbutton_gecko_compare(aVersion) {
-    var ioService = Components.classes["@mozilla.org/network/io-service;1"]
-                    .getService(Components.interfaces.nsIIOService);
-    var httpProtocolHandler = ioService.getProtocolHandler("http")
-                              .QueryInterface(Components.interfaces.nsIHttpProtocolHandler);
-    var versionComparator = null;
-
-    if ("nsIVersionComparator" in Components.interfaces) {
-        versionComparator = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
-                            .getService(Components.interfaces.nsIVersionComparator);
-    } else {
-        versionComparator = Components.classes["@mozilla.org/updates/version-checker;1"]
-                            .getService(Components.interfaces.nsIVersionChecker);
-    }
-    var geckoVersion = httpProtocolHandler.misc.match(/rv:([0-9.]+)/)[1];
-    return versionComparator.compare(aVersion, geckoVersion);
-}
-
 // -------------- HISTORY & COOKIES ---------------------
 
 // Bug 1506 P4: Used by New Identity if cookie protections are
@@ -2330,7 +2311,7 @@ function torbutton_do_startup()
     }
 }
 
-// Bug 1506 P0: Perform version check when a new tab is opened.
+// Perform version check when a new tab is opened.
 function torbutton_new_tab(event)
 {
     // listening for new tabs
