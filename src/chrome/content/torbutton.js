@@ -10,6 +10,7 @@
 let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm');
 let { Services } = Cu.import("resource://gre/modules/Services.jsm");
 let { showDialog } = Cu.import("resource://torbutton/modules/utils.js");
+let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js");
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -43,8 +44,6 @@ var m_tb_orig_BrowserOnAboutPageLoad = null;
 
 var m_tb_domWindowUtils = window.QueryInterface(Ci.nsIInterfaceRequestor).
                           getInterface(Ci.nsIDOMWindowUtils);
-
-var m_tb_sliderUpdate = false;
 
 // Bug 1506 P1: This object is only for updating the UI for toggling and style
 var torbutton_window_pref_observer =
@@ -85,11 +84,7 @@ var torbutton_unique_pref_observer =
         m_tb_prefs.addObserver("network.cookie", this, false);
         m_tb_prefs.addObserver("browser.privatebrowsing.autostart", this, false);
         m_tb_prefs.addObserver("javascript", this, false);
-        m_tb_prefs.addObserver("gfx", this, false);
         m_tb_prefs.addObserver("noscript", this, false);
-        m_tb_prefs.addObserver("media", this, false);
-        m_tb_prefs.addObserver("mathml", this, false);
-        m_tb_prefs.addObserver("svg", this, false);
         m_tb_prefs.addObserver("plugin.disable", this, false);
         m_tb_prefs.addObserver("privacy.thirdparty.isolate", this, false);
         m_tb_prefs.addObserver("privacy.resistFingerprinting", this, false);
@@ -106,11 +101,10 @@ var torbutton_unique_pref_observer =
         m_tb_prefs.removeObserver("network.cookie", this);
         m_tb_prefs.removeObserver("browser.privatebrowsing.autostart", this);
         m_tb_prefs.removeObserver("javascript", this);
-        m_tb_prefs.removeObserver("gfx", this);
         m_tb_prefs.removeObserver("noscript", this);
-        m_tb_prefs.removeObserver("media", this);
-        m_tb_prefs.removeObserver("mathml", this);
-        m_tb_prefs.removeObserver("svg", this);
+        m_tb_prefs.removeObserver("plugin.disable", this);
+        m_tb_prefs.removeObserver("privacy.thirdparty.isolate", this);
+        m_tb_prefs.removeObserver("privacy.resistFingerprinting", this);
 
         var observerService = Cc["@mozilla.org/observer-service;1"].
             getService(Ci.nsIObserverService);
@@ -148,7 +142,9 @@ var torbutton_unique_pref_observer =
         }
  
         if (topic != "nsPref:changed") return;
-
+        if (data.startsWith("noscript.")) {
+          torbutton_update_noscript_button();
+        }
         switch (data) {
             case "network.cookie.cookieBehavior":
                 var val = m_tb_prefs.getIntPref("network.cookie.cookieBehavior");
@@ -178,42 +174,6 @@ var torbutton_unique_pref_observer =
                 break;
             case "extensions.torbutton.hide_sync_ui":
                 torbutton_update_sync_ui();
-                break;
-            case "gfx.font_rendering.opentype_svg.enabled":
-            case "javascript.options.ion.content":
-            case "javascript.options.typeinference":
-            case "noscript.forbidMedia":
-            case "media.webaudio.enabled":
-            case "mathml.disabled":
-            case "javascript.options.baselinejit.content":
-            case "noscript.forbidFonts":
-            case "noscript.globalHttpsWhitelist":
-            case "noscript.global":
-            case "svg.in-content.enabled":
-                // |m_tb_slider_update| is only set if the user updated a
-                // preference under control of the security slider via the
-                // slider on the Torbutton dialog. This in turn means we can
-                // skip the code dealing with setting/unsetting the custom mode
-                // in this case.
-                if (!m_tb_sliderUpdate) {
-                    // Do we already have custom settings?
-                    let customSlider = m_tb_prefs.
-                        getBoolPref("extensions.torbutton.security_custom");
-                    // A preference governed by the security slider got changed
-                    // but we are not in custom mode yet. Change that.
-                    if (!customSlider) {
-                        m_tb_prefs.
-                            setBoolPref("extensions.torbutton.security_custom",
-                            true);
-                    } else {
-                        // We are in custom mode. Check whether all prefs are
-                        // reset and reset the mode if so. Otherwise we remain
-                        // in custom mode.
-                        torbutton_log(4, "custom mode and we got: " + data);
-                        torbutton_security_slider_custom_check(m_tb_prefs.
-                            getIntPref("extensions.torbutton.security_slider"));
-                    }
-                }
                 break;
         }
     }
@@ -268,7 +228,9 @@ function torbutton_init_toolbutton()
 // called once per browser window.. This might belong in a component.
 function torbutton_init() {
     torbutton_log(3, 'called init()');
-    
+
+    SecurityPrefs.initialize();
+
     if (m_tb_wasinited) {
         return;
     }
@@ -370,12 +332,6 @@ function torbutton_init() {
     document.addEventListener("AboutTorLoad", function(aEvent) {
       torbutton_on_abouttor_load(aEvent.target);
     }, false, true);
-
-    // Set some important security prefs according to the chosen security level
-    // if there are no custom settings to respect.
-    if (!m_tb_prefs.getBoolPref("extensions.torbutton.security_custom")) {
-      torbutton_update_security_slider();
-    }
 
     // XXX: Get rid of the cached asmjs (or IndexedDB) files on disk in case we
     // don't allow things saved to disk. This is an ad-hoc fix to work around
@@ -1793,228 +1749,6 @@ function torbutton_update_thirdparty_prefs() {
     m_tb_prefs.savePrefFile(null);
 }
 
-var torbutton_sec_ml_bool_prefs = {
-  "javascript.options.ion.content" : false,
-  "javascript.options.typeinference" : false,
-  "noscript.forbidMedia" : true,
-  "media.webaudio.enabled" : false,
-  "mathml.disabled" : true
-};
-
-var torbutton_sec_mh_bool_prefs = {
-  "javascript.options.baselinejit.content" : false,
-  "gfx.font_rendering.opentype_svg.enabled" : false,
-  "noscript.global" : false,
-  "noscript.globalHttpsWhitelist" : true
-};
-
-var torbutton_sec_h_bool_prefs = {
-  "noscript.forbidFonts" : true,
-  "noscript.global" : false,
-  "svg.in-content.enabled" : false
-};
-
-function torbutton_update_security_slider() {
-  // Avoid checking the custom settings checkbox.
-  m_tb_sliderUpdate = true;
-  let mode = m_tb_prefs.getIntPref("extensions.torbutton.security_slider");
-  let capValue = m_tb_prefs.getCharPref("capability.policy.maonoscript.sites");
-  switch (mode) {
-   case 1:
-      for (p in torbutton_sec_ml_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, torbutton_sec_ml_bool_prefs[p])
-      }
-      for (p in torbutton_sec_mh_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, torbutton_sec_mh_bool_prefs[p])
-        // noscript.globalHttpsWhitelist is special: We don't want it in this
-        // mode.
-        if (p === "noscript.globalHttpsWhitelist") {
-          m_tb_prefs.setBoolPref(p, !torbutton_sec_mh_bool_prefs[p])
-        }
-      }
-      for (p in torbutton_sec_h_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, torbutton_sec_h_bool_prefs[p])
-      }
-      // Removing "https:" is needed due to a bug in older Noscript versions.
-      // We leave that in for a while as there may be users that were affected
-      // by this bug. Removing it immediately and having the auto-updater might
-      // leave users exposed to the problem.
-      if (capValue.indexOf(" https:") >= 0) {
-        m_tb_prefs.setCharPref("capability.policy.maonoscript.sites",
-          capValue.replace(" https:", ""));
-      }
-      break;
-    case 2:
-      for (p in torbutton_sec_ml_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, torbutton_sec_ml_bool_prefs[p])
-      }
-      // Order matters here as both the high mode and the medium-high mode
-      // share some preferences/values. So, let's revert the high mode
-      // preferences first and set the medium-high mode ones afterwards.
-      for (p in torbutton_sec_h_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, !torbutton_sec_h_bool_prefs[p])
-      }
-      for (p in torbutton_sec_mh_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, torbutton_sec_mh_bool_prefs[p])
-      }
-      break;
-    case 3:
-      for (p in torbutton_sec_ml_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, torbutton_sec_ml_bool_prefs[p])
-      }
-      for (p in torbutton_sec_mh_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, !torbutton_sec_mh_bool_prefs[p])
-      }
-      for (p in torbutton_sec_h_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, !torbutton_sec_h_bool_prefs[p])
-      }
-      // Removing "https:" is needed due to a bug in older Noscript versions.
-      // We leave that in for a while as there may be users that were affected
-      // by this bug. Removing it immediately and having the auto-updater might
-      // leave users exposed to the problem.
-      if (capValue.indexOf(" https:") >= 0) {
-        m_tb_prefs.setCharPref("capability.policy.maonoscript.sites",
-          capValue.replace(" https:", ""));
-      }
-      break;
-    case 4:
-      for (p in torbutton_sec_ml_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, !torbutton_sec_ml_bool_prefs[p])
-      }
-      for (p in torbutton_sec_mh_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, !torbutton_sec_mh_bool_prefs[p])
-      }
-      for (p in torbutton_sec_h_bool_prefs) {
-        m_tb_prefs.setBoolPref(p, !torbutton_sec_h_bool_prefs[p])
-      }
-      // Removing "https:" is needed due to a bug in older Noscript versions.
-      // We leave that in for a while as there may be users that were affected
-      // by this bug. Removing it immediately and having the auto-updater might
-      // leave users exposed to the problem.
-      if (capValue.indexOf(" https:") >= 0) {
-        m_tb_prefs.setCharPref("capability.policy.maonoscript.sites",
-          capValue.replace(" https:", ""));
-      }
-      break;
-  }
-  /* Update the NoScript button to reflect any changes */
-  try {
-      let wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-                         .getService(Components.interfaces.nsIWindowMediator);
-      let browserEnumerator = wm.getEnumerator("navigator:browser");
-
-      // Update every window's NoScript status...
-      while (browserEnumerator.hasMoreElements()) {
-          let win = browserEnumerator.getNext();
-          win.noscriptOverlay._syncUINow();
-      }
-      torbutton_log(3, 'Updated NoScript status for security slider');
-  } catch(e) {
-      torbutton_log(4, 'Failed to update NoScript status for security slider: '+e);
-  }
-  torbutton_log(3, 'Security Slider Pref Update Complete');
-  m_tb_sliderUpdate = false;
-}
-
-// The user (re)set a pref which is relevant to the security slider while she
-// was in custom mode. Check whether the preference values fit to the mode which
-// is still on the slider. Iff so, we are leaving the custom mode.
-function torbutton_security_slider_custom_check(mode) {
-  let capValue = m_tb_prefs.getCharPref("capability.policy.maonoscript.sites");
-  switch (mode) {
-    case 1:
-      for (p in torbutton_sec_ml_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) !== torbutton_sec_ml_bool_prefs[p]) {
-          return;
-        }
-      }
-      for (p in torbutton_sec_mh_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) !== torbutton_sec_mh_bool_prefs[p]) {
-          // We don't want to have the whitelist in high mode. JavaScript is
-          // disabled globally.
-          if (p === "noscript.globalHttpsWhitelist") {
-            continue;
-          }
-          return;
-        }
-      }
-      for (p in torbutton_sec_h_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) !== torbutton_sec_h_bool_prefs[p]) {
-          return;
-        }
-      }
-      // We are still here which means all preferences are properly reset. Leave
-      // custom mode.
-      m_tb_prefs.setBoolPref("extensions.torbutton.security_custom", false);
-      break;
-    case 2:
-      for (p in torbutton_sec_ml_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) !== torbutton_sec_ml_bool_prefs[p]) {
-          return;
-        }
-      }
-      for (p in torbutton_sec_mh_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) !== torbutton_sec_mh_bool_prefs[p]) {
-          return;
-        }
-      }
-      for (p in torbutton_sec_h_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) === torbutton_sec_h_bool_prefs[p]) {
-          // We have the whitelist and JavaScript is disabled in medium-high
-          // mode as well.
-          if (p === "noscript.global") {
-            continue;
-          }
-          return;
-        }
-      }
-      // We are still here which means all preferences are properly reset. Leave
-      // custom mode.
-      m_tb_prefs.setBoolPref("extensions.torbutton.security_custom", false);
-      break;
-    case 3:
-      for (p in torbutton_sec_ml_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) !== torbutton_sec_ml_bool_prefs[p]) {
-          return;
-        }
-      }
-      for (p in torbutton_sec_mh_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) === torbutton_sec_mh_bool_prefs[p]) {
-          return;
-        }
-      }
-      for (p in torbutton_sec_h_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) === torbutton_sec_h_bool_prefs[p]) {
-          return;
-        }
-      }
-      // We are still here which means all preferences are properly reset. Leave
-      // custom mode.
-      m_tb_prefs.setBoolPref("extensions.torbutton.security_custom", false);
-      break;
-    case 4:
-      for (p in torbutton_sec_ml_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) === torbutton_sec_ml_bool_prefs[p]) {
-          return;
-        }
-      }
-      for (p in torbutton_sec_mh_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) === torbutton_sec_mh_bool_prefs[p]) {
-          return;
-        }
-      }
-      for (p in torbutton_sec_h_bool_prefs) {
-        if (m_tb_prefs.getBoolPref(p) === torbutton_sec_h_bool_prefs[p]) {
-          return;
-        }
-      }
-      // We are still here which means all preferences are properly reset. Leave
-      // custom mode.
-      m_tb_prefs.setBoolPref("extensions.torbutton.security_custom", false);
-      break;
-  }
-}
-
 function torbutton_close_tabs_on_new_identity() {
     var close_newnym = m_tb_prefs.getBoolPref("extensions.torbutton.close_newnym");
     if (!close_newnym) {
@@ -2835,5 +2569,28 @@ function torbutton_update_sync_ui()
     torbutton_log(5, 'Error updating the Sync UI: ' + e);
   }
 }
+
+// Update the NoScript button to reflect any changes to noscript prefs
+function torbutton_update_noscript_button()
+{
+  // Make sure pref values have fully propagated inside NoScript before
+  // we sync the UI.
+  setTimeout(() => {
+    try {
+      let wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
+          .getService(Components.interfaces.nsIWindowMediator);
+      let browserEnumerator = wm.getEnumerator("navigator:browser");
+      // Update every window's NoScript status...
+      while (browserEnumerator.hasMoreElements()) {
+        let win = browserEnumerator.getNext();
+        win.noscriptOverlay._syncUINow();
+      }
+      torbutton_log(3, 'Updated NoScript status for security settings');
+    } catch (e) {
+      torbutton_log(4, 'Failed to update NoScript status for security setings: '+e);
+    }
+  }, 0);
+}
+
 
 //vim:set ts=4

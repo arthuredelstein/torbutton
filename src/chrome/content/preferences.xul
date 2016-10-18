@@ -10,63 +10,58 @@
         title="&torbutton.prefs.security_settings;"
         buttons="accept,cancel"
         persist="screenX screenY width height"
-        onload="torbutton_prefs_init(document)"
+        onload="torbutton_init_security_ui()"
         align="stretch"
         pack="center"
-        maxheight="350"
+        maxheight="300"
+        minwidth="300"
         maxwidth="400"
-        ondialogaccept="torbutton_prefs_save(document)" >
+        ondialogaccept="torbutton_save_security_settings()"
+        width="400" >
 
     <script type="application/x-javascript" src="torbutton_util.js"/>
     <script type="application/x-javascript" src="preferences.js"/>
     <vbox flex="1" align="stretch">
         <groupbox align="stretch" flex="1"> <!-- security settings container -->
           <caption label="&torbutton.prefs.sec_caption;"/>
-          <hbox flex="1" align="stretch">
+          <hbox id="torbutton_slider_settings" flex="1" align="stretch" hidden="false">
             <vbox>
               <hbox height="200">
                 <vbox>
                   <scale id="torbutton_sec_slider" flex="1" min="1" max="4"
-                         movetoclick="true" orient="vertical"/>
+                         movetoclick="true" orient="vertical"
+                         onchange="torbutton_set_slider(this.value)"/>
                 </vbox>
                 <vbox>
                   <hbox flex="1" align="start">
                     <description id="torbutton_sec_high"
-                                 tooltip="high_preview"
-                                 onclick="torbutton_toggle_slider(document, 1);">
+                                 onclick="torbutton_set_slider(1);"
+                                 tooltip="high_preview">
                       &torbutton.prefs.sec_high;
                     </description>
                   </hbox>
                   <hbox flex="1" align="center">
                     <description id="torbutton_sec_med_high"
-                                 tooltip="mh_preview"
-                                 onclick="torbutton_toggle_slider(document, 2);">
+                                 onclick="torbutton_set_slider(2);"
+                                 tooltip="mh_preview">
                       &torbutton.prefs.sec_med_high;
                     </description>
                   </hbox>
                   <hbox flex="1" align="center">
                     <description id="torbutton_sec_med_low"
-                                 tooltip="ml_preview"
-                                 onclick="torbutton_toggle_slider(document, 3);">
+                                 onclick="torbutton_set_slider(3);"
+                                 tooltip="ml_preview">
                       &torbutton.prefs.sec_med_low;
                     </description>
                   </hbox>
                   <hbox flex="1" align="end">
                     <description id="torbutton_sec_low"
-                                 tooltip="low_preview"
-                                 onclick="torbutton_toggle_slider(document, 4);">
+                                 onclick="torbutton_set_slider(4);"
+                                 tooltip="low_preview">
                       &torbutton.prefs.sec_low;
                     </description>
                   </hbox>
                 </vbox>
-              </hbox>
-              <hbox>
-                <!-- We are using |oncommand| instead of |onclick| as the former does
-                     not fire if the checkbox is disabled and it does fire after the
-                     checkbox adapted its state. -->
-                <checkbox id="torbutton_sec_custom" flex="1"
-                          oncommand="torbutton_set_slider_text(document, event.target.checked);"
-                          label="&torbutton.prefs.sec_custom;"/>
               </hbox>
             </vbox>
             <!-- A width of 400 is already too much for OS X it seems. The above
@@ -161,6 +156,20 @@
               </vbox>
             </vbox>
           </hbox>
+          <vbox id="torbutton_custom_settings"
+                hidden="true"
+                width="300"
+                height="200"
+                style="overflow:auto;">
+            <description>
+              &torbutton.prefs.custom_warning;
+            </description>
+            <hbox>
+              <button id="torbutton_restore_defaults_button"
+                      oncommand="torbutton_set_custom(false);"
+                      label="&torbutton.prefs.restore_defaults;"/>
+            </hbox>
+          </vbox>
         </groupbox>
       </vbox>
 
@@ -200,4 +209,4 @@
      <html:br></html:br>
      <html:div>&torbutton.prefs.sec_low_usable_desc;</html:div>
    </tooltip>
-</dialog>
+ </dialog>
