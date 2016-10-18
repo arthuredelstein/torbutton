@@ -23,11 +23,11 @@ var getPrefValue = function (prefName) {
   }
 };
 
-// __bindPrefAndInit(prefName, prefHandler)__
-// Applies prefHandler to the current value of pref specified by prefName.
-// Re-applies prefHandler whenever the value of the pref changes.
+// __bindPref(prefName, prefHandler, init)__
+// Applies prefHandler whenever the value of the pref changes.
+// If init is true, applies prefHandler to the current value.
 // Returns a zero-arg function that unbinds the pref.
-var bindPrefAndInit = function (prefName, prefHandler) {
+var bindPref = function (prefName, prefHandler, init = false) {
   let update = () => { prefHandler(getPrefValue(prefName)); },
       observer = { observe : function (subject, topic, data) {
                      if (data === prefName) {
@@ -35,9 +35,18 @@ var bindPrefAndInit = function (prefName, prefHandler) {
                      }
                    } };
   prefs.addObserver(prefName, observer, false);
-  update();
+  if (init) {
+    update();
+  }
   return () => { prefs.removeObserver(prefName, observer); };
 };
+
+// __bindPrefAndInit(prefName, prefHandler)__
+// Applies prefHandler to the current value of pref specified by prefName.
+// Re-applies prefHandler whenever the value of the pref changes.
+// Returns a zero-arg function that unbinds the pref.
+var bindPrefAndInit = (prefName, prefHandler) =>
+    bindPref(prefName, prefHandler, true);
 
 // ## Environment variables
 
@@ -74,5 +83,17 @@ var showDialog = function (parent, url, name, features) {
   }
 };
 
+// __browserWindows()__.
+// Returns an array of chrome windows containing a browser element.
+var browserWindows = function () {
+  let browserEnumerator = Services.wm.getEnumerator("navigator:browser");
+  let results = [];
+  while (browserEnumerator.hasMoreElements()) {
+    results.push(browserEnumerator.getNext());
+  }
+  return results;
+};
+
 // Export utility functions for external use.
-let EXPORTED_SYMBOLS = ["bindPrefAndInit", "getPrefValue", "getEnv", "showDialog"];
+let EXPORTED_SYMBOLS = ["bindPref", "bindPrefAndInit", "browserWindows",
+                        "getEnv", "getPrefValue", "showDialog"];
