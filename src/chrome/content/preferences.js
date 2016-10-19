@@ -7,6 +7,11 @@ let { bindPrefAndInit } =
 let { setBoolPref, setIntPref } =
     Cu.import("resource://gre/modules/Services.jsm").Services.prefs;
 
+// Utility functions to convert between the legacy 4-value pref index
+// and the 3-valued security slider.
+let sliderPositionToPrefSetting = pos => [, 1, 2, 4][pos];
+let prefSettingToSliderPosition = pref => [, 1, 2, 2, 3][pref];
+
 // __torbutton_init_security_ui()__.
 // Wire the Security Settings UI to two prefs,
 // 'extensions.torbutton.security_slider' and
@@ -18,25 +23,26 @@ let torbutton_init_security_ui = function () {
   // reflect its new value.
   const slider = document.getElementById("torbutton_sec_slider");
   bindPrefAndInit("extensions.torbutton.security_slider", prefValue => {
-    slider.value = prefValue;
+    slider.value = prefSettingToSliderPosition(prefValue);
   });
   // When security slider is finished dragging, propagate its value to the pref.
   // (For performance and security reasons, we don't set prefs during dragging.)
   slider.dragStateChanged = function(isDragging) {
     let newValue = slider.value;
-    if (newValue >= 1 && newValue <= 4) {
-      setIntPref("extensions.torbutton.security_slider", newValue);
+    if (newValue >= 1 && newValue <= 3) {
+      setIntPref("extensions.torbutton.security_slider",
+                 sliderPositionToPrefSetting(newValue));
     }
   };
   // When the slider moves during or after a drag, or after it moves to
   // reflect a change in the pref value, show the matching description.
   const descNames =
-        [, "desc_high", "desc_medium_high", "desc_medium_low", "desc_low"];
+        [, "desc_high", "desc_medium", "desc_low"];
   const descs = descNames.map(name => document.getElementById(name));
   const updateDescs = sliderPosition =>
         descs.forEach((desc, i) => desc.collapsed = sliderPosition !== i);
   slider.valueChanged = function (which, newValue, userChanged) {
-    if (userChanged && newValue >= 1 && newValue <= 4) {
+    if (userChanged && newValue >= 1 && newValue <= 3) {
       updateDescs(newValue);
     }
   };

@@ -15,18 +15,19 @@ let log = (level, msg) => logger.log(level, msg);
 
 // __kSecuritySettings__.
 // A table of all prefs bound to the security slider, and the value
-// for each security setting.
+// for each security setting. Note that 2-m and 3-m are identical,
+// corresponding to the old 2-medium-high setting.
 const kSecuritySettings = {
-  // Preference name :                        [0, 1-high 2-mh   3-ml   4-low]
+  // Preference name :                        [0, 1-high 2-m    3-m    4-low]
   "javascript.options.ion.content" :          [,  false, false, false, true ],
   "javascript.options.typeinference" :        [,  false, false, false, true ],
   "noscript.forbidMedia" :                    [,  true,  true,  true,  false],
   "media.webaudio.enabled" :                  [,  false, false, false, true ],
   "mathml.disabled" :                         [,  true,  true,  true,  false],
-  "javascript.options.baselinejit.content" :  [,  false, false, true,  true ],
-  "gfx.font_rendering.opentype_svg.enabled" : [,  false, false, true,  true ],
-  "noscript.global" :                         [,  false, false, true,  true ],
-  "noscript.globalHttpsWhitelist" :           [,  false, true,  false, false],
+  "javascript.options.baselinejit.content" :  [,  false, false, false, true ],
+  "gfx.font_rendering.opentype_svg.enabled" : [,  false, false, false, true ],
+  "noscript.global" :                         [,  false, false, false, true ],
+  "noscript.globalHttpsWhitelist" :           [,  false, true,  true,  false],
   "noscript.forbidFonts" :                    [,  true,  false, false, false],
   "svg.in-content.enabled" :                  [,  false, true,  true,  true ],
 };
@@ -123,6 +124,12 @@ var initialize = function () {
       setBoolPref(kCustomPref, false);
     }
   });
+  // Migrate from old medium-low (3) to new medium (2).
+  if (getBoolPref("extensions.torbutton.security_custom") === false &&
+      getIntPref("extensions.torbutton.security_slider") === 3) {
+    setIntPref("extensions.torbutton.security_slider", 2);
+    write_setting_to_prefs(2);
+  }
   log(4, "security-prefs.js initialization complete");
 };
 

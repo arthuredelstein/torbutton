@@ -27,7 +27,7 @@
             <vbox>
               <hbox height="200">
                 <vbox>
-                  <scale id="torbutton_sec_slider" flex="1" min="1" max="4"
+                  <scale id="torbutton_sec_slider" flex="1" min="1" max="3"
                          movetoclick="true" orient="vertical"/>
                 </vbox>
                 <vbox>
@@ -38,15 +38,9 @@
                     </description>
                   </hbox>
                   <hbox flex="1" align="center">
-                    <description id="torbutton_sec_med_high"
-                                 tooltip="mh_preview">
-                      &torbutton.prefs.sec_med_high;
-                    </description>
-                  </hbox>
-                  <hbox flex="1" align="center">
-                    <description id="torbutton_sec_med_low"
-                                 tooltip="ml_preview">
-                      &torbutton.prefs.sec_med_low;
+                    <description id="torbutton_sec_medium"
+                                 tooltip="medium_preview">
+                      &torbutton.prefs.sec_medium;
                     </description>
                   </hbox>
                   <hbox flex="1" align="end">
@@ -95,7 +89,7 @@
                   &torbutton.prefs.sec_webfonts_desc;
                 </description>
               </vbox>
-              <vbox id="desc_medium_high" collapsed="true">
+              <vbox id="desc_medium" collapsed="true">
                 <description
                   class="slider-text-size, slider-text-weight">
                   &torbutton.prefs.sec_gen_desc;
@@ -119,24 +113,6 @@
                 <description class="slider-text-size"
                   tooltiptext="&torbutton.prefs.sec_font_rend_svg_tooltip;">
                   &torbutton.prefs.sec_font_rend_desc;
-                </description>
-              </vbox>
-             <vbox id="desc_medium_low" collapsed="true">
-                <description
-                  class="slider-text-size, slider-text-weight">
-                  &torbutton.prefs.sec_gen_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_jit_desc_tooltip;">
-                  &torbutton.prefs.sec_some_jit_desc; &torbutton.prefs.sec_jit_slower_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_html5_tooltip;">
-                  &torbutton.prefs.sec_html5_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_mathml_desc_tooltip;">
-                  &torbutton.prefs.sec_mathml_desc;
                 </description>
               </vbox>
               <vbox id="desc_low" collapsed="false">
@@ -179,7 +155,7 @@
      <html:div>&torbutton.prefs.sec_svg_desc;</html:div>
      <html:div>&torbutton.prefs.sec_webfonts_desc;</html:div>
    </tooltip>
-   <tooltip id="mh_preview">
+   <tooltip id="medium_preview">
      <html:b>&torbutton.prefs.sec_gen_desc;</html:b>
      <html:br></html:br>
      <html:br></html:br>
@@ -188,14 +164,6 @@
      <html:div>&torbutton.prefs.sec_html5_desc;</html:div>
      <html:div>&torbutton.prefs.sec_mathml_desc;</html:div>
      <html:div>&torbutton.prefs.sec_font_rend_desc;</html:div>
-   </tooltip>
-   <tooltip id="ml_preview">
-     <html:b>&torbutton.prefs.sec_gen_desc;</html:b>
-     <html:br></html:br>
-     <html:br></html:br>
-     <html:div>&torbutton.prefs.sec_some_jit_desc; &torbutton.prefs.sec_jit_slower_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_html5_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_mathml_desc;</html:div>
    </tooltip>
    <tooltip id="low_preview">
      <html:b>&torbutton.prefs.sec_low_desc;</html:b>
