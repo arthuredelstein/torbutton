@@ -1746,12 +1746,6 @@ function torbutton_update_fingerprinting_prefs() {
 
     if (m_tb_tbb) {
       if (mode) {
-        // Use TBB pref defaults for these two.
-        if(m_tb_prefs.prefHasUserValue("browser.display.max_font_attempts"))
-          m_tb_prefs.clearUserPref("browser.display.max_font_attempts");
-        if(m_tb_prefs.prefHasUserValue("browser.display.max_font_count"))
-          m_tb_prefs.clearUserPref("browser.display.max_font_count");
-
         // Governed also by the spoof_english dialog..
         if (m_tb_prefs.getBoolPref("extensions.torbutton.spoof_english")) {
           m_tb_prefs.setCharPref("intl.accept_languages", "en-US, en");
@@ -1762,9 +1756,6 @@ function torbutton_update_fingerprinting_prefs() {
           m_tb_prefs.setBoolPref("javascript.use_us_english_locale", false);
         }
       } else {
-        m_tb_prefs.setIntPref("browser.display.max_font_attempts",-1);
-        m_tb_prefs.setIntPref("browser.display.max_font_count",-1);
-
         if(m_tb_prefs.prefHasUserValue("intl.accept_languages"))
           m_tb_prefs.clearUserPref("intl.accept_languages");
       }
