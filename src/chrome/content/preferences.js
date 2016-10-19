@@ -7,10 +7,15 @@ let { getBoolPref, getIntPref, setBoolPref, setIntPref } =
 
 // Description elements have the follow names.
 const descNames =
-      [, "desc_high", "desc_medium_high", "desc_medium_low", "desc_low"];
+      [, "desc_high", "desc_medium", "desc_low"];
 
 // A single `state` object that reflects the user settings in this UI.
 let state = { slider : 0, custom : false};
+
+// Utility functions to convert between the legacy 4-value pref index
+// and the 3-valued security slider.
+let sliderPositionToPrefSetting = pos => [, 1, 2, 4][pos];
+let prefSettingToSliderPosition = pref => [, 1, 2, 2, 3][pref];
 
 // Set the desired slider value and update UI.
 function torbutton_set_slider(sliderPosition) {
@@ -33,12 +38,14 @@ function torbutton_set_custom(customValue) {
 // Read prefs 'extensions.torbutton.security_slider' and
 // 'extensions.torbutton.security_custom', and initialize the UI.
 function torbutton_init_security_ui() {
-  torbutton_set_slider(getIntPref("extensions.torbutton.security_slider"));
+  torbutton_set_slider(prefSettingToSliderPosition(
+    getIntPref("extensions.torbutton.security_slider")));
   torbutton_set_custom(getBoolPref("extensions.torbutton.security_custom"));
 };
 
 // Write the two prefs from the current settings.
 function torbutton_save_security_settings() {
-  setIntPref("extensions.torbutton.security_slider", state.slider);
+  setIntPref("extensions.torbutton.security_slider",
+             sliderPositionToPrefSetting(state.slider));
   setBoolPref("extensions.torbutton.security_custom", state.custom);
 };
