@@ -1,0 +1,138 @@
+#banner {
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    background-color: #406;
+    background-opacity: 10%;
+    background-size: cover;
+    background: radial-gradient(circle, #406 90%, #203 100%);
+    border-bottom:  6px solid #305;
+    border-top: 5px solid #305;
+    display: none;
+    height: 120px;
+    justify-content: center;
+    left: 0px;
+    margin-top: 40px;
+    min-width: 900px;
+    opacity: 1;
+    position: absolute;
+    user-select: none;
+    width: 100%;
+    z-index: 1;
+}
+#banner:before {
+    background-image: url('chrome://torbutton/content/aboutTor/tor-roots-only.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: ' ';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.20;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#banner-contents-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    max-width: 700px;
+    position: relative;
+    width: 700px;
+}
+#banner-text {
+    align-self: stretch;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    font-family: sans-serif;
+    font-size: 8px;
+    margin: 10px 20px 10px 20px;
+    max-height: 100%;
+}
+#banner-tagline {
+    align-items: center;
+    display: flex;
+    flex: 2 2 67%;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+}
+#banner-heart {
+    align-items: center;
+    color: #f8f8a0;
+    display: flex;
+    flex: 1 1 33%;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+#banner-logo-container {
+    display: inline-block;
+    flex: 0 0 auto;
+    margin: 0px;
+    position: relative;
+}
+#banner-logo {
+    height: 155px;
+    position: relative;
+    padding-bottom: 40px;
+    width: 108px;
+}
+#banner-donate-button-container {
+    background-color: #FFD;
+    border-bottom: 4px solid #204;
+    border-left: 4px solid #204;
+    border-right: 4px solid #204;
+    border-top: 4px solid #204;
+    color: #A20;
+    display: block;
+    flex-grow: 0.0;
+    flex: 0;
+    height: 50px;
+    letter-spacing: -0.00em;
+    opacity: 100%;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    width: 80px;
+}
+#banner-donate-button {
+    align-items: center;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 100%;
+    text-align: left;
+    width: 100%;
+}
+#banner-donate-button-link {
+    flex: 0 0 auto;
+    text-decoration: none;
+}
+#banner-donate-button-link:link {
+    color: #A20;
+}
+#banner-donate-button-link:hover {
+    color: #C40;
+}
+#banner-donate-button-link:visited {
+    color: #408;
+}
+#banner-donate-button-linka:active {
+    color: black;
+}
+#banner-spacer {
+    display: none;
+    height: 150px;
+    position: relative;
+    top: 0;
+};
