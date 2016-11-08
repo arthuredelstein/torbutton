@@ -78,7 +78,7 @@ var watch_security_prefs = function (onSettingChanged) {
   let prefNames = Object.keys(kSecuritySettings);
   let unbindFuncs = [];
   for (let prefName of prefNames) {
-    unbindFuncs.push(bindPref(
+    unbindFuncs.push(bindPrefAndInit(
       prefName, () => onSettingChanged(read_setting_from_prefs())));
   }
   // Call all the unbind functions.
@@ -102,7 +102,7 @@ var initialize = function () {
   initialized = true;
   // When security_custom is set to false, apply security_slider setting
   // to the security-sensitive prefs.
-  bindPref(kCustomPref, function (custom) {
+  bindPrefAndInit(kCustomPref, function (custom) {
     if (custom === false) {
       write_setting_to_prefs(getIntPref(kSliderPref));
     }
