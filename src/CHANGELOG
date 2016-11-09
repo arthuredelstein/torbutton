@@ -1,3 +1,7 @@
+1.9.5.8
+ * Bug 20414: Add donation banner on about:tor for 2016 campaign
+ * Translation updates
+
 1.9.5.7
  * Bug 18589: Clear site security settings during New Identity
  * Bug 19906: "Maximizing Tor Browser" Notification can exist multiple times
