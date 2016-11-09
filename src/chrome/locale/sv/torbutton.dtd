@@ -2,13 +2,18 @@
 <!ENTITY torbutton.context_menu.new_identity_key "N">
 <!ENTITY torbutton.context_menu.new_circuit "Ny Tor-krets för den här webbsidan">
 <!ENTITY torbutton.context_menu.new_circuit_key "S">
+<!ENTITY torbutton.context_menu.preferences "Säkerhetsinställningar...">
+<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor nätverksinställningar...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Sök efter uppdateringar för Tor webbläsare...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Skydd mot Cookies...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "S">
 <!ENTITY torbutton.button.tooltip "Klicka för att installera Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Återställ till standard">
+<!ENTITY torbutton.prefs.security_settings "Tor-webbläsares säkerhetsinställningar">
+<!ENTITY torbutton.prefs.restore_defaults "Återställ standard">
+<!ENTITY torbutton.prefs.custom_warning "Dina anpassade webbläsarinställningar har resulterat i ovanliga säkerhetsinställningar. Av säkerhets- och integritetsskäl rekommenderar vi att du använder en av de fördefinierade säkerhetsnivåerna.">
 <!ENTITY torbutton.cookiedialog.title "Hantera skyddade kakor">
 <!ENTITY torbutton.cookiedialog.lockCol "Skyddad">
 <!ENTITY torbutton.cookiedialog.domainCol "Värd">
@@ -21,8 +26,13 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Skydda nya kakor">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Skydda inte nya kakor">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Begränsa tredjepartskakor och annan tracking data">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Behåll det här alternativet valt för att förhindra olika webbläsarfunktioner från att missbrukas för att spåra dig när du surfar på nätet. Ändrade funktioner inkluderar blog-URLer, broadcastkanaler, webbläsar-cache, kakor, favicons, HTTP-Auth-huvuden, länk-föranslutningar, localStorage, mediaSource URLer, OCSP-förfrågningar, SharedWorkers och TLS-sessionstickets.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Ändra detailjer som utmärker dig ifrån andra Tor Browser användare">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Behåll det här alternativet valt för att dölja saker från webbsidor som kan vara unika för dig, inklusive din batteristatus, datorprestanda, tangentbordslayout, språk, platser insticksmoduler är installerade på, lista över installerade insticksmoduler, din nätverksstatus, skärmorientering, skärmstorlek, platsspecifika zoom-nivåer, filtypsstöd, systemfärger och WebGL-stöd.">
 <!ENTITY torbutton.prefs.sec_caption "Säkerhetsnivå">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Säkerhetsreglaget låter dig stänga av vissa webbläsarfunktioner som kan göra din webbläsare mer sårbar mot intrångsförsök.">
 <!ENTITY torbutton.prefs.sec_low "Låg (förvald)">
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Detta skapar den mest användbara upplevelsen.">
 <!ENTITY torbutton.prefs.sec_low_desc "På den här säkerhetsnivån är webbläsarens alla funktioner aktiverade.">
@@ -38,7 +48,7 @@
 <!ENTITY torbutton.prefs.sec_mathml_desc "Vissa funktioner för att visa matematiska formler är avaktiverade.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML är inaktiverat.">
 <!ENTITY torbutton.prefs.sec_med_high "Medium-hög">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "Alla prestandaoptimeringar av JavaScript är inaktiverade.">
+<!ENTITY torbutton.prefs.sec_all_jit_desc "På sidor där JavaScript är aktiverat, är prestandaoptimeringar inaktiverade.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Vissa funktioner för gestaltning av typsnitt är avaktiverad.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Användande av Graphite-typsnitt är avaktiverad.">
 <!ENTITY torbutton.prefs.sec_svg_desc "Vissa typer av bilder är inaktiverade.">
@@ -49,5 +59,4 @@
 <!ENTITY torbutton.prefs.sec_all_js_desc "JavaScript är normalt avaktiverat på alla webbsidor.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Vissa typsnitt ock ikoner kan visas felaktigt.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Typsnitt som tillhandahålls av webbsidor är blockerade.">
-<!ENTITY torbutton.prefs.sec_custom "Anpassad nivå">
 <!ENTITY torbutton.circuit_display.title "Tor-krets för den här webbsidan">

@@ -6,10 +6,10 @@
 <!ENTITY  brandShortName        "Trình duyệt Tor">
 <!ENTITY  brandFullName         "Trình duyệt Tor">
 <!ENTITY  vendorShortName       "Dự án Tor">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  trademarkInfo.part1   "Firefox và logo của Firefox là thương hiệu của Tổ chức Mozilla">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
-<!ENTITY plugins.installed.find "Click to load installed system plugins">
-<!ENTITY plugins.installed.enable "Enable plugins">
-<!ENTITY plugins.installed.disable "Disable plugins">
-<!ENTITY plugins.installed.disable.tip "Click to prevent loading system plugins">
+<!ENTITY plugins.installed.find "Bấm chuột để tải những những chương trình gắn thêm vào hệ thống đã được cài đặt">
+<!ENTITY plugins.installed.enable "Cho phép những chương trình gắn thêm">
+<!ENTITY plugins.installed.disable "Vô hiệu những chương trình gắn thêm">
+<!ENTITY plugins.installed.disable.tip "Bấm chuột để ngăn chặn việc tải những những chương trình gắn thêm vào hệ thống">

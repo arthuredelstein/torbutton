@@ -2,13 +2,18 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Novo Circuito Tor para este Site">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Security Settings…">
+<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Configurações da Rede Tor...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Procurar por atualizações do Navegador Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "A">
 <!ENTITY torbutton.context_menu.cookieProtections "Proteções de Cookies...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Clique para inicializar o Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Restaurar Predefinições">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
+<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
+<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
 <!ENTITY torbutton.cookiedialog.title "Gerir Proteções dos Cookies">
 <!ENTITY torbutton.cookiedialog.lockCol "Protegido">
 <!ENTITY torbutton.cookiedialog.domainCol "Hospedeiro">
@@ -21,8 +26,13 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Proteger Novos Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Não Proteger Novos Cookies">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restringir os cookies de terceiros e outros dados de rastreamento">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Keep this box checked to prevent various browser features from being abused to track you as you browse the web. Modified features include blob URLs, broadcast channels, the browser cache, cookies, favicons, HTTP Auth headers, link preconnects, localStorage, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Alterar os detalhes que o diferencia dos outros utilizadores do Navegador Tor">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your battery status, computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
 <!ENTITY torbutton.prefs.sec_caption "Nível de Segurança">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
 <!ENTITY torbutton.prefs.sec_low "Baixo (predefinição)">
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Isto proporciona a melhor experiência usável.">
 <!ENTITY torbutton.prefs.sec_low_desc "Neste nível de segurança, as funções do navegador estão ativadas.">
@@ -38,7 +48,7 @@
 <!ENTITY torbutton.prefs.sec_mathml_desc "Alguns mecanismos de visualização de equações matemáticas estão desativados.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML está desativado.">
 <!ENTITY torbutton.prefs.sec_med_high "Médio-Alto">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "Todas as otimizações de desempenho da JavaScript estão desativadas.">
+<!ENTITY torbutton.prefs.sec_all_jit_desc "On sites where JavaScript is enabled, performance optimizations are disabled.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Algumas funções de renderização do tipo de letra estão desativadas.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "O mecanismo de renderização do tipo de letra Graphite está desativado.">
 <!ENTITY torbutton.prefs.sec_svg_desc "Alguns tipos de imagens estão desativados.">
@@ -49,5 +59,4 @@
 <!ENTITY torbutton.prefs.sec_all_js_desc "JavaScript está desativada por predefinição em todos os sites.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Alguns tipos de letra e ícones poderão ser visualizados incorretamente.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Os ficheiros dos tipos de letra fornecidos pelo site da Web estão bloqueados.">
-<!ENTITY torbutton.prefs.sec_custom "Valores Personalizados">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor para este site">

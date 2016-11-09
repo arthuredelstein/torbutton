@@ -2,13 +2,18 @@
 <!ENTITY torbutton.context_menu.new_identity_key "Я">
 <!ENTITY torbutton.context_menu.new_circuit "Новая цепочка Tor для этого cайта">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Настройки безопасности...">
+<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Настройки сети Tor">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Проверить на наличие обновлений Tor Browser">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Защита куки-файла">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Нажмите, чтобы инициализировать Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Восстановить значения по умолчанию">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
+<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
+<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
 <!ENTITY torbutton.cookiedialog.title "Управление защитой куки-файлов">
 <!ENTITY torbutton.cookiedialog.lockCol "Защищено">
 <!ENTITY torbutton.cookiedialog.domainCol "Ведущий узел">
@@ -21,8 +26,13 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Защищать новые куки-файлы">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не защищать новые куки-файлы">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Блокировать сторонние куки-файлы и другие данные слежения">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Оставьте флажок напротив этой опции отмеченным, чтобы защитить многие функции обозревателя от элементов отслеживания ваших действий во время сёрфинга в сети. Модифицированные компоненты включают в себя ссылки на блобы, транслируемые каналы, кэш браузера, файлы куки, значки, заголовки аутентификации HTTP, ссылки предпросмотра, локальное хранилище, ссылки на медиаконтент, запросы OCSP, SharedWorkers и объявления сессии TLS.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Изменить сведения, отличающие вас от других пользователей Tor Browser">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Оставьте флажок напротив этой опции отмеченным, чтобы скрывать те сведения, которые могли бы быть уникальными о вас, такие как: статус вашей батареи, производительность компьютера, раскладка клавиатуры, локализация, путь к установленным плагинам, список инсталлированных плагинов, статус вашей сети, ориентация дисплея, размер экрана, масштаб для конерктного сайта, поддерживаемые типы файлов, системная палитра и возможности WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Уровень безопасности">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Ползунок безопасности позволяет вам запретить некоторые особенности обозревателя, которые могут сделать ваш браузер более уязвимым к попыткам взлома.">
 <!ENTITY torbutton.prefs.sec_low "Низкий (по умолчанию)">
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Наиболее простой вариант использования.">
 <!ENTITY torbutton.prefs.sec_low_desc "На этом уровне безопасности, все функции браузера включены.">
@@ -38,7 +48,7 @@
 <!ENTITY torbutton.prefs.sec_mathml_desc "Некоторые механизмы отображения математических уравнений отключены.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML отключен.">
 <!ENTITY torbutton.prefs.sec_med_high "Умеренно высокий">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "Все оптимизации производительности JavaScript отключены.">
+<!ENTITY torbutton.prefs.sec_all_jit_desc "На сайтах с применением JavaScript  оптимизация отключена.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Некоторые функции отрисовки шрифтов отключены.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Механизм визуализации шрифта Graphite отключен.">
 <!ENTITY torbutton.prefs.sec_svg_desc "Некоторые типы изображений отключены.">
@@ -49,5 +59,4 @@
 <!ENTITY torbutton.prefs.sec_all_js_desc "JavaScript отключен по умолчанию на всех сайтах.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Некоторые шрифты и значки могут отображаться некорректно.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Файлы шрифтов, предоставленные сайтом, заблокированы">
-<!ENTITY torbutton.prefs.sec_custom "Собственные значения">
 <!ENTITY torbutton.circuit_display.title "Цепочка Tor для этого сайта">
