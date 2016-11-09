@@ -8,6 +8,7 @@ let kBannerLocales = [
   "fa",
   "it",
   "nl",
+  "tr",
   "vi",
   "zh",
 ];
