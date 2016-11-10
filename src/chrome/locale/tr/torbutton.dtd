@@ -37,7 +37,6 @@
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Bu seçenek en kullanılabilir deneyimi sunar.">
 <!ENTITY torbutton.prefs.sec_low_desc "Bu güvenlik düzeyinde tüm tarayıcı özellikleri kullanılabilir.">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "SVG OpenType yazı tipi görüntüleme düzeneği devre dışı bırakılır.">
-<!ENTITY torbutton.prefs.sec_med_low "Orta-Düşük">
 <!ENTITY torbutton.prefs.sec_gen_desc "Bu güvenlik düzeyinde, şu değişiklikler uygulanır (ayrıntılar için fare ile üzerlerinde dolaşın):">
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 görüntü ve ses ortamı NoScript aracılığıyla tıklayıp oynat şekline dönüştürülür.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Bazı sitelerde bu ortam nesnelerini etkinleştirebilmek için NoScript düğmesinin kullanılması gerekebilir.">
@@ -47,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Bazı sitelerde betikler daha yavaş çalışabilir.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Matematik denklemlerini görüntüleyen bazı düzenekler devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML devre dışı bırakılır.">
-<!ENTITY torbutton.prefs.sec_med_high "Orta-Yüksek">
+<!ENTITY torbutton.prefs.sec_medium "Orta">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "JavaScript kullanılan web sitelerinde başarım iyileştirmeleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Bazı yazı tipi işleme özellikleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Graphite yazı tipi görüntüleme düzeneği devre dışı bırakılır.">

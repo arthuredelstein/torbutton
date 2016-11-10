@@ -37,7 +37,6 @@
 <!ENTITY torbutton.prefs.sec_low_usable_desc "هذا يوفر أفضل خبرة للإستخدام">
 <!ENTITY torbutton.prefs.sec_low_desc "طبقاً لهذا المستوى من إعدادات الأمان سوف يتم تفعيل كل صفات المتصفح">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "آلية تجسيد الخط SVG OpenType معطلة.">
-<!ENTITY torbutton.prefs.sec_med_low "شبه منخفض">
 <!ENTITY torbutton.prefs.sec_gen_desc "طبقاً لهذا المستوى من إعدادات الأمان سوف يتم تفعيل هذه التغيرات ( لمزيد من التفاصيل مرر الفأرة فوق)">
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 video and audio media become click-to-play via NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "في بعض المواقع من الممكن أن تحتاج لإستخدام زر تعطيل السكريبتات في شرط الأدوات لتفعل المحتويات المرئية.">
@@ -47,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "سكربت في بعض المواقع قد تعمل بشكل بطيئ">
 <!ENTITY torbutton.prefs.sec_mathml_desc "بعض الآليات لعرض معادلات رياضية معطلة.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML is disabled.">
-<!ENTITY torbutton.prefs.sec_med_high "شبه عالٍ">
+<!ENTITY torbutton.prefs.sec_medium "Medium">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "في المواقع التي تشغل جافا سكريبت، يكون تطوير الأداء معطل.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "بعض ميزات إظهار الخطوط معطلة ">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "آلية تجسيد الخط Graphite معطلة.">

@@ -37,7 +37,6 @@
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Isto proporciona a melhor experiência usável.">
 <!ENTITY torbutton.prefs.sec_low_desc "Neste nível de segurança, as funções do navegador estão ativadas.">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "O mecanismo de renderização do tipo de letra OpenType SVG está desativado.">
-<!ENTITY torbutton.prefs.sec_med_low "Médio-Baixo">
 <!ENTITY torbutton.prefs.sec_gen_desc "Neste nível de segurança, aplicam-se as seguintes alterações ('rato sobre' para os detalhes).">
 <!ENTITY torbutton.prefs.sec_html5_desc "A multimédia de áudio e vídeo HTML5 torna-se clique-par-reproduzir via NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Em alguns sites, poderá precisar de utilizar o botão da barra de ferramentas NoScript para ativar estes objetos de multimédia.">
@@ -47,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Os scripts em alguns sites poderão funcionar muito lentamente.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Alguns mecanismos de visualização de equações matemáticas estão desativados.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML está desativado.">
-<!ENTITY torbutton.prefs.sec_med_high "Médio-Alto">
+<!ENTITY torbutton.prefs.sec_medium "Medium">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "On sites where JavaScript is enabled, performance optimizations are disabled.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Algumas funções de renderização do tipo de letra estão desativadas.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "O mecanismo de renderização do tipo de letra Graphite está desativado.">

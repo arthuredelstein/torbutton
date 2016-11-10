@@ -37,7 +37,6 @@
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Questo permette la migliore esperienza di usablità.">
 <!ENTITY torbutton.prefs.sec_low_desc "A questo livello di sicurezza, tutte le features del browser sono abilitate.">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "Il meccanismo di rendering SVG OpenType è disabilitato.">
-<!ENTITY torbutton.prefs.sec_med_low "Medio-Basso">
 <!ENTITY torbutton.prefs.sec_gen_desc "A questo livello di sicurezza, i seguenti cambiamenti si applicano  a (passa sopra con il mouse per i dettagli):">
 <!ENTITY torbutton.prefs.sec_html5_desc "I video e audio in HTML5 diventano click-to-play grazie a NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Su alcuni siti, potresti dover usare il pulsante toolbar di NoScript per attivare quei media.">
@@ -47,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Gli scripts su alcuni siti possono girare più lenti.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Alcuni meccanismi di visualizzazione di equazioni matematiche sono disabilitati.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML è disabilitato.">
-<!ENTITY torbutton.prefs.sec_med_high "Medio-Alto">
+<!ENTITY torbutton.prefs.sec_medium "Medium">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "Nei siti dove è attivato JavaScript le ottimizzazioni sono disabilitate">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Alcuni rendering dei font sono disabilitati.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Il meccanismo di rendering font Graphite è disabilitato.">

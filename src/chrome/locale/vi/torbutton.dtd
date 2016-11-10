@@ -37,7 +37,6 @@
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Điều này cung cấp trải nghiệm tiện lợi nhất">
 <!ENTITY torbutton.prefs.sec_low_desc "Ở mức này, tất cả tính năng của trình duyệt đều được kích hoạt.">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "Cơ chế kết xuất font SVG OpenType bị vô hiệu.">
-<!ENTITY torbutton.prefs.sec_med_low "Trung bình-Thấp">
 <!ENTITY torbutton.prefs.sec_gen_desc "Ở mức bảo mật này, những thay đổi sau sẽ được áp dụng (rê chuột vào để xem chi tiết):">
 <!ENTITY torbutton.prefs.sec_html5_desc "Video và âm thanh truyền thông HTML5 có thể trở thành nhấp để phát qua NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Trên một số trang, có thể bạn cần phải dùng nút thanh công cụ NoScript để kích hoạt những đối tượng đa phương tiện này.">
@@ -47,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Những đoạn mã trên một số trang có thể chạy chậm hơn.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Một vài cơ chế hiển thị công thức toán học bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathMK bị vô hiệu">
-<!ENTITY torbutton.prefs.sec_med_high "Trung bình-Cao">
+<!ENTITY torbutton.prefs.sec_medium "Medium">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "Trên những trang nơi JavaScript được cho phép, việc tối ưu hóa hiệu suất bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Một vài chức năng tô vẽ phông chữ bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Cơ chế tô vẽ phông chữ Graphite bị vô hiệu.">

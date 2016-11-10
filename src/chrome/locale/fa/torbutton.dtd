@@ -6,14 +6,14 @@
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "تنظیمات شبکه تور">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "بررسی بروز رسانی Tor Browser ...">
+<!ENTITY torbutton.context_menu.downloadUpdate "بررسی بروز رسانی مرورگر تور">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "حفاظت کوکی ها...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "جهت شروع دكمه تُرکليک کنيد">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
-<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.prefs.security_settings "تنظیمات امنیتی مرورگر تور">
+<!ENTITY torbutton.prefs.restore_defaults "بازگردانی تنظیمات اولیه">
+<!ENTITY torbutton.prefs.custom_warning "تنظیمات سفارشی شما در مرورگر منجر به تغییرات غیر معمول در تنظیمات امنیتی شده است.برای امن نگه داشتن حریم خصوصی خود ما پیشنهاد میکنیم یکی از تنظیمات پیشفرض امنیتی را انتخاب کنید. ">
 <!ENTITY torbutton.cookiedialog.title "مديريت حفاظت کلوچک‌ها">
 <!ENTITY torbutton.cookiedialog.lockCol "حفاظت شده">
 <!ENTITY torbutton.cookiedialog.domainCol "ميزبان">
@@ -37,7 +37,6 @@
 <!ENTITY torbutton.prefs.sec_low_usable_desc "این فراهم می کند بیشترین تجربه قابل استفاده.">
 <!ENTITY torbutton.prefs.sec_low_desc "در این سطح امنیتی، تمام ویژگی های مرورگر ها فعال است.">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "مکانیسم رندر فونت SVG اپن تایپ غیر فعال است.">
-<!ENTITY torbutton.prefs.sec_med_low "متوسط ​​- کم">
 <!ENTITY torbutton.prefs.sec_gen_desc "در این سطح امنیتی، تغییرات زیر اعمال می شود (خلاصه شده برای جزئیات بیشتر):">
 <!ENTITY torbutton.prefs.sec_html5_desc "صدا و تصویر HTML5 از طریق دکمه NoScript نوار ابزار به حالت -کلیک برای پخش- در می آید">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "در برخی سایت ها، ممکن است شما نیاز به استفاده از دکمه NoScript نوار ابزار برای فعال کردن این اشیاء رسانه داشته باشید.">
@@ -47,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "اسکریپت هل در برخی از سایت ها ممکن است آهسته تر اجرا شود.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "برخی مکانیسم ها نمایش معادلات ریاضی غیر فعال می باشد.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML غیر فعال است.">
-<!ENTITY torbutton.prefs.sec_med_high "متوسط ​​- بالا">
+<!ENTITY torbutton.prefs.sec_medium "Medium">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "On sites where JavaScript is enabled, performance optimizations are disabled.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "برخی از ویژگی های رندر فونت غیر فعال می باشد.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "مکانیسم گرافیت رندر فونت غیر فعال است.">

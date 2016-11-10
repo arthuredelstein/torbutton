@@ -37,7 +37,6 @@
 <!ENTITY torbutton.prefs.sec_low_usable_desc "该选项可提供最佳的用户体验。">
 <!ENTITY torbutton.prefs.sec_low_desc "该安全级别将启用所有浏览器功能。">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "禁用 SVG OpenType 字体渲染功能。">
-<!ENTITY torbutton.prefs.sec_med_low "中低">
 <!ENTITY torbutton.prefs.sec_gen_desc "在这个安全级别，下列更改将会生效（鼠标悬停查看细节）：">
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 视频和音频需通过 NoScript 点击播放。">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "在某些网站，可通过 NoScript 工具栏按钮播放这些媒体。">
@@ -47,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "一些网站脚本可能会暂缓执行。">
 <!ENTITY torbutton.prefs.sec_mathml_desc "禁用数学方程式的某些显示机制。">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "禁用 MathML。">
-<!ENTITY torbutton.prefs.sec_med_high "中高">
+<!ENTITY torbutton.prefs.sec_medium "中等">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "在开启 JavaScript 的站点上禁用性能优化。">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "禁用某些字体渲染功能。">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "禁用 Graphite 字体渲染。">

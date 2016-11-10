@@ -39,7 +39,6 @@ Mantenga marcada esta casilla para ocultar a los sitios web detalles que pudiera
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Esto proporciona la mejor experiencia de usabilidad.">
 <!ENTITY torbutton.prefs.sec_low_desc "En este nivel de seguridad, todas las funciones del navegador están habilitadas.">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "El mecanismo de representación de fuentes SVG OpenType está deshabilitado.">
-<!ENTITY torbutton.prefs.sec_med_low "Medio-Bajo">
 <!ENTITY torbutton.prefs.sec_gen_desc "En este nivel de seguridad, se aplican los siguientes cambios (ratón encima para detalles):">
 <!ENTITY torbutton.prefs.sec_html5_desc "Los medios de vídeo y audio HTML5 se vuelven tipo clic-para-reproducir mediante NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "En algunos sitios, podría necesitar usar el botón NoScript de barra de herramientas para habilitar estos objetos de medios.">
@@ -49,7 +48,7 @@ Mantenga marcada esta casilla para ocultar a los sitios web detalles que pudiera
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Los scripts en algunos sitios puede que se ejecuten más lentamente.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Algunos mecanismos de representación de ecuaciones matemáticas están deshabilitados.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML está deshabilitado.">
-<!ENTITY torbutton.prefs.sec_med_high "Medio-Alto">
+<!ENTITY torbutton.prefs.sec_medium "Medio">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "En sitios donde JavaScript esté habilitado, las optimizaciones de rendimiento están deshabilitadas.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Algunas características de representación de fuentes están deshabilitadas.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "El mecanismo de representación de fuentes Graphite está deshabilitado.">
