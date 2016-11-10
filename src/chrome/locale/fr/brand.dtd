@@ -9,7 +9,7 @@
 <!ENTITY  trademarkInfo.part1   "Firefox et les logos de Firefox sont des marques déposées de la Fondation Mozilla.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
-<!ENTITY plugins.installed.find "Cliquer pour charger les modules complémentaires du système installés">
-<!ENTITY plugins.installed.enable "Activer les modules complémentaires">
-<!ENTITY plugins.installed.disable "Désactiver les modules complémentaires">
-<!ENTITY plugins.installed.disable.tip "Cliquer pour empêcher le chargement de modules complémentaires du système">
+<!ENTITY plugins.installed.find "Cliquer pour charger les greffons système installés">
+<!ENTITY plugins.installed.enable "Activer les greffons">
+<!ENTITY plugins.installed.disable "Désactiver les greffons">
+<!ENTITY plugins.installed.disable.tip "Cliquer pour empêcher le chargement des greffons système">

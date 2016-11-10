@@ -11,8 +11,8 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie-Schutz …">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klicken, um Torbutton zu aktivieren">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
-<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
+<!ENTITY torbutton.prefs.security_settings "Tor-Browser-Sicherheitseinstellungen">
+<!ENTITY torbutton.prefs.restore_defaults "Standardeinstellungen wiederherstellen">
 <!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
 <!ENTITY torbutton.cookiedialog.title "Cookie-Schutz verwalten">
 <!ENTITY torbutton.cookiedialog.lockCol "Geschützt">

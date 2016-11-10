@@ -11,9 +11,9 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Защита куки-файла">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Нажмите, чтобы инициализировать Torbutton">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
-<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.prefs.security_settings "Настройки безопасности Tor Browser">
+<!ENTITY torbutton.prefs.restore_defaults "Восстановить значения по умолчанию">
+<!ENTITY torbutton.prefs.custom_warning "Ваши настройки браузера, привели к необычным параметрам безопасности. По соображениям безопасности и конфиденциальности, мы рекомендуем вам выбрать один из уровней безопасности по умолчанию.">
 <!ENTITY torbutton.cookiedialog.title "Управление защитой куки-файлов">
 <!ENTITY torbutton.cookiedialog.lockCol "Защищено">
 <!ENTITY torbutton.cookiedialog.domainCol "Ведущий узел">
