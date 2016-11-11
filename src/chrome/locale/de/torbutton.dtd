@@ -46,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Scripts können auf manchen Seiten langsamer laufen.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Manche Vorgänge zur Anzeige von mathematischen Gleichungen sind deaktiviert.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML ist deaktiviert.">
-<!ENTITY torbutton.prefs.sec_medium "Medium">
+<!ENTITY torbutton.prefs.sec_medium "Mittel">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "Auf Seiten wo JavaScript aktiviert ist, sind Leistungsoptimierungen deaktiviert.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Einige Schriftabbildungseigenschaften sind deaktiviert.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Der Graphite-Schriftdarstellungsvorgang ist deaktiviert.">

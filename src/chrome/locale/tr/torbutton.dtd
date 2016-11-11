@@ -46,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Bazı sitelerde betikler daha yavaş çalışabilir.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Matematik denklemlerini görüntüleyen bazı düzenekler devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML devre dışı bırakılır.">
-<!ENTITY torbutton.prefs.sec_medium "Orta">
+<!ENTITY torbutton.prefs.sec_medium "Ortam">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "JavaScript kullanılan web sitelerinde başarım iyileştirmeleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Bazı yazı tipi işleme özellikleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Graphite yazı tipi görüntüleme düzeneği devre dışı bırakılır.">
