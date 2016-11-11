@@ -1,4 +1,4 @@
-1.9.6.5
+1.9.6.6
  * Bug 20414: Add donation banner on about:tor for 2016 campaign
  * Bug 20111: use Unix domain sockets for SOCKS port by default
  * Bug 19459: Move resizing code to tor-browser.git
