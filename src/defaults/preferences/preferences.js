@@ -55,9 +55,5 @@ pref("extensions.torbutton.confirm_newnym", true);
 // Browser home page:
 pref("browser.startup.homepage", "chrome://torbutton/content/locale/non-localized.properties");
 
-// Browser window maximum size (used when setting the size during startup):
-pref("extensions.torbutton.window.maxHeight", 1000);
-pref("extensions.torbutton.window.maxWidth", 1000);
-
 // This pref specifies an ad-hoc "version" for various pref update hacks we need to do
 pref("extensions.torbutton.pref_fixup_version", 0);
