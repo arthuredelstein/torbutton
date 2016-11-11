@@ -7,7 +7,7 @@
 //
 // To import the module, use
 //
-//  let { controller } = Components.utils.import("path/to/tor-control-port.js");
+//  let { controller } = Components.utils.import("path/to/tor-control-port.js", {});
 //
 // See the last function defined in this file:
 //   controller(ipcFile, host, port, password, onError)

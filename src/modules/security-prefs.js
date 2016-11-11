@@ -4,9 +4,9 @@
 
 let {classes: Cc, utils: Cu } = Components;
 let { getBoolPref, setBoolPref, getIntPref, setIntPref } =
-    Cu.import("resource://gre/modules/Services.jsm").Services.prefs;
-let { bindPref } =
-    Cu.import("resource://torbutton/modules/utils.js");
+    Cu.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
+let { bindPref, bindPrefAndInit } =
+    Cu.import("resource://torbutton/modules/utils.js", {});
 let logger = Components.classes["@torproject.org/torbutton-logger;1"]
     .getService(Components.interfaces.nsISupports).wrappedJSObject;
 let log = (level, msg) => logger.log(level, msg);

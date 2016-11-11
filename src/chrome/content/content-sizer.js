@@ -41,7 +41,8 @@ let torbuttonBundle = Services.strings.createBundle(
                         "chrome://torbutton/locale/torbutton.properties");
 
 // Import utility functions
-let { bindPrefAndInit, getEnv } = Cu.import("resource://torbutton/modules/utils.js");
+let { bindPrefAndInit, getEnv, observe } =
+    Cu.import("resource://torbutton/modules/utils.js", {});
 
 // __windowUtils(window)__.
 // See nsIDOMWindowUtils on MDN.

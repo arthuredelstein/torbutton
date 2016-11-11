@@ -7,11 +7,11 @@
 // TODO: Double-check there are no strange exploits to defeat:
 //       http://kb.mozillazine.org/Links_to_local_pages_don%27t_work
 
-let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm');
-let { Services } = Cu.import("resource://gre/modules/Services.jsm");
-let { showDialog } = Cu.import("resource://torbutton/modules/utils.js");
-let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js");
-let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js");
+let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm', {});
+let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
+let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
+let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";

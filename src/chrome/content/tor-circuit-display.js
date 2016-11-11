@@ -31,10 +31,10 @@ Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://gre/modules/Task.jsm");
 
 // Import the controller code.
-let { controller } = Cu.import("resource://torbutton/modules/tor-control-port.js");
+let { controller } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
 
 // Utility functions
-let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js");
+let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 // Make the TorButton logger available.
 let logger = Cc["@torproject.org/torbutton-logger;1"]

@@ -3,7 +3,7 @@
 // Utilities
 let { utils: Cu } = Components;
 let { getBoolPref, getIntPref, setBoolPref, setIntPref } =
-    Cu.import("resource://gre/modules/Services.jsm").Services.prefs;
+    Cu.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
 
 // Description elements have the follow names.
 const descNames =
