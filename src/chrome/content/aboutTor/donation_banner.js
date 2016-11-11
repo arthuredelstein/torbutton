@@ -9,6 +9,7 @@ let kBannerLocales = [
   "fr",
   "it",
   "nl",
+  "pt",
   "ru",
   "tr",
   "vi",
@@ -58,9 +59,9 @@ let shouldShowBanner = function () {
         kDonationPageLocales.indexOf(kBrowserLocaleShort) === -1) {
       return false;
     }
-    // Only show banner between 2016 Nov 15 and 2017 Jan 25.
+    // Only show banner between 2016 Nov 22 and 2017 Jan 25.
     let now = new Date();
-    let start = new Date(2016, 10, 15);
+    let start = new Date(2016, 10, 22);
     let end = new Date(2017, 0, 26);
     let shownCountPref = "extensions.torbutton.donation_banner2016.shown_count";
     if (now < start || now > end) {
@@ -122,7 +123,7 @@ let avoidWidows = function (element) {
 let updateTextSizes = function () {
   fitTextInElement(sel("#banner-tagline"));
   fitTextInElement(sel("#banner-heart"));
-  fitTextInElement(sel("#banner-donate-button"));
+  fitTextInElement(sel("#banner-donate-button-text"));
   avoidWidows(sel("#banner-tagline span"));
 };
 
@@ -143,9 +144,9 @@ let runDonationBanner = function () {
     sel("#banner-tagline span").innerText = getTagline(randomInteger(4));
     sel("#banner-heart span").innerText =
       gStringBundle.GetStringFromName("aboutTor.donationBanner.heart");
-    sel("#banner-donate-button-text").innerHTML =
+    sel("#banner-donate-button-text span").innerHTML =
       gStringBundle.GetStringFromName("aboutTor.donationBanner.donate");
-    sel("#banner-donate-button-arrow").innerHTML = "&#9654;";
+    sel("#banner-donate-button-arrow").innerHTML = "&#10230;";
     sel("#banner").style.display = "flex";
     sel("#banner-spacer").style.display = "block";
     addEventListener("resize", updateTextSizes);

@@ -96,10 +96,10 @@
     letter-spacing: -0.00em;
     opacity: 100%;
     padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
     padding-top: 5px;
-    width: 80px;
+    width: 100px;
 }
 #banner-donate-button-container:hover {
     border-color: #610;
@@ -110,16 +110,25 @@
 #banner-donate-button {
     align-items: center;
     display: flex;
+    flex-direction: column;
     font-family: sans-serif;
     font-size: 12px;
     font-weight: bold;
     height: 100%;
-    text-align: start;
+    text-align: center;
     width: 100%;
 }
+#banner-donate-button-text {
+    align-self: stretch;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex: 2 2 67%;
+}
 #banner-donate-button-arrow {
+    flex: 1 1 33%;
     font-size: 14px;
-    margin-inline-start: 5px;
+    line-height: 14px;
 }
 #banner-donate-button-arrow:-moz-dir(rtl) {
     transform: scaleX(-1);
