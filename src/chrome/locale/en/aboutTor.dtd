@@ -32,6 +32,8 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor is NOT all you need to browse anonymously! You may need to change some of your browsing habits to ensure your identity stays safe.">
 <!ENTITY aboutTor.whatnext.label "Tips On Staying Anonymous »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "You Can Help!">
 <!ENTITY aboutTor.helpInfo2.label "There are many ways you can help make the Tor Network faster and stronger:">
 <!ENTITY aboutTor.helpInfo3.label "Run a Tor Relay Node »">
