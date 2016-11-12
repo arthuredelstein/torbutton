@@ -12,6 +12,7 @@ let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
 let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
+let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -362,7 +363,7 @@ function torbutton_init() {
     window.addEventListener("aftercustomization", function() {
       torbutton_update_all_abouttor_pages(undefined, undefined);
     }, false);
-    
+
     //setting up context menu
     //var contextMenu = document.getElementById("contentAreaContextMenu");
     //if (contextMenu)
@@ -398,6 +399,8 @@ function torbutton_init() {
                             "extensions.torbutton.display_circuit");
 
     quantizeBrowserSize(window, 100, 100);
+
+    torbutton_init_user_manual_links();
 
     torbutton_log(3, 'init completed');
 }
@@ -629,6 +632,11 @@ function torbutton_update_abouttor_doc(aDoc, aTorOn, aUpdateNeeded) {
       aDoc.body.setAttribute("torNeedsUpdate", "yes"); 
     else
       aDoc.body.removeAttribute("torNeedsUpdate");
+
+    if (torbutton_show_torbrowser_manual())
+      aDoc.body.setAttribute("showmanual", "yes");
+    else
+      aDoc.body.removeAttribute("showmanual");
 
     // Display product name and TBB version.
     try {
@@ -2437,5 +2445,26 @@ function torbutton_update_noscript_button()
   }, 0);
 }
 
+// Opens the Tor Browser User Manual in a new tab
+function torbutton_open_torbrowser_user_manual() {
+  gBrowser.selectedTab = gBrowser.addTab("https://tb-manual.torproject.org");
+}
+
+// Returns true if we should show the tor browser manual.
+function torbutton_show_torbrowser_manual() {
+  let locale = torbutton_get_general_useragent_locale();
+  return locale.startsWith("en");
+}
+
+// Makes sure the item in the Help Menu and the link in about:tor
+// for the Tor Browser User Manual are only visible when
+// torbutton_show_torbrowser_manual() returns true.
+function torbutton_init_user_manual_links() {
+  let menuitem = document.getElementById("torBrowserUserManual");
+  bindPrefAndInit("general.useragent.locale", val => {
+    menuitem.hidden = !torbutton_show_torbrowser_manual();
+    torbutton_update_all_abouttor_pages(undefined, undefined);
+  });
+}
 
 //vim:set ts=4
