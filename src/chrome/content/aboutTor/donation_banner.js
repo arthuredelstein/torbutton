@@ -59,9 +59,9 @@ let shouldShowBanner = function () {
         kDonationPageLocales.indexOf(kBrowserLocaleShort) === -1) {
       return false;
     }
-    // Only show banner between 2016 Nov 22 and 2017 Jan 25.
+    // Only show banner between 2016 Nov 23 and 2017 Jan 25.
     let now = new Date();
-    let start = new Date(2016, 10, 22);
+    let start = new Date(2016, 10, 23);
     let end = new Date(2017, 0, 26);
     let shownCountPref = "extensions.torbutton.donation_banner2016.shown_count";
     if (now < start || now > end) {
@@ -175,7 +175,7 @@ let observeAttribute = function (target, attributeName, callback) {
       }
     });
   });
-  observer.observe(document.body, { attributes: true });
+  observer.observe(target, { attributes: true });
   return () => observer.disconnect();
 };
 
