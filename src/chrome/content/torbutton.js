@@ -883,17 +883,6 @@ function torbutton_update_toolbutton()
                             torbutton_get_property_string(tooltipKey));
 }
 
-// Bug 1506 P4: Timezone spoofing is pretty important
-function torbutton_set_timezone() {
-    /* Windows doesn't call tzset() automatically.. Linux and MacOS
-     * both do though.. FF3.5 now calls _tzset() for us on windows.
-     */
-    torbutton_log(3, "Setting timezone to UTC");
-    var environ = Components.classes["@mozilla.org/process/environment;1"]
-                   .getService(Components.interfaces.nsIEnvironment);
-    environ.set("TZ", "UTC");
-}
-
 // Bug 1506 P3: Support code for language+uagent spoofing
 function torbutton_get_general_useragent_locale() {
    try {
@@ -1739,8 +1728,6 @@ function torbutton_update_fingerprinting_prefs() {
 
     m_tb_prefs.setBoolPref("extensions.torbutton.resize_new_windows", mode);
 
-    // XXX: How do we undo timezone?
-
     // Force prefs to be synced to disk
     m_tb_prefs.savePrefFile(null);
 }
@@ -2017,9 +2004,6 @@ function torbutton_do_startup()
 
         // Bug 1506: Should probably be moved to an XPCOM component
         torbutton_do_main_window_startup();
-
-        // Bug 1506: Still want to do this
-        torbutton_set_timezone();
 
         // For charsets
         torbutton_update_fingerprinting_prefs();
