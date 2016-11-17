@@ -37,6 +37,9 @@ ContentPolicy.prototype = {
 
     // Resizing text boxes.
     "chrome://global/content/bindings/resizer.xml": Ci.nsIContentPolicy.TYPE_XBL,
+
+    // Directory listing.
+    "chrome://global/skin/dirListing/dirListing.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
   },
 
   shouldLoad: function(aContentType, aContentLocation, aRequestOrigin, aContext, aMimeTypeGuess, aExtra) {
