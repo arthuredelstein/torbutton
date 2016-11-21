@@ -13,9 +13,9 @@
         onload="torbutton_init_security_ui()"
         align="stretch"
         pack="center"
-        maxheight="300"
-        minwidth="300"
-        maxwidth="400"
+        maxheight="350"
+        minwidth="400"
+        maxwidth="600"
         ondialogaccept="torbutton_save_security_settings()"
         width="400" >
 
@@ -57,9 +57,7 @@
                 </vbox>
               </hbox>
             </vbox>
-            <!-- A width of 400 is already too much for OS X it seems. The above
-                 spacer tag would basically be useless and the layout ugly. -->
-            <vbox flex="1" width="300" style="overflow: auto;">
+            <vbox flex="1" width="400" style="overflow: auto;">
               <vbox id="desc_high" collapsed="true">
                 <description
                   class="slider-text-size, slider-text-weight">
