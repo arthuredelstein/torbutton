@@ -132,10 +132,6 @@ body[toron] .top h1 {
   color: #600060;
 }
 
-body:not([showmanual]) .showForManual {
-  display: none;
-}
-
 div.hideIfTorIsUpToDate,
 body .top div.hideIfTorIsUpToDate h1 {
   color: black;

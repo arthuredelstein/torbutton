@@ -12,7 +12,6 @@ let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
 let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
-let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -201,7 +200,7 @@ var torbutton_tor_check_observer = {
 
         // Update all open about:tor pages. If the user does not have an
         // about:tor page open in the front most window, open one.
-        if (torbutton_update_all_abouttor_pages(undefined, undefined, false) < 1) {
+        if (torbutton_update_all_abouttor_pages(undefined, false) < 1) {
           var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
               .getService(Components.interfaces.nsIWindowMediator);
           var win = wm.getMostRecentWindow("navigator:browser");
@@ -361,7 +360,7 @@ function torbutton_init() {
 
     // Detect toolbar customization and update arrow on about:tor pages.
     window.addEventListener("aftercustomization", function() {
-      torbutton_update_all_abouttor_pages(undefined, undefined, undefined);
+      torbutton_update_all_abouttor_pages(undefined, undefined);
     }, false);
     
     //setting up context menu
@@ -399,8 +398,6 @@ function torbutton_init() {
                             "extensions.torbutton.display_circuit");
 
     quantizeBrowserSize(window, 100, 100);
-
-    torbutton_init_user_manual_links();
 
     torbutton_log(3, 'init completed');
 }
@@ -568,7 +565,7 @@ function torbutton_notify_if_update_needed() {
     setOrClearAttribute(btn, "tbUpdateNeeded", updateNeeded);
 
     // Update all open about:tor pages.
-    torbutton_update_all_abouttor_pages(updateNeeded, undefined, undefined);
+    torbutton_update_all_abouttor_pages(updateNeeded, undefined);
 
     // Make the "check for update" menu item bold if an update is needed.
     var item = document.getElementById("torbutton-checkForUpdate");
@@ -597,11 +594,9 @@ function torbutton_check_for_update() {
 
 // Pass undefined for a parameter to have this function determine it.
 // Returns a count of open pages that were updated,
-function torbutton_update_all_abouttor_pages(aUpdateNeeded, aShowManual, aTorIsOn) {
+function torbutton_update_all_abouttor_pages(aUpdateNeeded, aTorIsOn) {
   if (aUpdateNeeded === undefined)
     aUpdateNeeded = torbutton_update_is_needed();
-  if (aShowManual === undefined)
-    aShowManual = torbutton_show_torbrowser_manual();
   if (aTorIsOn === undefined)
     aTorIsOn = torbutton_tor_check_ok();
 
@@ -612,7 +607,7 @@ function torbutton_update_all_abouttor_pages(aUpdateNeeded, aShowManual, aTorIsO
     for (var tab = tabs[0]; tab != null; tab = tab.nextSibling) {
       try {
         let doc = tabBrowser.getBrowserForTab(tab).contentDocument;
-        if (torbutton_update_abouttor_doc(doc, aTorIsOn, aShowManual, aUpdateNeeded))
+        if (torbutton_update_abouttor_doc(doc, aTorIsOn, aUpdateNeeded))
           ++count;
       } catch(e) {}
     }
@@ -622,18 +617,13 @@ function torbutton_update_all_abouttor_pages(aUpdateNeeded, aShowManual, aTorIsO
 }
 
 // Returns true if aDoc is an about:tor page.
-function torbutton_update_abouttor_doc(aDoc, aTorOn, aShowManual, aUpdateNeeded) {
+function torbutton_update_abouttor_doc(aDoc, aTorOn, aUpdateNeeded) {
   var isAboutTor = torbutton_is_abouttor_doc(aDoc);
   if (isAboutTor) {
     if (aTorOn)
       aDoc.body.setAttribute("toron", "yes");
     else
       aDoc.body.removeAttribute("toron");
-
-    if (aShowManual)
-      aDoc.body.setAttribute("showmanual", "yes");
-    else
-      aDoc.body.removeAttribute("showmanual");
 
     if (aUpdateNeeded)
       aDoc.body.setAttribute("torNeedsUpdate", "yes"); 
@@ -749,9 +739,8 @@ function torbutton_on_abouttor_load(aDoc) {
 
     // Show correct Tor on/off and "update needed" status.
     let torOn = torbutton_tor_check_ok();
-    let showManual = torbutton_show_torbrowser_manual();
     let needsUpdate = torbutton_update_is_needed();
-    torbutton_update_abouttor_doc(aDoc, torOn, showManual, needsUpdate);
+    torbutton_update_abouttor_doc(aDoc, torOn, needsUpdate);
 
     aDoc.defaultView.addEventListener("resize",
                       function() { torbutton_update_abouttor_arrow(aDoc); },
@@ -2448,26 +2437,5 @@ function torbutton_update_noscript_button()
   }, 0);
 }
 
-// Opens the Tor Browser User Manual in a new tab
-function torbutton_open_torbrowser_user_manual() {
-  gBrowser.selectedTab = gBrowser.addTab("https://tb-manual.torproject.org");
-}
-
-// Returns true if we should show the tor browser manual.
-function torbutton_show_torbrowser_manual() {
-  let locale = torbutton_get_general_useragent_locale();
-  return locale.startsWith("en");
-}
-
-// Makes sure the tem in the Help Menu and the link in about:tor
-// for the Tor Browser User Manual are only visible when
-// torbutton_show_torbrowser_manual() returns true.
-function torbutton_init_user_manual_links() {
-  let menuitem = document.getElementById("torBrowserUserManual");
-  bindPrefAndInit("general.useragent.locale", val => {
-    menuitem.hidden = !torbutton_show_torbrowser_manual();
-    torbutton_update_all_abouttor_pages(undefined, undefined, undefined);
-  });
-}
 
 //vim:set ts=4
