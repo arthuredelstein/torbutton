@@ -146,7 +146,7 @@ let runDonationBanner = function () {
       gStringBundle.GetStringFromName("aboutTor.donationBanner.heart");
     sel("#banner-donate-button-text span").innerHTML =
       gStringBundle.GetStringFromName("aboutTor.donationBanner.donate");
-    sel("#banner-donate-button-arrow").innerHTML = "&#10230;";
+    sel("#banner-donate-button-arrow").innerHTML = "&#187;";
     sel("#banner").style.display = "flex";
     sel("#banner-spacer").style.display = "block";
     addEventListener("resize", updateTextSizes);
