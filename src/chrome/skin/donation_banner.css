@@ -127,11 +127,8 @@
 }
 #banner-donate-button-arrow {
     flex: 1 1 33%;
-    font-size: 14px;
-    line-height: 14px;
-}
-#banner-donate-button-arrow:-moz-dir(rtl) {
-    transform: scaleX(-1);
+    font-size: 24px;
+    line-height: 24px;
 }
 #banner-donate-button-link {
     flex: 0 0 auto;
