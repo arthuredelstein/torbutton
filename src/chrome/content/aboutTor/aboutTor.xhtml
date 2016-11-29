@@ -143,9 +143,9 @@ function insertPropertyStrings()
 
     Components.utils.import("resource://gre/modules/Services.jsm");
     let gStringBundle = Services.strings.createBundle(kPropertiesURL);
-    let s1 = gStringBundle.GetStringFromName("aboutTor.searchDC.privacy.link");
-    let s2 = gStringBundle.GetStringFromName("aboutTor.searchDC.search.link");
-    let result = gStringBundle.formatStringFromName("aboutTor.searchDC.privacy",
+    let s1 = gStringBundle.GetStringFromName("aboutTor.searchDDG.privacy.link");
+    let s2 = gStringBundle.GetStringFromName("aboutTor.searchDDG.search.link");
+    let result = gStringBundle.formatStringFromName("aboutTor.searchDDG.privacy",
                   [s1, s2], 2);
     if (result) {
       let elem = document.getElementById("searchProviderInfo");
@@ -196,7 +196,7 @@ window.addEventListener("pageshow", function() {
 </div>
 
 <div class="searchbox hideIfTorOff"> <!-- begin form based search -->
-  <form action="&aboutTor.searchDCPost.link;" method="post">
+  <form action="&aboutTor.searchDDGPost.link;" method="post">
   <div id="sxw">
     <div id="sbutton">
       <input name="b" id="sb" value="" title="&aboutTor.search.label;"
