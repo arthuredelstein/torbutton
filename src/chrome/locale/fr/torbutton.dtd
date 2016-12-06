@@ -46,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Les scripts pourraient être exécutés plus lentement sur certains sites.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Certains mécanismes d'affichage des équations mathématiques sont désactivés.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML est désactivé.">
-<!ENTITY torbutton.prefs.sec_medium "Medium">
+<!ENTITY torbutton.prefs.sec_medium "https://www.transifex.com/otf/torproject/translate/#fr_CA/torbutton-torbuttondtd/13755783">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "Sur les sites où JavaScript est activé, les optimisations des performances sont désactivées.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Certaines fonctions de rendu de police sont désactivées.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Le mécanisme de rendu de police Graphite est désactivé.">
@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Certains polices et icônes pourraient ne pas s'afficher correctement.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Les polices fournies par les sites Web sont bloquées.">
 <!ENTITY torbutton.circuit_display.title "Circuit Tor pour ce site">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

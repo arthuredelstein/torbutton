@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; foi programada por ">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "o/a &vendorShortName;">
+<!ENTITY project.end             ", uma organização sem fins lucrativos para defender a sua privacidade e liberdade na internet.">
+
+<!ENTITY help.start              "Você gostaria de ajudar?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Doar">
+<!ENTITY help.or                 "ou">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "envolver-se">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Perguntas?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Ajude a Rede Tor a crescer!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Informações de licenciamento ">
+<!ENTITY tor.TrademarkStatement   "'Tor' e 'Logo da Cebola' são marcas registradas do Projeto Tor,  Inc.">

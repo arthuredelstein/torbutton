@@ -11,9 +11,9 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Những sự bảo vệ Cookie...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Bấm chuột để khởi chạy Torbutton">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
-<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.prefs.security_settings "Những cài đặt bảo mật cho trình duyệt Tor">
+<!ENTITY torbutton.prefs.restore_defaults "Khôi phục trạng thái mặc định">
+<!ENTITY torbutton.prefs.custom_warning "Những điều chỉnh trong trình duyệt của bạn vừa tạo ra những lỗi bảo mật bất thường. Vì những lý do bảo mật và riêng tư, chúng tôi khuyến cáo bạn chọn những cấp độ bảo mật mặc định khác.">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -46,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Những đoạn mã trên một số trang có thể chạy chậm hơn.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Một vài cơ chế hiển thị công thức toán học bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathMK bị vô hiệu">
-<!ENTITY torbutton.prefs.sec_medium "Medium">
+<!ENTITY torbutton.prefs.sec_medium "Vừa phải">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "Trên những trang nơi JavaScript được cho phép, việc tối ưu hóa hiệu suất bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Một vài chức năng tô vẽ phông chữ bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Cơ chế tô vẽ phông chữ Graphite bị vô hiệu.">
@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Một vài phông chữ và biểu tượng có thể hiển thị không đúng.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Những tập tin phông chữ do trang web cung cấp bị chặn.">
 <!ENTITY torbutton.circuit_display.title "Đầu nối Tor dành cho trang này.">
+<!ENTITY torbutton.torbrowser_user_manual.label "Hướng dẫn sử dụng trình duyệt Tor">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

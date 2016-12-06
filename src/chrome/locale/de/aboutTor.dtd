@@ -17,13 +17,9 @@
 <!ENTITY aboutTor.success3.label "Sie können jetzt anonym im Internet surfen.">
 <!ENTITY aboutTor.failure.label "Irgend etwas lief schief!">
 <!ENTITY aboutTor.failure2.label "Tor funktioniert mit diesem Browser nicht.">
-<!ENTITY aboutTor.failure3prefix.label "Um Hilfe zu erhalten, kontaktieren Sie bitte">
-<!ENTITY aboutTor.failure3Link "help@rt.torproject.org">
-<!ENTITY aboutTor.failure3suffix.label ".">
 
 <!ENTITY aboutTor.search.label "Suche">
 
-<!ENTITY aboutTor.searchSPPost.link "https://startpage.com/rth/search">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
 <!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=DE&amp;source=tor">
 
@@ -35,6 +31,8 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor ist NICHT alles was benötigt wird, um anonym zu surfen! Sie müssen eventuell einige Gewohnheiten ändern, um sicherzustellen, dass Ihre Identität geschützt bleibt.">
 <!ENTITY aboutTor.whatnext.label "Tipps, um anonym zu bleiben »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor-Browser-Benutzerhandbuch »">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "Sie können helfen!">
 <!ENTITY aboutTor.helpInfo2.label "Es gibt viele Möglichkeiten, um das Tor-Netzwerk schneller und stärker zu machen:">
 <!ENTITY aboutTor.helpInfo3.label "Einen Tor-Relaisknoten betreiben »">

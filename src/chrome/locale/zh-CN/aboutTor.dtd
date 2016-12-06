@@ -17,13 +17,9 @@
 <!ENTITY aboutTor.success3.label "现在即可自由地匿名访问互联网。">
 <!ENTITY aboutTor.failure.label "出错了！">
 <!ENTITY aboutTor.failure2.label "Tor 无法在该浏览器下运行。">
-<!ENTITY aboutTor.failure3prefix.label "如需帮助，请联系：">
-<!ENTITY aboutTor.failure3Link "help-zh@rt.torproject.org">
-<!ENTITY aboutTor.failure3suffix.label "。">
 
 <!ENTITY aboutTor.search.label "安全的搜索引擎">
 
-<!ENTITY aboutTor.searchSPPost.link "https://startpage.com/rth/search">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
 <!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=US&amp;source=tor">
 
@@ -35,6 +31,8 @@
 <!ENTITY aboutTor.whatnextAnswer.label "仅仅使用 Tor 无法实现匿名浏览。为了确保身份安全，你可能需要改变某些浏览习惯。">
 <!ENTITY aboutTor.whatnext.label "匿名提示 »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser 用户手册 »">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "你也可以帮忙！">
 <!ENTITY aboutTor.helpInfo2.label "可通过很多方式提供帮助，让 Tor 网络变得更快更强大：">
 <!ENTITY aboutTor.helpInfo3.label "运行 Tor 中继节点 »">

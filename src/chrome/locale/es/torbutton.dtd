@@ -19,7 +19,7 @@
 <!ENTITY torbutton.cookiedialog.domainCol "Servidor (host)">
 <!ENTITY torbutton.cookiedialog.nameCol "Nombre">
 <!ENTITY torbutton.cookiedialog.pathCol "Ruta">
-<!ENTITY torbutton.cookiedialog.protectCookie "Cookie protegida">
+<!ENTITY torbutton.cookiedialog.protectCookie "Proteger cookie">
 <!ENTITY torbutton.cookiedialog.removeCookie "Eliminar cookie">
 <!ENTITY torbutton.cookiedialog.unprotectCookie "Desproteger cookie">
 <!ENTITY torbutton.cookiedialog.removeAllBut "Eliminar todas excepto las protegidas">
@@ -41,7 +41,7 @@ Mantenga marcada esta casilla para ocultar a los sitios web detalles que pudiera
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "El mecanismo de representación de fuentes SVG OpenType está deshabilitado.">
 <!ENTITY torbutton.prefs.sec_gen_desc "En este nivel de seguridad, se aplican los siguientes cambios (ratón encima para detalles):">
 <!ENTITY torbutton.prefs.sec_html5_desc "Los medios de vídeo y audio HTML5 se vuelven tipo clic-para-reproducir mediante NoScript.">
-<!ENTITY torbutton.prefs.sec_html5_tooltip "En algunos sitios, podría necesitar usar el botón NoScript de barra de herramientas para habilitar estos objetos de medios.">
+<!ENTITY torbutton.prefs.sec_html5_tooltip "En algunos sitios, puede que necesite usar el botón NoScript de la barra de herramientas para habilitar estos objetos audiovisuales.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Algunas optimizaciones de rendimiento de JavaScript están deshabilitadas.">
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT (compilador JS instantáneo optimizado), Type Inference (deducción del tipo de datos por el compilador), ASM.JS (JS intermedio para alto rendimiento de otros lenguajes)">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT (compilador JS instantáneo)">
@@ -61,3 +61,5 @@ Mantenga marcada esta casilla para ocultar a los sitios web detalles que pudiera
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Algunas fuentes e iconos pueden mostrarse de forma incorrecta.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Los ficheros de fuentes proporcionados por el sitio web están bloqueados.">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor para este sitio">
+<!ENTITY torbutton.torbrowser_user_manual.label "Manual de usuario del Navegador Tor">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

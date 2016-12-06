@@ -11,9 +11,9 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Protezioni dei Cookie...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Fai clic per inizializzare Torbutton">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
-<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.prefs.security_settings "Impostazioni di Sicurezza Tor Browser">
+<!ENTITY torbutton.prefs.restore_defaults "Ripristina Defaults">
+<!ENTITY torbutton.prefs.custom_warning "Le tue impostazioni del browser sembrano avere preferenze di sicurezza insolite. Per motivi di sicurezza e privacy, ti consigliamo di scegliere uno dei livelli di sicurezza predefiniti.">
 <!ENTITY torbutton.cookiedialog.title "Gestisci protezione Cookies">
 <!ENTITY torbutton.cookiedialog.lockCol "Protetto">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -46,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Gli scripts su alcuni siti possono girare più lenti.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Alcuni meccanismi di visualizzazione di equazioni matematiche sono disabilitati.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML è disabilitato.">
-<!ENTITY torbutton.prefs.sec_medium "Medium">
+<!ENTITY torbutton.prefs.sec_medium "Medio">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "Nei siti dove è attivato JavaScript le ottimizzazioni sono disabilitate">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Alcuni rendering dei font sono disabilitati.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Il meccanismo di rendering font Graphite è disabilitato.">
@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Alcuni caratteri e icone possono non essere visualizzati correttamente.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "I font provvisti dal sito sono bloccati.">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor per questo sito">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

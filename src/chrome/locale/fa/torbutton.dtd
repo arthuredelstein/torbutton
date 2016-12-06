@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "برخی از فونت ها و آیکون های ممکن است نمایش نادرست داشته باشند.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "فایل های فونتی که در وب سایت ارائه می شوند مسدود شده است.">
 <!ENTITY torbutton.circuit_display.title "مدار Tor برای این سایت">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

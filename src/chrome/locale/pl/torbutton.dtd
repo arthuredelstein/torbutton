@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Niektóre czcionki i ikony mogą być wyświetlane niepoprawnie.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Pliki czcionek dostarczane przez strony internetowe są blokowane.">
 <!ENTITY torbutton.circuit_display.title "Obwód Tor dla tej strony">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

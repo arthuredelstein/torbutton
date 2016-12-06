@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "某些字体和图标可能无法正确显示。">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "禁用网站提供的字体文件。">
 <!ENTITY torbutton.circuit_display.title "为此站点使用的 Tor 线路">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser 用户手册">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

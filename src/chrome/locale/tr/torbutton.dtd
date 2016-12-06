@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Bazı yazı tipi ve simgeler düzgün görüntülenemeyebilir.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Web sitesi tarafından sunulan yazı tipi dosyaları engellenir.">
 <!ENTITY torbutton.circuit_display.title "Bu site için Tor devresi">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

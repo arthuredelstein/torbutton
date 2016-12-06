@@ -17,13 +17,9 @@
 <!ENTITY aboutTor.success3.label "Du kan nu surfa på nätet anonymt.">
 <!ENTITY aboutTor.failure.label "Någonting gick fel!">
 <!ENTITY aboutTor.failure2.label "Tor fungerar inte i den här webbläsaren.">
-<!ENTITY aboutTor.failure3prefix.label "För assistans (på engelska), vänligen kontakta">
-<!ENTITY aboutTor.failure3Link "help@rt.torproject.org">
-<!ENTITY aboutTor.failure3suffix.label ".">
 
 <!ENTITY aboutTor.search.label "Sök">
 
-<!ENTITY aboutTor.searchSPPost.link "https://startpage.com/rth/search">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
 <!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=SE&amp;source=tor">
 
@@ -35,6 +31,8 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor är INTE allt som behövs för att vara anonym på nätet! Du behöver kanske ändra några av dina vanor för att säkerställa att din identitet förblir skyddad.">
 <!ENTITY aboutTor.whatnext.label "Tips på hur man förblir anonym »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser bruksanvisning »">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "Du kan hjälpa till!">
 <!ENTITY aboutTor.helpInfo2.label "Det finns många sätt du kan hjälpa till med att göra Tor-nätverket snabbare och säkrare:">
 <!ENTITY aboutTor.helpInfo3.label "Kör ett Tor-relä »">

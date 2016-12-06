@@ -1,4 +1,4 @@
-<!ENTITY torbutton.context_menu.new_identity "Nieuwe identiteit">
+<!ENTITY torbutton.context_menu.new_identity "Nieuwe Identiteit">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nieuw Tor-circuit voor deze website">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
@@ -8,26 +8,26 @@
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Controleer op updates voor de Tor-browser...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookiebeveiligingen...">
+<!ENTITY torbutton.context_menu.cookieProtections "Cookie Beveiligingen">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Klik hier om Torbutton te initialiseren">
-<!ENTITY torbutton.prefs.security_settings "Tor-browserbeveiligingsinstellingen">
+<!ENTITY torbutton.button.tooltip "Klik hier om Tor-knop te initialiseren">
+<!ENTITY torbutton.prefs.security_settings "Tor-browser Beveiligingsinstellingen">
 <!ENTITY torbutton.prefs.restore_defaults "Standaardwaarden herstellen">
-<!ENTITY torbutton.prefs.custom_warning "Je aangepaste browservoorkeuren hebben geleid tot ongebruikelijke beveiligingsinstellingen. Uit veiligheids- en privacy-overwegen raden we je aan een van de standaardbeveiligingsniveau's te kiezen.">
-<!ENTITY torbutton.cookiedialog.title "Beheer cookiebeveiligingen">
+<!ENTITY torbutton.prefs.custom_warning "Je aangepaste browservoorkeuren hebben geleid tot ongebruikelijke beveiligingsinstellingen. Uit veiligheids- en privacy-overwegingen raden we je aan één van de standaardbeveiligingsniveaus te kiezen.">
+<!ENTITY torbutton.cookiedialog.title "Beheer Cookie Beveiligingen">
 <!ENTITY torbutton.cookiedialog.lockCol "Beveiligd">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
 <!ENTITY torbutton.cookiedialog.nameCol "Naam">
 <!ENTITY torbutton.cookiedialog.pathCol "Pad">
 <!ENTITY torbutton.cookiedialog.protectCookie "Cookie beveiligen">
 <!ENTITY torbutton.cookiedialog.removeCookie "Cookie verwijderen">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Cookiebeveiliging opheffen">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Alle cookies behalve beveiligde verwijderen">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Cookie beveiliging opheffen">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Alle cookies, met uitzondering van de beveiligde, verwijderen">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beveilig nieuwe cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beveilig nieuwe cookies niet">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Beperk cookies en andere tracking-gegevens van derden">
 <!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Vink dit vakje aan om te voorkomen dat functies van je browser worden misbruikt om je te volgen op het internet. Gemodificeerde functies zijn o.a. URL's, uitzendingskanalen, de browsercache, cookies, favicons, HTTP-auth-hoofdingen, koppelingsvoorverbindingen, localStorage, mediaSource-URL's, OCSP-verzoeken, SharedWorkers en TLS-sessietickets.">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Vink dit vakje aan om te voorkomen dat functies van je browser worden misbruikt om je te volgen op het internet. Gemodificeerde functies zijn o.a. URL's, uitzendingskanalen, de browsercache, cookies, favicons, HTTP Auth headers, koppeling-voorverbindingen, lokale opslag, mediabron-URL's, OCSP-verzoeken, Gedeelde-werkers en TLS-sessietickets.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Verander details die je onderscheiden van andere Tor Browser gebruikers">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Vink dit vakje aan om websites geen inzicht te geven in dingen die uniek aan je zijn, zoals je batterijstatus, computersnelheid, toetsenbordindeling, taal, geïnstalleerde plug-ins en hun locatie, netwerkstatus, schermoriëntatie, schermgrootte, zoomniveaus per site, ondersteunde bestandstypes, systeemkleuren en WebGL-mogelijkheden.">
@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Sommige lettertypen en pictogrammen worden mogelijk niet goed weergegeven. ">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Door websites aangeleverde lettertypen worden geblokkeerd.">
 <!ENTITY torbutton.circuit_display.title "Tor-circuit voor deze website">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser Gebruikershandleiding">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

@@ -17,13 +17,9 @@
 <!ENTITY aboutTor.success3.label "現在、自由に匿名でインターネットをブラウズ出来ます。">
 <!ENTITY aboutTor.failure.label "何かが間違っています！">
 <!ENTITY aboutTor.failure2.label "Torは、このブラウザでは動作しません。">
-<!ENTITY aboutTor.failure3prefix.label "サポートについては、お問い合わせください。">
-<!ENTITY aboutTor.failure3Link "help@rt.torproject.org まで">
-<!ENTITY aboutTor.failure3suffix.label "。">
 
 <!ENTITY aboutTor.search.label "検索">
 
-<!ENTITY aboutTor.searchSPPost.link "https://startpage.com/rth/search">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
 <!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=US&amp;source=tor">
 
@@ -35,6 +31,8 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Torだけが匿名にブラウズするのに必要というわけではないのです！ あなたの身元を安全に保つには、ブラウジングの習慣の一部を変える必要があるかもしれません。">
 <!ENTITY aboutTor.whatnext.label "匿名性を保つことについてのヒント »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "助けてください！">
 <!ENTITY aboutTor.helpInfo2.label "Torネットワークをさらに高速に、さらに強力にするのに役立てるたくさんのやり方があります。">
 <!ENTITY aboutTor.helpInfo3.label "Torリレーノードを起動 »">

@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Some fonts and icons may display incorrectly.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Webguneak hornitutako letra fitxategiak blokeatuta daude.">
 <!ENTITY torbutton.circuit_display.title "Gune honetako Tor zirkuitua">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

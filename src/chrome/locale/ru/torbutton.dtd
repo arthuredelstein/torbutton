@@ -46,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Сценарии на некоторых сайтах могут работать медленнее.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Некоторые механизмы отображения математических уравнений отключены.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML отключен.">
-<!ENTITY torbutton.prefs.sec_medium "Medium">
+<!ENTITY torbutton.prefs.sec_medium "Средний">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "На сайтах с применением JavaScript  оптимизация отключена.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Некоторые функции отрисовки шрифтов отключены.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Механизм визуализации шрифта Graphite отключен.">
@@ -59,3 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Некоторые шрифты и значки могут отображаться некорректно.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Файлы шрифтов, предоставленные сайтом, заблокированы">
 <!ENTITY torbutton.circuit_display.title "Цепочка Tor для этого сайта">
+<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser руководство пользователя">
+<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">
