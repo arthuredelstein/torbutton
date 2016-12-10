@@ -1,3 +1,14 @@
+1.9.6.8
+ * Bug 16622: Timezone spoofing moved to tor-browser.git
+ * Bug 20701: Allow the directory listing stylesheet in the content policy
+ * Bug 20556: Use pt-BR strings from now on
+ * Bug 20614: Add links to Tor Browser User Manual
+ * Bug 20414: Fix non-rendering arrow on OS X
+ * Bug 20728: Fix bad preferences.xul dimensions
+ * Bug 20318: Remove helpdesk link from about:tor
+ * Bug 20753: Remove obsolete StartPage locale strings
+ * Translation updates
+
 1.9.6.7
  * Bug 20414: Add donation banner on about:tor for 2016 campaign
  * Bug 20111: use Unix domain sockets for SOCKS port by default
