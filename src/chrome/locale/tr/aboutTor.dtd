@@ -31,7 +31,7 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor, anonim kalmanız için gerek duyacağınız her şeyi sağlamaz! Kimliğinizin güvende kalması için bazı İnternet alışkanlıklarınızı değiştirmeniz gerekebilir.">
 <!ENTITY aboutTor.whatnext.label "Anonim Kalma İpuçları »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Tarayıcısı Kullanıcı Rehberi »">
 <!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "Yardım Edebilirsiniz!">
 <!ENTITY aboutTor.helpInfo2.label "Tor ağını daha hızlı güçlü kılmaya yardımcı olabilmenin çeşitli yolları var:">
