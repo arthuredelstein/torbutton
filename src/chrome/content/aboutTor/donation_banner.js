@@ -69,12 +69,12 @@ let shouldShowBanner = function () {
       Services.prefs.clearUserPref(shownCountPref);
       return false;
     }
-    // Only show banner 10 times.
+    // Only show banner 50 times.
     let count = 0;
     if (Services.prefs.prefHasUserValue(shownCountPref)) {
       count = Services.prefs.getIntPref(shownCountPref);
     }
-    if (count >= 10) {
+    if (count >= 50) {
       return false;
     }
     Services.prefs.setIntPref(shownCountPref, count+1);
@@ -125,6 +125,7 @@ let updateTextSizes = function () {
   fitTextInElement(sel("#banner-heart"));
   fitTextInElement(sel("#banner-donate-button-text"));
   avoidWidows(sel("#banner-tagline span"));
+  avoidWidows(sel("#banner-donate-button-text"));
 };
 
 // Read the tagline with the given index.
@@ -145,8 +146,7 @@ let runDonationBanner = function () {
     sel("#banner-heart span").innerText =
       gStringBundle.GetStringFromName("aboutTor.donationBanner.heart");
     sel("#banner-donate-button-text span").innerHTML =
-      gStringBundle.GetStringFromName("aboutTor.donationBanner.donate");
-    sel("#banner-donate-button-arrow").innerHTML = "&#187;";
+      gStringBundle.GetStringFromName("aboutTor.donationBanner.donate") + "&#160;&#187;";
     sel("#banner").style.display = "flex";
     sel("#banner-spacer").style.display = "block";
     addEventListener("resize", updateTextSizes);
