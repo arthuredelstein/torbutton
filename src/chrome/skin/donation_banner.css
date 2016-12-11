@@ -95,10 +95,7 @@
     height: 50px;
     letter-spacing: -0.00em;
     opacity: 100%;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
+    padding: 10px;
     width: 100px;
 }
 #banner-donate-button-container:hover {
@@ -115,7 +112,7 @@
     font-size: 12px;
     font-weight: bold;
     height: 100%;
-    text-align: center;
+    text-align: start;
     width: 100%;
 }
 #banner-donate-button-text {
@@ -124,11 +121,6 @@
     display: flex;
     justify-content: center;
     flex: 2 2 67%;
-}
-#banner-donate-button-arrow {
-    flex: 1 1 33%;
-    font-size: 24px;
-    line-height: 24px;
 }
 #banner-donate-button-link {
     flex: 0 0 auto;
