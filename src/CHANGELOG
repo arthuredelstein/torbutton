@@ -1,3 +1,6 @@
+1.9.6.9
+ * Bug 20947: Donation banner improvements
+
 1.9.6.8
  * Bug 16622: Timezone spoofing moved to tor-browser.git
  * Bug 20701: Allow the directory listing stylesheet in the content policy
