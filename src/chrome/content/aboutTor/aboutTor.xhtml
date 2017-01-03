@@ -21,8 +21,6 @@
   <title>&aboutTor.title;</title>
   <link rel="stylesheet" type="text/css" media="all"
         href="chrome://torbutton/skin/aboutTor.css"/>
-  <link rel="stylesheet" type="text/css" media="all"
-        href="chrome://torbutton/skin/donation_banner.css"/>
 <script type="text/javascript;version=1.7">
  <![CDATA[
 function onLoad()
@@ -166,29 +164,6 @@ window.addEventListener("pageshow", function() {
 </script>
 </head>
 <body dir="&locale.dir;" onload="onLoad();">
-  <div id="banner" class="onions-bg">
-    <div id="banner-contents-container">
-      <div id="banner-logo-container">
-        <img id="banner-logo" alt="Tor Onion-Heart Logo"
-             src="chrome://torbutton/content/aboutTor/onion-heart.svg"/>
-      </div>
-      <div id="banner-text">
-        <div id="banner-tagline"><span></span></div>
-        <div id="banner-heart"><span></span></div>
-      </div>
-      <a id="banner-donate-button-link"
-         href="https://www.torproject.org/donate/donate-tbb">
-        <div id="banner-donate-button-container">
-          <div id="banner-donate-button">
-            <div id="banner-donate-button-text">
-              <span></span>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div id="banner-spacer"></div>
 <div id="torstatus" class="top">
   <div id="torstatus-version"/>
   <div id="torstatus-image"/>
@@ -270,6 +245,6 @@ window.addEventListener("pageshow", function() {
   <p>&aboutTor.footer.label;
 <a href="&aboutTor.learnMore.link;">&aboutTor.learnMore.label;</a></p>
 </div>
-  <script src="chrome://torbutton/content/aboutTor/donation_banner.js"></script>
+
 </body>
 </html>
