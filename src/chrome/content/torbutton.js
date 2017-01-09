@@ -1822,6 +1822,17 @@ function torbutton_check_protections()
   else
     document.getElementById("torbutton-networksettings").hidden = false;
 
+  // Bug 21091: check for the existence of an environment variable
+  // in order to toggle the visibility of the torbutton-checkForUpdate
+  // menuitem and its separator.
+  if (env.exists("TOR_HIDE_UPDATE_CHECK_UI")) {
+    document.getElementById("torbutton-checkForUpdateSeparator").hidden = true;
+    document.getElementById("torbutton-checkForUpdate").hidden = true;
+  } else {
+    document.getElementById("torbutton-checkForUpdateSeparator").hidden = false;
+    document.getElementById("torbutton-checkForUpdate").hidden = false;
+  }
+
   var cookie_pref = m_tb_prefs.getBoolPref("extensions.torbutton.cookie_protections");
   document.getElementById("torbutton-cookie-protector").disabled = !cookie_pref;
 

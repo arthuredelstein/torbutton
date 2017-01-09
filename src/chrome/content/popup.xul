@@ -44,7 +44,7 @@
                   label="&torbutton.context_menu.networksettings;"
                   accesskey="&torbutton.context_menu.networksettings.key;"
                   oncommand="torbutton_open_network_settings()"/>
-        <menuseparator/>
+        <menuseparator id="torbutton-checkForUpdateSeparator"/>
         <menuitem id="torbutton-checkForUpdate"
                   label="&torbutton.context_menu.downloadUpdate;"
                   accesskey="&torbutton.context_menu.downloadUpdate.key;"
