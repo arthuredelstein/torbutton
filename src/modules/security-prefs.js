@@ -29,7 +29,7 @@ const kSecuritySettings = {
   "noscript.global" :                         [,  false, false, false, true ],
   "noscript.globalHttpsWhitelist" :           [,  false, true,  true,  false],
   "noscript.forbidFonts" :                    [,  true,  false, false, false],
-  "svg.in-content.enabled" :                  [,  false, true,  true,  true ],
+  "svg.disabled" :                            [,  true,  false, false, false],
 };
 
 // The Security Settings prefs in question.
