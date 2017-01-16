@@ -19,9 +19,7 @@
 <!ENTITY aboutTor.failure2.label "Tor ez da nabigatzaile honetan funtzionatzen ari.">
 
 <!ENTITY aboutTor.search.label "Bilatu">
-
-<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
-<!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=US&amp;source=tor">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torInfo1.label "Informazio gehiago:">
 <!ENTITY aboutTor.torInfo2.label "Herrialde eta IP helbidea:">

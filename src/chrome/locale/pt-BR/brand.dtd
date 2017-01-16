@@ -12,4 +12,4 @@
 <!ENTITY plugins.installed.find "Clique para carregar os plugins de sistema instalados">
 <!ENTITY plugins.installed.enable "Ativar plugins">
 <!ENTITY plugins.installed.disable "Desativar plugins">
-<!ENTITY plugins.installed.disable.tip "Clique para evitar o carregamento dos plugins de sistema ">
+<!ENTITY plugins.installed.disable.tip "Clique para evitar o carregamento de plugins de sistema ">

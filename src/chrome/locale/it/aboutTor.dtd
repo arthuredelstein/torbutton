@@ -19,9 +19,7 @@
 <!ENTITY aboutTor.failure2.label "Tor non sta funzionando su questo browser.">
 
 <!ENTITY aboutTor.search.label "Cerca">
-
-<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
-<!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=US&amp;source=tor">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torInfo1.label "Ulteriori Info:">
 <!ENTITY aboutTor.torInfo2.label "Nazione &amp; Indirizzo IP:">
@@ -31,7 +29,7 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor NON è tutto ciò che ti serve per navigare anonimamente! Potresti aver bisogno di cambiare le tue abitudini di navigazione per accertarti che la tua identità rimanga al sicuro.">
 <!ENTITY aboutTor.whatnext.label "Consigli Per Restare Anonimo »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Manuale utente di Tor Browser »">
 <!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "Puoi Aiutare!">
 <!ENTITY aboutTor.helpInfo2.label "Ci sono molti modi in cui puoi aiutare a rendere la Rete Tor più veloce e stabile:">

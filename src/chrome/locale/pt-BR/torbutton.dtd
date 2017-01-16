@@ -32,7 +32,7 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Deixe esta opção marcada para ocultar suas informações individuais, como o status da bateria, a performance do computados, o formato de teclado, a localização e os plugins instalados, a lista de plugins instalados, o status da sua rede, a posição de tela, o tamanho de tela, níveis de zoom de alguns sites, tipos de arquivos compatíveis, cores de sistema, e capacidade de WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Nível de Segurança">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider permite que você desabilite certas funcionalidades de navegação que podem torná-la mais vulnerável a tentativas de ataque.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider possibilita que você desabilite certas funcionalidades de navegação que podem torná-la mais vulnerável a tentativas de ataque.">
 <!ENTITY torbutton.prefs.sec_low "Baixo (padrão)">
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Isto proporciona a experiência mais utilizável.">
 <!ENTITY torbutton.prefs.sec_low_desc "Nesse nível de segurança, todas as funções do navegador são ativadas. ">

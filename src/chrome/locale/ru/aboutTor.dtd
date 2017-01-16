@@ -6,22 +6,20 @@
 
 <!ENTITY aboutTor.title "О проекте Tor">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "ВНИМАНИЕ: этот браузер устарел.">
+<!ENTITY aboutTor.outOfDateTorOn.label "ВНИМАНИЕ: Вы используете старую версию браузера.">
 <!ENTITY aboutTor.outOfDateTorOff.label "КРОМЕ ТОГО, данный браузер устарел.">
 <!ENTITY aboutTor.outOfDate2.label "Нажмите на &quot;луковицу&quot;и затем выберите &quot;Проверить обновления браузера Tor&quot;">
 
 <!ENTITY aboutTor.check.label "Проверить настройки сети Tor">
 
-<!ENTITY aboutTor.success.label "Добро пожаловать в обозреватель Tor">
-<!ENTITY aboutTor.success2.label "Вы подключены к сети Tor.">
+<!ENTITY aboutTor.success.label "Вас приветствует Tor Browser">
+<!ENTITY aboutTor.success2.label "Сеть Tor подключена.">
 <!ENTITY aboutTor.success3.label "Теперь Вы можете просматривать интернет-сайты в анонимном режиме.">
 <!ENTITY aboutTor.failure.label "Что-то пошло не так!">
 <!ENTITY aboutTor.failure2.label "Tor не работает в этом браузере.">
 
 <!ENTITY aboutTor.search.label "Поиск">
-
-<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
-<!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=US&amp;source=tor">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torInfo1.label "Дополнительные сведения:">
 <!ENTITY aboutTor.torInfo2.label "Страна и IP-адрес">
@@ -31,11 +29,11 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor НЕ является исчерпывающим средством для анонимного использования сети! Возможно, чтобы обезопасить свои личные данные, Вам придется изменить некоторые привычки работы в Интернете.">
 <!ENTITY aboutTor.whatnext.label "Рекомендации для сохранения анонимности »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser руководство пользователя">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Руководство использования Tor Browser.">
 <!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "Вы можете помочь!">
 <!ENTITY aboutTor.helpInfo2.label "Есть много способов сделать сеть Tor более быстрой и устойчивой:">
-<!ENTITY aboutTor.helpInfo3.label "Запустить ретранслятор Tor »">
+<!ENTITY aboutTor.helpInfo3.label "Запустить цепочку Tor »">
 <!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html#ru">
 <!ENTITY aboutTor.helpInfo4.label "Станьте нашим добровольцем »">
 <!ENTITY aboutTor.helpInfo4.link "https://www.torproject.org/getinvolved/volunteer.html#ru">

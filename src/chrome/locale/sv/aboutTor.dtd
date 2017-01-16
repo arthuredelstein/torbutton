@@ -19,9 +19,7 @@
 <!ENTITY aboutTor.failure2.label "Tor fungerar inte i den här webbläsaren.">
 
 <!ENTITY aboutTor.search.label "Sök">
-
-<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
-<!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=SE&amp;source=tor">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torInfo1.label "Ytterligare information:">
 <!ENTITY aboutTor.torInfo2.label "Land och IP-adress:">
@@ -39,7 +37,7 @@
 <!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html.en">
 <!ENTITY aboutTor.helpInfo4.label "Erbjud din hjälp »">
 <!ENTITY aboutTor.helpInfo4.link "https://www.torproject.org/getinvolved/volunteer.html.en">
-<!ENTITY aboutTor.helpInfo5.label "Donera »">
+<!ENTITY aboutTor.helpInfo5.label "Gör en donation »">
 <!ENTITY aboutTor.helpInfo5.link "https://www.torproject.org/donate/donate.html.en">
 
 <!ENTITY aboutTor.footer.label "Tor projektet är en US 501(c)(3) non-profit organisation som utför forskning, utveckling, och utbildning inom online anonymitet och integritet.">

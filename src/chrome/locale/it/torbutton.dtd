@@ -59,5 +59,5 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Alcuni caratteri e icone possono non essere visualizzati correttamente.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "I font provvisti dal sito sono bloccati.">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor per questo sito">
-<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
+<!ENTITY torbutton.torbrowser_user_manual.label "Manuale utente di Tor Browser">
 <!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

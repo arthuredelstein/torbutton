@@ -19,9 +19,7 @@
 <!ENTITY aboutTor.failure2.label "تا با این مرورگر کار نمی‌کند.">
 
 <!ENTITY aboutTor.search.label "جستجو">
-
-<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
-<!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=US&amp;source=tor">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torInfo1.label "اطلاعات بيشتر">
 <!ENTITY aboutTor.torInfo2.label "كشور و آدرس آى پی:">

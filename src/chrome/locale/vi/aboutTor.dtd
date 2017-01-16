@@ -19,9 +19,7 @@
 <!ENTITY aboutTor.failure2.label "Tor không hoạt động trên trình duyệt này.">
 
 <!ENTITY aboutTor.search.label "Tìm kiếm">
-
-<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
-<!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=US&amp;source=tor">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torInfo1.label "Thông tin thêm:">
 <!ENTITY aboutTor.torInfo2.label "Quốc gia &amp; Địa chỉ IP:">

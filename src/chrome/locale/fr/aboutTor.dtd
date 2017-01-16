@@ -8,7 +8,7 @@
 
 <!ENTITY aboutTor.outOfDateTorOn.label "AVERTISSEMENT : ce navigateur n'est pas à jour.">
 <!ENTITY aboutTor.outOfDateTorOff.label "DE PLUS, ce navigateur n'est pas à jour.">
-<!ENTITY aboutTor.outOfDate2.label "Cliquer sur l'oignon, puis choisir Vérifier les màj. du navigateur Tor.">
+<!ENTITY aboutTor.outOfDate2.label "Cliquez sur l'oignon, puis choisissez Vérifier les màj. du navigateur Tor.">
 
 <!ENTITY aboutTor.check.label "Tester les paramètres du réseau Tor">
 
@@ -19,9 +19,7 @@
 <!ENTITY aboutTor.failure2.label "Tor ne fonctionne pas dans ce navigateur.">
 
 <!ENTITY aboutTor.search.label "Rechercher">
-
-<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/html/">
-<!ENTITY aboutTor.searchDCPost.link "https://search.disconnect.me/searchTerms/search?ses=Google&amp;location_option=US&amp;source=tor">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torInfo1.label "Informations supplémentaires :">
 <!ENTITY aboutTor.torInfo2.label "Pays &amp; adresse IP :">
@@ -31,7 +29,7 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor n'est PAS tout ce dont vous avez besoin pour naviguer anonymement! Vous aurez peut-être à changer certaines de vos habitudes de navigation pour garder votre identité en sécurité.">
 <!ENTITY aboutTor.whatnext.label "Conseils pour rester anonyme »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html#warning">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Guide d'utilisation du navigateur Tor »">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Le guide d'utilisation du navigateur Tor »">
 <!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
 <!ENTITY aboutTor.helpInfo1.label "Vous pouvez aider !">
 <!ENTITY aboutTor.helpInfo2.label "Vous pouvez aider à rendre le réseau Tor plus rapide et plus puissant de plusieurs façons :">
