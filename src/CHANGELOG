@@ -1,6 +1,9 @@
 1.9.6.9
  * Bug 20947: Donation banner improvements
 
+1.9.5.13
+ * Bug 20947: Donation banner improvements
+
 1.9.6.8
  * Bug 16622: Timezone spoofing moved to tor-browser.git
  * Bug 20701: Allow the directory listing stylesheet in the content policy
@@ -27,6 +30,10 @@
  * Bug 20388+20399+20394: Code clean-up
  * Translation updates
 
+1.9.5.12
+ * Bug 20414: Add donation banner on about:tor for 2016 campaign
+ * Translation updates
+
 1.9.6.4
  * Bug 17334: Move referrer spoofing for .onion domains into tor-browser.git
  * Bug 17767: Make "JavaScript disabled" more visible in Security Slider
@@ -40,12 +47,23 @@
  * Bug 14271: Make Torbutton work with Unix Domain Socket option
  * Translation updates
 
+1.9.5.7
+ * Bug 18589: Clear site security settings during New Identity
+ * Bug 19906: "Maximizing Tor Browser" Notification can exist multiple times
+
 1.9.6.1
  * Bug 19206: Avoid SOCKS auth and NEWNYM collisions when sharing a tor client
  * Bug 19417: Disable asm.js (but add code to clear on New Identity if enabled)
  * Bug 19689: Plugin usage prompt is parented to wrong window
  * Bug 19273: Improve external app launch handling and associated warnings
  * Bug 8725: Block addon resource and url fingerprinting with nsIContentPolicy
+
+1.9.5.6
+ * Bug 19417: Disable asmjs for now
+ * Bug 19689: Use proper parent windows for plugin prompt
+
+1.9.5.5
+ * Bug 19417: Clear asmjscache
 
 1.9.6
  * Bug 18743: Pref to hide 'Sign in to Sync' button in hamburger menu
