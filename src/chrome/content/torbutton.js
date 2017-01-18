@@ -2440,15 +2440,11 @@ function torbutton_update_noscript_button()
   }, 0);
 }
 
-// Opens the Tor Browser User Manual in a new tab
-function torbutton_open_torbrowser_user_manual() {
-  gBrowser.selectedTab = gBrowser.addTab("https://tb-manual.torproject.org");
-}
-
 // Returns true if we should show the tor browser manual.
 function torbutton_show_torbrowser_manual() {
-  let locale = torbutton_get_general_useragent_locale();
-  return locale.startsWith("en");
+  let availableLocales = ["en", "es", "fr", "pt"];
+  let shortLocale = torbutton_get_general_useragent_locale().substring(0, 2);
+  return availableLocales.indexOf(shortLocale) >= 0;
 }
 
 // Makes sure the item in the Help Menu and the link in about:tor

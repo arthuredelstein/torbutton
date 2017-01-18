@@ -29,8 +29,9 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor NÃO é tudo o que você precisa para navegar anonimamente! Para isso, você precisará mudar alguns hábitos de utilização da Internet, que garantirão a proteção da sua identidade. ">
 <!ENTITY aboutTor.whatnext.label "Dicas para garantir seu anonimato&quot;">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Manual de Uso do Navegador Tor » ">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/pt-BR">
 <!ENTITY aboutTor.helpInfo1.label "Você pode ajudar!">
 <!ENTITY aboutTor.helpInfo2.label "Existem várias maneiras de ajudar a rede Tor a tornar-se mais rápida e eficaz:">
 <!ENTITY aboutTor.helpInfo3.label "Rodar um Nó de Retransmissor Tor »">
