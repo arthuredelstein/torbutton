@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?> <!-- -*- Mode: HTML -*- -->
 
-<!DOCTYPE overlay SYSTEM "chrome://torbutton/locale/torbutton.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://torbutton/locale/aboutTor.dtd">
 
 <overlay id="torbutton-menu-overlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
@@ -20,8 +20,8 @@
     <menuitem name="torBrowserUserManual"
               id="torBrowserUserManual"
               position="1"
-              label="&torbutton.torbrowser_user_manual.label;"
-              accesskey="&torbutton.torbrowser_user_manual.accesskey;"
-              oncommand="torbutton_open_torbrowser_user_manual()" />
+              label="&aboutTor.torbrowser_user_manual.label;"
+              accesskey="&aboutTor.torbrowser_user_manual.accesskey;"
+              oncommand="gBrowser.selectedTab = gBrowser.addTab('&aboutTor.torbrowser_user_manual.link;')" />
   </menupopup>
 </overlay>
