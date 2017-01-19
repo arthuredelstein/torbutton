@@ -59,5 +59,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "어떤 글씨체나 아이콘은 올바르지 않게 표시될 수 있습니다.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "사이트 내장 폰트가 차단되었습니다.">
 <!ENTITY torbutton.circuit_display.title "Tor circuit for this site">
-<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
-<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

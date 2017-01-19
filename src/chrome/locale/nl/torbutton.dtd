@@ -59,5 +59,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Sommige lettertypen en pictogrammen worden mogelijk niet goed weergegeven. ">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Door websites aangeleverde lettertypen worden geblokkeerd.">
 <!ENTITY torbutton.circuit_display.title "Tor-circuit voor deze website">
-<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser Gebruikershandleiding">
-<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

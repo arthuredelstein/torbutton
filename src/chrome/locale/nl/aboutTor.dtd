@@ -29,8 +29,9 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor is NIET alles wat je nodig hebt om anoniem te kunnen browsen. Mogelijk is het nodig dat je bepaalde browsegewoontes verandert om te verzekeren dat je identiteit veilig blijft.">
 <!ENTITY aboutTor.whatnext.label "Tips om anoniem te blijven »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual »">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "Jij kan helpen!">
 <!ENTITY aboutTor.helpInfo2.label "Er zijn veel verschillende manieren hoe jij kan helpen het Tor-netwerk sneller en sterker te maken:">
 <!ENTITY aboutTor.helpInfo3.label "Draai een Tor-relaynode »">

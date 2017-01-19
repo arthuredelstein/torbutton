@@ -61,5 +61,3 @@ Mantenga marcada esta casilla para ocultar a los sitios web detalles que pudiera
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Algunas fuentes e iconos pueden mostrarse de forma incorrecta.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Los ficheros de fuentes proporcionados por el sitio web están bloqueados.">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor para este sitio">
-<!ENTITY torbutton.torbrowser_user_manual.label "Manual de usuario del Navegador Tor">
-<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

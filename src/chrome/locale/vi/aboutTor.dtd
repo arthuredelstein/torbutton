@@ -29,8 +29,9 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor KHÔNG phải là tất cả những gì bạn cần để ẩn danh! Bạn cần nên thay đổi một vài thói quen lướt net để chắc chắn rằng xác minh danh tính sẽ an toàn.">
 <!ENTITY aboutTor.whatnext.label "Gợi ý cho việc ẩn danh »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Hướng dẫn sử dụng Trình duyệt Tor »">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "Bạn có thể giúp đỡ!">
 <!ENTITY aboutTor.helpInfo2.label "Có nhiều cách mà bạn có thể giúp mạng Tor nhanh hơn và tốt hơn.">
 <!ENTITY aboutTor.helpInfo3.label "Chạy một đầu mối tiếp sức Tor »">

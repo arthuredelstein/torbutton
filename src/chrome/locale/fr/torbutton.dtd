@@ -59,5 +59,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Certains polices et icônes pourraient ne pas s'afficher correctement.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Les polices fournies par les sites Web sont bloquées.">
 <!ENTITY torbutton.circuit_display.title "Circuit Tor pour ce site">
-<!ENTITY torbutton.torbrowser_user_manual.label "Le guide d'utilisation du navigateur Tor">
-<!ENTITY torbutton.torbrowser_user_manual.accesskey "G">

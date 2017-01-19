@@ -59,5 +59,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "いくつかのフォントとアイコンは正常に表示されません。">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Web サイトが提供するフォントはブロックされます。">
 <!ENTITY torbutton.circuit_display.title "このサイト用の Tor サーキット">
-<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser User Manual">
-<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

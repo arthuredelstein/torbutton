@@ -59,5 +59,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Некоторые шрифты и значки могут отображаться некорректно.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Файлы шрифтов, предоставленные сайтом, заблокированы">
 <!ENTITY torbutton.circuit_display.title "Цепочка Tor для этого сайта">
-<!ENTITY torbutton.torbrowser_user_manual.label "Tor Browser руководство пользователя">
-<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">

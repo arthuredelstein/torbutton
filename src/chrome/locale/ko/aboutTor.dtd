@@ -29,8 +29,9 @@
 <!ENTITY aboutTor.whatnextAnswer.label "Tor는 완벽한 익명 브라우징을 보장하지 않습니다! 따라서 신분을 안전하게 유지하기 위해서는 브라우징 습관을 바꾸셔야 합니다.">
 <!ENTITY aboutTor.whatnext.label "익명으로 알짱거릴 때의 팁 &gt;&gt;">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual »">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "여러분도 도울 수 있습니다!">
 <!ENTITY aboutTor.helpInfo2.label "여러분이 Tor 네트워크를 보다 빠르고 강하게 만들 수 있는 방법이 있습니다.">
 <!ENTITY aboutTor.helpInfo3.label "Tor 중계 서버 node 실행 »">

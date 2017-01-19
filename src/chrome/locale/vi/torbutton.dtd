@@ -59,5 +59,3 @@
 <!ENTITY torbutton.prefs.sec_webfonts_desc "Một vài phông chữ và biểu tượng có thể hiển thị không đúng.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Những tập tin phông chữ do trang web cung cấp bị chặn.">
 <!ENTITY torbutton.circuit_display.title "Đầu nối Tor dành cho trang này.">
-<!ENTITY torbutton.torbrowser_user_manual.label "Hướng dẫn sử dụng trình duyệt Tor">
-<!ENTITY torbutton.torbrowser_user_manual.accesskey "M">
