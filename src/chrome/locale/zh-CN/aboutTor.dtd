@@ -30,8 +30,8 @@
 <!ENTITY aboutTor.whatnext.label "匿名提示 »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser 用户手册 »">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser 用户手册">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/zh-CN">
 <!ENTITY aboutTor.helpInfo1.label "你也可以帮忙！">
 <!ENTITY aboutTor.helpInfo2.label "可通过很多方式提供帮助，让 Tor 网络变得更快更强大：">
 <!ENTITY aboutTor.helpInfo3.label "运行 Tor 中继节点 »">
