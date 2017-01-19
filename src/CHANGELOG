@@ -1,3 +1,11 @@
+1.9.7
+ * Bug 19898: Use DuckDuckGo on about:tor
+ * Bug 21091: Hide the update check menu entry when running under the sandbox
+ * Bug 21243: Add links to es, fr, and pt Tor Browser manual
+ * Bug 21194: Show snowflake in the circuit display
+ * Bug 21131: Remove 2016 donation banner
+ * Translation updates
+
 1.9.6.9
  * Bug 20947: Donation banner improvements
 
