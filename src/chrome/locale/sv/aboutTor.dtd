@@ -30,7 +30,7 @@
 <!ENTITY aboutTor.whatnext.label "Tips på hur man förblir anonym »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser bruksanvisning »">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser bruksanvisning">
 <!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "Du kan hjälpa till!">
 <!ENTITY aboutTor.helpInfo2.label "Det finns många sätt du kan hjälpa till med att göra Tor-nätverket snabbare och säkrare:">

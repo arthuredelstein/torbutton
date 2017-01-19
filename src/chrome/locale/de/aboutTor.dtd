@@ -30,8 +30,8 @@
 <!ENTITY aboutTor.whatnext.label "Tipps, um anonym zu bleiben »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor-Browser-Benutzerhandbuch »">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor-Browser-Benutzerhandbuch">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/de">
 <!ENTITY aboutTor.helpInfo1.label "Sie können helfen!">
 <!ENTITY aboutTor.helpInfo2.label "Es gibt viele Möglichkeiten, um das Tor-Netzwerk schneller und stärker zu machen:">
 <!ENTITY aboutTor.helpInfo3.label "Einen Tor-Relaisknoten betreiben »">
