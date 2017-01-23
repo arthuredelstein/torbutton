@@ -29,11 +29,6 @@ let mozilla = {};
 mozilla.protocolProxyService = Cc["@mozilla.org/network/protocol-proxy-service;1"]
                                  .getService(Ci.nsIProtocolProxyService);
 
-// __mozilla.thirdPartyUtil__.
-// Mozilla's Thirdy Party Utilities, for figuring out first party domain.
-mozilla.thirdPartyUtil = Cc["@mozilla.org/thirdpartyutil;1"]
-                           .getService(Ci.mozIThirdPartyUtil);
-
 // __mozilla.registerProxyChannelFilter(filterFunction, positionIndex)__.
 // Registers a proxy channel filter with the Mozilla Protocol Proxy Service,
 // which will help to decide the proxy to be used for a given channel.
@@ -133,11 +128,8 @@ tor.isolateCircuitsByDomain = function () {
       return aProxy;
 
     try {
-      let channel = aChannel.QueryInterface(Ci.nsIChannel),
-          firstPartyURI = mozilla.thirdPartyUtil.getFirstPartyURIFromChannel(channel, true)
-                            .QueryInterface(Ci.nsIURI),
-          firstPartyDomain = mozilla.thirdPartyUtil
-                               .getFirstPartyHostForIsolation(firstPartyURI),
+      let channel = aChannel.QueryInterface(Ci.nsIChannel);
+          firstPartyDomain = channel.loadInfo.originAttributes.firstPartyDomain,
           proxy = aProxy.QueryInterface(Ci.nsIProxyInfo),
           replacementProxy = tor.socksProxyCredentials(aProxy, firstPartyDomain);
       logger.eclog(3, "tor SOCKS: " + channel.URI.spec + " via " +
