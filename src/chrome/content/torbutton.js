@@ -86,7 +86,7 @@ var torbutton_unique_pref_observer =
         m_tb_prefs.addObserver("javascript", this, false);
         m_tb_prefs.addObserver("noscript", this, false);
         m_tb_prefs.addObserver("plugin.disable", this, false);
-        m_tb_prefs.addObserver("privacy.thirdparty.isolate", this, false);
+        m_tb_prefs.addObserver("privacy.firstparty.isolate", this, false);
         m_tb_prefs.addObserver("privacy.resistFingerprinting", this, false);
 
         // We observe xpcom-category-entry-added for plugins w/ Gecko-Content-Viewers
@@ -103,7 +103,7 @@ var torbutton_unique_pref_observer =
         m_tb_prefs.removeObserver("javascript", this);
         m_tb_prefs.removeObserver("noscript", this);
         m_tb_prefs.removeObserver("plugin.disable", this);
-        m_tb_prefs.removeObserver("privacy.thirdparty.isolate", this);
+        m_tb_prefs.removeObserver("privacy.firstparty.isolate", this);
         m_tb_prefs.removeObserver("privacy.resistFingerprinting", this);
 
         var observerService = Cc["@mozilla.org/observer-service;1"].
@@ -148,11 +148,11 @@ var torbutton_unique_pref_observer =
         switch (data) {
             case "network.cookie.cookieBehavior":
                 var val = m_tb_prefs.getIntPref("network.cookie.cookieBehavior");
-                var block_thirdparty = m_tb_prefs.getIntPref("privacy.thirdparty.isolate") !== 0;
+                var block_thirdparty = m_tb_prefs.getBoolPref("privacy.firstparty.isolate");
                 if (val == 0 && block_thirdparty) // Allow all cookies
-                  m_tb_prefs.setIntPref("privacy.thirdparty.isolate", 0);
+                  m_tb_prefs.setBoolPref("privacy.firstparty.isolate", false);
                 else if (val == 1 && !block_thirdparty) // Block third party cookies
-                  m_tb_prefs.setIntPref("privacy.thirdparty.isolate", 2);
+                  m_tb_prefs.setBoolPref("privacy.firstparty.isolate", true);
                 break;
 
             case "plugin.disable":
@@ -169,7 +169,7 @@ var torbutton_unique_pref_observer =
             case "extensions.torbutton.spoof_english":
                 torbutton_update_fingerprinting_prefs();
                 break;
-            case "privacy.thirdparty.isolate":
+            case "privacy.firstparty.isolate":
                 torbutton_update_thirdparty_prefs();
                 break;
             case "extensions.torbutton.hide_sync_ui":
@@ -1741,7 +1741,7 @@ function torbutton_update_fingerprinting_prefs() {
 }
 
 function torbutton_update_thirdparty_prefs() {
-    let isolate = m_tb_prefs.getIntPref("privacy.thirdparty.isolate") !== 0;
+    let isolate = m_tb_prefs.getBoolPref("privacy.firstparty.isolate");
 
     if (isolate) {
       m_tb_prefs.setIntPref("network.cookie.cookieBehavior", 1);
