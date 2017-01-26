@@ -140,9 +140,13 @@ var torbutton_unique_pref_observer =
           }
           return;
         }
- 
+
         if (topic != "nsPref:changed") return;
-        if (data.startsWith("noscript.")) {
+        // Make sure the NoScript button shows the current NoScript state. We
+        // don't want to run the update function, though, if just a timer gets
+        // updated. Fixes bug 21324.
+        if (data.startsWith("noscript.") &&
+            data !== "noscript.subscription.lastCheck") {
           torbutton_update_noscript_button();
         }
         switch (data) {
