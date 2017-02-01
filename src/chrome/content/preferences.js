@@ -41,6 +41,11 @@ function torbutton_init_security_ui() {
   torbutton_set_slider(prefSettingToSliderPosition(
     getIntPref("extensions.torbutton.security_slider")));
   torbutton_set_custom(getBoolPref("extensions.torbutton.security_custom"));
+
+  // Show a scrollbar for the description text if one is needed.
+  // To avoid bug 21330, we set the overflow=auto style here instead
+  // of directly in the XUL.
+  document.getElementById("descBox").style.overflow = "auto";
 };
 
 // Write the two prefs from the current settings.

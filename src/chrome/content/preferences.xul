@@ -57,7 +57,7 @@
                 </vbox>
               </hbox>
             </vbox>
-            <vbox flex="1" width="400" style="overflow: auto;">
+            <vbox id="descBox" flex="1" width="400" style="overflow: hidden;">
               <vbox id="desc_high" collapsed="true">
                 <description
                   class="slider-text-size, slider-text-weight">
