@@ -1215,7 +1215,12 @@ function torbutton_do_new_identity() {
       // then we are using the new cache (cache2) which operates synchronously.
       // If we are using the old cache, then the tor-browser.git patch for
       // #5715 also makes this synchronous. So we pass a null callback.
-      appCacheStorage.asyncEvictStorage(null);
+      try {
+        appCacheStorage.asyncEvictStorage(null);
+      } catch (err if err.name == 'NS_ERROR_NOT_AVAILABLE') {
+        // We ignore "not available" errors because they occur if a cache
+        // has not been used, e.g., if no browsing has been done.
+      }
     }
   } catch(e) {
       torbutton_log(5, "Exception on cache clearing: "+e);
@@ -1754,56 +1759,57 @@ function torbutton_update_thirdparty_prefs() {
     m_tb_prefs.savePrefFile(null);
 }
 
+// This function closes all XUL browser windows except this one. For this
+// window, it closes all existing tabs and creates one about:blank tab.
 function torbutton_close_tabs_on_new_identity() {
-    var close_newnym = m_tb_prefs.getBoolPref("extensions.torbutton.close_newnym");
-    if (!close_newnym) {
-      torbutton_log(3, "Not closing tabs");
-      return;
+  if (!m_tb_prefs.getBoolPref("extensions.torbutton.close_newnym")) {
+    torbutton_log(3, "Not closing tabs");
+    return;
+  }
+
+  // TODO: muck around with browser.tabs.warnOnClose.. maybe..
+  torbutton_log(3, "Closing tabs...");
+  let wm = Cc["@mozilla.org/appshell/window-mediator;1"]
+             .getService(Ci.nsIWindowMediator);
+  let enumerator = wm.getEnumerator("navigator:browser");
+  let windowsToClose = new Array();
+  while (enumerator.hasMoreElements()) {
+    let win = enumerator.getNext();
+    let browser = win.getBrowser();
+    if (!browser) {
+      torbutton_log(5, "No browser for possible closed window");
+      continue;
     }
 
-    // TODO: muck around with browser.tabs.warnOnClose.. maybe..
-    torbutton_log(3, "Closing tabs...");
-    var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-        .getService(Components.interfaces.nsIWindowMediator);
-    var enumerator = wm.getEnumerator("navigator:browser");
-    var closeWins = new Array();
-    while(enumerator.hasMoreElements()) {
-        var win = enumerator.getNext();
-        var browser = win.getBrowser();
-        if(!browser) {
-          torbutton_log(5, "No browser for possible closed window");
-          continue;
-        }
-        var tabs = browser.browsers.length;
-
-        torbutton_log(3, "Length: "+browser.browsers.length);
-
-        var remove = new Array();
-        for(var i = 0; i < tabs; i++) {
-            remove.push(browser.browsers[i]);
-        }
-
-        if(browser.browsers.length == remove.length) {
-            // It is a bad idea to alter the window list while
-            // iterating over it.
-            browser.addTab("about:blank");
-            if(win != window) {
-                closeWins.push(win);
-            }
-        }
-
-        for(var i = 0; i < remove.length; i++) {
-            remove[i].contentWindow.close();
-        }
+    let tabCount = browser.browsers.length;
+    torbutton_log(3, "Tab count for window: " + tabCount);
+    let tabsToRemove = new Array();
+    for (let i = 0; i < tabCount; i++) {
+      let tab = browser.getTabForBrowser(browser.browsers[i]);
+      if (!tab) {
+        torbutton_log(5, "No tab for browser");
+      } else {
+        tabsToRemove.push(tab);
+      }
     }
 
-    torbutton_log(2, "Closing windows...");
-
-    for(var i = 0; i < closeWins.length; ++i) {
-        closeWins[i].close();
+    if (win == window) {
+      browser.addTab("about:blank");
+    } else {
+      // It is a bad idea to alter the window list while iterating
+      // over it, so add this window to an array and close it later.
+      windowsToClose.push(win);
     }
 
-    torbutton_log(3, "Closed all tabs");
+    // Close each tab except the new blank one that we created.
+    tabsToRemove.forEach(aTab => browser.removeTab(aTab));
+  }
+
+  // Close all XUL windows except this one.
+  torbutton_log(2, "Closing windows...");
+  windowsToClose.forEach(aWin => aWin.close());
+
+  torbutton_log(3, "Closed all tabs");
 }
 
 // Bug 1506 P2: This code is only important for disabling
