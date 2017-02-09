@@ -2200,26 +2200,16 @@ var torbutton_resizelistener =
 {
   QueryInterface: function(aIID)
   {
-   if (aIID.equals(Components.interfaces.nsIWebProgressListener) ||
-       aIID.equals(Components.interfaces.nsISupportsWeakReference) ||
-       aIID.equals(Components.interfaces.nsISupports))
+   if (aIID.equals(Ci.nsIWebProgressListener) ||
+       aIID.equals(Ci.nsISupportsWeakReference) ||
+       aIID.equals(Ci.nsISupports))
      return this;
-   throw Components.results.NS_NOINTERFACE;
+   throw Cr.NS_NOINTERFACE;
   },
 
   onLocationChange: function(aProgress, aRequest, aURI) {},
   onStateChange: function(aProgress, aRequest, aFlag, aStatus) {
-    if (aFlag & Components.interfaces.nsIWebProgressListener.STATE_STOP) {
-      var progress =
-        Components.classes["@mozilla.org/docloaderservice;1"].
-        getService(Components.interfaces.nsIWebProgress);
-      var win = getBrowser().contentWindow;
-      if (!win || typeof(win) == "undefined") {
-        torbutton_log(5, "No initial browser content window?");
-        progress.removeProgressListener(this);
-        return;
-      }
-
+    if (aFlag & Ci.nsIWebProgressListener.STATE_STOP) {
       m_tb_resize_handler = function() {
         if (window.windowState === 1) {
           if (m_tb_prefs.
@@ -2297,6 +2287,8 @@ var torbutton_resizelistener =
       // event got fired. Thus, we have the rather klunky setTimeout() call.
       window.addEventListener("sizemodechange", m_tb_resize_handler, false);
 
+      let progress = Cc["@mozilla.org/docloaderservice;1"]
+                       .getService(Ci.nsIWebProgress);
       progress.removeProgressListener(this);
     }
   }, // onStateChange
