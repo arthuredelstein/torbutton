@@ -1117,7 +1117,7 @@ function torbutton_do_new_identity() {
           m_tb_prefs.clearUserPref("general.open_location.last_url");
       }
   } catch(e) {
-      torbutton_log(3, "Exception on wifi token clear: "+e);
+      torbutton_log(3, "Exception on clearing last opened location: "+e);
   }
 
   torbutton_log(3, "New Identity: Closing tabs and clearing searchbox");
