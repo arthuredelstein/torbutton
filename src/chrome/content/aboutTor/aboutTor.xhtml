@@ -23,9 +23,14 @@
         href="chrome://torbutton/skin/aboutTor.css"/>
 <script type="text/javascript;version=1.7">
  <![CDATA[
+Components.utils.import("resource://gre/modules/Services.jsm");
+
 function onLoad()
 {
   insertPropertyStrings();
+
+  let locale = Services.prefs.getCharPref("general.useragent.locale");
+  document.getElementById("manualLink").href = "https://tb-manual.torproject.org/" + locale;
 
   document.addEventListener("AboutTorAdjustArrow", function() {
     adjustToolbarIconArrow();
@@ -141,7 +146,6 @@ function insertPropertyStrings()
   try {
     let kPropertiesURL = "chrome://torbutton/locale/aboutTor.properties";
 
-    Components.utils.import("resource://gre/modules/Services.jsm");
     let gStringBundle = Services.strings.createBundle(kPropertiesURL);
     let s1 = gStringBundle.GetStringFromName("aboutTor.searchDDG.privacy.link");
     let s2 = gStringBundle.GetStringFromName("aboutTor.searchDDG.search.link");
@@ -222,7 +226,7 @@ window.addEventListener("pageshow", function() {
           </a>
         </li>
         <li class="showForManual">
-          <a href="&aboutTor.torbrowser_user_manual.link;">
+          <a id="manualLink">
             &aboutTor.torbrowser_user_manual.label; &raquo;
           </a>
         </li>

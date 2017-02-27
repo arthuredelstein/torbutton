@@ -22,6 +22,6 @@
               position="1"
               label="&aboutTor.torbrowser_user_manual.label;"
               accesskey="&aboutTor.torbrowser_user_manual.accesskey;"
-              oncommand="gBrowser.selectedTab = gBrowser.addTab('&aboutTor.torbrowser_user_manual.link;')" />
+              oncommand="gBrowser.selectedTab = gBrowser.addTab('https://tb-manual.torproject.org/' + Services.prefs.getCharPref('general.useragent.locale'))" />
   </menupopup>
 </overlay>
