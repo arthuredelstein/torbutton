@@ -12,8 +12,16 @@ const Cc = Components.classes, Ci = Components.interfaces, Cu = Components.utils
 
 // Import XPCOMUtils object.
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+let { bindPrefAndInit } =
+    Cu.import("resource://torbutton/modules/utils.js", {});
 
-function ContentPolicy() {}
+function ContentPolicy() {
+  this.uriFingerprinting = null;
+  bindPrefAndInit("extensions.torbutton.resource_and_chrome_uri_fingerprinting",
+    function (enabled) {
+      this.uriFingerprinting = enabled;
+    });
+}
 
 ContentPolicy.prototype = {
   classDescription: "ContentPolicy",
@@ -44,9 +52,13 @@ ContentPolicy.prototype = {
 
   shouldLoad: function(aContentType, aContentLocation, aRequestOrigin, aContext, aMimeTypeGuess, aExtra) {
 
-    // Accept if no content URI or scheme is not a resource/chrome.
-    if (!aContentLocation || !(aContentLocation.schemeIs('resource') || aContentLocation.schemeIs('chrome')))
+    // Accept if the user does not care, no content URI is available or scheme
+    // is not resource/chrome.
+    if (this.uriFingerprinting || !aContentLocation ||
+        !(aContentLocation.schemeIs('resource') ||
+          aContentLocation.schemeIs('chrome'))) {
       return Ci.nsIContentPolicy.ACCEPT;
+    }
 
     // Accept if no origin URI or if origin scheme is chrome/resource/about.
     if (!aRequestOrigin || aRequestOrigin.schemeIs('resource') || aRequestOrigin.schemeIs('chrome') || aRequestOrigin.schemeIs('about'))
