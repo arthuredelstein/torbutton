@@ -30,8 +30,8 @@
 <!ENTITY aboutTor.whatnext.label "Anonim Kalma İpuçları »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Tarayıcısı Kullanıcı Rehberi">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/tr">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Kullanım Kılavuzu">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "Yardım Edebilirsiniz!">
 <!ENTITY aboutTor.helpInfo2.label "Tor ağını daha hızlı güçlü kılmaya yardımcı olabilmenin çeşitli yolları var:">
 <!ENTITY aboutTor.helpInfo3.label "Tor Aktarıcı Noktası Çalıştır »">

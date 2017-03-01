@@ -1,4 +1,4 @@
-<!ENTITY torbutton.context_menu.new_identity "Nueva identidad (nueva instancia y conexiones de Tor)">
+<!ENTITY torbutton.context_menu.new_identity "Nueva identidad">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nuevo circuito Tor para este sitio">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
@@ -13,7 +13,7 @@
 <!ENTITY torbutton.button.tooltip "Haga clic para inicializar Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Configuración de seguridad del Navegador Tor">
 <!ENTITY torbutton.prefs.restore_defaults "Restaurar valores predeterminados">
-<!ENTITY torbutton.prefs.custom_warning "Sus preferencias personalizadas para el navegador han resultado en una configuración de seguridad inusual. Por motivos de seguridad y privacidad, le recomendamos uno de los de los niveles de seguridad predeterminados.">
+<!ENTITY torbutton.prefs.custom_warning "Tus preferencias personalizadas para el navegador han resultado en una configuración de seguridad inusual. Por motivos de seguridad y privacidad, te recomendamos uno de los de los niveles de seguridad predeterminados.">
 <!ENTITY torbutton.cookiedialog.title "Administrar protecciones de cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "Protegidas">
 <!ENTITY torbutton.cookiedialog.domainCol "Servidor (host)">
@@ -27,21 +27,19 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "No proteger las nuevas cookies">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restringir cookies de terceros y otros datos de seguimiento">
 <!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "T">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "
-Mantenga marcada esta casilla para evitar que diversas características del navegador sean explotadas para rastrear su navegación por la web. Las características modificadas incluyen URLs blob (a objetos binarios internos), BroadcastChannel (comunicación interna dentro del mismo origen), caché del navegador, cookies, favicons, cabeceras Auth de HTTP (autentificación básica), preconexiones de enlaces, objetos localStorage (almacenamiento local para aplicaciones web), URLs de objetos MediaSource (audiovisuales), peticiones OCSP (estado de certificados), SharedWorkers (subprocesos compartidos), y tickets de sesión TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Cambiar los detalles que le distinguen de otros usuarios del Navegador Tor">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Mantén marcada esta casilla para evitar que diversas características del navegador se puedan usar para rastrear tu navegación por la web. Las características modificadas incluyen URLs blob (a objetos binarios internos), BroadcastChannel (comunicación interna dentro del mismo origen), caché del navegador, cookies, favicons, cabeceras Auth de HTTP (autentificación básica), preconexiones de enlaces, objetos localStorage (almacenamiento local para aplicaciones web), URLs de objetos MediaSource (audiovisuales), peticiones OCSP (estado de certificados), SharedWorkers (subprocesos compartidos), y tickets de sesión TLS.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Cambiar los detalles que te distinguen de otros usuarios del Navegador Tor">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "H">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "
-Mantenga marcada esta casilla para ocultar a los sitios web detalles que pudieran ser únicos acerca de usted, incluyendo el estado de su batería, el rendimiento del equipo, la distribución del teclado, la configuración regional, la ubicación y la lista de los plugins instalados, el estado de la red, la orientación y el tamaño de la pantalla, niveles de zoom específicos para sitios web, tipos de fichero soportados, los colores del sistema, y las capacidades gráficas WebGL.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Mantén marcada esta casilla para ocultar a los sitios web detalles sobre ti que pudan ser únicos, incluyendo el estado de tu batería, el rendimiento del equipo, la distribución del teclado, la configuración regional, la ubicación y la lista de los plugins instalados, el estado de la red, la orientación y el tamaño de la pantalla, niveles de zoom específicos para sitios web, tipos de fichero soportados, los colores del sistema, y las capacidades gráficas WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Nivel de seguridad">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "El control deslizante del nivel de seguridad le permite deshabilitar ciertas características del navegador que pueden hacerlo más vulnerable a tentativas de hackeo.">
 <!ENTITY torbutton.prefs.sec_low "Bajo (por defecto)">
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Esto proporciona la mejor experiencia de usabilidad.">
-<!ENTITY torbutton.prefs.sec_low_desc "En este nivel de seguridad, todas las funciones del navegador están habilitadas.">
+<!ENTITY torbutton.prefs.sec_low_desc "En este nivel de seguridad están habilitadas todas las funcionalidades del navegador .">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "El mecanismo de representación de fuentes SVG OpenType está deshabilitado.">
-<!ENTITY torbutton.prefs.sec_gen_desc "En este nivel de seguridad, se aplican los siguientes cambios (ratón encima para detalles):">
+<!ENTITY torbutton.prefs.sec_gen_desc "En este nivel de seguridad se aplican los siguientes cambios (ratón encima para detalles):">
 <!ENTITY torbutton.prefs.sec_html5_desc "Los medios de vídeo y audio HTML5 se vuelven tipo clic-para-reproducir mediante NoScript.">
-<!ENTITY torbutton.prefs.sec_html5_tooltip "En algunos sitios, puede que necesite usar el botón NoScript de la barra de herramientas para habilitar estos objetos audiovisuales.">
+<!ENTITY torbutton.prefs.sec_html5_tooltip "En algunos sitios puede que necesite usar el botón NoScript de la barra de herramientas para habilitar estos objetos audiovisuales.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Algunas optimizaciones de rendimiento de JavaScript están deshabilitadas.">
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT (compilador JS instantáneo optimizado), Type Inference (deducción del tipo de datos por el compilador), ASM.JS (JS intermedio para alto rendimiento de otros lenguajes)">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT (compilador JS instantáneo)">

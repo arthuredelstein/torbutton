@@ -31,7 +31,7 @@
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/ko">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "여러분도 도울 수 있습니다!">
 <!ENTITY aboutTor.helpInfo2.label "여러분이 Tor 네트워크를 보다 빠르고 강하게 만들 수 있는 방법이 있습니다.">
 <!ENTITY aboutTor.helpInfo3.label "Tor 중계 서버 node 실행 »">

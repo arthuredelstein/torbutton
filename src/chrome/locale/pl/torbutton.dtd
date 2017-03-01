@@ -11,7 +11,7 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Ochrona plików cookie...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "c">
 <!ENTITY torbutton.button.tooltip "Kliknij tutaj, aby uruchomić Torbutton">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
+<!ENTITY torbutton.prefs.security_settings "Ustawienia Bezpieczeństwa Przeglądarki Tor">
 <!ENTITY torbutton.prefs.restore_defaults "Przywróć domyślne">
 <!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
 <!ENTITY torbutton.cookiedialog.title "Zarządzaj ochroną ciasteczek">
@@ -46,7 +46,7 @@
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Skrypty na niektórych stronach mogą działać wolniej.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Niektóre mechanizmy wyświetlania równań matematycznych są wyłączone.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML jest wyłączony.">
-<!ENTITY torbutton.prefs.sec_medium "Medium">
+<!ENTITY torbutton.prefs.sec_medium "Średni">
 <!ENTITY torbutton.prefs.sec_all_jit_desc "Na stronach, na których włączony jest JavaScript optymalizacje wydajności są wyłączone.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "Niektóre funkcje renderingu czcionki są wyłączone.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Mechanizm Graphite do renderowania czcionki jest wyłączony.">

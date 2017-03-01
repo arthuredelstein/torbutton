@@ -1,4 +1,4 @@
-<!ENTITY torbutton.context_menu.new_identity "新しい匿名">
+<!ENTITY torbutton.context_menu.new_identity "新しい識別子">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "このサイト用の新しい Tor サーキット">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">

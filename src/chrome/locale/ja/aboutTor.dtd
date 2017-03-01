@@ -30,7 +30,7 @@
 <!ENTITY aboutTor.whatnext.label "匿名性を保つことについてのヒント »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser ユーザーマニュアル">
 <!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "助けてください！">
 <!ENTITY aboutTor.helpInfo2.label "Torネットワークをさらに高速に、さらに強力にするのに役立てるたくさんのやり方があります。">

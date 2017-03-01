@@ -19,7 +19,7 @@
 <!ENTITY aboutTor.failure2.label "Tor werkt niet in deze browser.">
 
 <!ENTITY aboutTor.search.label "Zoeken">
-<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/">
 
 <!ENTITY aboutTor.torInfo1.label "Bijkomende informatie:">
 <!ENTITY aboutTor.torInfo2.label "Land &amp; IP-adres:">
@@ -30,8 +30,8 @@
 <!ENTITY aboutTor.whatnext.label "Tips om anoniem te blijven »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/nl">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Gebruikershandleiding">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "Jij kan helpen!">
 <!ENTITY aboutTor.helpInfo2.label "Er zijn veel verschillende manieren hoe jij kan helpen het Tor-netwerk sneller en sterker te maken:">
 <!ENTITY aboutTor.helpInfo3.label "Draai een Tor-relaynode »">

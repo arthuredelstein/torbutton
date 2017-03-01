@@ -2,7 +2,7 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "دائرة تور جديدة لهذا الموقع">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Security Settings…">
+<!ENTITY torbutton.context_menu.preferences "الإعدادات الأمنية ...">
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "إعدادات شبكة تور...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
@@ -11,7 +11,7 @@
 <!ENTITY torbutton.context_menu.cookieProtections "إعدادات أمان ملفات تعريف الارتباط...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "انقر لبدء زر تور">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
+<!ENTITY torbutton.prefs.security_settings "إعدادات الأمان لمتصفح طور">
 <!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
 <!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
 <!ENTITY torbutton.cookiedialog.title "إدارة إعدادت الحماية لملفات تعريف الارتباط">

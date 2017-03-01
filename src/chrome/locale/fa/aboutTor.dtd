@@ -30,8 +30,8 @@
 <!ENTITY aboutTor.whatnext.label "راهنمایی برای ناشناس ماندن.">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/fa">
+<!ENTITY aboutTor.torbrowser_user_manual.label "راهنمای کاربری مرورگر تور">
+<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "می‌توانید کمک کنید!">
 <!ENTITY aboutTor.helpInfo2.label "راه های زیادی برای کمک کردن شما جهت سریعتر کردن و مستحکم کردن شبکه تور وجود دارد:">
 <!ENTITY aboutTor.helpInfo3.label "مسيرياب تورى اداره كنيد »">
