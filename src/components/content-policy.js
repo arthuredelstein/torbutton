@@ -17,9 +17,10 @@ let { bindPrefAndInit } =
 
 function ContentPolicy() {
   this.uriFingerprinting = null;
+  let that = this;
   bindPrefAndInit("extensions.torbutton.resource_and_chrome_uri_fingerprinting",
     function (enabled) {
-      this.uriFingerprinting = enabled;
+      that.uriFingerprinting = enabled;
     });
 }
 
