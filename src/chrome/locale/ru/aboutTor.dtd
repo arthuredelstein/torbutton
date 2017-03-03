@@ -31,7 +31,6 @@
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "М">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Руководство использования Tor Browser.">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "Вы можете помочь!">
 <!ENTITY aboutTor.helpInfo2.label "Есть много способов сделать сеть Tor более быстрой и устойчивой:">
 <!ENTITY aboutTor.helpInfo3.label "Запустить цепочку Tor »">

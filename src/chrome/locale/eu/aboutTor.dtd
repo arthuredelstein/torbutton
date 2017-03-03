@@ -31,7 +31,6 @@
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser User Manual">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/en-US">
 <!ENTITY aboutTor.helpInfo1.label "Lagundu dezakezu!">
 <!ENTITY aboutTor.helpInfo2.label "Tor sarea bizkorragoa eta indartsuagoa egiteko hainbat modutan lagundu dezakezu:">
 <!ENTITY aboutTor.helpInfo3.label "Tor errele nodo bat exekutatu »">

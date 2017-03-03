@@ -31,7 +31,6 @@
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "G">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Le guide d'utilisation du navigateur Tor">
-<!ENTITY aboutTor.torbrowser_user_manual.link "https://tb-manual.torproject.org/fr">
 <!ENTITY aboutTor.helpInfo1.label "Vous pouvez aider !">
 <!ENTITY aboutTor.helpInfo2.label "Vous pouvez aider à rendre le réseau Tor plus rapide et plus puissant de plusieurs façons :">
 <!ENTITY aboutTor.helpInfo3.label "Faire tourner un nœud relais Tor »">
