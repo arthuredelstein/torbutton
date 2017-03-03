@@ -1,9 +1,25 @@
+1.9.7.1
+ * Bug 21396: Allow leaking of resource/chrome URIs (off by default)
+ * Bug 21574: Add link for zh manual and create manual links dynamically
+ * Bug 21330: Non-usable scrollbar appears in tor browser security settings
+ * Bug 21324: Don't update NoScript button with timer update
+ * Translation updates
+
 1.9.7
  * Bug 19898: Use DuckDuckGo on about:tor
  * Bug 21091: Hide the update check menu entry when running under the sandbox
  * Bug 21243: Add links to es, fr, and pt Tor Browser manual
  * Bug 21194: Show snowflake in the circuit display
  * Bug 21131: Remove 2016 donation banner
+ * Translation updates
+
+1.9.6.12
+ * Bug 20951: Back out Unix domain socket related patches for Tor Browser 6.5
+ * Bug 19898: Use DuckDuckGo on about:tor
+ * Bug 21243: Add links to es, fr, and pt Tor Browser manual
+ * Bug 21091: Hide the update check menu entry when running under the sandbox
+ * Bug 21131: Remove 2016 donation banner
+ * Bug 14429: Make sure the automatic resizing is disabled
  * Translation updates
 
 1.9.6.9
