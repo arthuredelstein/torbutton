@@ -34,7 +34,6 @@ pref("extensions.torbutton.spoof_english",true);
 pref("extensions.torbutton.clear_http_auth",true);
 pref("extensions.torbutton.close_newnym",true);
 pref("extensions.torbutton.resize_new_windows",true);
-pref("extensions.torbutton.resize_windows",true);
 pref("extensions.torbutton.startup_state", 2); // 0=non-tor, 1=tor, 2=last
 pref("extensions.torbutton.tor_memory_jar",false);
 pref("extensions.torbutton.nontor_memory_jar",false);
