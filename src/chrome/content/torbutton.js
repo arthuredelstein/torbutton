@@ -402,8 +402,6 @@ function torbutton_init() {
                             m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
 
-    quantizeBrowserSize(window, 100, 100);
-
     torbutton_init_user_manual_links();
 
     torbutton_log(3, 'init completed');
