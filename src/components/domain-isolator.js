@@ -6,7 +6,7 @@
 // call earlier functions). The code file can be processed
 // with docco.js to provide clear documentation.
 
-/* jshint moz: true */
+/* jshint esversion: 6 */
 /* global Components, console, XPCOMUtils */
 
 // ### Abbreviations
@@ -91,19 +91,19 @@ tor.nonce = function() {
 
   // Convert the tag to a hex string.
   let tagStr = "";
-  for (var i = 0; i < tag.length; i++) {
+  for (let i = 0; i < tag.length; i++) {
     tagStr += (tag[i] >>> 4).toString(16);
     tagStr += (tag[i] & 0x0F).toString(16);
   }
 
   return tagStr;
-}
+};
 
 tor.newCircuitForDomain = function(domain) {
   // Re-generate the nonce for the domain.
   tor.noncesForDomains[domain] = tor.nonce();
   logger.eclog(3, "New domain isolation for " + domain + ": " + tor.noncesForDomains[domain]);
-}
+};
 
 // __tor.clearIsolation()_.
 // Clear the isolation state cache, forcing new circuits to be used for all
@@ -115,7 +115,7 @@ tor.clearIsolation = function () {
   // Force a rotation on the next catch-all circuit use by setting the creation
   // time to the epoch.
   tor.unknownDirtySince = 0;
-}
+};
 
 // __tor.isolateCircuitsByDomain()__.
 // For every HTTPChannel, replaces the default SOCKS proxy with one that authenticates
@@ -124,29 +124,27 @@ tor.clearIsolation = function () {
 // combination.
 tor.isolateCircuitsByDomain = function () {
   mozilla.registerProxyChannelFilter(function (aChannel, aProxy) {
-    if (!tor.isolationEnabled)
+    if (!tor.isolationEnabled) {
       return aProxy;
-
+    }
     try {
-      let channel = aChannel.QueryInterface(Ci.nsIChannel);
-          firstPartyDomain = channel.loadInfo.originAttributes.firstPartyDomain,
+      let channel = aChannel.QueryInterface(Ci.nsIChannel),
           proxy = aProxy.QueryInterface(Ci.nsIProxyInfo),
-          replacementProxy = tor.socksProxyCredentials(aProxy, firstPartyDomain);
-      logger.eclog(3, "tor SOCKS: " + channel.URI.spec + " via " +
-                      replacementProxy.username + ":" + replacementProxy.password);
-      return replacementProxy;
-    } catch (err) {
-      logger.eclog(3, err.message);
-      if (Date.now() - tor.unknownDirtySince > 1000*10*60) {
-        logger.eclog(3, "tor catchall circuit has been dirty for over 10 minutes. Rotating.");
-        tor.newCircuitForDomain("--unknown--");
-        tor.unknownDirtySince = Date.now();
+          firstPartyDomain = channel.loadInfo.originAttributes.firstPartyDomain;
+      if (firstPartyDomain === "") {
+        firstPartyDomain = "--unknown--";
+        if (Date.now() - tor.unknownDirtySince > 1000*10*60) {
+          logger.eclog(3, "tor catchall circuit has been dirty for over 10 minutes. Rotating.");
+          tor.newCircuitForDomain("--unknown--");
+          tor.unknownDirtySince = Date.now();
+        }
       }
-      let replacementProxy = tor.socksProxyCredentials(aProxy, "--unknown--");
-
-      logger.eclog(3, "tor SOCKS isolation catchall: " + aChannel.URI.spec + " via " +
-                      replacementProxy.username + ":" + replacementProxy.password);
+      let replacementProxy = tor.socksProxyCredentials(aProxy, firstPartyDomain);
+      logger.eclog(3, `tor SOCKS: ${channel.URI.spec} via
+                       ${replacementProxy.username}:${replacementProxy.password}`);
       return replacementProxy;
+    } catch (e) {
+      logger.eclog(4, `tor domain isolator error: ${e.message}`);
     }
   }, 0);
 };
