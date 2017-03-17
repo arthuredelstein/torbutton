@@ -101,6 +101,9 @@ tor.nonce = function() {
 
 tor.newCircuitForDomain = function(domain) {
   // Re-generate the nonce for the domain.
+  if (domain === "") {
+    domain = "--unknown--";
+  }
   tor.noncesForDomains[domain] = tor.nonce();
   logger.eclog(3, "New domain isolation for " + domain + ": " + tor.noncesForDomains[domain]);
 };
