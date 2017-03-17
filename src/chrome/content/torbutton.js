@@ -1014,11 +1014,8 @@ function torbutton_send_ctrl_cmd(command) {
 
 // Bug 1506 P4: Needed for New IP Address
 function torbutton_new_circuit() {
-  let thirdPartyUtil = Cc["@mozilla.org/thirdpartyutil;1"]
-                         .getService(Ci.mozIThirdPartyUtil);
-
-  let firstPartyDomain = thirdPartyUtil
-                             .getFirstPartyHostForIsolation(gBrowser.currentURI);
+  let firstPartyDomain = gBrowser.contentPrincipal.originAttributes
+                                 .firstPartyDomain;
 
   let domainIsolator = Cc["@torproject.org/domain-isolator;1"]
                           .getService(Ci.nsISupports).wrappedJSObject;
