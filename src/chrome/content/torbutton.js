@@ -637,7 +637,11 @@ function torbutton_init() {
     createTorCircuitDisplay(m_tb_control_host, m_tb_control_port, m_tb_control_pass,
                             "extensions.torbutton.display_circuit");
 
+    let { blocker } = Cu.import("external-app-blocker.js");
+    blocker.activate();
+
     torbutton_log(3, 'init completed');
+
 }
 
 // Bug 1506 P3: This code asks the user once if they want to spoof their
