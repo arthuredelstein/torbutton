@@ -19,12 +19,12 @@ let log = (level, msg) => logger.log(level, msg);
 // corresponding to the old 2-medium-high setting.
 const kSecuritySettings = {
   // Preference name :                        [0, 1-high 2-m    3-m    4-low]
-  "javascript.options.ion.content" :          [,  false, false, false, true ],
-  "javascript.options.typeinference" :        [,  false, false, false, true ],
+  "javascript.options.ion" :                  [,  false, false, false, true ],
+  "javascript.options.baselinejit" :          [,  false, false, false, true ],
+  "javascript.options.native_regexp" :        [,  false, false, false, true ],
   "noscript.forbidMedia" :                    [,  true,  true,  true,  false],
   "media.webaudio.enabled" :                  [,  false, false, false, true ],
   "mathml.disabled" :                         [,  true,  true,  true,  false],
-  "javascript.options.baselinejit.content" :  [,  false, false, false, true ],
   "gfx.font_rendering.opentype_svg.enabled" : [,  false, false, false, true ],
   "noscript.global" :                         [,  false, false, false, true ],
   "noscript.globalHttpsWhitelist" :           [,  false, true,  true,  false],

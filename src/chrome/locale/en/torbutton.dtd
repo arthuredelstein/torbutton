@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 video and audio media become click-to-play via NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "On some sites, you might need to use the NoScript toolbar button to enable these media objects.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Some JavaScript performance optimizations are disabled.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Scripts on some sites may run slower.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Some mechanisms of displaying math equations are disabled.">
