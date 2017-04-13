@@ -1,7 +1,7 @@
 <!ENTITY project.start           "&brandShortName; 的开发者为">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "&vendorShortName;">
-<!ENTITY project.end             "，一个捍卫您的隐私和自由上网权的非营利组织。">
+<!ENTITY project.end             "，一个捍卫您的隐私和自由上网权利的非营利组织。">
 
 <!ENTITY help.start              "需要得到帮助？">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->

@@ -43,7 +43,7 @@
 <!ENTITY torbutton.prefs.sec_some_jit_desc "禁用某些 JavaScript 性能优化。">
 <!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT、类型推断、ASM.JS。">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT。">
-<!ENTITY torbutton.prefs.sec_jit_slower_desc "一些网站脚本可能会暂缓执行。">
+<!ENTITY torbutton.prefs.sec_jit_slower_desc "一些网站脚本可能会缓执行。">
 <!ENTITY torbutton.prefs.sec_mathml_desc "禁用数学方程式的某些显示机制。">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "禁用 MathML。">
 <!ENTITY torbutton.prefs.sec_medium "中等">
