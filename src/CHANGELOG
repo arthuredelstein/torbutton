@@ -1,3 +1,13 @@
+1.9.7.2
+ * Bug 21865: Update our JIT preferences in the security slider
+ * Bug 21747: Make 'New Tor Circuit for this Site' work in ESR52
+ * Bug 21745: Fix handling of catch-all circuit
+ * Bug 21547: Fix circuit display under e10s
+ * Bug 21268: e10s compatibility for New Identity
+ * Bug 21267: Remove window resize implementation for now
+ * Bug 21201: Make Torbutton multiprocess compatible
+ * Translation updates
+
 1.9.7.1
  * Bug 21396: Allow leaking of resource/chrome URIs (off by default)
  * Bug 21574: Add link for zh manual and create manual links dynamically
