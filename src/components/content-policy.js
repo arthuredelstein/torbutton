@@ -128,9 +128,9 @@ var requestObserver = {
 
     // If this is a redirect...
     //
-    // Note: Technically `304 Not Modifed` isn't a redirect, but receiving that
-    // to the proscribed schemes is nonsensical.
-    if (aStatus >= 300 && aStatus < 400) {
+    // Note: `304 Not Modifed` isn't a redirect, so there is no Location header to check
+    // in that case.
+    if (aStatus >= 300 && aStatus < 400 && aStatus != 304) {
       let location = aChannel.getResponseHeader("Location");
       let aUri = this.ioService.newURI(location, null, null);
 
