@@ -22,13 +22,22 @@ function ContentPolicy() {
     function (enabled) {
       that.uriFingerprinting = enabled;
     });
+
+  // Register as an nsIContentPolicy filter.
+  let registrar = Components.manager.QueryInterface(Ci.nsIComponentRegistrar);
+  registrar.registerFactory(this.classID, this.classDescription,
+                            this.contractID, this);
+
+  let catMan = Cc["@mozilla.org/categorymanager;1"]
+                 .getService(Ci.nsICategoryManager);
+  catMan.addCategoryEntry("content-policy", this.contractID, this.contractID,
+                          false, true);
 }
 
 ContentPolicy.prototype = {
   classDescription: "ContentPolicy",
   classID: Components.ID("{4c03be7d-492f-990e-f0da-f3689e564898}"),
   contractID: "@torproject.org/content-policy;1",
-  QueryInterface: XPCOMUtils.generateQI([Ci.nsIContentPolicy]),
 
   uriWhitelist: {
     // Video playback.
@@ -51,6 +60,19 @@ ContentPolicy.prototype = {
     "chrome://global/skin/dirListing/dirListing.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
   },
 
+  // nsISupports
+  QueryInterface: XPCOMUtils.generateQI([Ci.nsIContentPolicy, Ci.nsIFactory,
+                                         Ci.nsISupportsWeakReference]),
+
+  // nsIFactory
+  createInstance: function(outer, iid)
+  {
+    if (outer)
+      throw Cr.NS_ERROR_NO_AGGREGATION;
+    return this.QueryInterface(iid);
+  },
+
+  // nsIContentPolicy
   shouldLoad: function(aContentType, aContentLocation, aRequestOrigin, aContext, aMimeTypeGuess, aExtra) {
 
     // Accept if the user does not care, no content URI is available or scheme
@@ -121,8 +143,10 @@ var requestObserver = {
   },
 };
 
-// Firefox >= 4.0 (Old versions are extremely irrelevant).
-var NSGetFactory = XPCOMUtils.generateNSGetFactory([ContentPolicy]);
+// Create a content policy object; initialization is done in the contructor.
+var cp = new ContentPolicy();
 
-// Register the request observer to handle redirects.
-requestObserver.start();
+// In the chrome process, register the request observer to handle redirects.
+if (Services.appinfo.processType == Services.appinfo.PROCESS_TYPE_DEFAULT) {
+  requestObserver.start();
+}

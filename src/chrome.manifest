@@ -166,10 +166,6 @@ contract @torproject.org/domain-isolator;1 {e33fd6d4-270f-475f-a96f-ff3140279f68
 
 category profile-after-change CookieJarSelector @torproject.org/cookie-jar-selector;1
 
-component {4c03be7d-492f-990e-f0da-f3689e564898} components/content-policy.js
-contract @torproject.org/content-policy;1 {4c03be7d-492f-990e-f0da-f3689e564898}
-category content-policy ContentPolicy @torproject.org/content-policy;1
-
 category profile-after-change StartupObserver @torproject.org/startup-observer;1
 category profile-after-change DomainIsolator @torproject.org/domain-isolator;1
 category profile-after-change ExtAppBlockerService @torproject.org/torbutton-extAppBlockerService;1

@@ -60,6 +60,13 @@ function StartupObserver() {
     } catch(e) {
       this.logger.log(4, "Early proxy change failed. Will try again at profile load. Error: "+e);
     }
+
+    // Arrange for our nsIContentPolicy filter to be loaded in the
+    // default (chrome) process as well as in each content process.
+    let ppmm = Cc["@mozilla.org/parentprocessmessagemanager;1"]
+                 .getService(Ci.nsIProcessScriptLoader);
+    ppmm.loadProcessScript("resource://torbutton/components/content-policy.js",
+                           true);
 }
 
 StartupObserver.prototype = {
