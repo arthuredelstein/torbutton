@@ -43,22 +43,35 @@ ContentPolicy.prototype = {
     // Video playback.
     "chrome://global/content/TopLevelVideoDocument.js": Ci.nsIContentPolicy.TYPE_SCRIPT,
     "resource://gre/res/TopLevelVideoDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
-    "chrome://global/skin/media/TopLevelVideoDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
     "chrome://global/content/bindings/videocontrols.xml": Ci.nsIContentPolicy.TYPE_XBL,
     "chrome://global/content/bindings/scale.xml": Ci.nsIContentPolicy.TYPE_XBL,
     "chrome://global/content/bindings/progressmeter.xml": Ci.nsIContentPolicy.TYPE_XBL,
+    "chrome://global/content/bindings/button.xml": Ci.nsIContentPolicy.TYPE_XBL,
+    "chrome://global/content/bindings/general.xml": Ci.nsIContentPolicy.TYPE_XBL,
+    "chrome://global/content/bindings/text.xml": Ci.nsIContentPolicy.TYPE_XBL,
 
     // Image display.
     "resource://gre/res/ImageDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
     "resource://gre/res/TopLevelImageDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
-    "chrome://global/skin/media/TopLevelImageDocument.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
 
-    // Resizing text boxes.
+    // Scrollbars, text box resizer, and content keyboard shortcuts.
+    "chrome://global/content/bindings/scrollbar.xml": Ci.nsIContentPolicy.TYPE_XBL,
     "chrome://global/content/bindings/resizer.xml": Ci.nsIContentPolicy.TYPE_XBL,
+    "chrome://global/content/platformHTMLBindings.xml": Ci.nsIContentPolicy.TYPE_XBL,
 
     // Directory listing.
     "chrome://global/skin/dirListing/dirListing.css": Ci.nsIContentPolicy.TYPE_STYLESHEET,
   },
+
+  uriRegexWhitelist: [
+    // Video playback: whitelist png and svg images under chrome://global/skin/media
+    { regex: /^chrome:\/\/global\/skin\/media\/.+\.(png|svg)$/,
+      type: Ci.nsIContentPolicy.TYPE_IMAGE },
+
+    // Video playback and image display: whitelist css files under chrome://global/skin/media
+    { regex: /^chrome:\/\/global\/skin\/media\/.+\.css$/,
+      type: Ci.nsIContentPolicy.TYPE_STYLESHEET },
+  ],
 
   // nsISupports
   QueryInterface: XPCOMUtils.generateQI([Ci.nsIContentPolicy, Ci.nsIFactory,
@@ -104,6 +117,11 @@ ContentPolicy.prototype = {
     if (aContentLocation.spec in this.uriWhitelist)
       if (this.uriWhitelist[aContentLocation.spec] == aContentType)
         return Ci.nsIContentPolicy.ACCEPT;
+
+    for (let wlObj of this.uriRegexWhitelist) {
+      if ((wlObj.type == aContentType) && wlObj.regex.test(aContentLocation.spec))
+        return Ci.nsIContentPolicy.ACCEPT;
+    }
 
     return Ci.nsIContentPolicy.REJECT_REQUEST;
   },
