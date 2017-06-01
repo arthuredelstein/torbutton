@@ -83,8 +83,12 @@ ContentPolicy.prototype = {
       return Ci.nsIContentPolicy.ACCEPT;
     }
 
-    // Accept if no origin URI or if origin scheme is chrome/resource/about.
-    if (!aRequestOrigin || aRequestOrigin.schemeIs('resource') || aRequestOrigin.schemeIs('chrome') || aRequestOrigin.schemeIs('about'))
+    // Accept if no origin URI or if origin scheme is
+    // chrome/resource/about/view-source.
+    if (!aRequestOrigin || aRequestOrigin.schemeIs('resource') ||
+                           aRequestOrigin.schemeIs('chrome') ||
+                           aRequestOrigin.schemeIs('about') ||
+                           aRequestOrigin.schemeIs('view-source'))
       return Ci.nsIContentPolicy.ACCEPT;
 
     // Accept if resource directly loaded into a tab.
