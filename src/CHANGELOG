@@ -1,3 +1,10 @@
+1.9.7.3
+ * Bug 22104: Adjust our content policy whitelist for ff52-esr
+ * Bug 22457: Allow resources loaded by view-source://
+ * Bug 21627: Ignore HTTP 304 responses when checking redirects
+ * Bug 22459: Adapt our use of the nsIContentPolicy to e10s mode
+ * Translations update
+
 1.9.7.2
  * Bug 21865: Update our JIT preferences in the security slider
  * Bug 21747: Make 'New Tor Circuit for this Site' work in ESR52
