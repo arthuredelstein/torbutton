@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 video e mídia de audio torna-se clique-para-tocar através do NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Em alguns sites, talvez você precise usar o botão da barra de ferramentas NoScript para habilitar esses objetos de mídia.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Algumas otimizações de perfomance JavaScript estão desabilitadas.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Tipo de Inferência, ASM JS.">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Linha de Base JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Scripts podem rodar mais devagar em alguns sites.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Alguns mecanismos para mostrar equações matemáticas estão desabilitados.">

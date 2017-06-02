@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "Video và âm thanh truyền thông HTML5 có thể trở thành nhấp để phát qua NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Trên một số trang, có thể bạn cần phải dùng nút thanh công cụ NoScript để kích hoạt những đối tượng đa phương tiện này.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Một số tối ưu hoá JavaScript bị vô hiệu.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Những đoạn mã trên một số trang có thể chạy chậm hơn.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Một vài cơ chế hiển thị công thức toán học bị vô hiệu.">

@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 video and audio media become click-to-play via NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "في بعض المواقع من الممكن أن تحتاج لإستخدام زر تعطيل السكريبتات في شرط الأدوات لتفعل المحتويات المرئية.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "بعض محسنات نصوص الجافا معطلة">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "سكربت في بعض المواقع قد تعمل بشكل بطيئ">
 <!ENTITY torbutton.prefs.sec_mathml_desc "بعض الآليات لعرض معادلات رياضية معطلة.">

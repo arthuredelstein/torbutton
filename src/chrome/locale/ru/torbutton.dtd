@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 видео и аудио воспроизводятся только после щелчка благодаря NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "На некоторых сайтах, вам может потребоваться использовать кнопку NoScript панели инструментов, чтобы включить эти мультимедийные объекты.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Некоторые оптимизации производительности JavaScript отключены.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Базовый JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Сценарии на некоторых сайтах могут работать медленнее.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Некоторые механизмы отображения математических уравнений отключены.">

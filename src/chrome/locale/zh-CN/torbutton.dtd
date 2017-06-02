@@ -12,7 +12,7 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "点此初始化 Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Tor 浏览器安全设置">
-<!ENTITY torbutton.prefs.restore_defaults "恢复默认值">
+<!ENTITY torbutton.prefs.restore_defaults "恢复默认">
 <!ENTITY torbutton.prefs.custom_warning "您自定义的浏览器设置导致了不安全的安全设置。出于安全和隐私考虑，我们建议您选择一个默认的安全级别。">
 <!ENTITY torbutton.cookiedialog.title "管理受保护的 Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "受保护">
@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 视频和音频需通过 NoScript 点击播放。">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "在某些网站，可通过 NoScript 工具栏按钮播放这些媒体。">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "禁用某些 JavaScript 性能优化。">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT、类型推断、ASM.JS。">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT，原生正则表达式。">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT。">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "一些网站脚本可能会缓执行。">
 <!ENTITY torbutton.prefs.sec_mathml_desc "禁用数学方程式的某些显示机制。">

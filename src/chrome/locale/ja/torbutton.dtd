@@ -2,7 +2,7 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "このサイト用の新しい Tor サーキット">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Security Settings…">
+<!ENTITY torbutton.context_menu.preferences "セキュリティの設定...">
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Torネットワークの設定...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
@@ -11,9 +11,9 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie の防御">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbuttonを初期状態に戻す">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
-<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser セキュリティの設定">
+<!ENTITY torbutton.prefs.restore_defaults "デフォルトにもどす">
+<!ENTITY torbutton.prefs.custom_warning "あなたのブラウザーにおけるカスタム設定はセキュリティ結果に影響を及ぼしません。セキュリティとプライバシーに関してはデフォルトのセキュリティレベルのひとつを選択することをおすすめいたします。">
 <!ENTITY torbutton.cookiedialog.title "Cookie保護を管理">
 <!ENTITY torbutton.cookiedialog.lockCol "保護済み">
 <!ENTITY torbutton.cookiedialog.domainCol "ホスト">
@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 の映像と音楽は No-Script によりクリックするまで再生されません。">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "いくつかのサイトでは、メディアを有効にするために No-Script ツールバーを使う必要があります。">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "いくつかの JavaScript のパフォーマンス最適化が無効化されます。">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT、型インターフェイス、ASM.JS。">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "基本的なJIT。">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "サイトによってはスクリプトの動作が遅くなります。">
 <!ENTITY torbutton.prefs.sec_mathml_desc "数式を表示するためのいくつかの機能が無効化されます。">

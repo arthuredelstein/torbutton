@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "صدا و تصویر HTML5 از طریق دکمه NoScript نوار ابزار به حالت -کلیک برای پخش- در می آید">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "در برخی سایت ها، ممکن است شما نیاز به استفاده از دکمه NoScript نوار ابزار برای فعال کردن این اشیاء رسانه داشته باشید.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "برخی از بهینه سازی عملکرد جاوا اسکریپت غیر فعال شده است.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "JIT در شروع مطالعه.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "اسکریپت هل در برخی از سایت ها ممکن است آهسته تر اجرا شود.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "برخی مکانیسم ها نمایش معادلات ریاضی غیر فعال می باشد.">
@@ -58,4 +58,4 @@
 <!ENTITY torbutton.prefs.sec_all_js_desc "جاوا اسکریپت به طور پیش فرض در تمامی سایت ها غیر فعال است.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc "برخی از فونت ها و آیکون های ممکن است نمایش نادرست داشته باشند.">
 <!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "فایل های فونتی که در وب سایت ارائه می شوند مسدود شده است.">
-<!ENTITY torbutton.circuit_display.title "مدار Tor برای این سایت">
+<!ENTITY torbutton.circuit_display.title "مدار تور برای این سایت">

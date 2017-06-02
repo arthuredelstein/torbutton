@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5-video en -audio worden klik-om-af-te-spelen via NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Op sommige sites moet je de NoScript-werkbalkknop gebruiken om deze media-objecten in te schakelen.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Sommige JavaScript-prestatieverbeteringen zijn uitgeschakeld.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Type Inference, ASM.JS.">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Scripts kunnen op sommige websites trager zijn.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Sommige mechanismen voor het weergeven van wiskundige vergelijkingen zijn uitgeschakeld.">

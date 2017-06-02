@@ -12,7 +12,7 @@
 
 <!ENTITY aboutTor.check.label "Testa nätverksinställningarna för Tor">
 
-<!ENTITY aboutTor.success.label "Välkommen till Tor Browser">
+<!ENTITY aboutTor.success.label "Välkommen till Tor-webbläsaren">
 <!ENTITY aboutTor.success2.label "Ansluten till Tor-nätverket.">
 <!ENTITY aboutTor.success3.label "Du kan nu surfa på nätet anonymt.">
 <!ENTITY aboutTor.failure.label "Någonting gick fel!">
