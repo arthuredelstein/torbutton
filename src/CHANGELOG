@@ -1,3 +1,6 @@
+1.9.7.4
+ * Bug 22542: Security Settings window too small on macOS 10.12
+
 1.9.7.3
  * Bug 22104: Adjust our content policy whitelist for ff52-esr
  * Bug 22457: Allow resources loaded by view-source://
