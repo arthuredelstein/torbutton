@@ -12,7 +12,7 @@ let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
 let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
-let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -1997,6 +1997,8 @@ function torbutton_is_windowed(wind) {
     return true;
 }
 
+let stopLanguagePromptObserver;
+
 // Bug 1506 P3: This is needed pretty much only for the version check
 // and the window resizing. See comments for individual functions for
 // details
@@ -2031,11 +2033,12 @@ function torbutton_new_window(event)
     }
 
     // If the default language is not English and we have not already asked,
-    // add a web progress listener that will show a "request English language
-    // web pages?" prompt the first time an http or https page is opened.
+    // add an http-on-modify-request observer that will show a "request English
+    // language web pages?" prompt the first time a content http or https page
+    // is opened.
     if (torbutton_should_prompt_for_language_preference()) {
-      progress.addProgressListener(torbutton_langPromptListener,
-                                   Ci.nsIWebProgress.NOTIFY_STATE_DOCUMENT);
+      stopLanguagePromptObserver = observe("http-on-modify-request",
+                                           torbutton_http_connection_observed);
     }
 
     // Check the version on every new window. We're already pinging check in these cases.    
@@ -2210,68 +2213,53 @@ var torbutton_resizelistener =
   onSecurityChange: function() {}
 };
 
-var torbutton_langPromptListener =
-{
-  QueryInterface: function(aIID)
-  {
-   if (aIID.equals(Ci.nsIWebProgressListener) ||
-       aIID.equals(Ci.nsISupportsWeakReference) ||
-       aIID.equals(Ci.nsISupports))
-     return this;
-   throw Cr.NS_NOINTERFACE;
-  },
-
-  onLocationChange: function(aProgress, aRequest, aURI) {},
-
-  onStateChange: function(aProgress, aRequest, aFlag, aStatus) {
-    if (aFlag & Ci.nsIWebProgressListener.STATE_START) {
-      // If we are loading an HTTP page, show the
-      // "request English language web pages?" prompt.
-      try {
-        let httpChannel = aRequest.QueryInterface(Ci.nsIHttpChannel);
-
-        // The above QI did not throw, so we must have an HTTP request.
-        // Remove this listener and display the prompt if another window has
-        // not already done so.
-        let progress = Cc["@mozilla.org/docloaderservice;1"]
-                         .getService(Ci.nsIWebProgress);
-        progress.removeProgressListener(torbutton_langPromptListener,
-                            Ci.nsIWebProgress.NOTIFY_STATE_DOCUMENT);
-
-        if (torbutton_should_prompt_for_language_preference()) {
-          if (torbutton_is_homepage_url(aRequest.URI)) {
-            // If the homepage is being loaded, display the prompt after a
-            // delay to avoid a problem where a blank prompt is displayed.
-            // In this case, the homepage will be loaded using the current
-            // spoof English setting, which is OK.
-            setTimeout(function() {
-              if (torbutton_should_prompt_for_language_preference())
-                torbutton_prompt_for_language_preference();
-            }, 2000);
-          } else {
-            // No delay is needed. Display the prompt and fix up the
-            // Accept-Language header before allowing the load to continue.
-            torbutton_prompt_for_language_preference();
-
-            // The Accept-Language header for this request was set when the
-            // channel was created. Reset it to match the value that will be
-            // used for future requests.
-            let val = torbutton_get_current_accept_language_value(aRequest.URI);
-            if (val)
-              httpChannel.setRequestHeader("Accept-Language", val, false);
-          }
-        }
-      } catch (e) {}
+function torbutton_http_connection_observed(aRequest, aData) {
+  // If we are loading an HTTP page from content, show the
+  // "request English language web pages?" prompt.
+  try {
+    let httpChannel = aRequest.QueryInterface(Ci.nsIHttpChannel);
+    if (!aRequest.URI.schemeIs("http") && !aRequest.URI.schemeIs("https")) {
+      return;
     }
-  },
+    if (!httpChannel) return;
+    let notificationCallbacks = httpChannel.notificationCallbacks;
+    if (!notificationCallbacks) return;
+    let loadContext = notificationCallbacks.getInterface(Ci.nsILoadContext);
+    if (!loadContext) return;
+    if (!loadContext.isContent) return;
+    // The above QI did not throw, the scheme is http[s], and we know the
+    // load context is content, so we must have a true HTTP request from content.
+    // Stop the observer and display the prompt if another window has
+    // not already done so.
+    stopLanguagePromptObserver();
 
-  onProgressChange: function(aProgress, aRequest, curSelfProgress,
-                             maxSelfProgress, curTotalProgress,
-                             maxTotalProgress) {},
-  onStatusChange: function(aProgress, aRequest, stat, message) {},
-  onSecurityChange: function() {}
-};
+    if (torbutton_should_prompt_for_language_preference()) {
+      if (torbutton_is_homepage_url(aRequest.URI)) {
+        // If the homepage is being loaded, display the prompt after a
+        // delay to avoid a problem where a blank prompt is displayed.
+        // In this case, the homepage will be loaded using the current
+        // spoof English setting, which is OK.
+        setTimeout(function() {
+          if (torbutton_should_prompt_for_language_preference())
+            torbutton_prompt_for_language_preference();
+        }, 2000);
+      } else {
+        // No delay is needed. Display the prompt and fix up the
+        // Accept-Language header before allowing the load to continue.
+        torbutton_prompt_for_language_preference();
 
+        // The Accept-Language header for this request was set when the
+        // channel was created. Reset it to match the value that will be
+        // used for future requests.
+        let val = torbutton_get_current_accept_language_value(aRequest.URI);
+        if (val)
+          httpChannel.setRequestHeader("Accept-Language", val, false);
+      }
+    }
+  } catch (e) {
+    torbutton_log(3, e.message);
+  }
+}
 
 // aURI should be an http or https nsIURI object.
 function torbutton_get_current_accept_language_value(aURI)
