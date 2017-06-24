@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-   - Copyright (c) 2016, The Tor Project, Inc.
+   - Copyright (c) 2017, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -20,154 +20,17 @@
 <head>
   <title>&aboutTor.title;</title>
   <link rel="stylesheet" type="text/css" media="all"
-        href="chrome://torbutton/skin/aboutTor.css"/>
+        href="resource://torbutton/chrome/skin/aboutTor.css"/>
 <script type="text/javascript;version=1.7">
  <![CDATA[
-Components.utils.import("resource://gre/modules/Services.jsm");
-
-function onLoad()
-{
-  insertPropertyStrings();
-
-  let locale = Services.prefs.getCharPref("general.useragent.locale");
-  document.getElementById("manualLink").href = "https://tb-manual.torproject.org/" + locale;
-
-  document.addEventListener("AboutTorAdjustArrow", function() {
-    adjustToolbarIconArrow();
-  }, false);
-
-  window.setTimeout( function() {
-    adjustToolbarIconArrow();
-  }, 0);
-}
-
-function adjustToolbarIconArrow()
-{
-  let textElem = document.getElementById("updatePrompt");
-  let arrowHeadDiv = document.getElementById("toolbarIconArrowHead");
-  let vertExtDiv = document.getElementById("toolbarIconArrowVertExtension");
-  let bendDiv = document.getElementById("toolbarIconArrowBend");
-  let horzExtDiv = document.getElementById("toolbarIconArrowHorzExtension");
-  if (!textElem || !arrowHeadDiv || !vertExtDiv || !bendDiv || !horzExtDiv)
-    return;
-
-  let arrowTailElems = [ vertExtDiv, bendDiv, horzExtDiv ];
-  let tbXpos;
-  if (document.body.hasAttribute("torbutton-xpos"))
-    tbXpos = parseInt(document.body.getAttribute("torbutton-xpos"), 10);
-
-  if (!tbXpos || isNaN(tbXpos) || (tbXpos < 0))
-  {
-    arrowHeadDiv.style.display = "none";
-    for (let elem of arrowTailElems)
-      elem.style.display = "none";
-    return;
-  }
-
-  const kArrowMargin = 6;          // Horizontal margin between line and text.
-  const kArrowHeadExtraWidth = 9;  // Horizontal margin to the line.
-  const kArrowLineThickness = 11;
-  const kBendWidth = 22;
-  const kBendHeight = 22;
-
-  arrowHeadDiv.style.display = "block";  // Must be visible to get offsetWidth.
-  let arrowHalfWidth = Math.round(arrowHeadDiv.offsetWidth / 2);
-  let leftAnchor = textElem.offsetLeft - kArrowMargin
-                    - kBendWidth + Math.round(kArrowLineThickness / 2);
-  let rightAnchor = textElem.offsetLeft + textElem.offsetWidth
-                    + kArrowMargin + arrowHalfWidth;
-
-  let isArrowOnLeft = (tbXpos < leftAnchor);
-  let isArrowOnRight = (tbXpos > rightAnchor) &&
-                       (tbXpos < (window.innerWidth - arrowHalfWidth));
-  let isArrowInMiddle = (tbXpos >= leftAnchor) && (tbXpos <= rightAnchor);
-
-  if (isArrowOnLeft || isArrowOnRight || isArrowInMiddle)
-  {
-    // Position the arrow head.
-    let arrowHeadLeft = tbXpos - arrowHalfWidth;
-    arrowHeadDiv.style.left = arrowHeadLeft + "px";
-    if (isArrowOnLeft || isArrowOnRight)
-    {
-      let horzExtBottom = textElem.offsetTop +
-               Math.round((textElem.offsetHeight + kArrowLineThickness) / 2);
-
-      // Position the vertical (extended) line.
-      let arrowHeadBottom = arrowHeadDiv.offsetTop + arrowHeadDiv.offsetHeight;
-      vertExtDiv.style.top = arrowHeadBottom + "px";
-      vertExtDiv.style.left = (arrowHeadLeft + kArrowHeadExtraWidth) + "px";
-      let ht = horzExtBottom - kBendHeight - arrowHeadBottom;
-      vertExtDiv.style.height = ht + "px";
-
-      // Position the bend (elbow).
-      bendDiv.style.top = (horzExtBottom - kBendHeight) + "px";
-      let bendDivLeft;
-      if (isArrowOnLeft)
-      {
-        bendDiv.setAttribute("pos", "left");
-        bendDivLeft = arrowHeadLeft + kArrowHeadExtraWidth;
-      }
-      else if (isArrowOnRight)
-      {
-        bendDiv.setAttribute("pos", "right");
-        bendDivLeft = arrowHeadLeft + kArrowHeadExtraWidth
-                      + kArrowLineThickness - kBendWidth;
-      }
-      bendDiv.style.left = bendDivLeft + "px";
-
-      // Position the horizontal (extended) line.
-      horzExtDiv.style.top = (horzExtBottom - kArrowLineThickness) + "px";
-      let horzExtLeft, w;
-      if (isArrowOnLeft)
-      {
-        horzExtLeft = bendDivLeft + kBendWidth;
-        w = (textElem.offsetLeft - horzExtLeft - kArrowMargin);
-      }
-      else
-      {
-        horzExtLeft = rightAnchor - arrowHalfWidth;
-        w = tbXpos - arrowHalfWidth - horzExtLeft;
-      }
-      horzExtDiv.style.left = horzExtLeft + "px";
-      horzExtDiv.style.width = w + "px";
-    }
-  }
-
-  let headDisplay = (isArrowOnLeft || isArrowInMiddle || isArrowOnRight)
-                      ? "block" : "none";
-  arrowHeadDiv.style.display = headDisplay;
-  let tailDisplay = (isArrowOnLeft || isArrowOnRight) ? "block" : "none";
-  for (let elem of arrowTailElems)
-    elem.style.display = tailDisplay;
-}
-
-function insertPropertyStrings()
-{
-  try {
-    let kPropertiesURL = "chrome://torbutton/locale/aboutTor.properties";
-
-    let gStringBundle = Services.strings.createBundle(kPropertiesURL);
-    let s1 = gStringBundle.GetStringFromName("aboutTor.searchDDG.privacy.link");
-    let s2 = gStringBundle.GetStringFromName("aboutTor.searchDDG.search.link");
-    let result = gStringBundle.formatStringFromName("aboutTor.searchDDG.privacy",
-                  [s1, s2], 2);
-    if (result) {
-      let elem = document.getElementById("searchProviderInfo");
-      if (elem)
-        elem.innerHTML = result;
-    }
-  } catch(e) {};
-}
-
 window.addEventListener("pageshow", function() {
   let evt = new CustomEvent("AboutTorLoad", { bubbles: true });
   document.dispatchEvent(evt);
 });
-
 ]]>
 </script>
 </head>
-<body dir="&locale.dir;" onload="onLoad();">
+<body dir="&locale.dir;">
 <div id="torstatus" class="top">
   <div id="torstatus-version"/>
   <div id="torstatus-image"/>

@@ -40,8 +40,6 @@ var m_tb_control_host = null;        // Set if using TCP.
 var m_tb_control_pass = null;
 var m_tb_control_desc = null;        // For logging.
 
-var m_tb_orig_BrowserOnAboutPageLoad = null;
-
 var m_tb_domWindowUtils = window.QueryInterface(Ci.nsIInterfaceRequestor).
                           getInterface(Ci.nsIDOMWindowUtils);
 
@@ -203,15 +201,24 @@ var torbutton_tor_check_observer = {
         // Update toolbar icon and tooltip.
         torbutton_update_toolbutton();
 
-        // Update all open about:tor pages. If the user does not have an
-        // about:tor page open in the front most window, open one.
-        if (torbutton_update_all_abouttor_pages(undefined, false) < 1) {
-          var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
+        // Update all open about:tor pages.
+        torbutton_abouttor_message_handler.updateAllOpenPages();
+
+        // If the user does not have an about:tor tab open in the front most
+        // window, open one.
+        var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
               .getService(Components.interfaces.nsIWindowMediator);
-          var win = wm.getMostRecentWindow("navigator:browser");
-          if (win == window) {
-            gBrowser.selectedTab = gBrowser.addTab("about:tor");
+        var win = wm.getMostRecentWindow("navigator:browser");
+        if (win == window) {
+          let foundTab = false;
+          let tabBrowser = top.getBrowser();
+          for (let i = 0; !foundTab && (i < tabBrowser.browsers.length); ++i) {
+            let b = tabBrowser.getBrowserAtIndex(i);
+            foundTab = (b.currentURI.spec.toLowerCase() == "about:tor");
           }
+
+          if (!foundTab)
+            gBrowser.selectedTab = gBrowser.addTab("about:tor");
         }
       }
     }
@@ -332,10 +339,10 @@ function torbutton_init() {
         }
     }
 
-    // Add event listener for about:tor page loads.
-    document.addEventListener("AboutTorLoad", function(aEvent) {
-      torbutton_on_abouttor_load(aEvent.target);
-    }, false, true);
+    // Add about:tor IPC message listeners.
+    let aboutTorMessages = [ "AboutTor:Loaded", "AboutTor:GetToolbarData" ];
+    aboutTorMessages.forEach(aMsg => window.messageManager.addMessageListener(
+                                   aMsg, torbutton_abouttor_message_handler));
 
     // XXX: Get rid of the cached asmjs (or IndexedDB) files on disk in case we
     // don't allow things saved to disk. This is an ad-hoc fix to work around
@@ -365,7 +372,7 @@ function torbutton_init() {
 
     // Detect toolbar customization and update arrow on about:tor pages.
     window.addEventListener("aftercustomization", function() {
-      torbutton_update_all_abouttor_pages(undefined, undefined);
+      torbutton_abouttor_message_handler.updateAllOpenPages();
     }, false);
 
     //setting up context menu
@@ -404,9 +411,58 @@ function torbutton_init() {
 
     torbutton_init_user_manual_links();
 
+    // Arrange for our about:tor content script to be loaded in each frame.
+    window.messageManager.loadFrameScript(
+              "chrome://torbutton/content/aboutTor/aboutTor-content.js", true);
+
     torbutton_log(3, 'init completed');
 }
 
+var torbutton_abouttor_message_handler = {
+  // Receive IPC messages from the about:tor content script.
+  receiveMessage: function(aMessage) {
+    switch(aMessage.name) {
+      case "AboutTor:Loaded":
+        torbutton_show_sec_slider_notification();
+        aMessage.target.messageManager.sendAsyncMessage("AboutTor:ChromeData",
+                                                        this.chromeData);
+        break;
+      case "AboutTor:GetToolbarData":
+        aMessage.target.messageManager.sendAsyncMessage("AboutTor:ToolbarData",
+                                                        this.toolbarData);
+        break;
+    }
+  },
+
+  // Send privileged data to all of the about:tor content scripts.
+  updateAllOpenPages: function() {
+    window.messageManager.broadcastAsyncMessage("AboutTor:ChromeData",
+                                                this.chromeData);
+  },
+
+  // The chrome data contains all of the data needed by the about:tor
+  // content process that is only available here (in the chrome process).
+  // It is sent to the content process when an about:tor window is opened
+  // and in response to events such as the browser noticing that an update
+  // is available.
+  get chromeData() {
+    return {
+      torOn: torbutton_tor_check_ok(),
+      updateNeeded: torbutton_update_is_needed(),
+      showManual: torbutton_show_torbrowser_manual(),
+      toolbarButtonXPos: torbutton_get_toolbarbutton_xpos()
+    };
+  },
+
+  // The toolbar data only contains the x coordinate of Torbutton's toolbar
+  // item; it is sent back to the content process as the about:tor window
+  // is resized.
+  get toolbarData() {
+    return {
+      toolbarButtonXPos: torbutton_get_toolbarbutton_xpos()
+    };
+  }
+};
 
 function torbutton_should_prompt_for_language_preference() {
   return torbutton_get_general_useragent_locale().substring(0, 2) != "en" &&
@@ -570,7 +626,7 @@ function torbutton_notify_if_update_needed() {
     setOrClearAttribute(btn, "tbUpdateNeeded", updateNeeded);
 
     // Update all open about:tor pages.
-    torbutton_update_all_abouttor_pages(updateNeeded, undefined);
+    torbutton_abouttor_message_handler.updateAllOpenPages();
 
     // Make the "check for update" menu item bold if an update is needed.
     var item = document.getElementById("torbutton-checkForUpdate");
@@ -597,117 +653,11 @@ function torbutton_check_for_update() {
         prompter.checkForUpdates();
 }
 
-// Pass undefined for a parameter to have this function determine it.
-// Returns a count of open pages that were updated,
-function torbutton_update_all_abouttor_pages(aUpdateNeeded, aTorIsOn) {
-  if (aUpdateNeeded === undefined)
-    aUpdateNeeded = torbutton_update_is_needed();
-  if (aTorIsOn === undefined)
-    aTorIsOn = torbutton_tor_check_ok();
-
-  var count = 0;
-  var tabBrowser = top.getBrowser();
-  var tabs = tabBrowser.mTabs;
-  if (tabs && (tabs.length > 0)) {
-    for (var tab = tabs[0]; tab != null; tab = tab.nextSibling) {
-      try {
-        let doc = tabBrowser.getBrowserForTab(tab).contentDocument;
-        if (torbutton_update_abouttor_doc(doc, aTorIsOn, aUpdateNeeded))
-          ++count;
-      } catch(e) {}
-    }
-  }
-
-  return count;
-}
-
-// Returns true if aDoc is an about:tor page.
-function torbutton_update_abouttor_doc(aDoc, aTorOn, aUpdateNeeded) {
-  var isAboutTor = torbutton_is_abouttor_doc(aDoc);
-  if (isAboutTor) {
-    if (aTorOn)
-      aDoc.body.setAttribute("toron", "yes");
-    else
-      aDoc.body.removeAttribute("toron");
-
-    if (aUpdateNeeded)
-      aDoc.body.setAttribute("torNeedsUpdate", "yes"); 
-    else
-      aDoc.body.removeAttribute("torNeedsUpdate");
-
-    if (torbutton_show_torbrowser_manual())
-      aDoc.body.setAttribute("showmanual", "yes");
-    else
-      aDoc.body.removeAttribute("showmanual");
-
-    // Display product name and TBB version.
-    try {
-      const kBrandBundle = "chrome://branding/locale/brand.properties";
-      let brandBundle = Cc["@mozilla.org/intl/stringbundle;1"]
-                          .getService(Ci.nsIStringBundleService)
-                          .createBundle(kBrandBundle);
-      let productName = brandBundle.GetStringFromName("brandFullName");
-      let tbbVersion = m_tb_prefs.getCharPref("torbrowser.version");
-      let e = aDoc.getElementById("torstatus-version");
-
-      while (e.firstChild)
-        e.removeChild(e.firstChild);
-      e.appendChild(aDoc.createTextNode(productName + '\n' + tbbVersion));
-    } catch (e) {}
-
-    let containerName = "torstatus-" + (aTorOn ? "on" : "off") + "-container";
-    torbutton_adjust_abouttor_fontsizes(aDoc, containerName);
-    torbutton_update_abouttor_arrow(aDoc);
-  }
-
-  return isAboutTor;
-}
-
-// Ensure that text in top area does not overlap the tor on/off (onion) image.
-// This is done by reducing the font sizes as necessary.
-function torbutton_adjust_abouttor_fontsizes(aDoc, aContainerName)
-{
-  let imgElem = aDoc.getElementById("torstatus-image");
-  let containerElem = aDoc.getElementById(aContainerName);
-  if (!imgElem || !containerElem)
-    return;
-
-  try
-  {
-    let imgRect = imgElem.getBoundingClientRect();
-
-    for (let textElem = containerElem.firstChild; textElem;
-         textElem = textElem.nextSibling)
-    {
-      if ((textElem.nodeType != textElem.ELEMENT_NODE) ||
-          (textElem.nodeName.toLowerCase() == "br"))
-      {
-        continue;
-      }
-
-      let textRect = textElem.getBoundingClientRect();
-      if (0 == textRect.width)
-        continue;
-
-      // Reduce font to 90% of previous size, repeating the process up to 7
-      // times.  This allows for a maximum reduction to just less than 50% of
-      // the original size.
-      let maxTries = 7;
-      while ((textRect.left < imgRect.right) && (--maxTries >= 0))
-      {
-        let style = aDoc.defaultView.getComputedStyle(textElem, null);
-        let fontSize = parseFloat(style.getPropertyValue("font-size"));
-        textElem.style.fontSize = (fontSize * 0.9) + "px";
-        textRect = textElem.getBoundingClientRect();
-      }
-    }
-  } catch (e) {}
-}
-
-// Determine X position of torbutton toolbar item and pass it through
-// to the xhtml document by setting a torbutton-xpos attribute on the body.
-// The value that is set takes retina displays and content zoom into account.
-function torbutton_update_abouttor_arrow(aDoc) {
+// Determine X position of Torbutton toolbar item. The value returned
+// accounts for retina but not content zoom.
+// undefined is returned if the value cannot be determined (e.g., if the
+// toolbar item is not on the toolbar).
+function torbutton_get_toolbarbutton_xpos() {
   try {
     let tbXpos = -1;
     let tbItem = torbutton_get_toolbutton();
@@ -721,55 +671,16 @@ function torbutton_update_abouttor_arrow(aDoc) {
     }
 
     if (tbXpos >= 0) {
-      // Convert to device-independent units, compensating for retina display
-      // and content zoom that may be in effect on the about:tor page.
-      // Because window.devicePixelRatio always returns 1.0 for non-Chrome
-      // windows (see bug 13875), we use screenPixelsPerCSSPixel for the
-      // content window.
+      // Convert to device-independent units, compensating for retina display.
       tbXpos *= window.devicePixelRatio;
-      let pixRatio = gBrowser.contentWindow
-                             .QueryInterface(Ci.nsIInterfaceRequestor)
-                             .getInterface(Ci.nsIDOMWindowUtils)
-                             .screenPixelsPerCSSPixel;
-      tbXpos = Math.round(tbXpos / pixRatio);
-      aDoc.body.setAttribute("torbutton-xpos", tbXpos);
-    } else {
-      aDoc.body.removeAttribute("torbutton-xpos");
+      return tbXpos;
     }
-
-    let evt = new Event("AboutTorAdjustArrow");
-    aDoc.dispatchEvent(evt);
   } catch(e) {}
+
+  return undefined;
 }
 
-function torbutton_on_abouttor_load(aDoc) {
-  if (torbutton_is_abouttor_doc(aDoc) &&
-      !aDoc.documentElement.hasAttribute("aboutTorLoaded")) {
-    aDoc.documentElement.setAttribute("aboutTorLoaded", true);
-
-    // Show correct Tor on/off and "update needed" status.
-    let torOn = torbutton_tor_check_ok();
-    let needsUpdate = torbutton_update_is_needed();
-    torbutton_update_abouttor_doc(aDoc, torOn, needsUpdate);
-
-    aDoc.defaultView.addEventListener("resize",
-                      function() { torbutton_update_abouttor_arrow(aDoc); },
-                      false);
-
-    // Insert "Test Tor Network Settings" url.
-    let elem = aDoc.getElementById("testTorSettings");
-    if (elem) {
-      let locale = m_tb_prefs.getCharPref("general.useragent.locale");
-      locale = locale.replace(/-/g, '_');
-      let url = m_tb_prefs.getCharPref(
-                      "extensions.torbutton.test_url_interactive");
-      elem.href = url.replace(/__LANG__/g, locale);
-    }
-  }
-
-  if (m_tb_orig_BrowserOnAboutPageLoad)
-    m_tb_orig_BrowserOnAboutPageLoad(aDoc);
-
+function torbutton_show_sec_slider_notification() {
   // Show the notification about the new security slider.
   if (m_tb_prefs.
       getBoolPref("extensions.torbutton.show_slider_notification")) {
@@ -795,10 +706,6 @@ function torbutton_on_abouttor_load(aDoc) {
     m_tb_prefs.
       setBoolPref("extensions.torbutton.show_slider_notification", false);
   }
-}
-
-function torbutton_is_abouttor_doc(aDoc) {
-  return (aDoc && /^about:tor$/i.test(aDoc.documentURI.toLowerCase()));
 }
 
 // Bug 1506 P4: Checking for Tor Browser updates is pretty important,
@@ -2449,7 +2356,7 @@ function torbutton_init_user_manual_links() {
   let menuitem = document.getElementById("torBrowserUserManual");
   bindPrefAndInit("general.useragent.locale", val => {
     menuitem.hidden = !torbutton_show_torbrowser_manual();
-    torbutton_update_all_abouttor_pages(undefined, undefined);
+    torbutton_abouttor_message_handler.updateAllOpenPages();
   });
 }
 
