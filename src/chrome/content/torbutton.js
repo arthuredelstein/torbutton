@@ -2275,6 +2275,25 @@ function torbutton_get_current_accept_language_value(aURI)
   return null;
 }
 
+// Take URL strings the user has specified for a homepage
+// and normalize it so it looks like a real URL.
+function torbutton_normalize_homepage_url_string(aURLString)
+{
+  if (!aURLString) return null;
+  if (typeof aURLString !== "string") return null;
+  let url;
+  try {
+    url = new URL(aURLString);
+  } catch (e) {
+    try {
+      url = new URL("http://" + aURLString);
+    } catch (e) {
+      return null;
+    }
+  }
+  return url.href;
+}
+
 function torbutton_is_homepage_url(aURI)
 {
   if (!aURI)
@@ -2292,7 +2311,8 @@ function torbutton_is_homepage_url(aURI)
   if (!homePageURLs)
     return false;
 
-  let urls = homePageURLs.split('|');
+  let urls = homePageURLs.split('|')
+               .map(torbutton_normalize_homepage_url_string);
   return (urls.indexOf(aURI.spec) >= 0);
 }
 
