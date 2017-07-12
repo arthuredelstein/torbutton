@@ -13,11 +13,11 @@
         onload="torbutton_init_security_ui()"
         align="stretch"
         pack="center"
-        maxheight="350"
+        maxheight="600"
         minwidth="400"
-        maxwidth="600"
+        maxwidth="800"
         ondialogaccept="torbutton_save_security_settings()"
-        width="400" >
+        width="500" >
 
     <script type="application/x-javascript" src="torbutton_util.js"/>
     <script type="application/x-javascript" src="preferences.js"/>
@@ -26,7 +26,7 @@
           <caption label="&torbutton.prefs.sec_caption;"/>
           <hbox id="torbutton_slider_settings" flex="1" align="stretch" hidden="false">
             <vbox>
-              <hbox height="220">
+              <hbox flex="1" minheight="220">
                 <vbox>
                   <scale id="torbutton_sec_slider" flex="1" min="1" max="3"
                          movetoclick="true" orient="vertical"
@@ -57,7 +57,7 @@
                 </vbox>
               </hbox>
             </vbox>
-            <vbox id="descBox" flex="1" width="400" style="overflow: hidden;">
+            <vbox id="descBox" flex="1" style="overflow: hidden;">
               <vbox id="desc_high" collapsed="true">
                 <description
                   class="slider-text-size, slider-text-weight">
