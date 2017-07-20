@@ -7,19 +7,24 @@
  * Handles displaying confirmation dialogs for external apps and protocols
  * due to Firefox Bug https://bugzilla.mozilla.org/show_bug.cgi?id=440892
  *
- * Also implements an observer that filters drag events to prevent OS
- * access to URLs (a potential proxy bypass vector).
+ * An instance of this module is created each time the browser starts to
+ * download a file that may be opened by another or application and when
+ * an external application may be invoked to handle an URL (e.g., when the
+ * user clicks on a mailto: URL).
  *************************************************************************/
 
 const Cc = Components.classes;
 const Ci = Components.interfaces;
+const Cr = Components.results;
 const Cu = Components.utils;
 
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+Cu.import("resource://gre/modules/Services.jsm");
+Cu.import("resource://gre/modules/SharedPromptUtils.jsm");
 
 // Module specific constants
 const kMODULE_NAME = "Torbutton External App Handler";
-const kCONTRACT_ID = "@torproject.org/torbutton-extAppBlockerService;1";
+const kCONTRACT_ID = "@torproject.org/torbutton-extAppBlocker;1";
 const kMODULE_CID = Components.ID("3da0269f-fc29-4e9e-a678-c3b1cafcf13f");
 
 const kInterfaces = [Ci.nsIObserver, Ci.nsIClassInfo];
@@ -28,23 +33,14 @@ function ExternalAppBlocker() {
   this.logger = Cc["@torproject.org/torbutton-logger;1"]
       .getService(Ci.nsISupports).wrappedJSObject;
   this.logger.log(3, "Component Load 0: New ExternalAppBlocker.");
-
-  this._prefs = Cc["@mozilla.org/preferences-service;1"]
-      .getService(Ci.nsIPrefBranch);
-
-  try {
-    var observerService = Cc["@mozilla.org/observer-service;1"].
-        getService(Ci.nsIObserverService);
-    observerService.addObserver(this, "external-app-requested", false);
-    observerService.addObserver(this, "on-datatransfer-available", false);
-  } catch(e) {
-    this.logger.log(5, "Failed to register external app observer or drag observer");
-  }
 }
 
 ExternalAppBlocker.prototype =
 {
-  QueryInterface: XPCOMUtils.generateQI([Ci.nsISupports, Ci.nsIObserver]),
+  _helperAppLauncher: undefined,
+
+  QueryInterface: XPCOMUtils.generateQI([Ci.nsISupports, Ci.nsIObserver,
+                                         Ci.nsIHelperAppWarningDialog]),
 
   // make this an nsIClassInfo object
   flags: Ci.nsIClassInfo.DOM_OBJECT,
@@ -58,83 +54,86 @@ ExternalAppBlocker.prototype =
     return kInterfaces;
   },
 
-  // method of nsIClassInfo  
+  // method of nsIClassInfo
   getHelperForLanguage: function(count) { return null; },
 
-  // Returns true if launch should proceed.
-  _confirmLaunch: function() {
-    if (!this._prefs.getBoolPref("extensions.torbutton.launch_warning")) {
-      return true;
+  // method of nsIHelperAppWarningDialog
+  maybeShow: function(aLauncher, aWindowContext)
+  {
+    // Hold a reference to the object that called this component. This is
+    // important not just because we need to later invoke the
+    // continueRequest() or cancelRequest() callback on aLauncher, but also
+    // so that the launcher object (which is a reference counted object) is
+    // not released too soon.
+    this._helperAppLauncher = aLauncher;
+
+    if (!Services.prefs.getBoolPref("extensions.torbutton.launch_warning")) {
+      this._helperAppLauncher.continueRequest();
+      return;
     }
 
-    var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-               .getService(Ci.nsIWindowMediator);
-    var chrome = wm.getMostRecentWindow("navigator:browser");
-
-    var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
-                            .getService(Ci.nsIPromptService);
-    var flags = prompts.BUTTON_POS_0 * prompts.BUTTON_TITLE_IS_STRING +
-                prompts.BUTTON_POS_1 * prompts.BUTTON_TITLE_IS_STRING +
-                prompts.BUTTON_DELAY_ENABLE +
-                prompts.BUTTON_POS_1_DEFAULT;
-
-    var title = chrome.torbutton_get_property_string("torbutton.popup.external.title");
-    var app = chrome.torbutton_get_property_string("torbutton.popup.external.app");
-    var note = chrome.torbutton_get_property_string("torbutton.popup.external.note");
-    var suggest = chrome.torbutton_get_property_string("torbutton.popup.external.suggest");
-    var launch = chrome.torbutton_get_property_string("torbutton.popup.launch");
-    var cancel = chrome.torbutton_get_property_string("torbutton.popup.cancel");
-    var dontask = chrome.torbutton_get_property_string("torbutton.popup.dontask");
-
-    var check = {value: false};
-    var result = prompts.confirmEx(chrome, title, app+note+suggest+" ",
-                                   flags, launch, cancel, "", dontask, check);
-
-    if (check.value) {
-      this._prefs.setBoolPref("extensions.torbutton.launch_warning", false);
-    }
-
-    return (0 == result);
-  },
-  
-  observe: function(subject, topic, data) {
-    if (topic == "external-app-requested") {
-      this.logger.log(3, "External app requested");
-      // subject.data is true if the launch should be canceled.
-      if ((subject instanceof Ci.nsISupportsPRBool)
-          && !subject.data /* not canceled already */
-          && !this._confirmLaunch()) {
-        subject.data = true; // The user said to cancel the launch.
-      }
-    } else if (topic == "on-datatransfer-available") {
-      this.logger.log(3, "The DataTransfer is available");
-      return this.filterDataTransferURLs(subject);
-    }
+    this._showPrompt(aWindowContext);
   },
 
-  filterDataTransferURLs: function(aDataTransfer) {
-    var types = null;
-    var type = "";
-    var count = aDataTransfer.mozItemCount;
-    var len = 0;
-    for (var i = 0; i < count; ++i) {
-      this.logger.log(3, "Inspecting the data transfer: " + i);
-      types = aDataTransfer.mozTypesAt(i);
-      len = types.length;
-      for (var j = 0; j < len; ++j) {
-        type = types[j];
-        this.logger.log(3, "Type is: " + type);
-        if (type == "text/x-moz-url" ||
-            type == "text/x-moz-url-data" ||
-            type == "text/uri-list" ||
-            type == "application/x-moz-file-promise-url") {
-          aDataTransfer.clearData(type);
-          this.logger.log(3, "Removing " + type);
+  /*
+   * The _showPrompt() implementation uses some XUL and JS that is part of the
+   * browser's confirmEx() implementation. Specifically, _showPrompt() depends
+   * on chrome://global/content/commonDialog.xul as well as some of the code
+   * in resource://gre/modules/SharedPromptUtils.jsm.
+   */
+  _showPrompt: function(aWindowContext) {
+    let parentWin;
+    try {
+      parentWin = aWindowContext.getInterface(Ci.nsIDOMWindow);
+    } catch (e) {
+      parentWin = Services.wm.getMostRecentWindow("navigator:browser");
+    }
+
+    let title = parentWin.torbutton_get_property_string("torbutton.popup.external.title");
+    let app = parentWin.torbutton_get_property_string("torbutton.popup.external.app");
+    let note = parentWin.torbutton_get_property_string("torbutton.popup.external.note");
+    let suggest = parentWin.torbutton_get_property_string("torbutton.popup.external.suggest");
+    let launch = parentWin.torbutton_get_property_string("torbutton.popup.launch");
+    let cancel = parentWin.torbutton_get_property_string("torbutton.popup.cancel");
+    let dontask = parentWin.torbutton_get_property_string("torbutton.popup.dontask");
+
+    let args = {
+      promptType:       "confirmEx",
+      title:            title,
+      text:             app+note+suggest+" ",
+      checkLabel:       dontask,
+      checked:          false,
+      ok:               false,
+      button0Label:     launch,
+      button1Label:     cancel,
+      defaultButtonNum: 1, // Cancel
+      buttonNumClicked: 1, // Cancel
+      enableDelay: true,
+    };
+
+    let propBag = PromptUtils.objectToPropBag(args);
+    let uri = "chrome://global/content/commonDialog.xul";
+    let promptWin = Services.ww.openWindow(parentWin, uri, "_blank",
+                                    "centerscreen,chrome,titlebar", propBag);
+    promptWin.addEventListener("load", aEvent => {
+      promptWin.addEventListener("unload", aEvent => {
+        PromptUtils.propBagToObject(propBag, args);
+
+        if (0 == args.buttonNumClicked) {
+          // Save the checkbox value and tell the browser's external helper app
+          // module about the user's choice.
+          if (args.checked) {
+            Services.prefs.setBoolPref("extensions.torbutton.launch_warning",
+                                       false);
+          }
+
+          this._helperAppLauncher.continueRequest();
+        } else {
+          this._helperAppLauncher.cancelRequest(Cr.NS_BINDING_ABORTED);
         }
-      }
-    }
-  }
-
+      }, false);
+    }, false);
+  },
 };
 
 var NSGetFactory = XPCOMUtils.generateNSGetFactory([ExternalAppBlocker]);
