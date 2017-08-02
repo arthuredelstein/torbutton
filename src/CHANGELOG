@@ -1,3 +1,11 @@
+1.9.7.5
+ * Bug 21999: Fix display of language prompt in non-en-US locales
+ * Bug 18193: Don't let about:tor have chrome privileges
+ * Bug 22535: Search on about:tor discards search query
+ * Bug 21948: Going back to about:tor page gives "Address isn't valid" error
+ * Code clean-up
+ * Translations update
+
 1.9.7.4
  * Bug 22542: Security Settings window too small on macOS 10.12
 
