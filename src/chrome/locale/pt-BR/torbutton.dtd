@@ -6,7 +6,7 @@
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Configurações da Rede Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "Verificar atualizações do Navegador Tor...">
+<!ENTITY torbutton.context_menu.downloadUpdate "Aplicar Atualizações do Navegador Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Proteções contra Cookies...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
@@ -30,7 +30,7 @@
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Deixe esta opção sempre marcada para impedir que funcionalidades de navegação sejam usadas para rastreá-la(o) durante a sua navegação. Funcionalidades alteradas incluem janelas pop-up, canais de transmissão, o cache de memória, cookies, favicons, ">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Alterar os detalhes  que distinguem você de outros usuários do Navegador Tor">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Deixe esta opção marcada para ocultar suas informações individuais, como o status da bateria, a performance do computados, o formato de teclado, a localização e os plugins instalados, a lista de plugins instalados, o status da sua rede, a posição de tela, o tamanho de tela, níveis de zoom de alguns sites, tipos de arquivos compatíveis, cores de sistema, e capacidade de WebGL.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Manter esta opção ativa para ocultar de websites as suas informações que podem ser individuais: performance do computador, modelo de teclado, local, a localização e a lista dos plugins instalados, o status da sua conexão, a orientação de tela, o tamanho da tela, os níveis de zoom de certos sites, os tipos de arquivos que possuem suporte, o sistema de cores, e os recursos WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Nível de Segurança">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider possibilita que você desabilite certas funcionalidades de navegação que podem torná-la mais vulnerável a tentativas de ataque.">
 <!ENTITY torbutton.prefs.sec_low "Baixo (padrão)">

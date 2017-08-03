@@ -30,7 +30,7 @@
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "このボックスをチェックしたままにすることで、様々なブラウザーの機能が悪用されウェブの閲覧中に追跡されることを防ぐ。影響を受ける機能：blob URL、ブロードキャスト・チャンネル、ブラウザー・キャッシュ、クッキー、favicon、HTTP認証ヘッダー、link preconnects、ローカルストレージ、mediaSource URL、OCSPリクエスト、共有ワーカー、TLSセッション・チケットなど。">
 <!ENTITY torbutton.prefs.resist_fingerprinting "あなたとほかのTorブラウザのユーザーを区別する詳細を変更">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "このボックスをチェックしたままにすることで、ウェブサイトからあなたを識別する内容を隠す：バッテリー状態、コンピューターの性能、キーボードの配列、地域設定、インストールされたプラグインの場所、インストールされたプラグインの一覧、あなたのネットワーク状態、画面の向き、画面の大きさ、サイトごとのズームレベル、対応するファイルの種類、システムの色、WebGL能力など。">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
 <!ENTITY torbutton.prefs.sec_caption "セキュリティレベル">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "セキュリティ・スライダーを使って、あなたのブラウザーをハッキングの試みに対してより脆弱にする可能性のあるブラウザーの機能を無効にできます。">
 <!ENTITY torbutton.prefs.sec_low "低い(デフォルト)">
