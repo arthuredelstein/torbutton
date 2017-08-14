@@ -2123,8 +2123,11 @@ var torbutton_resizelistener =
   onLocationChange: function(aProgress, aRequest, aURI) {},
   onStateChange: function(aProgress, aRequest, aFlag, aStatus) {
     if (aFlag & Ci.nsIWebProgressListener.STATE_STOP) {
-      m_tb_resize_handler = function() {
-        if (window.windowState === 1) {
+      m_tb_resize_handler = async function() {
+        // Wait for end of execution queue to ensure we have correct windowState.
+        await new Promise(resolve => setTimeout(resolve, 0));
+        if (window.windowState === window.STATE_MAXIMIZED ||
+            window.windowState === window.STATE_FULLSCREEN) {
           if (m_tb_prefs.
               getIntPref("extensions.torbutton.maximize_warnings_remaining") > 0) {
 
