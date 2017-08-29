@@ -1,3 +1,7 @@
+1.9.7.6
+ * Bug 22989: Fix dimensions of new windows on macOS
+ * Translations update
+
 1.9.7.5
  * Bug 21999: Fix display of language prompt in non-en-US locales
  * Bug 18193: Don't let about:tor have chrome privileges
