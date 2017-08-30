@@ -8,9 +8,8 @@
  * due to Firefox Bug https://bugzilla.mozilla.org/show_bug.cgi?id=440892
  *
  * An instance of this module is created each time the browser starts to
- * download a file that may be opened by another or application and when
- * an external application may be invoked to handle an URL (e.g., when the
- * user clicks on a mailto: URL).
+ * download a file and when an external application may be invoked to
+ * handle an URL (e.g., when the user clicks on a mailto: URL).
  *************************************************************************/
 
 const Cc = Components.classes;
