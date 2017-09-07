@@ -6,7 +6,6 @@ pref("extensions.torbutton.logmethod",1); // 0=stdout, 1=errorconsole, 2=debuglo
 pref("extensions.torbutton.display_circuit", true);
 pref("extensions.torbutton@torproject.org.description", "chrome://torbutton/locale/torbutton.properties");
 pref("extensions.torbutton.updateNeeded", false);
-pref("extensions.torbutton.hide_sync_ui", true);
 
 // Tor check and proxy prefs
 pref("extensions.torbutton.test_enabled",true);
