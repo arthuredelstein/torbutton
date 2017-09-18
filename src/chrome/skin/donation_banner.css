@@ -1,0 +1,111 @@
+#banner {
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    display: none;
+    font-weight: bold;
+    height: 150px;
+    justify-content: center;
+    left: 0px;
+    margin-top: 0px;
+    min-width: 900px;
+    opacity: 1;
+    position: absolute;
+    user-select: none;
+    width: 100%;
+    z-index: 1;
+}
+#banner:before {
+    background-color: #406;
+    background-image: url('resource://torbutton/chrome/content/aboutTor/onion-hand.png');
+    background-position: center;
+    background-size: cover;
+    content: "";
+    height: 150px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+#banner:-moz-dir(rtl):before {
+    transform: scaleX(-1);
+}
+#banner-contents-container {
+    align-items: center;
+    height: 100%;
+    max-width: 700px;
+    position: relative;
+    width: 700px;
+}
+#banner-tagline {
+    align-items: center;
+    bottom: 60px;
+    color: white;
+    display: flex;
+    font-family: monospace;
+    font-size: 8px;
+    left: 85px;
+    position: absolute;
+    right: 0px;
+    text-align: start;
+    text-transform: uppercase;
+    top: 10px;
+}
+#banner-tagline:-moz-dir(rtl) {
+    left: 0px;
+    right: 85px;
+}
+#banner-slogan {
+    align-items: start;
+    bottom: 0px;
+    color: #f8f8a0;
+    display: flex;
+    font-family: monospace;
+    left: 85px;
+    position: absolute;
+    right: 285px;
+    text-align: start;
+    top: 100px;
+    white-space: nowrap;
+}
+#banner-slogan:-moz-dir(rtl) {
+    left: 285px;
+    right: 85px;
+}
+#banner-donate-button {
+    background-color: #13a513;
+    border: 0px;
+    bottom: 10px;
+    color: #fbf7ef;
+    font-family: sans-serif;
+    font-size: 12px;
+    left: 430px;
+    letter-spacing: -0.00em;
+    position: absolute;
+    right: 0px;
+    top: 100px;
+}
+#banner-donate-button:-moz-dir(rtl) {
+    left: 0px;
+    right: 430px;
+}
+#banner-donate-button:hover {
+    background-color: #38bc38;
+}
+#banner-donate-button-inner {
+    bottom: 6px;
+    display: flex;
+    justify-content: center;
+    left: 8px;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+}
+#banner-spacer {
+    display: none;
+    height: 150px;
+    position: relative;
+    top: 0;
+}
