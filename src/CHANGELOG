@@ -1,3 +1,7 @@
+1.9.7.7
+ * Bug 22542: Security Settings window too small on macOS 10.12 (fixup)
+ * Bug 20375: Warn users after entering fullscreen mode
+
 1.9.7.6
  * Bug 22989: Fix dimensions of new windows on macOS
  * Translations update
