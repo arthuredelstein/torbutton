@@ -37,7 +37,7 @@
 <!ENTITY torbutton.prefs.sec_low_usable_desc "Cela offre l'expérience la plus conviviale.">
 <!ENTITY torbutton.prefs.sec_low_desc "À ce niveau de sécurité, toutes les fonctions du navigateur sont activées.">
 <!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "Le mécanisme de rendu de police SVG OpenType est désactivé.">
-<!ENTITY torbutton.prefs.sec_gen_desc "À ce niveau de sécurité, les changements suivants sont applicables (survolez avec la souris pour plus de détails ) :">
+<!ENTITY torbutton.prefs.sec_gen_desc "À ce niveau de sécurité, les changements suivants sont applicables (survolez avec la souris pour plus de détails) :">
 <!ENTITY torbutton.prefs.sec_html5_desc "Le contenu HTML5 vidéo et audio devient « cliquer pour lire » avec NoScript.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Pour certains sites, vous aurez peut-être à utiliser le bouton NoScript de la barre d'outils pour activer ces objets multimédias.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Certaines optimisations de performance de JavaScript sont désactivées.">

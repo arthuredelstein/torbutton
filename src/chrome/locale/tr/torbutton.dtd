@@ -30,7 +30,7 @@
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Bu seçeneği işaretleyerek, çeşitli web tarayıcıların, web sitelerinde yaptığınız işlemleri izlemesini engelleyebilirsiniz. Değiştirilen özellikler içinde blob İnternet adresleri, yayın kanalları, web tarayıcı ön belleği, çerezler, favicon dosyaları, HTTP Auth başlık bilgileri, ön bağlantı bilgileri, localStorage, mediaSource adresleri, OCSP istekleri, SharedWorkers ve TLS oturumu bulunur.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Diğer Tor Browser kullanıcılarından sizi ayıran ayrıntılar değiştirilsin">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Bilgisayarınızın performansı, klavye düzeni, yerel dil, kurulu eklentilerin konumu, kurulu eklentilerin listesi, ağınızın durumu, ekran yönlendirmesi, ekran boyutu, siteye bağlı özel yakınlaştırma seviyeleri, desteklenen dosya türleri, sistem renkleri ve WebGL yetenekleri gibi sizin için benzersiz olabilecek şeyleri gizlemek için bu kutuyu işaretli tutun.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Bilgisayarınızın başarımı, tuş takımı düzeni, yerel dil ayarları, yüklenmiş eklentilerin konumu, yüklenmiş eklentilerin listesi, ağınızın durumu, ekran yönlendirmesi, ekran boyutu, siteye bağlı özel yakınlaştırma seviyeleri, desteklenen dosya türleri, sistem renkleri ve WebGL yetenekleri gibi size özel olan ve kimliğinizin belirlenmesinde kullanılabilecek bilgileri gizlemek için bu kutuyu işaretlenmiş olarak tutun.">
 <!ENTITY torbutton.prefs.sec_caption "Güvenlik Düzeyi">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Güvenlik ayarı ile belirli web tarayıcı özeliklerini kapatabilirsiniz. Ancak bu durumda web tarayıcınız saldırılara karşı daha korumasız olur.">
 <!ENTITY torbutton.prefs.sec_low "Düşük (varsayılan)">
@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 görüntü ve ses ortamı NoScript aracılığıyla tıklayıp oynat şekline dönüştürülür.">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "Bazı sitelerde bu ortam nesnelerini etkinleştirebilmek için NoScript düğmesinin kullanılması gerekebilir.">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "Bazı JavaScript başarım iyileştirmeleri devre dışı bırakılır.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Doğal Düzenli İfade.">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Doğal Kurallı İfade">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Sınır Çizgi JIT.">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "Bazı sitelerde betikler daha yavaş çalışabilir.">
 <!ENTITY torbutton.prefs.sec_mathml_desc "Matematik denklemlerini görüntüleyen bazı düzenekler devre dışı bırakılır.">

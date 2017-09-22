@@ -12,7 +12,7 @@
 
 <!ENTITY aboutTor.check.label "Test Impostazioni della Rete Tor">
 
-<!ENTITY aboutTor.success.label "Benvenuto nel Browser TOR">
+<!ENTITY aboutTor.success.label "Benvenuto nel browser TOR">
 <!ENTITY aboutTor.success2.label "Connesso alla rete TOR.">
 <!ENTITY aboutTor.success3.label "Ora sei libero di navigare in internet anonimamente.">
 <!ENTITY aboutTor.failure.label "Qualcosa è Andato Storto!">

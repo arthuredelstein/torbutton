@@ -15,7 +15,7 @@
 <!ENTITY aboutTor.success.label "Bienvenue dans le navigateur Tor">
 <!ENTITY aboutTor.success2.label "Connecté au réseau Tor.">
 <!ENTITY aboutTor.success3.label "Vous êtes maintenant libre de naviguer sur Internet anonymement.">
-<!ENTITY aboutTor.failure.label "Une erreur s'est produite !">
+<!ENTITY aboutTor.failure.label "Une erreur s'est produite !">
 <!ENTITY aboutTor.failure2.label "Tor ne fonctionne pas dans ce navigateur.">
 
 <!ENTITY aboutTor.search.label "Rechercher">
@@ -25,13 +25,13 @@
 <!ENTITY aboutTor.torInfo2.label "Pays &amp; adresse IP :">
 <!ENTITY aboutTor.torInfo3.label "Nœud de sortie :">
 <!ENTITY aboutTor.torInfo4.label "Ce serveur ne journalise aucune information sur les visteurs.">
-<!ENTITY aboutTor.whatnextQuestion.label "Que faire ensuite ?">
-<!ENTITY aboutTor.whatnextAnswer.label "Tor n'est PAS tout ce dont vous avez besoin pour naviguer anonymement! Vous aurez peut-être à changer certaines de vos habitudes de navigation pour garder votre identité en sécurité.">
+<!ENTITY aboutTor.whatnextQuestion.label "Que faire ensuite ?">
+<!ENTITY aboutTor.whatnextAnswer.label "Tor n'est PAS tout ce dont vous avez besoin pour naviguer anonymement ! Vous aurez peut-être à changer certaines de vos habitudes de navigation pour garder votre identité en sécurité.">
 <!ENTITY aboutTor.whatnext.label "Conseils pour rester anonyme »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "G">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Le guide d'utilisation du navigateur Tor">
-<!ENTITY aboutTor.helpInfo1.label "Vous pouvez aider !">
+<!ENTITY aboutTor.helpInfo1.label "Vous pouvez aider !">
 <!ENTITY aboutTor.helpInfo2.label "Vous pouvez aider à rendre le réseau Tor plus rapide et plus puissant de plusieurs façons :">
 <!ENTITY aboutTor.helpInfo3.label "Faire tourner un nœud relais Tor »">
 <!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html">
