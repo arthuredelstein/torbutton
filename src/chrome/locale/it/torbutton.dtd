@@ -12,7 +12,7 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Fai clic per inizializzare Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Impostazioni di Sicurezza Tor Browser">
-<!ENTITY torbutton.prefs.restore_defaults "Ripristina Defaults">
+<!ENTITY torbutton.prefs.restore_defaults "Ripristina Default">
 <!ENTITY torbutton.prefs.custom_warning "Le tue impostazioni del browser sembrano avere preferenze di sicurezza insolite. Per motivi di sicurezza e privacy, ti consigliamo di scegliere uno dei livelli di sicurezza predefiniti.">
 <!ENTITY torbutton.cookiedialog.title "Gestisci protezione Cookies">
 <!ENTITY torbutton.cookiedialog.lockCol "Protetto">

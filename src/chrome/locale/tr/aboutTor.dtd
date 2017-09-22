@@ -35,7 +35,7 @@
 <!ENTITY aboutTor.helpInfo2.label "Tor ağını daha hızlı güçlü kılmaya yardımcı olabilmenin çeşitli yolları var:">
 <!ENTITY aboutTor.helpInfo3.label "Tor Aktarıcı Noktası Çalıştır »">
 <!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html.en">
-<!ENTITY aboutTor.helpInfo4.label "Gönüllü Hizmetlerde Bulunun »">
+<!ENTITY aboutTor.helpInfo4.label "Gönüllü Destekte Bulunun »">
 <!ENTITY aboutTor.helpInfo4.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 <!ENTITY aboutTor.helpInfo5.label "Bağış Yapın »">
 <!ENTITY aboutTor.helpInfo5.link "https://www.torproject.org/donate/donate.html.en">
