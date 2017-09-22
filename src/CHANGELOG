@@ -1,3 +1,10 @@
+1.9.8.1
+ * Bug 20375: Warn users after entering fullscreen mode
+ * Bug 22989: Fix dimensions of new windows on macOS
+ * Bug 23526: Add 2017 Donation banner text
+ * Bug 23483: Donation banner on about:tor for 2017 (testing mode)
+ * Translations Update
+
 1.9.8
  * Bug 22610: Avoid crashes when canceling external helper app related downloads
  * Bug 22472: Fix FTP downloads when external helper app dialog is shown
