@@ -2346,7 +2346,7 @@ function torbutton_update_noscript_button()
       // Update every window's NoScript status...
       while (browserEnumerator.hasMoreElements()) {
         let win = browserEnumerator.getNext();
-        win.noscriptOverlay._syncUINow();
+        //win.noscriptOverlay._syncUINow();
       }
       torbutton_log(3, 'Updated NoScript status for security settings');
     } catch (e) {
