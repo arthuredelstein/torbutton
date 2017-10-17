@@ -46,6 +46,7 @@ let avoidWidows = function (element) {
 let updateTextSizes = function () {
   fitTextInElement(sel("#banner-tagline"));
   fitTextInElement(sel("#banner-slogan"));
+  fitTextInElement(sel("#banner-mozilla"));
   fitTextInElement(sel("#banner-donate-button-inner"));
   avoidWidows(sel("#banner-tagline span"));
 };
@@ -54,10 +55,11 @@ let updateTextSizes = function () {
 let randomInteger = max => Math.floor(max * Math.random());
 
 // The main donation banner function.
-let runDonationBanner = function ({ taglines, slogan, donate, shortLocale }) {
+let runDonationBanner = function ({ taglines, slogan, mozilla, donate, shortLocale }) {
   try {
     sel("#banner-tagline span").innerText = taglines[randomInteger(taglines.length)];
     sel("#banner-slogan span").innerText = slogan;
+    sel("#banner-mozilla span").innerText = mozilla;
     let donateButtonText = sel("#banner-donate-button-inner span");
     let rtl = window.getComputedStyle(donateButtonText).direction === "rtl";
     donateButtonText.innerHTML = donate + "&#160;" + (rtl ? "&#9664;" : "&#9654;");

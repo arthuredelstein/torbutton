@@ -58,8 +58,8 @@
     right: 85px;
 }
 #banner-slogan {
-    align-items: start;
-    bottom: 0px;
+    align-items: center;
+    bottom: 30px;
     color: #f8f8a0;
     display: flex;
     font-family: monospace;
@@ -68,10 +68,27 @@
     position: absolute;
     right: 285px;
     text-align: start;
-    top: 100px;
+    top: 90px;
     white-space: nowrap;
 }
 #banner-slogan:-moz-dir(rtl) {
+    left: 285px;
+    right: 85px;
+}
+#banner-mozilla {
+    align-items: center;
+    bottom: 5px;
+    color: white;
+    display: flex;
+    font-family: sans-serif;
+    left: 85px;
+    position: absolute;
+    right: 285px;
+    text-align: start;
+    top: 120px;
+    white-space: nowrap;
+}
+#banner-mozilla:-moz-dir(rtl) {
     left: 285px;
     right: 85px;
 }
