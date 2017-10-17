@@ -1,3 +1,13 @@
+1.9.7.8
+ * Bug 23887: Update banner locales and Mozilla text
+ * Bug 23526: Add 2017 Donation banner text
+ * Bug 23483: Donation banner on about:tor for 2017 (testing mode)
+ * Bug 22610: Avoid crashes when canceling external helper app related downloads
+ * Bug 22472: Fix FTP downloads when external helper app dialog is shown
+ * Bug 22471: Downloading pdf files via the PDF viewer download button is broken
+ * Bug 22618: Downloading pdf file via file:/// is stalling
+ * Translations update
+
 1.9.7.7
  * Bug 22542: Security Settings window too small on macOS 10.12 (fixup)
  * Bug 20375: Warn users after entering fullscreen mode
