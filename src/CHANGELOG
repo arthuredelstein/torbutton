@@ -1,3 +1,7 @@
+1.9.8.2
+ * Bug 23887: Update banner locales and Mozilla text
+ * Translations update
+
 1.9.8.1
  * Bug 20375: Warn users after entering fullscreen mode
  * Bug 22989: Fix dimensions of new windows on macOS
