@@ -7,17 +7,15 @@ Cu.import("resource://gre/modules/Services.jsm");
 
 // A list of locales for which the banner has been translated.
 const kBannerLocales = [
-  "bg",
-  "da",
   "de",
-  "el",
   "en",
   "es",
+  "fa",
   "fr",
-  "is",
   "it",
+  "nl",
+  "pl",
   "pt",
-  "nb",
   "ru",
   "sv",
   "tr",
