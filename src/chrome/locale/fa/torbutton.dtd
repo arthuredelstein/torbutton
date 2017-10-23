@@ -47,7 +47,7 @@
 <!ENTITY torbutton.prefs.sec_mathml_desc "برخی مکانیسم ها نمایش معادلات ریاضی غیر فعال می باشد.">
 <!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML غیر فعال است.">
 <!ENTITY torbutton.prefs.sec_medium "متوسط">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "On sites where JavaScript is enabled, performance optimizations are disabled.">
+<!ENTITY torbutton.prefs.sec_all_jit_desc "بهینه سازی عملکرد در سایت های حاوی جاوا اسکریپت غیرفعال شده است.">
 <!ENTITY torbutton.prefs.sec_font_rend_desc "برخی از ویژگی های رندر فونت غیر فعال می باشد.">
 <!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "مکانیسم گرافیت رندر فونت غیر فعال است.">
 <!ENTITY torbutton.prefs.sec_svg_desc "برخی از انواع تصاویر غیر فعال هستند.">

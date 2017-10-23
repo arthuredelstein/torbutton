@@ -12,7 +12,7 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "点此初始化 Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Tor 浏览器安全设置">
-<!ENTITY torbutton.prefs.restore_defaults "恢复默认">
+<!ENTITY torbutton.prefs.restore_defaults "恢复默认设置">
 <!ENTITY torbutton.prefs.custom_warning "您自定义的浏览器设置导致了不安全的安全设置。出于安全和隐私考虑，我们建议您选择一个默认的安全级别。">
 <!ENTITY torbutton.cookiedialog.title "管理受保护的 Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "受保护">
@@ -30,7 +30,7 @@
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "该选项用于防止滥用浏览器功能跟踪用户。修改的功能包括：blob 网址，广播通道，浏览器缓存，cookie，收藏夹图标，HTTP 验证头部，预连接，localStorage，mediaSource 网址，OCSP 请求，SharedWorker 和 TLS 会话票证。">
 <!ENTITY torbutton.prefs.resist_fingerprinting "修改 Tor 浏览器中可区分你与其他 Tor 用户的细节信息">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "选中此框以避免网站获取识别您的指纹，包括您的计算机性能、键盘布局、语言区域、已安装插件位置、已安装插件列表、您的网络状态、屏幕方向、屏幕尺寸、特定网站缩放级别、支持的文件类型、系统颜色、WebGL 能力。">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "勾选此选项以避免网站获取您的浏览器指纹信息，包括您的计算机性能、键盘布局、系统语言、安装插件的位置、已安装插件列表、您的网络状态、屏幕方向、屏幕尺寸、特定网站缩放级别、支持的文件类型、系统颜色、WebGL 功能。">
 <!ENTITY torbutton.prefs.sec_caption "安全等级">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "安全滑块可禁用某些浏览器功能，避免因这些功能导致的漏洞而受到攻击。">
 <!ENTITY torbutton.prefs.sec_low "低（默认）">
