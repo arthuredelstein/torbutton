@@ -52,7 +52,8 @@ const gStringBundle = Services.strings.createBundle(kPropertiesURL);
 const shouldShowBanner = function (shortLocale) {
   try {
     // If our override test pref is true, then just show the banner regardless.
-    if (Services.prefs.getBoolPref("extensions.torbutton.testBanner", false)) {
+    if (Services.prefs.prefHasUserValue("extensions.torbutton.testBanner") &&
+        Services.prefs.getBoolPref("extensions.torbutton.testBanner") === true) {
       return true;
     }
     // Don't show a banner if update is needed.
