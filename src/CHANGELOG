@@ -1,3 +1,8 @@
+1.9.7.9
+ * Bug 23949: Fix donation banner display
+ * Update locales with translated banner
+ * Translations update
+
 1.9.7.8
  * Bug 23887: Update banner locales and Mozilla text
  * Bug 23526: Add 2017 Donation banner text
