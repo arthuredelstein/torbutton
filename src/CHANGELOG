@@ -1,3 +1,7 @@
+1.9.7.10
+ * Bug 23997: Add link to Tor Browser manual for de, nl, tr, vi
+ * Translations update
+
 1.9.7.9
  * Bug 23949: Fix donation banner display
  * Update locales with translated banner
