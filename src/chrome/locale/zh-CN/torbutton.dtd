@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_html5_desc "HTML5 视频和音频需通过 NoScript 点击播放。">
 <!ENTITY torbutton.prefs.sec_html5_tooltip "在某些网站，可通过 NoScript 工具栏按钮播放这些媒体。">
 <!ENTITY torbutton.prefs.sec_some_jit_desc "禁用某些 JavaScript 性能优化。">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT，原生正则表达式。">
+<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT，原版RegExp。">
 <!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT。">
 <!ENTITY torbutton.prefs.sec_jit_slower_desc "一些网站脚本可能会缓执行。">
 <!ENTITY torbutton.prefs.sec_mathml_desc "禁用数学方程式的某些显示机制。">
