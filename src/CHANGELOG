@@ -1,5 +1,20 @@
+1.9.7.9
+ * Bug 23949: Fix donation banner display
+ * Update locales with translated banner
+ * Translations update
+
 1.9.8.2
  * Bug 23887: Update banner locales and Mozilla text
+ * Translations update
+
+1.9.7.8
+ * Bug 23887: Update banner locales and Mozilla text
+ * Bug 23526: Add 2017 Donation banner text
+ * Bug 23483: Donation banner on about:tor for 2017 (testing mode)
+ * Bug 22610: Avoid crashes when canceling external helper app related downloads
+ * Bug 22472: Fix FTP downloads when external helper app dialog is shown
+ * Bug 22471: Downloading pdf files via the PDF viewer download button is broken
+ * Bug 22618: Downloading pdf file via file:/// is stalling
  * Translations update
 
 1.9.8.1
@@ -9,12 +24,28 @@
  * Bug 23483: Donation banner on about:tor for 2017 (testing mode)
  * Translations Update
 
+1.9.7.7
+ * Bug 22542: Security Settings window too small on macOS 10.12 (fixup)
+ * Bug 20375: Warn users after entering fullscreen mode
+
+1.9.7.6
+ * Bug 22989: Fix dimensions of new windows on macOS
+ * Translations update
+
 1.9.8
  * Bug 22610: Avoid crashes when canceling external helper app related downloads
  * Bug 22472: Fix FTP downloads when external helper app dialog is shown
  * Bug 22471: Downloading pdf files via the PDF viewer download button is broken
  * Bug 22618: Downloading pdf file via file:/// is stalling
  * Bug 22542: Resize slider window to work without scrollbars
+ * Bug 21999: Fix display of language prompt in non-en-US locales
+ * Bug 18193: Don't let about:tor have chrome privileges
+ * Bug 22535: Search on about:tor discards search query
+ * Bug 21948: Going back to about:tor page gives "Address isn't valid" error
+ * Code clean-up
+ * Translations update
+
+1.9.7.5
  * Bug 21999: Fix display of language prompt in non-en-US locales
  * Bug 18193: Don't let about:tor have chrome privileges
  * Bug 22535: Search on about:tor discards search query
