@@ -53,7 +53,7 @@ function CookieJarSelector() {
     var file = 
       Cc["@mozilla.org/file/directory_service;1"]
       .getService(Ci.nsIProperties)
-      .get(loc, Ci.nsILocalFile)
+      .get(loc, Ci.nsIFile)
       .clone();
     file.append(filename); 
     return file;

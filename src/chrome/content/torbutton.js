@@ -831,7 +831,7 @@ function torbutton_socket_readline(input) {
 // Bug 1506 P4: Control port interaction. Needed for New Identity.
 function torbutton_read_authentication_cookie(path) {
   var file = Components.classes['@mozilla.org/file/local;1']
-             .createInstance(Components.interfaces.nsILocalFile);
+             .createInstance(Components.interfaces.nsIFile);
   file.initWithPath(path);
   var fileStream = Components.classes['@mozilla.org/network/file-input-stream;1']
                    .createInstance(Components.interfaces.nsIFileInputStream);
