@@ -34,98 +34,85 @@
                 </vbox>
                 <vbox>
                   <hbox flex="1" align="start">
-                    <description id="torbutton_sec_high"
+                    <description id="torbutton_sec_safest"
                                  onclick="torbutton_set_slider(1);"
-                                 tooltip="high_preview">
-                      &torbutton.prefs.sec_high;
+                                 tooltip="safest_preview">
+                      &torbutton.prefs.sec_safest_label;
                     </description>
                   </hbox>
                   <hbox flex="1" align="center">
-                    <description id="torbutton_sec_medium"
+                    <description id="torbutton_sec_safer"
                                  onclick="torbutton_set_slider(2);"
-                                 tooltip="medium_preview">
-                      &torbutton.prefs.sec_medium;
+                                 tooltip="safer_preview">
+                      &torbutton.prefs.sec_safer_label;
                     </description>
                   </hbox>
                   <hbox flex="1" align="end">
-                    <description id="torbutton_sec_low"
+                    <description id="torbutton_sec_standard"
                                  onclick="torbutton_set_slider(3);"
-                                 tooltip="low_preview">
-                      &torbutton.prefs.sec_low;
+                                 tooltip="standard_preview">
+                      &torbutton.prefs.sec_standard_label;
                     </description>
                   </hbox>
                 </vbox>
               </hbox>
             </vbox>
             <vbox id="descBox" flex="1" style="overflow: hidden;">
-              <vbox id="desc_high" collapsed="true">
+              <vbox id="desc_safest" collapsed="true">
                 <description
                   class="slider-text-size, slider-text-weight">
-                  &torbutton.prefs.sec_gen_desc;
+                  &torbutton.prefs.sec_safest_description;
                 </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_js_desc_tooltip;">
-                  &torbutton.prefs.sec_all_js_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_jit_desc_tooltip; &torbutton.prefs.sec_baseline_jit_desc_tooltip;">
-                  &torbutton.prefs.sec_all_jit_desc; &torbutton.prefs.sec_jit_slower_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_html5_tooltip;">
-                  &torbutton.prefs.sec_html5_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_mathml_desc_tooltip;">
-                  &torbutton.prefs.sec_mathml_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_font_rend_svg_tooltip;">
-                  &torbutton.prefs.sec_font_rend_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_svg_desc_tooltip;">
-                  &torbutton.prefs.sec_svg_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_webfonts_desc_tooltip;">
-                  &torbutton.prefs.sec_webfonts_desc;
-                </description>
-              </vbox>
-              <vbox id="desc_medium" collapsed="true">
-                <description
-                  class="slider-text-size, slider-text-weight">
-                  &torbutton.prefs.sec_gen_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_js_desc_tooltip;">
-                  &torbutton.prefs.sec_js_https_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_jit_desc_tooltip; &torbutton.prefs.sec_baseline_jit_desc_tooltip;">
-                  &torbutton.prefs.sec_all_jit_desc; &torbutton.prefs.sec_jit_slower_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_html5_tooltip;">
-                  &torbutton.prefs.sec_html5_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_mathml_desc_tooltip;">
-                  &torbutton.prefs.sec_mathml_desc;
-                </description>
-                <description class="slider-text-size"
-                  tooltiptext="&torbutton.prefs.sec_font_rend_svg_tooltip;">
-                  &torbutton.prefs.sec_font_rend_desc;
-                </description>
-              </vbox>
-              <vbox id="desc_low" collapsed="false">
-                <description
-                  class="slider-text-size, slider-text-weight">
-                  &torbutton.prefs.sec_low_desc;
+                <separator orient="horizontal" class="thin"/>
+                <description class="slider-text-size, slider-text-weight">
+                  &torbutton.prefs.sec_safest_list_label;
                 </description>
                 <description class="slider-text-size">
-                  &torbutton.prefs.sec_low_usable_desc;
+                  &torbutton.prefs.sec_js_disabled;
                 </description>
+                <description class="slider-text-size">
+                  &torbutton.prefs.sec_limit_graphics_and_typography;
+                </description>
+                <description class="slider-text-size">
+                  &torbutton.prefs.sec_click_to_play_media;
+                </description>
+                <separator orient="horizontal" class="thin"/>
+                <label id="link_safest" class="text-link">
+                  &torbutton.prefs.sec_learn_more_label;
+                </label>
+              </vbox>
+              <vbox id="desc_safer" collapsed="true">
+                <description
+                  class="slider-text-size, slider-text-weight">
+                  &torbutton.prefs.sec_safer_description;
+                </description>
+                <separator orient="horizontal" class="thin"/>
+                <description class="slider-text-size, slider-text-weight">
+                  &torbutton.prefs.sec_safer_list_label;
+                </description>
+                <description class="slider-text-size">
+                  &torbutton.prefs.sec_js_on_https_sites_only;
+                </description>
+                <description class="slider-text-size">
+                  &torbutton.prefs.sec_limit_typography;
+                </description>
+                <description class="slider-text-size">
+                  &torbutton.prefs.sec_click_to_play_media;
+                </description>
+                <separator orient="horizontal" class="thin"/>
+                <label id="link_safer" class="text-link">
+                  &torbutton.prefs.sec_learn_more_label;
+                </label>
+              </vbox>
+              <vbox id="desc_standard" collapsed="false">
+                <description
+                  class="slider-text-size, slider-text-weight">
+                  &torbutton.prefs.sec_standard_description;
+                </description>
+                <separator orient="horizontal" class="thin"/>
+                <label id="link_standard" class="text-link">
+                  &torbutton.prefs.sec_learn_more_label;
+                </label>
               </vbox>
             </vbox>
           </hbox>
@@ -146,32 +133,23 @@
         </groupbox>
       </vbox>
 
-   <tooltip id="high_preview">
-     <html:b>&torbutton.prefs.sec_gen_desc;</html:b>
+   <tooltip id="safest_preview">
+     <html:b>&torbutton.prefs.sec_safest_list_label;</html:b>
      <html:br></html:br>
      <html:br></html:br>
-     <html:div>&torbutton.prefs.sec_all_js_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_all_jit_desc; &torbutton.prefs.sec_jit_slower_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_html5_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_mathml_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_font_rend_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_svg_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_webfonts_desc;</html:div>
+     <html:div>&torbutton.prefs.sec_js_disabled;</html:div>
+     <html:div>&torbutton.prefs.sec_limit_graphics_and_typography;</html:div>
+     <html:div>&torbutton.prefs.sec_click_to_play_media;</html:div>
    </tooltip>
-   <tooltip id="medium_preview">
-     <html:b>&torbutton.prefs.sec_gen_desc;</html:b>
+   <tooltip id="safer_preview">
+     <html:b>&torbutton.prefs.sec_safer_list_label;</html:b>
      <html:br></html:br>
      <html:br></html:br>
-     <html:div>&torbutton.prefs.sec_js_https_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_all_jit_desc; &torbutton.prefs.sec_jit_slower_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_html5_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_mathml_desc;</html:div>
-     <html:div>&torbutton.prefs.sec_font_rend_desc;</html:div>
+     <html:div>&torbutton.prefs.sec_js_on_https_sites_only;</html:div>
+     <html:div>&torbutton.prefs.sec_limit_typography;</html:div>
+     <html:div>&torbutton.prefs.sec_click_to_play_media;</html:div>
    </tooltip>
-   <tooltip id="low_preview">
-     <html:b>&torbutton.prefs.sec_low_desc;</html:b>
-     <html:br></html:br>
-     <html:br></html:br>
-     <html:div>&torbutton.prefs.sec_low_usable_desc;</html:div>
+   <tooltip id="standard_preview">
+     <html:b>&torbutton.prefs.sec_standard_description;</html:b>
    </tooltip>
  </dialog>

@@ -2,14 +2,17 @@
 
 // Utilities
 let { utils: Cu } = Components;
-let { getBoolPref, getIntPref, setBoolPref, setIntPref } =
+let { getBoolPref, getIntPref, setBoolPref, setIntPref, getCharPref } =
     Cu.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
 
 // Description elements have the follow names.
 const descNames =
-      [, "desc_high", "desc_medium", "desc_low"];
-
+      [, "desc_safest", "desc_safer", "desc_standard"];
+// "Learn-more"-elements have the follow names.
+const linkNames =
+      [, "link_safest", "link_safer", "link_standard"];
 // A single `state` object that reflects the user settings in this UI.
+
 let state = { slider : 0, custom : false};
 
 // Utility functions to convert between the legacy 4-value pref index
@@ -41,7 +44,12 @@ function torbutton_init_security_ui() {
   torbutton_set_slider(prefSettingToSliderPosition(
     getIntPref("extensions.torbutton.security_slider")));
   torbutton_set_custom(getBoolPref("extensions.torbutton.security_custom"));
-
+  torbutton_set_learn_more_links();
+  // Make sure the "Accept"-button is focused when we show the dialog and not a
+  // possible "Learn more"-link. See: comment:16 in bug 21847.
+  let okBtn = document.documentElement.getButton("accept");
+  if (okBtn)
+    okBtn.focus();
   setTimeout(adjustDialogSize, 0);
 };
 
@@ -51,6 +59,27 @@ function torbutton_save_security_settings() {
              sliderPositionToPrefSetting(state.slider));
   setBoolPref("extensions.torbutton.security_custom", state.custom);
 };
+
+// We follow the way we treat the links to the Tor Browser User Manual on the
+// Help Menu and on about:tor: if we have the manual available for a locale,
+// let's show the "Learn more"-link, otherwise hide it.
+function torbutton_set_learn_more_links() {
+  let show_manual = window.opener.torbutton_show_torbrowser_manual();
+  let locale = ""
+  if (show_manual) {
+    locale = getCharPref('general.useragent.locale');
+  }
+  let links = linkNames.map(name => document.getElementById(name));
+  links.forEach(link => {;
+    if (show_manual && locale != "") {
+      link.href= "https:/tb-manual.torproject.org/" + locale +
+        "/security-slider.html";
+      link.hidden = false;
+    } else {
+      link.hidden = true;
+    }
+  });
+}
 
 // Increase the height of this window so that a vertical scrollbar is not
 // needed on the description box.
