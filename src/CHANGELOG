@@ -1,7 +1,16 @@
+1.9.8.4
+ * Bug 21847: Update copy for security slider
+ * Bug 10573: Replace deprecated nsILocalFile with nsIFile (code clean-up)
+ * Translations update
+
 1.9.8.3
  * Bug 23997: Add link to Tor Browser manual for de, nl, tr, vi
  * Bug 23949: Fix donation banner display
  * Update locales with translated banner
+ * Translations update
+
+1.9.7.10
+ * Bug 23997: Add link to Tor Browser manual for de, nl, tr, vi
  * Translations update
 
 1.9.7.9
