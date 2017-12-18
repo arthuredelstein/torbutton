@@ -28,34 +28,23 @@
 <!ENTITY torbutton.prefs.restrict_thirdparty "Limiter les fichiers témoins tiers et les autres données de suivi à la trace">
 <!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "L">
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Gardez cette case cochée pour empêcher que diverses fonctions du navigateur soient utilisées pour vous suivre à la trace lorsque vous surfez sur le Web. Les fonctions modifiées incluent les URL de grands objets binaires, les canaux de diffusion, le cache du navigateur, les fichiers fichiers témoins, les favoricônes, les en-têtes Auth HTTP, les préconnexions de liens, localStorage, les URL de sources de médias, les requêtes OCSP, les travailleurs Web SharedWorker, et les billets de session TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Modifier les détails qui vous distingue d'autres utilisateurs du navigateur Tor">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Modifier les détails qui vous distingue d’autres utilisateurs du navigateur Tor">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Gardez cette case cochée pour cacher aux sites Web certaines choses qui pourraient être uniques à votre sujet, incluant les performances de votre ordinateur, l'agencement du clavier, les paramètres de langue, l'emplacement des greffons installés, la liste des greffons installés, l'état de votre réseau, l'orientation de l'écran, la taille de l'écran, les niveaux de zoom particuliers aux sites, les types de fichiers pris en charge, les couleurs système et les capacités WebGL.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Gardez cette case cochée pour cacher aux sites Web certaines choses qui pourraient être uniques à votre sujet, incluant les performances de votre ordinateur, l’agencement du clavier, les paramètres de langue, l’emplacement des greffons installés, la liste des greffons installés, l’état de votre réseau, l’orientation de l’écran, la taille de l’écran, les niveaux de zoom particuliers aux sites, les types de fichiers pris en charge, les couleurs système et les capacités WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Niveau de sécurité">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Le bouton de sécurité coulissant vous permet de désactiver certaines fonctions du navigateur qui le rendent plus vulnérable aux tentatives de piratage.">
-<!ENTITY torbutton.prefs.sec_low "Bas (par défaut)">
-<!ENTITY torbutton.prefs.sec_low_usable_desc "Cela offre l'expérience la plus conviviale.">
-<!ENTITY torbutton.prefs.sec_low_desc "À ce niveau de sécurité, toutes les fonctions du navigateur sont activées.">
-<!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "Le mécanisme de rendu de police SVG OpenType est désactivé.">
-<!ENTITY torbutton.prefs.sec_gen_desc "À ce niveau de sécurité, les changements suivants sont applicables (survolez avec la souris pour plus de détails) :">
-<!ENTITY torbutton.prefs.sec_html5_desc "Le contenu HTML5 vidéo et audio devient « cliquer pour lire » avec NoScript.">
-<!ENTITY torbutton.prefs.sec_html5_tooltip "Pour certains sites, vous aurez peut-être à utiliser le bouton NoScript de la barre d'outils pour activer ces objets multimédias.">
-<!ENTITY torbutton.prefs.sec_some_jit_desc "Certaines optimisations de performance de JavaScript sont désactivées.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
-<!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Baseline JIT.">
-<!ENTITY torbutton.prefs.sec_jit_slower_desc "Les scripts pourraient être exécutés plus lentement sur certains sites.">
-<!ENTITY torbutton.prefs.sec_mathml_desc "Certains mécanismes d'affichage des équations mathématiques sont désactivés.">
-<!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML est désactivé.">
-<!ENTITY torbutton.prefs.sec_medium "Moyen">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "Sur les sites où JavaScript est activé, les optimisations des performances sont désactivées.">
-<!ENTITY torbutton.prefs.sec_font_rend_desc "Certaines fonctions de rendu de police sont désactivées.">
-<!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Le mécanisme de rendu de police Graphite est désactivé.">
-<!ENTITY torbutton.prefs.sec_svg_desc "Certains types d'images sont désactivés.">
-<!ENTITY torbutton.prefs.sec_svg_desc_tooltip "Les images SVG sont désactivées.">
-<!ENTITY torbutton.prefs.sec_js_https_desc "JavaScript est désactivé par défaut pour tous les sites non HTTPS.">
-<!ENTITY torbutton.prefs.sec_js_desc_tooltip "JavaScript peut être activé par site avec le bouton NoScript de la barre d'outils">
-<!ENTITY torbutton.prefs.sec_high "Élevé">
-<!ENTITY torbutton.prefs.sec_all_js_desc "JavaScript est désactivé par défaut pour tous les sites.">
-<!ENTITY torbutton.prefs.sec_webfonts_desc "Certains polices et icônes pourraient ne pas s'afficher correctement.">
-<!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Les polices fournies par les sites Web sont bloquées.">
+<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
+<!ENTITY torbutton.prefs.sec_safer_label "Safer">
+<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
+<!ENTITY torbutton.prefs.sec_safest_label "Safest">
+<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Circuit Tor pour ce site">

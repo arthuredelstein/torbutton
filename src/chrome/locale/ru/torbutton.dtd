@@ -33,29 +33,18 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Оставьте флажок напротив этой функции отмеченным, чтобы скрыть от веб-узлов вещи , которые могут быть уникальными для вас, включая производительность компьютера, раскладку клавиатуры, язык, расположение и список установленных плагинов, состояние сети, ориентацию и размер экрана , значения масштабирования для конкретных узлов, поддерживаемые типы файлов, системные цвета и возможности WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Уровень безопасности">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Ползунок безопасности позволяет вам запретить некоторые особенности обозревателя, которые могут сделать ваш браузер более уязвимым к попыткам взлома.">
-<!ENTITY torbutton.prefs.sec_low "Низкий (по умолчанию)">
-<!ENTITY torbutton.prefs.sec_low_usable_desc "Наиболее простой вариант использования.">
-<!ENTITY torbutton.prefs.sec_low_desc "На этом уровне безопасности, все функции браузера включены.">
-<!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "Механизм визуализации шрифта SVG OpenType отключен.">
-<!ENTITY torbutton.prefs.sec_gen_desc "На этом уровне безопасности, следующие изменения применяются (при наведении курсора мыши):">
-<!ENTITY torbutton.prefs.sec_html5_desc "HTML5 видео и аудио воспроизводятся только после щелчка благодаря NoScript.">
-<!ENTITY torbutton.prefs.sec_html5_tooltip "На некоторых сайтах, вам может потребоваться использовать кнопку NoScript панели инструментов, чтобы включить эти мультимедийные объекты.">
-<!ENTITY torbutton.prefs.sec_some_jit_desc "Некоторые оптимизации производительности JavaScript отключены.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
-<!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "Базовый JIT.">
-<!ENTITY torbutton.prefs.sec_jit_slower_desc "Сценарии на некоторых сайтах могут работать медленнее.">
-<!ENTITY torbutton.prefs.sec_mathml_desc "Некоторые механизмы отображения математических уравнений отключены.">
-<!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML отключен.">
-<!ENTITY torbutton.prefs.sec_medium "Средний">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "На сайтах с применением JavaScript  оптимизация отключена.">
-<!ENTITY torbutton.prefs.sec_font_rend_desc "Некоторые функции отрисовки шрифтов отключены.">
-<!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "Механизм визуализации шрифта Graphite отключен.">
-<!ENTITY torbutton.prefs.sec_svg_desc "Некоторые типы изображений отключены.">
-<!ENTITY torbutton.prefs.sec_svg_desc_tooltip "SVG изображения отключены">
-<!ENTITY torbutton.prefs.sec_js_https_desc "JavaScript отключен по умолчанию на всех не HTTPS сайтах.">
-<!ENTITY torbutton.prefs.sec_js_desc_tooltip "JavaScript может быть включен на сайте с помощью кнопки NoScript на панели инструментов.">
-<!ENTITY torbutton.prefs.sec_high "Высокий">
-<!ENTITY torbutton.prefs.sec_all_js_desc "JavaScript отключен по умолчанию на всех сайтах.">
-<!ENTITY torbutton.prefs.sec_webfonts_desc "Некоторые шрифты и значки могут отображаться некорректно.">
-<!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "Файлы шрифтов, предоставленные сайтом, заблокированы">
+<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
+<!ENTITY torbutton.prefs.sec_safer_label "Safer">
+<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
+<!ENTITY torbutton.prefs.sec_safest_label "Safest">
+<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Цепочка Tor для этого сайта">

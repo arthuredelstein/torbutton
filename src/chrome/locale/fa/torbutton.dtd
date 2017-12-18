@@ -33,29 +33,18 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
 <!ENTITY torbutton.prefs.sec_caption "سطح امنیت">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
-<!ENTITY torbutton.prefs.sec_low "پایین (به طور پیش فرض)">
-<!ENTITY torbutton.prefs.sec_low_usable_desc "این فراهم می کند بیشترین تجربه قابل استفاده.">
-<!ENTITY torbutton.prefs.sec_low_desc "در این سطح امنیتی، تمام ویژگی های مرورگر ها فعال است.">
-<!ENTITY torbutton.prefs.sec_font_rend_svg_tooltip "مکانیسم رندر فونت SVG اپن تایپ غیر فعال است.">
-<!ENTITY torbutton.prefs.sec_gen_desc "در این سطح امنیتی، تغییرات زیر اعمال می شود (خلاصه شده برای جزئیات بیشتر):">
-<!ENTITY torbutton.prefs.sec_html5_desc "صدا و تصویر HTML5 از طریق دکمه NoScript نوار ابزار به حالت -کلیک برای پخش- در می آید">
-<!ENTITY torbutton.prefs.sec_html5_tooltip "در برخی سایت ها، ممکن است شما نیاز به استفاده از دکمه NoScript نوار ابزار برای فعال کردن این اشیاء رسانه داشته باشید.">
-<!ENTITY torbutton.prefs.sec_some_jit_desc "برخی از بهینه سازی عملکرد جاوا اسکریپت غیر فعال شده است.">
-<!ENTITY torbutton.prefs.sec_jit_desc_tooltip "ION JIT, Native RegExp.">
-<!ENTITY torbutton.prefs.sec_baseline_jit_desc_tooltip "JIT در شروع مطالعه.">
-<!ENTITY torbutton.prefs.sec_jit_slower_desc "اسکریپت هل در برخی از سایت ها ممکن است آهسته تر اجرا شود.">
-<!ENTITY torbutton.prefs.sec_mathml_desc "برخی مکانیسم ها نمایش معادلات ریاضی غیر فعال می باشد.">
-<!ENTITY torbutton.prefs.sec_mathml_desc_tooltip "MathML غیر فعال است.">
-<!ENTITY torbutton.prefs.sec_medium "متوسط">
-<!ENTITY torbutton.prefs.sec_all_jit_desc "بهینه سازی عملکرد در سایت های حاوی جاوا اسکریپت غیرفعال شده است.">
-<!ENTITY torbutton.prefs.sec_font_rend_desc "برخی از ویژگی های رندر فونت غیر فعال می باشد.">
-<!ENTITY torbutton.prefs.sec_font_rend_graphite_tooltip "مکانیسم گرافیت رندر فونت غیر فعال است.">
-<!ENTITY torbutton.prefs.sec_svg_desc "برخی از انواع تصاویر غیر فعال هستند.">
-<!ENTITY torbutton.prefs.sec_svg_desc_tooltip "تصاویر SVG غیر فعال می باشد.">
-<!ENTITY torbutton.prefs.sec_js_https_desc "جاوا اسکریپت به طور پیش فرض در تمامی سایت های غیر HTTPS غیر فعال است.">
-<!ENTITY torbutton.prefs.sec_js_desc_tooltip "جاوا اسکریپ برای هر وب سایت از طریق دکمه NoScript نوار ابزار فعال می شود.">
-<!ENTITY torbutton.prefs.sec_high "زیاد">
-<!ENTITY torbutton.prefs.sec_all_js_desc "جاوا اسکریپت به طور پیش فرض در تمامی سایت ها غیر فعال است.">
-<!ENTITY torbutton.prefs.sec_webfonts_desc "برخی از فونت ها و آیکون های ممکن است نمایش نادرست داشته باشند.">
-<!ENTITY torbutton.prefs.sec_webfonts_desc_tooltip "فایل های فونتی که در وب سایت ارائه می شوند مسدود شده است.">
+<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
+<!ENTITY torbutton.prefs.sec_safer_label "Safer">
+<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
+<!ENTITY torbutton.prefs.sec_safest_label "Safest">
+<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "مدار تور برای این سایت">

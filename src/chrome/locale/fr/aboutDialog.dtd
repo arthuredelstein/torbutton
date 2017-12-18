@@ -9,11 +9,11 @@
 <!ENTITY help.or                 "ou">
 <!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
 <!ENTITY help.getInvolvedLink    "impliquez-vous">
-<!ENTITY help.end                " !">
+<!ENTITY help.end                " !">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
 <!ENTITY bottomLinks.questions   "Des questions ?">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
 <!ENTITY bottomLinks.grow        "Aidez à la croissance du réseau Tor !">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
 <!ENTITY bottomLinks.license  "Informations de licence">
-<!ENTITY tor.TrademarkStatement   "« Tor » et le « logo Oignon » sont des marques déposées de « The Tor Project, Inc. »">
+<!ENTITY tor.TrademarkStatement   "« Tor » et le « logo Oignon » sont des marques déposées de « The Tor Project, Inc. »">
