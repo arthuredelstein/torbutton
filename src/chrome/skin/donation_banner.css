@@ -75,23 +75,6 @@
     left: 285px;
     right: 85px;
 }
-#banner-mozilla {
-    align-items: center;
-    bottom: 5px;
-    color: white;
-    display: flex;
-    font-family: sans-serif;
-    left: 85px;
-    position: absolute;
-    right: 285px;
-    text-align: start;
-    top: 120px;
-    white-space: nowrap;
-}
-#banner-mozilla:-moz-dir(rtl) {
-    left: 285px;
-    right: 85px;
-}
 #banner-donate-button {
     background-color: #13a513;
     border: 0px;
