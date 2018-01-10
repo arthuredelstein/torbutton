@@ -41,7 +41,7 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Safest">
 <!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
+<!ENTITY torbutton.prefs.sec_learn_more_label "اطلاعات بیشتر">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">

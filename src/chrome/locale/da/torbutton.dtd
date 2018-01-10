@@ -1,12 +1,19 @@
 <!ENTITY torbutton.context_menu.new_identity "Ny identitet">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Hent bundt-opdatering Tor Browser Bundle ...">
+<!ENTITY torbutton.context_menu.new_circuit "Nyt Tor-kredsløb for dette sted">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Sikkerhedsindstillinger…">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "Tor netværksindstillinger...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Søg efter Tor Browser opdateringer...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "O">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie-beskyttelser">
+<!ENTITY torbutton.context_menu.cookieProtections "Cookie-beskyttelser...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik for at starte Torbutton">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser sikkerhedsindstillinger">
 <!ENTITY torbutton.prefs.restore_defaults "Gendan Standarder">
+<!ENTITY torbutton.prefs.custom_warning "Dine tilpassede browserpræferencer har resulterede i usædvanlige sikkerhedsindstillinger. Pga. sikkerheds- og privatlivsårsagen, anbefaler vi at du vælger en af standardsikkerhedsniveauerne.">
 <!ENTITY torbutton.cookiedialog.title "Håndtér Cookie-beskyttelser">
 <!ENTITY torbutton.cookiedialog.lockCol "Beskyttet">
 <!ENTITY torbutton.cookiedialog.domainCol "Vært">
@@ -19,4 +26,25 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beskyt nye cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beskyt ikke nye cookies">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Begræns tredjeparts-cookies og andre registreringsdata">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "B">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Lad denne boks være tilvalgt for at forhindre diverse browserfunktionalitet i at blive misbrugt til at spore dig efterhånden som du søger på webbet.. Modificerede funktionaliteter inkluderer blob-URL'er, broadcast-kanaler, browserens mellemlager, cookies, favicon'er, HTTP Auth-headere, link preconnects, localStorage, mediaSource-URL'er, OCSP-anmodninger, SharedWorkers og TLS session tickets.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Tilpas detaljer som adskiller dig fra andre Tor Browser-brugere">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lad denne boks være valgt til for at skjule ting fra websteder som er unikke for dig, inklusiv din computerydelse, tastaturlayout, sprog, placeringen af installerede plugins, listen af installerede plugins, din netværksstatus, skærmorientering, skærmstørrelse, stedspecifikke zoom-niveauer, understøttede filtyper, systemfarver og WebGL-formåenheder.">
+<!ENTITY torbutton.prefs.sec_caption "Sikkerheds Niveau">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Sikkerhedsskyderen giver dig mulighed for at deaktivere bestemte browserfunktionaliteter som kan gøre din browser sårbar overfor forsøg på hacking.">
+<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser- og webstedsfunktionaliteter er aktiveret.">
+<!ENTITY torbutton.prefs.sec_safer_label "Mere sikker">
+<!ENTITY torbutton.prefs.sec_safer_description "Deaktiverer webstedsfunktionaliteter som ofte er farlige, hvilket kan gøre at nogle steder mister deres funktionalitet.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Ved den mere sikker indstilling:">
+<!ENTITY torbutton.prefs.sec_safest_label "Mest sikker">
+<!ENTITY torbutton.prefs.sec_safest_description "Tillader kun webstedsfunktionaliteter som kræves til statiske steder og grundlæggende tjenester. Ændringerne påvirker billeder, medier og scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Ved den sikreste indstilling:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Lær mere">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript er deaktiveret på ikke-HTTPS steder.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript er som standard deaktiveret på alle steder.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Nogle skrifttyper og matematiksymboler er deaktiverede.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Nogle skrifttyper, ikoner, matematiksymboler og billeder er deaktiveret.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Lyd og video (HTML5-medier) er klik-for-at-afspille.">
+<!ENTITY torbutton.circuit_display.title "Tor-kredsløb for dette websted">

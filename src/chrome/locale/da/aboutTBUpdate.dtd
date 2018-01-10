@@ -1,0 +1,6 @@
+<!ENTITY aboutTBUpdate.title "Tor Browser opdatering">
+<!ENTITY aboutTBUpdate.updated "Tor Browseren er blevet opdateret.">
+<!ENTITY aboutTBUpdate.linkPrefix "For den mest aktuelle information om denne udgivelse,">
+<!ENTITY aboutTBUpdate.linkLabel  "Besøg vores webside">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "Ændringslog:">

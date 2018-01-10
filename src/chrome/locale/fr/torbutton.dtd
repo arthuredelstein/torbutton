@@ -33,18 +33,18 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Gardez cette case cochée pour cacher aux sites Web certaines choses qui pourraient être uniques à votre sujet, incluant les performances de votre ordinateur, l’agencement du clavier, les paramètres de langue, l’emplacement des greffons installés, la liste des greffons installés, l’état de votre réseau, l’orientation de l’écran, la taille de l’écran, les niveaux de zoom particuliers aux sites, les types de fichiers pris en charge, les couleurs système et les capacités WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Niveau de sécurité">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Le bouton de sécurité coulissant vous permet de désactiver certaines fonctions du navigateur qui le rendent plus vulnérable aux tentatives de piratage.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
-<!ENTITY torbutton.prefs.sec_safer_label "Safer">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
-<!ENTITY torbutton.prefs.sec_safest_label "Safest">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
+<!ENTITY torbutton.prefs.sec_standard_label "Normal">
+<!ENTITY torbutton.prefs.sec_standard_description "Tous les fonctions du navigateur Tor et de site Web sont activées.">
+<!ENTITY torbutton.prefs.sec_safer_label "Plus sûr">
+<!ENTITY torbutton.prefs.sec_safer_description "Désactive les fonctions de site Web qui sont souvent dangereuses, ce qui pourrait causer le non-fonctionnement de certains sites Web.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Au paramètre plus sûr :">
+<!ENTITY torbutton.prefs.sec_safest_label "Le plus sûr">
+<!ENTITY torbutton.prefs.sec_safest_description "Ne permettre que les fonctions de site Web qui sont exigées pour les sites fixes et les services de base. Ces changements affectent les images, les médias et les scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Au paramètre le plus sûr :">
+<!ENTITY torbutton.prefs.sec_learn_more_label "En apprendre davantage">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript est désactivé sur les sites non HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript est désactivé par défaut sur tous les sites.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Certaines polices et certains symboles mathématiques sont désactivés.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Certaines polices, icônes, images et certains symboles mathématiques sont désactivés.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Le son et la vidéo (médias HTML5) sont « cliquer pour lire ».">
 <!ENTITY torbutton.circuit_display.title "Circuit Tor pour ce site">

@@ -33,18 +33,18 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Оставьте флажок напротив этой функции отмеченным, чтобы скрыть от веб-узлов вещи , которые могут быть уникальными для вас, включая производительность компьютера, раскладку клавиатуры, язык, расположение и список установленных плагинов, состояние сети, ориентацию и размер экрана , значения масштабирования для конкретных узлов, поддерживаемые типы файлов, системные цвета и возможности WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Уровень безопасности">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Ползунок безопасности позволяет вам запретить некоторые особенности обозревателя, которые могут сделать ваш браузер более уязвимым к попыткам взлома.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
-<!ENTITY torbutton.prefs.sec_safer_label "Safer">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
-<!ENTITY torbutton.prefs.sec_safest_label "Safest">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
+<!ENTITY torbutton.prefs.sec_standard_label "Стандартные">
+<!ENTITY torbutton.prefs.sec_standard_description "Все функции Tor Browser и веб-сайтов включены.">
+<!ENTITY torbutton.prefs.sec_safer_label "Более безопасные">
+<!ENTITY torbutton.prefs.sec_safer_description "Отключены функции веб-сайтов, которые часто бывают опасны, что может привести к потере функциональности некоторыми сайтами.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "При более безопасных настройках:">
+<!ENTITY torbutton.prefs.sec_safest_label "Наиболее безопасные">
+<!ENTITY torbutton.prefs.sec_safest_description "Разрешены только функции веб-сайтов, требующиеся для статических сайтов и основных сервисов. Эти изменения влияют на изображения, медиа и скрипты.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "При самых безопасных настройках:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Подробнее">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only " JavaScript отключён на всех не HTTPS сайтах. ">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript отключен по умолчанию на всех сайтах.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Некоторые шрифты и математические символы отключены.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Некоторые шрифты, значки, математические символы и изображения отключены.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Аудио и видео (HTML5 медиа) проигрываются только после клика.">
 <!ENTITY torbutton.circuit_display.title "Цепочка Tor для этого сайта">

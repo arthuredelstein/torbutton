@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; er udviklet af">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "&vendorShortName;">
+<!ENTITY project.end             "En nonprofit-arbejder for at beskytte dit privatliv og din frihed online.">
+
+<!ENTITY help.start              "Vil du hjælpe? ">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Doner">
+<!ENTITY help.or                 " eller ">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "vær med">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Spørgsmål?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Hjælp Tor Network med at vokse!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Licens Information">
+<!ENTITY tor.TrademarkStatement   "&quot;Tor&quot; og &quot;løg-logoet&quot; er registrerede varemærker tilhørende The Tor Project, Inc.">

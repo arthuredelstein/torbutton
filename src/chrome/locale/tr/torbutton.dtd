@@ -33,18 +33,18 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Bilgisayarınızın başarımı, tuş takımı düzeni, yerel dil ayarları, yüklenmiş eklentilerin konumu, yüklenmiş eklentilerin listesi, ağınızın durumu, ekran yönlendirmesi, ekran boyutu, siteye bağlı özel yakınlaştırma seviyeleri, desteklenen dosya türleri, sistem renkleri ve WebGL yetenekleri gibi size özel olan ve kimliğinizin belirlenmesinde kullanılabilecek bilgileri gizlemek için bu kutuyu işaretlenmiş olarak tutun.">
 <!ENTITY torbutton.prefs.sec_caption "Güvenlik Düzeyi">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Güvenlik ayarı ile belirli web tarayıcı özeliklerini kapatabilirsiniz. Ancak bu durumda web tarayıcınız saldırılara karşı daha korumasız olur.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
-<!ENTITY torbutton.prefs.sec_safer_label "Safer">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
-<!ENTITY torbutton.prefs.sec_safest_label "Safest">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
+<!ENTITY torbutton.prefs.sec_standard_label "Standart">
+<!ENTITY torbutton.prefs.sec_standard_description "Tüm Tor Browser ve web sitesi özellikleri kullanılabilir.">
+<!ENTITY torbutton.prefs.sec_safer_label "Daha güvenli">
+<!ENTITY torbutton.prefs.sec_safer_description "Sıklıkla tehlikeli olan web sitesi özellikleri devre dışı bırakılır ve bazı sitelerin işlevlerinde kayıplar olabilir. ">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Daha güvenli ayarlarda:">
+<!ENTITY torbutton.prefs.sec_safest_label "En güvenli">
+<!ENTITY torbutton.prefs.sec_safest_description "Yalnız durağan siteler ve temel hizmetler için gerekli web sitesi özelliklerine izin verilir. Bu değişiklikler görselleri, ortamları ve betikleri etkiler.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "En güvenli ayarlarda:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Ayrıntılı bilgi">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript, HTTPS kullanmayan sitelerde devre dışı bırakılır.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript varsayılan olarak tüm sitelerde devre dışı bırakılır.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Bazı yazı türleri ve matematik simgeleri devre dışı bırakılır.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Bazı yazı türleri, simgeler, matematik simgeleri ve görseller devre dışı bırakılır.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Ses ve görüntüler (HTML5 ortamı) tıklayarak çalıştırılabilir.">
 <!ENTITY torbutton.circuit_display.title "Bu site için Tor devresi">
