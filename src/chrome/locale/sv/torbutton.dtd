@@ -34,17 +34,17 @@
 <!ENTITY torbutton.prefs.sec_caption "Säkerhetsnivå">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Säkerhetsreglaget låter dig stänga av vissa webbläsarfunktioner som kan göra din webbläsare mer sårbar mot intrångsförsök.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standard">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
+<!ENTITY torbutton.prefs.sec_standard_description "Alla funktioner för Tor Browser och webbplatsfunktioner är aktiverade.">
 <!ENTITY torbutton.prefs.sec_safer_label "Säkrare">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
+<!ENTITY torbutton.prefs.sec_safer_description "Inaktiverar webbplatsfunktioner som ofta är farliga, vilket gör att vissa webbplatser förlorar funktionalitet.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "I den säkrare inställningen:">
 <!ENTITY torbutton.prefs.sec_safest_label "Säkrast">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
+<!ENTITY torbutton.prefs.sec_safest_description "Tillåt endast webbplatsfunktioner som krävs för statiska webbplatser och grundläggande tjänster. Dessa förändringar påverkar bilder, media och skript.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "I den säkraste inställningen:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Läs mer">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript är inaktiverat på webbplatser utan HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript är inaktiverat som standard på alla webbplatser.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Vissa typsnitt och matte symboler är inaktiverade.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Vissa typsnitt, ikoner, matte symboler och bilder är inaktiverade.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Ljud och video (HTML5-media) är klicka-för-att-spel.">
 <!ENTITY torbutton.circuit_display.title "Tor-krets för den här webbplatsen">

@@ -1,3 +1,8 @@
+1.9.8.5
+ * Bug 21245: Add da translation to Torbutton and keep track of it
+ * Bug 24702: Remove Mozilla text from banner
+ * Translations update
+
 1.9.8.4
  * Bug 21847: Update copy for security slider
  * Bug 10573: Replace deprecated nsILocalFile with nsIFile (code clean-up)

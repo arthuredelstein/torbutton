@@ -6,14 +6,14 @@
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Impostazioni della rete Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "Controllando gli aggiornamenti di Tor Browser...">
+<!ENTITY torbutton.context_menu.downloadUpdate "Controllo degli aggiornamenti di Tor Browser...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "A">
 <!ENTITY torbutton.context_menu.cookieProtections "Protezioni dei Cookie...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Fai clic per inizializzare Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Impostazioni di Sicurezza Tor Browser">
 <!ENTITY torbutton.prefs.restore_defaults "Ripristina impostazioni iniziali">
-<!ENTITY torbutton.prefs.custom_warning "Le tue impostazioni del browser sembrano avere preferenze di sicurezza insolite. Per motivi di sicurezza e privacy, ti consigliamo di scegliere uno dei livelli di sicurezza predefiniti.">
+<!ENTITY torbutton.prefs.custom_warning "Le tue impostazioni personalizzate del browser sembrano avere preferenze di sicurezza insolite. Per motivi di sicurezza e privacy, ti consigliamo di scegliere uno dei livelli di sicurezza predefiniti.">
 <!ENTITY torbutton.cookiedialog.title "Gestisci protezione Cookies">
 <!ENTITY torbutton.cookiedialog.lockCol "Protetto">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -27,10 +27,10 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Non proteggere i nuovi cookie">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Limita i cookie di terze parti e altri dati di tracciamento">
 <!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Lascia questo box selezionato per evitare che diverse funzionalità del browser possano essere utilizzate per tracciare la tua navigazione. Le funzionalità modificate includono URL blob, canali di trasmissione, la cache del browser, cookie, favicon, intestazioni di Auth HTTP, link a cui ti sei connesso, localStorage, URL mediaSource, richieste OCSP, SharedWorkers, a ticket di sessioni TLS.">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Lascia questo box selezionato per evitare che diverse funzionalità del browser possano essere utilizzate per tracciare la tua navigazione. Le funzionalità modificate includono URL blob, canali di trasmissione, la cache del browser, cookie, favicon, intestazioni di Auth HTTP, link a cui ti sei precedentemente connesso, localStorage, URL mediaSource, richieste OCSP, SharedWorkers e ticket di sessioni TLS.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Cambia i dettagli che ti distinguono dagli altri utenti di Tor Browser">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lascia questa casella selezionata per nascondere ai siti web alcune cose che potrebbero essere uniche per te, incluse le prestazioni del computer, la disposizione della tastiera, la lingua, il percorso dei plugin installati, l'elenco dei plugin installati, lo stato di rete, l'orientamento dello schermo, le dimensioni dello schermo, i livelli di zoom per ogni sito, i tipi di file supportati, i colori di sistema e le funzionalità WebGL.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lascia questa casella selezionata per nascondere ai siti web alcuni elementi che potrebbero essere unicamente riconducibili a te, incluse le prestazioni del computer, la disposizione della tastiera, la lingua, il percorso dei plugin installati, l'elenco dei plugin installati, lo stato di rete, l'orientamento dello schermo, le dimensioni dello schermo, i livelli di zoom per ogni sito, i tipi di file supportati, i colori di sistema e le funzionalità WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Livello di Sicurezza">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Il Security Slider ti permette di disabilitare determinate funzionalità del browser che potrebbero renderlo più vulnerabile a tentativi di attacco.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standard">

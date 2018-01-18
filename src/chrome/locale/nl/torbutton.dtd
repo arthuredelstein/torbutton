@@ -1,4 +1,4 @@
-<!ENTITY torbutton.context_menu.new_identity "Nieuwe Identiteit">
+<!ENTITY torbutton.context_menu.new_identity "Nieuwe identiteit">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nieuw Tor-circuit voor deze website">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">

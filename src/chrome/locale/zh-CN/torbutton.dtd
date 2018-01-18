@@ -33,18 +33,18 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "勾选此选项以避免网站获取您的浏览器指纹信息，包括您的计算机性能、键盘布局、系统语言、安装插件的位置、已安装插件列表、您的网络状态、屏幕方向、屏幕尺寸、特定网站缩放级别、支持的文件类型、系统颜色、WebGL 功能。">
 <!ENTITY torbutton.prefs.sec_caption "安全等级">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "安全滑块可禁用某些浏览器功能，避免因这些功能导致的漏洞而受到攻击。">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
-<!ENTITY torbutton.prefs.sec_safer_label "Safer">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
-<!ENTITY torbutton.prefs.sec_safest_label "Safest">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
+<!ENTITY torbutton.prefs.sec_standard_label "正式的">
+<!ENTITY torbutton.prefs.sec_standard_description "将启用所有Tor浏览器与网站功能。">
+<!ENTITY torbutton.prefs.sec_safer_label "中等安全性">
+<!ENTITY torbutton.prefs.sec_safer_description "禁用网站功能通常是危险的，这会导致一些站不能正常运作。">
+<!ENTITY torbutton.prefs.sec_safer_list_label "在中等安全性设置下：">
+<!ENTITY torbutton.prefs.sec_safest_label "最高安全性">
+<!ENTITY torbutton.prefs.sec_safest_description "只允许网站请求静态网页与基本服务。这将会影响图片，媒体与脚本。">
+<!ENTITY torbutton.prefs.sec_safest_list_label "在最高安全性设置下：">
 <!ENTITY torbutton.prefs.sec_learn_more_label "更多详情">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "在非HTTPS网站，JavaScripts被禁用。">
+<!ENTITY torbutton.prefs.sec_js_disabled "在所有网站上默认禁用JavaScript。">
+<!ENTITY torbutton.prefs.sec_limit_typography "一些字体与数学符号被禁用。">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "一些字体，图标，数学符号与图片被禁用。">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "点击播放音频或视频（HTML5 媒体）。">
 <!ENTITY torbutton.circuit_display.title "为此站点使用的 Tor 线路">
