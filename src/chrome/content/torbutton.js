@@ -752,12 +752,27 @@ function torbutton_do_async_versioncheck() {
           try {
             var version_list = JSON.parse(req.responseText);
             var my_version = m_tb_prefs.getCharPref("torbrowser.version");
-            for (var v in version_list) {
-              if (version_list[v] == my_version) {
-                torbutton_log(3, "Version check passed.");
-                m_tb_prefs.setBoolPref(k_tb_browser_update_needed_pref, false);
-                return;
-              }
+            var platformSuffix;
+            var platform = Services.appinfo.OS;
+            switch (platform) {
+              case "WINNT":
+                platformSuffix = "Windows";
+                break;
+              case "Darwin":
+                platformSuffix = "MacOS";
+                break;
+              case "Linux":
+              case "Android":
+                platformSuffix = platform;
+                break;
+            }
+            if (platformSuffix)
+              my_version += "-" + platformSuffix;
+
+            if (version_list.indexOf(my_version) >= 0) {
+              torbutton_log(3, "Version check passed.");
+              m_tb_prefs.setBoolPref(k_tb_browser_update_needed_pref, false);
+              return;
             }
             torbutton_log(5, "Your Tor Browser is out of date.");
             m_tb_prefs.setBoolPref(k_tb_browser_update_needed_pref, true);
