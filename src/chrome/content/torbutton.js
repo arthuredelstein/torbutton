@@ -13,7 +13,6 @@ let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
 let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
-let { bannerData } = Cu.import("resource://torbutton/modules/donation-banner.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -451,8 +450,7 @@ var torbutton_abouttor_message_handler = {
       torOn: torbutton_tor_check_ok(),
       updateNeeded: torbutton_update_is_needed(),
       showManual: torbutton_show_torbrowser_manual(),
-      toolbarButtonXPos: torbutton_get_toolbarbutton_xpos(),
-      bannerData: bannerData(),
+      toolbarButtonXPos: torbutton_get_toolbarbutton_xpos()
     };
   },
 
