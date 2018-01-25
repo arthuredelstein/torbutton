@@ -105,11 +105,6 @@ var AboutTorListener = {
     else
       body.removeAttribute("showmanual");
 
-    if (aData.bannerData)
-      body.setAttribute("banner-data", aData.bannerData);
-    else
-      body.removeAttribute("banner-data");
-
     // Setting body.initialized="yes" displays the body, which must be done
     // at this point because our remaining initialization depends on elements
     // being visible so that their size and position are accurate.
