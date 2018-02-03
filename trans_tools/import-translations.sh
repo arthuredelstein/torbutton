@@ -1,16 +1,5 @@
 #!/bin/bash -e
 
-# This var comes from the TBB locale list.
-# XXX: Find some way to keep this, tor-launcher, and Tor Browser in sync
-BUNDLE_LOCALES="ar de es fa fr it ko nl pl pt-BR ru tr vi zh-CN"
-
-# XXX: Basque (eu) by request in #10687.
-# This is not used for official builds, but should remain 
-# so Basque XPIs can be build independently. We can do
-# this for other languages too, if anyone requests this
-# and translations are available.
-BUNDLE_LOCALES="$BUNDLE_LOCALES eu ja sv da"
-
 LOCALE_DIR=../src/chrome/locale
 
 # FILEMAP is an array of "localeFile:translationBranch" strings.
@@ -71,7 +60,8 @@ for KEYVAL in "${FILEMAP[@]}"; do
   echo "Updating ${DEST_FILE}..."
   git checkout -q "$BRANCH"
   git merge -q origin/"$BRANCH"
-  for i in $BUNDLE_LOCALES;
+# Copy translations from all locales.
+  for i in */;
   do
     UL="`echo $i|tr - _`"
     mkdir -p ../$LOCALE_DIR/$i/
