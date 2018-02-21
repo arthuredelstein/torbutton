@@ -33,7 +33,7 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Luôn đánh dấu hộp này để ẩn các dấu hiệu có thể là đặc trưng duy nhất về bạn, bao gồm khả năng làm việc của máy tính của bạn, cách sắp xếp của bàn phím, nơi ở, vị trí của các trình thêm vào (plugins) được cài đặt, danh sách của các trình thêm vào được cài đặt, trạng thái mạng của bạn, định hướng màn hình, kích thước màn hình, các mức độ phóng to-thu nhỏ đối với các trang cụ thể, các dạng tệp tin được hỗ trợ, các màu hệ thống, và các năng lực WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Mức độ Bảo mật">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Những Người điều chỉnh an ninh để cho bạn vô hiệu một vài tính năng của trình duyệt mà có thể làm trình duyệt của bạn dễ bị tổn thương đổi với những cố gắng tấn công.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_label "Chuẩn">
 <!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
 <!ENTITY torbutton.prefs.sec_safer_label "Safer">
 <!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
@@ -41,9 +41,9 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Safest">
 <!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Biết thêm">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript mặc định bị vô hiệu trên tất cả các trang.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">

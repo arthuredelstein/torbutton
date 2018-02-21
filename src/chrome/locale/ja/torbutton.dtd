@@ -30,21 +30,21 @@
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "このボックスをチェックしたままにすることで、様々なブラウザーの機能が悪用されウェブの閲覧中に追跡されることを防ぐ。影響を受ける機能：blob URL、ブロードキャスト・チャンネル、ブラウザー・キャッシュ、クッキー、favicon、HTTP認証ヘッダー、link preconnects、ローカルストレージ、mediaSource URL、OCSPリクエスト、共有ワーカー、TLSセッション・チケットなど。">
 <!ENTITY torbutton.prefs.resist_fingerprinting "あなたとほかのTorブラウザのユーザーを区別する詳細を変更">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "このボックスをチェックしたままにすると、あなたを識別できうる情報をウェブサイトから隠します。これには、コンピュータの性能、キーボードの配列、ロケール、インストールされたプラグインの位置、インストールされたプラグインのリスト、あなたのネットワークの状態、画面の向き、画面の解像度、サイトごとのズーム設定、対応しているファイル形式、システムの色設定、WebGL機能が含まれます。">
 <!ENTITY torbutton.prefs.sec_caption "セキュリティレベル">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "セキュリティ・スライダーを使って、あなたのブラウザーをハッキングの試みに対してより脆弱にする可能性のあるブラウザーの機能を無効にできます。">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
-<!ENTITY torbutton.prefs.sec_safer_label "Safer">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
-<!ENTITY torbutton.prefs.sec_safest_label "Safest">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
+<!ENTITY torbutton.prefs.sec_standard_label "標準">
+<!ENTITY torbutton.prefs.sec_standard_description "Tor Browserとウェブサイトのすべての機能が有効化されます。">
+<!ENTITY torbutton.prefs.sec_safer_label "より安全">
+<!ENTITY torbutton.prefs.sec_safer_description "ウェブサイトのしばしば危険である機能を無効化します。サイトによっては正常に動作しなくなります。">
+<!ENTITY torbutton.prefs.sec_safer_list_label "「より安全」設定では：">
+<!ENTITY torbutton.prefs.sec_safest_label "最も安全">
+<!ENTITY torbutton.prefs.sec_safest_description "静的なサイトと基本的なサービスに必要な機能だけを許可します。この変更は画像、メディア、スクリプトに影響します。">
+<!ENTITY torbutton.prefs.sec_safest_list_label "「最も安全」設定では：">
+<!ENTITY torbutton.prefs.sec_learn_more_label "さらに知る">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "HTTPS非対応のサイトでJavaScript が無効化されます。">
+<!ENTITY torbutton.prefs.sec_js_disabled "すべてのサイトでJavaScriptが無効化されます。">
+<!ENTITY torbutton.prefs.sec_limit_typography "いくつかのフォントと数学記号が無効化されます。">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "いくつかのアイコン、数学記号および画像が無効化されます。">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "オーディオとビデオ(HTML5メディア)はクリックすると再生されます。">
 <!ENTITY torbutton.circuit_display.title "このサイト用の Tor サーキット">

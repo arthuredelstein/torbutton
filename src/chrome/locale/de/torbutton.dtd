@@ -33,11 +33,11 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lassen Sie dieses Feld ausgewählt um bestimmte einzigartige Informationen Ihres Systems vor Webportalen zu verbergen, wie die Rechnerleistung, Tastaturbelegung, das Sprachprofil, den Installationsort von Erweiterungen, die Liste der installierten Erweiterungen, Ihren Netzwerkstatus, die Bildschirmausrichtung, Bildschirmgröße, seitenspezifische Vergrößerungseinstellungen, unterstützte Dateitypen, Farbschemata und WebGL-Fähigkeiten.">
 <!ENTITY torbutton.prefs.sec_caption "Sicherheitsstufe">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Mit dem Sicherheitsschieberegler können Sie bestimmte Browserfunktionen, die Ihren Browser für mögliche Attacken anfälliger machen, deaktivieren.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standart
+<!ENTITY torbutton.prefs.sec_standard_label "Standard
 ">
 <!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser und Webseiten Funktionen sind aktiviert.">
 <!ENTITY torbutton.prefs.sec_safer_label "Sicherer">
-<!ENTITY torbutton.prefs.sec_safer_description " Deaktiviert Webseiten Funktionen, die oft gefährlich sind. Sorgt dafür, dass manche Seiten nicht mehr so gut funktionieren">
+<!ENTITY torbutton.prefs.sec_safer_description "Deaktiviert Webseiten-Funktionen, die oft gefährlich sind. Sorgt dafür, dass manche Seiten nicht mehr so gut funktionieren">
 <!ENTITY torbutton.prefs.sec_safer_list_label "In der sicheren Einstellung:">
 <!ENTITY torbutton.prefs.sec_safest_label "Am sichersten">
 <!ENTITY torbutton.prefs.sec_safest_description "Erlaubt nur Webseiten-Funktionen, die für statische Seiten und Basisdienste benötigt werden. Diese Änderungen betreffen Bilder, Medien und Skripte.">

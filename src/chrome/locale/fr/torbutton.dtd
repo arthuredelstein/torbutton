@@ -2,13 +2,13 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nouveau circuit Tor pour ce site">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Paramètres de sécurité...">
+<!ENTITY torbutton.context_menu.preferences "Paramètres de sécurité">
 <!ENTITY torbutton.context_menu.preferences.key "S">
-<!ENTITY torbutton.context_menu.networksettings "Paramètres du réseau Tor...">
+<!ENTITY torbutton.context_menu.networksettings "Paramètres du réseau Tor">
 <!ENTITY torbutton.context_menu.networksettings.key "R">
-<!ENTITY torbutton.context_menu.downloadUpdate "Vérifier les màj. du navigateur Tor">
+<!ENTITY torbutton.context_menu.downloadUpdate "Vérifier les mises à jour du navigateur Tor">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "M">
-<!ENTITY torbutton.context_menu.cookieProtections "Protections des fichiers témoins...">
+<!ENTITY torbutton.context_menu.cookieProtections "Protections des fichiers témoins…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "T">
 <!ENTITY torbutton.button.tooltip "Cliquer pour lancer BoutonTor">
 <!ENTITY torbutton.prefs.security_settings "Paramètres de sécurité du navigateur Tor">
@@ -32,18 +32,18 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Gardez cette case cochée pour cacher aux sites Web certaines choses qui pourraient être uniques à votre sujet, incluant les performances de votre ordinateur, l’agencement du clavier, les paramètres de langue, l’emplacement des greffons installés, la liste des greffons installés, l’état de votre réseau, l’orientation de l’écran, la taille de l’écran, les niveaux de zoom particuliers aux sites, les types de fichiers pris en charge, les couleurs système et les capacités WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Niveau de sécurité">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "Le bouton de sécurité coulissant vous permet de désactiver certaines fonctions du navigateur qui le rendent plus vulnérable aux tentatives de piratage.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Le curseur de sécurité vous permet de désactiver certaines fonctions du navigateur qui pourraient le rendre plus vulnérable aux tentatives de piratage.">
 <!ENTITY torbutton.prefs.sec_standard_label "Normal">
-<!ENTITY torbutton.prefs.sec_standard_description "Tous les fonctions du navigateur Tor et de site Web sont activées.">
+<!ENTITY torbutton.prefs.sec_standard_description "Toutes les fonctions du navigateur Tor et des sites Web sont activées.">
 <!ENTITY torbutton.prefs.sec_safer_label "Plus sûr">
-<!ENTITY torbutton.prefs.sec_safer_description "Désactive les fonctions de site Web qui sont souvent dangereuses, ce qui pourrait causer le non-fonctionnement de certains sites Web.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "Au paramètre plus sûr :">
+<!ENTITY torbutton.prefs.sec_safer_description "Désactive les fonctions souvent dangereuses des sites Web, ce qui pourrait entraîner une perte de fonctionnalité de certains sites Web.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Au réglage Plus sûr :">
 <!ENTITY torbutton.prefs.sec_safest_label "Le plus sûr">
-<!ENTITY torbutton.prefs.sec_safest_description "Ne permettre que les fonctions de site Web qui sont exigées pour les sites fixes et les services de base. Ces changements affectent les images, les médias et les scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "Au paramètre le plus sûr :">
+<!ENTITY torbutton.prefs.sec_safest_description "Ne permettre que les fonctions de sites Web qui sont exigées pour les sites fixes et les services de base. Ces changements affectent les images, les médias et les scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Au réglage Le plus sûr :">
 <!ENTITY torbutton.prefs.sec_learn_more_label "En apprendre davantage">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript est désactivé sur les sites non HTTPS.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript est désactivé par défaut sur tous les sites.">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript est désactivé pour les sites non HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript est désactivé par défaut pour tous les sites.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Certaines polices et certains symboles mathématiques sont désactivés.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Certaines polices, icônes, images et certains symboles mathématiques sont désactivés.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Le son et la vidéo (médias HTML5) sont « cliquer pour lire ».">

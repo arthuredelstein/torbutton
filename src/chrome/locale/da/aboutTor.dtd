@@ -8,9 +8,9 @@
 
 <!ENTITY aboutTor.outOfDateTorOn.label "ADVARSEL: denne browser er forældet.">
 <!ENTITY aboutTor.outOfDateTorOff.label "Denne browser er desuden forældet.">
-<!ENTITY aboutTor.outOfDate2.label "Klik på løget og vælg så Søg efter Tor Browser opdateringer.">
+<!ENTITY aboutTor.outOfDate2.label "Klik på løget og vælg så Søg efter Tor Browser-opdateringer.">
 
-<!ENTITY aboutTor.check.label "Test Tor netværksindstillinger.">
+<!ENTITY aboutTor.check.label "Test Tor-netværksindstillinger">
 
 <!ENTITY aboutTor.success.label "Velkommen til Tor Browser">
 <!ENTITY aboutTor.success2.label "Forbundet til Tor-netværket.">
@@ -26,13 +26,13 @@
 <!ENTITY aboutTor.torInfo3.label "Udgangsknudepunkt:">
 <!ENTITY aboutTor.torInfo4.label "Denne server logger ikke nogle informationer om besøgende.">
 <!ENTITY aboutTor.whatnextQuestion.label "Hvad er næste skridt?">
-<!ENTITY aboutTor.whatnextAnswer.label "Tor er IKKE al den sikkerhed du har brug for for at browse anonymt. Du bliver muligvis også nødt til at ændre browsing vaner for at sikre, at din identitet forbliver sikker">
-<!ENTITY aboutTor.whatnext.label "Tips for at forblive anonym">
+<!ENTITY aboutTor.whatnextAnswer.label "Tor er IKKE al den sikkerhed du har brug for for at browse anonymt. Du bliver muligvis også nødt til at ændre nogle af dine browsingvaner for at sikre, at din identitet er sikker.">
+<!ENTITY aboutTor.whatnext.label "Tips til at være anonym »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser brugermanual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser-brugermanual">
 <!ENTITY aboutTor.helpInfo1.label "Du kan hjælpe!">
-<!ENTITY aboutTor.helpInfo2.label "Der er mange måder hvorpå du kan hjælpe for at gøre Tor-netværket hurtigere og stærkere:">
+<!ENTITY aboutTor.helpInfo2.label "Der er mange måder du kan hjælpe med at gøre Tor-netværket hurtigere og stærkere:">
 <!ENTITY aboutTor.helpInfo3.label "Kør et Tor-relæknudepunkt »">
 <!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html.en">
 <!ENTITY aboutTor.helpInfo4.label "Tilbyd din hjælp »">

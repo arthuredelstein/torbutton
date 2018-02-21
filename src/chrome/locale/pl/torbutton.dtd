@@ -33,7 +33,7 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Zachowaj to pole zaznaczone, aby ukryć przed stronami internetowymi elementy, które mogą być u ciebie unikalne, wliczając w to wydajność komputera, układ klawiatury, lokalizację, położenie zainstalowanych wtyczek, listę zainstalowanych wtyczek, stan sieci, orientację ekranu, rozmiar ekranu, określone poziomy powiększenia, obsługiwane typy plików, kolory systemu oraz możliwości WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Poziom bezpieczeństwa">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Suwak poziomu bezpieczeństwa pozwala na wyłączenie pewnych funkcji przeglądarki, które mogą uczynić ten program bardziej narażonym na próby ataku hakerskiego.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_label "Standardowy">
 <!ENTITY torbutton.prefs.sec_standard_description "Wszystkie funkcje Przeglądarki Tor i strony zostały włączone.">
 <!ENTITY torbutton.prefs.sec_safer_label "Safer">
 <!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">

@@ -33,7 +33,7 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
 <!ENTITY torbutton.prefs.sec_caption "مستوى الأمان">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_label "عادي">
 <!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
 <!ENTITY torbutton.prefs.sec_safer_label "Safer">
 <!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
@@ -43,7 +43,7 @@
 <!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "تعرّف على المزيد">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
+<!ENTITY torbutton.prefs.sec_js_disabled "جافا سكريبت معطل بشكل افتراضي على جميع المواقع.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">

@@ -4,14 +4,14 @@
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.preferences "Sikkerhedsindstillinger…">
 <!ENTITY torbutton.context_menu.preferences.key "S">
-<!ENTITY torbutton.context_menu.networksettings "Tor netværksindstillinger...">
+<!ENTITY torbutton.context_menu.networksettings "Tor-netværksindstillinger...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "Søg efter Tor Browser opdateringer...">
+<!ENTITY torbutton.context_menu.downloadUpdate "Søg efter Tor Browser-opdatering...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "O">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie-beskyttelser...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik for at starte Torbutton">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser sikkerhedsindstillinger">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser-sikkerhedsindstillinger">
 <!ENTITY torbutton.prefs.restore_defaults "Gendan Standarder">
 <!ENTITY torbutton.prefs.custom_warning "Dine tilpassede browserpræferencer har resulterede i usædvanlige sikkerhedsindstillinger. Pga. sikkerheds- og privatlivsårsagen, anbefaler vi at du vælger en af standardsikkerhedsniveauerne.">
 <!ENTITY torbutton.cookiedialog.title "Håndtér Cookie-beskyttelser">
@@ -30,7 +30,7 @@
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Lad denne boks være tilvalgt for at forhindre diverse browserfunktionalitet i at blive misbrugt til at spore dig efterhånden som du søger på webbet.. Modificerede funktionaliteter inkluderer blob-URL'er, broadcast-kanaler, browserens mellemlager, cookies, favicon'er, HTTP Auth-headere, link preconnects, localStorage, mediaSource-URL'er, OCSP-anmodninger, SharedWorkers og TLS session tickets.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Tilpas detaljer som adskiller dig fra andre Tor Browser-brugere">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lad denne boks være valgt til for at skjule ting fra websteder som er unikke for dig, inklusiv din computerydelse, tastaturlayout, sprog, placeringen af installerede plugins, listen af installerede plugins, din netværksstatus, skærmorientering, skærmstørrelse, stedspecifikke zoom-niveauer, understøttede filtyper, systemfarver og WebGL-formåenheder.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lad denne boks være valgt til for at skjule ting fra websteder som er unikke for dig, inklusiv din computerydelse, tastaturlayout, sprog, placeringen af installerede plugins, listen af installerede plugins, din netværksstatus, skærmorientering, skærmstørrelse, stedspecifikke zoomniveauer, understøttede filtyper, systemfarver og WebGL-formåenheder.">
 <!ENTITY torbutton.prefs.sec_caption "Sikkerheds Niveau">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Sikkerhedsskyderen giver dig mulighed for at deaktivere bestemte browserfunktionaliteter som kan gøre din browser sårbar overfor forsøg på hacking.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standard">
