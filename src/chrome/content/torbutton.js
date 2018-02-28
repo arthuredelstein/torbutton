@@ -10,7 +10,7 @@
 let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm', {});
 let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
 let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
-let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { getLocale, unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
 let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
 
@@ -818,14 +818,14 @@ function torbutton_update_toolbutton()
 // Bug 1506 P3: Support code for language+uagent spoofing
 function torbutton_get_general_useragent_locale() {
    try {
-        var locale = m_tb_prefs.getCharPref("general.useragent.locale");
+        const locale = getLocale();
         if (/chrome:\/\//.test(locale)) {
-            return m_tb_prefs.getComplexValue("general.useragent.locale",
+            return m_tb_prefs.getComplexValue("intl.locale.requested",
                        Components.interfaces.nsIPrefLocalizedString).data;
         }
         return locale;
     } catch(err) {
-        torbutton_log(4, "Error while getting general.useragent.locale:" + err);
+        torbutton_log(4, "Error while getting locale" + err);
         return 'en-US';
     }
 }
@@ -2380,7 +2380,7 @@ function torbutton_show_torbrowser_manual() {
 // torbutton_show_torbrowser_manual() returns true.
 function torbutton_init_user_manual_links() {
   let menuitem = document.getElementById("torBrowserUserManual");
-  bindPrefAndInit("general.useragent.locale", val => {
+  bindPrefAndInit("intl.locale.requested", val => {
     menuitem.hidden = !torbutton_show_torbrowser_manual();
     torbutton_abouttor_message_handler.updateAllOpenPages();
   });
