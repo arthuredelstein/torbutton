@@ -21,7 +21,7 @@ and lines drawn between them to represent Tor network inter-relay connections.
   width: 100%;
 }
 
-#circuit-display-content:-moz-locale-dir(rtl) {
+#circuit-display-content:dir(rtl) {
   background-position: calc(100% - 1em) 1em;
 }
 
@@ -65,7 +65,7 @@ ul#circuit-display-nodes li {
   white-space: nowrap;
 }
 
-ul#circuit-display-nodes li:-moz-locale-dir(rtl) {
+ul#circuit-display-nodes li:dir(rtl) {
   background-position: right center;
 }
 
