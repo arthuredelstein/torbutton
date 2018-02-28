@@ -5,6 +5,9 @@ let { utils: Cu } = Components;
 let { getBoolPref, getIntPref, setBoolPref, setIntPref, getCharPref } =
     Cu.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
 
+let { getLocale } =
+    Cu.import("resource://torbutton/modules/utils.js", {});
+
 // Description elements have the follow names.
 const descNames =
       [, "desc_safest", "desc_safer", "desc_standard"];
@@ -67,7 +70,7 @@ function torbutton_set_learn_more_links() {
   let show_manual = window.opener.torbutton_show_torbrowser_manual();
   let locale = ""
   if (show_manual) {
-    locale = getCharPref('general.useragent.locale');
+    locale = getLocale();
   }
   let links = linkNames.map(name => document.getElementById(name));
   links.forEach(link => {;

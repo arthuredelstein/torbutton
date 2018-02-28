@@ -67,8 +67,10 @@ var AboutTorListener = {
 
   onPageLoad: function() {
     // Arrange to update localized text and links.
-    bindPrefAndInit("general.useragent.locale", aNewVal => {
-      this.onLocaleChange(aNewVal);
+    bindPrefAndInit("intl.locale.requested", aNewVal => {
+      if (aNewVal !== null) {
+        this.onLocaleChange(aNewVal);
+      }
     });
 
     // Add message and event listeners.
