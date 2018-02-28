@@ -7,12 +7,13 @@
 // TODO: Double-check there are no strange exploits to defeat:
 //       http://kb.mozillazine.org/Links_to_local_pages_don%27t_work
 
-let { LoadContextInfo } = Cu.import('resource://gre/modules/LoadContextInfo.jsm', {});
 let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
 let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { getLocale, unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
 let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
+
+Cu.importGlobalProperties(["XMLHttpRequest"]);
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -733,9 +734,7 @@ function torbutton_do_async_versioncheck() {
   torbutton_log(3, "Checking version with socks port: "
           +m_tb_prefs.getIntPref("network.proxy.socks_port"));
   try {
-    var req = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"]
-                            .createInstance(Components.interfaces.nsIXMLHttpRequest);
-    //var req = new XMLHttpRequest(); Blocked by content policy
+    var req = new XMLHttpRequest();
     var url = m_tb_prefs.getCharPref("extensions.torbutton.versioncheck_url");
     req.open('GET', url, true);
     req.channel.loadFlags |= Ci.nsIRequest.LOAD_BYPASS_CACHE;
@@ -1130,6 +1129,9 @@ function torbutton_do_new_identity() {
   torbutton_log(3, "New Identity: Clearing Offline Cache");
 
   try {
+    const LoadContextInfo = Cc["@mozilla.org/load-context-info-factory;1"]
+      .getService(Ci.nsILoadContextInfoFactory);
+
     for (let contextInfo of [LoadContextInfo.default, LoadContextInfo.private]) {
       let appCacheStorage = Services.cache2.appCacheStorage(contextInfo, null);
       // The following call (asyncEvictStorage) is actually synchronous, either
@@ -2023,7 +2025,7 @@ let stopLanguagePromptObserver;
 function torbutton_new_window(event)
 {
     torbutton_log(3, "New window");
-    var browser = getBrowser();
+    var browser = window.gBrowser;
 
     if(!browser) {
       torbutton_log(5, "No browser for new window.");

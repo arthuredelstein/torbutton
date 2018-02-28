@@ -57,3 +57,6 @@ pref("browser.startup.homepage", "chrome://torbutton/content/locale/non-localize
 
 // This pref specifies an ad-hoc "version" for various pref update hacks we need to do
 pref("extensions.torbutton.pref_fixup_version", 0);
+
+// Firefox 58 and above is not setting this pref however the plugin code still is using it
+pref("plugin.disable", false);
