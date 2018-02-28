@@ -110,7 +110,7 @@ let nodeDataForCircuit = function* (controller, circuitEvent) {
       // Remove the leading '$' if present.
       ids = rawIDs.map(id => id[0] === "$" ? id.substring(1) : id);
   // Get the node data for all IDs in circuit.
-  return [for (id of ids) yield nodeDataForID(controller, id)];
+  for (id of ids) yield nodeDataForID(controller, id);
 };
 
 // __getCircuitStatusByID(aController, circuitID)__

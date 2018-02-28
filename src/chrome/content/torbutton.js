@@ -1140,9 +1140,12 @@ function torbutton_do_new_identity() {
       // #5715 also makes this synchronous. So we pass a null callback.
       try {
         appCacheStorage.asyncEvictStorage(null);
-      } catch (err if err.name == 'NS_ERROR_NOT_AVAILABLE') {
-        // We ignore "not available" errors because they occur if a cache
-        // has not been used, e.g., if no browsing has been done.
+      } catch (err) {
+         // We ignore "not available" errors because they occur if a cache
+         // has not been used, e.g., if no browsing has been done.
+         if (err.name !== 'NS_ERROR_NOT_AVAILABLE') {
+             throw err;
+         }
       }
     }
   } catch(e) {

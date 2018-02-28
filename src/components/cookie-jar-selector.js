@@ -143,7 +143,7 @@ function CookieJarSelector() {
     var file = getProfileFile("cookies-" + name + ".json");
     var foStream = Cc["@mozilla.org/network/file-output-stream;1"]
           .createInstance(Ci.nsIFileOutputStream);
-    foStream.init(file, 0x02 | 0x08 | 0x20, 0666, 0);
+    foStream.init(file, 0x02 | 0x08 | 0x20, 0o666, 0);
     var data = JSON.stringify(this["cookiesobj-" + name]);
     foStream.write(data, data.length);
     foStream.close();
@@ -154,7 +154,7 @@ function CookieJarSelector() {
     var file = getProfileFile("protected-" + name + ".json");
     var foStream = Cc["@mozilla.org/network/file-output-stream;1"]
         .createInstance(Ci.nsIFileOutputStream);
-    foStream.init(file, 0x02 | 0x08 | 0x20, 0666, 0);
+    foStream.init(file, 0x02 | 0x08 | 0x20, 0o666, 0);
     var data = JSON.stringify(this["protected-" + name]);
     foStream.write(data, data.length);
     foStream.close();
