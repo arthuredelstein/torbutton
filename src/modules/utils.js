@@ -79,6 +79,12 @@ var getEnv = function (name) {
   return env.exists(name) ? env.get(name) : undefined;
 };
 
+// __getLocale
+// Reads the browser locale, the default locale is en-US.
+var getLocale = function() {
+  return Services.locale.getRequestedLocale() || "en-US";
+}
+
 // ## Windows
 
 // __dialogsByName__.
@@ -200,5 +206,5 @@ var unescapeTorString = function(str) {
 };
 
 // Export utility functions for external use.
-let EXPORTED_SYMBOLS = ["bindPref", "bindPrefAndInit", "getEnv", "getPrefValue",
-                        "observe", "showDialog", "unescapeTorString"];
+let EXPORTED_SYMBOLS = ["bindPref", "bindPrefAndInit", "getEnv", "getLocale",
+                        "getPrefValue", "observe", "showDialog", "unescapeTorString"];
