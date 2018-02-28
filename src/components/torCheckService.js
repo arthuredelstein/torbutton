@@ -77,9 +77,8 @@ TBTorCheckService.prototype =
 
   createCheckRequest: function(aAsync)
   {
-    let req = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"]
-                      .createInstance(Ci.nsIXMLHttpRequest);
-    //let req = new XMLHttpRequest(); Blocked by content policy
+    Cu.importGlobalProperties(["XMLHttpRequest"]);
+    let req = new XMLHttpRequest();
     let prefs =  Cc["@mozilla.org/preferences-service;1"]
                    .getService(Ci.nsIPrefBranch);
     let url = prefs.getCharPref("extensions.torbutton.test_url");

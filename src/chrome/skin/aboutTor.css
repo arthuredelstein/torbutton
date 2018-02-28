@@ -25,11 +25,11 @@ body {
 }
 
 body {
-  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 10%, #dddddd 50%, #dddddd);
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff 10%, #dddddd 50%, #dddddd);
 }
 
 body[toron] {
-  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 10%, #d5ffd5 50%, #d5ffd5);
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff 10%, #d5ffd5 50%, #d5ffd5);
 }
 
 /* Hide the entire document by default to avoid showing the incorrect
@@ -221,7 +221,7 @@ body .top div.hideIfTorIsUpToDate h1 {
   padding: 5px 0 0 22px;
 }
 
-#middle ul:-moz-dir(rtl) {
+#middle ul:dir(rtl) {
   padding: 5px 22px 0 0;
 }
 

@@ -82,7 +82,7 @@ io.pumpInputStream = function (inputStream, onInputData, onError) {
       pump = Cc["@mozilla.org/network/input-stream-pump;1"]
                .createInstance(Components.interfaces.nsIInputStreamPump);
   // Start the pump.
-  pump.init(inputStream, -1, -1, 0, 0, true);
+  pump.init(inputStream, 0, 0, true);
   // Tell the pump to read all data whenever it is available, and pass the data
   // to the onInputData callback. The first argument to asyncRead implements
   // nsIStreamListener.
