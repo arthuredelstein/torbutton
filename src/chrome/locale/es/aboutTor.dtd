@@ -35,7 +35,7 @@
 <!ENTITY aboutTor.helpInfo2.label "Hay muchas formas en que las puede ayudar a hacer la red Tor más rápida y fuerte.">
 <!ENTITY aboutTor.helpInfo3.label "Ejecutar un nodo de repetidor Tor »">
 <!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html.en">
-<!ENTITY aboutTor.helpInfo4.label "Ofrece sus servicios como voluntario »">
+<!ENTITY aboutTor.helpInfo4.label "Ofrece tus serviciosde forma voluntaria »">
 <!ENTITY aboutTor.helpInfo4.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 <!ENTITY aboutTor.helpInfo5.label "Realiza una donación »">
 <!ENTITY aboutTor.helpInfo5.link "https://www.torproject.org/donate/donate.html.en">
