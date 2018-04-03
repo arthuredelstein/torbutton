@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-   - Copyright (c) 2017, The Tor Project, Inc.
+   - Copyright (c) 2018, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -31,87 +31,88 @@ window.addEventListener("pageshow", function() {
 </script>
 </head>
 <body dir="&locale.dir;">
-<div id="torstatus" class="top">
-  <div id="torstatus-version"/>
-  <div id="torstatus-image"/>
-  <div id="torstatus-on-container" class="hideIfTorOff torstatus-container">
-    <h1>&aboutTor.success.label;</h1>
-    <br/>
-    <h3 class="hideIfTBBNeedsUpdate">&aboutTor.success3.label;</h3>
-    <br/>
-    <div style="margin-top: 20px;">
-      <a id="testTorSettings" href="about:blank">&aboutTor.check.label;</a>
-    </div>
-  </div>
-  <div id="torstatus-off-container" class="hideIfTorOn torstatus-container">
-    <h1>&aboutTor.failure.label;</h1>
-    <br/>
-    <h2>&aboutTor.failure2.label;</h2>
-  </div>
-</div>
-<div class="top">
   <div class="hideIfTorIsUpToDate">
-    <h1 class="hideIfTorOff">&aboutTor.outOfDateTorOn.label;</h1>
-    <h1 class="hideIfTorOn">&aboutTor.outOfDateTorOff.label;</h1>
-    <h3 id="updatePrompt">&aboutTor.outOfDate2.label;</h3>
-
-    <div id="toolbarIconArrowHead" class="arrow"/>
-    <div id="toolbarIconArrowVertExtension" class="arrow"/>
-    <div id="toolbarIconArrowBend" class="arrow"/>
-    <div id="toolbarIconArrowHorzExtension" class="arrow"/>
+      <div id="toolbarIconArrowHead" class="arrow"/>
+      <div id="toolbarIconArrowVertExtension" class="arrow"/>
+      <div id="toolbarIconArrowBend" class="arrow"/>
+      <div id="toolbarIconArrowHorzExtension" class="arrow"/>
   </div>
-</div>
-
-<div class="searchbox hideIfTorOff"> <!-- begin form based search -->
-  <form action="&aboutTor.searchDDGPost.link;" method="post">
-  <div id="sxw">
-    <div id="sbutton">
-      <input name="b" id="sb" value="" title="&aboutTor.search.label;"
-             alt="&aboutTor.search.label;" type="submit"/>
+  <div class="torcontent-container">
+    <div id="torstatus-version"/>
+    <div id="torstatus" class="top">
+      <div id="torstatus-image"/>
+      <div id="torstatus-on-container" class="hideIfTorOff torstatus-container">
+        <h1>&aboutTor.success.label;</h1>
+        <br/>
+        <h3 class="hideIfTBBNeedsUpdate">&aboutTor.success3.label;</h3>
+        <br/>
+        <div style="margin-top: 20px;">
+          <a id="testTorSettings" href="about:blank">&aboutTor.check.label;</a>
+        </div>
+      </div>
+      <div id="torstatus-off-container" class="hideIfTorOn torstatus-container">
+        <h1>&aboutTor.failure.label;</h1>
+        <br/>
+        <h2>&aboutTor.failure2.label;</h2>
+      </div>
     </div>
-    <input name="q" autocomplete="off" id="sx" type="text"/>
-  </div>
-  <h4 id="searchProviderInfo" />
-  </form>
-</div>
-
-<div class="hideIfTorOn" style="height:100px"/>
-
-<div id="middle" class="hideIfTorOff">
-  <div class="bubbleRow">
-    <div class="bubble">
-      <h1>&aboutTor.whatnextQuestion.label;</h1>
-      <p>&aboutTor.whatnextAnswer.label;</p>
-      <ul>
-        <li>
-          <a href="&aboutTor.whatnext.link;">
-            &aboutTor.whatnext.label;
-          </a>
-        </li>
-        <li class="showForManual">
-          <a id="manualLink">
-            &aboutTor.torbrowser_user_manual.label; &raquo;
-          </a>
-        </li>
-      </ul>
+    <div class="top">
+      <div class="hideIfTorIsUpToDate">
+        <h1 class="hideIfTorOff">&aboutTor.outOfDateTorOn.label;</h1>
+        <h1 class="hideIfTorOn">&aboutTor.outOfDateTorOff.label;</h1>
+        <div>
+          <h3 id="updatePrompt">&aboutTor.outOfDate2.label;</h3>
+        </div>
+      </div>
     </div>
 
-    <div class="bubble">
-      <h1>&aboutTor.helpInfo1.label;</h1>
-      <p>&aboutTor.helpInfo2.label;</p>
-      <ul>
-        <li><a href="&aboutTor.helpInfo3.link;">&aboutTor.helpInfo3.label;</a></li>
-        <li><a href="&aboutTor.helpInfo4.link;">&aboutTor.helpInfo4.label;</a></li>
-        <li><a href="&aboutTor.helpInfo5.link;">&aboutTor.helpInfo5.label;</a></li>
-      </ul>
+    <div class="searchbox hideIfTorOff"> <!-- begin form based search -->
+      <form action="&aboutTor.searchDDGPost.link;" method="post">
+      <div id="sxw">
+        <div id="sbutton">
+          <input name="b" id="sb" value="" title="&aboutTor.search.label;"
+                alt="&aboutTor.search.label;" type="submit"/>
+        </div>
+        <input name="q" autocomplete="off" id="sx" type="text"/>
+      </div>
+      <h4 id="searchProviderInfo" />
+      </form>
+    </div>
+
+    <div class="hideIfTorOn" style="height:100px"/>
+
+    <div id="middle" class="hideIfTorOff">
+        <div class="bubble">
+          <h1>&aboutTor.whatnextQuestion.label;</h1>
+          <p>&aboutTor.whatnextAnswer.label;</p>
+          <ul>
+            <li>
+              <a href="&aboutTor.whatnext.link;">
+                &aboutTor.whatnext.label;
+              </a>
+            </li>
+            <li class="showForManual">
+              <a id="manualLink">
+                &aboutTor.torbrowser_user_manual.label; &raquo;
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bubble">
+          <h1>&aboutTor.helpInfo1.label;</h1>
+          <p>&aboutTor.helpInfo2.label;</p>
+          <ul>
+            <li><a href="&aboutTor.helpInfo3.link;">&aboutTor.helpInfo3.label;</a></li>
+            <li><a href="&aboutTor.helpInfo4.link;">&aboutTor.helpInfo4.label;</a></li>
+            <li><a href="&aboutTor.helpInfo5.link;">&aboutTor.helpInfo5.label;</a></li>
+          </ul>
+        </div>
+    </div> <!-- middle -->
+
+    <div id="bottom">
+      <p>&aboutTor.footer.label;
+    <a href="&aboutTor.learnMore.link;">&aboutTor.learnMore.label;</a></p>
     </div>
   </div>
-</div> <!-- middle -->
-
-<div id="bottom">
-  <p>&aboutTor.footer.label;
-<a href="&aboutTor.learnMore.link;">&aboutTor.learnMore.label;</a></p>
-</div>
-
 </body>
 </html>
