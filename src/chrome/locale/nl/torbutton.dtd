@@ -34,12 +34,12 @@
 <!ENTITY torbutton.prefs.sec_caption "Beveiligingsniveau">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "De beveiligingsschuifbalk laat je toe sommige functies uit te schakelen die je browser mogelijk blootstellen aan beveiligingsrisico's.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standaard">
-<!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser- en website functies zijn ingeschakeld.">
+<!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser- en websitefuncties zijn ingeschakeld.">
 <!ENTITY torbutton.prefs.sec_safer_label "Veiliger">
-<!ENTITY torbutton.prefs.sec_safer_description "Uitgeschakelde website functies die zijn meestal gevaarlijk, waardoor sommige sites functionaliteit vaak verliezen.">
+<!ENTITY torbutton.prefs.sec_safer_description "Uitgeschakelde websitefuncties die zijn meestal gevaarlijk, waardoor sommige sites functionaliteit vaak verliezen.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Op de veiliger instelling:">
 <!ENTITY torbutton.prefs.sec_safest_label "Veiligste">
-<!ENTITY torbutton.prefs.sec_safest_description "Alleen website-functies toestaan die vereist zijn voor statische sites en basis diensten. Deze wijzigingen zijn van invloed op afbeeldingen, media en scripts.">
+<!ENTITY torbutton.prefs.sec_safest_description "Alleen websitefuncties toestaan die vereist zijn voor statische sites en basis diensten. Deze wijzigingen zijn van invloed op afbeeldingen, media en scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Op de veiligste instelling:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Leer Meer">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript zijn uitgeschakeld op non-HTTP sites.">

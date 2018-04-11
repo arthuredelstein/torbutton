@@ -35,10 +35,10 @@
 <!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
 <!ENTITY torbutton.prefs.sec_standard_label "عادي">
 <!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
-<!ENTITY torbutton.prefs.sec_safer_label "Safer">
+<!ENTITY torbutton.prefs.sec_safer_label "آمِن جدا">
 <!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
-<!ENTITY torbutton.prefs.sec_safest_label "Safest">
+<!ENTITY torbutton.prefs.sec_safest_label "جِدّ آمِن">
 <!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "تعرّف على المزيد">

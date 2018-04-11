@@ -8,7 +8,7 @@
 
 <!ENTITY aboutTor.outOfDateTorOn.label "ADVERTENCIA: Este navegador no está actualizado.">
 <!ENTITY aboutTor.outOfDateTorOff.label "ADEMÁS, este navegador tampoco está actualizado.">
-<!ENTITY aboutTor.outOfDate2.label "Haga clic en la cebolla y luego seleccione Comprobar actualizaciones del Navegador Tor.">
+<!ENTITY aboutTor.outOfDate2.label "Haz clic en la cebolla y luego selecciona Comprobar actualizaciones del Navegador Tor.">
 
 <!ENTITY aboutTor.check.label "Probar las preferencias de red Tor">
 
