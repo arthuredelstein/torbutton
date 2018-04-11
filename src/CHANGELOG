@@ -1,3 +1,7 @@
+1.9.9.1
+ * Bug 25126: Make about:tor layout responsive
+ * Translations update
+
 1.9.9
  * Bug 24159: Version check does not deal with platform specific checks
  * Bug 25016: Remove 2017 donation banner
