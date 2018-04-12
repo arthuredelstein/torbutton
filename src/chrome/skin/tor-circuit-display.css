@@ -4,110 +4,134 @@ a domain, and a bulleted list.
 
 Each bullet in the circuit node list is supposed to represent a Tor circuit node,
 and lines drawn between them to represent Tor network inter-relay connections.
-
-CSS for line between bullets is derived in part from https://jsfiddle.net/5JP8Q/
 */
 
-/* The circuit-display div encloses all other HTML elements.
-   Color the background to make circuit display distinct
-   from the rest of the popup. */
-div#circuit-display {
-  background-color: #e8f4f4;
-  font-family: Arial;
-  width: 100%;
-  height: 100%;
-  padding: 8px;
-  /* Magically keep popup menu from clipping div: */
-  display: table-cell;
+
+#circuit-display-content {
+  background-image: url(chrome://torbutton/skin/relay.svg);
+  background-position: 1em 1em;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  background-color: rgba(255,255,255,0.4);
+  background-blend-mode: lighten;
   cursor: default;
+  padding: 0.5em 0px 0.5em;
+  padding-inline-end: 1em;
+  padding-inline-start: calc(2em + 24px);
+  width: 100%;
 }
 
-/* Format the title text. */
-div#circuit-display p#title {
-  font-size: 15px;
-  font-weight: bold;
-  color: #2c26a7;
-  margin: 0;
+#circuit-display-content:-moz-locale-dir(rtl) {
+  background-position: calc(100% - 1em) 1em;
+}
+
+#circuit-reload-content {
+  background-color: #f7f7f7;
+  cursor: default;
+  padding: 1em 0px 1em;
+  padding-inline-end: 3em;
+  padding-inline-start: calc(2em + 24px);
+  width: 100%;
 }
 
 /* Format the domain text. */
-div#circuit-display p#domain {
-  font-size: 13px;
-  color: black;
-  margin: 4px;
+#circuit-display-domain {
+  opacity: 0.8;
+}
+
+#circuit-div {
+  position: relative;
+  margin-inline-start: 6px;
 }
 
 /* Format the circuit node list. */
-ul#circuit-nodes {
-  font-family: Arial;
-  font-size: 14px;
-  color: black;
-  margin-top: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
+ul#circuit-display-nodes {
+ /* font-family: Arial; */
+  font-size: 16px;
+  line-height: 26px;
+ /* color: black;*/
+  margin-top: 4px;
+  margin-bottom: 2px;
+  padding-inline-start: 4px;
 }
 
-/* Hide default bullets, and position pseudoelements (our new bullets) relative
-   to the list items. */
-ul#circuit-nodes li {
+/* Hide default bullets, and draw our own bullets */
+ul#circuit-display-nodes li {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2715%27%20height%3D%2740%27%3E%3Cg%20style%3D%27stroke%3A%234a4a4a%3Bstroke-width%3A3px%3Bfill%3Awhite%3B%27%3E%3Cline%20x1%3D%2750%25%27%20y1%3D%270%25%27%20x2%3D%2750%25%27%20y2%3D%27100%25%27%2F%3E%3Ccircle%20cx%3D%2750%25%27%20cy%3D%2750%25%27%20r%3D%274.5%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
+  background-position: left center;
+  background-repeat: no-repeat;
   list-style: none;
-  position:relative;
+  padding-inline-start: 1.5em;
 }
 
-/* Pad the list item text at left or right to be tastefully
-   separated from bullets. */
-ul#circuit-nodes li:-moz-dir(ltr) {
-  padding-left: 18px;
-}
-ul#circuit-nodes li:-moz-dir(rtl) {
-  padding-right: 18px;
+ul#circuit-display-nodes li:-moz-locale-dir(rtl) {
+  background-position: right center;
 }
 
-/* Drawn bullets, centered vertically for each list item. */
-ul#circuit-nodes li:after {
-  /* bullets */
-  content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2711%27%20height%3D%2711%27%3E%3Ccircle%20cx%3D%275.5%27%20cy%3D%275.5%27%20r%3D%274%27%20style%3D%27stroke%3A%20%23195021%3B%20stroke-width%3A%202px%3B%20fill%3A%20white%3B%27%2F%3E%3C%2Fsvg%3E");
-  position: absolute;
-  top: 1px;
+ul#circuit-display-nodes li:first-child {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2715%27%20height%3D%2740%27%3E%3Cg%20style%3D%27stroke%3A%234a4a4a%3Bstroke-width%3A3px%3Bfill%3Awhite%3B%27%3E%3Cline%20x1%3D%2750%25%27%20y1%3D%2750%25%27%20x2%3D%2750%25%27%20y2%3D%27100%25%27%2F%3E%3Ccircle%20cx%3D%2750%25%27%20cy%3D%2750%25%27%20r%3D%274.5%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
 }
 
-/* Move the bullets to the far left or right,
-   depending on text directionality. */
-ul#circuit-nodes li:-moz-dir(ltr):after {
-  left: 0px;
-}
-ul#circuit-nodes li:-moz-dir(rtl):after {
-  right: 0px;
+ul#circuit-display-nodes li:last-child {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2715%27%20height%3D%2740%27%3E%3Cg%20style%3D%27stroke%3A%234a4a4a%3Bstroke-width%3A3px%3Bfill%3Awhite%3B%27%3E%3Cline%20x1%3D%2750%25%27%20y1%3D%270%25%27%20x2%3D%2750%25%27%20y2%3D%2750%25%27%2F%3E%3Ccircle%20cx%3D%2750%25%27%20cy%3D%2750%25%27%20r%3D%274.5%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
 }
 
-/* Draw a connecting vertical line through the bullets. */
-ul#circuit-nodes li:before {
-  content: "";
-  position: absolute;
-  border-left: 3px solid #4d363a;
-  height: 100%;
-  width: 0px;
+.circuit-guard-help {
+  -moz-context-properties: fill, stroke;
+  fill: #6200a4;
+  stroke: #6200a4;
 }
 
-/* Position lines through the middle of the bullet. */
-ul#circuit-nodes li:-moz-dir(ltr):before {
-  left: 4px;
-}
-ul#circuit-nodes li:-moz-dir(rtl):before {
-  right: 4px;
+.circuit-ip-address {
+  font-size: 80%;
+  opacity: 0.4;
+  padding-inline-start: 3px;
 }
 
-/* Shorten the first list item's line so that it starts under the bullet. */
-ul#circuit-nodes li:first-child:before {
-  top: 50%;
+.circuit-guard-info {
+  font-size: 80%;
+  font-weight: bold;
+  color: #6200a4;
+  padding-inline-start: 3px;
 }
 
-/* Shorten the last list item's line so that it ends under the bullet. */
-ul#circuit-nodes li:last-child:before {
-  height: 50%;
+#circuit-reload-button {
+  background-color: #0060df;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
 }
 
-/* Onion site relay node text should be gray. */
-ul#circuit-nodes li.relay {
-  color: gray;
+#circuit-reload-button:hover {
+  background-color: #0058cf;
+}
+
+#circuit-reload-button:active {
+  background-color: #0050bf;
+}
+
+#circuit-guard-note-container {
+  margin-top: 10px;
+}
+
+#circuit-guard-note-container div {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.circuit-guard-name {
+  font-weight: bold;
+  color: #6200a4;
+}
+
+.circuit-link {
+  cursor: pointer;
+  color: #0000ee;
+}
+
+.circuit-link:hover {
+  text-decoration: underline;
 }

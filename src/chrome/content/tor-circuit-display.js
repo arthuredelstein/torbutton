@@ -215,7 +215,7 @@ let regionBundle = Services.strings.createBundle(
 // Convert a country code to a localized country name.
 // Example: `'de'` -> `'Deutschland'` in German locale.
 let localizedCountryNameFromCode = function (countryCode) {
-  if (typeof(countryCode) === "undefined") return undefined;
+  if (!countryCode) return uiString("unknown_country");
   try {
     return regionBundle.GetStringFromName(countryCode.toLowerCase());
   } catch (e) {
@@ -249,7 +249,7 @@ let nodeLines = function (nodeData) {
                  (country ? " (" + country + ")" : ""))
              :
                // For each non-bridge relay, show its host country and IP.
-               (country || uiString("unknown_country")) +
+               country +
                // As we don't have a bridge, show the IP address
                // of the node. Use unicode escapes to ensure that
                // parentheses behave properly in both left-to-right
@@ -260,46 +260,86 @@ let nodeLines = function (nodeData) {
   return result;
 };
 
-// __onionSiteRelayLine__.
-// When we have an onion site, we simply show the word '(relay)'.
-let onionSiteRelayLine = "<li class='relay'>(" + uiString("relay") + ")</li>";
+// __xmlTree(ns, data)__.
+// Takes an xml namespace, ns, and a
+// data structure representing xml elements like
+// [tag, { attr-key: attr-value }, ...xml-children]
+// and returns nested xml element objects.
+let xmlTree = function xmlTree (ns, data) {
+  let [type, attrs, ...children] = data;
+  let element = document.createElementNS(ns, type);
+  for (let [key, val] of Object.entries(attrs)) {
+    element.setAttribute(key, val);
+  }
+  for (let child of children) {
+    if (child !== null && child !== undefined) {
+      element.append(typeof child === "string" ? child : xmlTree(ns, child));
+    }
+  }
+  return element;
+};
+
+// __htmlTree(data)__.
+// Takes a data structure representing html elements like
+// [tag, { attr-key: attr-value }, ...html-children]
+// and return nested html element objects.
+let htmlTree = data => xmlTree("http://www.w3.org/1999/xhtml", data);
+
+// __appendHtml(parent, data)__.
+// Takes a data structure representing html elements like
+// [tag, { attr-key: attr-value }, ...html-children]
+// and append nested html element objects to the parent element.
+let appendHtml = (parent, data) => parent.appendChild(htmlTree(data));
+
+// __circuitCircuitData()__.
+// Obtains the circuit used by the given browser.
+let currentCircuitData = function (browser) {
+  if (browser) {
+    let credentials = browserToCredentialsMap.get(browser);
+    if (credentials) {
+      let [SOCKS_username, SOCKS_password] = credentials;
+      let nodeData = credentialsToNodeDataMap[`${SOCKS_username}|${SOCKS_password}`];
+      let domain = SOCKS_username;
+      return { domain, nodeData };
+    }
+  }
+  return { domain: null, nodeData: null };
+};
 
 // __updateCircuitDisplay()__.
 // Updates the Tor circuit display, showing the current domain
 // and the relay nodes for that domain.
 let updateCircuitDisplay = function () {
-  let selectedBrowser = gBrowser.selectedBrowser;
-  if (selectedBrowser) {
-    let credentials = browserToCredentialsMap.get(selectedBrowser),
-        nodeData = null;
-    if (credentials) {
-      let [SOCKS_username, SOCKS_password] = credentials;
-      // Check if we have anything to show for these credentials.
-      nodeData = credentialsToNodeDataMap[SOCKS_username + "|" + SOCKS_password];
-      if (nodeData) {
-	// Update the displayed domain.
-        let domain = SOCKS_username;
-	document.getElementById("domain").innerHTML = "(" + domain + "):";
-	// Update the displayed information for the relay nodes.
-        let lines = nodeLines(nodeData),
-            nodeInnerHTML = "<li>" + uiString("this_browser") + "</li>";
-	for (let line of lines) {
-          nodeInnerHTML += "<li>" + line + "</li>";
-	}
-        nodeInnerHTML += domain.endsWith(".onion") ?
-                           (onionSiteRelayLine +
-                            onionSiteRelayLine +
-                            onionSiteRelayLine +
-                            "<li>" + uiString("onion_site") + "</li>") :
-                           "<li>" + uiString("internet") + "</li>";
-        document.getElementById("circuit-nodes").innerHTML = nodeInnerHTML;
+  let { domain, nodeData } = currentCircuitData(gBrowser.selectedBrowser);
+  if (domain && nodeData) {
+    // Update the displayed information for the relay nodes.
+    let nodeHtmlList = document.getElementById("circuit-display-nodes");
+    let li = (...data) => appendHtml(nodeHtmlList, ["li", {}, ...data]);
+    nodeHtmlList.innerHTML = "";
+    li(uiString("this_browser"));
+    for (let i = 0; i < nodeData.length; ++i) {
+      let relayText;
+      if (nodeData[i].type === "bridge") {
+        relayText = uiString("tor_bridge") +
+          ((nodeData[i].bridgeType !== "vanilla") ? `: ${nodeData[i].bridgeType}` : "");
+      } else {
+        relayText = localizedCountryNameFromCode(nodeData[i].countryCode);
       }
-    } else {
-      logger.eclog(5, "no SOCKS credentials found for current document.");
+      li(relayText, " ",
+         ["span", { class: "circuit-ip-address" }, nodeData[i].ip], " ",
+         i === 0 ? ["span", { class: "circuit-guard-info" }, uiString("guard")] : null);
     }
+    if (domain.endsWith(".onion")) {
+      for (let i = 0; i < 3; ++i) {
+        li(uiString("relay"));
+      }
+    }
+    li(domain);
+  } else {
     // Only show the Tor circuit if we have credentials and node data.
-    showCircuitDisplay(credentials && nodeData);
+    logger.eclog(5, "no SOCKS credentials found for current document.");
   }
+  showCircuitDisplay(domain && nodeData);
 };
 
 // __syncDisplayWithSelectedTab(syncOn)__.
@@ -314,7 +354,7 @@ let syncDisplayWithSelectedTab = (function() {
                       }
                     } };
   return function (syncOn) {
-    let popupMenu = document.getElementById("torbutton-context-menu");
+    let popupMenu = document.getElementById("identity-popup");
     if (syncOn) {
       // Update the circuit display just before the popup menu is shown.
       popupMenu.addEventListener("popupshowing", updateCircuitDisplay);
@@ -331,6 +371,23 @@ let syncDisplayWithSelectedTab = (function() {
   };
 })();
 
+// __setupGuardNote()__.
+// Call once to show the Guard note as intended.
+let setupGuardNote = function () {
+  let guardNote = document.getElementById("circuit-guard-note-container");
+  let guardNoteString = uiString("guard_note");
+  let learnMoreString = uiString("learn_more");
+  let [noteBefore, name, noteAfter] = guardNoteString.split(/[\[\]]/);
+  let localeCode = torbutton_get_general_useragent_locale();
+  appendHtml(guardNote,
+             ["div", {},
+              noteBefore, ["span", {class: "circuit-guard-name"}, name],
+              noteAfter, " ",
+              ["span", {onclick: `gBrowser.selectedTab = gBrowser.addTab('https://tb-manual.torproject.org/${localeCode}');`,
+                        class: "circuit-link"},
+               learnMoreString]]);
+};
+
 // ## Main function
 
 // __setupDisplay(ipcFile, host, port, password, enablePrefName)__.
@@ -338,6 +395,7 @@ let syncDisplayWithSelectedTab = (function() {
 // the "enablePref" is set to true, and stopped when it is set to false.
 // A reference to this function (called createTorCircuitDisplay) is exported as a global.
 let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
+  setupGuardNote();
   let myController = null,
       stopCollectingIsolationData = null,
       stopCollectingBrowserCredentials = null,
