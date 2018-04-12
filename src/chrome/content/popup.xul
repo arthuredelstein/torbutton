@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://torbutton/skin/torbutton.css" type="text/css"?>
-<?xml-stylesheet href="chrome://torbutton/skin/tor-circuit-display.css" type="text/css"?>
 
 <!DOCTYPE overlay SYSTEM "chrome://torbutton/locale/torbutton.dtd">
 
@@ -50,17 +49,6 @@
                   accesskey="&torbutton.context_menu.downloadUpdate.key;"
                   insertafter="context-stop"
                   oncommand="torbutton_check_for_update()"/>
-      </vbox>
-      <vbox id="circuit-display-container">
-        <div id="circuit-display" xmlns="http://www.w3.org/1999/xhtml" dir="auto">
-          <p id="title">&torbutton.circuit_display.title;</p>
-          <p id="domain">(example.com):</p>
-          <ul id="circuit-nodes" dir="auto">
-            <li>example A</li>
-            <li>example B</li>
-            <li>example C</li>
-          </ul>
-        </div>
       </vbox>
     </hbox>
   </panel>
