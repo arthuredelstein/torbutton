@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://torbutton/skin/tor-circuit-display.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://torbutton/locale/torbutton.dtd">
+
+<overlay id="circuit-display-overlay"
+         xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         xmlns:html="http://www.w3.org/1999/xhtml">
+  <panelview id="identity-popup-mainView">
+    <!-- Circuit display section -->
+    <xul:hbox id="circuit-display-container"
+              class="identity-popup-section"
+              insertafter="identity-popup-security">
+      <xul:vbox id="circuit-display-content" flex="1">
+        <xul:label id="circuit-display-headline"
+                   class="identity-popup-headline"
+                   value="&torbutton.circuit_display.title;"/>
+        <html:ul id="circuit-display-nodes" dir="auto">
+          <li>example A</li>
+          <li>example B</li>
+          <li>example C</li>
+        </html:ul>
+      </xul:vbox>
+      <xul:vbox id="circuit-reload-content" flex="1">
+        <html:button id="circuit-reload-button"
+                     onclick="torbutton_new_circuit()">
+          &torbutton.circuit_display.new_circuit;
+        </html:button>
+        <xul:hbox id="circuit-guard-note-container">
+        </xul:hbox>
+      </xul:vbox>
+    </xul:hbox>
+  </panelview>
+</overlay>
