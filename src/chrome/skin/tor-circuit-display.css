@@ -43,7 +43,8 @@ CSS for line between bullets is derived in part from https://jsfiddle.net/5JP8Q/
 
 /* Format the circuit node list. */
 ul#circuit-display-nodes {
- /* font-family: Arial; */
+  /* font-family: Arial; */
+  cursor: default;
   font-size: 16px;
   line-height: 26px;
  /* color: black;*/
@@ -117,14 +118,14 @@ ul#circuit-display-nodes li.relay {
 .circuit-ip-address {
   font-size: 80%;
   opacity: 0.4;
-  padding-inline-start: 3px;
+  padding-inline-start: 1em;
 }
 
 .circuit-guard-info {
   font-size: 80%;
   font-weight: bold;
   color: #6200a4;
-  padding-inline-start: 3px;
+  padding-inline-start: 1em;
 }
 
 #circuit-reload-button {

@@ -12,8 +12,8 @@
 //
 // See https://trac.torproject.org/8641
 
-/* jshint esnext: true */
-/* global document, gBrowser, Components */
+/* jshint esversion: 6, moz: true */
+/* globals document, gBrowser, Components */
 
 // ### Main function
 // __createTorCircuitDisplay(ipcFile, host, port, password, enablePrefName)__.
@@ -110,7 +110,7 @@ let nodeDataForCircuit = function* (controller, circuitEvent) {
       // Remove the leading '$' if present.
       ids = rawIDs.map(id => id[0] === "$" ? id.substring(1) : id);
   // Get the node data for all IDs in circuit.
-  return [for (id of ids) yield nodeDataForID(controller, id)];
+  return [for (id of ids) (yield nodeDataForID(controller, id))];
 };
 
 // __getCircuitStatusByID(aController, circuitID)__
@@ -309,14 +309,14 @@ let currentCircuitData = function (browser) {
 // __updateCircuitDisplay()__.
 // Updates the Tor circuit display, showing the current domain
 // and the relay nodes for that domain.
-let updateCircuitDisplay = function () {
+let updateCircuitDisplay = async function () {
   let { domain, nodeData } = currentCircuitData(gBrowser.selectedBrowser);
   if (domain && nodeData) {
     // Update the displayed information for the relay nodes.
-    let nodeHtmlList = document.getElementById("circuit-display-nodes");
-    let li = (...data) => appendHtml(nodeHtmlList, ["li", {}, ...data]);
-    nodeHtmlList.innerHTML = "";
-    li(uiString("this_browser"));
+    let content = `<html>`;
+    content += `<head><link rel="stylesheet" href="chrome://torbutton/skin/tor-circuit-display.css"></head>`;
+    content += `<body><ul id="circuit-display-nodes">`;
+    content += `<li>${uiString("this_browser")}</li>`;
     for (let i = 0; i < nodeData.length; ++i) {
       let relayText;
       if (nodeData[i].type === "bridge") {
@@ -325,16 +325,31 @@ let updateCircuitDisplay = function () {
       } else {
         relayText = localizedCountryNameFromCode(nodeData[i].countryCode);
       }
-      li(relayText, " ",
-         ["span", { class: "circuit-ip-address" }, nodeData[i].ip], " ",
-         i === 0 ? ["span", { class: "circuit-guard-info" }, uiString("guard")] : null);
+      content += `<li>${relayText} <span class="circuit-ip-address">${nodeData[i].ip}</span>`;
+      if (i === 0) {
+        content += `<span class="circuit-guard-info">${uiString("guard")}</span>`;
+      }
     }
     if (domain.endsWith(".onion")) {
       for (let i = 0; i < 3; ++i) {
-        li(uiString("relay"));
+        content += `<li>${uiString("relay")}</li>`;
       }
     }
-    li(domain);
+    content += `<li>${domain}</li>`;
+    content += `</ul></body></html>`;
+//    console.log(content);
+    let iframe = document.getElementById("circuit-display-iframe");
+    iframe.addEventListener("load", function () {
+      //    await new Promise(r => iframe.contentDocument.onload = r);
+      let desiredHeight = iframe.contentDocument.body.children[0].clientHeight + 20;
+      console.log(`LOADED!!!!!!!!!!!! ${desiredHeight}`);
+      iframe.parentElement.height = desiredHeight;
+      iframe.parentElement.style.maxHeight = desiredHeight + "px";
+      iframe.style.height = desiredHeight + "px";
+      iframe.style.maxHeight = desiredHeight + "px"
+    }, true);
+    iframe.setAttribute("src", "data:text/html;charset=utf-8," + content);
+//    iframe.style.minWidth = iframe.contentDocument.body.scrollWidth + "px";
   } else {
     // Only show the Tor circuit if we have credentials and node data.
     logger.eclog(5, "no SOCKS credentials found for current document.");
@@ -357,13 +372,15 @@ let syncDisplayWithSelectedTab = (function() {
     let popupMenu = document.getElementById("identity-popup");
     if (syncOn) {
       // Update the circuit display just before the popup menu is shown.
-      popupMenu.addEventListener("popupshowing", updateCircuitDisplay);
+      gBrowser.tabContainer.addEventListener("TabSelect", updateCircuitDisplay);
+//      popupMenu.addEventListener("popupshowing", updateCircuitDisplay);
       // If the currently selected tab has been sent to a new location,
       // update the circuit to reflect that.
       gBrowser.addTabsProgressListener(listener);
     } else {
       // Stop syncing.
-      gBrowser.removeTabsProgressListener(listener);
+      gBrowser.tabContainer.addEventListener("TabSelect", updateCircuitDisplay);
+//      gBrowser.removeTabsProgressListener(listener);
       popupMenu.removeEventListener("popupshowing", updateCircuitDisplay);
       // Hide the display.
       showCircuitDisplay(false);
@@ -395,6 +412,7 @@ let setupGuardNote = function () {
 // the "enablePref" is set to true, and stopped when it is set to false.
 // A reference to this function (called createTorCircuitDisplay) is exported as a global.
 let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
+   // return;
   setupGuardNote();
   let myController = null,
       stopCollectingIsolationData = null,

@@ -15,11 +15,9 @@
         <xul:label id="circuit-display-headline"
                    class="identity-popup-headline"
                    value="&torbutton.circuit_display.title;"/>
-        <html:ul id="circuit-display-nodes" dir="auto">
-          <li>example A</li>
-          <li>example B</li>
-          <li>example C</li>
-        </html:ul>
+        <xul:iframe id="circuit-display-iframe"
+                    type="content"
+                    src=""/>
       </xul:vbox>
       <xul:vbox id="circuit-reload-content" flex="1">
         <html:button id="circuit-reload-button"
