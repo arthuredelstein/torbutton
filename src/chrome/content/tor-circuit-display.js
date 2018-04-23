@@ -215,7 +215,7 @@ let regionBundle = Services.strings.createBundle(
 // Convert a country code to a localized country name.
 // Example: `'de'` -> `'Deutschland'` in German locale.
 let localizedCountryNameFromCode = function (countryCode) {
-  if (typeof(countryCode) === "undefined") return uiString("unknown_country");
+  if (!countryCode) return uiString("unknown_country");
   try {
     return regionBundle.GetStringFromName(countryCode.toLowerCase());
   } catch (e) {
@@ -339,11 +339,15 @@ let updateCircuitDisplay = function () {
     let iframe = document.getElementById("circuit-display-iframe");
     iframe.contentDocument.head.innerHTML = `<link rel="stylesheet" href="chrome://torbutton/skin/tor-circuit-display.css">`;
     iframe.contentDocument.body.innerHTML = content;
-    let desiredHeight = iframe.contentDocument.body.children[0].clientHeight + 50;
+    let nodeList = iframe.contentDocument.body.children[0];
+    let numberOfNodes = nodeList.children.length;
+    console.log(`numberOfNodes: ${numberOfNodes}`);
+    let singleNodeLineHeight = parseInt(getComputedStyle(nodeList.children[0]).lineHeight);
+    let desiredHeight = numberOfNodes * singleNodeLineHeight + 70;
     iframe.parentElement.height = desiredHeight;
     iframe.parentElement.style.maxHeight = desiredHeight + "px";
     iframe.style.height = desiredHeight + "px";
-    iframe.style.maxHeight = desiredHeight + "px"
+    iframe.style.maxHeight = desiredHeight + "px";
   } else {
     // Only show the Tor circuit if we have credentials and node data.
     logger.eclog(5, "no SOCKS credentials found for current document.");
