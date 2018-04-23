@@ -309,13 +309,12 @@ let currentCircuitData = function (browser) {
 // __updateCircuitDisplay()__.
 // Updates the Tor circuit display, showing the current domain
 // and the relay nodes for that domain.
-let updateCircuitDisplay = async function () {
+let updateCircuitDisplay = function () {
+  console.log("updateCircuitDisplay");
   let { domain, nodeData } = currentCircuitData(gBrowser.selectedBrowser);
   if (domain && nodeData) {
     // Update the displayed information for the relay nodes.
-    let content = `<html>`;
-    content += `<head><link rel="stylesheet" href="chrome://torbutton/skin/tor-circuit-display.css"></head>`;
-    content += `<body><ul id="circuit-display-nodes">`;
+    let content = `<ul id="circuit-display-nodes">`;
     content += `<li>${uiString("this_browser")}</li>`;
     for (let i = 0; i < nodeData.length; ++i) {
       let relayText;
@@ -335,21 +334,16 @@ let updateCircuitDisplay = async function () {
         content += `<li>${uiString("relay")}</li>`;
       }
     }
-    content += `<li>${domain}</li>`;
-    content += `</ul></body></html>`;
-//    console.log(content);
+    content += `<li>${domain}</li></ul>`;
+    console.log(content);
     let iframe = document.getElementById("circuit-display-iframe");
-    iframe.addEventListener("load", function () {
-      //    await new Promise(r => iframe.contentDocument.onload = r);
-      let desiredHeight = iframe.contentDocument.body.children[0].clientHeight + 20;
-      console.log(`LOADED!!!!!!!!!!!! ${desiredHeight}`);
-      iframe.parentElement.height = desiredHeight;
-      iframe.parentElement.style.maxHeight = desiredHeight + "px";
-      iframe.style.height = desiredHeight + "px";
-      iframe.style.maxHeight = desiredHeight + "px"
-    }, true);
-    iframe.setAttribute("src", "data:text/html;charset=utf-8," + content);
-//    iframe.style.minWidth = iframe.contentDocument.body.scrollWidth + "px";
+    iframe.contentDocument.head.innerHTML = `<link rel="stylesheet" href="chrome://torbutton/skin/tor-circuit-display.css">`;
+    iframe.contentDocument.body.innerHTML = content;
+    let desiredHeight = iframe.contentDocument.body.children[0].clientHeight + 50;
+    iframe.parentElement.height = desiredHeight;
+    iframe.parentElement.style.maxHeight = desiredHeight + "px";
+    iframe.style.height = desiredHeight + "px";
+    iframe.style.maxHeight = desiredHeight + "px"
   } else {
     // Only show the Tor circuit if we have credentials and node data.
     logger.eclog(5, "no SOCKS credentials found for current document.");
@@ -388,9 +382,9 @@ let syncDisplayWithSelectedTab = (function() {
   };
 })();
 
-// __setupGuardNote()__.
+// __setupStaticUI()__.
 // Call once to show the Guard note as intended.
-let setupGuardNote = function () {
+let setupStaticUI = function () {
   let guardNote = document.getElementById("circuit-guard-note-container");
   let guardNoteString = uiString("guard_note");
   let learnMoreString = uiString("learn_more");
@@ -413,7 +407,7 @@ let setupGuardNote = function () {
 // A reference to this function (called createTorCircuitDisplay) is exported as a global.
 let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
    // return;
-  setupGuardNote();
+  setupStaticUI();
   let myController = null,
       stopCollectingIsolationData = null,
       stopCollectingBrowserCredentials = null,
