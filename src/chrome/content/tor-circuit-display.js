@@ -21,7 +21,7 @@
 // control port with the given ipcFile or host plus port, and password, and
 // binds to a named bool pref whose value determines whether the circuit display
 // is enabled or disabled.
-let createTorCircuitDisplay = (function () {
+const createTorCircuitDisplay = (function () {
 
 "use strict";
 
@@ -31,38 +31,38 @@ Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://gre/modules/Task.jsm");
 
 // Import the controller code.
-let { controller } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
+const { controller } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
 
 // Utility functions
-let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
+const { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 // Make the TorButton logger available.
-let logger = Cc["@torproject.org/torbutton-logger;1"]
+const logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Components.interfaces.nsISupports).wrappedJSObject;
 
 // ## Circuit/stream credentials and node monitoring
 
 // A mutable map that stores the current nodes for each
 // SOCKS username/password pair.
-let credentialsToNodeDataMap = {},
-    // A mutable map that reports `true` for IDs of "mature" circuits
-    // (those that have conveyed a stream).
-    knownCircuitIDs = {},
-    // A mutable map that records the SOCKS credentials for the
-    // latest channels for each browser.
-    browserToCredentialsMap = new Map();
+const credentialsToNodeDataMap = {},
+      // A mutable map that reports `true` for IDs of "mature" circuits
+      // (those that have conveyed a stream).
+      knownCircuitIDs = {},
+      // A mutable map that records the SOCKS credentials for the
+      // latest channels for each browser.
+      browserToCredentialsMap = new Map();
 
 // __trimQuotes(s)__.
 // Removes quotation marks around a quoted string.
-let trimQuotes = s => s ? s.match(/^"(.*)"$/)[1] : undefined;
+const trimQuotes = s => s ? s.match(/^"(.*)"$/)[1] : undefined;
 
 // __getBridge(id)__.
 // Gets the bridge parameters for a given node ID. If the node
 // is not currently used as a bridge, returns null.
-let getBridge = function* (controller, id) {
-  let bridges = yield controller.getConf("bridge");
+const getBridge = function* (controller, id) {
+  const bridges = yield controller.getConf("bridge");
   if (bridges) {
-    for (let bridge of bridges) {
+    for (const bridge of bridges) {
       if (bridge.ID && bridge.ID.toUpperCase() === id.toUpperCase()) {
         return bridge;
       }
@@ -75,8 +75,8 @@ let getBridge = function* (controller, id) {
 // Returns the type, IP and country code of a node with given ID.
 // Example: `nodeDataForID(controller, "20BC91DC525C3DC9974B29FBEAB51230DE024C44")`
 // => `{ type : "default", ip : "12.23.34.45", countryCode : "fr" }`
-let nodeDataForID = function* (controller, id) {
-  let result = {},
+const nodeDataForID = function* (controller, id) {
+  const result = {},
       bridge = yield getBridge(controller, id); // type, ip, countryCode;
   if (bridge) {
     result.type = "bridge";
@@ -89,14 +89,14 @@ let nodeDataForID = function* (controller, id) {
     result.type = "default";
     // Get the IP address for the given node ID.
      try {
-       let statusMap = yield controller.getInfo("ns/id/" + id);
+       const statusMap = yield controller.getInfo("ns/id/" + id);
        result.ip = statusMap.IP;
      } catch (e) { }
   }
   if (result.ip) {
     // Get the country code for the node's IP address.
     try {
-      let countryCode = yield controller.getInfo("ip-to-country/" + result.ip);
+      const countryCode = yield controller.getInfo("ip-to-country/" + result.ip);
       result.countryCode = countryCode === "??" ? null : countryCode;
     } catch (e) { }
   }
@@ -105,20 +105,20 @@ let nodeDataForID = function* (controller, id) {
 
 // __nodeDataForCircuit(controller, circuitEvent)__.
 // Gets the information for a circuit.
-let nodeDataForCircuit = function* (controller, circuitEvent) {
-  let rawIDs = circuitEvent.circuit.map(circ => circ[0]),
-      // Remove the leading '$' if present.
-      ids = rawIDs.map(id => id[0] === "$" ? id.substring(1) : id);
+const nodeDataForCircuit = function* (controller, circuitEvent) {
+  const rawIDs = circuitEvent.circuit.map(circ => circ[0]),
+        // Remove the leading '$' if present.
+        ids = rawIDs.map(id => id[0] === "$" ? id.substring(1) : id);
   // Get the node data for all IDs in circuit.
   return [for (id of ids) yield nodeDataForID(controller, id)];
 };
 
 // __getCircuitStatusByID(aController, circuitID)__
 // Returns the circuit status for the circuit with the given ID.
-let getCircuitStatusByID = function* (aController, circuitID) {
-  let circuitStatuses = yield aController.getInfo("circuit-status");
+const getCircuitStatusByID = function* (aController, circuitID) {
+  const circuitStatuses = yield aController.getInfo("circuit-status");
   if (circuitStatuses) {
-    for (let circuitStatus of circuitStatuses) {
+    for (const circuitStatus of circuitStatuses) {
       if (circuitStatus.id === circuitID) {
         return circuitStatus;
       }
@@ -135,7 +135,7 @@ let getCircuitStatusByID = function* (aController, circuitID) {
 // We need to update the circuit display immediately after any new node data
 // is received. So the `updateUI` callback will be called at that point.
 // See https://trac.torproject.org/projects/tor/ticket/15493
-let collectIsolationData = function (aController, updateUI) {
+const collectIsolationData = function (aController, updateUI) {
   return aController.watchEvent(
     "STREAM",
     streamEvent => streamEvent.StreamStatus === "SENTCONNECT",
@@ -143,13 +143,13 @@ let collectIsolationData = function (aController, updateUI) {
       if (!knownCircuitIDs[streamEvent.CircuitID]) {
         logger.eclog(3, "streamEvent.CircuitID: " + streamEvent.CircuitID);
         knownCircuitIDs[streamEvent.CircuitID] = true;
-        let circuitStatus = yield getCircuitStatusByID(aController, streamEvent.CircuitID),
-            credentials = circuitStatus ?
-                            (trimQuotes(circuitStatus.SOCKS_USERNAME) + "|" +
-                             trimQuotes(circuitStatus.SOCKS_PASSWORD)) :
-                            null;
+        const circuitStatus = yield getCircuitStatusByID(aController, streamEvent.CircuitID),
+              credentials = circuitStatus ?
+                              (trimQuotes(circuitStatus.SOCKS_USERNAME) + "|" +
+                               trimQuotes(circuitStatus.SOCKS_PASSWORD)) :
+                              null;
         if (credentials) {
-          let nodeData = yield nodeDataForCircuit(aController, circuitStatus);
+          const nodeData = yield nodeDataForCircuit(aController, circuitStatus);
           credentialsToNodeDataMap[credentials] = nodeData;
           updateUI();
         }
@@ -159,10 +159,10 @@ let collectIsolationData = function (aController, updateUI) {
 
 // __browserForChannel(channel)__.
 // Returns the browser that loaded a given channel.
-let browserForChannel = function (channel) {
+const browserForChannel = function (channel) {
   if (!channel) return null;
-  let chan = channel.QueryInterface(Ci.nsIChannel);
-  let callbacks = chan.notificationCallbacks;
+  const chan = channel.QueryInterface(Ci.nsIChannel),
+        callbacks = chan.notificationCallbacks;
   if (!callbacks) return null;
   let loadContext;
   try {
@@ -178,11 +178,11 @@ let browserForChannel = function (channel) {
 // __collectBrowserCredentials()__.
 // Starts observing http channels. Each channel's proxyInfo
 // username and password is recorded for the channel's browser.
-let collectBrowserCredentials = function () {
+const collectBrowserCredentials = function () {
   return observe("http-on-modify-request", chan => {
     try {
-      let proxyInfo = chan.QueryInterface(Ci.nsIProxiedChannel).proxyInfo;
-      let browser = browserForChannel(chan);
+      const proxyInfo = chan.QueryInterface(Ci.nsIProxiedChannel).proxyInfo,
+            browser = browserForChannel(chan);
       if (browser && proxyInfo) {
           browserToCredentialsMap.set(browser, [proxyInfo.username,
                                                 proxyInfo.password]);
@@ -197,24 +197,24 @@ let collectBrowserCredentials = function () {
 
 // __torbuttonBundle__.
 // Bundle of localized strings for torbutton UI.
-let torbuttonBundle = Services.strings.createBundle(
+const torbuttonBundle = Services.strings.createBundle(
                         "chrome://torbutton/locale/torbutton.properties");
 
 // __uiString__.
 // Read the localized strings for this UI.
-let uiString = function (shortName) {
+const uiString = function (shortName) {
   return torbuttonBundle.GetStringFromName("torbutton.circuit_display." + shortName);
 };
 
 // __regionBundle__.
 // A list of localized region (country) names.
-let regionBundle = Services.strings.createBundle(
+const regionBundle = Services.strings.createBundle(
                      "chrome://global/locale/regionNames.properties");
 
 // __localizedCountryNameFromCode(countryCode)__.
 // Convert a country code to a localized country name.
 // Example: `'de'` -> `'Deutschland'` in German locale.
-let localizedCountryNameFromCode = function (countryCode) {
+const localizedCountryNameFromCode = function (countryCode) {
   if (typeof(countryCode) === "undefined") return uiString("unknown_country");
   try {
     return regionBundle.GetStringFromName(countryCode.toLowerCase());
@@ -225,7 +225,7 @@ let localizedCountryNameFromCode = function (countryCode) {
 
 // __showCircuitDisplay(show)__.
 // If show === true, makes the circuit display visible.
-let showCircuitDisplay = function (show) {
+const showCircuitDisplay = function (show) {
   document.getElementById("circuit-display-container").style.display = show ?
 							    'block' : 'none';
 };
@@ -235,11 +235,11 @@ let showCircuitDisplay = function (show) {
 // `{ ip : "12.34.56.78", country : "fr" }`
 // and converts each node data to text, as
 // `"France (12.34.56.78)"`.
-let nodeLines = function (nodeData) {
-  let result = [];
-  for (let {ip, countryCode, type, bridgeType} of nodeData) {
-    let bridge = type === "bridge",
-        country = countryCode ? localizedCountryNameFromCode(countryCode) : null;
+const nodeLines = function (nodeData) {
+  const result = [];
+  for (const {ip, countryCode, type, bridgeType} of nodeData) {
+    const bridge = type === "bridge",
+          country = countryCode ? localizedCountryNameFromCode(countryCode) : null;
     result.push(
       bridge ?
                // As we have a bridge, don't show the IP address
@@ -265,13 +265,13 @@ let nodeLines = function (nodeData) {
 // data structure representing xml elements like
 // [tag, { attr-key: attr-value }, ...xml-children]
 // and returns nested xml element objects.
-let xmlTree = function xmlTree (ns, data) {
-  let [type, attrs, ...children] = data;
-  let element = document.createElementNS(ns, type);
-  for (let [key, val] of Object.entries(attrs)) {
+const xmlTree = function xmlTree (ns, data) {
+  const [type, attrs, ...children] = data,
+        element = document.createElementNS(ns, type);
+  for (const [key, val] of Object.entries(attrs)) {
     element.setAttribute(key, val);
   }
-  for (let child of children) {
+  for (const child of children) {
     if (child !== null && child !== undefined) {
       element.append(typeof child === "string" ? child : xmlTree(ns, child));
     }
@@ -283,23 +283,23 @@ let xmlTree = function xmlTree (ns, data) {
 // Takes a data structure representing html elements like
 // [tag, { attr-key: attr-value }, ...html-children]
 // and return nested html element objects.
-let htmlTree = data => xmlTree("http://www.w3.org/1999/xhtml", data);
+const htmlTree = data => xmlTree("http://www.w3.org/1999/xhtml", data);
 
 // __appendHtml(parent, data)__.
 // Takes a data structure representing html elements like
 // [tag, { attr-key: attr-value }, ...html-children]
 // and append nested html element objects to the parent element.
-let appendHtml = (parent, data) => parent.appendChild(htmlTree(data));
+const appendHtml = (parent, data) => parent.appendChild(htmlTree(data));
 
 // __circuitCircuitData()__.
 // Obtains the circuit used by the given browser.
-let currentCircuitData = function (browser) {
+const currentCircuitData = function (browser) {
   if (browser) {
-    let credentials = browserToCredentialsMap.get(browser);
+    const credentials = browserToCredentialsMap.get(browser);
     if (credentials) {
-      let [SOCKS_username, SOCKS_password] = credentials;
-      let nodeData = credentialsToNodeDataMap[`${SOCKS_username}|${SOCKS_password}`];
-      let domain = SOCKS_username;
+      const [SOCKS_username, SOCKS_password] = credentials,
+            nodeData = credentialsToNodeDataMap[`${SOCKS_username}|${SOCKS_password}`],
+            domain = SOCKS_username;
       return { domain, nodeData };
     }
   }
@@ -309,12 +309,12 @@ let currentCircuitData = function (browser) {
 // __updateCircuitDisplay()__.
 // Updates the Tor circuit display, showing the current domain
 // and the relay nodes for that domain.
-let updateCircuitDisplay = function () {
-  let { domain, nodeData } = currentCircuitData(gBrowser.selectedBrowser);
+const updateCircuitDisplay = function () {
+  const { domain, nodeData } = currentCircuitData(gBrowser.selectedBrowser);
   if (domain && nodeData) {
     // Update the displayed information for the relay nodes.
-    let nodeHtmlList = document.getElementById("circuit-display-nodes");
-    let li = (...data) => appendHtml(nodeHtmlList, ["li", {}, ...data]);
+    const nodeHtmlList = document.getElementById("circuit-display-nodes"),
+          li = (...data) => appendHtml(nodeHtmlList, ["li", {}, ...data]);
     nodeHtmlList.innerHTML = "";
     li(uiString("this_browser"));
     for (let i = 0; i < nodeData.length; ++i) {
@@ -347,14 +347,14 @@ let updateCircuitDisplay = function () {
 // is the correct one for this tab. It's also possible that a new site
 // can be loaded while the popup menu is open.
 // Update the display if this happens.
-let syncDisplayWithSelectedTab = (function() {
-  let listener = { onLocationChange : function (aBrowser) {
+const syncDisplayWithSelectedTab = (function() {
+  const listener = { onLocationChange : function (aBrowser) {
                       if (aBrowser === gBrowser.selectedBrowser) {
                         updateCircuitDisplay();
                       }
                     } };
   return function (syncOn) {
-    let popupMenu = document.getElementById("identity-popup");
+    const popupMenu = document.getElementById("identity-popup");
     if (syncOn) {
       // Update the circuit display just before the popup menu is shown.
       popupMenu.addEventListener("popupshowing", updateCircuitDisplay);
@@ -373,12 +373,12 @@ let syncDisplayWithSelectedTab = (function() {
 
 // __setupGuardNote()__.
 // Call once to show the Guard note as intended.
-let setupGuardNote = function () {
-  let guardNote = document.getElementById("circuit-guard-note-container");
-  let guardNoteString = uiString("guard_note");
-  let learnMoreString = uiString("learn_more");
-  let [noteBefore, name, noteAfter] = guardNoteString.split(/[\[\]]/);
-  let localeCode = torbutton_get_general_useragent_locale();
+const setupGuardNote = function () {
+  const guardNote = document.getElementById("circuit-guard-note-container"),
+        guardNoteString = uiString("guard_note"),
+        learnMoreString = uiString("learn_more"),
+        [noteBefore, name, noteAfter] = guardNoteString.split(/[\[\]]/),
+        localeCode = torbutton_get_general_useragent_locale();
   appendHtml(guardNote,
              ["div", {},
               noteBefore, ["span", {class: "circuit-guard-name"}, name],
@@ -394,12 +394,12 @@ let setupGuardNote = function () {
 // Once called, the Tor circuit display will be started whenever
 // the "enablePref" is set to true, and stopped when it is set to false.
 // A reference to this function (called createTorCircuitDisplay) is exported as a global.
-let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
+const setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
   setupGuardNote();
-  let myController = null,
-      stopCollectingIsolationData = null,
+  let stopCollectingIsolationData = null,
       stopCollectingBrowserCredentials = null,
-      stop = function() {
+      myController = null;
+  const stop = function() {
         syncDisplayWithSelectedTab(false);
         if (myController) {
           if (stopCollectingIsolationData) {
@@ -427,7 +427,7 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
        }
      };
   try {
-    let unbindPref = bindPrefAndInit(enablePrefName, on => { if (on) start(); else stop(); });
+    const unbindPref = bindPrefAndInit(enablePrefName, on => { if (on) start(); else stop(); });
     // When this chrome window is unloaded, we need to unbind the pref.
     window.addEventListener("unload", function () {
       unbindPref();
