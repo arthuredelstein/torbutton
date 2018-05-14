@@ -28,7 +28,6 @@ let createTorCircuitDisplay = (function () {
 // Mozilla utilities
 const { Cu : utils , Ci : interfaces } = Components.utils;
 Cu.import("resource://gre/modules/Services.jsm");
-Cu.import("resource://gre/modules/Task.jsm");
 
 // Import the controller code.
 let { controller } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
@@ -59,8 +58,8 @@ let trimQuotes = s => s ? s.match(/^"(.*)"$/)[1] : undefined;
 // __getBridge(id)__.
 // Gets the bridge parameters for a given node ID. If the node
 // is not currently used as a bridge, returns null.
-let getBridge = function* (controller, id) {
-  let bridges = yield controller.getConf("bridge");
+let getBridge = async function (controller, id) {
+  let bridges = await controller.getConf("bridge");
   if (bridges) {
     for (let bridge of bridges) {
       if (bridge.ID && bridge.ID.toUpperCase() === id.toUpperCase()) {
@@ -75,9 +74,9 @@ let getBridge = function* (controller, id) {
 // Returns the type, IP and country code of a node with given ID.
 // Example: `nodeDataForID(controller, "20BC91DC525C3DC9974B29FBEAB51230DE024C44")`
 // => `{ type : "default", ip : "12.23.34.45", countryCode : "fr" }`
-let nodeDataForID = function* (controller, id) {
+let nodeDataForID = async function (controller, id) {
   let result = {},
-      bridge = yield getBridge(controller, id); // type, ip, countryCode;
+      bridge = await getBridge(controller, id); // type, ip, countryCode;
   if (bridge) {
     result.type = "bridge";
     result.bridgeType = bridge.type;
@@ -89,14 +88,14 @@ let nodeDataForID = function* (controller, id) {
     result.type = "default";
     // Get the IP address for the given node ID.
      try {
-       let statusMap = yield controller.getInfo("ns/id/" + id);
+       let statusMap = await controller.getInfo("ns/id/" + id);
        result.ip = statusMap.IP;
      } catch (e) { }
   }
   if (result.ip) {
     // Get the country code for the node's IP address.
     try {
-      let countryCode = yield controller.getInfo("ip-to-country/" + result.ip);
+      let countryCode = await controller.getInfo("ip-to-country/" + result.ip);
       result.countryCode = countryCode === "??" ? null : countryCode;
     } catch (e) { }
   }
@@ -105,18 +104,18 @@ let nodeDataForID = function* (controller, id) {
 
 // __nodeDataForCircuit(controller, circuitEvent)__.
 // Gets the information for a circuit.
-let nodeDataForCircuit = function* (controller, circuitEvent) {
+let nodeDataForCircuit = async function (controller, circuitEvent) {
   let rawIDs = circuitEvent.circuit.map(circ => circ[0]),
       // Remove the leading '$' if present.
       ids = rawIDs.map(id => id[0] === "$" ? id.substring(1) : id);
   // Get the node data for all IDs in circuit.
-  return [for (id of ids) yield nodeDataForID(controller, id)];
+  return Promise.all(ids.map(id => nodeDataForID(controller, id)));
 };
 
 // __getCircuitStatusByID(aController, circuitID)__
 // Returns the circuit status for the circuit with the given ID.
-let getCircuitStatusByID = function* (aController, circuitID) {
-  let circuitStatuses = yield aController.getInfo("circuit-status");
+let getCircuitStatusByID = async function (aController, circuitID) {
+  let circuitStatuses = await aController.getInfo("circuit-status");
   if (circuitStatuses) {
     for (let circuitStatus of circuitStatuses) {
       if (circuitStatus.id === circuitID) {
@@ -139,22 +138,22 @@ let collectIsolationData = function (aController, updateUI) {
   return aController.watchEvent(
     "STREAM",
     streamEvent => streamEvent.StreamStatus === "SENTCONNECT",
-    streamEvent => Task.spawn(function* () {
+    async (streamEvent) => {
       if (!knownCircuitIDs[streamEvent.CircuitID]) {
         logger.eclog(3, "streamEvent.CircuitID: " + streamEvent.CircuitID);
         knownCircuitIDs[streamEvent.CircuitID] = true;
-        let circuitStatus = yield getCircuitStatusByID(aController, streamEvent.CircuitID),
+        let circuitStatus = await getCircuitStatusByID(aController, streamEvent.CircuitID),
             credentials = circuitStatus ?
                             (trimQuotes(circuitStatus.SOCKS_USERNAME) + "|" +
                              trimQuotes(circuitStatus.SOCKS_PASSWORD)) :
                             null;
         if (credentials) {
-          let nodeData = yield nodeDataForCircuit(aController, circuitStatus);
+          let nodeData = await nodeDataForCircuit(aController, circuitStatus);
           credentialsToNodeDataMap[credentials] = nodeData;
           updateUI();
         }
       }
-    }).then(null, Cu.reportError));
+    });
 };
 
 // __browserForChannel(channel)__.
