@@ -16,6 +16,9 @@ const Cc = Components.classes, Ci = Components.interfaces, Cu = Components.utils
 let logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Components.interfaces.nsISupports).wrappedJSObject;
 
+const { getPrefValue } =
+    Cu.import("resource://torbutton/modules/utils.js", {});
+
 // Import crypto object (FF 37+).
 Cu.importGlobalProperties(["crypto"]);
 
@@ -165,6 +168,7 @@ Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 function DomainIsolator() {
     this.wrappedJSObject = this;
 }
+
 // Firefox component requirements
 DomainIsolator.prototype = {
   QueryInterface: XPCOMUtils.generateQI([Ci.nsISupports, Ci.nsIObserver]),
@@ -175,9 +179,7 @@ DomainIsolator.prototype = {
     if (topic === "profile-after-change") {
       logger.eclog(3, "domain isolator: set up isolating circuits by domain");
 
-      let prefs =  Cc["@mozilla.org/preferences-service;1"]
-          .getService(Ci.nsIPrefBranch);
-      if (prefs.getBoolPref("extensions.torbutton.use_nontor_proxy")) {
+      if (getPrefValue("extensions.torbutton.use_nontor_proxy")) {
         tor.isolationEnabled = false;
       }
       tor.isolateCircuitsByDomain();

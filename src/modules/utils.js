@@ -10,7 +10,7 @@ Cu.import("resource://gre/modules/Services.jsm");
 // ## Pref utils
 
 // __prefs__. A shortcut to Mozilla Services.prefs.
-let prefs = Services.prefs;
+let prefs = Services.prefs.getDefaultBranch(null);
 
 // __getPrefValue(prefName)__
 // Returns the current value of a preference, regardless of its type.

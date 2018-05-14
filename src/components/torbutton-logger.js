@@ -16,17 +16,26 @@ const kMODULE_CID = Components.ID("f36d72c9-9718-4134-b550-e109638331d7");
 const Cr = Components.results;
 const Cc = Components.classes;
 const Ci = Components.interfaces;
+const Cu = Components.utils;
+
+Cu.import("resource://gre/modules/Services.jsm");
+
+const { getPrefValue } =
+    Cu.import("resource://torbutton/modules/utils.js", {});
+
+const kDefaultPreferences = "resource://torbutton/defaults/preferences/preferences.js";
 
 function TorbuttonLogger() {
-    this.prefs = Components.classes["@mozilla.org/preferences-service;1"]
-        .getService(Components.interfaces.nsIPrefBranch);
+    const loader = Cc["@mozilla.org/moz/jssubscript-loader;1"]
+                   .getService(Ci.mozIJSSubScriptLoader);
+    loader.loadSubScript(kDefaultPreferences, this);
 
     // Register observer
-    this._branch = this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch);
+    this._branch = Services.prefs.getDefaultBranch(null);
     this._branch.addObserver("extensions.torbutton", this, false);
 
-    this.loglevel = this.prefs.getIntPref("extensions.torbutton.loglevel");
-    this.logmethod = this.prefs.getIntPref("extensions.torbutton.logmethod");
+    this.loglevel = getPrefValue("extensions.torbutton.loglevel");
+    this.logmethod = getPrefValue("extensions.torbutton.logmethod");
 
     try {
         var logMngr = Components.classes["@mozmonkey.com/debuglogger/manager;1"]
@@ -122,6 +131,7 @@ TorbuttonLogger.prototype =
   },
 
   log: function(level, str) {
+	  this.logmethod = 2;
       switch(this.logmethod) {
           case 2: // debuglogger
               if(this._debuglog) {
@@ -152,12 +162,29 @@ TorbuttonLogger.prototype =
       if (topic != "nsPref:changed") return;
       switch (data) {
           case "extensions.torbutton.logmethod":
-              this.logmethod = this.prefs.getIntPref("extensions.torbutton.logmethod");
+              this.logmethod = getPrefValue("extensions.torbutton.logmethod");
               break;
           case "extensions.torbutton.loglevel":
-              this.loglevel = this.prefs.getIntPref("extensions.torbutton.loglevel");
+              this.loglevel = getPrefValue("extensions.torbutton.loglevel");
               break;
       }
+  },
+
+  pref: function (aPrefName, aValue) {
+
+    const prefs = Services.prefs.getDefaultBranch(null);
+    const typeToHandler = {
+      boolean: prefs.setBoolPref,
+      number: prefs.setIntPref,
+      string: prefs.setCharPref,
+    };
+
+    const aValueType = typeof aValue;
+    if (typeToHandler.hasOwnProperty(aValueType)) {
+      typeToHandler[aValueType](aPrefName, aValue);
+    } else {
+      dump("Preference ${aPrefName} with value ${aValue} has an invalid value type");
+    }
   }
 }
 
