@@ -109,7 +109,7 @@ let nodeDataForCircuit = async function (controller, circuitEvent) {
       // Remove the leading '$' if present.
       ids = rawIDs.map(id => id[0] === "$" ? id.substring(1) : id);
   // Get the node data for all IDs in circuit.
-  for await (id of ids) nodeDataForID(controller, id);
+  return Promise.all(ids.map(id => nodeDataForID(controller, id)));
 };
 
 // __getCircuitStatusByID(aController, circuitID)__
