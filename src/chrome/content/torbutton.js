@@ -1217,7 +1217,7 @@ function torbutton_do_new_identity() {
   torbutton_log(3, "New Identity: Syncing prefs");
 
   // Force prefs to be synced to disk
-  m_tb_prefs.savePrefFile(null);
+  Services.prefs.savePrefFile(null);
 
   torbutton_log(3, "New Identity: Clearing permissions");
 
@@ -1634,7 +1634,7 @@ function torbutton_update_disk_prefs() {
     } catch (e) {}
 
     // Force prefs to be synced to disk
-    m_tb_prefs.savePrefFile(null);
+    Services.prefs.savePrefFile(null);
 }
 
 function torbutton_update_fingerprinting_prefs() {
@@ -1667,7 +1667,7 @@ function torbutton_update_fingerprinting_prefs() {
     m_tb_prefs.setBoolPref("extensions.torbutton.resize_new_windows", mode);
 
     // Force prefs to be synced to disk
-    m_tb_prefs.savePrefFile(null);
+    Services.prefs.savePrefFile(null);
 }
 
 function torbutton_update_isolation_prefs() {
@@ -1682,7 +1682,7 @@ function torbutton_update_isolation_prefs() {
     m_tb_prefs.setBoolPref("security.enable_tls_session_tickets", !isolate);
 
     // Force prefs to be synced to disk
-    m_tb_prefs.savePrefFile(null);
+    Services.prefs.savePrefFile(null);
 }
 
 // This function closes all XUL browser windows except this one. For this

@@ -22,11 +22,13 @@ Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 XPCOMUtils.defineLazyModuleGetter(this, "FileUtils",
                                   "resource://gre/modules/FileUtils.jsm");
 
+Cu.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
 
 // Module specific constants
 const kMODULE_NAME = "Startup";
 const kMODULE_CONTRACTID = "@torproject.org/startup-observer;1";
 const kMODULE_CID = Components.ID("06322def-6fde-4c06-aef6-47ae8e799629");
+
 
 function StartupObserver() {
     this.logger = Cc["@torproject.org/torbutton-logger;1"]
@@ -96,7 +98,9 @@ StartupObserver.prototype = {
           let tlps = Cc["@torproject.org/torlauncher-protocol-service;1"]
                      .getService(Ci.nsISupports).wrappedJSObject;
           socksPortInfo = tlps.TorGetSOCKSPortInfo();
-        } catch(e) {}
+        } catch(e) {
+          this.logger.log(3, "tor launcher failed " + e);
+        }
 
         // If Tor Launcher is not available, check environment variables.
         if (!socksPortInfo) {
@@ -137,13 +141,14 @@ StartupObserver.prototype = {
         }
 
         if (socksPortInfo.ipcFile || socksPortInfo.host || socksPortInfo.port) {
+
           this._prefs.setBoolPref("network.proxy.socks_remote_dns", true);
           this._prefs.setIntPref("network.proxy.type", 1);
         }
       }
 
       // Force prefs to be synced to disk
-      this._prefs.savePrefFile(null);
+      Services.prefs.savePrefFile(null);
 
       this.logger.log(3, "Synced network settings to environment.");
     },
@@ -158,7 +163,7 @@ StartupObserver.prototype = {
       }
 
       // In all cases, force prefs to be synced to disk
-      this._prefs.savePrefFile(null);
+      Services.prefs.savePrefFile(null);
     },
 
   QueryInterface: function(iid) {
