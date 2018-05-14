@@ -9,6 +9,8 @@ const Cc = Components.classes;
 const Ci = Components.interfaces;
 const Cu = Components.utils;
 
+Cu.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
+
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 
 // Module specific constants
