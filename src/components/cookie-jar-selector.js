@@ -19,6 +19,10 @@ const kMODULE_CONTRACTID = "@torproject.org/cookie-jar-selector;1";
 const kMODULE_CID = Components.ID("e6204253-b690-4159-bfe8-d4eedab6b3be");
 
 const Cr = Components.results;
+const Cu = Components.utils;
+
+Cu.import("resource://torbutton/modules/default-prefs.js", {})
+  .ensureDefaultPrefs();
 
 // XXX: Must match the definition in torcookie.js :/
 function Cookie(number,name,value,isDomain,host,rawHost,HttpOnly,path,isSecure,isSession,

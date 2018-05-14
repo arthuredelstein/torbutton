@@ -22,6 +22,7 @@ Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 XPCOMUtils.defineLazyModuleGetter(this, "FileUtils",
                                   "resource://gre/modules/FileUtils.jsm");
 
+Cu.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
 
 // Module specific constants
 const kMODULE_NAME = "Startup";
@@ -96,7 +97,9 @@ StartupObserver.prototype = {
           let tlps = Cc["@torproject.org/torlauncher-protocol-service;1"]
                      .getService(Ci.nsISupports).wrappedJSObject;
           socksPortInfo = tlps.TorGetSOCKSPortInfo();
-        } catch(e) {}
+        } catch(e) {
+          this.logger.log(3, "tor launcher failed " + e);
+        }
 
         // If Tor Launcher is not available, check environment variables.
         if (!socksPortInfo) {
@@ -143,7 +146,7 @@ StartupObserver.prototype = {
       }
 
       // Force prefs to be synced to disk
-      this._prefs.savePrefFile(null);
+      Services.prefs.savePrefFile(null);
 
       this.logger.log(3, "Synced network settings to environment.");
     },
@@ -158,7 +161,7 @@ StartupObserver.prototype = {
       }
 
       // In all cases, force prefs to be synced to disk
-      this._prefs.savePrefFile(null);
+      Services.prefs.savePrefFile(null);
     },
 
   QueryInterface: function(iid) {
