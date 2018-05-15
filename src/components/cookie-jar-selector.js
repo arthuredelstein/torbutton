@@ -20,6 +20,9 @@ const kMODULE_CID = Components.ID("e6204253-b690-4159-bfe8-d4eedab6b3be");
 
 const Cr = Components.results;
 
+let { ensureDefaultPrefs } = Components.utils.import("resource://torbutton/modules/default-prefs.js", {});
+ensureDefaultPrefs();
+
 // XXX: Must match the definition in torcookie.js :/
 function Cookie(number,name,value,isDomain,host,rawHost,HttpOnly,path,isSecure,isSession,
                 expires,isProtected) {

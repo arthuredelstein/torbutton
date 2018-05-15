@@ -10,11 +10,12 @@ Cu.import("resource://gre/modules/Services.jsm");
 // ## Pref utils
 
 // __prefs__. A shortcut to Mozilla Services.prefs.
-let prefs = Services.prefs.getDefaultBranch(null);
+let prefs = Services.prefs;
 
 // __getPrefValue(prefName)__
 // Returns the current value of a preference, regardless of its type.
 var getPrefValue = function (prefName) {
+  Services.console.logStringMessage(`getPrefValue(${prefName})`);
   switch(prefs.getPrefType(prefName)) {
     case prefs.PREF_BOOL: return prefs.getBoolPref(prefName);
     case prefs.PREF_INT: return prefs.getIntPref(prefName);
