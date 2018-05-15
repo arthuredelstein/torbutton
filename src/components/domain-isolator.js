@@ -16,8 +16,11 @@ const Cc = Components.classes, Ci = Components.interfaces, Cu = Components.utils
 let logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Components.interfaces.nsISupports).wrappedJSObject;
 
-const { getPrefValue } =
-    Cu.import("resource://torbutton/modules/utils.js", {});
+let { ensureDefaultPrefs } = Cu.import("resource://torbutton/modules/default-prefs.js", {});
+ensureDefaultPrefs();
+
+// Import Services object
+Cu.import("resource://gre/modules/Services.jsm");
 
 // Import crypto object (FF 37+).
 Cu.importGlobalProperties(["crypto"]);
@@ -179,7 +182,7 @@ DomainIsolator.prototype = {
     if (topic === "profile-after-change") {
       logger.eclog(3, "domain isolator: set up isolating circuits by domain");
 
-      if (getPrefValue("extensions.torbutton.use_nontor_proxy")) {
+      if (Services.prefs.getBoolPref("extensions.torbutton.use_nontor_proxy")) {
         tor.isolationEnabled = false;
       }
       tor.isolateCircuitsByDomain();

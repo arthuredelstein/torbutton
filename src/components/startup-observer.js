@@ -22,6 +22,9 @@ Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 XPCOMUtils.defineLazyModuleGetter(this, "FileUtils",
                                   "resource://gre/modules/FileUtils.jsm");
 
+let { ensureDefaultPrefs } = Cu.import("resource://torbutton/modules/default-prefs.js", {});
+ensureDefaultPrefs();
+
 // Module specific constants
 const kMODULE_NAME = "Startup";
 const kMODULE_CONTRACTID = "@torproject.org/startup-observer;1";
@@ -31,7 +34,7 @@ const kMODULE_CID = Components.ID("06322def-6fde-4c06-aef6-47ae8e799629");
 function StartupObserver() {
     this.logger = Cc["@torproject.org/torbutton-logger;1"]
                     .getService(Ci.nsISupports).wrappedJSObject;
-    this._prefs = Services.prefs.getDefaultBranch(null);
+    this._prefs = Services.prefs;
     this.logger.log(3, "Startup Observer created");
 
     var env = Cc["@mozilla.org/process/environment;1"]

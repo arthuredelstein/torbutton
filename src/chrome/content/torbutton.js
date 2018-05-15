@@ -20,7 +20,7 @@ const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
 const k_tb_last_update_check_pref = "extensions.torbutton.lastUpdateCheck";
 const k_tb_tor_check_failed_topic = "Torbutton:TorCheckFailed";
 
-var m_tb_prefs = Services.prefs.getDefaultBranch(null);
+var m_tb_prefs = Services.prefs;
 
 // status
 var m_tb_wasinited = false;

@@ -18,24 +18,17 @@ const Cc = Components.classes;
 const Ci = Components.interfaces;
 const Cu = Components.utils;
 
+let { ensureDefaultPrefs } = Cu.import("resource://torbutton/modules/default-prefs.js", {});
+ensureDefaultPrefs();
+
 Cu.import("resource://gre/modules/Services.jsm");
 
-const { getPrefValue } =
-    Cu.import("resource://torbutton/modules/utils.js", {});
-
-const kDefaultPreferences = "resource://torbutton/defaults/preferences/preferences.js";
-
 function TorbuttonLogger() {
-    const loader = Cc["@mozilla.org/moz/jssubscript-loader;1"]
-                   .getService(Ci.mozIJSSubScriptLoader);
-    loader.loadSubScript(kDefaultPreferences, this);
-
     // Register observer
-    this._branch = Services.prefs.getDefaultBranch(null);
-    this._branch.addObserver("extensions.torbutton", this, false);
+    Services.prefs.addObserver("extensions.torbutton", this, false);
 
-    this.loglevel = getPrefValue("extensions.torbutton.loglevel");
-    this.logmethod = getPrefValue("extensions.torbutton.logmethod");
+    this.loglevel = Services.prefs.getIntPref("extensions.torbutton.loglevel");
+    this.logmethod = Services.prefs.getIntPref("extensions.torbutton.logmethod");
 
     try {
         var logMngr = Components.classes["@mozmonkey.com/debuglogger/manager;1"]
@@ -162,29 +155,12 @@ TorbuttonLogger.prototype =
       if (topic != "nsPref:changed") return;
       switch (data) {
           case "extensions.torbutton.logmethod":
-              this.logmethod = getPrefValue("extensions.torbutton.logmethod");
+              this.logmethod = Services.prefs.getIntPref("extensions.torbutton.logmethod");
               break;
           case "extensions.torbutton.loglevel":
-              this.loglevel = getPrefValue("extensions.torbutton.loglevel");
+              this.loglevel = Services.prefs.getIntPref("extensions.torbutton.loglevel");
               break;
       }
-  },
-
-  pref: function (aPrefName, aValue) {
-
-    const prefs = Services.prefs.getDefaultBranch(null);
-    const typeToHandler = {
-      boolean: prefs.setBoolPref,
-      number: prefs.setIntPref,
-      string: prefs.setCharPref,
-    };
-
-    const aValueType = typeof aValue;
-    if (typeToHandler.hasOwnProperty(aValueType)) {
-      typeToHandler[aValueType](aPrefName, aValue);
-    } else {
-      dump("Preference ${aPrefName} with value ${aValue} has an invalid value type");
-    }
   }
 }
 
