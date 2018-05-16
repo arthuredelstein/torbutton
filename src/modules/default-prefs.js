@@ -9,7 +9,9 @@ function ensureDefaultPrefs () {
 
   let context = {
     pref: function (aPrefName, aValue) {
-      //Services.console.logStringMessage(`${aPrefName} : ${aValue}`);
+      if (Services.prefs.prefHasUserValue(aPrefName)) {
+        return;
+      }
       const aValueType = typeof aValue;
       if (aValueType === "boolean") {
         Services.prefs.setBoolPref(aPrefName, aValue);
