@@ -43,8 +43,8 @@ mozilla.protocolProxyService = Cc["@mozilla.org/network/protocol-proxy-service;1
 // for the given channel, and should return a new Proxy or list of Proxies.
 mozilla.registerProxyChannelFilter = function (filterFunction, positionIndex) {
   let proxyFilter = {
-    applyFilter : function (aProxyService, aChannel, aProxy) {
-      return filterFunction(aChannel, aProxy);
+    applyFilter : function (aProxyService, aChannel, aProxy, aCallback) {
+      aCallback.onProxyFilterResult(filterFunction(aChannel, aProxy));
     }
   };
   mozilla.protocolProxyService.registerChannelFilter(proxyFilter, positionIndex);
