@@ -664,7 +664,7 @@ function torbutton_get_toolbarbutton_xpos() {
     let tbItem = torbutton_get_toolbutton();
     if (tbItem) {
       let tbItemRect = tbItem.getBoundingClientRect();
-      let contentElem = document.getElementById("content");
+      let contentElem = document.getElementById("tabbrowser-initialBrowser");
       let contentRect = contentElem.getBoundingClientRect();
       if (tbItemRect.top < contentRect.top) {
         tbXpos = tbItemRect.left + (tbItemRect.width / 2.0) - contentRect.left;

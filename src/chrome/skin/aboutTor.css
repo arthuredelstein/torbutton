@@ -59,7 +59,7 @@ body:not([initialized]) {
 }
 
 body[toron] #torstatus-image {
-  background-image: url('chrome://torbutton/content/aboutTor/tor-on.png');
+  background-image: url('chrome://torbutton/skin/tor-on.png');
 }
 
 #torstatus-image {
@@ -68,7 +68,7 @@ body[toron] #torstatus-image {
   left: 85px;
   height: 128px;
   width: 128px;
-  background-image: url('chrome://torbutton/content/aboutTor/tor-off.png');
+  background-image: url('chrome://torbutton/skin/tor-off.png');
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
@@ -84,23 +84,23 @@ body[toron] #torstatus-image {
   top: 4px;
   width: 30px;
   height: 36px;
-  background-image: url('chrome://torbutton/content/aboutTor/onionArrow-short.png');
+  background-image: url('chrome://torbutton/skin/onionArrow-short.png');
 }
 
 #toolbarIconArrowVertExtension, #toolbarIconArrowHorzExtension {
   width: 11px;
   height: 11px;
-  background-image: url('chrome://torbutton/content/aboutTor/onionArrow-extension.png');
+  background-image: url('chrome://torbutton/skin/onionArrow-extension.png');
 }
 
 #toolbarIconArrowBend {
   width: 22px;
   height: 22px;
-  background-image: url('chrome://torbutton/content/aboutTor/onionArrow-leftBend.png');
+  background-image: url('chrome://torbutton/skin/onionArrow-leftBend.png');
 }
 
 #toolbarIconArrowBend[pos="right"] {
-  background-image: url('chrome://torbutton/content/aboutTor/onionArrow-rightBend.png');
+  background-image: url('chrome://torbutton/skin/onionArrow-rightBend.png');
 }
 
 a {
@@ -288,7 +288,7 @@ body .top div.hideIfTorIsUpToDate h1 {
   height: 34px;
   width: 33px;
   border: 0;
-  background: url('chrome://torbutton/content/aboutTor/search.png') no-repeat top left;
+  background: url('chrome://torbutton/skin/search.png') no-repeat top left;
   cursor: pointer;
 }
 

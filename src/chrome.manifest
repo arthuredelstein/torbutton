@@ -6,6 +6,7 @@ overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome:
 overlay about:addons chrome://torbutton/content/torbutton-extensions.xul
 overlay chrome://mozapps/content/extensions/extensions.xul chrome://torbutton/content/torbutton-extensions.xul
 resource torbutton ./
+resource torbutton-assets resource://torbutton/chrome/skin/ contentaccessible=yes
 
 # browser branding
 override chrome://branding/locale/brand.dtd chrome://torbutton/locale/brand.dtd
