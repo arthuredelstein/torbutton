@@ -26,14 +26,9 @@ Cu.import("resource://gre/modules/Services.jsm");
 
 // __log__.
 // Logging function
-let log;
-if ((typeof console) !== "undefined") {
-  log = x => console.log(typeof(x) === "string" ? x.trimRight().replace(/\r\n/g, "\n") : JSON.stringify(x));
-} else {
-  let logger = Cc["@torproject.org/torbutton-logger;1"]
-                 .getService(Components.interfaces.nsISupports).wrappedJSObject;
-  log = x => logger.eclog(3, x.trimRight().replace(/\r\n/g, "\n"));
-}
+let logger = Cc["@torproject.org/torbutton-logger;1"]
+               .getService(Components.interfaces.nsISupports).wrappedJSObject;
+let log = x => logger.eclog(3, x.trimRight().replace(/\r\n/g, "\n"));
 
 // ### announce this file
 log("Loading tor-control-port.js\n");
