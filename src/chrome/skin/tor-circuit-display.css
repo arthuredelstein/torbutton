@@ -56,10 +56,10 @@ ul#circuit-nodes li {
 
 /* Pad the list item text at left or right to be tastefully
    separated from bullets. */
-ul#circuit-nodes li:-moz-dir(ltr) {
+ul#circuit-nodes li:dir(ltr) {
   padding-left: 18px;
 }
-ul#circuit-nodes li:-moz-dir(rtl) {
+ul#circuit-nodes li:dir(rtl) {
   padding-right: 18px;
 }
 
@@ -73,10 +73,10 @@ ul#circuit-nodes li:after {
 
 /* Move the bullets to the far left or right,
    depending on text directionality. */
-ul#circuit-nodes li:-moz-dir(ltr):after {
+ul#circuit-nodes li:dir(ltr):after {
   left: 0px;
 }
-ul#circuit-nodes li:-moz-dir(rtl):after {
+ul#circuit-nodes li:dir(rtl):after {
   right: 0px;
 }
 
@@ -90,10 +90,10 @@ ul#circuit-nodes li:before {
 }
 
 /* Position lines through the middle of the bullet. */
-ul#circuit-nodes li:-moz-dir(ltr):before {
+ul#circuit-nodes li:dir(ltr):before {
   left: 4px;
 }
-ul#circuit-nodes li:-moz-dir(rtl):before {
+ul#circuit-nodes li:dir(rtl):before {
   right: 4px;
 }
 
