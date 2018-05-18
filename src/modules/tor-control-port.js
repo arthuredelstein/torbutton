@@ -68,35 +68,26 @@ io.asyncSocketStreams = function (ipcFile, host, port) {
 };
 
 // __io.pumpInputStream(scriptableInputStream, onInputData, onError)__.
-// Run an "input stream pump" that takes an input stream and
-// asynchronously pumps incoming data to the onInputData callback.
+// Take an input stream and asynchronously pass data to the onInputData callback.
 io.pumpInputStream = function (inputStream, onInputData, onError) {
   // Wrap raw inputStream with a "ScriptableInputStream" so we can read incoming data.
   let ScriptableInputStream = Components.Constructor(
     "@mozilla.org/scriptableinputstream;1", "nsIScriptableInputStream", "init"),
       scriptableInputStream = new ScriptableInputStream(inputStream),
-      // A private method to read all data available on the input stream.
-      readAll = function() {
-        return scriptableInputStream.read(scriptableInputStream.available());
-      },
-      pump = Cc["@mozilla.org/network/input-stream-pump;1"]
-               .createInstance(Components.interfaces.nsIInputStreamPump);
-  // Start the pump.
-  pump.init(inputStream, 0, 0, true);
-  // Tell the pump to read all data whenever it is available, and pass the data
-  // to the onInputData callback. The first argument to asyncRead implements
-  // nsIStreamListener.
-  pump.asyncRead({ onStartRequest: function (request, context) { },
-                   onStopRequest: function (request, context, code) { },
-                   onDataAvailable : function (request, context, stream, offset, count) {
-                     try {
-                       onInputData(readAll());
-                     } catch (error) {
-                       // readAll() or onInputData(...) has thrown an error.
-                       // Notify calling code through onError.
-                       onError(error);
-                     }
-                   } }, null);
+      awaitNextChunk = function () {
+        inputStream.asyncWait({
+          onInputStreamReady: (stream) => {
+            try {
+              let chunk = scriptableInputStream.read(scriptableInputStream.available());
+              onInputData(chunk);
+              awaitNextChunk();
+            } catch (err) {
+              onError(err);
+            }
+          }
+        }, 0, 0, Services.tm.currentThread);
+      };
+  awaitNextChunk();
 };
 
 // __io.asyncSocket(ipcFile, host, port, onInputData, onError)__.
