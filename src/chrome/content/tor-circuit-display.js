@@ -138,7 +138,7 @@ let collectIsolationData = function (aController, updateUI) {
   return aController.watchEvent(
     "STREAM",
     streamEvent => streamEvent.StreamStatus === "SENTCONNECT",
-    async () => {
+    async (streamEvent) => {
       if (!knownCircuitIDs[streamEvent.CircuitID]) {
         logger.eclog(3, "streamEvent.CircuitID: " + streamEvent.CircuitID);
         knownCircuitIDs[streamEvent.CircuitID] = true;
