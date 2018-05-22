@@ -62,6 +62,7 @@ ul#circuit-display-nodes li {
   background-repeat: no-repeat;
   list-style: none;
   padding-inline-start: 1.5em;
+  white-space: nowrap;
 }
 
 ul#circuit-display-nodes li:-moz-locale-dir(rtl) {
