@@ -282,13 +282,13 @@ let xmlTree = function xmlTree (ns, data) {
 // __htmlTree(data)__.
 // Takes a data structure representing html elements like
 // [tag, { attr-key: attr-value }, ...html-children]
-// and return nested html element objects.
+// and returns nested html element objects.
 let htmlTree = data => xmlTree("http://www.w3.org/1999/xhtml", data);
 
 // __appendHtml(parent, data)__.
 // Takes a data structure representing html elements like
 // [tag, { attr-key: attr-value }, ...html-children]
-// and append nested html element objects to the parent element.
+// and appends nested html element objects to the parent element.
 let appendHtml = (parent, data) => parent.appendChild(htmlTree(data));
 
 // __circuitCircuitData()__.
