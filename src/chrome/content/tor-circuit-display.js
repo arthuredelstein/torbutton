@@ -391,6 +391,27 @@ let setupGuardNote = function () {
                learnMoreString]]);
 };
 
+// __ensureCorrectPopupHeight()__.
+// Make sure the identity popup always displays with the correct height.
+let ensureCorrectPopupHeight = function () {
+  let setHeight = () => {
+    let view = document.querySelector("#identity-popup-multiView .panel-viewcontainer");
+    let stack = document.querySelector("#identity-popup-multiView .panel-viewstack");
+    view.setAttribute("height", stack.clientHeight);
+  };
+  let removeHeight = () => {
+    let view = document.querySelector("#identity-popup-multiView .panel-viewcontainer");
+    view.removeAttribute("height");
+  };
+  let popupMenu = document.getElementById("identity-popup");
+  popupMenu.addEventListener("popupshowing", setHeight);
+  popupMenu.addEventListener("popuphiding", removeHeight);
+  return () => {
+    popupMenu.removeEventListener("popupshowing", setHeight);
+    popupMenu.removeEventListener("popuphiding", removeHeight);
+  };
+};
+
 // ## Main function
 
 // __setupDisplay(ipcFile, host, port, password, enablePrefName)__.
@@ -402,6 +423,7 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
   let myController = null,
       stopCollectingIsolationData = null,
       stopCollectingBrowserCredentials = null,
+      stopEnsuringCorrectPopupHeight = null,
       stop = function() {
         syncDisplayWithSelectedTab(false);
         if (myController) {
@@ -410,6 +432,9 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
           }
           if (stopCollectingBrowserCredentials) {
             stopCollectingBrowserCredentials();
+          }
+          if (stopEnsuringCorrectPopupHeight) {
+            stopEnsuringCorrectPopupHeight();
           }
           myController = null;
         }
@@ -427,6 +452,7 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
           syncDisplayWithSelectedTab(true);
           stopCollectingIsolationData = collectIsolationData(myController, updateCircuitDisplay);
           stopCollectingBrowserCredentials = collectBrowserCredentials();
+          stopEnsuringCorrectPopupHeight = ensureCorrectPopupHeight();
        }
      };
   try {
