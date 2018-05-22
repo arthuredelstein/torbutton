@@ -392,6 +392,44 @@ let setupGuardNote = function () {
                learnMoreString]]);
 };
 
+// __ensureCorrectPopupDimensions()__.
+// Make sure the identity popup always displays with the correct height.
+let ensureCorrectPopupDimensions = function () {
+  let setDimensions = () => {
+    setTimeout(() => {
+      let view = document.querySelector("#identity-popup-multiView .panel-viewcontainer");
+      let stack = document.querySelector("#identity-popup-multiView .panel-viewstack");
+      let view2 = document.getElementById("identity-popup-mainView");
+      if (view && stack && view2) {
+        let newWidth = Math.max(...[...view2.children].map(el => el.clientWidth)) + 10;
+        let newHeight = stack.clientHeight;
+        stack.setAttribute("width", newWidth);
+        view2.style.minWidth = view2.style.maxWidth = newWidth + "px";
+        view.setAttribute("width", newWidth);
+        view.setAttribute("height", newHeight);
+      }
+    }, 0);
+  };
+  let removeDimensions = () => {
+    let view = document.querySelector("#identity-popup-multiView .panel-viewcontainer");
+    let stack = document.querySelector("#identity-popup-multiView .panel-viewstack");
+    let view2 = document.getElementById("identity-popup-mainView");
+    if (view && stack && view2) {
+      view.removeAttribute("width");
+      view.removeAttribute("height");
+      stack.removeAttribute("width");
+      view2.style.minWidth = view2.style.maxWidth = "";
+    }
+  };
+  let popupMenu = document.getElementById("identity-popup");
+  popupMenu.addEventListener("popupshowing", setDimensions);
+  popupMenu.addEventListener("popuphiding", removeDimensions);
+  return () => {
+    popupMenu.removeEventListener("popupshowing", setDimensions);
+    popupMenu.removeEventListener("popuphiding", removeDimensions);
+  };
+};
+
 // ## Main function
 
 // __setupDisplay(ipcFile, host, port, password, enablePrefName)__.
@@ -403,6 +441,7 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
   let myController = null,
       stopCollectingIsolationData = null,
       stopCollectingBrowserCredentials = null,
+      stopEnsuringCorrectPopupDimensions = null,
       stop = function() {
         syncDisplayWithSelectedTab(false);
         if (myController) {
@@ -411,6 +450,9 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
           }
           if (stopCollectingBrowserCredentials) {
             stopCollectingBrowserCredentials();
+          }
+          if (stopEnsuringCorrectPopupDimensions) {
+            stopEnsuringCorrectPopupDimensions();
           }
           myController = null;
         }
@@ -428,6 +470,7 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
           syncDisplayWithSelectedTab(true);
           stopCollectingIsolationData = collectIsolationData(myController, updateCircuitDisplay);
           stopCollectingBrowserCredentials = collectBrowserCredentials();
+          stopEnsuringCorrectPopupDimensions = ensureCorrectPopupDimensions();
        }
      };
   try {
