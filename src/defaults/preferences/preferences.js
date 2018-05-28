@@ -53,7 +53,7 @@ pref("extensions.torbutton.confirm_plugins", true);
 pref("extensions.torbutton.confirm_newnym", true);
 
 // Browser home page:
-pref("browser.startup.homepage", "about:tor");
+pref("browser.startup.homepage", "chrome://torbutton/content/locale/non-localized.properties");
 
 // This pref specifies an ad-hoc "version" for various pref update hacks we need to do
 pref("extensions.torbutton.pref_fixup_version", 0);
