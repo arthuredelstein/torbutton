@@ -14,6 +14,8 @@
     <menuitem id="menu_HelpPopup_reportPhishingtoolmenu" removeelement="true"/>
     <menuitem id="menu_HelpPopup_reportPhishingErrortoolmenu" removeelement="true"/>
     <!-- dummy elements to avoid 'getElementById' errors -->
+    <box id="feedbackPage"/>
+    <box id="helpSafeMode"/>
     <box id="menu_HelpPopup_reportPhishingtoolmenu"/>
     <box id="menu_HelpPopup_reportPhishingErrortoolmenu"/>
     <!-- Add Tor Browser manual link -->
