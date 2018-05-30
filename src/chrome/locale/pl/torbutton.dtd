@@ -47,4 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Niektóre fonty i symbole są wyłączone.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Niektóre fonty, ikony, symbole i obrazki są wyłączone.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
-<!ENTITY torbutton.circuit_display.title "Obwód Tor dla tej strony">
+<!ENTITY torbutton.circuit_display.title "Tor Circuit">
+<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">

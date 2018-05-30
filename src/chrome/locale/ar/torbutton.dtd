@@ -2,7 +2,7 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "دائرة تور جديدة لهذا الموقع">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "الإعدادات الأمنية ...">
+<!ENTITY torbutton.context_menu.preferences "إعدادات الأمان...">
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "إعدادات شبكة تور...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
@@ -11,9 +11,9 @@
 <!ENTITY torbutton.context_menu.cookieProtections "إعدادات أمان ملفات تعريف الارتباط...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "انقر لبدء زر تور">
-<!ENTITY torbutton.prefs.security_settings "إعدادات الأمان لمتصفح طور">
-<!ENTITY torbutton.prefs.restore_defaults "إعادة التعيين">
-<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.prefs.security_settings "إعدادات أمان متصفح طور">
+<!ENTITY torbutton.prefs.restore_defaults "استعد الإعادات المبدئية">
+<!ENTITY torbutton.prefs.custom_warning "تفضيلاتك الخاصة للمتصفح تسببت في إعدادات أمان غير معتادة. لأمان وخصوصية أفضل ننصح باستخدام أحد مستويات الأمان المبدئية.">
 <!ENTITY torbutton.cookiedialog.title "إدارة إعدادت الحماية لملفات تعريف الارتباط">
 <!ENTITY torbutton.cookiedialog.lockCol "محمية">
 <!ENTITY torbutton.cookiedialog.domainCol "استضافة">
@@ -22,29 +22,30 @@
 <!ENTITY torbutton.cookiedialog.protectCookie "احم ملف تعريف الارتباط (كوكي)">
 <!ENTITY torbutton.cookiedialog.removeCookie "إزالة ملف تعريف الارتباط (كوكي)">
 <!ENTITY torbutton.cookiedialog.unprotectCookie "إلغاء حماية ملف تعريف الارتباط (كوكي)">
-<!ENTITY torbutton.cookiedialog.removeAllBut "إزالة الكل لكن استمر في الحماية">
+<!ENTITY torbutton.cookiedialog.removeAllBut "أزِل الكل لكن استمر في الحماية">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "احم ملفات تعريف الارتباط الجديدة">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "لا تحم ملفات تعريف الارتباط الجديدة">
 <!ENTITY torbutton.prefs.restrict_thirdparty "تقييد الـCookies الخاصة بالطرف الثالث و بيانات التتبع الأخري.">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Keep this box checked to prevent various browser features from being abused to track you as you browse the web. Modified features include blob URLs, broadcast channels, the browser cache, cookies, favicons, HTTP Auth headers, link preconnects, localStorage, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "تغيير التفاصيل التي تميزك عن المستخدمين الآخرين لمتصفح تور">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "ق">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "اترك هذا المربع مؤشرا لمنع إساءة استخدام العديد من خصائص المتصفح في تعقبك أثناء تصفحك للوب. الخصائص المعدّلة تشمل مسارات الكائنات، وقنوات البث، وخبيئة المتصفح، والكعكات، وأيقونات المواقع، وترويسات استيثاق HTTP، والاتصال المسبق بالروابط، التخزين المحلي، ومسارات الوسائط، وطلبات OCSP، وSharedWorkers، وبطاقات جلسات TLS.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "غيّر التفاصيل التي تميزك عن مستخدمي متصفح تور الآخرين">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "غ">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "اترك هذا المربع مؤشرا لتخفي عن مواقع الوب الأشياء التي تميزك عن غيرك، مثل أداء حاسوبك، وتخطيط لوحة المفاتيح، واللغة، ومكان تنصيب الملحقات، وقائمة الملحقات المنصبة، وحالة الشبكة، واتجاه الشاشة وحجمها، ومستويات التقريب لكل موقع، وأنواع الملفات المدعومة، وألوان النظام، وإمكانات WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "مستوى الأمان">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "يتيح لك شريط تمرير مستوى الأمان تعطيل بعض من مميزات متصفحك تجعلك أكثر عرضة للاختراق.">
 <!ENTITY torbutton.prefs.sec_standard_label "عادي">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
-<!ENTITY torbutton.prefs.sec_safer_label "آمِن جدا">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
-<!ENTITY torbutton.prefs.sec_safest_label "جِدّ آمِن">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
+<!ENTITY torbutton.prefs.sec_standard_description "كل خصائص متصفح تور ومواقع الوب مفعلة">
+<!ENTITY torbutton.prefs.sec_safer_label "آمِن">
+<!ENTITY torbutton.prefs.sec_safer_description "يعطل مميزات مواقع الوب التي عادة ما تكون خطيرة. يتسبب في تعطل خصائص بعض المواقع.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "في الإعداد الآمن:">
+<!ENTITY torbutton.prefs.sec_safest_label "الأكثر أمنا">
+<!ENTITY torbutton.prefs.sec_safest_description "اسمح فقط بالخصائص المطلوبة للمواقع غير الديناميكية والخدمات الأساسية. تؤثر هذه التغييرات على الصور والوسائط والنصوص البرمجية.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "في الإعداد الأكثر أمنا:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "تعرّف على المزيد">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "جافا سكريبت معطل بشكل افتراضي على جميع المواقع.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
-<!ENTITY torbutton.circuit_display.title "دائرة تور لهذا الموقع">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "تعطل جافا سكربت  على المواقع التي لا تستخدم HTTPS">
+<!ENTITY torbutton.prefs.sec_js_disabled "تعطل جافا سكربت مبدئيا على جميع المواقع.">
+<!ENTITY torbutton.prefs.sec_limit_typography "تعطّل بعض الخطوط والرموز الرياضية.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "تعطّل بعض الخطوط والأيقونات والرموز الرياضية والصور.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "الصوت والفيديو يحتاج للنقر لتشغيله.">
+<!ENTITY torbutton.circuit_display.title "دائرة تور">
+<!ENTITY torbutton.circuit_display.new_circuit "دائرة تور جديدة لهذا الموقع">

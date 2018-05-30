@@ -47,4 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Nogle skrifttyper og matematiksymboler er deaktiverede.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Nogle skrifttyper, ikoner, matematiksymboler og billeder er deaktiveret.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Lyd og video (HTML5-medier) er klik-for-at-afspille.">
-<!ENTITY torbutton.circuit_display.title "Tor-kredsløb for dette websted">
+<!ENTITY torbutton.circuit_display.title "Tor-kredsløb">
+<!ENTITY torbutton.circuit_display.new_circuit "Nyt kredsløb til dette sted">

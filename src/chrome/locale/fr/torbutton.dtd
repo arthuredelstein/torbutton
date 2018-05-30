@@ -47,4 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Certaines polices et certains symboles mathématiques sont désactivés.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Certaines polices, icônes, images et certains symboles mathématiques sont désactivés.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Le son et la vidéo (médias HTML5) sont « cliquer pour lire ».">
-<!ENTITY torbutton.circuit_display.title "Circuit Tor pour ce site">
+<!ENTITY torbutton.circuit_display.title "Circuit Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "Nouveau circuit pour ce site">

@@ -47,4 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Некоторые шрифты и математические символы отключены.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Некоторые шрифты, значки, математические символы и изображения отключены.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Аудио и видео (HTML5 медиа) проигрываются только после клика.">
-<!ENTITY torbutton.circuit_display.title "Цепочка Tor для этого сайта">
+<!ENTITY torbutton.circuit_display.title "Схема Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "Новая схема для этого Сайта">

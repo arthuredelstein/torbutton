@@ -13,7 +13,7 @@
 <!ENTITY aboutTor.check.label "اختبر إعدادات شبكة تور.">
 
 <!ENTITY aboutTor.success.label "أهلاً بك في متصفح تور">
-<!ENTITY aboutTor.success2.label "تم الإتصال بشبكة تور">
+<!ENTITY aboutTor.success2.label "متصل بشبكة تور">
 <!ENTITY aboutTor.success3.label "يمكنك الآن تصفح الانترنت بشكل يحمي هويتك.">
 <!ENTITY aboutTor.failure.label "حدث خطأ ما!">
 <!ENTITY aboutTor.failure2.label "تور لا يعمل في هذا المتصفح.">
@@ -29,8 +29,8 @@
 <!ENTITY aboutTor.whatnextAnswer.label "لا يمثل تور كل ما تحتاجه للتصفح بشكل يحمي هويتك! قد تحتاج لتغيير بعد عاداتك أثناء التصفّح لضمان سرية هويتك.">
 <!ENTITY aboutTor.whatnext.label "نصائح للحفاظ على سريّة هويتك »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
-<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "دليل استخدام متصفّح Tor">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "س">
+<!ENTITY aboutTor.torbrowser_user_manual.label "دليل استخدام متصفّح تور">
 <!ENTITY aboutTor.helpInfo1.label "بإمكانك المساعدة!">
 <!ENTITY aboutTor.helpInfo2.label "يمكنك مساعدة شبكة تور و جعلها أكثر سرعة و قوّة بإحدي الطرق الآتية:">
 <!ENTITY aboutTor.helpInfo3.label "شغّل نقطة تور »">

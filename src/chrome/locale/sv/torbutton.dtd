@@ -47,4 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Vissa typsnitt och matte symboler är inaktiverade.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Vissa typsnitt, ikoner, matte symboler och bilder är inaktiverade.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Ljud och video (HTML5-media) är klicka-för-att-spel.">
-<!ENTITY torbutton.circuit_display.title "Tor-krets för den här webbplatsen">
+<!ENTITY torbutton.circuit_display.title "Tor Circuit">
+<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">
