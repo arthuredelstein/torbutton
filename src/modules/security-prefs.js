@@ -16,19 +16,17 @@ let log = (level, msg) => logger.log(level, msg);
 // __kSecuritySettings__.
 // A table of all prefs bound to the security slider, and the value
 // for each security setting. Note that 2-m and 3-m are identical,
-// corresponding to the old 2-medium-high setting.
+// corresponding to the old 2-medium-high setting. We also separately
+// bind NoScript settings to the extensions.torbutton.security_slider
+// (see noscript-control.js).
 const kSecuritySettings = {
   // Preference name :                        [0, 1-high 2-m    3-m    4-low]
   "javascript.options.ion" :                  [,  false, false, false, true ],
   "javascript.options.baselinejit" :          [,  false, false, false, true ],
   "javascript.options.native_regexp" :        [,  false, false, false, true ],
-  "noscript.forbidMedia" :                    [,  true,  true,  true,  false],
   "media.webaudio.enabled" :                  [,  false, false, false, true ],
   "mathml.disabled" :                         [,  true,  true,  true,  false],
   "gfx.font_rendering.opentype_svg.enabled" : [,  false, false, false, true ],
-  "noscript.global" :                         [,  false, false, false, true ],
-  "noscript.globalHttpsWhitelist" :           [,  false, true,  true,  false],
-  "noscript.forbidFonts" :                    [,  true,  false, false, false],
   "svg.in-content.enabled" :                  [,  false, true,  true,  true ],
 };
 
