@@ -11,6 +11,7 @@ let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
 let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { getLocale, unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
+let NoScriptControl = Cu.import("resource://torbutton/modules/noscript-control.js", {});
 let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 Cu.importGlobalProperties(["XMLHttpRequest"]);
@@ -242,6 +243,7 @@ function torbutton_init() {
     torbutton_log(3, 'called init()');
 
     SecurityPrefs.initialize();
+    NoScriptControl.initialize();
 
     if (m_tb_wasinited) {
         return;
