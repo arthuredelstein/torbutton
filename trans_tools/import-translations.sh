@@ -2,14 +2,14 @@
 
 # This var comes from the TBB locale list.
 # XXX: Find some way to keep this, tor-launcher, and Tor Browser in sync
-BUNDLE_LOCALES="ar de es fa fr it ko nl pl pt-BR ru tr vi zh-CN"
+BUNDLE_LOCALES="ar bn-BD da de es fa fr he it ja ko nl pl pt-BR ru sv tr vi zh-CN zh-TW"
 
 # XXX: Basque (eu) by request in #10687.
 # This is not used for official builds, but should remain 
 # so Basque XPIs can be build independently. We can do
 # this for other languages too, if anyone requests this
 # and translations are available.
-BUNDLE_LOCALES="$BUNDLE_LOCALES eu ja sv da"
+BUNDLE_LOCALES="$BUNDLE_LOCALES eu"
 
 LOCALE_DIR=../src/chrome/locale
 
