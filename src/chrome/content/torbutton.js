@@ -176,9 +176,6 @@ var torbutton_unique_pref_observer =
             case "privacy.firstparty.isolate":
                 torbutton_update_isolation_prefs();
                 break;
-            case "extensions.torbutton.hide_sync_ui":
-                torbutton_update_sync_ui();
-                break;
         }
     }
 }
@@ -406,7 +403,6 @@ function torbutton_init() {
 
     torbutton_update_toolbutton();
     torbutton_notify_if_update_needed();
-    torbutton_update_sync_ui();
 
     createTorCircuitDisplay(m_tb_control_ipc_file, m_tb_control_host,
                             m_tb_control_port, m_tb_control_pass,
@@ -2339,18 +2335,6 @@ function torbutton_is_homepage_url(aURI)
   let urls = homePageURLs.split('|')
                .map(torbutton_normalize_homepage_url_string);
   return (urls.indexOf(aURI.spec) >= 0);
-}
-
-// Check if "extensions.torbutton.hide_sync_ui" is enabled, and if so,
-// hide the "Sign in to Sync" button on the hamburger menu.
-function torbutton_update_sync_ui()
-{
-  try {
-    document.getElementById("PanelUI-footer-fxa").style.display =
-      getBoolPref("extensions.torbutton.hide_sync_ui") ? "none" : "";
-  } catch (e) {
-    torbutton_log(5, 'Error updating the Sync UI: ' + e);
-  }
 }
 
 // Update the NoScript button to reflect any changes to noscript prefs
