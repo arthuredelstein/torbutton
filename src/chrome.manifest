@@ -14,6 +14,7 @@ override chrome://branding/locale/brand.properties chrome://torbutton/locale/bra
 overlay chrome://browser/content/aboutDialog.xul chrome://torbutton/content/aboutDialog.xul
 
 # UI customization
+overlay chrome://browser/content/browser.xul chrome://torbutton/content/menu-items-overlay.xul
 overlay chrome://browser/content/browser.xul chrome://torbutton/content/menu-overlay.xul
 overlay about:preferences chrome://torbutton/content/privacy-prefs-overlay.xul
 overlay chrome://browser/content/browser.xul chrome://torbutton/content/tor-circuit-display.xul
