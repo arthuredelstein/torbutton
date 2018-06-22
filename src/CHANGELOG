@@ -1,3 +1,14 @@
+2.0
+ * Bug 26100: Adapt Torbutton to Firefox 60 ESR
+ * Bug 24309: Move circuit display to the identity popup
+ * Bug 26128: Adapt security slider to the WebExtensions version of NoScript
+ * Bug 23247: Show security state of .onions
+ * Bug 26129: Show our about:tor page on startup
+ * Bug 26235: Hide new unusable items from help menu
+ * Bug 26058: Remove workaround for hiding 'sign in to sync' button
+ * Bug 20628: Add locales bn-BD, da, he, sv, zh-TW
+ * Translations update
+
 1.9.9.1
  * Bug 25126: Make about:tor layout responsive
  * Translations update
