@@ -949,7 +949,8 @@ function torbutton_new_identity() {
   try {
     // Make sure that we can only click once on New Identiy to avoid race
     // conditions leading to failures (see bug 11783 for an example).
-    document.getElementById("torbutton-new-identity").disabled = true;
+    document.getElementById("menu_newIdentity").disabled = true;
+    document.getElementById("appMenuNewIdentity").disabled = true;
 
     let shouldConfirm =  m_tb_prefs.getBoolPref("extensions.torbutton.confirm_newnym");
 
@@ -972,7 +973,8 @@ function torbutton_new_identity() {
       if (confirmed) {
         torbutton_do_new_identity();
       } else {
-        document.getElementById("torbutton-new-identity").disabled = false;
+        document.getElementById("menu_newIdentity").disabled = false;
+        document.getElementById("appMenuNewIdentity").disabled = false;
       }
     } else {
         torbutton_do_new_identity();
@@ -980,7 +982,8 @@ function torbutton_new_identity() {
   } catch(e) {
     // If something went wrong make sure we have the New Identity button
     // enabled (again).
-    document.getElementById("torbutton-new-identity").disabled = false;
+    document.getElementById("menu_newIdentity").disabled = false;
+    document.getElementById("appMenuNewIdentity").disabled = false;
     torbutton_log(5, "Unexpected error on new identity: "+e);
     window.alert("Torbutton: Unexpected error on new identity: "+e);
   }
@@ -1769,7 +1772,8 @@ function torbutton_check_protections()
   document.getElementById("torbutton-cookie-protector").hidden = m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart");
 
   if (!m_tb_control_pass || (!m_tb_control_ipc_file && !m_tb_control_port)) {
-    document.getElementById("torbutton-new-identity").disabled = true;
+    document.getElementById("menu_newIdentity").disabled = true;
+    document.getElementById("appMenuNewIdentity").disabled = true;
   }
 
   if (!m_tb_tbb && m_tb_prefs.getBoolPref("extensions.torbutton.prompt_torbrowser")) {

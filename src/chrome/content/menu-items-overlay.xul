@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- Mode: HTML -*- -->
+
+<!DOCTYPE overlay SYSTEM "chrome://torbutton/locale/torbutton.dtd">
+
+<overlay id="torbutton-menu-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <menuitem id="menu_newIdentity"
+            accesskey="&torbutton.context_menu.new_identity_key;"
+            key="torbutton-new-identity-key"
+            label="&torbutton.context_menu.new_identity;"
+            oncommand="torbutton_new_identity();"/>
+  <menuitem id="menu_newCircuit"
+            accesskey="&torbutton.context_menu.new_circuit_key;"
+            key="torbutton-new-circuit-key"
+            label="&torbutton.context_menu.new_circuit;"
+            oncommand="torbutton_new_circuit();"/>
+  <toolbarbutton id="appMenuNewIdentity"
+                 key="torbutton-new-identity-key"
+                 label="&torbutton.context_menu.new_identity;"
+                 oncommand="torbutton_new_identity();"/>
+  <toolbarbutton id="appMenuNewCircuit"
+                 key="torbutton-new-circuit-key"
+                 label="&torbutton.context_menu.new_circuit;"
+                 oncommand="torbutton_new_circuit();"/>
+  <toolbarbutton id="appMenu-private-window-button"
+                 hidden="true"/>
+  <toolbarbutton id="appMenuRestoreLastSession"
+                 hidden="true"/>
+</overlay>
