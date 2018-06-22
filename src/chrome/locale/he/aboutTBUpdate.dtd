@@ -1,0 +1,6 @@
+<!ENTITY aboutTBUpdate.title "עדכונים לדפדפן Tor">
+<!ENTITY aboutTBUpdate.updated "דפדפן Tor עודכן.">
+<!ENTITY aboutTBUpdate.linkPrefix "למידע המעודכנת ביותר על גרסה זו,">
+<!ENTITY aboutTBUpdate.linkLabel  "בקר באתר שלנו">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "יומן שינויים:">

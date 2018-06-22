@@ -1,0 +1,51 @@
+<!ENTITY torbutton.context_menu.new_identity "নতুন পরিচয়">
+<!ENTITY torbutton.context_menu.new_identity_key "I">
+<!ENTITY torbutton.context_menu.new_circuit "এই সাইটের জন্য নতুন টর সার্কিট">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "নিরাপত্তা বিন্যাস…">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "টর নেটওয়ার্ক সেটিংস ...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "টর ব্রাউজার আপডেটের জন্য চেক করুন ...">
+<!ENTITY torbutton.context_menu.downloadUpdate.key "U">
+<!ENTITY torbutton.context_menu.cookieProtections "কুকি প্রোটেকশন ...">
+<!ENTITY torbutton.context_menu.cookieProtections.key "C">
+<!ENTITY torbutton.button.tooltip "Torbutton আরম্ভ করার জন্য ক্লিক করুন">
+<!ENTITY torbutton.prefs.security_settings "টর ব্রাউজার নিরাপত্তা সেটিংস">
+<!ENTITY torbutton.prefs.restore_defaults "পূর্বনির্ধারন পুনরুধার">
+<!ENTITY torbutton.prefs.custom_warning "আপনার কাস্টম ব্রাউজারের পছন্দগুলির কারণে অস্বাভাবিক নিরাপত্তা সেটিংস দেখা দিয়েছে নিরাপত্তা এবং গোপনীয়তার কারণে, আমরা আপনাকে ডিফল্ট নিরাপত্তা স্তরগুলির একটি চয়ন করার সুপারিশ করি।">
+<!ENTITY torbutton.cookiedialog.title "কুকি প্রোটেকশনগুলি পরিচালনা করুন">
+<!ENTITY torbutton.cookiedialog.lockCol "রক্ষিত">
+<!ENTITY torbutton.cookiedialog.domainCol "নিমন্ত্রণকর্তা">
+<!ENTITY torbutton.cookiedialog.nameCol "Name">
+<!ENTITY torbutton.cookiedialog.pathCol "Path">
+<!ENTITY torbutton.cookiedialog.protectCookie "কুকি রক্ষা করুন">
+<!ENTITY torbutton.cookiedialog.removeCookie "কুকি সরান">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "অরক্ষিত কুকি">
+<!ENTITY torbutton.cookiedialog.removeAllBut "সমস্ত কিন্তু সুরক্ষিত সরান">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "নতুন কুকি সংরক্ষণ করুন">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "নতুন কুকি রক্ষা করবেন না">
+<!ENTITY torbutton.prefs.restrict_thirdparty "তৃতীয় পক্ষের কুকিজ এবং অন্যান্য ট্র্যাকিং ডেটা নিয়ন্ত্রণ করুন">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "আপনি ব্রাউজ করে ব্রাউজ হিসাবে বিভিন্ন ব্রাউজার বৈশিষ্ট্যগুলি অপব্যবহার করা থেকে বিরত থাকার জন্য এই বক্সটি চেক করুন। পরিবর্তিত বৈশিষ্ট্যগুলির মধ্যে রয়েছে ব্লব ইউআরএল, ব্রডকাস্ট চ্যানেল, ব্রাউজার ক্যাশ, কুকিজ, ফ্যাভিকন, এইচটিটিপি অহিউথ হেডার, লিংক প্রিকনেটস, স্থানীয় স্টোরেজ, মিডিয়াসোর্স ইউআরএল, ওসিএসপি অনুরোধ, শেয়ার ওয়ার্কার্স, এবং টিএলএস সেশন টিকিট।">
+<!ENTITY torbutton.prefs.resist_fingerprinting "অন্যান্য টর ব্রাউজার ব্যবহারকারীদের থেকে আপনি পার্থক্য বিবরণ পরিবর্তন করুন">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "আপনার কম্পিউটারের পারফরম্যান্স, কীবোর্ড লেআউট, লোকেল, ইনস্টল করা প্লাগইনগুলির অবস্থান, ইনস্টল করা প্লাগইনগুলির তালিকা, আপনার নেটওয়ার্ক স্থিতি, স্ক্রীন অভিগমন, স্ক্রিনের আকার, সাইট-এর সাথে আপনার কম্পিউটারের এমন কিছু জিনিস লুকিয়ে রাখতে এই বক্সটি চেক করুন যা সাইটটি আপনার কাছে অনন্য হতে পারে। নির্দিষ্ট জুম স্তর, সমর্থিত ফাইলের ধরন, সিস্টেম রং এবং WebGL ক্ষমতাগুলি।">
+<!ENTITY torbutton.prefs.sec_caption "নিরাপত্তার মাত্রা">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "সিকিউরিটি স্লাইডার আপনাকে নির্দিষ্ট ব্রাউজারের বৈশিষ্ট্যগুলি অক্ষম করতে দেয় যা আপনার ব্রাউজারকে হ্যাকিংয়ের প্রচেষ্টাগুলিকে আরও দুর্বল করে তুলতে পারে।">
+<!ENTITY torbutton.prefs.sec_standard_label "মান">
+<!ENTITY torbutton.prefs.sec_standard_description "সমস্ত টর ব্রাউজার এবং ওয়েবসাইট বৈশিষ্ট্য সক্ষম করা হয়।">
+<!ENTITY torbutton.prefs.sec_safer_label "নিরাপদ">
+<!ENTITY torbutton.prefs.sec_safer_description "ওয়েবসাইটের বৈশিষ্ট্যগুলি প্রায়ই বিপজ্জনক করে, যা কিছু সাইটগুলি কার্যকারিতা হারাতে বাধা দেয়।">
+<!ENTITY torbutton.prefs.sec_safer_list_label "নিরাপদ সেটিংসে:">
+<!ENTITY torbutton.prefs.sec_safest_label "নিরাপদ">
+<!ENTITY torbutton.prefs.sec_safest_description "শুধুমাত্র স্থায়ী সাইট এবং মৌলিক পরিষেবাগুলির জন্য প্রয়োজনীয় ওয়েবসাইট বৈশিষ্ট্যগুলি মঞ্জুরি দেয় এই পরিবর্তনগুলি ইমেজ, মিডিয়া এবং স্ক্রিপ্টগুলি প্রভাবিত করে।">
+<!ENTITY torbutton.prefs.sec_safest_list_label "নিরাপদ সেটিং এ:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "আরও জানুন">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Non-HTTPS সাইটগুলিতে জাভাস্ক্রিপ্ট অক্ষম করা আছে।">
+<!ENTITY torbutton.prefs.sec_js_disabled "জাভাস্ক্রিপ্ট সব সাইটে ডিফল্ট দ্বারা নিষ্ক্রিয় করা হয়।">
+<!ENTITY torbutton.prefs.sec_limit_typography "কিছু ফন্ট এবং গণিত চিহ্ন অক্ষম আছে।">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "কিছু ফন্ট, আইকন, গণিত প্রতীক এবং ছবি অক্ষম রয়েছে।">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "অডিও এবং ভিডিও (HTML5 মিডিয়া) ক্লিক-টু-খেলা।">
+<!ENTITY torbutton.circuit_display.title "Tor Circuit">
+<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">

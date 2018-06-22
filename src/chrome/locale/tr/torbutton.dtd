@@ -47,5 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Bazı yazı türleri ve matematik simgeleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Bazı yazı türleri, simgeler, matematik simgeleri ve görseller devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Ses ve görüntüler (HTML5 ortamı) tıklayarak çalıştırılabilir.">
-<!ENTITY torbutton.circuit_display.title "Tor Circuit">
-<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">
+<!ENTITY torbutton.circuit_display.title "Tor Devresi">
+<!ENTITY torbutton.circuit_display.new_circuit "Bu Sitenin Devresini Yenile">

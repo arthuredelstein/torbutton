@@ -2,7 +2,7 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Tor zirkuitu berria gune honetarako">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Security Settings…">
+<!ENTITY torbutton.context_menu.preferences "Segurtasun Ezarpenak...">
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor Sarearen Ezarpenak...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
@@ -11,7 +11,7 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie babesak...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Sakatu Torbutton abiarazteko">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Security Settings">
+<!ENTITY torbutton.prefs.security_settings "Tor Nagibatzailearen Segurtasun Ezarpenak">
 <!ENTITY torbutton.prefs.restore_defaults "Lehenetsiak berrezarri">
 <!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
 <!ENTITY torbutton.cookiedialog.title "Cookie Babesak kudeatu">
@@ -33,19 +33,19 @@
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
 <!ENTITY torbutton.prefs.sec_caption "Segurtasun maila">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
-<!ENTITY torbutton.prefs.sec_safer_label "Safer">
+<!ENTITY torbutton.prefs.sec_standard_label "Estandarra">
+<!ENTITY torbutton.prefs.sec_standard_description "Tor Nabigatzailearen eta web-orriaren ezaugarri guztiak gaituta daude.">
+<!ENTITY torbutton.prefs.sec_safer_label "Seguruagoa">
 <!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
-<!ENTITY torbutton.prefs.sec_safest_label "Safest">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Ezarpenik seguruenean: ">
+<!ENTITY torbutton.prefs.sec_safest_label "Seguruena">
 <!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Learn more">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Gehiago jakin">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript ezgaituta dago HTTPS ez diren web-orrietan.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
-<!ENTITY torbutton.circuit_display.title "Tor Circuit">
-<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">
+<!ENTITY torbutton.circuit_display.title "Tor Zirkuitoa">
+<!ENTITY torbutton.circuit_display.new_circuit "Zirkuito berria Gune honetarako">

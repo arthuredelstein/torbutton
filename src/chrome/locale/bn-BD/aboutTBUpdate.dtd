@@ -1,0 +1,6 @@
+<!ENTITY aboutTBUpdate.title "টর ব্রাউজার আপডেট">
+<!ENTITY aboutTBUpdate.updated "টর ব্রাউজার আপডেট করা হয়েছে।">
+<!ENTITY aboutTBUpdate.linkPrefix "এই রিলিজ সম্পর্কে সবচেয়ে আপ টু ডেট তথ্য জন্য,">
+<!ENTITY aboutTBUpdate.linkLabel  "আমাদের ওয়েবসাইট দেখুন">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "পরিবর্তণের:">

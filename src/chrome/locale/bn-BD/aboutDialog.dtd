@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; দ্বারা তৈরি করা হয়েছে">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "&vendorShortName;">
+<!ENTITY project.end             "একটি অলাভজনক প্রতিষ্টান আপনার গোপনীয়তা এবং অনলাইন স্বাধীনতা রক্ষা করার জন্য কাজ করে।">
+
+<!ENTITY help.start              "সাহায্য করতে চাই?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "ডনেট করুন">
+<!ENTITY help.or                 "আথবা">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "জড়িত">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "প্রশ্ন?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "টর নেটওয়ার্ক বৃদ্ধিতে সাহায্য করুন!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "লাইসেন্সিং তথ্য">
+<!ENTITY tor.TrademarkStatement   "'টর' এবং 'ওয়ানিয়ান লোগো' টর প্রজেক্ট, ইনক। এর নিবন্ধিত ট্রেডমার্ক">

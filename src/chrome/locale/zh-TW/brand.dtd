@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  brandShorterName      "洋蔥路由瀏覽器">
+<!ENTITY  brandShortName        "洋蔥路由瀏覽器">
+<!ENTITY  brandFullName         "洋蔥路由瀏覽器">
+<!ENTITY  vendorShortName       "洋蔥路由專案">
+<!ENTITY  trademarkInfo.part1   "Firefox 與 Firefox 標誌是 Mozilla 基金會的註冊商標。">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "點擊以載入已安裝的系統外掛">
+<!ENTITY plugins.installed.enable "啟用外掛">
+<!ENTITY plugins.installed.disable "停用外掛">
+<!ENTITY plugins.installed.disable.tip "點擊以阻止載入已安裝的系統外掛">

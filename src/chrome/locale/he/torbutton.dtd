@@ -1,22 +1,51 @@
 <!ENTITY torbutton.context_menu.new_identity "זהות חדשה">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
+<!ENTITY torbutton.context_menu.new_circuit "נתיב Tor חדש לאתר זה">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "הגדרות אבטחה...">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "הגדרות רשת Tor...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "בדוק אחר עדכון לדפדפן Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "הגנות קוקיז">
+<!ENTITY torbutton.context_menu.cookieProtections "הגנת עוגיות...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "לחץ בכדי לאתחל את Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "חזרה לברירת מחדל">
-<!ENTITY torbutton.cookiedialog.title "נהל הגנות קוקיז">
+<!ENTITY torbutton.prefs.security_settings "הגדרות אבטחה של דפדפן Tor">
+<!ENTITY torbutton.prefs.restore_defaults "שחזר ברירות מחדל">
+<!ENTITY torbutton.prefs.custom_warning "העדפות הדפדפן המותאמות שלך נבעו מהגדרות אבטחה בלתי שגרתיות. מטעמי אבטחה ופרטיות, אנו ממליצים לך לבחור באחת מרמות האבטחה של ברירת המחדל.">
+<!ENTITY torbutton.cookiedialog.title "נהל הגנות עוגיות">
 <!ENTITY torbutton.cookiedialog.lockCol "מוגן">
 <!ENTITY torbutton.cookiedialog.domainCol "מארח">
 <!ENTITY torbutton.cookiedialog.nameCol "שם">
-<!ENTITY torbutton.cookiedialog.pathCol "מעבר">
-<!ENTITY torbutton.cookiedialog.protectCookie "הגן על הקוקי">
-<!ENTITY torbutton.cookiedialog.removeCookie "מחק את הקוקי">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "אל תגן על הקוקי">
-<!ENTITY torbutton.cookiedialog.removeAllBut "מחק את כל הקוקיז הלא מוגנים">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "הגן על קוקיז חדשים">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "אל תגן על קוקיז חדשים">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">
+<!ENTITY torbutton.cookiedialog.pathCol "נתיב">
+<!ENTITY torbutton.cookiedialog.protectCookie "הגן על עוגייה">
+<!ENTITY torbutton.cookiedialog.removeCookie "הסר עוגייה">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "בטל הגנה על עוגייה">
+<!ENTITY torbutton.cookiedialog.removeAllBut "הסר הכל מלבד מוגנים">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "הגן על עוגיות חדשות">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "אל תגן על עוגיות חדשות">
+<!ENTITY torbutton.prefs.restrict_thirdparty "הגבל עוגיות מצד שלישי ונתוני מעקב אחרים">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "השאר תיבה זו מסומנת כדי למנוע מתכונות דפדפו מסוימות להיות מנוצלות כדי לאתר אותך בעודך גולש ברשת. תכונות שהשתנו כוללות כתובות גוש, ערוצי שידור, מטמון הדפדפן, עוגיות, צלמיות מועדפים, כותרות אימות HTTP, קדם חיבורים של קישורים, אחסון מקומי, כתובות אחסון מדיה, בקשות OCSP, עובדים משותפים וכרטיסים של שיח TLS.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "שנה פרטים המבדילים בינך לבין יתר משתמשי דפדפן Tor">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "השאר תיבה זו מסומנת כדי להסתיר דברים מאתרים שיכולים להיות ייחודים לגביך, כולל ביצועי המחשב שלך, מערך מקלדת, איזור, מיקום המתקעים מותקנים, רשימת המתקעים המותקנים, מיצב הרשת שלך, מכוונות מסך, גודל מסך, רמת תצוגה לכל אתר, סוגי קובץ נתמכים, צבעי מערכת ויכולות WebGL.">
+<!ENTITY torbutton.prefs.sec_caption "רמת אבטחה">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "מחוון האבטחה נותן לך להשבית תכונות דפדפן מסוימות אשר עלולות לעשות את הדפדפן שלך יותר פגיע לנסיונות פיצוח.">
+<!ENTITY torbutton.prefs.sec_standard_label "תקני">
+<!ENTITY torbutton.prefs.sec_standard_description "כל המאפיינים של דפדפן Tor ומאפייני אתרים מושבתים.">
+<!ENTITY torbutton.prefs.sec_safer_label "בטוח יותר">
+<!ENTITY torbutton.prefs.sec_safer_description "משבית מאפייני אתר שמסוכנים לעיתים קרובות, מה שגורם למספר אתרים לאבד תפקודיות.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "בהגדרה הבטוחה יותר:">
+<!ENTITY torbutton.prefs.sec_safest_label "הכי בטוח">
+<!ENTITY torbutton.prefs.sec_safest_description "מתיר רק למאפייני אתר הדרושים עבור אתרים נייחים ושירותים יסודיים. שינויים אלו משפיעים על תמונות, מדיה ותסריטים.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "בהגדרה הבטוחה ביותר:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "למד עוד">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript מושבת בכל האתרים שאינם HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript מושבת כברירת מחדל בכל האתרים.">
+<!ENTITY torbutton.prefs.sec_limit_typography "מספר גופנים וסמלים מתמטיים מושבתים.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "מספר גופנים, צלמיות, סמלים מתמטיים ותמונות מושבתים.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "שמע ווידאו (מדית HTML5) הם לחץ-כדי-לנגן.">
+<!ENTITY torbutton.circuit_display.title "מעגל Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "מעגל חדש עבור אתר זה">

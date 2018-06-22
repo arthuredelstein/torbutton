@@ -12,7 +12,7 @@
 
 <!ENTITY aboutTor.check.label "Tor Ağ Ayarlarını Sınayın">
 
-<!ENTITY aboutTor.success.label "Tor Browser'a Hoş Geldiniz">
+<!ENTITY aboutTor.success.label "Tor Browser Uygulamasına Hoş Geldiniz">
 <!ENTITY aboutTor.success2.label "Tor ağına bağlanıldı.">
 <!ENTITY aboutTor.success3.label "Artık İnternet'te özgürce ve anonim olarak dolaşabilirsiniz.">
 <!ENTITY aboutTor.failure.label "Bir Şeyler Ters Gitti!">

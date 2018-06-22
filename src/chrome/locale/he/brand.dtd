@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  brandShorterName      "דפדפן Tor">
+<!ENTITY  brandShortName        "דפדפן Tor">
+<!ENTITY  brandFullName         "דפדפן Tor">
+<!ENTITY  vendorShortName       "מיזם Tor">
+<!ENTITY  trademarkInfo.part1   "Firefox וסמליליו הינם סימנים מסחריים רשומים בבעלות קרן Mozilla.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "לחץ לטעינת תוספי מערכת מותקנים">
+<!ENTITY plugins.installed.enable "אפשר מתקעים">
+<!ENTITY plugins.installed.disable "השבת מתקעים">
+<!ENTITY plugins.installed.disable.tip "לחץ כדי למנוע טעינת מתקעי מערכת">
