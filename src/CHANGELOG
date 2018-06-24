@@ -1,5 +1,6 @@
-2.0
+2.0.1
  * Bug 26100: Adapt Torbutton to Firefox 60 ESR
+ * Bug 26430: New Torbutton icon
  * Bug 24309: Move circuit display to the identity popup
  * Bug 26128: Adapt security slider to the WebExtensions version of NoScript
  * Bug 23247: Show security state of .onions
