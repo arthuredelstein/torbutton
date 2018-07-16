@@ -27,7 +27,7 @@ const kSecuritySettings = {
   "media.webaudio.enabled" :                  [,  false, false, false, true ],
   "mathml.disabled" :                         [,  true,  true,  true,  false],
   "gfx.font_rendering.opentype_svg.enabled" : [,  false, false, false, true ],
-  "svg.in-content.enabled" :                  [,  false, true,  true,  true ],
+  "svg.disabled" :                            [,  true,  false, false, false],
 };
 
 // The Security Settings prefs in question.
