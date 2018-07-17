@@ -9,6 +9,9 @@ const { LegacyExtensionContext } =
       Cu.import("resource://gre/modules/LegacyExtensionsUtils.jsm", {});
 const { bindPrefAndInit } =
       Cu.import("resource://torbutton/modules/utils.js", {});
+let logger = Components.classes["@torproject.org/torbutton-logger;1"]
+    .getService(Components.interfaces.nsISupports).wrappedJSObject;
+let log = (level, msg) => logger.log(level, msg);
 
 // ## NoScript settings
 
@@ -79,34 +82,6 @@ let noscriptSettings = safetyLevel => (
 // The extension ID for NoScript (WebExtension)
 const noscriptID = "{73a6fe31-595d-460b-a920-fcc0f8843232}";
 
-// A mock extension object that can communicate with another extension
-// via the WebExtensions sendMessage/onMessage mechanism.
-let extensionContext = new LegacyExtensionContext({ id : noscriptID });
-
-// The component that handles WebExtensions' sendMessage.
-let messageManager = extensionContext.messenger.messageManagers[0];
-
-// __setNoScriptSettings(settings)__.
-// NoScript listens for internal settings with onMessage. We can send
-// a new settings JSON object according to NoScript's
-// protocol and these are accepted! See the use of
-// `browser.runtime.onMessage.addListener(...)` in NoScript's bg/main.js.
-let sendNoScriptSettings = settings =>
-    extensionContext.messenger.sendMessage(messageManager, settings, noscriptID);
-
-// __setNoScriptSafetyLevel(safetyLevel)__.
-// Set NoScript settings according to a particular safety level
-// (security slider level): 0 = Standard, 1 = Safer, 2 = Safest
-let setNoScriptSafetyLevel = safetyLevel =>
-    sendNoScriptSettings(noscriptSettings(safetyLevel));
-
-// ## Slider binding
-
-// __securitySliderToSafetyLevel(sliderState)__.
-// Converts the "extensions.torbutton.security_slider" pref value
-// to a "safety level" value: 0 = Standard, 1 = Safer, 2 = Safest
-let securitySliderToSafetyLevel = sliderState => [undefined, 2, 1, 1, 0][sliderState];
-
 // Ensure binding only occurs once.
 let initialized = false;
 
@@ -114,12 +89,51 @@ let initialized = false;
 // The main function that binds the NoScript settings to the security
 // slider pref state.
 var initialize = () => {
+
   if (initialized) {
     return;
   }
-  bindPrefAndInit(
-    "extensions.torbutton.security_slider",
-    sliderState => setNoScriptSafetyLevel(securitySliderToSafetyLevel(sliderState)));
+
+  try {
+    // A mock extension object that can communicate with another extension
+    // via the WebExtensions sendMessage/onMessage mechanism.
+    let extensionContext = new LegacyExtensionContext({ id : noscriptID });
+
+    // The component that handles WebExtensions' sendMessage.
+    let messageManager = extensionContext.messenger.messageManagers[0];
+
+    // __setNoScriptSettings(settings)__.
+    // NoScript listens for internal settings with onMessage. We can send
+    // a new settings JSON object according to NoScript's
+    // protocol and these are accepted! See the use of
+    // `browser.runtime.onMessage.addListener(...)` in NoScript's bg/main.js.
+    let sendNoScriptSettings = settings =>
+        extensionContext.messenger.sendMessage(messageManager, settings, noscriptID);
+
+    // __setNoScriptSafetyLevel(safetyLevel)__.
+    // Set NoScript settings according to a particular safety level
+    // (security slider level): 0 = Standard, 1 = Safer, 2 = Safest
+    let setNoScriptSafetyLevel = safetyLevel =>
+        sendNoScriptSettings(noscriptSettings(safetyLevel));
+
+    // __securitySliderToSafetyLevel(sliderState)__.
+    // Converts the "extensions.torbutton.security_slider" pref value
+    // to a "safety level" value: 0 = Standard, 1 = Safer, 2 = Safest
+    let securitySliderToSafetyLevel = sliderState =>
+        [undefined, 2, 1, 1, 0][sliderState];
+
+    // Wait for the first message from NoScript to arrive, and then
+    // bind the security_slider pref to the NoScript settings.
+    let messageListener = (a,b,c) => {
+      extensionContext.api.browser.runtime.onMessage.removeListener(messageListener);
+      bindPrefAndInit(
+        "extensions.torbutton.security_slider",
+        sliderState => setNoScriptSafetyLevel(securitySliderToSafetyLevel(sliderState)));
+    };
+    extensionContext.api.browser.runtime.onMessage.addListener(messageListener);
+  } catch (e) {
+    log(e.message);
+  }
 };
 
 // Export initialize() function for external use.
