@@ -338,10 +338,9 @@ function torbutton_init() {
         }
     }
 
-    // Add about:tor IPC message listeners.
-    let aboutTorMessages = [ "AboutTor:Loaded", "AboutTor:GetToolbarData" ];
-    aboutTorMessages.forEach(aMsg => window.messageManager.addMessageListener(
-                                   aMsg, torbutton_abouttor_message_handler));
+    // Add about:tor IPC message listener.
+    window.messageManager.addMessageListener("AboutTor:Loaded",
+                                   torbutton_abouttor_message_handler);
 
     // XXX: Get rid of the cached asmjs (or IndexedDB) files on disk in case we
     // don't allow things saved to disk. This is an ad-hoc fix to work around
@@ -368,11 +367,6 @@ function torbutton_init() {
 
     torbutton_log(1, "registering Tor check observer");
     torbutton_tor_check_observer.register();
-
-    // Detect toolbar customization and update arrow on about:tor pages.
-    window.addEventListener("aftercustomization", function() {
-      torbutton_abouttor_message_handler.updateAllOpenPages();
-    }, false);
 
     //setting up context menu
     //var contextMenu = document.getElementById("contentAreaContextMenu");
@@ -425,10 +419,6 @@ var torbutton_abouttor_message_handler = {
         aMessage.target.messageManager.sendAsyncMessage("AboutTor:ChromeData",
                                                         this.chromeData);
         break;
-      case "AboutTor:GetToolbarData":
-        aMessage.target.messageManager.sendAsyncMessage("AboutTor:ToolbarData",
-                                                        this.toolbarData);
-        break;
     }
   },
 
@@ -441,23 +431,12 @@ var torbutton_abouttor_message_handler = {
   // The chrome data contains all of the data needed by the about:tor
   // content process that is only available here (in the chrome process).
   // It is sent to the content process when an about:tor window is opened
-  // and in response to events such as the browser noticing that an update
-  // is available.
+  // and in response to events such as the browser noticing that Tor is
+  // not working.
   get chromeData() {
     return {
       torOn: torbutton_tor_check_ok(),
-      updateNeeded: torbutton_update_is_needed(),
-      showManual: torbutton_show_torbrowser_manual(),
-      toolbarButtonXPos: torbutton_get_toolbarbutton_xpos()
-    };
-  },
-
-  // The toolbar data only contains the x coordinate of Torbutton's toolbar
-  // item; it is sent back to the content process as the about:tor window
-  // is resized.
-  get toolbarData() {
-    return {
-      toolbarButtonXPos: torbutton_get_toolbarbutton_xpos()
+      showManual: torbutton_show_torbrowser_manual()
     };
   }
 };
@@ -593,9 +572,6 @@ function torbutton_notify_if_update_needed() {
     var btn = torbutton_get_toolbutton();
     setOrClearAttribute(btn, "tbUpdateNeeded", updateNeeded);
 
-    // Update all open about:tor pages.
-    torbutton_abouttor_message_handler.updateAllOpenPages();
-
     // Make the "check for update" menu item bold if an update is needed.
     var item = document.getElementById("torbutton-checkForUpdate");
     setOrClearAttribute(item, "tbUpdateNeeded", updateNeeded);
@@ -619,33 +595,6 @@ function torbutton_check_for_update() {
         prompter.showUpdateDownloaded(update, false);
     else
         prompter.checkForUpdates();
-}
-
-// Determine X position of Torbutton toolbar item. The value returned
-// accounts for retina but not content zoom.
-// undefined is returned if the value cannot be determined (e.g., if the
-// toolbar item is not on the toolbar).
-function torbutton_get_toolbarbutton_xpos() {
-  try {
-    let tbXpos = -1;
-    let tbItem = torbutton_get_toolbutton();
-    if (tbItem) {
-      let tbItemRect = tbItem.getBoundingClientRect();
-      let contentElem = document.getElementById("tabbrowser-initialBrowser");
-      let contentRect = contentElem.getBoundingClientRect();
-      if (tbItemRect.top < contentRect.top) {
-        tbXpos = tbItemRect.left + (tbItemRect.width / 2.0) - contentRect.left;
-      }
-    }
-
-    if (tbXpos >= 0) {
-      // Convert to device-independent units, compensating for retina display.
-      tbXpos *= window.devicePixelRatio;
-      return tbXpos;
-    }
-  } catch(e) {}
-
-  return undefined;
 }
 
 function torbutton_show_sec_slider_notification() {

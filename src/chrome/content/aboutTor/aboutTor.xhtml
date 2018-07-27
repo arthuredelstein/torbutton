@@ -31,87 +31,173 @@ window.addEventListener("pageshow", function() {
 </script>
 </head>
 <body dir="&locale.dir;">
-  <div class="hideIfTorIsUpToDate">
-      <div id="toolbarIconArrowHead" class="arrow"/>
-      <div id="toolbarIconArrowVertExtension" class="arrow"/>
-      <div id="toolbarIconArrowBend" class="arrow"/>
-      <div id="toolbarIconArrowHorzExtension" class="arrow"/>
-  </div>
   <div class="torcontent-container">
     <div id="torstatus-version"/>
     <div id="torstatus" class="top">
-      <div id="torstatus-image"/>
       <div id="torstatus-on-container" class="hideIfTorOff torstatus-container">
-        <h1>&aboutTor.success.label;</h1>
+        <div class="heading1">&aboutTor.ready.label;</div>
         <br/>
-        <h3 class="hideIfTBBNeedsUpdate">&aboutTor.success3.label;</h3>
-        <br/>
-        <div style="margin-top: 20px;">
-          <a id="testTorSettings" href="about:blank">&aboutTor.check.label;</a>
-        </div>
+        <div class="heading2">&aboutTor.ready2.label;</div>
       </div>
       <div id="torstatus-off-container" class="hideIfTorOn torstatus-container">
-        <h1>&aboutTor.failure.label;</h1>
+        <div class="heading1">&aboutTor.failure.label;</div>
         <br/>
-        <h2>&aboutTor.failure2.label;</h2>
-      </div>
-    </div>
-    <div class="top">
-      <div class="hideIfTorIsUpToDate">
-        <h1 class="hideIfTorOff">&aboutTor.outOfDateTorOn.label;</h1>
-        <h1 class="hideIfTorOn">&aboutTor.outOfDateTorOff.label;</h1>
-        <div>
-          <h3 id="updatePrompt">&aboutTor.outOfDate2.label;</h3>
-        </div>
+        <div class="heading2">&aboutTor.failure2.label;</div>
       </div>
     </div>
 
     <div class="searchbox hideIfTorOff"> <!-- begin form based search -->
       <form action="&aboutTor.searchDDGPost.link;" method="post">
-      <div id="sxw">
-        <div id="sbutton">
-          <input name="b" id="sb" value="" title="&aboutTor.search.label;"
-                alt="&aboutTor.search.label;" type="submit"/>
+        <div class="searchwrapper">
+          <label class="searchlabel" for="search-text">&nbsp;</label>
+          <input name="q" id="search-text" placeholder="&aboutTor.search.label;"
+                 autocomplete="off" type="text"/>
+          <input name="b" id="search-button" value=""
+                 title="&aboutTor.search.label;"
+                 alt="&aboutTor.search.label;" type="submit"/>
         </div>
-        <input name="q" autocomplete="off" id="sx" type="text"/>
-      </div>
-      <h4 id="searchProviderInfo" />
       </form>
     </div>
 
-    <div class="hideIfTorOn" style="height:100px"/>
-
-    <div id="middle" class="hideIfTorOff">
-        <div class="bubble">
-          <h1>&aboutTor.whatnextQuestion.label;</h1>
-          <p>&aboutTor.whatnextAnswer.label;</p>
-          <ul>
-            <li>
-              <a href="&aboutTor.whatnext.link;">
-                &aboutTor.whatnext.label;
-              </a>
-            </li>
-            <li class="showForManual">
-              <a id="manualLink">
-                &aboutTor.torbrowser_user_manual.label; &raquo;
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="bubble">
-          <h1>&aboutTor.helpInfo1.label;</h1>
-          <p>&aboutTor.helpInfo2.label;</p>
-          <ul>
-            <li><a href="&aboutTor.helpInfo3.link;">&aboutTor.helpInfo3.label;</a></li>
-            <li><a href="&aboutTor.helpInfo4.link;">&aboutTor.helpInfo4.label;</a></li>
-            <li><a href="&aboutTor.helpInfo5.link;">&aboutTor.helpInfo5.label;</a></li>
-          </ul>
-        </div>
-    </div> <!-- middle -->
-
     <div id="bottom">
-      <p>&aboutTor.footer.label;
-    <a href="&aboutTor.learnMore.link;">&aboutTor.learnMore.label;</a></p>
+      <p class="showForManual moreInfoLink">&aboutTor.torbrowser_user_manual_questions.label;
+        <a id="manualLink">&aboutTor.torbrowser_user_manual_link.label;</a></p>
+      <p>&aboutTor.tor_mission.label;
+        <a href="&aboutTor.getInvolved.link;">&aboutTor.getInvolved.label;</a></p>
+    </div>
+  </div>
+
+<!--
+   - The abstract onion pattern begins here. There are two
+   - "onion-pattern-row" elements, each containing 14 circles. The width
+   - of "onion-pattern-row" is fixed at a value that is wide enough so the
+   - circles are not distorted by the flex-based layout. The parent
+   - "onion-pattern-container" element has overflow: hidden and is designed
+   - to expand to the width of the page, until it reaches a maximum width
+   - that can accommodate all 14 circles. Since the rows are wider than
+   - most browser windows, typically the two rows of onions will fill the
+   - bottom of the page. On really wide pages, the onions are centered at
+   - the bottom of the page.
+  -->
+  <div class="onion-pattern-container">
+    <div class="onion-pattern-row">
+      <div class="circle solid"></div>
+
+      <div class="circle border"></div>
+
+      <div class="circle border">
+        <div class="inner border"></div>
+        <div class="inner border"></div>
+        <div class="inner border"></div>
+      </div>
+
+      <div class="circle">
+        <div class="half solid"></div>
+        <div class="half dotted"></div>
+      </div>
+
+      <div class="circle dotted"></div>
+
+      <div class="circle dotted">
+        <div class="inner dotted"></div>
+        <div class="inner dotted"></div>
+        <div class="inner dotted"></div>
+      </div>
+
+      <div class="circle dashed"></div>
+
+      <div class="circle dashed">
+        <div class="inner dashed"></div>
+        <div class="inner dashed"></div>
+        <div class="inner dashed"></div>
+      </div>
+
+      <div class="circle bold"></div>
+
+      <div class="circle solid"></div>
+
+      <div class="circle dotted">
+        <div class="inner dotted"></div>
+        <div class="inner dotted"></div>
+        <div class="inner dotted"></div>
+      </div>
+
+      <div class="circle border">
+        <div class="inner border"></div>
+        <div class="inner border"></div>
+        <div class="inner border"></div>
+      </div>
+
+      <div class="circle">
+        <div class="half solid"></div>
+        <div class="half solid"></div>
+      </div>
+
+     <div class="circle dashed">
+        <div class="inner dashed"></div>
+        <div class="inner dashed"></div>
+        <div class="inner dashed"></div>
+      </div>
+    </div>
+
+    <div class="onion-pattern-row onion-pattern-offset-row">
+      <div class="circle dashed">
+        <div class="inner dashed"></div>
+        <div class="inner dashed"></div>
+        <div class="inner dashed"></div>
+      </div>
+
+      <div class="circle bold"></div>
+
+      <div class="circle solid"></div>
+
+      <div class="circle dotted">
+        <div class="inner dotted"></div>
+        <div class="inner dotted"></div>
+        <div class="inner dotted"></div>
+      </div>
+
+      <div class="circle border">
+        <div class="inner border"></div>
+        <div class="inner border"></div>
+        <div class="inner border"></div>
+      </div>
+
+      <div class="circle">
+        <div class="half solid"></div>
+        <div class="half solid"></div>
+      </div>
+
+     <div class="circle dashed">
+        <div class="inner dashed"></div>
+        <div class="inner dashed"></div>
+        <div class="inner dashed"></div>
+      </div>
+
+      <div class="circle solid"></div>
+
+      <div class="circle border"></div>
+
+      <div class="circle border">
+        <div class="inner border"></div>
+        <div class="inner border"></div>
+        <div class="inner border"></div>
+      </div>
+
+      <div class="circle">
+        <div class="half solid"></div>
+        <div class="half dotted"></div>
+      </div>
+
+      <div class="circle dotted"></div>
+
+      <div class="circle dotted">
+        <div class="inner dotted"></div>
+        <div class="inner dotted"></div>
+        <div class="inner dotted"></div>
+      </div>
+
+      <div class="circle dashed"></div>
     </div>
   </div>
 </body>

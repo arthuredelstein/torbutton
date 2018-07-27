@@ -5,6 +5,12 @@
  * vim: set sw=2 sts=2 ts=8 et syntax=css:
  */
 
+:root {
+  --abouttor-text-color: white;
+  --abouttor-bg-toron-color: #420C5D;
+  --abouttor-bg-toroff-color: #A4000F;
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -15,21 +21,15 @@ body {
   height: 100%;
   margin: 0px auto;
   padding: 0px 0px;
-  font-size: 62.5%;
-  font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
-  font-weight: normal;
-  color: #4d4d4d;
-  background-color: #FFFFFF;
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--abouttor-text-color);
+  background-color: var(--abouttor-bg-toroff-color);
   background-attachment: fixed;
   background-size: 100% 100%;
 }
 
-body {
-  background-image: linear-gradient(to bottom, #ffffff, #ffffff 10%, #dddddd 50%, #dddddd);
-}
-
 body[toron] {
-  background-image: linear-gradient(to bottom, #ffffff, #ffffff 10%, #d5ffd5 50%, #d5ffd5);
+  background-color: var(--abouttor-bg-toron-color);
 }
 
 /* Hide the entire document by default to avoid showing the incorrect
@@ -42,9 +42,17 @@ body:not([initialized]) {
 }
 
 .torcontent-container {
-  margin: 40px 20px;
+  margin: 40px 20px 28px 20px;
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (min-width: 900px) {
+  .torcontent-container {
+    margin: 40px auto 28px auto;
+    max-width: 1000px;
+    min-width: 1000px;
+  }
 }
 
 #torstatus-version {
@@ -53,77 +61,25 @@ body:not([initialized]) {
   right: 6px;
   height: 30px;
   width: 200px;
-  font-size: 1.4em;
+  font-size: 15px;
   white-space: pre-wrap;
   text-align: right;
 }
 
-body[toron] #torstatus-image {
-  background-image: url('chrome://torbutton/skin/tor-on.png');
-}
-
-#torstatus-image {
-  display: none;
-  position: absolute;
-  left: 85px;
-  height: 128px;
-  width: 128px;
-  background-image: url('chrome://torbutton/skin/tor-off.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-}
-
-.arrow {
-  display: none;
-  position: absolute;
-  z-index: -1;
-}
-
-#toolbarIconArrowHead {
-  top: 4px;
-  width: 30px;
-  height: 36px;
-  background-image: url('chrome://torbutton/skin/onionArrow-short.png');
-}
-
-#toolbarIconArrowVertExtension, #toolbarIconArrowHorzExtension {
-  width: 11px;
-  height: 11px;
-  background-image: url('chrome://torbutton/skin/onionArrow-extension.png');
-}
-
-#toolbarIconArrowBend {
-  width: 22px;
-  height: 22px;
-  background-image: url('chrome://torbutton/skin/onionArrow-leftBend.png');
-}
-
-#toolbarIconArrowBend[pos="right"] {
-  background-image: url('chrome://torbutton/skin/onionArrow-rightBend.png');
-}
-
 a {
-  color: #008000;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #00A000;
-  text-decoration: underline;
-}
-
-#testTorSettings {
-  font-size: 1.6em;
-  text-decoration: underline;
-  margin-bottom: 5px;
+  color: var(--abouttor-text-color);
 }
 
 #torstatus {
-  position: relative; /* needed for torstatus-image positioning */
+  margin-top: 135px;
   display: flex;
   justify-content: center;
-  min-height: 148px;
+  vertical-align: bottom;
+  min-height: 92px;
+}
+
+#torstatus > div {
+  align-self: flex-end; /* align text to bottom of container */
 }
 
 .top {
@@ -134,206 +90,183 @@ a:hover {
   text-align: center;
 }
 
-body[toron][torNeedsUpdate] .hideIfTBBNeedsUpdate,
-body:not([torNeedsUpdate]) .hideIfTorIsUpToDate {
-  display: none;
-}
-
 body[toron] .hideIfTorOn,
 body:not([toron]) .hideIfTorOff {
   display: none;
-}
-
-body[toron] .top h1 {
-  color: #600060;
 }
 
 body:not([showmanual]) .showForManual {
   display: none;
 }
 
-div.hideIfTorIsUpToDate {
-  display: flex;
-  flex-direction: column;
-}
-
-div.hideIfTorIsUpToDate,
-body .top div.hideIfTorIsUpToDate h1 {
-  color: black;
+.torstatus-container * {
   text-align: center;
 }
 
-/* Use inline-block for text-oriented elements whose widths need to measured. */
-.torstatus-container *,
-.top div.hideIfTorIsUpToDate h3 {
-  display: inline-block;
-  text-align: center;
-}
-
-.top div.hideIfTorOff h1 {
+.top div.hideIfTorOff .heading1 {
   margin-top: 20px;
 }
 
-.top h1 {
-  font-size: 4.00em;
-  font-weight: bold;
+.top .heading1 {
+  font-size: 50px;
+  font-weight: 300;
   margin-bottom: 5px;
 }
 
-.top h2 {
-  font-size: 2.934em;
+.top .heading2 {
+  font-size: 15px;
   margin-bottom: 20px;
-  font-weight: normal;
-}
-
-.top h3 {
-  font-size: 1.8em;
-  font-weight: normal;
-  color: #3B503C;
-}
-
-#middle {
-  display: flex;
-  flex-flow: row wrap;
-  font-size: 1.6em;
-  justify-content: space-evenly;
-  margin-top: 40px;
-}
-
-.bubble {
-  width: 242px;
-  padding: 20px 30px;
-  color: #3B503C;
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: 16px;
-  margin-bottom: 40px;
-  text-align: start;
-  vertical-align: top;
-}
-
-#middle h1 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-#middle ul {
-  padding: 5px 0 0 22px;
-}
-
-#middle ul:dir(rtl) {
-  padding: 5px 22px 0 0;
-}
-
-#middle li {
-  padding-top: 2px;
 }
 
 #bottom {
-  padding-bottom: 40px;
+  margin-top: 170px;
 }
 
 #bottom p {
-  font-size: 1.6em;
+  font-size: 10px;
   text-align: start;
   margin: auto;
+  padding-bottom: 20px;
 }
 
-#bottom a {
-  color: #800080;
-  text-decoration: underline;
+@media only screen and (min-width: 900px) {
+  #bottom p {
+    margin: 0px 135px 0px 135px;
+  }
 }
 
-#bottom a:hover {
-  color: #A000A0;
-  text-decoration: none;
+#bottom p:last-child {
+  padding-bottom: 0px;
 }
 
-#bottom h4 {
-  margin-top: 50px;
-  line-height: 1em;
-  font-size: 1em;
-  font-weight: normal;
-  text-align: center;
-}
-
-#bottom p.lang {
-  max-width: 620px;
-  margin: 10px auto;
-  font-size: 1em;
-  font-weight: normal;
-  text-align: center;
+#bottom p.moreInfoLink {
+  font-size: 15px;
 }
 
 .searchbox form {
-  width: 396px;
-  margin: 35px auto 1px auto;
+  width: 500px;
+  margin: 39px auto 0px auto;
   text-align: left;
 }
 
-.searchbox h4 {
-  padding-top: 5px;
-  font-size: 12px;
-  font-weight: normal;
-  text-align: center;
-}
-
-#sbutton {
-  display: block;
-  float: right;
-  width: 33px;
-}
-
-#sbutton input {
-  height: 34px;
-  width: 33px;
-  border: 0;
-  background: url('chrome://torbutton/skin/search.png') no-repeat top left;
-  cursor: pointer;
-}
-
-/* #sxw is the container div for the search field and button */
-#sxw {
-  border: none;
-}
-
-/* #sx is the search input (text) field */
-#sx {
-  border-color: lightgray;
-  border-style: solid;
-  border-width: 1px 0px 1px 1px;
-  width: 350px;
-  min-height: 23px;
-  padding: 4px 6px 5px 6px;
-  margin: 0;
-  outline: none;
-  color: #222;
-  font-size: 18px;
-}
-
-@media only screen and (min-width : 820px) {
-.torcontent-container {
-    margin: auto;
-    margin-top: 40px;
-    max-width: 920px;
-    min-width: 920px;
-  }
-
-  #torstatus-image {
-    display: block;
-  }
-
-  #bottom p {
-    margin: 10px 125px 0px 125px;
-  }
-}
-
-@media only screen and (max-width : 436px) {
+@media only screen and (max-width: 540px) {
   .searchbox form {
     width: auto;
   }
+}
 
-  #sx {
-    width: calc(100% - 46px);
-  }
+.searchwrapper {
+  display: flex;
+  height: 46px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.searchlabel {
+  height: auto;
+  width: 50px;
+  display: inline-block;
+  background: url('chrome://torbutton/skin/searchLogo.png') no-repeat center center;
+  background-size: 30px 30px;
+}
+
+#search-button {
+  height: auto;
+  width: 36px;
+  border: 0;
+  background: url('chrome://torbutton/skin/forwardArrow.png') no-repeat center center;
+  background-size: 16px 14px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: rgba(12, 12, 13, 0.1);  /* same as Firefox's about:home */
+}
+
+/* #search-text is the search input field */
+#search-text {
+  flex: 1;
+  border: none;
+  padding: 4px 2px 5px 2px;
+  margin: 0;
+  font-size: 15px;
+}
+
+.onion-pattern-container {
+  margin: 0px auto;
+  width: 100%;
+  max-width: 1624px;    /* room for 14 of the widest circles */
+  overflow: hidden;
+}
+
+.onion-pattern-row {
+  width: 1624px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.onion-pattern-offset-row {
+  left: -40px;
+}
+
+/* With borders, circles range in size from 100 x 100px to 116 x 116px. */
+.circle {
+  opacity: 0.2;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.inner {
+  position: absolute;
+}
+
+.inner:nth-child(1){
+  transform: translate(calc(12.5% - 2px),calc(12.5% - 2px));
+  width: calc(100% * 0.75);
+  height: calc(100% * 0.75);
+  border-radius: 50%;
+}
+
+.inner:nth-child(2){
+  transform: translate(calc(40% - 2px),calc(40% - 2px));
+  width: calc(100% * 0.5);
+  height: calc(100% * 0.5);
+  border-radius: 50%;
+}
+
+.inner:nth-child(3){
+  transform: translate(calc(108% - 2px),calc(108% - 2px));
+  width: calc(100% * 0.25);
+  height: calc(100% * 0.25);
+  border-radius: 50%;
+}
+
+.solid {
+  background-color: #fff;
+}
+
+.border {
+  border: 4px solid #fff;
+}
+
+.dashed {
+  border: 4px dashed #fff;
+}
+
+.dotted {
+  border: 4px dotted #fff;
+}
+
+.bold {
+  border: 8px solid #fff;
+}
+
+.half {
+  width: 100px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
 }
