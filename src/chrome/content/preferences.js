@@ -5,7 +5,7 @@ let { utils: Cu } = Components;
 let { getBoolPref, getIntPref, setBoolPref, setIntPref, getCharPref } =
     Cu.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
 
-let { getLocale } =
+let { getLocale, show_torbrowser_manual } =
     Cu.import("resource://torbutton/modules/utils.js", {});
 
 // Description elements have the follow names.
@@ -67,7 +67,7 @@ function torbutton_save_security_settings() {
 // Help Menu and on about:tor: if we have the manual available for a locale,
 // let's show the "Learn more"-link, otherwise hide it.
 function torbutton_set_learn_more_links() {
-  let show_manual = window.opener.torbutton_show_torbrowser_manual();
+  let show_manual = show_torbrowser_manual();
   let locale = ""
   if (show_manual) {
     locale = getLocale();
