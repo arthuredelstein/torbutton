@@ -342,6 +342,8 @@ function torbutton_init() {
     window.messageManager.addMessageListener("AboutTor:Loaded",
                                    torbutton_abouttor_message_handler);
 
+    setupPreferencesForMobile();
+
     // XXX: Get rid of the cached asmjs (or IndexedDB) files on disk in case we
     // don't allow things saved to disk. This is an ad-hoc fix to work around
     // #19417. Once this is properly solved we should remove this code again.
@@ -1905,6 +1907,49 @@ function torbutton_is_windowed(wind) {
 }
 
 let stopOpenSecuritySettingsObserver;
+
+function showSecurityPreferencesPanel(chromeWindow) {
+  const tabBrowser = chromeWindow.BrowserApp;
+  let settingsTab = null;
+
+  const SECURITY_PREFERENCES_URI = 'chrome://torbutton/content/preferences.xhtml';
+
+  tabBrowser.tabs.some(function (tab) {
+      // If the security prefs tab is opened, send the user to it
+      if (tab.browser.currentURI.spec === SECURITY_PREFERENCES_URI) {
+          settingsTab = tab;
+          return true;
+      }
+      return false;
+  });
+
+  if (settingsTab === null) {
+      // Open up the settings panel in a new tab.
+      tabBrowser.addTab(SECURITY_PREFERENCES_URI, {
+          'selected': true,
+          'parentId': tabBrowser.selectedTab.id
+      });
+  } else {
+      // Activate an existing settings panel tab.
+      tabBrowser.selectTab(settingsTab);
+  }
+}
+
+function setupPreferencesForMobile() {
+  if (Services.appinfo.OS !== "Android") {
+    return;
+  }
+
+  torbutton_log(4, "Setting up settings preferences for Android.");
+
+  const chromeWindow = Services.wm.getMostRecentWindow('navigator:browser');
+
+  // Add the extension's chrome menu item to the main browser menu.
+  chromeWindow.NativeWindow.menu.add({
+    'name': torbutton_get_property_string("torbutton.security_settings.menu.title"),
+    'callback': showSecurityPreferencesPanel.bind(this, chromeWindow)
+  });
+}
 
 // Bug 1506 P3: This is needed pretty much only for the version check
 // and the window resizing. See comments for individual functions for
