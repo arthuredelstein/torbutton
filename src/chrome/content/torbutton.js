@@ -12,7 +12,7 @@ let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { getLocale, unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
 let NoScriptControl = Cu.import("resource://torbutton/modules/noscript-control.js", {});
-let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 Cu.importGlobalProperties(["XMLHttpRequest"]);
 
@@ -170,7 +170,6 @@ var torbutton_unique_pref_observer =
                 torbutton_use_nontor_proxy();
                 break;
             case "privacy.resistFingerprinting":
-            case "extensions.torbutton.spoof_english":
                 torbutton_update_fingerprinting_prefs();
                 break;
             case "privacy.firstparty.isolate":
@@ -462,36 +461,6 @@ var torbutton_abouttor_message_handler = {
     };
   }
 };
-
-function torbutton_should_prompt_for_language_preference() {
-  return torbutton_get_general_useragent_locale().substring(0, 2) != "en" &&
-        !m_tb_prefs.getBoolPref("extensions.torbutton.prompted_language");
-}
-
-
-// Bug 1506 P3: This code asks the user once if they want to spoof their
-// language to English.
-//
-// Asks the user whether Torbutton should make "English requests", and updates
-// the extensions.torbutton.spoof_english preference accordingly.
-function torbutton_prompt_for_language_preference() {
-  var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
-                  .getService(Ci.nsIPromptService);
-
-  // Display two buttons, both with string titles.
-  var flags = prompts.STD_YES_NO_BUTTONS;
-
-  var message = torbutton_get_property_string("torbutton.popup.prompted_language");
-
-  m_tb_prefs.setBoolPref("extensions.torbutton.prompted_language", true);
-  // Display modal prompt, anchored to this window.
-  var response = prompts.confirmEx(window, "", message, flags,
-                                   null, null, null, null, {value: false});
-
-  // Update preferences to reflect their response and to prevent the prompt from
-  // being displayed again.
-  m_tb_prefs.setBoolPref("extensions.torbutton.spoof_english", response == 0);
-}
 
 function torbutton_confirm_plugins() {
   var any_plugins_enabled = false;
@@ -1641,23 +1610,6 @@ function torbutton_update_disk_prefs() {
 function torbutton_update_fingerprinting_prefs() {
     var mode = m_tb_prefs.getBoolPref("privacy.resistFingerprinting");
 
-    if (m_tb_tbb) {
-      if (mode) {
-        // Governed also by the spoof_english dialog..
-        if (m_tb_prefs.getBoolPref("extensions.torbutton.spoof_english")) {
-          m_tb_prefs.setCharPref("intl.accept_languages", "en-US, en");
-          m_tb_prefs.setBoolPref("javascript.use_us_english_locale", true);
-        } else {
-          if(m_tb_prefs.prefHasUserValue("intl.accept_languages"))
-            m_tb_prefs.clearUserPref("intl.accept_languages");
-          m_tb_prefs.setBoolPref("javascript.use_us_english_locale", false);
-        }
-      } else {
-        if(m_tb_prefs.prefHasUserValue("intl.accept_languages"))
-          m_tb_prefs.clearUserPref("intl.accept_languages");
-      }
-    }
-
     m_tb_prefs.setBoolPref("webgl.min_capability_mode", mode);
     m_tb_prefs.setBoolPref("webgl.disable-extensions", mode);
     m_tb_prefs.setBoolPref("dom.network.enabled", !mode);
@@ -2019,8 +1971,6 @@ function torbutton_is_windowed(wind) {
     return true;
 }
 
-let stopLanguagePromptObserver;
-
 // Bug 1506 P3: This is needed pretty much only for the version check
 // and the window resizing. See comments for individual functions for
 // details
@@ -2052,15 +2002,6 @@ function torbutton_new_window(event)
             && torbutton_is_windowed(window)) {
       progress.addProgressListener(torbutton_resizelistener,
                                    Ci.nsIWebProgress.NOTIFY_STATE_DOCUMENT);
-    }
-
-    // If the default language is not English and we have not already asked,
-    // add an http-on-modify-request observer that will show a "request English
-    // language web pages?" prompt the first time a content http or https page
-    // is opened.
-    if (torbutton_should_prompt_for_language_preference()) {
-      stopLanguagePromptObserver = observe("http-on-modify-request",
-                                           torbutton_http_connection_observed);
     }
 
     // Check the version on every new window. We're already pinging check in these cases.    
@@ -2237,54 +2178,6 @@ var torbutton_resizelistener =
   onStatusChange: function(aProgress, aRequest, stat, message) {},
   onSecurityChange: function() {}
 };
-
-function torbutton_http_connection_observed(aRequest, aData) {
-  // If we are loading an HTTP page from content, show the
-  // "request English language web pages?" prompt.
-  try {
-    let httpChannel = aRequest.QueryInterface(Ci.nsIHttpChannel);
-    if (!aRequest.URI.schemeIs("http") && !aRequest.URI.schemeIs("https")) {
-      return;
-    }
-    if (!httpChannel) return;
-    let notificationCallbacks = httpChannel.notificationCallbacks;
-    if (!notificationCallbacks) return;
-    let loadContext = notificationCallbacks.getInterface(Ci.nsILoadContext);
-    if (!loadContext) return;
-    if (!loadContext.isContent) return;
-    // The above QI did not throw, the scheme is http[s], and we know the
-    // load context is content, so we must have a true HTTP request from content.
-    // Stop the observer and display the prompt if another window has
-    // not already done so.
-    stopLanguagePromptObserver();
-
-    if (torbutton_should_prompt_for_language_preference()) {
-      if (torbutton_is_homepage_url(aRequest.URI)) {
-        // If the homepage is being loaded, display the prompt after a
-        // delay to avoid a problem where a blank prompt is displayed.
-        // In this case, the homepage will be loaded using the current
-        // spoof English setting, which is OK.
-        setTimeout(function() {
-          if (torbutton_should_prompt_for_language_preference())
-            torbutton_prompt_for_language_preference();
-        }, 2000);
-      } else {
-        // No delay is needed. Display the prompt and fix up the
-        // Accept-Language header before allowing the load to continue.
-        torbutton_prompt_for_language_preference();
-
-        // The Accept-Language header for this request was set when the
-        // channel was created. Reset it to match the value that will be
-        // used for future requests.
-        let val = torbutton_get_current_accept_language_value(aRequest.URI);
-        if (val)
-          httpChannel.setRequestHeader("Accept-Language", val, false);
-      }
-    }
-  } catch (e) {
-    torbutton_log(3, e.message);
-  }
-}
 
 // aURI should be an http or https nsIURI object.
 function torbutton_get_current_accept_language_value(aURI)

@@ -19,7 +19,6 @@ pref("extensions.torbutton.use_nontor_proxy",false);
 // State prefs:
 pref("extensions.torbutton.startup",false);
 pref("extensions.torbutton.inserted_button",false);
-pref("extensions.torbutton.prompted_language",false);
 
 // TODO: This is just part of a stopgap until #14429 gets properly implemented.
 // See #7255 for details. We display the warning three times to make sure the
@@ -29,7 +28,6 @@ pref("extensions.torbutton.maximize_warnings_remaining", 3);
 // Security prefs:
 pref("extensions.torbutton.cookie_protections",true);
 pref("extensions.torbutton.cookie_auto_protect",false);
-pref("extensions.torbutton.spoof_english",true);
 pref("extensions.torbutton.clear_http_auth",true);
 pref("extensions.torbutton.close_newnym",true);
 pref("extensions.torbutton.resize_new_windows",true);
