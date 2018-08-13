@@ -62,13 +62,10 @@ function StartupObserver() {
       this.logger.log(4, "Early proxy change failed. Will try again at profile load. Error: "+e);
     }
 
-    // Arrange for our nsIContentPolicy filter and about:tor handler to be
-    // loaded in the default (chrome) process as well as in each content
-    // process.
+    // Arrange for our about:tor handler to be loaded in the default (chrome)
+    // process as well as in each content process.
     let ppmm = Cc["@mozilla.org/parentprocessmessagemanager;1"]
                  .getService(Ci.nsIProcessScriptLoader);
-    ppmm.loadProcessScript("resource://torbutton/components/content-policy.js",
-                           true);
     ppmm.loadProcessScript("resource://torbutton/components/aboutTor.js",
                             true);
 }
