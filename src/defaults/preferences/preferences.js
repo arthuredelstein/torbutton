@@ -34,7 +34,7 @@ pref("extensions.torbutton.startup_state", 2); // 0=non-tor, 1=tor, 2=last
 pref("extensions.torbutton.tor_memory_jar",false);
 pref("extensions.torbutton.nontor_memory_jar",false);
 pref("extensions.torbutton.launch_warning",true);
-pref("extensions.torbutton.resource_and_chrome_uri_fingerprinting",false);
+
 // Opt out of Firefox addon pings:
 // https://developer.mozilla.org/en/Addons/Working_with_AMO
 pref("extensions.torbutton@torproject.org.getAddons.cache.enabled", false);
