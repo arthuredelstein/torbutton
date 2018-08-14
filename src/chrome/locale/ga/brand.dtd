@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  brandShorterName      "Brabhsálaí Tor">
+<!ENTITY  brandShortName        "Brabhsálaí Tor">
+<!ENTITY  brandFullName         "Brabhsálaí Tor">
+<!ENTITY  vendorShortName       "Tionscadal Tor">
+<!ENTITY  trademarkInfo.part1   "Is trádmharcanna de chuid Fondúireacht Mozilla 'Firefox' agus lógónna Firefox.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "Cliceáil chun forlíontáin an chórais a lódáil">
+<!ENTITY plugins.installed.enable "Cumasaigh breiseáin">
+<!ENTITY plugins.installed.disable "Díchumasaigh breiseáin">
+<!ENTITY plugins.installed.disable.tip "Cliceáil chun cosc a chur ar fhorlíontáin an chórais">

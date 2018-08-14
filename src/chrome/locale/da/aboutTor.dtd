@@ -6,9 +6,9 @@
 
 <!ENTITY aboutTor.title "Om Tor">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "ADVARSEL: denne browser er forældet.">
-<!ENTITY aboutTor.outOfDateTorOff.label "Denne browser er desuden forældet.">
-<!ENTITY aboutTor.outOfDate2.label "Klik på løget og vælg så Søg efter Tor Browser-opdateringer.">
+<!ENTITY aboutTor.outOfDateTorOn.label "ADVARSEL: browseren er forældet.">
+<!ENTITY aboutTor.outOfDateTorOff.label "Browseren er desuden forældet.">
+<!ENTITY aboutTor.outOfDate2.label "Klik på løget og vælg så Søg efter opdateringer til Tor Browser.">
 
 <!ENTITY aboutTor.check.label "Test Tor-netværksindstillinger">
 

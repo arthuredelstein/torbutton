@@ -26,14 +26,14 @@
 <!ENTITY aboutTor.torInfo3.label "צומת יציאה:">
 <!ENTITY aboutTor.torInfo4.label "שרת זה אינו רושם ביומן מידע כלשהו אודות מבקריו.">
 <!ENTITY aboutTor.whatnextQuestion.label "מה הלאה?">
-<!ENTITY aboutTor.whatnextAnswer.label "Tor אינה כל מה שתזדקק לו על מנת לגלוש באופן אנונימי! ייתכן שתצטרך לשנות חלק מהרגלי הגלישה שלך כדי להבטיח שזהותך תיוותר בטוחה.">
-<!ENTITY aboutTor.whatnext.label "טיפים לשמירה על אנונימיות ברשת »">
+<!ENTITY aboutTor.whatnextAnswer.label "Tor אינו כל מה שאתה צריך כדי לגלוש באופן אלמוני! ייתכן שתצטרך לשנות מספר הרגלי גלישה שלך כדי להבטיח שזהותך תישאר בטוחה.">
+<!ENTITY aboutTor.whatnext.label "עצות על להישאר אלמוני »">
 <!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "מדריך משתמש של דפדפן Tor">
 <!ENTITY aboutTor.helpInfo1.label "אתה יכול לעזור!">
 <!ENTITY aboutTor.helpInfo2.label "ישנן דרכים רבות בהן אתה יכול לעשות את רשת Tor מהירה יותר וחזקה יותר:">
-<!ENTITY aboutTor.helpInfo3.label "להקים ולהפעיל בעצמך שרת Tor">
+<!ENTITY aboutTor.helpInfo3.label "הרץ צומת ממסר Tor">
 <!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html.en">
 <!ENTITY aboutTor.helpInfo4.label "נדב את שירותיך »">
 <!ENTITY aboutTor.helpInfo4.link "https://www.torproject.org/getinvolved/volunteer.html.en">

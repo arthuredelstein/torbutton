@@ -16,4 +16,4 @@
 <!ENTITY bottomLinks.grow        "עזור לרשת Tor לגדול!">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
 <!ENTITY bottomLinks.license  "מידע רישוי">
-<!ENTITY tor.TrademarkStatement   "'Tor' ו-'סמליל הבצל' הם סימנים מסחריים רשומים של Tor Project, Inc.">
+<!ENTITY tor.TrademarkStatement   "'Tor' ו'סמליל הבצל' הם סימנים מסחריים רשומים של Tor Project, Inc.">

@@ -1,13 +1,20 @@
-<!ENTITY torbutton.context_menu.new_identity "Ny Identitet">
+<!ENTITY torbutton.context_menu.new_identity "Ny identitet">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Åpne nettverksinnstillinger...">
-<!ENTITY torbutton.context_menu.downloadUpdate "Last ned Tor Browser Bundle oppdatering...">
+<!ENTITY torbutton.context_menu.new_circuit "Ny Tor-krets for denne siden">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Sikkerhetsinnstillinger…">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "Nettverksinnstillinger for Tor…">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Se etter oppdatering for Tor-nettleseren…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "Informasjonskapsel Beskyttelser">
+<!ENTITY torbutton.context_menu.cookieProtections "Informasjonskapsels-beskyttelse…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Klikk for å initialisere Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Gjenopprett standard">
-<!ENTITY torbutton.cookiedialog.title "Administrér Informasjonskapslenes Beskyttelser">
+<!ENTITY torbutton.button.tooltip "Klikk for å igangsette Torbutton">
+<!ENTITY torbutton.prefs.security_settings "Sikkerhetsinnstillinger for Tor-nettleseren">
+<!ENTITY torbutton.prefs.restore_defaults "Gjenopprett forvalg">
+<!ENTITY torbutton.prefs.custom_warning "Dine nettleserinnstillinger har ført med seg uvanlige sikkerhetsvalg. Av sikkerhet- og personverns-hensyn anbefaler vi at du velger en av de forvalgte sikkerhetsnivåene.">
+<!ENTITY torbutton.cookiedialog.title "Administrer beskyttelse av informasjonskapsler">
 <!ENTITY torbutton.cookiedialog.lockCol "Beskyttet">
 <!ENTITY torbutton.cookiedialog.domainCol "Vert">
 <!ENTITY torbutton.cookiedialog.nameCol "Navn">
@@ -15,8 +22,30 @@
 <!ENTITY torbutton.cookiedialog.protectCookie "Beskytt Informasjonskapsel">
 <!ENTITY torbutton.cookiedialog.removeCookie "Fjern Informasjonskapsel">
 <!ENTITY torbutton.cookiedialog.unprotectCookie "Ikke Beskytt Informasjonskapsel">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Fjern Alle Bortsett Fra Beskyttede">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Beskytt Nye Informasjonskapsler">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ikke Beskytt Nye Informasjonskapsler">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Fjern alle bortsett fra beskyttede">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Beskytt nye informasjonskapsler">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ikke beskytt nye informasjonskapsler">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Begrens tredjeparts informasjonskapsler og andre sporingsdata.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Endre detaljer som skiller deg fra andre Tor Browser brukere.">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Hold denne boksen avhuket for å forebygge at ulike nettleserfunksjoner blir misbrukt til å spore deg når du surfer på nettet. Modifiserte funksjoner inkluderer blob-nettadresser, kringkastinskanaler, nettleserens mellomlager, informasjonskapsler, favicon, HTTP-autentiserings overskrifter, link preconnects, localstorage , Mediasource-nettadresser, OCSP-forespørsler, SharedWorkers og TLS øktbilletter.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Endre detaljer som skiller deg fra andre brukere av Tor-nettleseren.">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "La denne avkryssingsboksen være utkrysset for å skjule ting som kan være unikt med deg fra nettsteder, inkludert datamaskinens ytelse, tastaturoppsett , lokale, plasseringen av- og listen over  installerte programtillegg, nettverksstatus, skjermretning , skjermstørrelse , sidespesifikke forstørrelsesnivåer , filtyper som støttes, systemfarger og WebGL-evner.">
+<!ENTITY torbutton.prefs.sec_caption "Sikkerhetsnivå">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Sikkerhetsglidebryteren lar deg skru av forskjellige nettleserfunksjoner som kan eksponere deg for risiko.">
+<!ENTITY torbutton.prefs.sec_standard_label "Forvalg">
+<!ENTITY torbutton.prefs.sec_standard_description "Alle Tor-nettleser- og nettside-funksjoner er på.">
+<!ENTITY torbutton.prefs.sec_safer_label "Tryggere">
+<!ENTITY torbutton.prefs.sec_safer_description "Skrur av nettsidefunksjoner som ofte er farlige, som gjør at noen sider blir skadelidende.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "På den tryggere innstillingen:">
+<!ENTITY torbutton.prefs.sec_safest_label "Tryggest">
+<!ENTITY torbutton.prefs.sec_safest_description "Tillater bare nettsidefunksjoner som kreves for statiske sider og grunnleggende tjenester. Disse endringene har innvirkning på bilder, media, og skript.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "På den tryggeste innstillingen:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Lær mer">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript er avskrudd på sider som ikke er HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript er som forvalg slått av for alle nettsteder.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Noen skrifter og mattesymboler er avskrudd.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Noen skrifter, ikoner, mattesymboler og bilder er avskrudd.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Lyd og video (HTML5-media) må klikkes for å spilles av.">
+<!ENTITY torbutton.circuit_display.title "Tor Krets">
+<!ENTITY torbutton.circuit_display.new_circuit "Ny Krets for denne siden">

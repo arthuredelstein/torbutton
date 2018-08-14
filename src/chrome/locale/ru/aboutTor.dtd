@@ -6,7 +6,7 @@
 
 <!ENTITY aboutTor.title "О проекте Tor">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "ВНИМАНИЕ: Вы используете старую версию браузера.">
+<!ENTITY aboutTor.outOfDateTorOn.label "ВНИМАНИЕ: вы используете старую версию браузера.">
 <!ENTITY aboutTor.outOfDateTorOff.label "КРОМЕ ТОГО, данный браузер устарел.">
 <!ENTITY aboutTor.outOfDate2.label "Нажмите на &quot;луковицу&quot;и затем выберите &quot;Проверить обновления браузера Tor&quot;">
 

@@ -33,7 +33,7 @@
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Kullanım Kılavuzu">
 <!ENTITY aboutTor.helpInfo1.label "Yardım Edebilirsiniz!">
 <!ENTITY aboutTor.helpInfo2.label "Tor ağını daha hızlı güçlü kılmaya yardımcı olabilmenin çeşitli yolları var:">
-<!ENTITY aboutTor.helpInfo3.label "Tor Aktarıcı Noktası Çalıştır »">
+<!ENTITY aboutTor.helpInfo3.label "Bir Tor Aktarıcı Düğümü İşletin»">
 <!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html.en">
 <!ENTITY aboutTor.helpInfo4.label "Gönüllü Destekte Bulunun »">
 <!ENTITY aboutTor.helpInfo4.link "https://www.torproject.org/getinvolved/volunteer.html.en">

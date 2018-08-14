@@ -47,5 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "有些字形與數學符號被停用">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "有些字型,圖標,數學符號與圖片被停用">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "聲音和影片 (HTML5 媒體) 要點擊播放">
-<!ENTITY torbutton.circuit_display.title "Tor Circuit">
-<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">
+<!ENTITY torbutton.circuit_display.title "Tor 迴路">
+<!ENTITY torbutton.circuit_display.new_circuit "建立新的迴路來連接上此網站">

@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  brandShorterName      "Tor-vafrinn">
+<!ENTITY  brandShortName        "Tor-vafrinn">
+<!ENTITY  brandFullName         "Tor-vafrinn">
+<!ENTITY  vendorShortName       "Tor-verkefnið">
+<!ENTITY  trademarkInfo.part1   "Firefox og Firefox merkin eru vörumerki Mozilla Foundation.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "Smelltu til að hlaða inn uppsettum kerfisviðbótum">
+<!ENTITY plugins.installed.enable "Virkja viðbætur">
+<!ENTITY plugins.installed.disable "Gera viðbætur óvirkar">
+<!ENTITY plugins.installed.disable.tip "Smelltu til að koma í veg fyrir að kerfisviðbótum sé hlaðið inn">

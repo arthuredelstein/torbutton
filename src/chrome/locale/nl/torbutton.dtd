@@ -47,5 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Sommige lettertypen en wiskundige symbolen zijn uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Sommige lettertypen, pictogrammen, wiskundige symbolen en afbeeldingen zijn uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio en video (HTML5-media) zijn klik-bij-afspelen.">
-<!ENTITY torbutton.circuit_display.title "Tor Circuit">
-<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">
+<!ENTITY torbutton.circuit_display.title "Torcircuit">
+<!ENTITY torbutton.circuit_display.new_circuit "Nieuw circuit voor deze website">

@@ -1,22 +1,51 @@
 <!ENTITY torbutton.context_menu.new_identity "Nýtt auðkenni">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
+<!ENTITY torbutton.context_menu.new_circuit "Ný Tor-rás fyrir þetta vefsvæði">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Öryggisstillingar…">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "Netkerfisstillingar Tor…">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Athugaðu með uppfærslur Tor-vafra...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
+<!ENTITY torbutton.context_menu.cookieProtections "Varnir gegn vefkökum...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Click to initialize Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
-<!ENTITY torbutton.cookiedialog.lockCol "Protected">
-<!ENTITY torbutton.cookiedialog.domainCol "Host">
-<!ENTITY torbutton.cookiedialog.nameCol "Name">
-<!ENTITY torbutton.cookiedialog.pathCol "Path">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protect Cookie">
-<!ENTITY torbutton.cookiedialog.removeCookie "Remove Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Unprotect Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">
+<!ENTITY torbutton.button.tooltip "Smelltu til að kveikja á Tor-hnapp">
+<!ENTITY torbutton.prefs.security_settings "Öryggisstillingar Tor-vafrans">
+<!ENTITY torbutton.prefs.restore_defaults "Frumstilla á sjálfgefið">
+<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.cookiedialog.title "Sýsla með varnir gegn vefkökum">
+<!ENTITY torbutton.cookiedialog.lockCol "Varið">
+<!ENTITY torbutton.cookiedialog.domainCol "Hýsilvél">
+<!ENTITY torbutton.cookiedialog.nameCol "Heiti">
+<!ENTITY torbutton.cookiedialog.pathCol "Slóð">
+<!ENTITY torbutton.cookiedialog.protectCookie "Vernda vefköku">
+<!ENTITY torbutton.cookiedialog.removeCookie "Fjarlægja vefköku">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Afvernda vefköku">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Fjarlægja allar aðrar en verndaðar">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Vernda nýjar vefkökur">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ekki vernda nýjar vefkökur">
+<!ENTITY torbutton.prefs.restrict_thirdparty "Takmarka vefkökur frá þriðja aðila og önnur ferligögn">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Keep this box checked to prevent various browser features from being abused to track you as you browse the web. Modified features include blob URLs, broadcast channels, the browser cache, cookies, favicons, HTTP Auth headers, link preconnects, localStorage, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Breyta atriðum sem gera þig ólíkan öðrum notendum Tor-vafrans">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Hafðu hakað í þennan reit til að fela fyrir vefsvæðum atriði sem gætu verið einstök hjá þér, þar með talin atriði eins og upplýsingar um afköst tölvunnar, lyklaborðsuppsetningu, staðfærslu, staðsetningu uppsettra viðbóta, lista yfir uppsettar viðbætur, stöðu netkerfis, stærð og stefnu skjás, sértækan aðdrátt fyrir vefsvæði, studdar skráategundir, kerfisliti og getu varðandi WebGL.">
+<!ENTITY torbutton.prefs.sec_caption "Öryggisstig">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
+<!ENTITY torbutton.prefs.sec_standard_label "Staðlað">
+<!ENTITY torbutton.prefs.sec_standard_description "Allir eiginleikar Tor-vafrans og vefsvæðisins eru virkjaðir.">
+<!ENTITY torbutton.prefs.sec_safer_label "Öruggara">
+<!ENTITY torbutton.prefs.sec_safer_description "Gerir óvirka ýmsa eiginleika vefsvæða sem oft eru hættulegir, en veldur því að sum vefsvæði hætta að virka eins og þau eiga að gera.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Með öruggari stillingum:">
+<!ENTITY torbutton.prefs.sec_safest_label "Öruggast">
+<!ENTITY torbutton.prefs.sec_safest_description "Leyfir aðeins þá eiginleika vefsvæða sem krafist er fyrir beinan lestur (static sites) og grunnþjónustur. Þessar breytingar hafa áhrif á myndir, margmiðlunargögn og skriftur.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Með öruggustu stillingum:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Læra meira">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript er óvirkt á öllum ekki-HTTPS vefjum.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript er sjálfgefið óvirkt á öllum vefsvæðum.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Sumt letur og stærðfræðitákn eru óvirk.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Sumt letur, táknmyndir, myndir og stærðfræðitákn eru óvirk.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Hljóð og myndskeið (HTML5-gagnamiðlar) þarf að smella á til að spila.">
+<!ENTITY torbutton.circuit_display.title "Tor-rás">
+<!ENTITY torbutton.circuit_display.new_circuit "Ný rás fyrir þetta vefsvæði">

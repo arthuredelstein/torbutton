@@ -1,22 +1,51 @@
 <!ENTITY torbutton.context_menu.new_identity "Nova identitat">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
+<!ENTITY torbutton.context_menu.new_circuit "Nou circuit Tor per a aquest lloc">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Paràmetres de seguretat...">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "Preferències de la Xarxa Tor...7">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Cerca una actualització del navegador Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "A">
-<!ENTITY torbutton.context_menu.cookieProtections "Protecció de les galetes">
+<!ENTITY torbutton.context_menu.cookieProtections "Proteccions de les Galetes...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Feu clic per a iniciar Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Reestableix predeterminats">
-<!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
-<!ENTITY torbutton.cookiedialog.lockCol "Protected">
-<!ENTITY torbutton.cookiedialog.domainCol "Host">
+<!ENTITY torbutton.prefs.security_settings "Paràmetres de seguretat del navegador Tor">
+<!ENTITY torbutton.prefs.restore_defaults "Torna a les opcions per defecte">
+<!ENTITY torbutton.prefs.custom_warning "El navegador personalitzat ha obtingut uns paràmetres inusuals de seguretat. Per raons de privacitat i de seguretat, recomanem l'elecció d'un nivell de seguretat per defecte.">
+<!ENTITY torbutton.cookiedialog.title "Configura proteccions de les galetes">
+<!ENTITY torbutton.cookiedialog.lockCol "Protegit">
+<!ENTITY torbutton.cookiedialog.domainCol "Allotjador">
 <!ENTITY torbutton.cookiedialog.nameCol "Nom">
-<!ENTITY torbutton.cookiedialog.pathCol "Path">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protect Cookie">
-<!ENTITY torbutton.cookiedialog.removeCookie "Remove Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Unprotect Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">
+<!ENTITY torbutton.cookiedialog.pathCol "Camí">
+<!ENTITY torbutton.cookiedialog.protectCookie "Protegir les galetes">
+<!ENTITY torbutton.cookiedialog.removeCookie "Suprimir galetes">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Galetes sense protecció">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Suprimir totes amb protecció">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Protegir noves galetes">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "No protegir noves galetes">
+<!ENTITY torbutton.prefs.restrict_thirdparty "Restringir galetes de tercers i dades de seguiment">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Marca la casella de selecció per prevenir característiques d'abús i seguiments al consultar un web. Les característiques modificables son les URL blob, canals de difusió, memòria cau del navegador, galetes, favicons, capçaleres HTTP Auth, enllaços de preconexió, emmagatzemament local, URL mediaSource, sol·licitud OCSP, SharedWorkers i tiquets TLS.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Canviar detalls que distingeixen d'altres usuaris del navegador Tor">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Mantingueu aquesta casella marcada per a ocultar informació sensible sobre vosté a les pàgines web, tal com les capacitats de l'ordinador, la distribució del teclat, la localització dels connectors instal·lats, la llista de connectors, el seu estat de xarxa, la orientació de la pantalla, el seu tamany, el zoom específic per a cada lloc, els tipus de fitxer acceptats, els colors de sistema i les capacitats WebGL.">
+<!ENTITY torbutton.prefs.sec_caption "Nivell de seguretat">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "El control lliscant de seguretat permet deshabilitar característiques del navegador que poden permetre vulnerabilitats en atemptats de furoners.">
+<!ENTITY torbutton.prefs.sec_standard_label "Estàndard">
+<!ENTITY torbutton.prefs.sec_standard_description "Totes les característiques del buscador Tor i de la pàgina web estan actives.">
+<!ENTITY torbutton.prefs.sec_safer_label "Més segur.">
+<!ENTITY torbutton.prefs.sec_safer_description "Desactivar les funcions del lloc web que sovint són perilloses, pot fent que alguns llocs perden funcionalitat.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "A la configuració més segura:">
+<!ENTITY torbutton.prefs.sec_safest_label "més segur">
+<!ENTITY torbutton.prefs.sec_safest_description "Només es permeten funcions del lloc web requerides per a llocs estàtics i serveis bàsics. Aquests canvis afecten imatges, mitjans de comunicació i scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "A la configuració més segura:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Apreneu-ne més">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "El JavaScript està desactivat per defecte en tots els llocs no-HTTPS">
+<!ENTITY torbutton.prefs.sec_js_disabled "El JavaScript està desactivat per defecte a tots els llocs.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Algunes fonts i símbols matemàtics estan desactivats. ">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Algunes fonts, icones, símbols matemàtics, i imatges estan desactivats. ">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "L'àudio i el vídeo (mitjans de comunicació HTML5) són click-to-play.">
+<!ENTITY torbutton.circuit_display.title "Circuit de Tor">
+<!ENTITY torbutton.circuit_display.new_circuit " Circuit de Tor per a aquest lloc ">

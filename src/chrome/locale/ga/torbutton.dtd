@@ -1,22 +1,51 @@
-<!ENTITY torbutton.context_menu.new_identity "New Identity">
+<!ENTITY torbutton.context_menu.new_identity "Aitheantas Nua">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
+<!ENTITY torbutton.context_menu.new_circuit "Ciorcad Nua Tor don Suíomh seo">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Socruithe Slándála...">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "Socruithe Líonra Tor...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Lorg Nuashonrú ar Bhrabhsálaí Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
+<!ENTITY torbutton.context_menu.cookieProtections "Caomhnú Fianán...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Click to initialize Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Restore Defaults">
-<!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
-<!ENTITY torbutton.cookiedialog.lockCol "Protected">
-<!ENTITY torbutton.cookiedialog.domainCol "Host">
-<!ENTITY torbutton.cookiedialog.nameCol "Name">
-<!ENTITY torbutton.cookiedialog.pathCol "Path">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protect Cookie">
-<!ENTITY torbutton.cookiedialog.removeCookie "Remove Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Unprotect Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">
+<!ENTITY torbutton.button.tooltip "Cliceáil chun cnaipe Tor a thúsú">
+<!ENTITY torbutton.prefs.security_settings "Socruithe Slándála Bhrabhsálaí Tor">
+<!ENTITY torbutton.prefs.restore_defaults "Fill ar na Réamhshocruithe">
+<!ENTITY torbutton.prefs.custom_warning "Tá socruithe slándála an bhrabhsálaí as an ngnáth faoi láthair, mar thoradh ar do chuid sainroghanna.  Ar chúiseanna slándála agus príobháideachais, molaimid duit ceann de na leibhéil slándála réamhshocraithe a roghnú.">
+<!ENTITY torbutton.cookiedialog.title "Bainistigh Caomhnú Fianán">
+<!ENTITY torbutton.cookiedialog.lockCol "Cosanta">
+<!ENTITY torbutton.cookiedialog.domainCol "Óstríomhaire">
+<!ENTITY torbutton.cookiedialog.nameCol "Ainm">
+<!ENTITY torbutton.cookiedialog.pathCol "Cosán">
+<!ENTITY torbutton.cookiedialog.protectCookie "Caomhnaigh an Fianán">
+<!ENTITY torbutton.cookiedialog.removeCookie "Scrios an Fianán">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Ná caomhnaigh an fianán">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Scrios iad nach bhfuil caomhnaithe">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Caomhnaigh Fianáin Nua">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ná Caomhnaigh Fianáin Nua">
+<!ENTITY torbutton.prefs.restrict_thirdparty "Cuir srian le fianáin tríú páirtí agus le sonraí lorgaireachta eile">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Coinnigh tic sa bhosca seo chun cosc a chur ar ghnéithe éagsúla sa bhrabhsálaí a mbaintear mí-úsáid astu chun do ghníomhaíocht ar an nGréasán a lorg. I measc na ngnéithe seo: blob-URLanna, cainéil chraolta, taisce an bhrabhsálaí, fianáin, deilbhíní suímh, ceanntásca HTTP Auth, réamhcheangal nascanna, stóras áitiúil, URLanna mediaSource, iarratais OCSP, Oibrithe Roinnte, agus ticéid seisiún TLS. ">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Athraigh na mionsonraí a dhéanann idirdhealú ó úsáideoirí Tor eile">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "H">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Coinnigh tic sa bhosca seo chun sonraí a bhaineann leatsa go pearsanta a chur i bhfolach ó shuímh Ghréasáin, mar shampla luas do ríomhaire, leagan amach do mhéarchláir, an logchaighdeán, an áit ina bhfuil forlíontáin suiteáilte, na forlíontáin shuiteáilte féin, stádas do líonra, treoshuíomh an scáileáin, méid an scáileáin, leibhéil zúmála ar shuímh ar leith, cineálacha comhaid a dtacaíonn do bhrabhsálaí leo, dathanna an chórais, agus acmhainní WebGL.">
+<!ENTITY torbutton.prefs.sec_caption "Leibhéal Slándála">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Ligeann an Sleamhnán Slándála duit gnéithe áirithe sa bhrabhsálaí a dhíchumasú nuair is féidir le bradaí iad a úsáid chun ionsaí a dhéanamh ort.">
+<!ENTITY torbutton.prefs.sec_standard_label "Gnáthshlándáil">
+<!ENTITY torbutton.prefs.sec_standard_description "Gach gné de bhrabhsálaí Tor agus gach gné de shuímh Ghréasáin ar siúl.">
+<!ENTITY torbutton.prefs.sec_safer_label "Níos Sábháilte">
+<!ENTITY torbutton.prefs.sec_safer_description "Díchumasaítear gnéithe de shuímh atá contúirteach go minic; dá bharr seo, ní fheidhmeoidh gach suíomh mar is ceart.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Leis an rogha níos sábháilte:">
+<!ENTITY torbutton.prefs.sec_safest_label "Is Sábháilte">
+<!ENTITY torbutton.prefs.sec_safest_description "Ní cheadaítear ach na gnéithe atá de dhíth ar shuímh statacha agus ar bhunseirbhísí. Téann na hathruithe seo i bhfeidhm ar íomhánna, ar mheáin, agus ar scripteanna.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Leis an rogha is sábháilte:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Tuilleadh eolais">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Tá JavaScript díchumasaithe ar shuímh nach mbaineann úsáid as HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "Tá JavaScript díchumasaithe ar gach suíomh de réir réamhshocraithe.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Tá roinnt clófhoirne agus siombailí matamaiticiúla díchumasaithe.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Tá roinnt clófhoirne, deilbhíní, siombailí matamaiticiúla, agus íomhánna díchumasaithe.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Caithfidh tú fuaimeanna agus físeáin (meáin HTML5) a chliceáil lena seinm.">
+<!ENTITY torbutton.circuit_display.title "Ciorcad Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "Ciorcad Nua don Suíomh seo">
