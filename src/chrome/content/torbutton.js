@@ -12,7 +12,7 @@ let { showDialog } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { getLocale, unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
 let NoScriptControl = Cu.import("resource://torbutton/modules/noscript-control.js", {});
-let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 Cu.importGlobalProperties(["XMLHttpRequest"]);
 
@@ -1920,6 +1920,8 @@ function torbutton_is_windowed(wind) {
     return true;
 }
 
+let stopOpenSecuritySettingsObserver;
+
 // Bug 1506 P3: This is needed pretty much only for the version check
 // and the window resizing. See comments for individual functions for
 // details
@@ -1953,6 +1955,11 @@ function torbutton_new_window(event)
                                    Ci.nsIWebProgress.NOTIFY_STATE_DOCUMENT);
     }
 
+    // Register the TorOpenSecuritySettings observer, which is used by
+    // UITour to open the security slider dialog.
+    stopOpenSecuritySettingsObserver = observe("TorOpenSecuritySettings",
+                                               torbutton_open_prefs_dialog);
+
     // Check the version on every new window. We're already pinging check in these cases.    
     torbutton_do_async_versioncheck();
 
@@ -1964,6 +1971,7 @@ function torbutton_new_window(event)
 function torbutton_close_window(event) {
     torbutton_window_pref_observer.unregister();
     torbutton_tor_check_observer.unregister();
+    stopOpenSecuritySettingsObserver();
 
     window.removeEventListener("sizemodechange", m_tb_resize_handler,
         false);

@@ -20,6 +20,7 @@ FILEMAP=( "aboutDialog.dtd:torbutton-aboutdialogdtd"
           "aboutTBUpdate.dtd:torbutton-abouttbupdatedtd"
           "brand.dtd:torbutton-branddtd"
           "brand.properties:torbutton-brandproperties"
+          "browserOnboarding.properties:torbutton-browseronboardingproperties"
           "torbutton.dtd:torbutton-torbuttondtd"
           "torbutton.properties:torbutton-torbuttonproperties"
          )
