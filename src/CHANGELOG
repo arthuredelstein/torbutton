@@ -1,3 +1,15 @@
+2.0.2
+ * Bug 26960: Implement new about:tor start page
+ * Bug 26961: Implement new user onboarding
+ * Bug 26321: Move 'New Identity', 'New Circuit' to File, hamburger menus
+ * Bug 26590: Use new svg.disabled pref in security slider
+ * Bug 26655: Adjust color and size of onion button
+ * Bug 26500: Reposition circuit display relay icon for RTL locales
+ * Bug 26409: Remove spoofed locale implementation
+ * Bug 26189: Remove content-policy.js
+ * Bug 27129: Add locales ca, ga, id, is, nb
+ * Translations update
+
 2.0.1
  * Bug 26100: Adapt Torbutton to Firefox 60 ESR
  * Bug 26430: New Torbutton icon
