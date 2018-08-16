@@ -47,5 +47,5 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "কিছু ফন্ট এবং গণিত চিহ্ন অক্ষম আছে।">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "কিছু ফন্ট, আইকন, গণিত প্রতীক এবং ছবি অক্ষম রয়েছে।">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "অডিও এবং ভিডিও (HTML5 মিডিয়া) ক্লিক-টু-খেলা।">
-<!ENTITY torbutton.circuit_display.title "Tor Circuit">
-<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">
+<!ENTITY torbutton.circuit_display.title "টর সার্কিট">
+<!ENTITY torbutton.circuit_display.new_circuit "এই সাইটের জন্য নতুন সার্কিট">

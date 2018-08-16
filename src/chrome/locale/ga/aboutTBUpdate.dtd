@@ -1,0 +1,6 @@
+<!ENTITY aboutTBUpdate.title "Nuashonrú Brabhsálaí Tor">
+<!ENTITY aboutTBUpdate.updated "Nuashonraíodh Brabhsálaí Tor">
+<!ENTITY aboutTBUpdate.linkPrefix "Chun teach ar an eolas is déanaí maidir leis an leagan seo,">
+<!ENTITY aboutTBUpdate.linkLabel  "tabhair cuairt ar ár suíomh Gréasáin">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "Logchomhad athruithe:">

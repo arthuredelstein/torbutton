@@ -1,6 +1,6 @@
 <!ENTITY torbutton.context_menu.new_identity "Yeni Kimlik">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.new_circuit "Bu site için Tor devresini yenile">
+<!ENTITY torbutton.context_menu.new_circuit "Bu Sitenin Tor Devresini Yenile">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.preferences "Güvenlik Ayarları...">
 <!ENTITY torbutton.context_menu.preferences.key "S">

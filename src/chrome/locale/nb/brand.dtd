@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  brandShorterName      "Tor-nettleseren">
+<!ENTITY  brandShortName        "Tor-nettleseren">
+<!ENTITY  brandFullName         "Tor-nettleseren">
+<!ENTITY  vendorShortName       "Tor-prosjektet">
+<!ENTITY  trademarkInfo.part1   "Firefox og Firefox-logene er varemarker tilhørende Mozilla-stiftelsen.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "Klikk for å laste inn installerte systemtillegg">
+<!ENTITY plugins.installed.enable "Skru på programtillegg">
+<!ENTITY plugins.installed.disable "Skru av programtillegg">
+<!ENTITY plugins.installed.disable.tip "Klikk for å blokkere innlasting av systemtillegg">

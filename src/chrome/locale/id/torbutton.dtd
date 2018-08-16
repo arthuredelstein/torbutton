@@ -1,12 +1,19 @@
 <!ENTITY torbutton.context_menu.new_identity "Identitas Baru">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
-<!ENTITY torbutton.context_menu.downloadUpdate.key "A">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
+<!ENTITY torbutton.context_menu.new_circuit "Sirkuit Tor Baru untuk Situs ini">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Pengaturan Keamanan...">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "Pengaturan Jaringan Tor…">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Cek Versi Peramban Tor Terkini">
+<!ENTITY torbutton.context_menu.downloadUpdate.key "U">
+<!ENTITY torbutton.context_menu.cookieProtections "Perlindungan Cookie...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Klik untuk mengaktifkan Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Kembalikan ke asal">
+<!ENTITY torbutton.button.tooltip "Klik untuk mengaktifkan TombolTor">
+<!ENTITY torbutton.prefs.security_settings "Pengaturan Keamanan Tor Browser">
+<!ENTITY torbutton.prefs.restore_defaults "Kembalikan Kestandar">
+<!ENTITY torbutton.prefs.custom_warning "Preferensi browser khusus anda telah membuat pengaturan keamanan yang tidak biasa. Untuk alasan keamanan dan privasi, kami menyarankan anda untuk memilih satu dari tingkat keamanan bawaan.">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -19,4 +26,26 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Jaga kotak ini tetap tercentang untuk mencegah berbagai fitur browser dari penyalahgunaan untuk melacak anda saat sedang menelusuri web. Fitur modifikasi termasuk URL blob, saluran siaran, cache browser, cookies, favicon, kepala HTTP Auth, link preconnect, localStorage, URL mediaSource, permintaan OCSP, SharedWorkets, dan sesi tiket TLS.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Ubah rincian yang membedakan Anda dari pengguna peramban Tor lain.">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Biarkan kotak ini tetap dicentang untuk menyembunyikan hal-hal yang unik tentang Anda dari situs web, termasuk kinerja komputer Anda, susunan keyboard, bahasa, lokasi pengaya terpasang, daftar dari pengaya terpasang, status jaringan, orientasi layar, ukuran layar, tingkat pembesaran situs-spesifik, tipe berkas yang didukung, warna sistem, dan kemampuan WebGL.">
+<!ENTITY torbutton.prefs.sec_caption "Tingkat Keamanan">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Penggeser keamanan memungkinkan anda untuk menonaktifkan fitur browser yang dapat membuat browser anda menjadi lebih rentant dari upaya peretasan.">
+<!ENTITY torbutton.prefs.sec_standard_label "Standar">
+<!ENTITY torbutton.prefs.sec_standard_description "Semua fitur dari Tor Browser dan situs web diaktifkan.">
+<!ENTITY torbutton.prefs.sec_safer_label "Lebih aman">
+<!ENTITY torbutton.prefs.sec_safer_description "Menonaktifkan fitur-fitur situs web yang sering berbahaya, ini akan membuat beberapa situs kehilangan fungsionalitas.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Di pengaturan yang lebih aman:">
+<!ENTITY torbutton.prefs.sec_safest_label "Paling aman">
+<!ENTITY torbutton.prefs.sec_safest_description "Hanya menjalankan fitur-fitur situs yang diperlukan untuk menjalankan situs web statis dan servis dasar. Perubahan ini mempengaruhi gambar, media, dan skrip.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Di pengaturan yang paling aman:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Pelajari lebih lanjut">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript dinonaktifkan di semua situs non-HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript dinonaktifkan secara default di semua situs.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Beberapa font dan simbol matematika dinonaktifkan.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Beberapa font, icon, simbol matematika, dan gambar dinonaktifkan.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio dan video (media HTML5 media) dijalankan saat diklik.">
+<!ENTITY torbutton.circuit_display.title "Sirkuit Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "Sirkuit Baru untuk Situs Ini">

@@ -1,0 +1,19 @@
+<!ENTITY project.start           "Tá &brandShortName; forbartha ag">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "&vendorShortName;">
+<!ENTITY project.end             ", eagraíocht neamhbhrabhúis a chosnaíonn do phríobháideachas agus do shaoirse ar líne.">
+
+<!ENTITY help.start              "Ar mhaith leat cuidiú linn?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Tabhair síntiús airgid">
+<!ENTITY help.or                 "nó">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "glac páirt">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Ceisteanna?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Cabhraigh linn borradh a chur faoi Líonra Tor!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Ceadúnas">
+<!ENTITY tor.TrademarkStatement   "Is trádmharcanna de chuid Tor Project, Inc. iad 'Tor' agus an 'Onion Logo'">

@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; er þróað af ">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "&vendorShortName;">
+<!ENTITY project.end             ", frjálsum félagasamtökum sem vinna að því að verja rétt þinn til einkalífs og frelsi þitt á netinu.">
+
+<!ENTITY help.start              "Viltu hjálpa?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Styrkja">
+<!ENTITY help.or                 "eða">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "taka þátt">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Spurningar?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Hjálpaðu Tor-netinu að vaxa!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Upplýsingar um notkunarleyfi">
+<!ENTITY tor.TrademarkStatement   "'Tor' og 'Laukmerkið' (Onion Logo) eru skráð vörumerki Tor Project, Inc.">

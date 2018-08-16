@@ -1,0 +1,6 @@
+<!ENTITY aboutTBUpdate.title "Pemutakhiran peramban Tor">
+<!ENTITY aboutTBUpdate.updated "Peramban Tor telah diperbarui.">
+<!ENTITY aboutTBUpdate.linkPrefix "Untuk informasi paling terbaru mengenai rilisan ini,">
+<!ENTITY aboutTBUpdate.linkLabel  "kunjungi situs web kami">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "Catatan Perubahan:">

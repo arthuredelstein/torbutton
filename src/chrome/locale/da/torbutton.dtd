@@ -6,7 +6,7 @@
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor-netværksindstillinger...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "Søg efter Tor Browser-opdatering...">
+<!ENTITY torbutton.context_menu.downloadUpdate "Søg efter opdateringer til Tor Browser...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "O">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie-beskyttelser...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
@@ -37,10 +37,10 @@
 <!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser- og webstedsfunktionaliteter er aktiveret.">
 <!ENTITY torbutton.prefs.sec_safer_label "Mere sikker">
 <!ENTITY torbutton.prefs.sec_safer_description "Deaktiverer webstedsfunktionaliteter som ofte er farlige, hvilket kan gøre at nogle steder mister deres funktionalitet.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "Ved den mere sikker indstilling:">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Ved mere sikker-indstillingen:">
 <!ENTITY torbutton.prefs.sec_safest_label "Mest sikker">
 <!ENTITY torbutton.prefs.sec_safest_description "Tillader kun webstedsfunktionaliteter som kræves til statiske steder og grundlæggende tjenester. Ændringerne påvirker billeder, medier og scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "Ved den sikreste indstilling:">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Ved mest sikker-indstillingen:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Lær mere">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript er deaktiveret på ikke-HTTPS steder.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript er som standard deaktiveret på alle steder.">

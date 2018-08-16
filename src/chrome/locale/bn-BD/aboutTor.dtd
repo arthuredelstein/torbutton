@@ -1,45 +1,25 @@
 <!--
-   - Copyright (c) 2015, The Tor Project, Inc.
+   - Copyright (c) 2018, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
 
 <!ENTITY aboutTor.title "Tor সম্পর্কে">
 
-<!ENTITY aboutTor.outOfDateTorOn.label "সতর্কতা: এই ব্রাউজারটি পুরানো।">
-<!ENTITY aboutTor.outOfDateTorOff.label "এছাড়াও, এই ব্রাউজারটিও পুরানো।">
-<!ENTITY aboutTor.outOfDate2.label "Onion এর উপর ক্লিক করুন এবং তারপর টর ব্রাউজার আপডেট জন্য চেক নির্বাচন করুন।">
-
-<!ENTITY aboutTor.check.label "টর নেটওয়ার্ক সেটিংস টেস্ট  করুন">
-
-<!ENTITY aboutTor.success.label "টর ব্রাউজারে স্বাগতম">
-<!ENTITY aboutTor.success2.label "টর নেটওয়ার্কে সংযুক্ত">
-<!ENTITY aboutTor.success3.label "আপনি এখন নিরাপদে ইন্টারনেট ব্রাউজ করতে পারবেন।">
+<!ENTITY aboutTor.ready.label "এক্সপ্লোর. গোপনে.">
+<!ENTITY aboutTor.ready2.label "আপনি বিশ্বের সবচেয়ে ব্যক্তিগত ব্রাউজিং অভিজ্ঞতার জন্য প্রস্তুত ।">
 <!ENTITY aboutTor.failure.label "কিছু ভুল হয়েছে!">
 <!ENTITY aboutTor.failure2.label "টর এই ব্রাউজারে কাজ করছে না">
 
-<!ENTITY aboutTor.search.label "খুজুন">
+<!ENTITY aboutTor.search.label "DuckDuckGo সঙ্গে অনুসন্ধান">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
-<!ENTITY aboutTor.torInfo1.label "অতিরিক্ত তথ্য:">
-<!ENTITY aboutTor.torInfo2.label "দেশ এবং IP ঠিকানা:">
-<!ENTITY aboutTor.torInfo3.label "প্রস্থান নোড:">
-<!ENTITY aboutTor.torInfo4.label "এই সার্ভার দর্শক সম্পর্কে কোনও তথ্য লগ করে না।">
-<!ENTITY aboutTor.whatnextQuestion.label "এরপর কী?">
-<!ENTITY aboutTor.whatnextAnswer.label "Tor আপনি সমস্ত বেনামে ব্রাউজ করতে হবে না! আপনার পরিচয় নিরাপদ থাকে তা নিশ্চিত করতে আপনাকে আপনার ব্রাউজিং অভ্যাসগুলির কিছু পরিবর্তন করতে হবে।">
-<!ENTITY aboutTor.whatnext.label "নিরাপদে থাকার থাকার টিপস »">
-<!ENTITY aboutTor.whatnext.link "https://www.torproject.org/download/download.html.en#warning">
+<!ENTITY aboutTor.torbrowser_user_manual_questions.label "প্রশ্ন?">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "আমাদের টর ব্রাউজারের ম্যানুয়াল পরীক্ষা করুন»">
+<!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "টর ব্রাউজার ইউজার ম্যানুয়াল">
-<!ENTITY aboutTor.helpInfo1.label "তুমি সাহায্য করতে পার!">
-<!ENTITY aboutTor.helpInfo2.label "টর নেটওয়ার্ক দ্রুত এবং শক্তিশালী করতে আপনি অনেক উপায় আছে:">
-<!ENTITY aboutTor.helpInfo3.label "একটি টর্ রিলে নাড চালান »">
-<!ENTITY aboutTor.helpInfo3.link "https://www.torproject.org/docs/tor-doc-relay.html.en">
-<!ENTITY aboutTor.helpInfo4.label "আপনার পরিষেবাগুলি স্বেচ্ছাসেবক »">
-<!ENTITY aboutTor.helpInfo4.link "https://www.torproject.org/getinvolved/volunteer.html.en">
-<!ENTITY aboutTor.helpInfo5.label "দান করুন »">
-<!ENTITY aboutTor.helpInfo5.link "https://www.torproject.org/donate/donate.html.en">
+<!ENTITY aboutTor.torbrowser_user_manual.label "আমাদের টর ব্রাউজারের ম্যানুয়াল পরীক্ষা করুন»">
 
-<!ENTITY aboutTor.footer.label "টর প্রকল্পটি মার্কিন যুক্তরাষ্ট্রের 501 (সি) (3) অ-লাভজনক গবেষণা, উন্নয়ন এবং অনলাইন গোপনীয়তা এবং গোপনীয়তার শিক্ষা।">
-<!ENTITY aboutTor.learnMore.label "Tor প্রকল্প সম্পর্কে আরও জানুন »">
-<!ENTITY aboutTor.learnMore.link "https://www.torproject.org/about/overview.html.en">
+<!ENTITY aboutTor.tor_mission.label "টর প্রকল্পটি একটি মার্কিন 501 (c) (3) অলাভজনক প্রতিষ্ঠান, মানবাধিকার এবং মুক্ত এবং উন্মুক্ত উৎস সনদে এবং গোপনীয়তা প্রযুক্তিকে সমর্থন করে, তাদের নিষিদ্ধ সহজলভ্যতা এবং ব্যবহার এবং তাদের বৈজ্ঞানিক ও জনপ্রিয় বোঝাপড়া ।">
+<!ENTITY aboutTor.getInvolved.label "যুক্ত হোন»">
+<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">

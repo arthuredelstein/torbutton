@@ -1,0 +1,6 @@
+<!ENTITY aboutTBUpdate.title "Oppdatering av Tor-nettleseren">
+<!ENTITY aboutTBUpdate.updated "Tor-nettleseren har blitt oppdatert.">
+<!ENTITY aboutTBUpdate.linkPrefix "For den mest oppdaterte informasjonen om denne utgivelsen,">
+<!ENTITY aboutTBUpdate.linkLabel  "besøk vårt nettsted">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "Endringslogg:">

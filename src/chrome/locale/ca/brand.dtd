@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  brandShorterName      "Navegador Tor">
+<!ENTITY  brandShortName        "Navegador Tor">
+<!ENTITY  brandFullName         "Navegador Tor">
+<!ENTITY  vendorShortName       "Projecte Tor">
+<!ENTITY  trademarkInfo.part1   "El Firefox i els logotips del Firefox són marques registrades de la Mozilla Foundation.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "Cliqueu per carregar els complements de sistema instal·lats">
+<!ENTITY plugins.installed.enable "Activa els complements">
+<!ENTITY plugins.installed.disable "Desactiva els complements">
+<!ENTITY plugins.installed.disable.tip "Clicqueu per evitar que es carreguin els complements de sistema">

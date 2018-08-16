@@ -1,0 +1,6 @@
+<!ENTITY aboutTBUpdate.title "Actualització del navegador Tor">
+<!ENTITY aboutTBUpdate.updated "El navegador Tor s'ha actualitzat. ">
+<!ENTITY aboutTBUpdate.linkPrefix "Per la informació més actualitzada sobre aquesta versió,">
+<!ENTITY aboutTBUpdate.linkLabel  "visiteu el lloc web">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "Registre de canvis:">
