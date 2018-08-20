@@ -6,20 +6,20 @@
 
 <!ENTITY aboutTor.title "Om Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready.label "Utforsk. Privat.">
+<!ENTITY aboutTor.ready2.label "Du er klar for verdens mest private surfing opplevelse.">
 <!ENTITY aboutTor.failure.label "Noe gikk galt!">
 <!ENTITY aboutTor.failure2.label "Tor fungerer ikke i denne nettleseren.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Søk med DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Spørsmål?">
 <!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor-nettleseren Håndbok">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.tor_mission.label "The Tor Project er en US 501(c)(3) ideell organisasjon som fremmer menneskerettigheter og friheter ved å skape og distribuere anonymisering og personvernteknologi for fri og åpen kildekode, som støtter deres ubegrensede tilgjengelighet og bruk, og fremmer sin vitenskapelige og populære forståelse.">
+<!ENTITY aboutTor.getInvolved.label "Bli involvert »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">

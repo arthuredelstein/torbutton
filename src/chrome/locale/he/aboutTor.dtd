@@ -6,20 +6,20 @@
 
 <!ENTITY aboutTor.title "אודות Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready.label "חקור. בפרטיות.">
+<!ENTITY aboutTor.ready2.label "אתה מוכן לחוויה של הגלישה הפרטית ביותר של העולם.">
 <!ENTITY aboutTor.failure.label "משהו השתבש!">
 <!ENTITY aboutTor.failure2.label "Tor אינו עובד בדפדפן זה.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "חפש עם DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "שאלות?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "בדוק את מדריך של דפדפן Tor שלנו «">
 <!-- The next two entities are used within the browser's Help menu. -->
-<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "מ">
+<!ENTITY aboutTor.torbrowser_user_manual.label "מדריך של דפדפן Tor">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.tor_mission.label "מיזם Tor הוא ארגון US 501(c)(3) ללא רווחים המקדם זכויות אדם וחירויות ע&quot;י יצירה ופריסה של טכנולוגיות של אלמוניות ופרטיות בקוד פתוח וחינמי, תמיכה בזמינות ובשימוש בלתי־מוגבל שלהן, וקידום הבנה מדעית ועממית שלהן.">
+<!ENTITY aboutTor.getInvolved.label "הייה מעורב «">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">

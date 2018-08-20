@@ -6,20 +6,20 @@
 
 <!ENTITY aboutTor.title "Um Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
+<!ENTITY aboutTor.ready.label "Vafraðu í friði fyrir hnýsni.">
 <!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
 <!ENTITY aboutTor.failure.label "Eitthvað fór úrskeiðis!">
 <!ENTITY aboutTor.failure2.label "Tor virkar ekki í þessum vafra.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Leita með DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Spurningar?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Skoðaðu notendahandbók Tor-vafrans »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Notendahandbók Tor-vafrans">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.getInvolved.label "Taktu þátt »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
