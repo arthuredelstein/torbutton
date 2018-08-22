@@ -33,7 +33,7 @@ Cu.import("resource://gre/modules/Services.jsm");
 let { controller } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
 
 // Utility functions
-let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { bindPrefAndInit, observe, getLocale } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 // Make the TorButton logger available.
 let logger = Cc["@torproject.org/torbutton-logger;1"]
@@ -381,7 +381,7 @@ let setupGuardNote = function () {
   let guardNoteString = uiString("guard_note");
   let learnMoreString = uiString("learn_more");
   let [noteBefore, name, noteAfter] = guardNoteString.split(/[\[\]]/);
-  let localeCode = torbutton_get_general_useragent_locale();
+  let localeCode = getLocale();
   appendHtml(guardNote,
              ["div", {},
               noteBefore, ["span", {class: "circuit-guard-name"}, name],

@@ -205,6 +205,14 @@ var unescapeTorString = function(str) {
   return _torControl._strUnescape(str);
 };
 
+// Returns true if we should show the tor browser manual.
+var show_torbrowser_manual = () => {
+  let availableLocales = ["de", "en", "es", "fr", "nl", "pt", "tr", "vi", "zh"];
+  let shortLocale = getLocale().substring(0, 2);
+  return availableLocales.indexOf(shortLocale) >= 0;
+}
+
+
 // Export utility functions for external use.
 let EXPORTED_SYMBOLS = ["bindPref", "bindPrefAndInit", "getEnv", "getLocale",
-                        "getPrefValue", "observe", "showDialog", "unescapeTorString"];
+                        "getPrefValue", "observe", "showDialog", "show_torbrowser_manual", "unescapeTorString"];

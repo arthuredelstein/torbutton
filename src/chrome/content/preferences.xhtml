@@ -1,0 +1,85 @@
+<!DOCTYPE overlay SYSTEM "chrome://torbutton/locale/torbutton.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    <title>&torbutton.prefs.security_settings;</title>
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="chrome://torbutton/skin/preferences.css"/>
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="chrome://torbutton/skin/preferences-mobile.css"/>
+    <script type="text/javascript" src="torbutton_util.js"></script>
+    <script type="text/javascript" src="preferences-mobile.js"></script>
+    <style>
+    </style>
+  </head>
+  <body onload="torbutton_init_security_ui()">
+    <div class="wrapper outer-wrapper">
+      <div class="title">
+        &torbutton.prefs.sec_caption;
+      </div>
+      <div class="wrapper inner-wrapper">
+	      <input id="torbutton_sec_slider" type="range" min="1" max="3" list="datalist" onchange="torbutton_set_slider(parseInt(this.value, 10))"/>
+	      <datalist id="datalist">
+          <option onclick="torbutton_set_slider(1)">
+            &torbutton.prefs.sec_standard_label;
+          </option>
+          <option onclick="torbutton_set_slider(2)">
+            &torbutton.prefs.sec_safer_label;
+          </option>
+          <option onclick="torbutton_set_slider(3)">
+            &torbutton.prefs.sec_safest_label;
+          </option>
+	      </datalist>
+        <div class="description-wrapper">
+          <div id="desc_safest" class="description">
+            <p class="slider-text-size slider-text-weight">
+              &torbutton.prefs.sec_safest_description;
+            </p>
+            <p class="slider-text-size slider-text-weight">
+              &torbutton.prefs.sec_safest_list_label;
+            </p>
+            <p class="slider-text-size">
+              &torbutton.prefs.sec_js_disabled;
+            </p>
+            <p class="slider-text-size">
+              &torbutton.prefs.sec_limit_graphics_and_typography;
+            </p>
+            <p class="slider-text-size">
+              &torbutton.prefs.sec_click_to_play_media;
+            </p>
+            <a id="link_safest" class="text-link">
+              &torbutton.prefs.sec_learn_more_label;
+            </a>
+          </div>
+          <div id="desc_safer" class="description">
+            <p class="slider-text-size slider-text-weight">
+              &torbutton.prefs.sec_safer_description;
+            </p>
+            <p class="slider-text-size slider-text-weight">
+              &torbutton.prefs.sec_safer_list_label;
+            </p>
+            <p class="slider-text-size">
+              &torbutton.prefs.sec_js_on_https_sites_only;
+            </p>
+            <p class="slider-text-size">
+              &torbutton.prefs.sec_limit_typography;
+            </p>
+            <p class="slider-text-size">
+              &torbutton.prefs.sec_click_to_play_media;
+            </p>
+            <a id="link_safer" class="text-link">
+              &torbutton.prefs.sec_learn_more_label;
+            </a>
+          </div>
+          <div id="desc_standard" class="description">
+            <p class="slider-text-size slider-text-weight">
+              &torbutton.prefs.sec_standard_description;
+            </p>
+            <a id="link_standard" class="text-link">
+              &torbutton.prefs.sec_learn_more_label;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
