@@ -1,3 +1,7 @@
+2.0.3
+ * Bug 26884: Use Torbutton to provide security slider on mobile
+ * Translations update
+
 2.0.2
  * Bug 26960: Implement new about:tor start page
  * Bug 26961: Implement new user onboarding
