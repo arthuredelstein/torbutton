@@ -1,4 +1,4 @@
-<!ENTITY torbutton.context_menu.new_identity "Yeni Kimlik">
+<!ENTITY torbutton.context_menu.new_identity "Kimliği Yenile">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Bu Sitenin Tor Devresini Yenile">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
@@ -13,7 +13,7 @@
 <!ENTITY torbutton.button.tooltip "Torbutton uygulamasını başlatmak için tıklayın">
 <!ENTITY torbutton.prefs.security_settings "Tor Browser Güvenlik Ayarları">
 <!ENTITY torbutton.prefs.restore_defaults "Varsayılanlara Sıfırla">
-<!ENTITY torbutton.prefs.custom_warning "Özel tarayıcı tercihleriniz alışılmadık güvenlik ayarları ile sonuçlandı. Güvenlik ve gizlilik nedenleri ile, aşağıdaki varsayılan güvenlik seviyelerinden birini seçmenizi öneriyoruz.">
+<!ENTITY torbutton.prefs.custom_warning "Tarayıcınız standart olmayan özel güvenlik ayarları kullanıyor. Güvenlik ve gizlilik nedenleriyle aşağıdaki varsayılan güvenlik ayarı düzeylerinden birini seçmeniz önerilir.">
 <!ENTITY torbutton.cookiedialog.title "Çerez Koruması Yönetimi">
 <!ENTITY torbutton.cookiedialog.lockCol "Korunmuş">
 <!ENTITY torbutton.cookiedialog.domainCol "Sunucu">
@@ -23,27 +23,27 @@
 <!ENTITY torbutton.cookiedialog.removeCookie "Çerezi Sil">
 <!ENTITY torbutton.cookiedialog.unprotectCookie "Çerez Korumasını Kaldır">
 <!ENTITY torbutton.cookiedialog.removeAllBut "Korunanlar Dışında Tümünü Sil">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Yeni Çerezleri Koru">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Yeni Çerezleri Koruma">
-<!ENTITY torbutton.prefs.restrict_thirdparty "3. taraf çerez ve diğer iz sürücü bilgiler engellensin">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Yeni Çerezler Korunsun">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Yeni Çerezler Korunmasın">
+<!ENTITY torbutton.prefs.restrict_thirdparty "Üçüncü taraf çerezleri ve diğer izleme bilgileri engellensin">
 <!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Bu seçeneği işaretleyerek, çeşitli web tarayıcıların, web sitelerinde yaptığınız işlemleri izlemesini engelleyebilirsiniz. Değiştirilen özellikler içinde blob İnternet adresleri, yayın kanalları, web tarayıcı ön belleği, çerezler, favicon dosyaları, HTTP Auth başlık bilgileri, ön bağlantı bilgileri, localStorage, mediaSource adresleri, OCSP istekleri, SharedWorkers ve TLS oturumu bulunur.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Diğer Tor Browser kullanıcılarından sizi ayıran ayrıntılar değiştirilsin">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Bilgisayarınızın başarımı, tuş takımı düzeni, yerel dil ayarları, yüklenmiş eklentilerin konumu, yüklenmiş eklentilerin listesi, ağınızın durumu, ekran yönlendirmesi, ekran boyutu, siteye bağlı özel yakınlaştırma seviyeleri, desteklenen dosya türleri, sistem renkleri ve WebGL yetenekleri gibi size özel olan ve kimliğinizin belirlenmesinde kullanılabilecek bilgileri gizlemek için bu kutuyu işaretlenmiş olarak tutun.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Bilgisayarınızın başarımı, tuş takımı düzeni, yerel dil ayarları, kurulmuş eklentilerin konumu, kurulmuş eklentilerin listesi, ağınızın durumu, ekran yönlendirmesi, ekran boyutu, siteye bağlı özel yakınlaştırma seviyeleri, desteklenen dosya türleri, sistem renkleri ve WebGL yetenekleri gibi size özel olan ve kimliğinizin belirlenmesinde kullanılabilecek bilgileri gizlemek için bu kutuyu işaretlenmiş olarak tutun.">
 <!ENTITY torbutton.prefs.sec_caption "Güvenlik Düzeyi">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Güvenlik ayarı ile belirli web tarayıcı özeliklerini kapatabilirsiniz. Ancak bu durumda web tarayıcınız saldırılara karşı daha korumasız olur.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standart">
 <!ENTITY torbutton.prefs.sec_standard_description "Tüm Tor Browser ve web sitesi özellikleri kullanılabilir.">
-<!ENTITY torbutton.prefs.sec_safer_label "Daha güvenli">
+<!ENTITY torbutton.prefs.sec_safer_label "Daha Güvenli">
 <!ENTITY torbutton.prefs.sec_safer_description "Sıklıkla tehlikeli olan web sitesi özellikleri devre dışı bırakılır ve bazı sitelerin işlevlerinde kayıplar olabilir. ">
-<!ENTITY torbutton.prefs.sec_safer_list_label "Daha güvenli ayarlarda:">
-<!ENTITY torbutton.prefs.sec_safest_label "En güvenli">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Daha güvenli ayarlar kullanıldığında:">
+<!ENTITY torbutton.prefs.sec_safest_label "En Güvenli">
 <!ENTITY torbutton.prefs.sec_safest_description "Yalnız durağan siteler ve temel hizmetler için gerekli web sitesi özelliklerine izin verilir. Bu değişiklikler görselleri, ortamları ve betikleri etkiler.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "En güvenli ayarlarda:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Ayrıntılı bilgi">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript, HTTPS kullanmayan sitelerde devre dışı bırakılır.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript varsayılan olarak tüm sitelerde devre dışı bırakılır.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "En güvenli ayarlar kullanıldığında:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Ayrıntılı bilgi alın">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript,,HTTPS kullanmayan sitelerde devre dışı bırakılır.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript betikleri tüm sitelerde varsayılan olarak devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Bazı yazı türleri ve matematik simgeleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Bazı yazı türleri, simgeler, matematik simgeleri ve görseller devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Ses ve görüntüler (HTML5 ortamı) tıklayarak çalıştırılabilir.">

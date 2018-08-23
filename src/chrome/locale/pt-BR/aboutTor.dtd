@@ -11,14 +11,14 @@
 <!ENTITY aboutTor.failure.label "Alguma coisa deu errado!">
 <!ENTITY aboutTor.failure2.label "Tor não está funcionando neste navegador. ">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Pesquise com DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Perguntas?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Veja nosso Manual do Navegador Tor">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Manual do Navegador Tor">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
 <!ENTITY aboutTor.getInvolved.label "Get Involved »">
