@@ -48,7 +48,8 @@ const default_caps = [
 // capabilities. Most things are blocked.
 let noscriptSettings = safetyLevel => (
   {
-    "type": "NoScript.updateSettings",
+    "type": "NoScript.updateSettings", // backwards compatibility
+    "_messageName": "updateSettings",
     "policy": {
       "DEFAULT": {
         "capabilities": default_caps[safetyLevel],
@@ -117,6 +118,7 @@ var initialize = () => {
   if (initialized) {
     return;
   }
+  initialized = true;
   bindPrefAndInit(
     "extensions.torbutton.security_slider",
     sliderState => setNoScriptSafetyLevel(securitySliderToSafetyLevel(sliderState)));
