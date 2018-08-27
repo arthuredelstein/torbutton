@@ -270,3 +270,38 @@ body:not([showmanual]) .showForManual {
   height: 50px;
   border-radius: 50px 50px 0 0;
 }
+
+/* Tor News Signup Banner
+ * While this banner is present, we need to
+ * offset the elements normally at the top of
+ * the window.
+ */
+
+#tornews-banner {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: var(--abouttor-bg-toron-color);
+  font-size: 16px;
+  height: 60px;
+  justify-content: center;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+}
+
+#tornews-banner a {
+  color: var(--abouttor-bg-toron-color);
+}
+
+#tornews-icon {
+  background: url('chrome://torbutton/skin/newsletter_3x.png') no-repeat center center;
+  background-size: cover;
+  height: 32px;
+  margin: 0px 16px;
+  width: 32px;
+}
+
+#torstatus-version, #onboarding-overlay-button {
+  transform: translateY(70px);
+}
