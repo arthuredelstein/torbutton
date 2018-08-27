@@ -417,7 +417,6 @@ var torbutton_abouttor_message_handler = {
   receiveMessage: function(aMessage) {
     switch(aMessage.name) {
       case "AboutTor:Loaded":
-        torbutton_show_sec_slider_notification();
         aMessage.target.messageManager.sendAsyncMessage("AboutTor:ChromeData",
                                                         this.chromeData);
         break;
@@ -596,34 +595,6 @@ function torbutton_check_for_update() {
         prompter.showUpdateDownloaded(update, false);
     else
         prompter.checkForUpdates();
-}
-
-function torbutton_show_sec_slider_notification() {
-  // Show the notification about the new security slider.
-  if (m_tb_prefs.
-      getBoolPref("extensions.torbutton.show_slider_notification")) {
-    let sb = torbutton_get_stringbundle();
-    let button_label =
-      torbutton_get_property_string("torbutton.slider_notification_button");
-    let box = gBrowser.getNotificationBox();
-
-    let buttons = [{
-      label: button_label,
-      accessKey: 'S',
-      popup: null,
-      callback: torbutton_open_prefs_dialog,
-    }];
-
-    let priority = box.PRIORITY_INFO_LOW;
-    let message =
-      torbutton_get_property_string("torbutton.slider_notification");
-
-    box.appendNotification(message, 'new-menu-notification',
-                           "chrome://torbutton/skin/tor-enabled-16.png",
-                           priority, buttons);
-    m_tb_prefs.
-      setBoolPref("extensions.torbutton.show_slider_notification", false);
-  }
 }
 
 // Bug 1506 P4: Checking for Tor Browser updates is pretty important,
