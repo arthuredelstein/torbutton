@@ -18,7 +18,6 @@ LOCALE_DIR=../src/chrome/locale
 # FILEMAP is an array of "localeFile:translationBranch" strings.
 FILEMAP=( "aboutDialog.dtd:torbutton-aboutdialogdtd"
           "aboutTor.dtd:abouttor-homepage"
-          "aboutTor.properties:torbutton-abouttorproperties"
           "aboutTBUpdate.dtd:torbutton-abouttbupdatedtd"
           "brand.dtd:torbutton-branddtd"
           "brand.properties:torbutton-brandproperties"
