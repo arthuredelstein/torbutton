@@ -119,7 +119,7 @@ body:not([showmanual]) .showForManual {
 }
 
 #bottom {
-  margin-top: 170px;
+  margin-top: 10vh;
 }
 
 #bottom p {
@@ -196,12 +196,12 @@ body:not([showmanual]) .showForManual {
 .onion-pattern-container {
   margin: 0px auto;
   width: 100%;
-  max-width: 1624px;    /* room for 14 of the widest circles */
+  max-width: 2200px;    /* room for our 20 circles */
   overflow: hidden;
 }
 
 .onion-pattern-row {
-  width: 1624px;
+  width: 2200px;
   display: flex;
   flex-direction: row;
   position: relative;
