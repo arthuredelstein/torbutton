@@ -238,6 +238,10 @@ function torbutton_donation_banner_countdown() {
   }
 }
 
+function torbutton_is_mobile() {
+    return Services.appinfo.OS === "Android";
+}
+
 // Bug 1506 P2-P4: This code sets some version variables that are irrelevant.
 // It does read out some important environment variables, though. It is
 // called once per browser window.. This might belong in a component.
@@ -408,11 +412,19 @@ function torbutton_init() {
     torbutton_update_toolbutton();
     torbutton_notify_if_update_needed();
 
-    createTorCircuitDisplay(m_tb_control_ipc_file, m_tb_control_host,
-                            m_tb_control_port, m_tb_control_pass,
-                            "extensions.torbutton.display_circuit");
+    try {
+        createTorCircuitDisplay(m_tb_control_ipc_file, m_tb_control_host,
+                                m_tb_control_port, m_tb_control_pass,
+                               "extensions.torbutton.display_circuit");
+    } catch(e) {
+        torbutton_log(4, "Error creating the tor circuit display " + e);
+    }
 
-    torbutton_init_user_manual_links();
+    try {
+        torbutton_init_user_manual_links();
+    } catch(e) {
+        torbutton_log(4, "Error loading the user manual " + e);
+    }
 
     // Arrange for our about:tor content script to be loaded in each frame.
     window.messageManager.loadFrameScript(
@@ -449,6 +461,7 @@ var torbutton_abouttor_message_handler = {
   // not working.
   get chromeData() {
     return {
+      mobile: torbutton_is_mobile(),
       torOn: torbutton_tor_check_ok()
     };
   }
@@ -1932,7 +1945,7 @@ function showSecurityPreferencesPanel(chromeWindow) {
 }
 
 function setupPreferencesForMobile() {
-  if (Services.appinfo.OS !== "Android") {
+  if (!torbutton_is_mobile()) {
     return;
   }
 

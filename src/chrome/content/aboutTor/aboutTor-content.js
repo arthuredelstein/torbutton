@@ -119,6 +119,9 @@ var AboutTorListener = {
     else
       body.removeAttribute("showmanual");
 
+    if (aData.mobile)
+      body.setAttribute("mobile", "yes");
+
     // Setting body.initialized="yes" displays the body.
     body.setAttribute("initialized", "yes");
   },
