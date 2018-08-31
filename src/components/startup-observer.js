@@ -23,6 +23,7 @@ XPCOMUtils.defineLazyModuleGetter(this, "FileUtils",
                                   "resource://gre/modules/FileUtils.jsm");
 
 Cu.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
+let NoScriptControl = Cu.import("resource://torbutton/modules/noscript-control.js", {});
 
 // Module specific constants
 const kMODULE_NAME = "Startup";
@@ -153,6 +154,9 @@ StartupObserver.prototype = {
         // Bug 1506 P1: We listen to these prefs as signals for startup,
         // but only for hackish reasons.
         this._prefs.setBoolPref("extensions.torbutton.startup", true);
+
+	// We need to listen for NoScript before it starts.
+        NoScriptControl.initialize();
 
         this.setProxySettings();
       }
