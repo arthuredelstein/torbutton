@@ -1,3 +1,11 @@
+2.0.5
+ * Bug 26962: Circuit display onboarding
+ * Bug 26520: Fix sec slider/NoScript for TOR_SKIP_LAUNCH=1
+ * Bug 26490: Remove the security slider notification
+ * Bug 27301: Improve about:tor behavior and appearance
+ * Bug 27214: Improve the onboarding text
+ * Translations update
+
 2.0.4
  * Bug 27276: Adapt to new NoScript messaging protocol
  * Bug 27097: Add text for Tor News signup widget
