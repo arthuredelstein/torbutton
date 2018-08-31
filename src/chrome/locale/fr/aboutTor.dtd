@@ -6,20 +6,23 @@
 
 <!ENTITY aboutTor.title "À propos de Tor ">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready.label "Explorez, en toute confidentialité.">
+<!ENTITY aboutTor.ready2.label "Vous êtes prêts pour l’expérience de navigation la plus confidentielle au monde.">
 <!ENTITY aboutTor.failure.label "Une erreur s’est produite !">
 <!ENTITY aboutTor.failure2.label "Tor ne fonctionne pas dans ce navigateur.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Chercher avec DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Des questions ?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Consultez notre guide d’utilisation du navigateur Tor »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "G">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Guide d’utilisation du Navigateur Tor">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.tor_mission.label "Le Projet Tor est une organisation sans but lucratif US 501(c)(3) qui fait progresser les droits de la personne et les libertés en créant et en déployant des technologies d’anonymat et de confidentialité gratuites et à code source ouvert. Nous soutenons leur disponibilité et leur utilisation sans restriction, et promouvons une meilleure compréhension scientifique et populaire.">
+<!ENTITY aboutTor.getInvolved.label "Impliquez-vous »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html">
+
+<!ENTITY aboutTor.newsletter.tagline "Obtenez les dernières nouvelles au sujet de Tor directement dans votre boîte de réception.">
+<!ENTITY aboutTor.newsletter.link_text "Inscrivez-vous aux nouvelles de Tor">

@@ -23,3 +23,6 @@
 <!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
 <!ENTITY aboutTor.getInvolved.label "加入我們 »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
+
+<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
+<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">

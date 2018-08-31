@@ -23,3 +23,6 @@
 <!ENTITY aboutTor.tor_mission.label "টর প্রকল্পটি একটি মার্কিন 501 (c) (3) অলাভজনক প্রতিষ্ঠান, মানবাধিকার এবং মুক্ত এবং উন্মুক্ত উৎস সনদে এবং গোপনীয়তা প্রযুক্তিকে সমর্থন করে, তাদের নিষিদ্ধ সহজলভ্যতা এবং ব্যবহার এবং তাদের বৈজ্ঞানিক ও জনপ্রিয় বোঝাপড়া ।">
 <!ENTITY aboutTor.getInvolved.label "যুক্ত হোন»">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
+
+<!ENTITY aboutTor.newsletter.tagline "টর থেকে সর্বশেষ খবর নিন সোজা আপনার ইনবক্সে ।">
+<!ENTITY aboutTor.newsletter.link_text "টর নিউজ-এর জন্য সাইন আপ করুন ।">

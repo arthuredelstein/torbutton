@@ -23,3 +23,6 @@
 <!ENTITY aboutTor.tor_mission.label "Tor Projesi, US 501(c)(3) koşullarına uygun olarak, özgür ve açık kaynaklı anonimlik ve kişisel gizlilik teknolojileri geliştirerek insan hakları ve özgürlüklerini ileriye götürmeyi, bu teknolojilerin bilimsel ve kültürel olarak bilinirliğini arttırmayı ve herkes tarafından erişebilmesini sağlamak amacıyla çalışan, kar amacı gütmeyen bir kuruluştur.">
 <!ENTITY aboutTor.getInvolved.label "Katkıda Bulunun »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
+
+<!ENTITY aboutTor.newsletter.tagline "Tor ile ilgili son gelişmeler doğrudan e-posta kutunuza gelsin.">
+<!ENTITY aboutTor.newsletter.link_text "Tor Haber Bültenine Abone Olun">

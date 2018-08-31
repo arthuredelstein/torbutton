@@ -23,3 +23,6 @@
 <!ENTITY aboutTor.tor_mission.label "The Tor Project er en US 501(c)(3) ideell organisasjon som fremmer menneskerettigheter og friheter ved å skape og distribuere anonymisering og personvernteknologi for fri og åpen kildekode, som støtter deres ubegrensede tilgjengelighet og bruk, og fremmer sin vitenskapelige og populære forståelse.">
 <!ENTITY aboutTor.getInvolved.label "Bli involvert »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
+
+<!ENTITY aboutTor.newsletter.tagline "Få de siste nyhetene fra Tor rett til innboksen din.">
+<!ENTITY aboutTor.newsletter.link_text "Registrer deg for Tor Nyheter.">

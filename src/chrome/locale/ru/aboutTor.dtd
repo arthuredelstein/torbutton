@@ -6,20 +6,23 @@
 
 <!ENTITY aboutTor.title "О проекте Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready.label "Исследование. Конфиденциальность.">
+<!ENTITY aboutTor.ready2.label "Вы готовы к самому конфиденциальному просмотру в мире.">
 <!ENTITY aboutTor.failure.label "Что-то пошло не так!">
 <!ENTITY aboutTor.failure2.label "Tor не работает в этом браузере.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Поиск через DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Вопросы?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Ознакомьтесь с руководством по браузеру Тоr »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "М">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Руководство по браузеру Tor">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.tor_mission.label "Проект Tor является некоммерческой организацией США со статусом 501(c)(3), продвигающей права человека и свободы путем создания и развертывания технологий анонимности и конфиденциальности с открытым исходным кодом, поддержки их неограниченной доступности и использования, а также содействия их научному и популярному пониманию.">
+<!ENTITY aboutTor.getInvolved.label "Присоединяйтесь »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html#ru">
+
+<!ENTITY aboutTor.newsletter.tagline "Получайте последние новости Tor прямо на ваш почтовый ящик.">
+<!ENTITY aboutTor.newsletter.link_text "Подпишитесь на новости Tor.">

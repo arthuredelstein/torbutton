@@ -4,3 +4,7 @@
 <!ENTITY aboutTBUpdate.linkLabel  "visita il nostro sito web">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.changeLogHeading "Log dei cambiamenti:">
+
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "Visualizzazione circuito nuova e ridisegnata">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "La visualizzazione del circuito Tor è stata spostata e migliorata! Clicca il pulsante di identità&#160;del sito (posto a sinistra dell'URL) per vedere il nuovo circuito.">
+<!ENTITY aboutTBUpdate.learnMore "Maggiori informazioni">

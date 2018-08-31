@@ -4,3 +4,7 @@
 <!ENTITY aboutTBUpdate.linkLabel  "আমাদের ওয়েবসাইট দেখুন">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.changeLogHeading "পরিবর্তণের:">
+
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "নতুন, পরিকল্পিত বর্তনী প্রদর্শন">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "টর সার্কিট ডিসপ্লের অবস্থান এবং উন্নতি হয়েছে! নতুন সার্কিট ডিসপ্লে দেখার জন্য সাইটটি#160; আইডেন্টিটি বাটন (URL বারের বাম দিকে অবস্থিত) টিপুন ।">
+<!ENTITY aboutTBUpdate.learnMore "আরও জানুন">

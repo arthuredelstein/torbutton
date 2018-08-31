@@ -6,20 +6,23 @@
 
 <!ENTITY aboutTor.title "Tor에 대해서">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready.label "은밀하게 탐색하십시오.">
+<!ENTITY aboutTor.ready2.label "당신은 온세상이 가장 은밀한 탐색의 경험을 준비가 되었습니다.">
 <!ENTITY aboutTor.failure.label "뭔가 잘못되었습니다!">
 <!ENTITY aboutTor.failure2.label "Tor는 이 브라우저에서 작동하지 않습니다.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "DuckDuckGo으로 검색">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "질문이 있으신가요?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tor 브라우저 설명서를 읽어보기 »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor 브라우저 설명서">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.getInvolved.label "참여 »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
+
+<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
+<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">

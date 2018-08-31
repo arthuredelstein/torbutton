@@ -20,6 +20,9 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor-Browser-Handbuch">
 
-<!ENTITY aboutTor.tor_mission.label "Projekt Tor ist eine in den USA als &quot;The Tor Project&quot; (US 501(c)(3)) registrierte nicht-kommerzielle Organisation für Menschenrechte und Freiheit, die freie und quelloffene Technologien für Anomytät und Privatssphäre entwickelt und bereitstellt und die Forschung und das öffentliche Verständis auf diesen Gebieten voranbringt.">
+<!ENTITY aboutTor.tor_mission.label "Projekt Tor ist eine in den USA als &quot;The Tor Project&quot; (US 501(c)(3)) registrierte nicht-kommerzielle Organisation für Menschenrechte und Freiheit, die freie und quelloffene Technologien für Anonymität und Privatsphäre entwickelt und bereitstellt und die Forschung und das öffentliche Verständnis auf diesen Gebieten voranbringt.">
 <!ENTITY aboutTor.getInvolved.label "Machen Sie mit »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
+
+<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
+<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
