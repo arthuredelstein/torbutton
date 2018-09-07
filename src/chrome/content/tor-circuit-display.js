@@ -386,7 +386,7 @@ let setupGuardNote = function () {
              ["div", {},
               noteBefore, ["span", {class: "circuit-guard-name"}, name],
               noteAfter, " ",
-              ["span", {onclick: `gBrowser.selectedTab = gBrowser.addTab('https://tb-manual.torproject.org/${localeCode}');`,
+              ["span", {onclick: `gBrowser.selectedTab = gBrowser.addTab('https://support.torproject.org/${localeCode}/tbb/tbb-2/');`,
                         class: "circuit-link"},
                learnMoreString]]);
 };
