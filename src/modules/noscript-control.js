@@ -16,20 +16,20 @@ let log = (level, msg) => logger.log(level, msg);
 // ## NoScript settings
 
 // Minimum and maximum capability states as controlled by NoScript.
-const max_caps = ["fetch", "font", "frame", "media", "other", "script", "webgl"];
+const max_caps = ["fetch", "font", "frame", "media", "object", "other", "script", "webgl"];
 const min_caps = ["frame", "other"];
 
 // Untrusted capabilities for [Standard, Safer, Safest] safety levels.
 const untrusted_caps = [
   max_caps, // standard safety: neither http nor https
-  ["frame", "font", "other"], // safer: http
+  ["frame", "font", "object", "other"], // safer: http
   min_caps, // safest: neither http nor https
 ];
 
 // Default capabilities for [Standard, Safer, Safest] safety levels.
 const default_caps = [
   max_caps, // standard: both http and https
-  ["fetch", "font", "frame", "other", "script", "webgl"], // safer: https only
+  ["fetch", "font", "frame", "object", "other", "script", "webgl"], // safer: https only
   min_caps, // safest: both http and https
 ];
 
