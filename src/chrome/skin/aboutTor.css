@@ -58,12 +58,13 @@ body:not([initialized]) {
 #torstatus-version {
   position: absolute;
   top: 6px;
-  right: 6px;
+  offset-inline-end: 6px;
+  inset-inline-end: 6px;
   height: 30px;
   width: 200px;
   font-size: 15px;
   white-space: pre-wrap;
-  text-align: right;
+  text-align: end;
 }
 
 a {
