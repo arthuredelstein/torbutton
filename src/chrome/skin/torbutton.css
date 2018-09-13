@@ -6,9 +6,20 @@
     list-style-image: url("chrome://torbutton/skin/torbutton.svg");
   }
 }
+@keyframes blink-update-dark {
+  0% {
+    list-style-image: url("chrome://torbutton/skin/torbutton-dark-update-needed.svg");
+  }
+  100% {
+    list-style-image: url("chrome://torbutton/skin/torbutton-dark.svg");
+  }
+}
 
 #torbutton-button {
   list-style-image: url("chrome://torbutton/skin/torbutton.svg");
+}
+toolbar[brighttext] #torbutton-button {
+  list-style-image: url("chrome://torbutton/skin/torbutton-dark.svg");
 }
 #torbutton-button[tbstatus="on"] {
   opacity: 1.0;
@@ -19,6 +30,10 @@
 #torbutton-button[tbUpdateNeeded="true"] {
   opacity: 1.0;
   animation: blink-update normal 1s infinite ease-in-out;
+}
+toolbar[brighttext] #torbutton-button[tbUpdateNeeded="true"] {
+  opacity: 1.0;
+  animation: blink-update-dark normal 1s infinite ease-in-out;
 }
 
 #torbutton-button-tb {
