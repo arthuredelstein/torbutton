@@ -51,8 +51,10 @@ const default_caps = [
 // capabilities. Most things are blocked.
 let noscriptSettings = safetyLevel => (
   {
-    "type": "NoScript.updateSettings", // backwards compatibility
-    "_messageName": "updateSettings",
+    "__meta": {
+      "name": "updateSettings",
+      "recipientInfo": null
+    },
     "policy": {
       "DEFAULT": {
         "capabilities": default_caps[safetyLevel],
