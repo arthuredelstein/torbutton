@@ -60,15 +60,16 @@ var AboutTorListener = {
   },
 
   setupBannerClosing: function () {
+    let that = this;
     let closer = content.document.getElementById("tornews-banner-closer");
     closer.addEventListener("click", function () {
-      sendAsyncMessage(this.kAboutTorHideTorNewsBanner);
+      sendAsyncMessage(that.kAboutTorHideTorNewsBanner);
     });
     let link = content.document.querySelector("#tornews-banner-message a");
     link.addEventListener("click", function () {
       // Wait until page unloads so we don't hide banner before that.
       content.addEventListener("unload", function () {
-        sendAsyncMessage(this.kAboutTorHideTorNewsBanner);
+        sendAsyncMessage(that.kAboutTorHideTorNewsBanner);
       });
     });
     bindPrefAndInit("extensions.torbutton.tornews_banner_countdown",
