@@ -7,7 +7,7 @@
 <!ENTITY aboutTor.title "Um Tor">
 
 <!ENTITY aboutTor.ready.label "Vafraðu í friði fyrir hnýsni.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready2.label "Nú ertu tilbúin(n) fyrir mestu fáanlegu vernd við vafur á netinu.">
 <!ENTITY aboutTor.failure.label "Eitthvað fór úrskeiðis!">
 <!ENTITY aboutTor.failure2.label "Tor virkar ekki í þessum vafra.">
 
@@ -20,9 +20,9 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Notendahandbók Tor-vafrans">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
+<!ENTITY aboutTor.tor_mission.label "Tor-verkefnið er skráð sem bandarísk US 501(c)(3) sjálfboðaliðasamtök án gróðamarkmiða, samtök sem hafa mannréttindi og frelsi að leiðarljósi og stefna að þeim markmiðum með gerð og útbreiðslu á tækni til verndar persónuupplýsinga. Sú tækni eigi að vera öllum frjáls og heimil til notkunar, vera opin til skoðunar, enda sé eitt markmiðanna að stuðla að bættum almennum og vísindalegum skilningi á þessum málum.">
 <!ENTITY aboutTor.getInvolved.label "Taktu þátt »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.tagline "Fáðu nýjustu fréttir af Tor beint í pósthólfið þitt.">
+<!ENTITY aboutTor.newsletter.link_text "Skráðu þig til að fá Tor-fréttir.">

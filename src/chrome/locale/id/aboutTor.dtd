@@ -6,23 +6,23 @@
 
 <!ENTITY aboutTor.title "Tentang Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready.label "Jelajahi. Secara Privat.">
+<!ENTITY aboutTor.ready2.label "Anda siap untuk pengalaman menjelajah yang paling privat di dunia.">
 <!ENTITY aboutTor.failure.label "Ada Masalah!">
 <!ENTITY aboutTor.failure2.label "Tor tidak dapat digunakan di peramban ini.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Cari dengan DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Pertanyaan?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Periksa Tor Browser Manual kami »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "m">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual ">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.tor_mission.label "The Tor Project adalah US 501(c)(3) organisasi nirlaba yang bertujuan  memajukan hak asasi manusia dan kebebasan dengan membuat dan menyebarkan teknologi anominitas dan privasi yang bebas dan terbuka dan mendukung keberadaan dan penggunaannya, dan meningkatkan pemahamannya dalam hal ilmiah dan populer.">
+<!ENTITY aboutTor.getInvolved.label "Ikut Terlibat »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/terlibat/relawan.html.id">
 
-<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.tagline "Dapatkan berita Tor terbaru langsung ke inbox Anda.">
+<!ENTITY aboutTor.newsletter.link_text "Daftar untuk mendapatkan Berita Tor.">

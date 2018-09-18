@@ -11,11 +11,11 @@
 <!ENTITY aboutTor.failure.label "حدث خطأ ما!">
 <!ENTITY aboutTor.failure2.label "تور لا يعمل في هذا المتصفح.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "البحث بواسطة داك داك غو">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "أية أسئلة؟">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "إطّلع على دليلنا باستخدام متصفح تور ">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "س">
 <!ENTITY aboutTor.torbrowser_user_manual.label "دليل استخدام متصفّح تور">
@@ -25,4 +25,4 @@
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.link_text "اشترك للحصول على مستجدات تور.">

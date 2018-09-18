@@ -5,6 +5,6 @@
 <!ENTITY aboutTBUpdate.linkSuffix " ">
 <!ENTITY aboutTBUpdate.changeLogHeading "변경사항:">
 
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "New, Redesigned Circuit Display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
-<!ENTITY aboutTBUpdate.learnMore "Learn More">
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "서킷 표시가 일신하고 재설계했습니다">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "Tor 서킷 표시를 이전하고 개량했습니다! 새 서킷 표시를 보려고 Site&#160;Identity 버튼 (URL 막대의 왼쪽) 클릭하십시오.">
+<!ENTITY aboutTBUpdate.learnMore "더 알아보기">

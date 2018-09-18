@@ -27,25 +27,25 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "عدم حفاظت از کلوچک‌های جديد">
 <!ENTITY torbutton.prefs.restrict_thirdparty "محدود‌كردن كوكى‌هاى طرف سوم و داده‌هاى پيگردى ديگر">
 <!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Keep this box checked to prevent various browser features from being abused to track you as you browse the web. Modified features include blob URLs, broadcast channels, the browser cache, cookies, favicons, HTTP Auth headers, link preconnects, localStorage, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "این جعبه را نگه دارید تا از استفاده از ویژگی‌های مختلف مرورگر برای ردیابی شما در هنگام مرور وب جلوگیری شود. ویژگی های اصلاح شده شامل: آدرس‌های آلوده, broadcast channels, کش مرورگر, کوکی‌ها, فاویکن, HTTP Auth headers, پیوندهاpreconnects, حافظه محلی, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "تغييردادن جزئياتى كه شمارا از كاربران ديگر تُر تميزمى‌كند">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
 <!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
 <!ENTITY torbutton.prefs.sec_caption "سطح امنیت">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "نوار لغزنده امنیتی به شما اجازه می‌دهد که مشخصه‌های خاص مرورگر را غیرفعال کنید که ممکن است مرورگر شما را در برابر تلاش‌های هک آسیب‌پذیر سازد.">
 <!ENTITY torbutton.prefs.sec_standard_label "استاندارد">
-<!ENTITY torbutton.prefs.sec_standard_description "All Tor Browser and website features are enabled.">
+<!ENTITY torbutton.prefs.sec_standard_description "همه مرورگر تور و ویژگی‌های وبسایت به کار انداخته شده‌اند.">
 <!ENTITY torbutton.prefs.sec_safer_label "ایمن تر ">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "At the safer setting:">
+<!ENTITY torbutton.prefs.sec_safer_description "از کار انداختن ویژگی‌های وبسایت که اغلب خطرناک هستند و باعث از دست رفتن برخی سایت‌ها می‌شوند.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "تنظیم مکانی امن‌تر:">
 <!ENTITY torbutton.prefs.sec_safest_label "ایمن ترین ">
 <!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
+<!ENTITY torbutton.prefs.sec_safest_list_label "تنظیم امن‌ترین مکان">
 <!ENTITY torbutton.prefs.sec_learn_more_label "اطلاعات بیشتر">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is disabled on non-HTTPS sites.">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "جاوا اسکریپت روی سایت‌های غیر HTTPS کار نمی‌کند.">
 <!ENTITY torbutton.prefs.sec_js_disabled "جاوا اسکریپت به طور پیش فرض در تمامی سایت ها غیر فعال است.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
-<!ENTITY torbutton.circuit_display.title "Tor Circuit">
-<!ENTITY torbutton.circuit_display.new_circuit "New Circuit for this Site">
+<!ENTITY torbutton.prefs.sec_limit_typography "برخی از فونت ها و نمادهای ریاضی غیرفعال هستند">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "برخی از فونت ها، شمایل‌ها، علایم ریاضی و تصاویر از کار افتاده هستند.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "صدا و ویدیو ( HTML5 رسانه ) برای بازی کلیک می‌کنند.">
+<!ENTITY torbutton.circuit_display.title "مدار تور">
+<!ENTITY torbutton.circuit_display.new_circuit "مدار جدید برای این سایت">

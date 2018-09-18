@@ -5,6 +5,6 @@
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.changeLogHeading "Registro de modificações:">
 
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "New, Redesigned Circuit Display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "Novo  display de circuito reprojetado">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "O display do circuito Tor foi realocado e melhorado! Clique no Site&#160;botão de identidade (localizado no lado esquerdo da barra de URL) para ver o novo display do circuito.">
 <!ENTITY aboutTBUpdate.learnMore "Saiba Mais">

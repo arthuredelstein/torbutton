@@ -5,6 +5,6 @@
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.changeLogHeading "Logchomhad athruithe:">
 
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "New, Redesigned Circuit Display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "Dearadh Nua ar Thaispeántas an Chiorcaid">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "Chuireamar feabhas ar thaispeántas an chiorcaid, agus tá sé in áit nua freisin! Cliceáil an cnaipe Eolas&#160;faoin&#160;suíomh (ar an taobh clé den bharra URL) chun an taispeántas nua a fheiceáil.">
 <!ENTITY aboutTBUpdate.learnMore "Tuilleadh Eolais">

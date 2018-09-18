@@ -20,7 +20,7 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser 用户手册">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
+<!ENTITY aboutTor.tor_mission.label "The Tor Project 是一家美国 501(c)(3) 非营利机构，致力于通过开发和部署自由且开放源代码的匿名和隐私技术，为其不受限制的可用性和使用提供支持，促进其在科研领域和大众的知名度来支持人权和自由。">
 <!ENTITY aboutTor.getInvolved.label "参与进来 »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
