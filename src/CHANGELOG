@@ -1,3 +1,8 @@
+2.1
+ * Bug 27175: Add pref to allow users to persist custom noscript settings
+ * Bug 27760: Use new NoScript API for IPC and fix about:blank issue
+ * Bug 21263: Remove outdated information from the README
+
 2.0.7
  * Bug 27097: Tor News signup banner
  * Bug 27663: Add New Identity menuitem again
