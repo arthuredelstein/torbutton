@@ -48,6 +48,9 @@ pref("extensions.torbutton.prompt_torbrowser", true);
 pref("extensions.torbutton.confirm_plugins", true);
 pref("extensions.torbutton.confirm_newnym", true);
 
+pref("extensions.torbutton.noscript_inited", false);
+pref("extensions.torbutton.noscript_persist", false);
+
 // Browser home page:
 pref("browser.startup.homepage", "chrome://torbutton/content/locale/non-localized.properties");
 
