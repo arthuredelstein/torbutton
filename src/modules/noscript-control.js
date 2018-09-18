@@ -125,12 +125,8 @@ var initialize = () => {
 
     // Wait for the first message from NoScript to arrive, and then
     // bind the security_slider pref to the NoScript settings.
-    let messageListener = (message,b,c) => {
-      log(3, `Message received from NoScript: ${JSON.stringify([message,b,c])}`);
-      if (message._messageName !== "started" &&
-          message._messageName !== "pageshow") {
-        return;
-      }
+    let messageListener = (a,b,c) => {
+      log(3, `Message received from NoScript: ${JSON.stringify([a,b,c])}`);
       extensionContext.api.browser.runtime.onMessage.removeListener(messageListener);
       bindPrefAndInit(
         "extensions.torbutton.security_slider",
