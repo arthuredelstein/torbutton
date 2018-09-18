@@ -5,9 +5,10 @@
 // ## Utilities
 
 const { utils: Cu } = Components;
+const { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
 const { LegacyExtensionContext } =
       Cu.import("resource://gre/modules/LegacyExtensionsUtils.jsm", {});
-const { bindPrefAndInit } =
+const { bindPref } =
       Cu.import("resource://torbutton/modules/utils.js", {});
 let logger = Components.classes["@torproject.org/torbutton-logger;1"]
     .getService(Components.interfaces.nsISupports).wrappedJSObject;
@@ -128,14 +129,28 @@ var initialize = () => {
     // Wait for the first message from NoScript to arrive, and then
     // bind the security_slider pref to the NoScript settings.
     let messageListener = (a,b,c) => {
-      log(3, `Message received from NoScript: ${JSON.stringify([a,b,c])}`);
-      if (!["started", "pageshow"].includes(a.__meta.name)) {
-        return;
+      try {
+        log(3, `Message received from NoScript: ${JSON.stringify([a,b,c])}`);
+        if (!["started", "pageshow"].includes(a.__meta.name)) {
+          return;
+        }
+        extensionContext.api.browser.runtime.onMessage.removeListener(messageListener);
+        let noscriptPersist = Services.prefs.getBoolPref("extensions.torbutton.noscript_persist", false);
+        let noscriptInited = Services.prefs.getBoolPref("extensions.torbutton.noscript_inited", false);
+        // Set the noscript safety level once if we have never run noscript
+        // before, or if we are not allowing noscript per-site settings to be
+        // persisted between browser sessions. Otherwise make sure that the
+        // security slider position, if changed, will rewrite the noscript
+        // settings.
+        bindPref("extensions.torbutton.security_slider",
+                 sliderState => setNoScriptSafetyLevel(securitySliderToSafetyLevel(sliderState)),
+                 !noscriptPersist || !noscriptInited);
+        if (!noscriptInited) {
+          Services.prefs.setBoolPref("extensions.torbutton.noscript_inited", true);
+        }
+      } catch (e) {
+        log(5, e.message);
       }
-      extensionContext.api.browser.runtime.onMessage.removeListener(messageListener);
-      bindPrefAndInit(
-        "extensions.torbutton.security_slider",
-        sliderState => setNoScriptSafetyLevel(securitySliderToSafetyLevel(sliderState)));
     };
     extensionContext.api.browser.runtime.onMessage.addListener(messageListener);
     log(3, "Listening for message from NoScript.");
