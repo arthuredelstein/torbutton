@@ -1,3 +1,14 @@
+2.0.7
+ * Bug 27097: Tor News signup banner
+ * Bug 27663: Add New Identity menuitem again
+ * Bug 26624: Only block OBJECT on highest slider level
+ * Bug 26555: Don't show IP address for meek or snowflake
+ * Bug 27478: Torbutton icons for dark theme
+ * Bug 27506+14520: Move status version to upper left corner for RTL locales
+ * Bug 27427: Fix NoScript IPC for about:blank by whitelisting messages
+ * Bug 27558: Update the link to "Your Guard note may not change" text
+ * Translations update
+
 2.0.6
  * Bug 27401: Start listening for NoScript before it loads
 
