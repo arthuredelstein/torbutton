@@ -24,7 +24,7 @@ let { bindPrefAndInit, show_torbrowser_manual } = Cu.import("resource://torbutto
 var AboutTorListener = {
   kAboutTorLoadedMessage: "AboutTor:Loaded",
   kAboutTorChromeDataMessage: "AboutTor:ChromeData",
-  kAboutTorHideTorNewsBanner: "AboutTor:HideTorNewsBanner",
+  kAboutTorHideDonationBanner: "AboutTor:HideDonationBanner",
 
   get isAboutTor() {
     return content.document.documentURI.toLowerCase() == "about:tor";
@@ -61,20 +61,24 @@ var AboutTorListener = {
 
   setupBannerClosing: function () {
     let that = this;
-    let closer = content.document.getElementById("tornews-banner-closer");
+    let closer = content.document.getElementById("donation-banner-closer");
     closer.addEventListener("click", function () {
-      sendAsyncMessage(that.kAboutTorHideTorNewsBanner);
+      sendAsyncMessage(that.kAboutTorHideDonationBanner);
     });
-    let link = content.document.querySelector("#tornews-banner-message a");
-    link.addEventListener("click", function () {
+    let button = content.document.getElementById("donation-banner-button");
+    button.addEventListener("click", function () {
       // Wait until page unloads so we don't hide banner before that.
       content.addEventListener("unload", function () {
-        sendAsyncMessage(that.kAboutTorHideTorNewsBanner);
+        sendAsyncMessage(that.kAboutTorHideDonationBanner);
       });
     });
-    bindPrefAndInit("extensions.torbutton.tornews_banner_countdown",
-                    countdown => content.document.body.setAttribute(
-                      "show-tornews-banner", countdown > 0));
+    bindPrefAndInit("extensions.torbutton.donation_banner_countdown",
+                    countdown => {
+                      if (content.document && content.document.body) {
+                        content.document.body.setAttribute(
+                          "show-donation-banner", countdown > 0);
+                      }
+                    });
   },
 
   onPageLoad: function() {
@@ -123,6 +127,12 @@ var AboutTorListener = {
     // Set Tor Browser manual link.
     content.document.getElementById("manualLink").href =
                             "https://tb-manual.torproject.org/" + aLocale;
+
+    // Don't use "Count Me In" phrase in non-en-US locales
+    if (!aLocale.startsWith("en")) {
+      let button = content.document.getElementById("donation-banner-button");
+      button.innerHTML = button.getAttribute("data-0");
+    }
 
     // Display the Tor Browser product name and version.
     try {
