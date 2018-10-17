@@ -310,7 +310,7 @@ let updateCircuitDisplay = function () {
       (nodeData[0].type === "bridge") ? "none" : "block";
   } else {
     // Only show the Tor circuit if we have credentials and node data.
-    logger.eclog(5, "no SOCKS credentials found for current document.");
+    logger.eclog(4, "no SOCKS credentials found for current document.");
   }
   showCircuitDisplay(domain && nodeData);
 };
