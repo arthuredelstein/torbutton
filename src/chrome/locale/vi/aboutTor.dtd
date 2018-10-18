@@ -6,23 +6,37 @@
 
 <!ENTITY aboutTor.title "Thông tin về Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
-<!ENTITY aboutTor.failure.label "Có gì đó đã sai!">
+<!ENTITY aboutTor.ready.label "Khám phá. Riêng tư.">
+<!ENTITY aboutTor.ready2.label "Bạn đã sẵn sàng cho trải nghiệm duyệt web riêng tư nhất trên thế giới.">
+<!ENTITY aboutTor.failure.label "Có Lỗi Xảy Ra!">
 <!ENTITY aboutTor.failure2.label "Tor không hoạt động trên trình duyệt này.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Tìm kiếm với DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Những câu hỏi?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Xem qua Hướng dẫn Trình duyệt Tor »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Hướng dẫn Trình duyệt Tor">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.tor_mission.label "The Tor Project là một tổ chức phi lợi nhuận US 501(c)(3) của Hoa Kỳ thúc đẩy quyền con người và tự do bằng cách tạo và triển khai các công nghệ bảo mật và ẩn danh miễn phí và mã nguồn mở, hỗ trợ tính sẵn có và sử dụng không hạn chế của chúng và nâng cao hiểu biết khoa học và phổ biến của họ.">
+<!ENTITY aboutTor.getInvolved.label "Tham gia »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.tagline "Nhận thông tin mói nhất từ Tor vào hộp thư của bạn.">
+<!ENTITY aboutTor.newsletter.link_text "Đăng kí nhận tin tức từ Tor.">
+
+<!ENTITY aboutTor.donationBanner.line1 "Tor: Strength in Numbers">
+
+<!ENTITY aboutTor.donationBanner.line2a "Anonymity loves company.">
+<!ENTITY aboutTor.donationBanner.line2b "Nâng cao nhân quyền phổ thông.">
+<!ENTITY aboutTor.donationBanner.line2c "Đứng lên vì tự do.">
+<!ENTITY aboutTor.donationBanner.line2d "Bảo vệ sự riêng tư của hàng triệu người.">
+<!ENTITY aboutTor.donationBanner.line2e "Giữ cho Tor trở nên mạnh mẽ.">
+<!ENTITY aboutTor.donationBanner.line2f "Chúng toi cần sự hỗ trợ của bạn!">
+
+<!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
+
+<!ENTITY aboutTor.donationBanner.buttonA "Donate Ngay bây giờ">
+<!ENTITY aboutTor.donationBanner.buttonB "Count Me In">

@@ -27,12 +27,12 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ekki vernda nýjar vefkökur">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Takmarka vefkökur frá þriðja aðila og önnur ferligögn">
 <!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Keep this box checked to prevent various browser features from being abused to track you as you browse the web. Modified features include blob URLs, broadcast channels, the browser cache, cookies, favicons, HTTP Auth headers, link preconnects, localStorage, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Hafðu merkt í þennan reit til að koma í veg fyrir að ýmsir eiginleikar vafrans séu misnotaðir í að fylgjast með þér á meðan þú flakkar um vefinn. Breyttir eiginleikar eru til dæmis innri slóðir (blob URLs), útsendar rásir, skyndiminni vafrans, vefkökur, veftákn (favicon), HTTP-auðkenningarhausar, fortengi tengla, localStorage, mediaSource-slóðir, OCSP-beiðnir, SharedWorkers og TLS setumiðar.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "Breyta atriðum sem gera þig ólíkan öðrum notendum Tor-vafrans">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Hafðu hakað í þennan reit til að fela fyrir vefsvæðum atriði sem gætu verið einstök hjá þér, þar með talin atriði eins og upplýsingar um afköst tölvunnar, lyklaborðsuppsetningu, staðfærslu, staðsetningu uppsettra viðbóta, lista yfir uppsettar viðbætur, stöðu netkerfis, stærð og stefnu skjás, sértækan aðdrátt fyrir vefsvæði, studdar skráategundir, kerfisliti og getu varðandi WebGL.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Hafðu merkt í þennan reit til að fela fyrir vefsvæðum atriði sem gætu verið einstök hjá þér, þar með talin atriði eins og upplýsingar um afköst tölvunnar, lyklaborðsuppsetningu, staðfærslu, staðsetningu uppsettra viðbóta, lista yfir uppsettar viðbætur, stöðu netkerfis, stærð og stefnu skjás, sértækan aðdrátt fyrir vefsvæði, studdar skráategundir, kerfisliti og getu varðandi WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Öryggisstig">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Öryggisstillingasleðinn getur gert óvirka ýmsa þá eiginleika vafrans sem gætu gert vafrann viðkvæmari fyrir árásum hakkara.">
 <!ENTITY torbutton.prefs.sec_standard_label "Staðlað">
 <!ENTITY torbutton.prefs.sec_standard_description "Allir eiginleikar Tor-vafrans og vefsvæðisins eru virkjaðir.">
 <!ENTITY torbutton.prefs.sec_safer_label "Öruggara">
@@ -46,6 +46,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript er sjálfgefið óvirkt á öllum vefsvæðum.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Sumt letur og stærðfræðitákn eru óvirk.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Sumt letur, táknmyndir, myndir og stærðfræðitákn eru óvirk.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Hljóð og myndskeið (HTML5-gagnamiðlar) þarf að smella á til að spila.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Hljóð og myndskeið (HTML5-gagnamiðla) þarf að smella á til að spila.">
 <!ENTITY torbutton.circuit_display.title "Tor-rás">
 <!ENTITY torbutton.circuit_display.new_circuit "Ný rás fyrir þetta vefsvæði">

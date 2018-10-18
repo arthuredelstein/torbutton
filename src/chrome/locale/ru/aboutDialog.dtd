@@ -1,7 +1,7 @@
 <!ENTITY project.start           "Разработано &brandShortName;">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "&vendorShortName;">
-<!ENTITY project.end             ", проект, созданный, чтобы защитить вашу конфиденциальность и свободу в сети.">
+<!ENTITY project.end             ", некоммерческий проект для защиты приватности и других свобод в сети.">
 
 <!ENTITY help.start              "Желаете помочь?">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->

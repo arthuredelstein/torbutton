@@ -5,6 +5,6 @@
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.changeLogHeading "Registro de cambios:">
 
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Nuevo, Pantalla de Circuito Rediseñada RCD">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "¡Se ha trasladado y mejorado la visualización del ciruito de Tor! Clic en el botón Site&#160;Identity (situado en el lado izquierdo de la barra de direcciones URL) para ver la nueva visualización del circuito.">
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "Nueva Pantalla de Circuito Rediseñada">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "¡Se ha trasladado y mejorado la visualización del enrutado de Tor! Clic en el botón Site&#160;Identity (situado en el lado izquierdo de la barra de direcciones URL) para ver la nueva visualización del circuito.">
 <!ENTITY aboutTBUpdate.learnMore "Aprende más">
