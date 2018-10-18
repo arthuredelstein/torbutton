@@ -30,7 +30,7 @@
 <!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "این جعبه را نگه دارید تا از استفاده از ویژگی‌های مختلف مرورگر برای ردیابی شما در هنگام مرور وب جلوگیری شود. ویژگی های اصلاح شده شامل: آدرس‌های آلوده, broadcast channels, کش مرورگر, کوکی‌ها, فاویکن, HTTP Auth headers, پیوندهاpreconnects, حافظه محلی, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
 <!ENTITY torbutton.prefs.resist_fingerprinting "تغييردادن جزئياتى كه شمارا از كاربران ديگر تُر تميزمى‌كند">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Keep this box checked to hide things from websites that could be unique about you, including your computer performance, keyboard layout, locale, the location of installed plugins, the list of installed plugins, your network status, screen orientation, screen size, site-specific zoom levels, supported file types, system colors, and WebGL capabilities.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "این جعبه برای پنهان کردن چیزهایی از وب سایت‌هایی که می‌تواند منحصر به شما باشد؛ از جمله کارایی رایانه، طرح بندی صفحه کلید، مکان، محل افزونه‌های نصب شده، لیست افزونه‌های نصب شده، وضعیت شبکه شما، جهت صفحه نمایش، اندازه صفحه، سطوح زوم خاص، انواع فایل پشتیبانی شده، رنگ سیستم و قابلیت‌های WebGL نگه دارید.">
 <!ENTITY torbutton.prefs.sec_caption "سطح امنیت">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "نوار لغزنده امنیتی به شما اجازه می‌دهد که مشخصه‌های خاص مرورگر را غیرفعال کنید که ممکن است مرورگر شما را در برابر تلاش‌های هک آسیب‌پذیر سازد.">
 <!ENTITY torbutton.prefs.sec_standard_label "استاندارد">
@@ -39,7 +39,7 @@
 <!ENTITY torbutton.prefs.sec_safer_description "از کار انداختن ویژگی‌های وبسایت که اغلب خطرناک هستند و باعث از دست رفتن برخی سایت‌ها می‌شوند.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "تنظیم مکانی امن‌تر:">
 <!ENTITY torbutton.prefs.sec_safest_label "ایمن ترین ">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
+<!ENTITY torbutton.prefs.sec_safest_description "تنها اجازه می‌دهد که ویژگی‌های وبسایت برای سایت‌های ایستا و خدمات پایه مورد نیاز باشد. این تغییرات بر تصاویر، رسانه‌ها و متن تاثیر می‌گذارند.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "تنظیم امن‌ترین مکان">
 <!ENTITY torbutton.prefs.sec_learn_more_label "اطلاعات بیشتر">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "جاوا اسکریپت روی سایت‌های غیر HTTPS کار نمی‌کند.">

@@ -13,7 +13,7 @@
 <!ENTITY torbutton.button.tooltip "Klicken, um Torbutton zu aktivieren">
 <!ENTITY torbutton.prefs.security_settings "Tor-Browser-Sicherheitseinstellungen">
 <!ENTITY torbutton.prefs.restore_defaults "Standardeinstellungen wiederherstellen">
-<!ENTITY torbutton.prefs.custom_warning "Ihre benutzerdefinierten Browser-Einstellungen haben zu ungewöhnlichen Sicherheitseinstellungen geführt. Aus Gründen der Sicherheit und Privatsphäre empfehlen wir Ihnen eine der vorgegebenen Sicherheitsstufen auszuwählen.">
+<!ENTITY torbutton.prefs.custom_warning "Ihre benutzerdefinierten Browser-Einstellungen haben zu ungewöhnlichen Sicherheitseinstellungen geführt. Aus Gründen der Sicherheit und Privatsphäre empfehlen wir dir eine der vorgegebenen Sicherheitsstufen auszuwählen.">
 <!ENTITY torbutton.cookiedialog.title "Cookie-Schutz verwalten">
 <!ENTITY torbutton.cookiedialog.lockCol "Geschützt">
 <!ENTITY torbutton.cookiedialog.domainCol "Rechner">
@@ -27,12 +27,12 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neue Cookies nicht schützen">
 <!ENTITY torbutton.prefs.restrict_thirdparty "Cookies von Drittanbietern und andere Überwachungsdaten einschränken">
 <!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "E">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Lassen Sie dieses Feld ausgewählt, um zu verhindern, dass verschiedene Browserfunktionen ausgenutzt werden, um Ihr Surfverhalten nachzuverfolgen. Die veränderten Funktionen betreffen: BLOB-URLs, Rundruf-Kanäle, den Browser-Puffer, Cookies, Favicons, HTTP-Authentifizierungs-Kopfdaten, Verknüpfungs-Vorverbindungen, den lokalen Speicher, URLs von Medienquellen, OCSP-Anfragen, gemeinsame JavaScript-Instanzen und Tickets von TLS-Sitzungen.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Details ändern, die Sie von anderen Tor-Browser-Benutzern unterscheiden">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Lasse dieses Feld ausgewählt, um zu verhindern, dass verschiedene Browserfunktionen ausgenutzt werden, um dein Surfverhalten nachzuverfolgen. Die veränderten Funktionen betreffen: BLOB-URLs, Rundruf-Kanäle, den Browser-Puffer, Cookies, Favicons, HTTP-Authentifizierungs-Kopfdaten, Verknüpfungs-Vorverbindungen, den lokalen Speicher, URLs von Medienquellen, OCSP-Anfragen, gemeinsame JavaScript-Instanzen und Tickets von TLS-Sitzungen.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Details ändern, die dich von anderen Tor-Browser-Benutzern unterscheiden">
 <!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lassen Sie dieses Feld ausgewählt um bestimmte einzigartige Informationen Ihres Systems vor Webportalen zu verbergen, wie die Rechnerleistung, Tastaturbelegung, das Sprachprofil, den Installationsort von Erweiterungen, die Liste der installierten Erweiterungen, Ihren Netzwerkstatus, die Bildschirmausrichtung, Bildschirmgröße, seitenspezifische Vergrößerungseinstellungen, unterstützte Dateitypen, Farbschemata und WebGL-Fähigkeiten.">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lasse dieses Feld ausgewählt, um bestimmte einzigartige Informationen deines Systems vor Webportalen zu verbergen, wie die Rechnerleistung, Tastaturbelegung, das Sprachprofil, den Installationsort von Erweiterungen, die Liste der installierten Erweiterungen, deinen Netzwerkstatus, die Bildschirmausrichtung, Bildschirmgröße, seitenspezifische Vergrößerungseinstellungen, unterstützte Dateitypen, Farbschemata und WebGL-Fähigkeiten.">
 <!ENTITY torbutton.prefs.sec_caption "Sicherheitsstufe">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "Mit dem Sicherheitsschieberegler können Sie bestimmte Browserfunktionen, die Ihren Browser für mögliche Attacken anfälliger machen, deaktivieren.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Mit dem Sicherheitsschieberegler kannst du bestimmte Browserfunktionen, die deinen Browser für mögliche Attacken anfälliger machen, deaktivieren.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standard
 ">
 <!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser und Webseiten Funktionen sind aktiviert.">
@@ -42,7 +42,7 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Am sichersten">
 <!ENTITY torbutton.prefs.sec_safest_description "Erlaubt nur Webseiten-Funktionen, die für statische Seiten und Basisdienste benötigt werden. Diese Änderungen betreffen Bilder, Medien und Skripte.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "In der sichersten Einstellung:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Erfahren Sie mehr">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Erfahre mehr">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript ist auf Nicht-HTTTPS-Sites deaktiviert.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript ist standardmäßig auf allen Seiten deaktiviert.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Einige Schriftarten und mathematische Symbole sind deaktiviert.">

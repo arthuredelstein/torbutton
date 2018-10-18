@@ -1,6 +1,6 @@
 <!ENTITY project.start           "&brandShortName; פותח ע&quot;י">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
-<!ENTITY project.tpoLink         "ה-&vendorShortName;">
+<!ENTITY project.tpoLink         "&vendorShortName;">
 <!ENTITY project.end             ", ארגון ללא כוונות רווח הפועל להגן על פרטיותך וחירותך ברשת.">
 
 <!ENTITY help.start              "רוצה לעזור?">
@@ -8,7 +8,7 @@
 <!ENTITY help.donateLink         "תרום">
 <!ENTITY help.or                 "או">
 <!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
-<!ENTITY help.getInvolvedLink    "הייה מעורב!">
+<!ENTITY help.getInvolvedLink    "הייה מעורב">
 <!ENTITY help.end                "!">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
 <!ENTITY bottomLinks.questions   "שאלות?">

@@ -6,5 +6,5 @@
 <!ENTITY aboutTBUpdate.changeLogHeading "Journal des changements :">
 
 <!ENTITY aboutTBUpdate.circuitDisplayHeading "Affichage des circuits nouveau et repensé">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "L’affichage des circuits de Tor a été déplacé et amélioré ! Cliquez sur le bouton Identité&amp;#160;du&amp;#160;site (situé à gauche de la barre d’URL) pour voir le nouvel affichage des circuits.">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "L’affichage des circuits de Tor a été déplacé et amélioré ! Cliquez sur le bouton Identité&#160;du site (situé à gauche de la barre d’URL) pour voir le nouvel affichage des circuits.">
 <!ENTITY aboutTBUpdate.learnMore "En apprendre davantage">

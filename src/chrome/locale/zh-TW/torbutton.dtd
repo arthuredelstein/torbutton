@@ -2,11 +2,11 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "建立新的洋蔥路由迴路來連接上此網站">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "安全設定中...">
+<!ENTITY torbutton.context_menu.preferences "安全設定...">
 <!ENTITY torbutton.context_menu.preferences.key "S">
-<!ENTITY torbutton.context_menu.networksettings "洋蔥路由網路設定">
+<!ENTITY torbutton.context_menu.networksettings "洋蔥路由網路設定...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "檢查洋蔥路由瀏覽器更新....">
+<!ENTITY torbutton.context_menu.downloadUpdate "檢查洋蔥路由瀏覽器更新…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie 保護">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">

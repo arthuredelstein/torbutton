@@ -6,23 +6,37 @@
 
 <!ENTITY aboutTor.title "درباره‌ی تور">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
+<!ENTITY aboutTor.ready.label "کاوش. خصوصی.">
 <!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
 <!ENTITY aboutTor.failure.label "خطایی پیش آمده است!">
-<!ENTITY aboutTor.failure2.label "تا با این مرورگر کار نمی‌کند.">
+<!ENTITY aboutTor.failure2.label "تور با این مرورگر کار نمی‌کند.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "جستجو توسط داک‌داک‌گو">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
-<!ENTITY aboutTor.torbrowser_user_manual_questions.label "پرسش؟">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_questions.label "سوالات؟">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "بررسی راهنمای مرورگر تور »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "راهنمای مرورگر تور">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.getInvolved.label "دریافت مشارکت »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.tagline "آخرین اخبار تور را در صندوق ورودی خود دریافت کنید.">
+<!ENTITY aboutTor.newsletter.link_text "ثبت‌نام برای اخبار تور.">
+
+<!ENTITY aboutTor.donationBanner.line1 "تور: قدرت در اعداد">
+
+<!ENTITY aboutTor.donationBanner.line2a "شرکت گمنامیت را دوست دارد.">
+<!ENTITY aboutTor.donationBanner.line2b "حمایت از حقوق بشر جهانی.">
+<!ENTITY aboutTor.donationBanner.line2c "برای آزادی ایستادگی کنید.">
+<!ENTITY aboutTor.donationBanner.line2d "از حریم خصوصی میلیون‌ها محافظت کنید">
+<!ENTITY aboutTor.donationBanner.line2e "تور را محکم نگه دارید.">
+<!ENTITY aboutTor.donationBanner.line2f "ما به حمایت شما نیاز داریم!">
+
+<!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
+
+<!ENTITY aboutTor.donationBanner.buttonA "اکنون اهداء کنید">
+<!ENTITY aboutTor.donationBanner.buttonB "روی من حساب کن">

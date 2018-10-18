@@ -6,16 +6,16 @@
 
 <!ENTITY aboutTor.title "Sobre Tor">
 
-<!ENTITY aboutTor.ready.label "Explorar. Em particular.">
+<!ENTITY aboutTor.ready.label "Navegar. Com privacidade.">
 <!ENTITY aboutTor.ready2.label "Você está pronto para a maior experiência de navegação privada do mundo.">
 <!ENTITY aboutTor.failure.label "Alguma coisa deu errado!">
 <!ENTITY aboutTor.failure2.label "Tor não está funcionando neste navegador. ">
 
-<!ENTITY aboutTor.search.label "Pesquise com DuckDuckGo">
+<!ENTITY aboutTor.search.label "Pesquisar com DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Perguntas?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Veja nosso Manual do Navegador Tor">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Consulte nosso Manual do Navegador Tor »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Manual do Navegador Tor">
@@ -25,5 +25,19 @@
 ">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Receba as últimas novidades do Tor diretamente na sua caixa de e-mail.">
-<!ENTITY aboutTor.newsletter.link_text "Inscreva-se para novidades Tor">
+<!ENTITY aboutTor.newsletter.tagline "Receba as últimas notícias do Tor diretamente na sua caixa de e-mail.">
+<!ENTITY aboutTor.newsletter.link_text "Inscreva-se para receber Notícias do Tor.">
+
+<!ENTITY aboutTor.donationBanner.line1 "Tor: Nossa Força em Números">
+
+<!ENTITY aboutTor.donationBanner.line2a "Anonimidade adora companhia ">
+<!ENTITY aboutTor.donationBanner.line2b "Avançar os direitos humanos universais.">
+<!ENTITY aboutTor.donationBanner.line2c "Defender a liberdade.">
+<!ENTITY aboutTor.donationBanner.line2d "Proteger a privacidade de milhões de pessoas.">
+<!ENTITY aboutTor.donationBanner.line2e "Manter a força do Tor.">
+<!ENTITY aboutTor.donationBanner.line2f "Precisamos do seu apoio!">
+
+<!ENTITY aboutTor.donationBanner.line3 "Doe hoje, e a Mozilla duplicará a sua doação.">
+
+<!ENTITY aboutTor.donationBanner.buttonA "Doar Agora">
+<!ENTITY aboutTor.donationBanner.buttonB "Estou dentro">

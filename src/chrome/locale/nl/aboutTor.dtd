@@ -6,12 +6,12 @@
 
 <!ENTITY aboutTor.title "Over Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
+<!ENTITY aboutTor.ready.label "Onderzoek. Privé.">
 <!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
 <!ENTITY aboutTor.failure.label "Er ging iets mis!">
 <!ENTITY aboutTor.failure2.label "Tor werkt niet in deze browser.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Zoek met DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Vragen?">
@@ -21,8 +21,22 @@
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.getInvolved.label "Doe Mee">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.tagline "Krijg het laatste Tor nieuws regelrecht in jouw inbox.">
+<!ENTITY aboutTor.newsletter.link_text "Meld je aan voor Tor Nieuws.">
+
+<!ENTITY aboutTor.donationBanner.line1 "Tor: Kracht in Nummers">
+
+<!ENTITY aboutTor.donationBanner.line2a "Anonymity loves company.">
+<!ENTITY aboutTor.donationBanner.line2b "Universele rechten van de mens bevorderen.">
+<!ENTITY aboutTor.donationBanner.line2c "Stand up for freedom.">
+<!ENTITY aboutTor.donationBanner.line2d "Bescherm de privacy van miljoenen.">
+<!ENTITY aboutTor.donationBanner.line2e "Houdt Tor sterk.">
+<!ENTITY aboutTor.donationBanner.line2f "We hebben jouw ondersteuning nodig!">
+
+<!ENTITY aboutTor.donationBanner.line3 "Geef vandaag, en Mozilla geeft hetzelfde bedrag.">
+
+<!ENTITY aboutTor.donationBanner.buttonA "Geef Nu">
+<!ENTITY aboutTor.donationBanner.buttonB "Ik Doe Mee">

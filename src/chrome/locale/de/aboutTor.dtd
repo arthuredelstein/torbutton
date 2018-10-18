@@ -7,7 +7,7 @@
 <!ENTITY aboutTor.title "Über Tor">
 
 <!ENTITY aboutTor.ready.label "Entdecken. Privat.">
-<!ENTITY aboutTor.ready2.label "Sie sind bereit für das privateste Browsing-Erlebnis der Welt.">
+<!ENTITY aboutTor.ready2.label "Du bist bereit für das privateste Browsing-Erlebnis der Welt.">
 <!ENTITY aboutTor.failure.label "Irgend etwas lief schief!">
 <!ENTITY aboutTor.failure2.label "Tor funktioniert mit diesem Browser nicht.">
 
@@ -15,14 +15,28 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Fragen?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Schauen Sie unser Tor-Browser-Handbuch an »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Schaue unser Tor Browser Handbuch an »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor-Browser-Handbuch">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser-Handbuch">
 
-<!ENTITY aboutTor.tor_mission.label "Projekt Tor ist eine in den USA als &quot;The Tor Project&quot; (US 501(c)(3)) registrierte nicht-kommerzielle Organisation für Menschenrechte und Freiheit, die freie und quelloffene Technologien für Anonymität und Privatsphäre entwickelt und bereitstellt und die Forschung und das öffentliche Verständnis auf diesen Gebieten voranbringt.">
-<!ENTITY aboutTor.getInvolved.label "Machen Sie mit »">
+<!ENTITY aboutTor.tor_mission.label "Projekt Tor ist eine in den USA als &quot;The Tor Project&quot; US 501(c)(3) registrierte nicht-kommerzielle Organisation für Menschenrechte und Freiheit, die freie und quelloffene Technologien für Anonymität und Privatsphäre entwickelt und bereitstellt und die Forschung und das öffentliche Verständnis auf diesen Gebieten voranbringt.">
+<!ENTITY aboutTor.getInvolved.label "Mach mit »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Erhalte die neuesten Nachrichten von Tor direkt in den Posteingang">
-<!ENTITY aboutTor.newsletter.link_text "Tor-Nachrichten abonnieren">
+<!ENTITY aboutTor.newsletter.tagline "Erhalte die neuesten Nachrichten von Tor direkt in den Posteingang.">
+<!ENTITY aboutTor.newsletter.link_text "Tor-Nachrichten abonnieren.">
+
+<!ENTITY aboutTor.donationBanner.line1 "Tor: Stärke in Zahlen">
+
+<!ENTITY aboutTor.donationBanner.line2a "Anonymität liebt Gemeinschaft">
+<!ENTITY aboutTor.donationBanner.line2b "Verbessere die Menschenrechte">
+<!ENTITY aboutTor.donationBanner.line2c "Setz dich ein für Freiheit.">
+<!ENTITY aboutTor.donationBanner.line2d "Schütze die Privatsphäre von Millionen Menschen.">
+<!ENTITY aboutTor.donationBanner.line2e "Mache Tor stark.">
+<!ENTITY aboutTor.donationBanner.line2f "Wir brauchen deine Unterstützung.">
+
+<!ENTITY aboutTor.donationBanner.line3 "Gib noch heute, und Mozilla wird deiner Spende entsprechen.">
+
+<!ENTITY aboutTor.donationBanner.buttonA "Spende jetzt">
+<!ENTITY aboutTor.donationBanner.buttonB "Zähl mich mit">

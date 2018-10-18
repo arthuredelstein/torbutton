@@ -34,7 +34,7 @@
 <!ENTITY torbutton.prefs.sec_caption "רמת אבטחה">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "מחוון האבטחה נותן לך להשבית תכונות דפדפן מסוימות אשר עלולות לעשות את הדפדפן שלך יותר פגיע לנסיונות פיצוח.">
 <!ENTITY torbutton.prefs.sec_standard_label "תקני">
-<!ENTITY torbutton.prefs.sec_standard_description "כל המאפיינים של דפדפן Tor ומאפייני אתרים מושבתים.">
+<!ENTITY torbutton.prefs.sec_standard_description "כל המאפיינים של דפדפן Tor ומאפייני אתר מושבתים.">
 <!ENTITY torbutton.prefs.sec_safer_label "בטוח יותר">
 <!ENTITY torbutton.prefs.sec_safer_description "משבית מאפייני אתר שמסוכנים לעיתים קרובות, מה שגורם למספר אתרים לאבד תפקודיות.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "בהגדרה הבטוחה יותר:">

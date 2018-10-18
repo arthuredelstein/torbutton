@@ -20,9 +20,23 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor 브라우저 설명서">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
+<!ENTITY aboutTor.tor_mission.label "Tor 프로젝트는 자유와 인권증진에 기여하는 US 501(c)(3) 비영리 단체입니다. 이는 무료로 이용 가능한 오픈 소스 익명성과 사생활 보호기술을 개발하고 그 무제한적 이용을 지원하여 과학적 공적 이해로 나아갑니다.">
 <!ENTITY aboutTor.getInvolved.label "참여 »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "최신의 Tor 뉴스를 받은 편지함에 곧장 받으십시오.">
 <!ENTITY aboutTor.newsletter.link_text "Tor 뉴스를 구독.">
+
+<!ENTITY aboutTor.donationBanner.line1 "Tor: Strength in Numbers">
+
+<!ENTITY aboutTor.donationBanner.line2a "Anonymity loves company.">
+<!ENTITY aboutTor.donationBanner.line2b "Advance universal human rights.">
+<!ENTITY aboutTor.donationBanner.line2c "Stand up for freedom.">
+<!ENTITY aboutTor.donationBanner.line2d "Protect the privacy of millions.">
+<!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
+<!ENTITY aboutTor.donationBanner.line2f "We need your support!">
+
+<!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
+
+<!ENTITY aboutTor.donationBanner.buttonA "Donate Now">
+<!ENTITY aboutTor.donationBanner.buttonB "Count Me In">
