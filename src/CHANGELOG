@@ -1,3 +1,9 @@
+2.0.8
+ * Bug 23925+27959: Donation banner for year end 2018 campaign
+ * Bug 24172: Donation banner clobbers Tor Browser version string
+ * Bug 27760: Use new NoScript API for IPC and fix about:blank issue
+ * Translations update
+
 2.0.7
  * Bug 27097: Tor News signup banner
  * Bug 27663: Add New Identity menuitem again
