@@ -1,3 +1,9 @@
+2.1.1
+ * Bug 23925+27959: Donation banner for year end 2018 campaign
+ * Bug 24172: Donation banner clobbers Tor Browser version string
+ * Bug 28082: Add locales cs, el, hu, ka
+ * Translations update
+
 2.1
  * Bug 27175: Add pref to allow users to persist custom noscript settings
  * Bug 27760: Use new NoScript API for IPC and fix about:blank issue
