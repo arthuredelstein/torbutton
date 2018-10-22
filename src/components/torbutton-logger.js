@@ -154,6 +154,16 @@ TorbuttonLogger.prototype =
       switch (data) {
           case "extensions.torbutton.logmethod":
               this.logmethod = Services.prefs.getIntPref("extensions.torbutton.logmethod");
+              if (this.logmethod === 0) {
+                Services.prefs.setBoolPref("browser.dom.window.dump.enabled",
+                  true);
+              } else if (Services.prefs.
+                getIntPref("extensions.torlauncher.logmethod", 3) !== 0) {
+                // If Tor Launcher is not available or its log method is not 0
+                // then let's reset the dump pref.
+                Services.prefs.setBoolPref("browser.dom.window.dump.enabled",
+                  false);
+              }
               break;
           case "extensions.torbutton.loglevel":
               this.loglevel = Services.prefs.getIntPref("extensions.torbutton.loglevel");
