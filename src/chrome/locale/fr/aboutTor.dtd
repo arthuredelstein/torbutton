@@ -27,16 +27,16 @@
 <!ENTITY aboutTor.newsletter.tagline "Obtenez les dernières nouvelles au sujet de Tor directement dans votre boîte de réception.">
 <!ENTITY aboutTor.newsletter.link_text "Inscrivez-vous aux nouvelles de Tor">
 
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Strength in Numbers">
+<!ENTITY aboutTor.donationBanner.line1 "Tor : l’union fait la force">
 
-<!ENTITY aboutTor.donationBanner.line2a "L’anonymat adore la compagnie">
-<!ENTITY aboutTor.donationBanner.line2b "Améliorer les droits de la personne.">
-<!ENTITY aboutTor.donationBanner.line2c "Se lever pour la liberté.">
-<!ENTITY aboutTor.donationBanner.line2d "Protéger la confidentialité de millions de personnes.">
-<!ENTITY aboutTor.donationBanner.line2e "Garder Tor robuste.">
-<!ENTITY aboutTor.donationBanner.line2f "On a besoin de votre soutien !">
+<!ENTITY aboutTor.donationBanner.line2a "L’anonymat est contagieux.">
+<!ENTITY aboutTor.donationBanner.line2b "Promouvoir les droits universels de la personne.">
+<!ENTITY aboutTor.donationBanner.line2c "Défendre la liberté.">
+<!ENTITY aboutTor.donationBanner.line2d "Protéger la vie privée de millions de personnes.">
+<!ENTITY aboutTor.donationBanner.line2e "Assurer la robustesse de Tor.">
+<!ENTITY aboutTor.donationBanner.line2f "Nous avons besoin de votre soutien !">
 
-<!ENTITY aboutTor.donationBanner.line3 "Donnez aujourd'hui, et Mozilla recevra votre donation.">
+<!ENTITY aboutTor.donationBanner.line3 "Faites un don aujourd’hui et Mozilla fera un don équivalent.">
 
-<!ENTITY aboutTor.donationBanner.buttonA "Donnez dès maintenant">
-<!ENTITY aboutTor.donationBanner.buttonB "Count Me In">
+<!ENTITY aboutTor.donationBanner.buttonA "Faites un don maintenant">
+<!ENTITY aboutTor.donationBanner.buttonB "Comptez sur moi">
