@@ -4,14 +4,14 @@
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
 
-<!ENTITY aboutTor.title "關於洋蔥路由">
+<!ENTITY aboutTor.title "關於 Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
+<!ENTITY aboutTor.ready.label "探索。隱密。">
 <!ENTITY aboutTor.ready2.label "您已準備好使用全世界最私密的瀏覽體驗。">
 <!ENTITY aboutTor.failure.label "發生錯誤！">
-<!ENTITY aboutTor.failure2.label "洋蔥路由無法在此瀏覽器中運作。">
+<!ENTITY aboutTor.failure2.label "Tor 無法在此瀏覽器中運作。">
 
-<!ENTITY aboutTor.search.label "用 DuckDuckGo 搜尋">
+<!ENTITY aboutTor.search.label "使用 DuckDuckGo 搜尋">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "有什麼問題？">
@@ -25,7 +25,7 @@
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "將 Tor 的最新消息直接傳送到您的收件匣。">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.link_text "訂閱 Tor 的新資訊。">
 
 <!ENTITY aboutTor.donationBanner.line1 "Tor: Strength in Numbers">
 
@@ -34,9 +34,9 @@
 <!ENTITY aboutTor.donationBanner.line2c "Stand up for freedom.">
 <!ENTITY aboutTor.donationBanner.line2d "Protect the privacy of millions.">
 <!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
-<!ENTITY aboutTor.donationBanner.line2f "我們需要您的支持">
+<!ENTITY aboutTor.donationBanner.line2f "我們需要您的支援！">
 
-<!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
+<!ENTITY aboutTor.donationBanner.line3 "今日您捐款，Mozilla 也會捐出相同數額。">
 
 <!ENTITY aboutTor.donationBanner.buttonA "立刻捐款">
-<!ENTITY aboutTor.donationBanner.buttonB "Count Me In">
+<!ENTITY aboutTor.donationBanner.buttonB "我也要加入！">
