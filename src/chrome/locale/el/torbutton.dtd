@@ -1,22 +1,51 @@
 <!ENTITY torbutton.context_menu.new_identity "Νέα Ταυτότητα">
-<!ENTITY torbutton.context_menu.new_identity_key "Τ">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Λυψη του Tor Browser Bundle Update...">
+<!ENTITY torbutton.context_menu.new_identity_key "I">
+<!ENTITY torbutton.context_menu.new_circuit "Νέο κύκλωμα Tor για αυτήν την ιστοσελίδα">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.preferences "Ρυθμίσεις Ασφαλείας...">
+<!ENTITY torbutton.context_menu.preferences.key "S">
+<!ENTITY torbutton.context_menu.networksettings "Ρυθμίσεις του Δικτύου Tor...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Έλεγχος για ενημέρωση του Tor Browser...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "Προστασία Cookies">
+<!ENTITY torbutton.context_menu.cookieProtections "Προστασία Cookies...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Κάντε κλικ για να εκκίνηση του Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Αποκατάσταση αρχικών ρυθμίσεων">
+<!ENTITY torbutton.button.tooltip "Κάντε κλικ για να εκκινήσετε το Torbutton">
+<!ENTITY torbutton.prefs.security_settings "Ρυθμίσεις ασφαλείας του Tor Browser">
+<!ENTITY torbutton.prefs.restore_defaults "Επαναφορά προεπιλογών">
+<!ENTITY torbutton.prefs.custom_warning "Οι προσαρμοσμένες προτιμήσεις του browser σας έχουν οδηγήσει σε ασυνήθιστες ρυθμίσεις ασφάλειας. Για λόγους ασφαλείας και ιδιωτικότητας, προτείνουμε να επιλέξετε ένα από τα προεπιλεγμένα επίπεδα ασφάλειας.">
 <!ENTITY torbutton.cookiedialog.title "Διαχείριση Προστασίας Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "Προστατευμένα">
 <!ENTITY torbutton.cookiedialog.domainCol "Οικοδεσπότης">
 <!ENTITY torbutton.cookiedialog.nameCol "Όνομα">
 <!ENTITY torbutton.cookiedialog.pathCol "Μονοπάτι">
-<!ENTITY torbutton.cookiedialog.protectCookie "Προστασίας Cookie">
+<!ENTITY torbutton.cookiedialog.protectCookie "Προστασία Cookie">
 <!ENTITY torbutton.cookiedialog.removeCookie "Αφαίρεση Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Ξεπροστάτευση Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Αφαίρεση Όλων Εκτός από των Προστατευμένων">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Προστασία Νέων Cookie">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Έκθεση Cookie">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Αφαίρεση όλων εκτός των προστατευμένων">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Προστασία νέων Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Να Μη γίνεται Προστασία Νέων Cookie">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Περιορισμος των cookies τριτων και αλλων δεδομενων παρακολουθησης">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Αλλάξτε τις λεπτομέρειες που σας διακρίνει από άλλους χρήστες του Tor Browser ">
+<!ENTITY torbutton.prefs.restrict_thirdparty "Περιορισμος των cookies τρίτων και αλλων δεδομενων παρακολουθησης">
+<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
+<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Επιλέξτε αυτό το κουτάκι για να αποφύγετε διάφορες υπηρεσίες browser να επιτεθούν για να σας εντοπίσουν κατά την περιήγησή σας στο διαδίκτυο. Τροποποιημένες υπηρεσίες περιλαμβάνουν blob URLs, κανάλια προβολής, μνήμη cache, cookies, συντομεύσεις ιστοσελίδων, σελιδοδείκτες ταυτοποίησης HTTP, προσυνδέσεις συνδέσμων, τοπική αποθήκευση, URLs πηγών μέσων, αιτήματα OCSP, SharedWorkers και εισιτήρια λειτουργίας TLS.">
+<!ENTITY torbutton.prefs.resist_fingerprinting "Αλλάξτε τις λεπτομέρειες που σας διακρίνουν από άλλους χρήστες του Tor Browser ">
+<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
+<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Διατηρήστε αυτό το κουτί επιλεγμένο για να κρύψετε από τους ιστοτόπους πράγματα που θα μπορούσαν να είναι μοναδικά για εσάς, συμπεριλαμβανομένων της απόδοσης του υπολογιστή, της διάταξης του πληκτρολογίου, της γλώσσας, της τοποθεσίας των εγκατεστημένων προσθέτων, της κατάστασης του δικτύου, του προσανατολισμού της οθόνης, του μεγέθους της οθόνης, των επιπέδων zoom ανά site, των υποστηριζόμενων τύπων αρχείων, των χρωμάτων του συστήματος και των δυνατοτήτων WebGL.">
+<!ENTITY torbutton.prefs.sec_caption "Επίπεδο ασφάλειας">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Το Slider Ασφάλειας σας αφήνει να απενεργοποιήσετε ορισμένα χαρακτηριστικά του φυλλομετρητή που μπορεί να τον κάνουν πιο ευάλωτο σε προσπάθειες hacking.">
+<!ENTITY torbutton.prefs.sec_standard_label "Βασικά">
+<!ENTITY torbutton.prefs.sec_standard_description "Όλες οι παροχές του Tor Browser και της ιστοσελίδας είναι ενεργοποιημένες.">
+<!ENTITY torbutton.prefs.sec_safer_label "Ασφαλέστερα">
+<!ENTITY torbutton.prefs.sec_safer_description "Απενεργοποιεί παροχές ιστοσελίδων που είναι επικίνδυνες και οδηγούν κάποιες ιστοσελίδες στο να χάνουν λειτουργικότητα.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Στην ασφαλέστερη σύνδεση:">
+<!ENTITY torbutton.prefs.sec_safest_label "Ασφαλέστατο">
+<!ENTITY torbutton.prefs.sec_safest_description "Επιτρέπει μόνο τις παροχές ιστοσελίδας που απαιτούνται για βασικές ιστοσελίδες και υπηρεσίες. Αυτό επηρεάζει εικόνες, μέσα και scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Στην πιο ασφαλή ρύθμιση:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Μάθετε περισσότερα">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Η JavaScript είναι απενεργοποιημένη σε ιστότοπους που δεν είναι HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "Η JavaScript είναι απενεργοποιημένη σε όλους τους ιστότοπους ως προεπιλογή.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Μερικές γραμματοσειρές και μαθηματικά σύμβολα είναι απενεργοποιημένα.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Ορισμένες γραμματοσειρές, εικονίδια, μαθηματικά σύμβολα και εικόνες είναι απενεργοποιημένα.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Ήχος και βίντεο (μέσα HTML5) είναι κλίκαρε-και-παίζει.">
+<!ENTITY torbutton.circuit_display.title "Κύκλωμα Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "Νέο κύκλωμα για αυτή την ιστοσελίδα">

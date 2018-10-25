@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
+<!ENTITY  brandShorterName      "Tor Browser">
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  trademarkInfo.part1   "A Firefox és a Firefox logó a Mozilla Foundation védjegyei.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "Kattintson  telepített böngésző pluginek betltéséhez">
+<!ENTITY plugins.installed.enable "Beépülő modulok engedélyezése">
+<!ENTITY plugins.installed.disable "Beépülő modulok tiltása ">
+<!ENTITY plugins.installed.disable.tip "Kattintson a rendszer beépülő modulok betöltésének megakadályozásához.">

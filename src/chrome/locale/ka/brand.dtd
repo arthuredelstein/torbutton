@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  brandShorterName      "Tor-ბრაუზერი">
+<!ENTITY  brandShortName        "Tor-ბრაუზერი">
+<!ENTITY  brandFullName         "Tor-ბრაუზერი">
+<!ENTITY  vendorShortName       "Tor-პროექტი">
+<!ENTITY  trademarkInfo.part1   "Firefox და მისი ლოგოები წარმოადგენს Mozilla-ს ფონდის სავაჭრო ნიშნებს.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "დააწკაპეთ დაყენებული სისტემური მოდულების ჩასატვირთად">
+<!ENTITY plugins.installed.enable "მოდულების ჩართვა">
+<!ENTITY plugins.installed.disable "მოდულების გამორთვა">
+<!ENTITY plugins.installed.disable.tip "დააწკაპეთ სისტემური მოდულების ჩატვირთვის ასარიდებლად">

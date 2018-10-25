@@ -1,0 +1,19 @@
+<!ENTITY project.start           "Aplikace &brandShortName; je vyvíjena">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "společností &vendorShortName;">
+<!ENTITY project.end             ", neziskovou organizací chránící vaše soukromí a svobodu na internetu.">
+
+<!ENTITY help.start              "Chcete pomoci?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Přispějte">
+<!ENTITY help.or                 "nebo">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "se zapojte">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Otázky?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Pomozte síti Tor růst!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Informace o licencích">
+<!ENTITY tor.TrademarkStatement   "&quot;Tor&quot; a &quot;Onion logo&quot; jsou registrované ochranné známky společnosti Tor Project, Inc.">
