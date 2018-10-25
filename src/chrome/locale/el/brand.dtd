@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
+<!ENTITY  brandShorterName      "Tor Browser">
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox and the Firefox logos are trademarks of the Mozilla Foundation.">
+<!ENTITY  trademarkInfo.part1   "O Firefox και το λογότυπο Firefox είναι εμπορικά σήματα του Mozilla Foundation.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "Κάντε κλικ για να φορτώσετε εγκατεστημένα πρόσθετα συστήματος">
+<!ENTITY plugins.installed.enable "Ενεργοποίηση Πρόσθετων">
+<!ENTITY plugins.installed.disable "Απενεργοποίηση Πρόσθετων">
+<!ENTITY plugins.installed.disable.tip "Κάντε κλικ για να μην φορτωθούν τα πρόσθετα του συστήματος">

@@ -1,0 +1,10 @@
+<!ENTITY aboutTBUpdate.title "Actualización del Navegador Tor">
+<!ENTITY aboutTBUpdate.updated "El Navegador Tor ha sido actualizado.">
+<!ENTITY aboutTBUpdate.linkPrefix "Para la información más actualizada sobre ésta versión,">
+<!ENTITY aboutTBUpdate.linkLabel  "visitá nuestro sitio web">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "Bitácora de cambios:">
+
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "Nueva visualización de Circuito, rediseñada">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "¡La visualización del Circuito Tor ha sido reubicada y mejorada! Cliquear el botón Identidad de&#160;Sitio (localizado en el lado izquierdo de la barra URL) para ver la nueva visualización de circuito.">
+<!ENTITY aboutTBUpdate.learnMore "Aprendé más">

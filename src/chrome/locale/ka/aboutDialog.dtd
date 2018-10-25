@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName;-ის შემქმნელია">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "&vendorShortName;">
+<!ENTITY project.end             ", ყოველგვარი მოგების მიღების გარეშე, ინტერნეტში თქვენი პირადულობისა და თავისუფლების უზრუნველსაყოფად.">
+
+<!ENTITY help.start              "დახმარება გესაჭიროებათ?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "გაიღეთ შემოწირულობა">
+<!ENTITY help.or                 "ან">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "შემოგვიერთდით">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "კითხვები გაქვთ?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "დაეხმარეთ Tor ქსელს გაფართოებაში!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "სალიცენზიო მონაცემები">
+<!ENTITY tor.TrademarkStatement   "„Tor“ და „Onion Logo“ წარმოადგენს Tor Project Inc-ის კუთვნილ სავაჭრო ნიშნებს.">

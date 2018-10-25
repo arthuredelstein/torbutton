@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; έχει φτιαχτεί από">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "ο &vendorShortName;">
+<!ENTITY project.end             ",μια μη κερδοσκοπική οργάνωση που υπερασπίζεται την ιδιωτικότητα και την ελευθερεία σας στο διαδύκτιο.">
+
+<!ENTITY help.start              "Θέλετε να βοηθήσετε?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Δωρίστε">
+<!ENTITY help.or                 "ή">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "βοηθήστε">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Ερωτήσεις?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Βοηθήστε το Δίκτυο Tor να μεγαλώσει!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Πληροφορίες Αδειοδότησης">
+<!ENTITY tor.TrademarkStatement   "Το 'Tor' και το 'Onion Logo' είναι εγγεγραμένα λογότυπα του Tor Project, Inc.">

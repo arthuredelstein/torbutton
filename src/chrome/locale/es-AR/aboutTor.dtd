@@ -1,0 +1,42 @@
+<!--
+   - Copyright (c) 2018, The Tor Project, Inc.
+   - See LICENSE for licensing information.
+   - vim: set sw=2 sts=2 ts=8 et syntax=xml:
+  -->
+
+<!ENTITY aboutTor.title "Acerca de Tor">
+
+<!ENTITY aboutTor.ready.label "Explorá. Privadamente.">
+<!ENTITY aboutTor.ready2.label "Estás listo para la experiencia de navegación más privada del mundo.">
+<!ENTITY aboutTor.failure.label "¡Algo salió mal!">
+<!ENTITY aboutTor.failure2.label "Tor no funciona en este navegador.">
+
+<!ENTITY aboutTor.search.label "Buscá con DuckDuckGo">
+<!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
+
+<!ENTITY aboutTor.torbrowser_user_manual_questions.label "¿Preguntas?">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Revisá nuestro manual del navegador Tor »">
+<!-- The next two entities are used within the browser's Help menu. -->
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Manual del navegador Tor">
+
+<!ENTITY aboutTor.tor_mission.label "El proyecto Tor es una organización sin fines de lucro bajo las provisiones de la ley EUA 501(c)(3), cuya misión es avanzar los derechos y libertades humanas creando y desplegando tecnologías de anonimato y privacidad de fuente abierta, soportando su disponibilidad y uso irrestricto, y ampliando su entendimiento científico y popular.">
+<!ENTITY aboutTor.getInvolved.label "Involucrate »">
+<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
+
+<!ENTITY aboutTor.newsletter.tagline "Recibí las últimas noticias de Tor derecho en tu bandeja de entrada.">
+<!ENTITY aboutTor.newsletter.link_text "Registrate en Tor News.">
+
+<!ENTITY aboutTor.donationBanner.line1 "Tor: Fortaleza en Canidad">
+
+<!ENTITY aboutTor.donationBanner.line2a "El anonimato ama la compañía.">
+<!ENTITY aboutTor.donationBanner.line2b "Avanzar los derechos humanos universales.">
+<!ENTITY aboutTor.donationBanner.line2c "Plantarse por la libertad.">
+<!ENTITY aboutTor.donationBanner.line2d "Proteger la privacidad de millones.">
+<!ENTITY aboutTor.donationBanner.line2e "Mantener fuerte a Tor.">
+<!ENTITY aboutTor.donationBanner.line2f "¡Necesitamos tu apoyo!">
+
+<!ENTITY aboutTor.donationBanner.line3 "Dá hoy, y Mozilla emparejará tu donación.">
+
+<!ENTITY aboutTor.donationBanner.buttonA "Doná ahora">
+<!ENTITY aboutTor.donationBanner.buttonB "Contá conmigo">

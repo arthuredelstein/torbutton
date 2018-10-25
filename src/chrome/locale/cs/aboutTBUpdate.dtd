@@ -1,0 +1,10 @@
+<!ENTITY aboutTBUpdate.title "Aktualizace prohlížeče Tor">
+<!ENTITY aboutTBUpdate.updated "Prohlížeč Tor byl aktualizován.">
+<!ENTITY aboutTBUpdate.linkPrefix "Informace o tomto vydání najdete na ">
+<!ENTITY aboutTBUpdate.linkLabel  "naši webové stránce">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.changeLogHeading "Přehled změn:">
+
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "Nové zobrazení okruhů">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "Vylepšili jsme zobrazení okruhů Toru. Pro jeho otevření klepněte na tlačítko „Identita&amp;160#stránky“ umístěné v levé části adresního řádku.">
+<!ENTITY aboutTBUpdate.learnMore "Zjistit více">
