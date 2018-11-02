@@ -8,12 +8,12 @@ and lines drawn between them to represent Tor network inter-relay connections.
 
 
 #circuit-display-content {
-  background-image: url(chrome://torbutton/skin/relay.svg);
+  background-image: url(chrome://torbutton/skin/torbutton.svg);
   background-position: 1em 1em;
   background-repeat: no-repeat;
   background-size: 24px auto;
-  background-color: rgba(255,255,255,0.4);
-  background-blend-mode: lighten;
+  background-color: rgba(255,255,255,0.15);
+  background-blend-mode: overlay;
   cursor: default;
   padding: 0.5em 0px 0.5em;
   padding-inline-end: 1em;
