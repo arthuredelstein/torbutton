@@ -80,5 +80,5 @@ svg#tor-circuit circle.node-circle {
 }
 
 #appMenuNewCircuit {
-    list-style-image: url("chrome://torbutton/skin/relay.svg");
+    list-style-image: url("chrome://torbutton/skin/new_circuit.svg");
 }

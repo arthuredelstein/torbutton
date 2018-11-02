@@ -15,10 +15,12 @@
             label="&torbutton.context_menu.new_circuit;"
             oncommand="torbutton_new_circuit();"/>
   <toolbarbutton id="appMenuNewIdentity"
+                 class="subviewbutton subviewbutton-iconic"
                  key="torbutton-new-identity-key"
                  label="&torbutton.context_menu.new_identity;"
                  oncommand="torbutton_new_identity();"/>
   <toolbarbutton id="appMenuNewCircuit"
+                 class="subviewbutton subviewbutton-iconic"
                  key="torbutton-new-circuit-key"
                  label="&torbutton.context_menu.new_circuit;"
                  oncommand="torbutton_new_circuit();"/>
