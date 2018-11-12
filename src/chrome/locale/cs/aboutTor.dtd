@@ -7,8 +7,8 @@
 <!ENTITY aboutTor.title "O Toru">
 
 <!ENTITY aboutTor.ready.label "Prohlížejte v soukromí.">
-<!ENTITY aboutTor.ready2.label "Vše je připraveno pro maximální soukromí pro vaše prohlížení.">
-<!ENTITY aboutTor.failure.label "Něco se nepovedlo!">
+<!ENTITY aboutTor.ready2.label "Vše je připraveno pro maximální soukromí Vašeho prohlížení.">
+<!ENTITY aboutTor.failure.label "Něco se pokazilo!">
 <!ENTITY aboutTor.failure2.label "Tor v tomto prohlížeči nefunguje.">
 
 <!ENTITY aboutTor.search.label "Vyhledejte s DuckDuckGo">

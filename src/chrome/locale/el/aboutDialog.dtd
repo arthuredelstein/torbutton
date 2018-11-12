@@ -1,7 +1,7 @@
 <!ENTITY project.start           "&brandShortName; έχει φτιαχτεί από">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "ο &vendorShortName;">
-<!ENTITY project.end             ",μια μη κερδοσκοπική οργάνωση που υπερασπίζεται την ιδιωτικότητα και την ελευθερεία σας στο διαδύκτιο.">
+<!ENTITY project.end             ", μια μη κερδοσκοπική οργάνωση που υπερασπίζεται την ιδιωτικότητα και την ελευθερία σας στο διαδίκτυο.">
 
 <!ENTITY help.start              "Θέλετε να βοηθήσετε?">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->

@@ -6,19 +6,19 @@
 
 <!ENTITY aboutTor.title "Torについて">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready.label "探索する。 プライベートに。">
+<!ENTITY aboutTor.ready2.label "世界で最もプライベートなブラウジングを体験する準備が整いました。">
 <!ENTITY aboutTor.failure.label "何かが間違っています！">
 <!ENTITY aboutTor.failure2.label "Torは、このブラウザでは動作しません。">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "DuckDuckGoで検索">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "質問がありますか？">
 <!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser マニュアル">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
 <!ENTITY aboutTor.getInvolved.label "Get Involved »">
@@ -31,12 +31,12 @@
 
 <!ENTITY aboutTor.donationBanner.line2a "Anonymity loves company.">
 <!ENTITY aboutTor.donationBanner.line2b "Advance universal human rights.">
-<!ENTITY aboutTor.donationBanner.line2c "Stand up for freedom.">
+<!ENTITY aboutTor.donationBanner.line2c "自由のために立ち上がる。">
 <!ENTITY aboutTor.donationBanner.line2d "Protect the privacy of millions.">
 <!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
-<!ENTITY aboutTor.donationBanner.line2f "We need your support!">
+<!ENTITY aboutTor.donationBanner.line2f "我々にはあなたのサポートが必要です!">
 
 <!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
 
-<!ENTITY aboutTor.donationBanner.buttonA "Donate Now">
+<!ENTITY aboutTor.donationBanner.buttonA "今すぐ寄付">
 <!ENTITY aboutTor.donationBanner.buttonB "Count Me In">
