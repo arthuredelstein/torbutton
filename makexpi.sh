@@ -20,8 +20,8 @@ echo ---------- create $APP_NAME.xpi ----------
 # create the pkg directory if it doesn't exist yet
 mkdir -p pkg
 cd src
-echo zip -X -9r ../pkg/$XPI_NAME ./ -x "chrome/*" -x "*.diff" -x "*.svn/*"
-zip -X -9r ../pkg/$XPI_NAME ./ -x "*.svn/*" -x "*.diff" #-x "chrome/*"
+echo zip -X -9r ../pkg/$XPI_NAME ./ -x "chrome/*" -x "*.diff" -x "*.svn/*" -x "chrome/locale/en-US/*"
+zip -X -9r ../pkg/$XPI_NAME ./ -x "*.svn/*" -x "*.diff" -x "chrome/locale/en-US/*" #-x "chrome/*"
 #mv ../$APP_NAME.jar ./chrome
 #zip -9m ../pkg/$XPI_NAME chrome/$APP_NAME.jar
 cd ..
