@@ -6,5 +6,5 @@
 <!ENTITY aboutTBUpdate.changeLogHeading "سجل التغييرات:">
 
 <!ENTITY aboutTBUpdate.circuitDisplayHeading "تصميم جديد لطريقة عرض الدوائر">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "عرض دوائر تور نقل إلى مكان آخر وخضع للتحسين. انقر على زر «هوية الموقع» (تجده يمين شريط العنوانين) لترى العرض الجديد.">
 <!ENTITY aboutTBUpdate.learnMore "إعرف/ي أكثر ">

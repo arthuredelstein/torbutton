@@ -6,37 +6,37 @@
 
 <!ENTITY aboutTor.title "Om Tor">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready.label "Utforska. Privat.">
+<!ENTITY aboutTor.ready2.label "Du är redo för världens mest privata surfupplevelse.">
 <!ENTITY aboutTor.failure.label "Någonting gick fel!">
 <!ENTITY aboutTor.failure2.label "Tor fungerar inte i den här webbläsaren.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Sök med DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Frågor?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Kolla in bruksanvisning för Tor-webbläsaren »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Bruksanvisning för Tor-webbläsaren">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.tor_mission.label "Tor-projektet är en amerikansk 501(c)(3) ideell organisation som främjar mänskliga rättigheter och friheter genom att skapa och distribuera anonymitets- och sekretessteknik med fri och öppen källkod, stödja deras obegränsade tillgänglighet och användning och främja deras vetenskapliga och populära förståelse.">
+<!ENTITY aboutTor.getInvolved.label "Engagera dig »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.tagline "Få de senaste nyheterna från Tor direkt till din inkorg.">
+<!ENTITY aboutTor.newsletter.link_text "Anmäl dig till Tor-nyheter.">
 
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Strength in Numbers">
+<!ENTITY aboutTor.donationBanner.line1 "Tor: Styrka i antal">
 
-<!ENTITY aboutTor.donationBanner.line2a "Anonymity loves company.">
-<!ENTITY aboutTor.donationBanner.line2b "Advance universal human rights.">
-<!ENTITY aboutTor.donationBanner.line2c "Stand up for freedom.">
-<!ENTITY aboutTor.donationBanner.line2d "Protect the privacy of millions.">
-<!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
-<!ENTITY aboutTor.donationBanner.line2f "We need your support!">
+<!ENTITY aboutTor.donationBanner.line2a "Anonymitet älskar sällskap.">
+<!ENTITY aboutTor.donationBanner.line2b "Främja universella mänskliga rättigheter.">
+<!ENTITY aboutTor.donationBanner.line2c "Stå upp för frihet.">
+<!ENTITY aboutTor.donationBanner.line2d "Skydda miljontals privatliv.">
+<!ENTITY aboutTor.donationBanner.line2e "Håll Tor stark.">
+<!ENTITY aboutTor.donationBanner.line2f "Vi behöver ert stöd!">
 
-<!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
+<!ENTITY aboutTor.donationBanner.line3 "Ge idag, och Mozilla kommer att matcha din donation.">
 
-<!ENTITY aboutTor.donationBanner.buttonA "Donate Now">
-<!ENTITY aboutTor.donationBanner.buttonB "Count Me In">
+<!ENTITY aboutTor.donationBanner.buttonA "Donera nu">
+<!ENTITY aboutTor.donationBanner.buttonB "Räkna med mig">

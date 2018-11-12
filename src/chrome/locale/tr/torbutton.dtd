@@ -42,7 +42,7 @@
 <!ENTITY torbutton.prefs.sec_safest_description "Yalnız durağan siteler ve temel hizmetler için gerekli web sitesi özelliklerine izin verilir. Bu değişiklikler görselleri, ortamları ve betikleri etkiler.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "En güvenli ayarlar kullanıldığında:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Ayrıntılı bilgi alın">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript,,HTTPS kullanmayan sitelerde devre dışı bırakılır.">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript, HTTPS kullanmayan sitelerde devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript betikleri tüm sitelerde varsayılan olarak devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Bazı yazı türleri ve matematik simgeleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Bazı yazı türleri, simgeler, matematik simgeleri ve görseller devre dışı bırakılır.">

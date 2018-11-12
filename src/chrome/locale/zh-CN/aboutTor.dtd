@@ -27,16 +27,16 @@
 <!ENTITY aboutTor.newsletter.tagline "通过邮件获取 Tor 的最新消息。">
 <!ENTITY aboutTor.newsletter.link_text "注册 Tor 新闻列表">
 
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Strength in Numbers">
+<!ENTITY aboutTor.donationBanner.line1 "Tor：众人拾柴火焰高">
 
-<!ENTITY aboutTor.donationBanner.line2a "Anonymity loves company.">
-<!ENTITY aboutTor.donationBanner.line2b "Advance universal human rights.">
-<!ENTITY aboutTor.donationBanner.line2c "Stand up for freedom.">
-<!ENTITY aboutTor.donationBanner.line2d "Protect the privacy of millions.">
-<!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
-<!ENTITY aboutTor.donationBanner.line2f "We need your support!">
+<!ENTITY aboutTor.donationBanner.line2a "匿名的表示对公司的爱意。">
+<!ENTITY aboutTor.donationBanner.line2b "推进基本人权。">
+<!ENTITY aboutTor.donationBanner.line2c "为自由呐喊。">
+<!ENTITY aboutTor.donationBanner.line2d "保护数百万人的隐私。">
+<!ENTITY aboutTor.donationBanner.line2e "让 Tor 网络保持健壮。">
+<!ENTITY aboutTor.donationBanner.line2f "我们需要你的帮助！">
 
-<!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
+<!ENTITY aboutTor.donationBanner.line3 "现在捐款， Mozilla 也能从你的捐赠中受益。">
 
-<!ENTITY aboutTor.donationBanner.buttonA "Donate Now">
-<!ENTITY aboutTor.donationBanner.buttonB "Count Me In">
+<!ENTITY aboutTor.donationBanner.buttonA "现在就捐助">
+<!ENTITY aboutTor.donationBanner.buttonB "算我一个">
