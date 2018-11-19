@@ -21,6 +21,12 @@ function ensureDefaultPrefs () {
         Services.console.logStringMessage(
           `Preference ${aPrefName} with value ${aValue} has an invalid value type`);
       }
+
+      // Disable the External App Blocker on Android
+      if ((aPrefName === "extensions.torbutton.launch_warning") &&
+          (Services.appinfo.OS === "Android")) {
+        defaultPrefBranch.setBoolPref(aPrefName, false);
+      }
     }
   };
   Services.scriptloader.loadSubScript(kDefaultPreferences, context);
