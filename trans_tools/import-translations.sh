@@ -28,7 +28,7 @@ FILEMAP=( "aboutDialog.dtd:torbutton-aboutdialogdtd"
 
 # Verify that the FILEMAP contains an entry for each Torbutton file.
 FILES_ARE_MISSING=0
-for DEST_PATH in $LOCALE_DIR/en/*.dtd $LOCALE_DIR/en/*.properties;
+for DEST_PATH in $LOCALE_DIR/en-US/*.dtd $LOCALE_DIR/en-US/*.properties;
 do
   IS_FILE_IN_MAP=0
   DEST_FILE=${DEST_PATH##*/}
