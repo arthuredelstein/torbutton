@@ -15,10 +15,10 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Frågor?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Kolla in bruksanvisning för Tor-webbläsaren »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Kolla in bruksanvisning för Tor Browser »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Bruksanvisning för Tor-webbläsaren">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Bruksanvisning för Tor Browser">
 
 <!ENTITY aboutTor.tor_mission.label "Tor-projektet är en amerikansk 501(c)(3) ideell organisation som främjar mänskliga rättigheter och friheter genom att skapa och distribuera anonymitets- och sekretessteknik med fri och öppen källkod, stödja deras obegränsade tillgänglighet och användning och främja deras vetenskapliga och populära förståelse.">
 <!ENTITY aboutTor.getInvolved.label "Engagera dig »">
