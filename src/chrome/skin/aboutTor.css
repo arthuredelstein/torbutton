@@ -431,3 +431,30 @@ body[mobile] .top .heading1 {
   font-size: 62px;
   line-height: 1.1
 }
+
+body[mobile] #donation-banner {
+  position: static;
+}
+
+body[mobile][show-donation-banner="true"] .torcontent-container,
+body[mobile][show-donation-banner="true"] .onion-pattern-container {
+  transform: none;
+}
+
+body[mobile][show-donation-banner="false"] .torcontent-container {
+  transform: translateY(-200px);
+}
+
+@media only screen and (max-width: 480px) {
+  #donation-banner-image {
+    display: none;
+  }
+
+  #donation-banner-lines {
+    align-items: stretch;
+  }
+
+  #donation-banner-button {
+    text-align: center;
+  }
+}
