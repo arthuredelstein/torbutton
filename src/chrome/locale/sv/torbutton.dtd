@@ -6,12 +6,12 @@
 <!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor-nätverksinställningar...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "Sök efter uppdateringar för Tor webbläsare...">
+<!ENTITY torbutton.context_menu.downloadUpdate "Sök efter uppdateringar för Tor Browser...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Skydd mot Cookies...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "S">
 <!ENTITY torbutton.button.tooltip "Klicka för att initialisera Torbutton">
-<!ENTITY torbutton.prefs.security_settings "Tor-webbläsares säkerhetsinställningar">
+<!ENTITY torbutton.prefs.security_settings "Säkerhetsinställningar i Tor Browser">
 <!ENTITY torbutton.prefs.restore_defaults "Återställ standard">
 <!ENTITY torbutton.prefs.custom_warning "Dina anpassade webbläsarinställningar har resulterat i ovanliga säkerhetsinställningar. Av säkerhets- och integritetsskäl rekommenderar vi att du använder en av de fördefinierade säkerhetsnivåerna.">
 <!ENTITY torbutton.cookiedialog.title "Hantera Cookies skydd">
