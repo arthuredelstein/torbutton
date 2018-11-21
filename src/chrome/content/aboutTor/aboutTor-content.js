@@ -72,7 +72,7 @@ var AboutTorListener = {
         sendAsyncMessage(that.kAboutTorHideDonationBanner);
       });
     });
-    bindPrefAndInit("extensions.torbutton.donation_banner_countdown",
+    bindPrefAndInit("extensions.torbutton.donation_banner_countdown2",
                     countdown => {
                       if (content.document && content.document.body) {
                         content.document.body.setAttribute(
