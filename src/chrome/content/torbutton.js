@@ -19,7 +19,7 @@ const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion"
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
 const k_tb_last_update_check_pref = "extensions.torbutton.lastUpdateCheck";
 const k_tb_tor_check_failed_topic = "Torbutton:TorCheckFailed";
-const k_tb_donation_banner_countdown = "extensions.torbutton.donation_banner_countdown";
+const k_tb_donation_banner_countdown = "extensions.torbutton.donation_banner_countdown2";
 
 var m_tb_prefs = Services.prefs;
 
