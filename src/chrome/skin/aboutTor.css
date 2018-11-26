@@ -51,7 +51,6 @@ body:not([initialized]) {
   .torcontent-container {
     margin: 40px auto 28px auto;
     max-width: 1000px;
-    min-width: 1000px;
   }
 }
 
