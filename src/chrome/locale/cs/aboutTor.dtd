@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "Chráníme soukromí milionů lidí.">
 <!ENTITY aboutTor.donationBanner.line2e "Pomozte Toru sílit.">
 <!ENTITY aboutTor.donationBanner.line2f "Potřebujeme vaši podporu!">
+<!ENTITY aboutTor.donationBanner.line2g "Podpořte svobodu internetu.">
+<!ENTITY aboutTor.donationBanner.line2h "Braňte otevřený web.">
+<!ENTITY aboutTor.donationBanner.line2i "Podpořte online soukromí a svobodu.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla dorovná každý příspěvek až do začátku roku 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "Přispějte hned a Mozilla vás dar zdvojnásobí.">
+<!ENTITY aboutTor.donationBanner.line3b "Pošlete příspěvek a ten se zdvojnásobí.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "Přispějte">
 <!ENTITY aboutTor.donationBanner.buttonB "Jdu do toho">

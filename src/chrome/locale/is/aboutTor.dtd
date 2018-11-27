@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "Verndum friðhelgi milljóna manna.">
 <!ENTITY aboutTor.donationBanner.line2e "Höldum Tor sterku">
 <!ENTITY aboutTor.donationBanner.line2f "Við þörfnumst stuðnings þíns!">
+<!ENTITY aboutTor.donationBanner.line2g "Stattu með frelsi á netinu.">
+<!ENTITY aboutTor.donationBanner.line2h "Verðu hinn opna vef.">
+<!ENTITY aboutTor.donationBanner.line2i "Verðu rétt þinn til einkalífs og frelsis á netinu.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla jafnar upp hvert fjárframlag allt til 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "Gefðu í dag - og Mozilla mun jafna framlag þitt.">
+<!ENTITY aboutTor.donationBanner.line3b "Gefðu upphæð núna - og gjöfin þín mun tvöfaldast.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "Styrkja núna">
 <!ENTITY aboutTor.donationBanner.buttonB "Reiknið með mér">

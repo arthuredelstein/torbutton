@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "保护数百万人的隐私。">
 <!ENTITY aboutTor.donationBanner.line2e "让 Tor 网络保持健壮。">
 <!ENTITY aboutTor.donationBanner.line2f "我们需要你的帮助！">
+<!ENTITY aboutTor.donationBanner.line2g "Support internet freedom.">
+<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
+<!ENTITY aboutTor.donationBanner.line2i "Support privacy and freedom online.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "现在捐款， Mozilla 也能从你的捐赠中受益。">
+<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "现在就捐助">
 <!ENTITY aboutTor.donationBanner.buttonB "算我一个">

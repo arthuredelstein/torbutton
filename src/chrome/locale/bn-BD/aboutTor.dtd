@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "লাখো লোকের ব্যক্তিগত গোপনীয়তা রক্ষা করুন। ">
 <!ENTITY aboutTor.donationBanner.line2e "টরকে শক্তিশালী রাখুন। ">
 <!ENTITY aboutTor.donationBanner.line2f "আপনাদের সাহায্য দরকার! ">
+<!ENTITY aboutTor.donationBanner.line2g "Support internet freedom.">
+<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
+<!ENTITY aboutTor.donationBanner.line2i "Support privacy and freedom online.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "অর্থ সাহায্য করুন, এবং মজিলা সমপরিমাণ সাহায্য করবে। ">
+<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "এখুনি দান করুন! ">
 <!ENTITY aboutTor.donationBanner.buttonB "আমাকেও সাথে নিন">

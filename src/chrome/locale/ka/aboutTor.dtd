@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "დაიცავით მილიონობით ადამიანის პირადი მონაცემები.">
 <!ENTITY aboutTor.donationBanner.line2e "შეინარჩუნეთ Tor ძლიერი.">
 <!ENTITY aboutTor.donationBanner.line2f "ჩვენ გვესაჭიროება თქვენი გვერდში დგომა!">
+<!ENTITY aboutTor.donationBanner.line2g "მხარი დაუჭირეთ თავისუფალ ინტერნეტს.">
+<!ENTITY aboutTor.donationBanner.line2h "დაიცავით ინტერნეტის ღიაობა.">
+<!ENTITY aboutTor.donationBanner.line2i "მხარი დაუჭირეთ პირადი მონაცემების ხელშეუხებლობისა და თავისუფლების უზრუნველყოფას ინტერნეტსივრცეში.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla გააორმაგებს თითოეულ შემოწირულ შენატანს 2019 წლამდე.">
 
 <!ENTITY aboutTor.donationBanner.line3 "გაეცით დღესვე და Mozilla გააორმაგებს თქვენს შემოწირულობას.">
+<!ENTITY aboutTor.donationBanner.line3b "გაეცით თანხა ახლავე და თქვენი შემოწირულობა ორჯერ მეტად მძლავრი იქნება.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "თანხის გაღება ახლავე">
 <!ENTITY aboutTor.donationBanner.buttonB "ჩემი წვლილის აღნიშვნა">
