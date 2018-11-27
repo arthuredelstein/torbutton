@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "Προστατέψτε την ιδιωτικότητα εκατομμυρίων.">
 <!ENTITY aboutTor.donationBanner.line2e "Διατηρήστε το Tor ισχυρό.">
 <!ENTITY aboutTor.donationBanner.line2f "Χρειαζόμαστε την υποστήριξη σας!">
+<!ENTITY aboutTor.donationBanner.line2g "Στηρίξτε την ελευθερία στο διαδίκτυο.">
+<!ENTITY aboutTor.donationBanner.line2h "Υπερασπιστείτε τον ανοιχτό ιστό.">
+<!ENTITY aboutTor.donationBanner.line2i "Στηρίξτε την ιδιωτικότητα και την ελευθερία στο διαδίκτυο.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "Δωρίστε σήμερα και το Mozilla θα δωρίσει το ίδιο ποσό!">
+<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "Κάντε μια δωρεά τώρα!">
 <!ENTITY aboutTor.donationBanner.buttonB "Υπολογίστε με">

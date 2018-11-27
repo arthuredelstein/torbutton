@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "از حریم خصوصی میلیون‌ها محافظت کنید">
 <!ENTITY aboutTor.donationBanner.line2e "تور را محکم نگه دارید.">
 <!ENTITY aboutTor.donationBanner.line2f "ما به حمایت شما نیاز داریم!">
+<!ENTITY aboutTor.donationBanner.line2g "از آزادی اینترنت پشتیبانی کنید.">
+<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
+<!ENTITY aboutTor.donationBanner.line2i "از حریم شخصی و آزادی برخط دفاع کنید.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
+<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "اکنون اهداء کنید">
 <!ENTITY aboutTor.donationBanner.buttonB "روی من حساب کن">

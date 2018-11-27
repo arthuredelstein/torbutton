@@ -8,7 +8,7 @@
 
 <!ENTITY aboutTor.ready.label "Explorez, en toute confidentialité.">
 <!ENTITY aboutTor.ready2.label "Vous êtes prêts pour l’expérience de navigation la plus confidentielle au monde.">
-<!ENTITY aboutTor.failure.label "Une erreur s’est produite !">
+<!ENTITY aboutTor.failure.label "Un problème est survenu !">
 <!ENTITY aboutTor.failure2.label "Tor ne fonctionne pas dans ce navigateur.">
 
 <!ENTITY aboutTor.search.label "Chercher avec DuckDuckGo">
@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "Protéger la vie privée de millions de personnes.">
 <!ENTITY aboutTor.donationBanner.line2e "Assurer la robustesse de Tor.">
 <!ENTITY aboutTor.donationBanner.line2f "Nous avons besoin de votre soutien !">
+<!ENTITY aboutTor.donationBanner.line2g "Soutenez la liberté sur Internet.">
+<!ENTITY aboutTor.donationBanner.line2h "Défendez le web ouvert.">
+<!ENTITY aboutTor.donationBanner.line2i "Prise en charge de la vie privée et de la liberté en ligne.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla s'engage à verser un montant équivalent à chaque don jusqu'en 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "Faites un don aujourd’hui et Mozilla fera un don équivalent.">
+<!ENTITY aboutTor.donationBanner.line3b "Donnez maintenant, et votre don devient deux fois plus fort.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "Faites un don maintenant">
 <!ENTITY aboutTor.donationBanner.buttonB "Comptez sur moi">

@@ -6,19 +6,19 @@
 
 <!ENTITY aboutTor.title "Informacje na temat Tor'a">
 
-<!ENTITY aboutTor.ready.label "Explore. Privately.">
+<!ENTITY aboutTor.ready.label "Odkrywaj. Prywatnie.">
 <!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
 <!ENTITY aboutTor.failure.label "Coś poszło nie tak!">
 <!ENTITY aboutTor.failure2.label "Tor nie działa w tej przeglądarce.">
 
-<!ENTITY aboutTor.search.label "Search with DuckDuckGo">
+<!ENTITY aboutTor.search.label "Wyszukaj z DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Pytania?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Sprawdź naszą instrukcje korzystania z przeglądarki Tor »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Instrukcja korzystania z Tor Browser">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
 <!ENTITY aboutTor.getInvolved.label "Get Involved »">
@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "Protect the privacy of millions.">
 <!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
 <!ENTITY aboutTor.donationBanner.line2f "We need your support!">
+<!ENTITY aboutTor.donationBanner.line2g "Support internet freedom.">
+<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
+<!ENTITY aboutTor.donationBanner.line2i "Support privacy and freedom online.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "Give today, and Mozilla will match your donation.">
+<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "Donate Now">
 <!ENTITY aboutTor.donationBanner.buttonB "Count Me In">

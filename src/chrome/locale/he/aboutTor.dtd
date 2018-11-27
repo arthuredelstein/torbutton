@@ -35,8 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "הגן על פרטיותם של מיליונים.">
 <!ENTITY aboutTor.donationBanner.line2e "שמור על Tor חזק.">
 <!ENTITY aboutTor.donationBanner.line2f "אנחנו צריכים את תמיכתך!">
+<!ENTITY aboutTor.donationBanner.line2g "תמוך בחירות אינטרנט.">
+<!ENTITY aboutTor.donationBanner.line2h "הגן על הרשת הפתוחה.">
+<!ENTITY aboutTor.donationBanner.line2i "תמוך בפרטיות ובחירות באופן מקוון.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla משווה כל תרומה עד 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "תן היום, ו־Mozilla תשווה את תרומתך.">
+<!ENTITY aboutTor.donationBanner.line3b "תן עכשיו, והמתנה שלך הופכת לחזקה פי שניים.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "תרום עכשיו">
 <!ENTITY aboutTor.donationBanner.buttonB "החשב אותי">
