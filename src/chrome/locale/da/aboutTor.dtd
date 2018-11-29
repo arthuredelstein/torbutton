@@ -35,13 +35,13 @@
 <!ENTITY aboutTor.donationBanner.line2d "Beskyt privatlivet af millioner.">
 <!ENTITY aboutTor.donationBanner.line2e "Hold Tor stærk.">
 <!ENTITY aboutTor.donationBanner.line2f "Vi har brug for din støtte!">
-<!ENTITY aboutTor.donationBanner.line2g "Support internet freedom.">
-<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
-<!ENTITY aboutTor.donationBanner.line2i "Support privacy and freedom online.">
-<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
+<!ENTITY aboutTor.donationBanner.line2g "Støt internetfrihed.">
+<!ENTITY aboutTor.donationBanner.line2h "Forsvar det åbne web.">
+<!ENTITY aboutTor.donationBanner.line2i "Støt privatliv og frihed online.">
+<!ENTITY aboutTor.donationBanner.line2j "Mozilla matcher hver donation frem til 2019.">
 
 <!ENTITY aboutTor.donationBanner.line3 "Giv i dag, og Mozilla vil matche din donation.">
-<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
+<!ENTITY aboutTor.donationBanner.line3b "Giv nu og din gave bliver dobbelt så stærk.">
 
 <!ENTITY aboutTor.donationBanner.buttonA "Donér nu">
 <!ENTITY aboutTor.donationBanner.buttonB "Jeg er med">
