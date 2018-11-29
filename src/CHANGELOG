@@ -1,3 +1,14 @@
+2.1.2
+ * Bug 25013: Integrate Torbutton into tor-browser for Android
+ * Bug 27111: Update about:tor desktop version to work on mobile
+ * Bug 28093: Update donation banner style to make it fit in small screens
+ * Bug 28543: about:tor has scroll bar between widths 900px and 1000px
+ * Bug 28039: Enable dump() if log method is 0
+ * Bug 27701: Don't show App Blocker dialog on Android
+ * Bug 28187: Change tor circuit icon to torbutton.svg
+ * Bug 28515: Use en-US for english Torbutton strings
+ * Translations update
+
 2.1.1
  * Bug 23925+27959: Donation banner for year end 2018 campaign
  * Bug 24172: Donation banner clobbers Tor Browser version string
