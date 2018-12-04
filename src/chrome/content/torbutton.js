@@ -1551,7 +1551,6 @@ function torbutton_update_disk_prefs() {
 function torbutton_update_fingerprinting_prefs() {
     var mode = m_tb_prefs.getBoolPref("privacy.resistFingerprinting");
 
-    m_tb_prefs.setBoolPref("webgl.min_capability_mode", mode);
     m_tb_prefs.setBoolPref("webgl.disable-extensions", mode);
     m_tb_prefs.setBoolPref("dom.network.enabled", !mode);
     m_tb_prefs.setBoolPref("dom.enable_performance", !mode);
