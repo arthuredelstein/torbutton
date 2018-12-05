@@ -35,12 +35,12 @@
 <!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider possibilita que você desabilite certas funcionalidades de navegação que podem torná-la mais vulnerável a tentativas de ataque.">
 <!ENTITY torbutton.prefs.sec_standard_label "Padrão">
 <!ENTITY torbutton.prefs.sec_standard_description "Todos os recursos do Navegador Tor e do website estão ativos.">
-<!ENTITY torbutton.prefs.sec_safer_label "Mais seguro">
+<!ENTITY torbutton.prefs.sec_safer_label "Seguro">
 <!ENTITY torbutton.prefs.sec_safer_description "Desativar recursos geralmente inseguros de websites, o que pode fazer com que alguns sites percam a funcionalidade.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "No nível mais seguro:">
-<!ENTITY torbutton.prefs.sec_safest_label "Mais seguro">
+<!ENTITY torbutton.prefs.sec_safer_list_label "No nível seguro:">
+<!ENTITY torbutton.prefs.sec_safest_label "Segurança máxima">
 <!ENTITY torbutton.prefs.sec_safest_description "Apenas permitir os recursos dos websites necessários para sites estáticos e serviços básicos. Essas mudanças afetam imagens, mídias e scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "No nível mais seguro:">
+<!ENTITY torbutton.prefs.sec_safest_list_label "No nível de segurança máxima:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Aprenda mais">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript está desativado em todos os sites sem HTTPS.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript está desativado por padrão em todos os sites.">
