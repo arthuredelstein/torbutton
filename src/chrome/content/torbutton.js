@@ -82,7 +82,6 @@ var torbutton_unique_pref_observer =
         m_tb_prefs.addObserver("network.cookie", this, false);
         m_tb_prefs.addObserver("browser.privatebrowsing.autostart", this, false);
         m_tb_prefs.addObserver("javascript", this, false);
-        m_tb_prefs.addObserver("noscript", this, false);
         m_tb_prefs.addObserver("plugin.disable", this, false);
         m_tb_prefs.addObserver("privacy.firstparty.isolate", this, false);
         m_tb_prefs.addObserver("privacy.resistFingerprinting", this, false);
@@ -99,7 +98,6 @@ var torbutton_unique_pref_observer =
         m_tb_prefs.removeObserver("network.cookie", this);
         m_tb_prefs.removeObserver("browser.privatebrowsing.autostart", this);
         m_tb_prefs.removeObserver("javascript", this);
-        m_tb_prefs.removeObserver("noscript", this);
         m_tb_prefs.removeObserver("plugin.disable", this);
         m_tb_prefs.removeObserver("privacy.firstparty.isolate", this);
         m_tb_prefs.removeObserver("privacy.resistFingerprinting", this);
@@ -140,13 +138,7 @@ var torbutton_unique_pref_observer =
         }
 
         if (topic != "nsPref:changed") return;
-        // Make sure the NoScript button shows the current NoScript state. We
-        // don't want to run the update function, though, if just a timer gets
-        // updated. Fixes bug 21324.
-        if (data.startsWith("noscript.") &&
-            data !== "noscript.subscription.lastCheck") {
-          torbutton_update_noscript_button();
-        }
+
         switch (data) {
             case "network.cookie.cookieBehavior":
                 let val = m_tb_prefs.getIntPref("network.cookie.cookieBehavior");
@@ -974,18 +966,6 @@ function torbutton_do_new_identity() {
   torbutton_log(3, "New Identity: Emitting Private Browsing Session clear event");
   obsSvc.notifyObservers(null, "browser:purge-session-history", "");
 
-  torbutton_log(3, "New Identity: Clearing NoScript Temporary Permissions");
-
-  try {
-    if ("@maone.net/noscript-service;1" in Components.classes) {
-      var nsSvc = Components.classes["@maone.net/noscript-service;1"].getService().wrappedJSObject
-      nsSvc.eraseTemp();
-    }
-  } catch(e) {
-    torbutton_log(5, "New Identity: Error clearing NoScript Temporary Permissions: "+e);
-    window.alert("Torbutton: Error clearing NoScript Temporary Permissions: "+e);
-  }
-
   torbutton_log(3, "New Identity: Clearing HTTP Auth");
 
   if(m_tb_prefs.getBoolPref('extensions.torbutton.clear_http_auth')) {
@@ -1263,8 +1243,7 @@ function torbutton_clear_image_caches()
 
 /* Called when we switch the use_nontor_proxy pref in either direction.
  *
- * Enables/disables domain isolation and NoScript ABE, and then does
- * new identity
+ * Enables/disables domain isolation and then does new identity
  */
 function torbutton_use_nontor_proxy()
 {
@@ -1272,15 +1251,9 @@ function torbutton_use_nontor_proxy()
       .getService(Ci.nsISupports).wrappedJSObject;
 
   if (m_tb_prefs.getBoolPref("extensions.torbutton.use_nontor_proxy")) {
-    // We need to enable ABE because non-tor proxies won't reject localhost
-    // and RFC1918, and we should block them. (The default ABE policy does this).
-    m_tb_prefs.setBoolPref("noscript.ABE.enabled", true);
-
     // Disable domain isolation
     domainIsolator.disableIsolation();
   } else {
-    m_tb_prefs.setBoolPref("noscript.ABE.enabled", false);
-
     domainIsolator.enableIsolation();
   }
 
@@ -1534,15 +1507,6 @@ function torbutton_update_disk_prefs() {
         m_tb_prefs.setIntPref("network.cookie.lifetimePolicy", 0);
         m_tb_prefs.setIntPref("browser.download.manager.retention", 2);
     }
-
-    // If we have NoScript enabled we set `noscript.volatilePrivatePermissions`
-    // to `true` if we are blocking disk records and to `false` if we are
-    // enabling them.
-    try {
-      if ("@maone.net/noscript-service;1" in Components.classes) {
-        m_tb_prefs.setBoolPref("volatilePrivatePermissions", mode);
-      }
-    } catch (e) {}
 
     // Force prefs to be synced to disk
     Services.prefs.savePrefFile(null);
@@ -1808,12 +1772,6 @@ function torbutton_fixup_old_prefs()
             let matchOS = m_tb_prefs.getBoolPref("intl.locale.matchOS");
             m_tb_prefs.setBoolPref("intl.locale.matchOS", !matchOS);
             m_tb_prefs.setBoolPref("intl.locale.matchOS", matchOS);
-        }
-
-        // Prior to TBB 5.0, NoScript was allowed to update its whitelist. This caused
-        // odd things to appear in people's whitelists.
-        if (m_tb_prefs.prefHasUserValue("capability.policy.maonoscript.sites")) {
-            m_tb_prefs.clearUserPref("capability.policy.maonoscript.sites");
         }
 
         // For some reason, the Share This Page button also survived the
@@ -2226,28 +2184,6 @@ function torbutton_is_homepage_url(aURI)
   let urls = homePageURLs.split('|')
                .map(torbutton_normalize_homepage_url_string);
   return (urls.indexOf(aURI.spec) >= 0);
-}
-
-// Update the NoScript button to reflect any changes to noscript prefs
-function torbutton_update_noscript_button()
-{
-  // Make sure pref values have fully propagated inside NoScript before
-  // we sync the UI.
-  setTimeout(() => {
-    try {
-      let wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-          .getService(Components.interfaces.nsIWindowMediator);
-      let browserEnumerator = wm.getEnumerator("navigator:browser");
-      // Update every window's NoScript status...
-      while (browserEnumerator.hasMoreElements()) {
-        let win = browserEnumerator.getNext();
-        //win.noscriptOverlay._syncUINow();
-      }
-      torbutton_log(3, 'Updated NoScript status for security settings');
-    } catch (e) {
-      torbutton_log(4, 'Failed to update NoScript status for security setings: '+e);
-    }
-  }, 0);
 }
 
 // Makes sure the item in the Help Menu and the link in about:tor
