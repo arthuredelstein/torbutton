@@ -5,6 +5,11 @@
  * Bug 28747: Remove NoScript (XPCOM) related unused code
  * Translations update
 
+2.0.9
+ * Bug 28540: Use new text for 2018 donation banner
+ * Bug 28515: Use en-US for english Torbutton strings
+ * Translations update
+
 2.1.2
  * Bug 25013: Integrate Torbutton into tor-browser for Android
  * Bug 27111: Update about:tor desktop version to work on mobile
