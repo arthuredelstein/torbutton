@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Fjarlægja allar aðrar en verndaðar">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Vernda nýjar vefkökur">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ekki vernda nýjar vefkökur">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Takmarka vefkökur frá þriðja aðila og önnur ferligögn">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Hafðu merkt í þennan reit til að koma í veg fyrir að ýmsir eiginleikar vafrans séu misnotaðir í að fylgjast með þér á meðan þú flakkar um vefinn. Breyttir eiginleikar eru til dæmis innri slóðir (blob URLs), útsendar rásir, skyndiminni vafrans, vefkökur, veftákn (favicon), HTTP-auðkenningarhausar, fortengi tengla, localStorage, mediaSource-slóðir, OCSP-beiðnir, SharedWorkers og TLS setumiðar.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Breyta atriðum sem gera þig ólíkan öðrum notendum Tor-vafrans">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Hafðu merkt í þennan reit til að fela fyrir vefsvæðum atriði sem gætu verið einstök hjá þér, þar með talin atriði eins og upplýsingar um afköst tölvunnar, lyklaborðsuppsetningu, staðfærslu, staðsetningu uppsettra viðbóta, lista yfir uppsettar viðbætur, stöðu netkerfis, stærð og stefnu skjás, sértækan aðdrátt fyrir vefsvæði, studdar skráategundir, kerfisliti og getu varðandi WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Öryggisstig">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Öryggisstillingasleðinn getur gert óvirka ýmsa þá eiginleika vafrans sem gætu gert vafrann viðkvæmari fyrir árásum hakkara.">
 <!ENTITY torbutton.prefs.sec_standard_label "Staðlað">

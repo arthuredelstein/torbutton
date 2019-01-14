@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Αφαίρεση όλων εκτός των προστατευμένων">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Προστασία νέων Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Να Μη γίνεται Προστασία Νέων Cookie">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Περιορισμος των cookies τρίτων και αλλων δεδομενων παρακολουθησης">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Επιλέξτε αυτό το κουτάκι για να αποφύγετε διάφορες υπηρεσίες browser να επιτεθούν για να σας εντοπίσουν κατά την περιήγησή σας στο διαδίκτυο. Τροποποιημένες υπηρεσίες περιλαμβάνουν blob URLs, κανάλια προβολής, μνήμη cache, cookies, συντομεύσεις ιστοσελίδων, σελιδοδείκτες ταυτοποίησης HTTP, προσυνδέσεις συνδέσμων, τοπική αποθήκευση, URLs πηγών μέσων, αιτήματα OCSP, SharedWorkers και εισιτήρια λειτουργίας TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Αλλάξτε τις λεπτομέρειες που σας διακρίνουν από άλλους χρήστες του Tor Browser ">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Διατηρήστε αυτό το κουτί επιλεγμένο για να κρύψετε από τους ιστοτόπους πράγματα που θα μπορούσαν να είναι μοναδικά για εσάς, συμπεριλαμβανομένων της απόδοσης του υπολογιστή, της διάταξης του πληκτρολογίου, της γλώσσας, της τοποθεσίας των εγκατεστημένων προσθέτων, της κατάστασης του δικτύου, του προσανατολισμού της οθόνης, του μεγέθους της οθόνης, των επιπέδων zoom ανά site, των υποστηριζόμενων τύπων αρχείων, των χρωμάτων του συστήματος και των δυνατοτήτων WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Επίπεδο ασφάλειας">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Το Slider Ασφάλειας σας αφήνει να απενεργοποιήσετε ορισμένα χαρακτηριστικά του φυλλομετρητή που μπορεί να τον κάνουν πιο ευάλωτο σε προσπάθειες hacking.">
 <!ENTITY torbutton.prefs.sec_standard_label "Βασικά">

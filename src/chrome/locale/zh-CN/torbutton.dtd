@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "全部移除仅保留受保护的 Cookie">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "保护新的 Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "不保护新的 Cookie">
-<!ENTITY torbutton.prefs.restrict_thirdparty "限制第三方 cookie 和其他数据跟踪程序">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "该选项用于防止滥用浏览器功能跟踪用户。修改的功能包括：blob 网址，广播通道，浏览器缓存，cookie，收藏夹图标，HTTP 验证标头，预连接，localStorage，mediaSource 网址，OCSP 请求，SharedWorker 和 TLS 会话票证。">
-<!ENTITY torbutton.prefs.resist_fingerprinting "修改 Tor 浏览器中可区分你与其他 Tor 用户的细节信息">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "勾选此选项以避免网站获取您的浏览器指纹信息，包括您的计算机性能、键盘布局、系统语言、安装插件的位置、已安装插件列表、您的网络状态、屏幕方向、屏幕尺寸、特定网站缩放级别、支持的文件类型、系统颜色、WebGL 功能。">
 <!ENTITY torbutton.prefs.sec_caption "安全等级">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "安全滑块可禁用某些浏览器功能，避免因这些功能导致的漏洞而受到攻击。">
 <!ENTITY torbutton.prefs.sec_standard_label "标准安全性">

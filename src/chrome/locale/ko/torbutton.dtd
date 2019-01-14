@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "보호된 것 빼고 모두 지우기">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "새로운 쿠키 보호">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "새로운 쿠키를 보호하지 않음">
-<!ENTITY torbutton.prefs.restrict_thirdparty "제 3자 쿠키와 다른 추적 데이터 제한">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "웹을 탐색 할 때 다양한 브라우저 기능이 사용자를 추적하는 것을 막기 위해이 상자를 선택하십시오. 수정 된 기능에는 blob URL, 브로드 캐스트 채널, 브라우저 캐시, 쿠키, 파비콘, HTTP Auth 헤더, 링크 사전 연결, localStorage, mediaSource URL, OCSP 요청, SharedWorkers 및 TLS 세션 티켓이 포함됩니다.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "다른 Tor browser 사용자로부터 구별되는 세부 사항 변경">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "이 상자를 체크 해둠으로써 웹사이트가 당신의 식별 할 수 있는 요소를 숨길 수 있습니다. 그것에는 컴퓨터 성능, 키보드 레이아웃, 로케일, 플러그인이 설치된 장소, 설치된 플러그인의 목록, 네트워크 상태, 화면 방향, 화면 크기, 사이트 별 확대 / 축소 수준, 지원되는 파일 형식, 시스템 색, WebGL 기능 등이 있습니다.">
 <!ENTITY torbutton.prefs.sec_caption "보안 등급">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "보안 슬라이더를 사용하면 특정 브라우저 기능이 비활성화 되어 브라우저가 해킹 시도에 취약해질 수 있습니다.">
 <!ENTITY torbutton.prefs.sec_standard_label "표준">

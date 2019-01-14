@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Scrios iad nach bhfuil caomhnaithe">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Caomhnaigh Fianáin Nua">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ná Caomhnaigh Fianáin Nua">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Cuir srian le fianáin tríú páirtí agus le sonraí lorgaireachta eile">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Coinnigh tic sa bhosca seo chun cosc a chur ar ghnéithe éagsúla sa bhrabhsálaí a mbaintear mí-úsáid astu chun do ghníomhaíocht ar an nGréasán a lorg. I measc na ngnéithe seo: blob-URLanna, cainéil chraolta, taisce an bhrabhsálaí, fianáin, deilbhíní suímh, ceanntásca HTTP Auth, réamhcheangal nascanna, stóras áitiúil, URLanna mediaSource, iarratais OCSP, Oibrithe Roinnte, agus ticéid seisiún TLS. ">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Athraigh na mionsonraí a dhéanann idirdhealú ó úsáideoirí Tor eile">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "H">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Coinnigh tic sa bhosca seo chun sonraí a bhaineann leatsa go pearsanta a chur i bhfolach ó shuímh Ghréasáin, mar shampla luas do ríomhaire, leagan amach do mhéarchláir, an logchaighdeán, an áit ina bhfuil forlíontáin suiteáilte, na forlíontáin shuiteáilte féin, stádas do líonra, treoshuíomh an scáileáin, méid an scáileáin, leibhéil zúmála ar shuímh ar leith, cineálacha comhaid a dtacaíonn do bhrabhsálaí leo, dathanna an chórais, agus acmhainní WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Leibhéal Slándála">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Ligeann an Sleamhnán Slándála duit gnéithe áirithe sa bhrabhsálaí a dhíchumasú nuair is féidir le bradaí iad a úsáid chun ionsaí a dhéanamh ort.">
 <!ENTITY torbutton.prefs.sec_standard_label "Gnáthshlándáil">

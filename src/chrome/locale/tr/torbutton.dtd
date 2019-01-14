@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Korunanlar Dışında Tümünü Sil">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Yeni Çerezler Korunsun">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Yeni Çerezler Korunmasın">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Üçüncü taraf çerezleri ve diğer izleme bilgileri engellensin">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Bu seçeneği işaretleyerek, çeşitli web tarayıcıların, web sitelerinde yaptığınız işlemleri izlemesini engelleyebilirsiniz. Değiştirilen özellikler içinde blob İnternet adresleri, yayın kanalları, web tarayıcı ön belleği, çerezler, favicon dosyaları, HTTP Auth başlık bilgileri, ön bağlantı bilgileri, localStorage, mediaSource adresleri, OCSP istekleri, SharedWorkers ve TLS oturumu bulunur.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Diğer Tor Browser kullanıcılarından sizi ayıran ayrıntılar değiştirilsin">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Bilgisayarınızın başarımı, tuş takımı düzeni, yerel dil ayarları, kurulmuş eklentilerin konumu, kurulmuş eklentilerin listesi, ağınızın durumu, ekran yönlendirmesi, ekran boyutu, siteye bağlı özel yakınlaştırma seviyeleri, desteklenen dosya türleri, sistem renkleri ve WebGL yetenekleri gibi size özel olan ve kimliğinizin belirlenmesinde kullanılabilecek bilgileri gizlemek için bu kutuyu işaretlenmiş olarak tutun.">
 <!ENTITY torbutton.prefs.sec_caption "Güvenlik Düzeyi">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Güvenlik ayarı ile belirli web tarayıcı özeliklerini kapatabilirsiniz. Ancak bu durumda web tarayıcınız saldırılara karşı daha korumasız olur.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standart">

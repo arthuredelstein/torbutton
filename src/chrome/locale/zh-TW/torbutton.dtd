@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "全部刪除，但受保護">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "保護新的 Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "不保護新的 Cookie">
-<!ENTITY torbutton.prefs.restrict_thirdparty "限制第三方 cookie 和其他追蹤資料">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "保持啟用此項目以避免當您在瀏覽網頁時，瀏覽器的某些功能被網站設計者利用來追蹤您的真實身份。例如：blob URLs、廣播頻道、瀏覽器暫存資料、cookies、favicons、HTTP認證標頭、link preconnects、localStorage、vmediaSource URLs、OCSP requests、SharedWorkers、TLS session tickets等。">
-<!ENTITY torbutton.prefs.resist_fingerprinting "變更可以區別您與其他洋蔥路由瀏覽器使用者的詳細資訊">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "勾選啟動此功能可以避免下面這些資訊被所造訪的網站取得，這些資訊都可以被用來識別您的真實身份：電腦系統效能、鍵盤佈局、語系設定、外掛元件的安裝位置、已安裝之外掛元件、網路狀態、螢幕的大小與解析度、支援的檔案格式、系統色彩設定、WebGL 之繪圖運算能力。">
 <!ENTITY torbutton.prefs.sec_caption "安全等級">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "此安全性調整滑棒會關閉某些瀏覽器的功能，導致您的瀏覽器更容易遭受駭客攻擊。">
 <!ENTITY torbutton.prefs.sec_standard_label "標準">

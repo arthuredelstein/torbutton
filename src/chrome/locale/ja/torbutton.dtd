@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "保護されているもの以外削除">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "新しいCookieを保護">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "新しいCookieを保護しない">
-<!ENTITY torbutton.prefs.restrict_thirdparty "サードパーティーのCookieやその他のトラッキングデータを制限">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "このボックスをチェックしたままにすることで、様々なブラウザーの機能が悪用されウェブの閲覧中に追跡されることを防ぐ。影響を受ける機能：blob URL、ブロードキャスト・チャンネル、ブラウザー・キャッシュ、クッキー、favicon、HTTP認証ヘッダー、link preconnects、ローカルストレージ、mediaSource URL、OCSPリクエスト、共有ワーカー、TLSセッション・チケットなど。">
-<!ENTITY torbutton.prefs.resist_fingerprinting "あなたとほかのTorブラウザのユーザーを区別する詳細を変更">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "このボックスをチェックしたままにすると、あなたを識別できうる情報をウェブサイトから隠します。これには、コンピュータの性能、キーボードの配列、ロケール、インストールされたプラグインの位置、インストールされたプラグインのリスト、あなたのネットワークの状態、画面の向き、画面の解像度、サイトごとのズーム設定、対応しているファイル形式、システムの色設定、WebGL機能が含まれます。">
 <!ENTITY torbutton.prefs.sec_caption "セキュリティレベル">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "セキュリティ・スライダーを使って、あなたのブラウザーをハッキングの試みに対してより脆弱にする可能性のあるブラウザーの機能を無効にできます。">
 <!ENTITY torbutton.prefs.sec_standard_label "標準">

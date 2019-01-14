@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "حذف تمام کلوچک‌های حفاظت نشده">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "حفاظت از کلوچک‌های جديد">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "عدم حفاظت از کلوچک‌های جديد">
-<!ENTITY torbutton.prefs.restrict_thirdparty "محدود‌كردن كوكى‌هاى طرف سوم و داده‌هاى پيگردى ديگر">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "این جعبه را نگه دارید تا از استفاده از ویژگی‌های مختلف مرورگر برای ردیابی شما در هنگام مرور وب جلوگیری شود. ویژگی های اصلاح شده شامل: آدرس‌های آلوده, broadcast channels, کش مرورگر, کوکی‌ها, فاویکن, HTTP Auth headers, پیوندهاpreconnects, حافظه محلی, mediaSource URLs, OCSP requests, SharedWorkers, and TLS session tickets.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "تغييردادن جزئياتى كه شمارا از كاربران ديگر تُر تميزمى‌كند">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "این جعبه برای پنهان کردن چیزهایی از وب سایت‌هایی که می‌تواند منحصر به شما باشد؛ از جمله کارایی رایانه، طرح بندی صفحه کلید، مکان، محل افزونه‌های نصب شده، لیست افزونه‌های نصب شده، وضعیت شبکه شما، جهت صفحه نمایش، اندازه صفحه، سطوح زوم خاص، انواع فایل پشتیبانی شده، رنگ سیستم و قابلیت‌های WebGL نگه دارید.">
 <!ENTITY torbutton.prefs.sec_caption "سطح امنیت">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "نوار لغزنده امنیتی به شما اجازه می‌دهد که مشخصه‌های خاص مرورگر را غیرفعال کنید که ممکن است مرورگر شما را در برابر تلاش‌های هک آسیب‌پذیر سازد.">
 <!ENTITY torbutton.prefs.sec_standard_label "استاندارد">

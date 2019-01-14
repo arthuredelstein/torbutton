@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Jaga kotak ini tetap tercentang untuk mencegah berbagai fitur browser dari penyalahgunaan untuk melacak anda saat sedang menelusuri web. Fitur modifikasi termasuk URL blob, saluran siaran, cache browser, cookies, favicon, kepala HTTP Auth, link preconnect, localStorage, URL mediaSource, permintaan OCSP, SharedWorkets, dan sesi tiket TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Ubah rincian yang membedakan Anda dari pengguna peramban Tor lain.">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Biarkan kotak ini tetap dicentang untuk menyembunyikan hal-hal yang unik tentang Anda dari situs web, termasuk kinerja komputer Anda, susunan keyboard, bahasa, lokasi pengaya terpasang, daftar dari pengaya terpasang, status jaringan, orientasi layar, ukuran layar, tingkat pembesaran situs-spesifik, tipe berkas yang didukung, warna sistem, dan kemampuan WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Tingkat Keamanan">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Penggeser keamanan memungkinkan anda untuk menonaktifkan fitur browser yang dapat membuat browser anda menjadi lebih rentant dari upaya peretasan.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standar">

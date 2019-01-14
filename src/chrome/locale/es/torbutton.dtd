@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Eliminar todas excepto las protegidas">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Proteger las nuevas cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "No proteger las nuevas cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restringir cookies de terceros y otros datos de seguimiento">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Mantén marcada esta casilla para evitar que diversas características del navegador se puedan usar para rastrear tu navegación por la web. Las características modificadas incluyen URLs blob (a objetos binarios internos), BroadcastChannel (comunicación interna dentro del mismo origen), caché del navegador, cookies, favicons, cabeceras Auth de HTTP (autentificación básica), preconexiones de enlaces, objetos localStorage (almacenamiento local para aplicaciones web), URLs de objetos MediaSource (audiovisuales), peticiones OCSP (estado de certificados), SharedWorkers (subprocesos compartidos), y tickets de sesión TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Cambiar los detalles que te distinguen de otros usuarios del Navegador Tor">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "H">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Mantenga esta casilla marcada para ocultar cosas a los sitios web que podrían ser únicas acerca de usted, incluyendo el rendimiento de su equipo, plano de teclado, localización, lista y ubicacion de complementos instalados, estado de su red, orientación de pantalla, tamaño de pantalla, niveles de zoom específico del sitio, tipos de fichero soportados, colores del sistema, y capacidades WebGL. ">
 <!ENTITY torbutton.prefs.sec_caption "Nivel de seguridad">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "El control deslizante del nivel de seguridad te permite deshabilitar ciertas características del navegador que pueden hacerlo más vulnerable a tentativas de hackeo.">
 <!ENTITY torbutton.prefs.sec_standard_label "Estándar">

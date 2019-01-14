@@ -18,5 +18,3 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Noņemt visas, izņemot aizsargātās">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Aizsargāt jaunās sīkdatnes">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neaizsargāt jaunās sīkdatnes">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Ierobežot trešo personu sīkdatnes un citus izsekošanas datus">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Mainīt informāciju, kura dara Jūs atšķirīgus no citiem Pārlūka Tor lietotājiem">

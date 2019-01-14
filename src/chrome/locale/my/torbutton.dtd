@@ -18,5 +18,3 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "အားလုံးကို ဖယ်ထုတ်ပါ။ သို့သော် အကာအကွယ် လုပ်ထားသည်">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "ကွတ်ကီးသစ်များကို ကာကွယ်ရန်">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "ကွတ်ကီးသစ်များကို ကာကွယ်ခြင်း မပြုရန်">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">

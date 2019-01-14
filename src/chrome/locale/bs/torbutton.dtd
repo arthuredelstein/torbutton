@@ -18,5 +18,3 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">

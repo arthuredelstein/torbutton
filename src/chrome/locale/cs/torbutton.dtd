@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Odstranit všechny nechráněné">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Chránit nové cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Přestat chránit nové cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Omezit cookies třetích stran a další sledovací data">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "O">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Ponechte toto pole zaškrtnuté pro ochranu před zneužitím některých funkcí prohlížeče k sledování vašeho prohlížení webu. Zneužitelné funkce zahrnují blob URL adresy, vysílací kanály, mezipaměť prohlížeče, cookies, favicony, autorizační hlavičky HTTP, přednačítání odkazů, localStorage, URL adresy mediaSource, OCSP dotazy, SharedWorkers a tickety TLS relací.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Změnit podrobnosti, které vás odlišují od ostatních uživatelů prohlížeče Tor.">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Ponechte toto pole zaškrtnuté, abyste před webovými stránkami skryli unikátní informace, které vás mohou identifikovat, například výkon vašeho počítače, rozložení klávesnice, jazyk, umístění nainstalovaných zásuvných modulů a jejich seznam, stav vaší sítě, otočení obrazovky, velikost obrazovky, úrovně přiblížení pro jednotlivé stránky, podporované typy souborů, systémové barvy a podporované funkce WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Úroveň zabezpečení">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Úrovně zabezpečení vám umožňují vypnout některé funkce, kvůli kterým může být váš prohlížeč více náchylný k hackerským útokům.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standardní">

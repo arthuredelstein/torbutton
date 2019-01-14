@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Ta bort alla icke-skyddade">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Skydda nya Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Skydda inte nya Cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Begränsa tredjeparts-cookies och annan tracking data">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Behåll det här alternativet valt för att förhindra olika webbläsarfunktioner från att missbrukas för att spåra dig när du surfar på nätet. Ändrade funktioner inkluderar blob-URLer, broadcastkanaler, webbläsar-cache, cookies, favicons, HTTP-Auth-huvuden, länk-föranslutningar, localStorage, mediaSource URLer, OCSP-förfrågningar, SharedWorkers och TLS-sessionstickets.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Ändra detailjer som utmärker dig ifrån andra Tor Browser användare">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Låt den här kryssrutan vara ikryssad för att dölja saker från webbplatser som kan vara unika för just dig, såsom datorprestanda, tangentbordslayout, språkinställningar, plats för installerade plugin, lista över installerade plugin, nätverksstatus, skärmorientering, skärmstorlek, platsspecifika zoomnivåer, filtypsstöd, systemfärger, och WebGL-stöd.">
 <!ENTITY torbutton.prefs.sec_caption "Säkerhetsnivå">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Säkerhetsreglaget låter dig stänga av vissa webbläsarfunktioner som kan göra din webbläsare mer sårbar mot intrångsförsök.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standard">

@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Fjern alle bortsett fra beskyttede">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beskytt nye informasjonskapsler">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ikke beskytt nye informasjonskapsler">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Begrens tredjeparts informasjonskapsler og andre sporingsdata.">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Hold denne boksen avhuket for å forebygge at ulike nettleserfunksjoner blir misbrukt til å spore deg når du surfer på nettet. Modifiserte funksjoner inkluderer blob-nettadresser, kringkastinskanaler, nettleserens mellomlager, informasjonskapsler, favicon, HTTP-autentiserings overskrifter, link preconnects, localstorage , Mediasource-nettadresser, OCSP-forespørsler, SharedWorkers og TLS øktbilletter.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Endre detaljer som skiller deg fra andre brukere av Tor-nettleseren.">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "La denne avkryssingsboksen være utkrysset for å skjule ting som kan være unikt med deg fra nettsteder, inkludert datamaskinens ytelse, tastaturoppsett , lokale, plasseringen av- og listen over  installerte programtillegg, nettverksstatus, skjermretning , skjermstørrelse , sidespesifikke forstørrelsesnivåer , filtyper som støttes, systemfarger og WebGL-evner.">
 <!ENTITY torbutton.prefs.sec_caption "Sikkerhetsnivå">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Sikkerhetsglidebryteren lar deg skru av forskjellige nettleserfunksjoner som kan eksponere deg for risiko.">
 <!ENTITY torbutton.prefs.sec_standard_label "Forvalg">

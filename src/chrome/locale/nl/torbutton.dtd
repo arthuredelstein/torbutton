@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Alle cookies, met uitzondering van de beveiligde, verwijderen">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beveilig nieuwe cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beveilig nieuwe cookies niet">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Beperk cookies en andere tracking-gegevens van derden">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Vink dit vakje aan om te voorkomen dat functies van je browser worden misbruikt om je te volgen op het internet. Gemodificeerde functies zijn o.a. URL's, uitzendingskanalen, de browsercache, cookies, favicons, HTTP Auth headers, koppeling-voorverbindingen, lokale opslag, mediabron-URL's, OCSP-verzoeken, Gedeelde-werkers en TLS-sessietickets.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Verander details die je onderscheiden van andere Tor Browser gebruikers">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Houd deze box aangevinkt om dingen te verbergen voor website die uniek kunnen zijn voor u, inclusief uw computer prestaties, toetsenbord layout, locatie, de locatie van geïnstalleerde plugins, de lijst van geïnstalleerde plugins, uw netwerk status, scherm oriëntatie, scherm grootte, site-specifieke zoom levels, ondersteunde bestands types, systeem kleuren, en WebGL mogelijkheden.">
 <!ENTITY torbutton.prefs.sec_caption "Beveiligingsniveau">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "De beveiligingsschuifbalk laat je toe sommige functies uit te schakelen die je browser mogelijk blootstellen aan beveiligingsrisico's.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standaard">

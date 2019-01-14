@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "A védett kivételével az összes törlése">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Védje az új sütiket">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ne védje az új sütiket">
-<!ENTITY torbutton.prefs.restrict_thirdparty "A harmadik féltől származó sütik és nyomkövetési adatok korlátozása">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Hagyja ezt a gombot bejelölve, hogy megakadályozza, hogy különböző böngésző lehetőségek eltérítésre kerülhessenek a webes nyomon követhetősége érdekében. A módosított szolgáltatások többek között, blob URL, broadcast csatornák, böngésző cache, sütik, favikonok, HTTP Auth fejlécek, link előcsatlakozások, localStorage, mediaSource URL-ek, OCSP kérések, SharedWorkers-ek, és TLS session ticketek.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Változtassa meg a részleteket, amik megkülönböztetik a többi Tor Browser felhasználótól">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Hagyja ezt a gombot bejelölve, hogy elrejtsen dolgokat weboldalak elől, amik egyedivé tehetik, mint elem állapot, számítógép teljesítmény, billentyűzet kiosztás, hely, a telepített pluginek helye, a telepített pluginek listája, hálózati állapota, képernyő irányítottsága, oldal specifikus nagyítás szintek, támogatott fájltípusok, rendszerszínek, és WebGL képességek,">
 <!ENTITY torbutton.prefs.sec_caption "Biztonsági szint">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "A Biztonsági Csúszóka lehetővé tesz, hogy kikapcsoljon olyan böngésző funkcionalitásokat, amik sebezhetővé teszik a törési kísérletekben.">
 <!ENTITY torbutton.prefs.sec_standard_label "Normál">

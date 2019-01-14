@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "ყველას მოცილება დაცულების გარდა">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "ახალი ფუნთუშების დაცვა">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "ახალი ფუნთუშების დაცვის შეჩერება">
-<!ENTITY torbutton.prefs.restrict_thirdparty "მესამე მხარის ფუნთუშებისა და სხვა მეთვალყურეების შეზღუდვა">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "მ">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "დატოვეთ ეს უჯრა მონიშნული, ბრაუზერის ცალკეული შესაძლებლობების მიერ, თქვენზე უნებართვო თვალთვალის ასარიდებლად, ვებგვერდების მონახულებისას. შეცვლილი შესაძლებლობები მოიცავს Blob-ბმულებს, გადაცემის არხებს, ბრაუზერის კეშს, ფუნთუშებს, საიტის ხატულებს, HTTP-თავსართებს, ბმულის წინასწარ შეერთებებს, ადგილობრივ საცავს, ფაილის წყაროს URL-ებს, OCSP-მოთხოვნებს, SharedWorker-ებსა და TLS-სეანსის განაცხადებს.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "ცალკეული წვრილმანების შეცვლა, რომლებიც განგასხვავებთ Tor-ბრაუზერის სხვა მომხმარებლებისგან">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "ც">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "დატოვეთ ეს უჯრა მონიშნული, ისეთი მონაცემების დასაფარად, რომლის საშუალებითაც, საიტებს შეეძლებათ თქვენი სხვებისგან გამორჩევა, მათ შორისაა კომპიუტერის წარმადობა, კლავიატურის განლაგება, ენის პარამეტრები, დაყენებული მოდულების ჩამონათვალი და მათი ადგილმდებარეობა, ქსელის მდგომარეობა, ეკრანის მდგომარეობა და ზომები, საიტის შიგთავსის ზომები, ფაილის მხარდაჭერილი სახეები, სისტემის ფერები, WebGL-შესაძლებლობები.">
 <!ENTITY torbutton.prefs.sec_caption "უსაფრთხოების დონე">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "უსაფრთხოების ასარჩევი რბია, საშუალებას გაძლევთ გათიშოთ ბრაუზერის შესაძლებლობების ნაწილი, უნებართვო შეღწევის მცდელობებისგან უკეთ თავდასაცავად.">
 <!ENTITY torbutton.prefs.sec_standard_label "ჩვეულებრივი">

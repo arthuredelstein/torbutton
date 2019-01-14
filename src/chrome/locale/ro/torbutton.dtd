@@ -18,5 +18,3 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Indeparteaza tot, mai putin protejat">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protejeaza Cookie-urile noi">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nu proteja Cookie-urile noi">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restrict third party cookies and other tracking data">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Change details that distinguish you from other Tor Browser users">

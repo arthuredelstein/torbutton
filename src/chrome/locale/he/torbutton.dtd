@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "הסר הכל מלבד מוגנים">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "הגן על עוגיות חדשות">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "אל תגן על עוגיות חדשות">
-<!ENTITY torbutton.prefs.restrict_thirdparty "הגבל עוגיות מצד שלישי ונתוני מעקב אחרים">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "השאר תיבה זו מסומנת כדי למנוע מתכונות דפדפו מסוימות להיות מנוצלות כדי לאתר אותך בעודך גולש ברשת. תכונות שהשתנו כוללות כתובות גוש, ערוצי שידור, מטמון הדפדפן, עוגיות, צלמיות מועדפים, כותרות אימות HTTP, קדם חיבורים של קישורים, אחסון מקומי, כתובות אחסון מדיה, בקשות OCSP, עובדים משותפים וכרטיסים של שיח TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "שנה פרטים המבדילים בינך לבין יתר משתמשי דפדפן Tor">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "השאר תיבה זו מסומנת כדי להסתיר דברים מאתרים שיכולים להיות ייחודים לגביך, כולל ביצועי המחשב שלך, מערך מקלדת, איזור, מיקום המתקעים מותקנים, רשימת המתקעים המותקנים, מיצב הרשת שלך, מכוונות מסך, גודל מסך, רמת תצוגה לכל אתר, סוגי קובץ נתמכים, צבעי מערכת ויכולות WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "רמת אבטחה">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "מחוון האבטחה נותן לך להשבית תכונות דפדפן מסוימות אשר עלולות לעשות את הדפדפן שלך יותר פגיע לנסיונות פיצוח.">
 <!ENTITY torbutton.prefs.sec_standard_label "תקני">

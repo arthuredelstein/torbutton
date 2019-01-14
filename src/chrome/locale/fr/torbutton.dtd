@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Enlever tous les fichiers témoins non protégés">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protéger les nouveaux fichiers témoins">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ne pas protéger les nouveaux fichiers témoins">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Limiter les fichiers témoins tiers et les autres données de suivi à la trace">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "L">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Gardez cette case cochée pour empêcher que diverses fonctions du navigateur soient utilisées pour vous suivre à la trace quand vous surfez sur le Web. Les fonctions modifiées incluent les URL de grands objets binaires, les canaux de diffusion, le cache du navigateur, les fichiers fichiers témoins, les favoricônes, les en-têtes Auth HTTP, les préconnexions de liens, localStorage, les URL de sources de médias, les requêtes OCSP, les travailleurs Web SharedWorker, et les billets de session TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Modifier les détails qui vous distingue d’autres utilisateurs du Navigateur Tor">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Gardez cette case cochée pour cacher aux sites Web certaines choses qui pourraient être uniques à votre sujet, incluant les performances de votre ordinateur, l’agencement du clavier, les paramètres de langue, l’emplacement des greffons installés, la liste des greffons installés, l’état de votre réseau, l’orientation de l’écran, la taille de l’écran, les niveaux de zoom particuliers aux sites, les types de fichiers pris en charge, les couleurs système et les capacités WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Niveau de sécurité">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Le curseur de sécurité vous permet de désactiver certaines fonctions du navigateur qui pourraient le rendre plus vulnérable aux tentatives de piratage.">
 <!ENTITY torbutton.prefs.sec_standard_label "Normal">

@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "أزِل الكل لكن استمر في الحماية">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "احم ملفات تعريف الارتباط الجديدة">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "لا تحم ملفات تعريف الارتباط الجديدة">
-<!ENTITY torbutton.prefs.restrict_thirdparty "تقييد الـCookies الخاصة بالطرف الثالث و بيانات التتبع الأخري.">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "ق">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "اترك هذا المربع مؤشرا لمنع إساءة استخدام العديد من خصائص المتصفح في تعقبك أثناء تصفحك للوب. الخصائص المعدّلة تشمل مسارات الكائنات، وقنوات البث، وخبيئة المتصفح، والكعكات، وأيقونات المواقع، وترويسات استيثاق HTTP، والاتصال المسبق بالروابط، التخزين المحلي، ومسارات الوسائط، وطلبات OCSP، وSharedWorkers، وبطاقات جلسات TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "غيّر التفاصيل التي تميزك عن مستخدمي متصفح تور الآخرين">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "غ">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "اترك هذا المربع مؤشرا لتخفي عن مواقع الوب الأشياء التي تميزك عن غيرك، مثل أداء حاسوبك، وتخطيط لوحة المفاتيح، واللغة، ومكان تنصيب الملحقات، وقائمة الملحقات المنصبة، وحالة الشبكة، واتجاه الشاشة وحجمها، ومستويات التقريب لكل موقع، وأنواع الملفات المدعومة، وألوان النظام، وإمكانات WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "مستوى الأمان">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "يتيح لك شريط تمرير مستوى الأمان تعطيل بعض من مميزات متصفحك تجعلك أكثر عرضة للاختراق.">
 <!ENTITY torbutton.prefs.sec_standard_label "عادي">

@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Eliminar todas salvo las protegidas ">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Proteger nuevas Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "No proteger nuevas Cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restringir cookies de terceros y otros datos de rastreo">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Mantené esta casilla chequeada para prevenir varias características del navegador de ser abusadas para rastrearte a medida que navegás la web. Características modificadas incluyen URLs tipo blob, canales de difusión, el caché del navegador, cookies, iconos favoritos, encabezados HTTP Auth, vínculos de preconexión, URLs localStorage o mediaSource, llamadas OCSP, SharedWorkers, y tiquets de sesión TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Variar los detalles que te distinguen de otros usuarios del Navegador Tor">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "H">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Mantené ésta casilla chequeada para ocultar de los sitios web cosas que pudieran ser únicas acerca tuyo, incluyendo el rendimiento de tu computadora, distribución de teclado, configuración regional, localización de complementos instalados, lista de complementos instalados, estado de red, orientación de la pantalla, tamaño de la misma, niveles de zoom específicos por sitio, tipos de archivo soportados, colores del sistema y capacidades WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Nivel de seguridad">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "La regla deslizante de Seguridad te deja deshabilitar ciertas características del navegador que pueden hacerlo más vulnerable a intentos de apropiación.">
 <!ENTITY torbutton.prefs.sec_standard_label "Estándar">

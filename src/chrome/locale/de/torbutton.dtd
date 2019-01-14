@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Alle außer den geschützten Cookies entfernen">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Neue Cookies schützen">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neue Cookies nicht schützen">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Cookies von Drittanbietern und andere Überwachungsdaten einschränken">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "E">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Lasse dieses Feld ausgewählt, um zu verhindern, dass verschiedene Browserfunktionen ausgenutzt werden, um dein Surfverhalten nachzuverfolgen. Die veränderten Funktionen betreffen: BLOB-URLs, Rundruf-Kanäle, den Browser-Puffer, Cookies, Favicons, HTTP-Authentifizierungs-Kopfdaten, Verknüpfungs-Vorverbindungen, den lokalen Speicher, URLs von Medienquellen, OCSP-Anfragen, gemeinsame JavaScript-Instanzen und Tickets von TLS-Sitzungen.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Details ändern, die dich von anderen Tor-Browser-Benutzern unterscheiden">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Lasse dieses Feld ausgewählt, um bestimmte einzigartige Informationen deines Systems vor Webportalen zu verbergen, wie die Rechnerleistung, Tastaturbelegung, das Sprachprofil, den Installationsort von Erweiterungen, die Liste der installierten Erweiterungen, deinen Netzwerkstatus, die Bildschirmausrichtung, Bildschirmgröße, seitenspezifische Vergrößerungseinstellungen, unterstützte Dateitypen, Farbschemata und WebGL-Fähigkeiten.">
 <!ENTITY torbutton.prefs.sec_caption "Sicherheitsstufe">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Mit dem Sicherheitsschieberegler kannst du bestimmte Browserfunktionen, die deinen Browser für mögliche Attacken anfälliger machen, deaktivieren.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standard

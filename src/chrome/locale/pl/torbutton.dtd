@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Usuń wszystkie oprócz chronionych">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Chroń nowe ciasteczka">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nie chroń nowych ciasteczek">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Ograniczaj ciasteczka firm trzecich i inne dane służące do śledzenia">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Zachowaj to pole zaznaczone, aby zapobiec nadużyciom różnych funkcji przeglądarki, które śledzą cię podczas przeglądania sieci. Zmodyfikowane funkcje obejmują adresy Blob URL, kanały rozgłoszeniowe, pamięć podręczną przeglądarki, pliki cookie, ikony ulubionych, nagłówki HTTP Auth, wstępne połączenia, localStorage, adresy mediaSource URL, żądania OCSP, SharedWorkers oraz bilety sesji TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Zmień szczegóły odróżniające Cię od innych użytkowników Przeglądarki Tora">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Zachowaj to pole zaznaczone, aby ukryć przed stronami internetowymi elementy, które mogą być u ciebie unikalne, wliczając w to wydajność komputera, układ klawiatury, lokalizację, położenie zainstalowanych wtyczek, listę zainstalowanych wtyczek, stan sieci, orientację ekranu, rozmiar ekranu, określone poziomy powiększenia, obsługiwane typy plików, kolory systemu oraz możliwości WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Poziom bezpieczeństwa">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Suwak poziomu bezpieczeństwa pozwala na wyłączenie pewnych funkcji przeglądarki, które mogą uczynić ten program bardziej narażonym na próby ataku hakerskiego.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standardowy">

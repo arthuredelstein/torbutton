@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remover Todos Exceto os Protegidos">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Proteger Novos Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Não Proteger Novos Cookies">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restringir os cookies de terceiros e outros dados de rastreamento">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Deixe esta opção sempre marcada para impedir que funcionalidades de navegação sejam usadas para rastreá-la(o) durante a sua navegação. Funcionalidades alteradas incluem janelas pop-up, canais de transmissão, o cache de memória, cookies, favicons, ">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Alterar os detalhes  que distinguem você de outros usuários do Navegador Tor">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Manter esta opção ativa para ocultar de websites as suas informações que podem ser individuais: performance do computador, modelo de teclado, local, a localização e a lista dos plugins instalados, o status da sua conexão, a orientação de tela, o tamanho da tela, os níveis de zoom de certos sites, os tipos de arquivos que possuem suporte, o sistema de cores, e os recursos WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Nível de Segurança">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider possibilita que você desabilite certas funcionalidades de navegação que podem torná-la mais vulnerável a tentativas de ataque.">
 <!ENTITY torbutton.prefs.sec_standard_label "Padrão">

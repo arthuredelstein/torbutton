@@ -18,5 +18,3 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Poista kaikki paitsi suojatut">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Suojaa uudet evästeet">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Älä suojaa uusia evästeitä">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Estä kolmannen osapuolen evästeet ja muut seurantatiedot">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Muuta lisätietoja, jotka erottavat sinut muista Tor Browser -käyttäjistä">

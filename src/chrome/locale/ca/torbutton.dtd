@@ -25,12 +25,6 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Suprimir totes amb protecció">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protegir noves galetes">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "No protegir noves galetes">
-<!ENTITY torbutton.prefs.restrict_thirdparty "Restringir galetes de tercers i dades de seguiment">
-<!ENTITY torbutton.prefs.restrict_thirdparty.accesskey "R">
-<!ENTITY torbutton.prefs.restrict_thirdparty_tooltip "Marca la casella de selecció per prevenir característiques d'abús i seguiments al consultar un web. Les característiques modificables son les URL blob, canals de difusió, memòria cau del navegador, galetes, favicons, capçaleres HTTP Auth, enllaços de preconexió, emmagatzemament local, URL mediaSource, sol·licitud OCSP, SharedWorkers i tiquets TLS.">
-<!ENTITY torbutton.prefs.resist_fingerprinting "Canviar detalls que distingeixen d'altres usuaris del navegador Tor">
-<!ENTITY torbutton.prefs.resist_fingerprinting.accesskey "F">
-<!ENTITY torbutton.prefs.resist_fingerprinting_tooltip "Mantingueu aquesta casella marcada per a ocultar informació sensible sobre vosté a les pàgines web, tal com les capacitats de l'ordinador, la distribució del teclat, la localització dels connectors instal·lats, la llista de connectors, el seu estat de xarxa, la orientació de la pantalla, el seu tamany, el zoom específic per a cada lloc, els tipus de fitxer acceptats, els colors de sistema i les capacitats WebGL.">
 <!ENTITY torbutton.prefs.sec_caption "Nivell de seguretat">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "El control lliscant de seguretat permet deshabilitar característiques del navegador que poden permetre vulnerabilitats en atemptats de furoners.">
 <!ENTITY torbutton.prefs.sec_standard_label "Estàndard">
