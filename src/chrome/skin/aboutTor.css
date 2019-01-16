@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, The Tor Project, Inc.
+ * Copyright (c) 2019, The Tor Project, Inc.
  * See LICENSE for licensing information.
  *
  * vim: set sw=2 sts=2 ts=8 et syntax=css:
@@ -16,7 +16,13 @@
   margin: 0px;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   margin: 0px auto;
@@ -194,12 +200,15 @@ body:not([showmanual]) .showForManual {
 }
 
 .onion-pattern-container {
+  flex: auto;           /* grow to consume remaining space on the page */
+  display: flex;
+  flex-direction: column;
+  justify-content: end; /* position circles at the bottom */
   margin: 0px auto;
   width: 100%;
   max-width: 2200px;    /* room for our 20 circles */
-  overflow: hidden;
-  position: absolute;
-  bottom: 0px;
+  min-height: 232px;    /* room for 2 rows of circles */
+  overflow-x: hidden;   /* clip extra circles on the sides */
 }
 
 .onion-pattern-row {
@@ -386,10 +395,6 @@ body[show-donation-banner="true"] .onion-pattern-container {
   transition: transform 0ms;
 }
 
-body[show-donation-banner="true"] .onion-pattern-container {
-  position: fixed;
-}
-
 body[show-donation-banner="true"] #torstatus-version,
 body[show-donation-banner="true"] #onboarding-overlay-button {
   transform: translateY(200px);
@@ -429,6 +434,13 @@ body[mobile] .torcontent-logo {
 body[mobile] .top .heading1 {
   font-size: 62px;
   line-height: 1.1
+}
+
+body[mobile] .onion-pattern-container {
+  flex: none;
+  z-index: -1; /* ensure that circles do not block access to clickable links */
+  position: absolute;
+  bottom: 0px;
 }
 
 body[mobile] #donation-banner {
