@@ -26,22 +26,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Fáðu nýjustu fréttir af Tor beint í pósthólfið þitt.">
 <!ENTITY aboutTor.newsletter.link_text "Skráðu þig til að fá Tor-fréttir.">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Styrkur í fjöldanum">
-
-<!ENTITY aboutTor.donationBanner.line2a "Nafnleysi krefst félagsskapar.">
-<!ENTITY aboutTor.donationBanner.line2b "Setjum mannréttindi á oddinn.">
-<!ENTITY aboutTor.donationBanner.line2c "Stöndum saman með frelsinu.">
-<!ENTITY aboutTor.donationBanner.line2d "Verndum friðhelgi milljóna manna.">
-<!ENTITY aboutTor.donationBanner.line2e "Höldum Tor sterku">
-<!ENTITY aboutTor.donationBanner.line2f "Við þörfnumst stuðnings þíns!">
-<!ENTITY aboutTor.donationBanner.line2g "Stattu með frelsi á netinu.">
-<!ENTITY aboutTor.donationBanner.line2h "Verðu hinn opna vef.">
-<!ENTITY aboutTor.donationBanner.line2i "Verðu rétt þinn til einkalífs og frelsis á netinu.">
-<!ENTITY aboutTor.donationBanner.line2j "Mozilla jafnar upp hvert fjárframlag allt til 2019.">
-
-<!ENTITY aboutTor.donationBanner.line3 "Gefðu í dag - og Mozilla mun jafna framlag þitt.">
-<!ENTITY aboutTor.donationBanner.line3b "Gefðu upphæð núna - og gjöfin þín mun tvöfaldast.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "Styrkja núna">
-<!ENTITY aboutTor.donationBanner.buttonB "Reiknið með mér">

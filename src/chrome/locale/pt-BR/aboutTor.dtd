@@ -27,22 +27,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Receba as últimas notícias do Tor diretamente na sua caixa de e-mail.">
 <!ENTITY aboutTor.newsletter.link_text "Inscreva-se para receber Notícias do Tor.">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Nossa Força em Números">
-
-<!ENTITY aboutTor.donationBanner.line2a "Anonimidade adora companhia ">
-<!ENTITY aboutTor.donationBanner.line2b "Avançar os direitos humanos universais.">
-<!ENTITY aboutTor.donationBanner.line2c "Defender a liberdade.">
-<!ENTITY aboutTor.donationBanner.line2d "Proteger a privacidade de milhões de pessoas.">
-<!ENTITY aboutTor.donationBanner.line2e "Manter a força do Tor.">
-<!ENTITY aboutTor.donationBanner.line2f "Precisamos do seu apoio!">
-<!ENTITY aboutTor.donationBanner.line2g "Apóie a liberdade na internet.">
-<!ENTITY aboutTor.donationBanner.line2h "Defenda a web aberta.">
-<!ENTITY aboutTor.donationBanner.line2i "Apóie a privacidade e liberdade online.">
-<!ENTITY aboutTor.donationBanner.line2j "A Mozilla está combinando cada doação até 2019.">
-
-<!ENTITY aboutTor.donationBanner.line3 "Doe hoje, e a Mozilla duplicará a sua doação.">
-<!ENTITY aboutTor.donationBanner.line3b "Dê agora, e seu presente se torna duas vezes mais forte.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "Doar Agora">
-<!ENTITY aboutTor.donationBanner.buttonB "Estou dentro">

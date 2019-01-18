@@ -26,17 +26,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Recibí las últimas noticias de Tor derecho en tu bandeja de entrada.">
 <!ENTITY aboutTor.newsletter.link_text "Registrate en Tor News.">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Fortaleza en Canidad">
-
-<!ENTITY aboutTor.donationBanner.line2a "El anonimato ama la compañía.">
-<!ENTITY aboutTor.donationBanner.line2b "Avanzar los derechos humanos universales.">
-<!ENTITY aboutTor.donationBanner.line2c "Plantarse por la libertad.">
-<!ENTITY aboutTor.donationBanner.line2d "Proteger la privacidad de millones.">
-<!ENTITY aboutTor.donationBanner.line2e "Mantener fuerte a Tor.">
-<!ENTITY aboutTor.donationBanner.line2f "¡Necesitamos tu apoyo!">
-
-<!ENTITY aboutTor.donationBanner.line3 "Dá hoy, y Mozilla emparejará tu donación.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "Doná ahora">
-<!ENTITY aboutTor.donationBanner.buttonB "Contá conmigo">

@@ -26,22 +26,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Faigh an nuacht is déanaí maidir le Tor i do bhosca isteach.">
 <!ENTITY aboutTor.newsletter.link_text "Cláraigh le Nuachtlitir Tor.">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Ní neart go cur le chéile">
-
-<!ENTITY aboutTor.donationBanner.line2a "Dul i bhfolach sa slua.">
-<!ENTITY aboutTor.donationBanner.line2b "Cuir cearta daonna chun cinn.">
-<!ENTITY aboutTor.donationBanner.line2c "Seas an fód ar son na saoirse.">
-<!ENTITY aboutTor.donationBanner.line2d "Cosain príobháideachas na milliún duine.">
-<!ENTITY aboutTor.donationBanner.line2e "Cuir taca le Tor.">
-<!ENTITY aboutTor.donationBanner.line2f "Tá do chúnamh de dhíth orainn!">
-<!ENTITY aboutTor.donationBanner.line2g "Tacaigh le saoirse ar an idirlíon.">
-<!ENTITY aboutTor.donationBanner.line2h "Seas an fód ar son an Ghréasáin oscailte">
-<!ENTITY aboutTor.donationBanner.line2i "Tacaigh le príobháideachas agus le saoirse ar líne.">
-<!ENTITY aboutTor.donationBanner.line2j "Tá Mozilla ag meaitseáil gach euro a bhronntar orainn go dtí 2019.">
-
-<!ENTITY aboutTor.donationBanner.line3 "Tabhair síntiús airgid inniu agus tabharfaidh Mozilla an méid céanna arís dúinn.">
-<!ENTITY aboutTor.donationBanner.line3b "Beidh do bhronntanas airgid dhá uair níos láidre.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "Tabhair síntiús airgid anois">
-<!ENTITY aboutTor.donationBanner.buttonB "Cuir mise san áireamh">

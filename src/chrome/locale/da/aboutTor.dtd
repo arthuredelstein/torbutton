@@ -26,22 +26,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Få de seneste nyheder fra Tor direkte i din indbakke.">
 <!ENTITY aboutTor.newsletter.link_text "Tilmeld Tor-nyheder.">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Styrke i antal">
-
-<!ENTITY aboutTor.donationBanner.line2a "Anonymitet elsker selskab.">
-<!ENTITY aboutTor.donationBanner.line2b "Avancerede universelle menneskerettigheder.">
-<!ENTITY aboutTor.donationBanner.line2c "Slå et slag for frihed.">
-<!ENTITY aboutTor.donationBanner.line2d "Beskyt privatlivet af millioner.">
-<!ENTITY aboutTor.donationBanner.line2e "Hold Tor stærk.">
-<!ENTITY aboutTor.donationBanner.line2f "Vi har brug for din støtte!">
-<!ENTITY aboutTor.donationBanner.line2g "Støt internetfrihed.">
-<!ENTITY aboutTor.donationBanner.line2h "Forsvar det åbne web.">
-<!ENTITY aboutTor.donationBanner.line2i "Støt privatliv og frihed online.">
-<!ENTITY aboutTor.donationBanner.line2j "Mozilla matcher hver donation frem til 2019.">
-
-<!ENTITY aboutTor.donationBanner.line3 "Giv i dag, og Mozilla vil matche din donation.">
-<!ENTITY aboutTor.donationBanner.line3b "Giv nu og din gave bliver dobbelt så stærk.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "Donér nu">
-<!ENTITY aboutTor.donationBanner.buttonB "Jeg er med">

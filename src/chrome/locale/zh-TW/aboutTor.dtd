@@ -26,22 +26,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "將 Tor 的最新消息直接傳送到您的收件匣。">
 <!ENTITY aboutTor.newsletter.link_text "訂閱 Tor 的新資訊。">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Strength in Numbers">
-
-<!ENTITY aboutTor.donationBanner.line2a "Anonymity loves company.">
-<!ENTITY aboutTor.donationBanner.line2b "Advance universal human rights.">
-<!ENTITY aboutTor.donationBanner.line2c "Stand up for freedom.">
-<!ENTITY aboutTor.donationBanner.line2d "Protect the privacy of millions.">
-<!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
-<!ENTITY aboutTor.donationBanner.line2f "我們需要您的支援！">
-<!ENTITY aboutTor.donationBanner.line2g "Support internet freedom.">
-<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
-<!ENTITY aboutTor.donationBanner.line2i "Support privacy and freedom online.">
-<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
-
-<!ENTITY aboutTor.donationBanner.line3 "今日您捐款，Mozilla 也會捐出相同數額。">
-<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "立刻捐款">
-<!ENTITY aboutTor.donationBanner.buttonB "我也要加入！">
