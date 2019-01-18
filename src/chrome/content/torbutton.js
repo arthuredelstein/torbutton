@@ -19,7 +19,6 @@ const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion"
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
 const k_tb_last_update_check_pref = "extensions.torbutton.lastUpdateCheck";
 const k_tb_tor_check_failed_topic = "Torbutton:TorCheckFailed";
-const k_tb_tornews_banner_countdown = "extensions.torbutton.tornews_banner_countdown";
 
 var m_tb_prefs = Services.prefs;
 
@@ -232,14 +231,6 @@ function torbutton_init_toolbutton()
     }
 }
 
-// Show the Sign Up for Tor News banner a finite number of times.
-function torbutton_tornews_banner_countdown() {
-  let count = m_tb_prefs.getIntPref(k_tb_tornews_banner_countdown, 0);
-  if (count > 0) {
-    m_tb_prefs.setIntPref(k_tb_tornews_banner_countdown, count - 1);
-  }
-}
-
 // Bug 1506 P2-P4: This code sets some version variables that are irrelevant.
 // It does read out some important environment variables, though. It is
 // called once per browser window.. This might belong in a component.
@@ -348,10 +339,6 @@ function torbutton_init() {
     // Add about:tor IPC message listener.
     window.messageManager.addMessageListener("AboutTor:Loaded",
                                    torbutton_abouttor_message_handler);
-    window.messageManager.addMessageListener("AboutTor:HideTorNewsBanner",
-                                   torbutton_abouttor_message_handler);
-
-    torbutton_tornews_banner_countdown();
 
     setupPreferencesForMobile();
 
@@ -430,10 +417,6 @@ var torbutton_abouttor_message_handler = {
       case "AboutTor:Loaded":
         aMessage.target.messageManager.sendAsyncMessage("AboutTor:ChromeData",
                                                         this.chromeData);
-        break;
-      case "AboutTor:HideTorNewsBanner":
-        torbutton_log(5, "message AboutTor:HideTorNewsBanner received");
-        m_tb_prefs.setIntPref(k_tb_tornews_banner_countdown, 0);
         break;
     }
   },
