@@ -26,22 +26,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Nhận thông tin mới nhất từ Tor được gửi tới hộp thư của bạn.">
 <!ENTITY aboutTor.newsletter.link_text "Đăng kí nhận tin tức từ Tor.">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Sức mạnh nằm ở Số lượng người tham gia mạng lưới">
-
-<!ENTITY aboutTor.donationBanner.line2a "Việc ẩn danh cần sự đồng hành của cộng đồng">
-<!ENTITY aboutTor.donationBanner.line2b "Nâng cao phổ biến nhân quyền.">
-<!ENTITY aboutTor.donationBanner.line2c "Đứng lên vì tự do.">
-<!ENTITY aboutTor.donationBanner.line2d "Bảo vệ sự riêng tư của hàng triệu người.">
-<!ENTITY aboutTor.donationBanner.line2e "Giữ cho Tor trở nên mạnh mẽ.">
-<!ENTITY aboutTor.donationBanner.line2f "Chúng tôi cần sự hỗ trợ của bạn!">
-<!ENTITY aboutTor.donationBanner.line2g "Support internet freedom.">
-<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
-<!ENTITY aboutTor.donationBanner.line2i "Support privacy and freedom online.">
-<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
-
-<!ENTITY aboutTor.donationBanner.line3 "Hãy đóng góp ngay hôm nay, và Mozilla sẽ đóng góp tương ứng với phần của bạn.">
-<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "Đóng góp Ngay bây giờ">
-<!ENTITY aboutTor.donationBanner.buttonB "Hãy cho tôi tham gia">

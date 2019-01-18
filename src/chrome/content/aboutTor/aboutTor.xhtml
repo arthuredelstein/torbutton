@@ -32,54 +32,21 @@ window.addEventListener("pageshow", function() {
 </script>
 </head>
 <body dir="&locale.dir;">
-  <div id="donation-banner">
-    <div id="donation-banner-image"></div>
-    <div id="donation-banner-lines">
-      <div id="donation-banner-line1">&aboutTor.donationBanner.line1;</div>
-      <div id="donation-banner-line2"
-           data-6="&aboutTor.donationBanner.line2e;"
-           data-7="&aboutTor.donationBanner.line2f;"
-           data-8="&aboutTor.donationBanner.line2g;"
-           data-9="&aboutTor.donationBanner.line2h;"
-           data-10="&aboutTor.donationBanner.line2i;"
-           data-11="&aboutTor.donationBanner.line2j;">
-        &aboutTor.donationBanner.line2e;
+  <div id="tornews-banner">
+    <div><!--EMPTY SPACER DIV--></div>
+    <div id="tornews-banner-message">
+      <div id="tornews-banner-icon"></div>
+      <div>&aboutTor.newsletter.tagline;
+        <a href="https://newsletter.torproject.org">
+          &aboutTor.newsletter.link_text;
+        </a>
       </div>
-      <div id="donation-banner-line3"
-           data-b="&aboutTor.donationBanner.line3b;">
-        &aboutTor.donationBanner.line3;</div>
-      <a id="donation-banner-button"
-         href="https://www.torproject.org/donate/donate-sin-tbd0-0"
-         type="button"
-         data-0="&aboutTor.donationBanner.buttonA;"
-         data-1="&aboutTor.donationBanner.buttonB;">
-        &aboutTor.donationBanner.buttonA;
-      </a>
     </div>
-    <div id="donation-banner-closer">&times;</div>
+    <div id="tornews-banner-closer">&times;</div>
   </div>
-<script type="text/javascript">
- <![CDATA[
-    let lineChoice = 6 + Math.floor(Math.random() * 6);
-    let line2 = document.getElementById("donation-banner-line2");
-    let line2text = line2.getAttribute(`data-${lineChoice}`);
-    let line2pieces = line2text.split(" ");
-    let line2end = '<span>' + line2pieces.pop() + '</span>';
-    line2pieces.push(line2end);
-    line2.innerHTML = line2pieces.join(" ");
-    line3 = document.getElementById("donation-banner-line3");
-    if (lineChoice === 11) {
-      line3.innerHTML = line3.getAttribute("data-b");
-    }
-    let buttonChoice = Math.floor(Math.random() * 2);
-    let button = document.getElementById("donation-banner-button");
-    button.innerHTML = button.getAttribute(`data-${buttonChoice}`);
-    button.setAttribute("href",
-      `https://www.torproject.org/donate/donate-sin-tbd${lineChoice}-${buttonChoice}`);
-]]>
-</script>
-  <div id="torstatus-version"/>
+
   <div class="torcontent-container">
+    <div id="torstatus-version"/>
     <img class="torcontent-logo" src="resource://torbutton-assets/torbrowser_mobile_logo.png"/>
     <div id="torstatus" class="top">
       <div id="torstatus-on-container" class="hideIfTorOff torstatus-container">

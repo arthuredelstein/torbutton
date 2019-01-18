@@ -26,22 +26,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Krijg het laatste Tor nieuws regelrecht in jouw inbox.">
 <!ENTITY aboutTor.newsletter.link_text "Meld je aan voor Tor Nieuws.">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Kracht in Nummers">
-
-<!ENTITY aboutTor.donationBanner.line2a "Anonymity loves company.">
-<!ENTITY aboutTor.donationBanner.line2b "Universele rechten van de mens bevorderen.">
-<!ENTITY aboutTor.donationBanner.line2c "Stand up for freedom.">
-<!ENTITY aboutTor.donationBanner.line2d "Bescherm de privacy van miljoenen.">
-<!ENTITY aboutTor.donationBanner.line2e "Houdt Tor sterk.">
-<!ENTITY aboutTor.donationBanner.line2f "We hebben jouw ondersteuning nodig!">
-<!ENTITY aboutTor.donationBanner.line2g "Support internet freedom.">
-<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
-<!ENTITY aboutTor.donationBanner.line2i "Support privacy and freedom online.">
-<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
-
-<!ENTITY aboutTor.donationBanner.line3 "Geef vandaag, en Mozilla geeft hetzelfde bedrag.">
-<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "Geef Nu">
-<!ENTITY aboutTor.donationBanner.buttonB "Ik Doe Mee">

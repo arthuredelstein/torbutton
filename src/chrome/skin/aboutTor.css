@@ -282,124 +282,76 @@ body:not([showmanual]) .showForManual {
   border-radius: 50px 50px 0 0;
 }
 
-/* Donation Banner
+/* Tor News Signup Banner
  * While this banner is present, we need to
  * offset the elements normally at the top of
  * the window.
  */
 
-#donation-banner {
+#tornews-banner {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   background-color: white;
   color: var(--abouttor-bg-toron-color);
   font-size: 16px;
-  height: 200px;
-  justify-content: center;
+  height: 60px;
+  justify-content: space-between;
   left: 0px;
   right: 0px;
   top: 0px;
-  position: absolute;
-  transform: translateY(-200px);
+  transform: translateY(-60px);
   transition: transform 200ms;
-  z-index: 1;
 }
 
-body[show-donation-banner="true"] #donation-banner {
+body[show-tornews-banner="true"] #tornews-banner {
   transform: translateY(0px);
   transition: transform 0ms;
 }
 
-#donation-banner-image {
-  background: url('chrome://torbutton/skin/donation_banner_image_3x.png') no-repeat center center;
-  background-size: contain;
-  height: 190px;
-  margin: 10px 10px 0px 0px;
-  width: 400px;
+#tornews-banner-message {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-#donation-banner-closer {
+#tornews-banner-message a {
+  color: var(--abouttor-bg-toron-color);
+}
+
+#tornews-banner-icon {
+  background: url('chrome://torbutton/skin/newsletter_3x.png') no-repeat center center;
+  background-size: cover;
+  height: 32px;
+  margin: 0px 16px;
+  width: 32px;
+}
+
+#tornews-banner-closer {
   display: flex;
   align-items: center;
   font-size: 20px;
   height: 22px;
   justify-content: center;
-  margin: 4px;
+  margin: 4px 20px;
   padding: 4px;
-  position: absolute;
-  offset-inline-end: 0px;
-  top: 0px;
   width: 22px;
   -moz-user-select: none;
 }
 
-#donation-banner-closer:hover {
+#tornews-banner-closer:hover {
   background-color: gray;
   cursor: pointer;
 }
 
-#donation-banner-lines {
-  align-items: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 20px 0px;
-}
-
-#donation-banner-line1 {
-  font-size: 11px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-#donation-banner-line2 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-#donation-banner-line2 span {
-  background-color: #a9fef8;
-}
-
-#donation-banner-line3 {
-  font-size: 14px;
-}
-
-#donation-banner-button {
-  background-color: var(--abouttor-bg-toron-color);
-  border-radius: 3px;
-  border: 0px;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 10px 0px;
-  padding: 10px 24px;
-  text-decoration: none;
-}
-
-#donation-banner-button:hover {
-  background-color: #683d7d;
-  cursor: pointer;
-}
-
-body[show-donation-banner="false"] .torcontent-container,
-body[show-donation-banner="false"] .onion-pattern-container,
-body[show-donation-banner="false"] #torstatus-version,
-body[show-donation-banner="false"] #onboarding-overlay-button {
+body[show-tornews-banner="false"] #torstatus-version,
+body[show-tornews-banner="false"] #onboarding-overlay-button {
   transition: transform 200ms;
 }
 
-body[show-donation-banner="true"] .torcontent-container,
-body[show-donation-banner="true"] .onion-pattern-container {
-  transform: translateY(80px);
+body[show-tornews-banner="true"] #torstatus-version,
+body[show-tornews-banner="true"] #onboarding-overlay-button {
+  transform: translateY(60px);
   transition: transform 0ms;
-}
-
-body[show-donation-banner="true"] #torstatus-version,
-body[show-donation-banner="true"] #onboarding-overlay-button {
-  transform: translateY(200px);
-  transition: transform 0ms;
-  position: absolute;
 }
 
 /*
@@ -441,31 +393,4 @@ body[mobile] .onion-pattern-container {
   z-index: -1; /* ensure that circles do not block access to clickable links */
   position: absolute;
   bottom: 0px;
-}
-
-body[mobile] #donation-banner {
-  position: static;
-}
-
-body[mobile][show-donation-banner="true"] .torcontent-container,
-body[mobile][show-donation-banner="true"] .onion-pattern-container {
-  transform: none;
-}
-
-body[mobile][show-donation-banner="false"] .torcontent-container {
-  transform: translateY(-200px);
-}
-
-@media only screen and (max-width: 480px) {
-  #donation-banner-image {
-    display: none;
-  }
-
-  #donation-banner-lines {
-    align-items: stretch;
-  }
-
-  #donation-banner-button {
-    text-align: center;
-  }
 }

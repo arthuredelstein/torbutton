@@ -26,22 +26,3 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Tor ile ilgili son gelişmeler doğrudan e-posta kutunuza gelsin.">
 <!ENTITY aboutTor.newsletter.link_text "Tor Haber Bültenine Abone Olun">
-
-<!ENTITY aboutTor.donationBanner.line1 "Tor: Birlikten Kuvvet Doğar">
-
-<!ENTITY aboutTor.donationBanner.line2a "Anonimlik birlikteliği sever.">
-<!ENTITY aboutTor.donationBanner.line2b "Evrensel insan haklarını geliştir.">
-<!ENTITY aboutTor.donationBanner.line2c "Özgürlüğü savun.">
-<!ENTITY aboutTor.donationBanner.line2d "Milyonların gizliliğini koru.">
-<!ENTITY aboutTor.donationBanner.line2e "Tor uygulamasının gücünü koru.">
-<!ENTITY aboutTor.donationBanner.line2f "Desteğinize ihtiyacımız var!">
-<!ENTITY aboutTor.donationBanner.line2g "İnternet özgürlüğünü destekleyin">
-<!ENTITY aboutTor.donationBanner.line2h "Açık web düşüncesini savunun.">
-<!ENTITY aboutTor.donationBanner.line2i "Kişisel gizliliği ve çevrimiçi özgürlüğü destekleyin.">
-<!ENTITY aboutTor.donationBanner.line2j "Mozilla 2019 yılına kadar yapılan her bağışa karşılık veriyor.">
-
-<!ENTITY aboutTor.donationBanner.line3 "Bugün yaptığınız her bağış kadar Mozilla da bağış yapacak.">
-<!ENTITY aboutTor.donationBanner.line3b "Bağış yapın ve hediyeniz iki kat güzel olsun.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "Şimdi Bağış Yapın">
-<!ENTITY aboutTor.donationBanner.buttonB "Ben de Varım">
