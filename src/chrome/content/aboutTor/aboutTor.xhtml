@@ -62,9 +62,12 @@ window.addEventListener("pageshow", function() {
     </div>
 
     <div id="bottom">
-      <p class="showForManual moreInfoLink">&aboutTor.torbrowser_user_manual_questions.label;
+      <p id="manual" class="showForManual moreInfoLink">&aboutTor.torbrowser_user_manual_questions.label;
         <a id="manualLink" target="_blank">&aboutTor.torbrowser_user_manual_link.label;</a></p>
-      <p>&aboutTor.tor_mission.label;
+      <p id="newsletter" class="moreInfoLink"><img class="imageStyle" src="resource://torbutton-assets/icon-newsletter.png"/><br/>&aboutTor.newsletter.tagline;<br/>
+        <a href="https://newsletter.torproject.org">&aboutTor.newsletter.link_text; &#187;</a>
+      </p>
+      <p id="mission">&aboutTor.tor_mission.label;
         <a href="&aboutTor.getInvolved.link;">&aboutTor.getInvolved.label;</a></p>
     </div>
   </div>

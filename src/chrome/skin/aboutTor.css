@@ -149,6 +149,19 @@ body:not([showmanual]) .showForManual {
   font-size: 15px;
 }
 
+#bottom img.imageStyle {
+  padding-inline-end: 10px;
+}
+
+/* Hide the linebreaks on large enough screens (desktops, laptops, and
+ * tablets).
+ */
+@media only screen and (min-width: 768px) {
+  #bottom br {
+    display: none;
+  }
+}
+
 .searchbox form {
   width: 500px;
   margin: 39px auto 0px auto;
@@ -293,7 +306,8 @@ body:not([showmanual]) .showForManual {
 body[mobile] #torstatus-version,
 body[mobile] .searchbox,
 body[mobile] .top .heading2,
-body[mobile] #bottom {
+body[mobile] #manual,
+body[mobile] #mission {
   display: none;
 }
 
