@@ -1,3 +1,11 @@
+2.1.4
+ * Bug 25702: Update Tor Browser icon to follow design guidelines
+ * Bug 21805: Add click-to-play button for WebGL
+ * Bug 28836: Links on about:tor are not clickable
+ * Bug 29035: Clean up our donation campaign and add newsletter sign-up link
+ * Translations update
+ * Code clean-up
+
 2.1.3
  * Bug 28540: Use new text for 2018 donation banner
  * Bug 27290: Remove WebGL pref for min capability mode
