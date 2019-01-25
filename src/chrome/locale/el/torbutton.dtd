@@ -19,17 +19,17 @@
 <!ENTITY torbutton.cookiedialog.domainCol "Οικοδεσπότης">
 <!ENTITY torbutton.cookiedialog.nameCol "Όνομα">
 <!ENTITY torbutton.cookiedialog.pathCol "Μονοπάτι">
-<!ENTITY torbutton.cookiedialog.protectCookie "Προστασία Cookie">
+<!ENTITY torbutton.cookiedialog.protectCookie "Προστασία cookie">
 <!ENTITY torbutton.cookiedialog.removeCookie "Αφαίρεση Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Έκθεση Cookie">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Άρση προστασίας cookie">
 <!ENTITY torbutton.cookiedialog.removeAllBut "Αφαίρεση όλων εκτός των προστατευμένων">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Προστασία νέων Cookie">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Προστασία νέων cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Να Μη γίνεται Προστασία Νέων Cookie">
 <!ENTITY torbutton.prefs.sec_caption "Επίπεδο ασφάλειας">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Το Slider Ασφάλειας σας αφήνει να απενεργοποιήσετε ορισμένα χαρακτηριστικά του φυλλομετρητή που μπορεί να τον κάνουν πιο ευάλωτο σε προσπάθειες hacking.">
-<!ENTITY torbutton.prefs.sec_standard_label "Βασικά">
-<!ENTITY torbutton.prefs.sec_standard_description "Όλες οι παροχές του Tor Browser και της ιστοσελίδας είναι ενεργοποιημένες.">
-<!ENTITY torbutton.prefs.sec_safer_label "Ασφαλέστερα">
+<!ENTITY torbutton.prefs.sec_standard_label "Βασικό">
+<!ENTITY torbutton.prefs.sec_standard_description "Όλες οι παροχές του περιηγητή Tor και της ιστοσελίδας είναι ενεργοποιημένες.">
+<!ENTITY torbutton.prefs.sec_safer_label "Ασφαλέστερο">
 <!ENTITY torbutton.prefs.sec_safer_description "Απενεργοποιεί παροχές ιστοσελίδων που είναι επικίνδυνες και οδηγούν κάποιες ιστοσελίδες στο να χάνουν λειτουργικότητα.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Στην ασφαλέστερη σύνδεση:">
 <!ENTITY torbutton.prefs.sec_safest_label "Ασφαλέστατο">
@@ -40,6 +40,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "Η JavaScript είναι απενεργοποιημένη σε όλους τους ιστότοπους ως προεπιλογή.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Μερικές γραμματοσειρές και μαθηματικά σύμβολα είναι απενεργοποιημένα.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Ορισμένες γραμματοσειρές, εικονίδια, μαθηματικά σύμβολα και εικόνες είναι απενεργοποιημένα.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Ήχος και βίντεο (μέσα HTML5) είναι κλίκαρε-και-παίζει.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Οι ήχοι και τα βίντεο (μέσα HTML5) παίζουν, αφού γίνει κλικ για αναπαραγωγή.">
 <!ENTITY torbutton.circuit_display.title "Κύκλωμα Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Νέο κύκλωμα για αυτή την ιστοσελίδα">

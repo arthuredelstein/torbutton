@@ -4,18 +4,18 @@
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
 
-<!ENTITY aboutTor.title "Torについて">
+<!ENTITY aboutTor.title "Tor について">
 
 <!ENTITY aboutTor.ready.label "探索する。 プライベートに。">
 <!ENTITY aboutTor.ready2.label "世界で最もプライベートなブラウジングを体験する準備が整いました。">
 <!ENTITY aboutTor.failure.label "何かが間違っています！">
-<!ENTITY aboutTor.failure2.label "Torは、このブラウザでは動作しません。">
+<!ENTITY aboutTor.failure2.label "Tor は、このブラウザでは動作しません。">
 
-<!ENTITY aboutTor.search.label "DuckDuckGoで検索">
+<!ENTITY aboutTor.search.label "DuckDuckGo で検索">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "質問がありますか？">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tor Browser マニュアルをチェック »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser マニュアル">

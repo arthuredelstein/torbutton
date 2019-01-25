@@ -3,8 +3,8 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <!ENTITY  brandShorterName      "Tor Browser">
-<!ENTITY  brandShortName        "Przeglądarka Tor">
-<!ENTITY  brandFullName         "Przeglądarka Tor">
+<!ENTITY  brandShortName        "Tor Browser">
+<!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Project Tor">
 <!ENTITY  trademarkInfo.part1   "Firefox i jego loga są znakami towarowymi Mozilla Foundation.">
 

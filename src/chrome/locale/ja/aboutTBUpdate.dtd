@@ -1,5 +1,5 @@
-<!ENTITY aboutTBUpdate.title "TorBrowserアップデート">
-<!ENTITY aboutTBUpdate.updated "TorBrowserアップデート完了">
+<!ENTITY aboutTBUpdate.title "Tor Browser アップデート">
+<!ENTITY aboutTBUpdate.updated "Tor Browser アップデート完了">
 <!ENTITY aboutTBUpdate.linkPrefix "このリリースについての最新情報を入手するため、">
 <!ENTITY aboutTBUpdate.linkLabel  "我々のウェブサイトを見てください">
 <!ENTITY aboutTBUpdate.linkSuffix "。">

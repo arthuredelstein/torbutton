@@ -9,16 +9,16 @@
 <!ENTITY aboutTor.ready.label "Fedezzen fel. Privátan.">
 <!ENTITY aboutTor.ready2.label "Készen áll a világ legprivátabb böngészési élményére.">
 <!ENTITY aboutTor.failure.label "Valami nem jól működik!">
-<!ENTITY aboutTor.failure2.label "A tor nem működik ebben a böngészőben.">
+<!ENTITY aboutTor.failure2.label "A Tor nem működik ebben a böngészőben.">
 
 <!ENTITY aboutTor.search.label "Keressen a DuckDuckGo-val">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Kérdések?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tekintse meg a Tor  Böngésző Útmutatónkat">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tekintse meg a Tor Browser Útmutatónkat">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Böngésző Útmutató">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Útmutató">
 
 <!ENTITY aboutTor.tor_mission.label "A Tor Project egy a US 501(c)(3) szerinti non-profit szervezet, amely az emberi jogokért és szabadságért harcol, nyílt forráskódú anonimitás és adatvédelmi technológiák fejlesztésével és terjesztésével, támogatva azok korlátlan elérhetőségét és használatát, támogassák a tudományos ás általános megértésüket.">
 <!ENTITY aboutTor.getInvolved.label "Vegyen részt">

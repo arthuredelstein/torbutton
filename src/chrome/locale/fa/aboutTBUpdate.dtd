@@ -5,6 +5,6 @@
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.changeLogHeading "لیست تغییرات:">
 
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "New, Redesigned Circuit Display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
+<!ENTITY aboutTBUpdate.circuitDisplayHeading "نمایش جدید و دوباره طراحی شده‌ی جریان">
+<!ENTITY aboutTBUpdate.circuitDisplayDescription "نمایش جریان تور نقل مکان و بهبود یافت! بر روی دکمه ی هویت&#160;سایت کلیک کنید (که در سمت چپ نوار آدرس اینترنتی قرار دارد) تا نمایش جدید جریان را ببینید.">
 <!ENTITY aboutTBUpdate.learnMore "بیشتر بدانید">

@@ -15,10 +15,10 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "¿Preguntas?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Comprobar nuestro Manual del Navegador Tor">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Comprobar nuestro Manual del Tor Browser">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Manual del Navegador Tor">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Manual del Tor Browser">
 
 <!ENTITY aboutTor.tor_mission.label "El proyecto Tor es una organización sin fines de lucro definida legalmente en Estados Unidos como 501(c)(3), avanzando libertades y derechos humanos mediante la creación y despliegue de tecnologías de anonimato y privacidad sin costo y de fuente abierta, apoyando su disponibilidad y uso sin restricciones y ampliando su entendimiento científico y popular.">
 <!ENTITY aboutTor.getInvolved.label "Involúcrate">

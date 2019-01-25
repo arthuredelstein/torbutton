@@ -7,7 +7,7 @@
 <!ENTITY aboutTor.title "Informacje na temat Tor'a">
 
 <!ENTITY aboutTor.ready.label "Odkrywaj. Prywatnie.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready2.label "Jesteś gotowy na najbardziej prywatne doświadczenie przeglądania na świecie.">
 <!ENTITY aboutTor.failure.label "Coś poszło nie tak!">
 <!ENTITY aboutTor.failure2.label "Tor nie działa w tej przeglądarce.">
 
@@ -20,9 +20,9 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Instrukcja korzystania z Tor Browser">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
-<!ENTITY aboutTor.getInvolved.label "Get Involved »">
+<!ENTITY aboutTor.tor_mission.label "Projekt Tor jest organizacją non-profit US 501(c)(3), poszerzającą prawa człowieka i wolności tworząc darmowe i open-source technologie anonimowości i prywatności, wspierając ich nierestryktowaną dostępność i użycie i promuje ich naukowe i popularne zrozumienie.">
+<!ENTITY aboutTor.getInvolved.label "Zaangażuj się »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Sign up for Tor News.">
+<!ENTITY aboutTor.newsletter.tagline "Otrzymuj najnowsze newsy o Tor, prosto do swojej skrzynki.">
+<!ENTITY aboutTor.newsletter.link_text "Zapisz się na Tor News.">

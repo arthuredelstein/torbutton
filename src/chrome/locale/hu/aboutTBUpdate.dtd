@@ -1,5 +1,5 @@
-<!ENTITY aboutTBUpdate.title "Tor Böngésző Frissítés">
-<!ENTITY aboutTBUpdate.updated "Tor Böngésző frissítve.">
+<!ENTITY aboutTBUpdate.title "Tor Browser Frissítés">
+<!ENTITY aboutTBUpdate.updated "Tor Browser frissítve.">
 <!ENTITY aboutTBUpdate.linkPrefix "Az erről a kiadásról szóló legfrissebb információkért">
 <!ENTITY aboutTBUpdate.linkLabel  "látogassa meg weboldalunkat">
 <!ENTITY aboutTBUpdate.linkSuffix ".">

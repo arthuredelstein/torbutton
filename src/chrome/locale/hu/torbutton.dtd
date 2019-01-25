@@ -13,7 +13,7 @@
 <!ENTITY torbutton.button.tooltip "Kattintson a Torbutton inicializálásához">
 <!ENTITY torbutton.prefs.security_settings "Tor Browser biztonsági beállítások">
 <!ENTITY torbutton.prefs.restore_defaults "Alapértelmezések visszaállítása">
-<!ENTITY torbutton.prefs.custom_warning "Az általad eszközölt egyéni böngészői beállítások eredményeképp biztonsági kockázatok merülhetnek fel. Biztonsági és adatvédelmi szempontokból kérjük válassz az alapértelmezett biztonsági szintek közül.">
+<!ENTITY torbutton.prefs.custom_warning "Az Ön által eszközölt egyéni böngészői beállítások eredményeképp biztonsági kockázatok merülhetnek fel. Biztonsági és adatvédelmi szempontokból kérjük válasszon az alapértelmezett biztonsági szintek közül.">
 <!ENTITY torbutton.cookiedialog.title "Süti védelem kezelése">
 <!ENTITY torbutton.cookiedialog.lockCol "Védett">
 <!ENTITY torbutton.cookiedialog.domainCol "Állomás">
@@ -28,7 +28,7 @@
 <!ENTITY torbutton.prefs.sec_caption "Biztonsági szint">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "A Biztonsági Csúszóka lehetővé tesz, hogy kikapcsoljon olyan böngésző funkcionalitásokat, amik sebezhetővé teszik a törési kísérletekben.">
 <!ENTITY torbutton.prefs.sec_standard_label "Normál">
-<!ENTITY torbutton.prefs.sec_standard_description "Minden Tor Böngésző és weboldal szolgáltatás engedélyezve.">
+<!ENTITY torbutton.prefs.sec_standard_description "Minden Tor Browser és weboldal szolgáltatás engedélyezve.">
 <!ENTITY torbutton.prefs.sec_safer_label "Biztonságosabb">
 <!ENTITY torbutton.prefs.sec_safer_description "Azon weboldal szolgáltatások tiltása, amelyek többnyire veszélyesek, ami néhány oldal működésének problémáit okozhatja.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "A biztonságosabb beállítás után_">

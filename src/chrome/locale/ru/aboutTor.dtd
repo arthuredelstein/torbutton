@@ -11,7 +11,7 @@
 <!ENTITY aboutTor.failure.label "Что-то пошло не так!">
 <!ENTITY aboutTor.failure2.label "Tor не работает в этом браузере.">
 
-<!ENTITY aboutTor.search.label "Поиск через DuckDuckGo">
+<!ENTITY aboutTor.search.label "Поиск с помощью сервиса DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Вопросы?">
