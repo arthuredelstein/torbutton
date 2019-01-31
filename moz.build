@@ -7,6 +7,3 @@ JAR_MANIFESTS += ['src/jar.mn']
 JS_PREFERENCE_FILES += [
     'src/defaults/preferences/preferences.js',
 ]
-FINAL_TARGET_FILES.features['torbutton@torproject.org'] += [
-    'src/install.rdf'
-]
