@@ -6,6 +6,10 @@
  * Translations update
  * Code clean-up
 
+2.0.10
+ * Bug 29035: Clean up our donation campaign and add newsletter sign-up link
+ * Bug 27175: Add pref to allow users to persist custom noscript settings
+
 2.1.3
  * Bug 28540: Use new text for 2018 donation banner
  * Bug 27290: Remove WebGL pref for min capability mode
