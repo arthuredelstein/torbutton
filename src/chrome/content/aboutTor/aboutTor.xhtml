@@ -14,6 +14,8 @@
   %globalDTD;
   <!ENTITY % aboutTorDTD SYSTEM "chrome://torbutton/locale/aboutTor.dtd">
   %aboutTorDTD;
+  <!ENTITY % tbUpdateDTD SYSTEM "chrome://browser/locale/aboutTBUpdate.dtd">
+  %tbUpdateDTD;
 ]>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -33,15 +35,23 @@ window.addEventListener("pageshow", function() {
 </head>
 <body dir="&locale.dir;">
   <div class="torcontent-container">
-    <div id="torstatus-version"/>
+    <div id="torbrowser-info">
+      <div id="torbrowser-version"/>
+      <div id="torbrowser-changelog-link"><a href="about:tbupdate">&aboutTor.viewChangelog.label;</a></div>
+    </div>
     <img class="torcontent-logo" src="resource://torbutton-assets/torbrowser_mobile_logo.png"/>
     <div id="torstatus" class="top">
-      <div id="torstatus-on-container" class="hideIfTorOff torstatus-container">
+      <div class="hideIfTorOff hideIfHasBeenUpdated torstatus-container">
         <div class="heading1">&aboutTor.ready.label;</div>
         <br/>
         <div class="heading2">&aboutTor.ready2.label;</div>
       </div>
-      <div id="torstatus-off-container" class="hideIfTorOn torstatus-container">
+      <div class="showIfHasBeenUpdated torstatus-container">
+        <div class="heading1">&aboutTBUpdate.updated;</div>
+        <br/>
+        <div class="heading2">&aboutTBUpdate.linkPrefix;<a id="update-infolink">&aboutTBUpdate.linkLabel;</a>&aboutTBUpdate.linkSuffix;</div>
+      </div>
+      <div class="hideIfTorOn torstatus-container">
         <div class="heading1">&aboutTor.failure.label;</div>
         <br/>
         <div class="heading2">&aboutTor.failure2.label;</div>

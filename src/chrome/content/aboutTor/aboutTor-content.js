@@ -94,6 +94,17 @@ var AboutTorListener = {
     else
       body.removeAttribute("showmanual");
 
+    if (aData.updateChannel)
+      body.setAttribute("updatechannel", aData.updateChannel);
+    else
+      body.removeAttribute("updatechannel");
+
+    if (aData.hasBeenUpdated) {
+      body.setAttribute("hasbeenupdated", "yes");
+      content.document.getElementById("update-infolink").setAttribute("href",
+                                                      aData.updateMoreInfoURL);
+    }
+
     if (aData.mobile)
       body.setAttribute("mobile", "yes");
 
@@ -114,11 +125,11 @@ var AboutTorListener = {
                           .createBundle(kBrandBundle);
       let productName = brandBundle.GetStringFromName("brandFullName");
       let tbbVersion = Services.prefs.getCharPref("torbrowser.version");
-      elem = content.document.getElementById("torstatus-version");
+      let elem = content.document.getElementById("torbrowser-version");
 
       while (elem.firstChild)
         elem.removeChild(elem.firstChild);
-      elem.appendChild(content.document.createTextNode(productName + '\n'
+      elem.appendChild(content.document.createTextNode(productName + ' '
                        + tbbVersion));
     } catch (e) {}
   }

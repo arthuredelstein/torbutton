@@ -8,6 +8,7 @@
 //       http://kb.mozillazine.org/Links_to_local_pages_don%27t_work
 
 let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
+const {AppConstants} = ChromeUtils.import("resource://gre/modules/AppConstants.jsm");
 let { showDialog, show_torbrowser_manual } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
@@ -418,7 +419,7 @@ var torbutton_abouttor_message_handler = {
     switch(aMessage.name) {
       case "AboutTor:Loaded":
         aMessage.target.messageManager.sendAsyncMessage("AboutTor:ChromeData",
-                                                        this.chromeData);
+                                                    this.getChromeData(true));
         break;
     }
   },
@@ -426,7 +427,7 @@ var torbutton_abouttor_message_handler = {
   // Send privileged data to all of the about:tor content scripts.
   updateAllOpenPages: function() {
     window.messageManager.broadcastAsyncMessage("AboutTor:ChromeData",
-                                                this.chromeData);
+                                                this.getChromeData(false));
   },
 
   // The chrome data contains all of the data needed by the about:tor
@@ -434,11 +435,32 @@ var torbutton_abouttor_message_handler = {
   // It is sent to the content process when an about:tor window is opened
   // and in response to events such as the browser noticing that Tor is
   // not working.
-  get chromeData() {
-    return {
+  getChromeData: function(aIsRespondingToPageLoad) {
+    let dataObj = {
       mobile: torbutton_is_mobile(),
+      updateChannel: AppConstants.MOZ_UPDATE_CHANNEL,
       torOn: torbutton_tor_check_ok()
     };
+
+    if (aIsRespondingToPageLoad) {
+      const kShouldNotifyPref = "torbrowser.post_update.shouldNotify";
+      if (m_tb_prefs.getBoolPref(kShouldNotifyPref, false)) {
+        m_tb_prefs.clearUserPref(kShouldNotifyPref);
+        dataObj.hasBeenUpdated = true;
+        dataObj.updateMoreInfoURL = this.getUpdateMoreInfoURL();
+      }
+    }
+
+    return dataObj;
+  },
+
+  getUpdateMoreInfoURL: function() {
+    try {
+      return Services.prefs.getCharPref("torbrowser.post_update.url");
+    } catch (e) {}
+
+    // Use the default URL as a fallback.
+    return Services.urlFormatter.formatURLPref("startup.homepage_override_url");
   }
 };
 
