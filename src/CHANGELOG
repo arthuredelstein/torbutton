@@ -1,3 +1,6 @@
+2.0.11
+ * Bug 29021: Tell NoScript it is running within Tor Browser
+
 2.0.10
  * Bug 29035: Clean up our donation campaign and add newsletter sign-up link
  * Bug 27175: Add pref to allow users to persist custom noscript settings
