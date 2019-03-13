@@ -78,6 +78,7 @@ let noscriptSettings = safetyLevel => (
       "enforced": true,
       "autoAllowTop": false
     },
+   "isTorBrowser": true,
    "tabId": -1
   });
 
