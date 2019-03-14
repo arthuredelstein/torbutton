@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Νέο κύκλωμα Tor για αυτήν την ιστοσελίδα">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Ρυθμίσεις Ασφαλείας...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Ρυθμίσεις του Δικτύου Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Έλεγχος για ενημέρωση του Tor Browser...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Κάντε κλικ για να εκκινήσετε το Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Ρυθμίσεις ασφαλείας του Tor Browser">
-<!ENTITY torbutton.prefs.restore_defaults "Επαναφορά προεπιλογών">
-<!ENTITY torbutton.prefs.custom_warning "Οι προσαρμοσμένες προτιμήσεις του browser σας έχουν οδηγήσει σε ασυνήθιστες ρυθμίσεις ασφάλειας. Για λόγους ασφαλείας και ιδιωτικότητας, προτείνουμε να επιλέξετε ένα από τα προεπιλεγμένα επίπεδα ασφάλειας.">
 <!ENTITY torbutton.cookiedialog.title "Διαχείριση Προστασίας Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "Προστατευμένα">
 <!ENTITY torbutton.cookiedialog.domainCol "Οικοδεσπότης">

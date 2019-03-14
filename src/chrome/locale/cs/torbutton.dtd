@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "i">
 <!ENTITY torbutton.context_menu.new_circuit "Nový okruh Toru pro tuto stránku">
 <!ENTITY torbutton.context_menu.new_circuit_key "o">
-<!ENTITY torbutton.context_menu.preferences "Nastavení zabezpečení…">
-<!ENTITY torbutton.context_menu.preferences.key "b">
 <!ENTITY torbutton.context_menu.networksettings "Nastavení sítě Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Vyhledat aktualizace prohlížeče Tor…">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "c">
 <!ENTITY torbutton.button.tooltip "Klepněte pro inicializaci Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Nastavení zabezpečení prohlížeče Tor">
-<!ENTITY torbutton.prefs.restore_defaults "Obnovit výchozí">
-<!ENTITY torbutton.prefs.custom_warning "Vaše nastavení prohlížeče neodpovídá standardnímu nastavení zabezpečení. Z důvodu ochrany soukromí a zvýšení bezpečnosti vám doporučujeme vybrat si jednu z výchozích bezpečnostních úrovní.">
 <!ENTITY torbutton.cookiedialog.title "Správa ochrany cookies">
 <!ENTITY torbutton.cookiedialog.lockCol "Chráněné">
 <!ENTITY torbutton.cookiedialog.domainCol "Server">

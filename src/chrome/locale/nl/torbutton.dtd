@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nieuw Tor-circuit voor deze website">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Beveiligingsinstellingen…">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor-netwerkinstellingen…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Controleer op updates voor de Tor-browser...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik hier om Tor-knop te initialiseren">
 <!ENTITY torbutton.prefs.security_settings "Tor-browser Beveiligingsinstellingen">
-<!ENTITY torbutton.prefs.restore_defaults "Standaardwaarden herstellen">
-<!ENTITY torbutton.prefs.custom_warning "Je aangepaste browservoorkeuren hebben geleid tot ongebruikelijke beveiligingsinstellingen. Uit veiligheids- en privacy-overwegingen raden we je aan één van de standaardbeveiligingsniveaus te kiezen.">
 <!ENTITY torbutton.cookiedialog.title "Beheer Cookie Beveiligingen">
 <!ENTITY torbutton.cookiedialog.lockCol "Beveiligd">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

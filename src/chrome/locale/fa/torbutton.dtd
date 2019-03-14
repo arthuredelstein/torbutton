@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "شبکه جدید Tor برای این سایت">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "تنظیمات امنیتی…">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "تنظیمات شبکه تور">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "بررسی بروز رسانی مرورگر تور">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "جهت شروع دكمه تُرکليک کنيد">
 <!ENTITY torbutton.prefs.security_settings "تنظیمات امنیتی مرورگر تور">
-<!ENTITY torbutton.prefs.restore_defaults "بازگردانی تنظیمات اولیه">
-<!ENTITY torbutton.prefs.custom_warning "تنظیمات سفارشی شما در مرورگر منجر به تغییرات غیر معمول در تنظیمات امنیتی شده است.برای امن نگه داشتن حریم خصوصی خود ما پیشنهاد میکنیم یکی از تنظیمات پیشفرض امنیتی را انتخاب کنید. ">
 <!ENTITY torbutton.cookiedialog.title "مديريت حفاظت کلوچک‌ها">
 <!ENTITY torbutton.cookiedialog.lockCol "حفاظت شده">
 <!ENTITY torbutton.cookiedialog.domainCol "ميزبان">

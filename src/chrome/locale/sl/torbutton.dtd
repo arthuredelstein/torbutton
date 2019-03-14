@@ -6,7 +6,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "piškotkina zaščita">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klikni za inicializiranje razširitve Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Privzete nastavitve">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

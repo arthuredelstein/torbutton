@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "建立新的洋蔥路由迴路來連接上此網站">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "安全設定...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "洋蔥路由網路設定...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "檢查洋蔥路由瀏覽器更新…">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "按一下以初始化 Torbutton">
 <!ENTITY torbutton.prefs.security_settings "洋蔥路由瀏覽器之安全性設定">
-<!ENTITY torbutton.prefs.restore_defaults "恢復到預設值">
-<!ENTITY torbutton.prefs.custom_warning "您的瀏覽器個人化設定可能會造成安全性的疑慮。基於個人網路安全與隱私的考量，建議您選用預設的安全性層級選項。">
 <!ENTITY torbutton.cookiedialog.title "管理 Cookie 的保護">
 <!ENTITY torbutton.cookiedialog.lockCol "受保護">
 <!ENTITY torbutton.cookiedialog.domainCol "主機">

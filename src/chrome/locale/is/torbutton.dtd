@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Ný Tor-rás fyrir þetta vefsvæði">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Öryggisstillingar…">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Netkerfisstillingar Tor…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Athugaðu með uppfærslur Tor-vafra...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Smelltu til að kveikja á Tor-hnapp">
 <!ENTITY torbutton.prefs.security_settings "Öryggisstillingar Tor-vafrans">
-<!ENTITY torbutton.prefs.restore_defaults "Frumstilla á sjálfgefið">
-<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
 <!ENTITY torbutton.cookiedialog.title "Sýsla með varnir gegn vefkökum">
 <!ENTITY torbutton.cookiedialog.lockCol "Varið">
 <!ENTITY torbutton.cookiedialog.domainCol "Hýsilvél">

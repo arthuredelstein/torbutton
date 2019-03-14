@@ -18,6 +18,7 @@ pref("extensions.torbutton.use_nontor_proxy",false);
 // State prefs:
 pref("extensions.torbutton.startup",false);
 pref("extensions.torbutton.inserted_button",false);
+pref("extensions.torbutton.inserted_security_level",false);
 
 // TODO: This is just part of a stopgap until #14429 gets properly implemented.
 // See #7255 for details. We display the warning three times to make sure the

@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Ciorcad Nua Tor don Suíomh seo">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Socruithe Slándála...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Socruithe Líonra Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Lorg Nuashonrú ar Bhrabhsálaí Tor...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Cliceáil chun cnaipe Tor a thúsú">
 <!ENTITY torbutton.prefs.security_settings "Socruithe Slándála Bhrabhsálaí Tor">
-<!ENTITY torbutton.prefs.restore_defaults "Fill ar na Réamhshocruithe">
-<!ENTITY torbutton.prefs.custom_warning "Tá socruithe slándála an bhrabhsálaí as an ngnáth faoi láthair, mar thoradh ar do chuid sainroghanna.  Ar chúiseanna slándála agus príobháideachais, molaimid duit ceann de na leibhéil slándála réamhshocraithe a roghnú.">
 <!ENTITY torbutton.cookiedialog.title "Bainistigh Caomhnú Fianán">
 <!ENTITY torbutton.cookiedialog.lockCol "Cosanta">
 <!ENTITY torbutton.cookiedialog.domainCol "Óstríomhaire">

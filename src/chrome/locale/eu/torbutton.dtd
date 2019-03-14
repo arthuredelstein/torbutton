@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Tor zirkuitu berria gune honetarako">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Segurtasun Ezarpenak...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor Sarearen Ezarpenak...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Tor Browser eguneraketa egiaztatu">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Sakatu Torbutton abiarazteko">
 <!ENTITY torbutton.prefs.security_settings "Tor Nagibatzailearen Segurtasun Ezarpenak">
-<!ENTITY torbutton.prefs.restore_defaults "Lehenetsiak berrezarri">
-<!ENTITY torbutton.prefs.custom_warning "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
 <!ENTITY torbutton.cookiedialog.title "Cookie Babesak kudeatu">
 <!ENTITY torbutton.cookiedialog.lockCol "Babestuta">
 <!ENTITY torbutton.cookiedialog.domainCol "Ostalaria">

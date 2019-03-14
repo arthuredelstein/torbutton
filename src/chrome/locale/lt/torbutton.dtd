@@ -6,7 +6,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Slapukų apsaugos">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Paspauskite kad aktyvuoti Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Atstatyti numatytuosius">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

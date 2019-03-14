@@ -6,7 +6,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Protectii Cookie-uri.">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Apasă pentru pornirea Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Restaurează setările implicite">
 <!ENTITY torbutton.cookiedialog.title "Gestionează Protecţii Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "Protejat">
 <!ENTITY torbutton.cookiedialog.domainCol "Gazda">

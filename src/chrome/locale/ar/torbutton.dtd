@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "دائرة تور جديدة لهذا الموقع">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "إعدادات الأمان...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "إعدادات شبكة تور...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "تحقق من تحديثات متصفح تور...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "انقر لبدء زر تور">
 <!ENTITY torbutton.prefs.security_settings "إعدادات أمان متصفح طور">
-<!ENTITY torbutton.prefs.restore_defaults "استعد الإعادات المبدئية">
-<!ENTITY torbutton.prefs.custom_warning "تفضيلاتك الخاصة للمتصفح تسببت في إعدادات أمان غير معتادة. لأمان وخصوصية أفضل ننصح باستخدام أحد مستويات الأمان المبدئية.">
 <!ENTITY torbutton.cookiedialog.title "إدارة إعدادت الحماية لملفات تعريف الارتباط">
 <!ENTITY torbutton.cookiedialog.lockCol "محمية">
 <!ENTITY torbutton.cookiedialog.domainCol "استضافة">

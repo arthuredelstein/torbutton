@@ -6,7 +6,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Evästeiden suojaukset">
 <!ENTITY torbutton.context_menu.cookieProtections.key "E">
 <!ENTITY torbutton.button.tooltip "Klikkaa Torbutton aktiiviseksi">
-<!ENTITY torbutton.prefs.restore_defaults "Palauta Oletukset">
 <!ENTITY torbutton.cookiedialog.title "Hallitse evästeiden suojauksia">
 <!ENTITY torbutton.cookiedialog.lockCol "Suojaus">
 <!ENTITY torbutton.cookiedialog.domainCol "Palvelin">

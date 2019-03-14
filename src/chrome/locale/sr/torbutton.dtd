@@ -6,7 +6,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Дозволе за колачиће">
 <!ENTITY torbutton.context_menu.cookieProtections.key "Ц">
 <!ENTITY torbutton.button.tooltip "Кликните да бисте покренули Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Поврати подразумевано">
 <!ENTITY torbutton.cookiedialog.title "Уреди заштиту колачића">
 <!ENTITY torbutton.cookiedialog.lockCol "Заштићен">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "ვ">
 <!ENTITY torbutton.context_menu.new_circuit "ახალი Tor-წრედი ამ საიტისთვის">
 <!ENTITY torbutton.context_menu.new_circuit_key "წ">
-<!ENTITY torbutton.context_menu.preferences "უსაფრთხოების პარამეტრები">
-<!ENTITY torbutton.context_menu.preferences.key "უ">
 <!ENTITY torbutton.context_menu.networksettings "Tor-ქსელის პარამეტრები...">
 <!ENTITY torbutton.context_menu.networksettings.key "ქ">
 <!ENTITY torbutton.context_menu.downloadUpdate "Tor-ბრაუზერის განახლებებზე შემოწმება...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "ფ">
 <!ENTITY torbutton.button.tooltip "დააწკაპეთ Torbutton-ის გასაშვებად">
 <!ENTITY torbutton.prefs.security_settings "Tor-ბრაუზერის უსაფრთხოების პარამეტრები">
-<!ENTITY torbutton.prefs.restore_defaults "ნაგულისხმევის აღდგენა">
-<!ENTITY torbutton.prefs.custom_warning "თქვენ მიერ მითითებული პარამეტრები ბრაუზერში, არაა მისაღები უსაფრთხოებისთვის. პირადი მონაცემების სათანადოდ დაცვის უზრუნველსაყოფად, გირჩევთ შეარჩიოთ უსაფრთხოების ნაგულისხმევი დონეებიდან რომელიმე.">
 <!ENTITY torbutton.cookiedialog.title "ფუნთუშების უსაფრთხოების მართვა">
 <!ENTITY torbutton.cookiedialog.lockCol "დაცულია">
 <!ENTITY torbutton.cookiedialog.domainCol "მისამართი">

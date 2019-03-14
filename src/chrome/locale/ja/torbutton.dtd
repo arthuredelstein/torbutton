@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "このサイト用の新しい Tor サーキット">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "セキュリティの設定...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor ネットワークの設定...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Tor Browser のアップデートを確認">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbuttonを初期状態に戻す">
 <!ENTITY torbutton.prefs.security_settings "Tor Browser セキュリティの設定">
-<!ENTITY torbutton.prefs.restore_defaults "デフォルトにもどす">
-<!ENTITY torbutton.prefs.custom_warning "あなたのブラウザーにおけるカスタム設定はセキュリティ結果に影響を及ぼしません。セキュリティとプライバシーに関してはデフォルトのセキュリティレベルのひとつを選択することをおすすめいたします。">
 <!ENTITY torbutton.cookiedialog.title "Cookie保護を管理">
 <!ENTITY torbutton.cookiedialog.lockCol "保護済み">
 <!ENTITY torbutton.cookiedialog.domainCol "ホスト">

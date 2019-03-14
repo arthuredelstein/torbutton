@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Tor 서킷 재구축">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "보안 설정...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "토르 네트워크 설정...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "토르 브라우저 업데이트 체크하기...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbutton 설정 초기화">
 <!ENTITY torbutton.prefs.security_settings "Tor 브라우저 보안 설정">
-<!ENTITY torbutton.prefs.restore_defaults "기본값으로 복구">
-<!ENTITY torbutton.prefs.custom_warning "사용자 지정 브라우저 기본 설정으로 인해 비정상적인 보안 설정이 발생했습니다. 보안 및 개인 정보 보호를 위해 기본 보안 수준 중 하나를 선택하는 것이 좋습니다.">
 <!ENTITY torbutton.cookiedialog.title "쿠키 보호 관리">
 <!ENTITY torbutton.cookiedialog.lockCol "보호됨">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

@@ -6,7 +6,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Aizsardzība no sīkdatnēm">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Noklikšķināt, lai inicializētu Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "Atjaunot noklusējuma vērtības">
 <!ENTITY torbutton.cookiedialog.title "Pārvaldīt aizsardzību no sīkdatnēm">
 <!ENTITY torbutton.cookiedialog.lockCol "Aizsargāts">
 <!ENTITY torbutton.cookiedialog.domainCol "Viesotājs">

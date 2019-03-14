@@ -125,7 +125,7 @@ var torbutton_unique_pref_observer =
               * registers. Thankfully, these notifications arrive only on
               * the main thread, *however*, our confirmation dialog suspends
               * execution and allows more events to arrive until it is answered
-              */ 
+              */
              if (!m_tb_confirming_plugins) {
                m_tb_confirming_plugins = true;
                torbutton_confirm_plugins();
@@ -368,22 +368,27 @@ function torbutton_init() {
     //if (contextMenu)
     //  contextMenu.addEventListener("popupshowing", torbutton_check_contextmenu, false);
 
-    // Add toolbutton to the bar.
+    // Add torbutton and security level button to the bar.
     // This should maybe be in the startup function, but we want to add
     // the button to the panel before it's state (color) is set..
-    if (!m_tb_prefs.getBoolPref("extensions.torbutton.inserted_button")) {
+    if (!m_tb_prefs.getBoolPref("extensions.torbutton.inserted_button") ||
+        !m_tb_prefs.getBoolPref("extensions.torbutton.inserted_security_level")) {
       torbutton_log(3, 'Adding button');
       try {
         // ESR31-style toolbar is handled by the existing compiled-in pref.
         // We also need to prevent first-run toolbar reorg (#13378), so we
         // reset this toolbar state on first-run.
         try {
+          // reverts the serialized toolbar state to default set in Tor Browser
           m_tb_prefs.clearUserPref("browser.uiCustomization.state");
         } catch(e) {}
+        // reverts toolbar state to firefox defaults
         CustomizableUI.reset();
+        // 'restores' toolbar state from serialized state in "browser.uiCustomization.state"
         CustomizableUI.undoReset();
         torbutton_log(3, 'Button added');
         m_tb_prefs.setBoolPref("extensions.torbutton.inserted_button", true);
+        m_tb_prefs.setBoolPref("extensions.torbutton.inserted_security_level", true);
       } catch(e) {
         torbutton_log(4, 'Failed to add Torbutton to toolbar: '+e);
       }
@@ -477,7 +482,7 @@ function torbutton_confirm_plugins() {
     torbutton_log(3, "False positive on plugin notification. Ignoring");
     return;
   }
-  
+
   torbutton_log(3, "Confirming plugin usage.");
 
   var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
@@ -485,7 +490,7 @@ function torbutton_confirm_plugins() {
 
   // Display two buttons, both with string titles.
   var flags = prompts.STD_YES_NO_BUTTONS + prompts.BUTTON_DELAY_ENABLE;
-      
+
   var message = torbutton_get_property_string("torbutton.popup.confirm_plugins");
   var askAgainText = torbutton_get_property_string("torbutton.popup.never_ask_again");
   var askAgain = {value: false};
@@ -500,7 +505,7 @@ function torbutton_confirm_plugins() {
 
   // The pref observer for "plugin.disable" will set the appropriate plugin state.
   // So, we only touch the pref if it has changed.
-  if (no_plugins != 
+  if (no_plugins !=
       m_tb_prefs.getBoolPref("plugin.disable"))
     m_tb_prefs.setBoolPref("plugin.disable", no_plugins);
   else
@@ -511,12 +516,12 @@ function torbutton_confirm_plugins() {
   var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
                      .getService(Components.interfaces.nsIWindowMediator);
   var browserEnumerator = wm.getEnumerator("navigator:browser");
- 
+
   // Check each browser instance for our URL
   while (browserEnumerator.hasMoreElements()) {
     var browserWin = browserEnumerator.getNext();
     var tabbrowser = browserWin.gBrowser;
- 
+
     // Check each tab of this browser instance
     var numTabs = tabbrowser.browsers.length;
     for (var index = 0; index < numTabs; index++) {
@@ -650,7 +655,7 @@ function torbutton_do_async_versioncheck() {
     req.open('GET', url, true);
     req.channel.loadFlags |= Ci.nsIRequest.LOAD_BYPASS_CACHE;
     req.overrideMimeType("text/json");
-    req.onreadystatechange = function (oEvent) {  
+    req.onreadystatechange = function (oEvent) {
       if (req.readyState === 4) {
         if(req.status == 200) {
           if(!req.responseText) {
@@ -696,8 +701,8 @@ function torbutton_do_async_versioncheck() {
         }
         torbutton_log(5, "Version check failed! Web server error: "+req.status);
         return -1;
-      }  
-    };  
+      }
+    };
     req.send(null);
   } catch(e) {
     if(e.result == 0x80004005) { // NS_ERROR_FAILURE
@@ -1651,13 +1656,6 @@ function torbutton_open_cookie_dialog() {
              'Cookie Protections', 'centerscreen,chrome,dialog,modal,resizable');
 }
 
-// Bug 1506 P2/P3: Prefs are handled differently on android, I guess?
-function torbutton_open_prefs_dialog() {
-  showDialog(window, "chrome://torbutton/content/preferences.xul",
-             "torbutton-preferences","centerscreen, chrome");
-  torbutton_log(2, 'opened preferences window');
-}
-
 // -------------- HISTORY & COOKIES ---------------------
 
 // Bug 1506 P4: Used by New Identity if cookie protections are
@@ -1666,7 +1664,7 @@ function torbutton_clear_cookies() {
     torbutton_log(2, 'called torbutton_clear_cookies');
     var cm = Components.classes["@mozilla.org/cookiemanager;1"]
                     .getService(Components.interfaces.nsICookieManager);
-   
+
     cm.removeAll();
 }
 
@@ -1688,7 +1686,7 @@ function torbutton_disable_browser_js(browser) {
     } catch(e) {
         torbutton_log(4, "Failed to disable JS events: "+e)
     }
-   
+
     if (browser.docShell)
       browser.docShell.allowJavascript = false;
 
@@ -1721,9 +1719,9 @@ function torbutton_disable_window_js(win) {
         var b = browser.browsers[i];
         if (b && !b.docShell) {
             try {
-                if (b.currentURI) 
+                if (b.currentURI)
                     torbutton_log(5, "DocShell is null for: "+b.currentURI.spec);
-                else 
+                else
                     torbutton_log(5, "DocShell is null for unknown URL");
             } catch(e) {
                 torbutton_log(5, "DocShell is null for unparsable URL: "+e);
@@ -1867,12 +1865,12 @@ function torbutton_is_windowed(wind) {
         torbutton_log(2, "Window is fullScreen");
         return false;
     }
-    if(wind.outerHeight == wind.screen.availHeight 
+    if(wind.outerHeight == wind.screen.availHeight
             && wind.outerWidth == wind.screen.availWidth) {
         torbutton_log(3, "Window is ratpoisoned/evilwm'ed");
         return false;
     }
-        
+
     torbutton_log(2, "Window is normal");
     return true;
 }
@@ -1955,12 +1953,7 @@ function torbutton_new_window(event)
                                    Ci.nsIWebProgress.NOTIFY_STATE_DOCUMENT);
     }
 
-    // Register the TorOpenSecuritySettings observer, which is used by
-    // UITour to open the security slider dialog.
-    stopOpenSecuritySettingsObserver = observe("TorOpenSecuritySettings",
-                                               torbutton_open_prefs_dialog);
-
-    // Check the version on every new window. We're already pinging check in these cases.    
+    // Check the version on every new window. We're already pinging check in these cases.
     torbutton_do_async_versioncheck();
 
     torbutton_do_tor_check();
@@ -1977,9 +1970,9 @@ function torbutton_close_window(event) {
         false);
 
     // TODO: This is a real ghetto hack.. When the original window
-    // closes, we need to find another window to handle observing 
-    // unique events... The right way to do this is to move the 
-    // majority of torbutton functionality into a XPCOM component.. 
+    // closes, we need to find another window to handle observing
+    // unique events... The right way to do this is to move the
+    // majority of torbutton functionality into a XPCOM component..
     // But that is a major overhaul..
     if (m_tb_is_main_window) {
         torbutton_log(3, "Original window closed. Searching for another");

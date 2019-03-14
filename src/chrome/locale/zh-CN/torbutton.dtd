@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "为此站点使用新 Tor 线路">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "安全设置…">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor 网络设置…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Tor Browser 检查更新…">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "点此初始化 Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Tor 浏览器安全设置">
-<!ENTITY torbutton.prefs.restore_defaults "恢复默认设置">
-<!ENTITY torbutton.prefs.custom_warning "您自定义的浏览器设置导致了不安全的安全设置。出于安全和隐私考虑，我们建议您选择一个默认的安全级别。">
 <!ENTITY torbutton.cookiedialog.title "管理受保护的 Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "受保护">
 <!ENTITY torbutton.cookiedialog.domainCol "主机">

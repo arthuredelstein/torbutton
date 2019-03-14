@@ -27,11 +27,6 @@
                   insertafter="context-stop"
                   hidden="true"
                   oncommand="torbutton_open_cookie_dialog()"/>
-        <menuitem id="torbutton-preferences"
-                  label="&torbutton.context_menu.preferences;"
-                  accesskey="&torbutton.context_menu.preferences.key;"
-                  insertafter="context-stop"
-                  oncommand="torbutton_open_prefs_dialog()"/>
         <menuitem id="torbutton-networksettings"
                   label="&torbutton.context_menu.networksettings;"
                   accesskey="&torbutton.context_menu.networksettings.key;"

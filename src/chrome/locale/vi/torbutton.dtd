@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Mạch nối Tor mới cho trang này">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Những cài đặt về an ninh...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Những cài đặt Mạng Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Kiểm tra Bản cập nhật của trình duyệt Tor...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Bấm chuột để khởi chạy Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Những cài đặt bảo mật cho trình duyệt Tor">
-<!ENTITY torbutton.prefs.restore_defaults "Khôi phục trạng thái mặc định">
-<!ENTITY torbutton.prefs.custom_warning "Những điều chỉnh trong trình duyệt của bạn vừa tạo ra những lỗi bảo mật bất thường. Vì những lý do bảo mật và riêng tư, chúng tôi khuyến cáo bạn chọn những cấp độ bảo mật mặc định khác.">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

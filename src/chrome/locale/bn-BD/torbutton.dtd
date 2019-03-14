@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "এই সাইটের জন্য নতুন টর সার্কিট">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "নিরাপত্তা বিন্যাস…">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "টর নেটওয়ার্ক সেটিংস ...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "টর ব্রাউজার আপডেটের জন্য চেক করুন ...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbutton আরম্ভ করার জন্য ক্লিক করুন">
 <!ENTITY torbutton.prefs.security_settings "টর ব্রাউজার নিরাপত্তা সেটিংস">
-<!ENTITY torbutton.prefs.restore_defaults "পূর্বনির্ধারন পুনরুধার">
-<!ENTITY torbutton.prefs.custom_warning "আপনার কাস্টম ব্রাউজারের পছন্দগুলির কারণে অস্বাভাবিক নিরাপত্তা সেটিংস দেখা দিয়েছে নিরাপত্তা এবং গোপনীয়তার কারণে, আমরা আপনাকে ডিফল্ট নিরাপত্তা স্তরগুলির একটি চয়ন করার সুপারিশ করি।">
 <!ENTITY torbutton.cookiedialog.title "কুকি প্রোটেকশনগুলি পরিচালনা করুন">
 <!ENTITY torbutton.cookiedialog.lockCol "রক্ষিত">
 <!ENTITY torbutton.cookiedialog.domainCol "নিমন্ত্রণকর্তা">

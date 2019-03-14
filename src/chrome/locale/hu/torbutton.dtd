@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "S">
 <!ENTITY torbutton.context_menu.new_circuit "Új Tor áramkör ehhez az oldalhoz">
 <!ENTITY torbutton.context_menu.new_circuit_key "S">
-<!ENTITY torbutton.context_menu.preferences "Biztonsági beállítások...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor hálózati beállítások">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Tor Browser frissítések keresése">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "S">
 <!ENTITY torbutton.button.tooltip "Kattintson a Torbutton inicializálásához">
 <!ENTITY torbutton.prefs.security_settings "Tor Browser biztonsági beállítások">
-<!ENTITY torbutton.prefs.restore_defaults "Alapértelmezések visszaállítása">
-<!ENTITY torbutton.prefs.custom_warning "Az Ön által eszközölt egyéni böngészői beállítások eredményeképp biztonsági kockázatok merülhetnek fel. Biztonsági és adatvédelmi szempontokból kérjük válasszon az alapértelmezett biztonsági szintek közül.">
 <!ENTITY torbutton.cookiedialog.title "Süti védelem kezelése">
 <!ENTITY torbutton.cookiedialog.lockCol "Védett">
 <!ENTITY torbutton.cookiedialog.domainCol "Állomás">

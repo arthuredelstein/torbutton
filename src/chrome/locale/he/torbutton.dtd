@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "נתיב Tor חדש לאתר זה">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "הגדרות אבטחה...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "הגדרות רשת Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "בדוק אחר עדכון לדפדפן Tor...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "לחץ בכדי לאתחל את Torbutton">
 <!ENTITY torbutton.prefs.security_settings "הגדרות אבטחה של דפדפן Tor">
-<!ENTITY torbutton.prefs.restore_defaults "שחזר ברירות מחדל">
-<!ENTITY torbutton.prefs.custom_warning "העדפות הדפדפן המותאמות שלך נבעו מהגדרות אבטחה בלתי שגרתיות. מטעמי אבטחה ופרטיות, אנו ממליצים לך לבחור באחת מרמות האבטחה של ברירת המחדל.">
 <!ENTITY torbutton.cookiedialog.title "נהל הגנות עוגיות">
 <!ENTITY torbutton.cookiedialog.lockCol "מוגן">
 <!ENTITY torbutton.cookiedialog.domainCol "מארח">

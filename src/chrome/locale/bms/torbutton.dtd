@@ -1,7 +1,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbutton စတင္ရန္ ကလစ္လုပ္ပါ">
-<!ENTITY torbutton.prefs.restore_defaults "မူလအေျခအေနသို႕ ျပန္လည္ ထည့္သြင္းရန္">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

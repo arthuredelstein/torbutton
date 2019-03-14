@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nuevo Circuito Tor para este Sitio">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Configuración de Seguridad...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Configuraciones de la Red de Tor">
 <!ENTITY torbutton.context_menu.networksettings.key "R">
 <!ENTITY torbutton.context_menu.downloadUpdate "Comprobar si hay Actualización para el Navegador Tor">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "K">
 <!ENTITY torbutton.button.tooltip "Cliqueá para inicializar Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Configuración de Seguridad del Navegador Tor">
-<!ENTITY torbutton.prefs.restore_defaults "Restablecer valores por defecto">
-<!ENTITY torbutton.prefs.custom_warning "Tus preferencias personalizadas del navegador han resultado en ajustes de seguridad inusuales. Por razones de seguridad y privacidad, recomendamos que elijas uno de los niveles de seguridad por defecto.">
 <!ENTITY torbutton.cookiedialog.title "Manejar la Protección de cookies">
 <!ENTITY torbutton.cookiedialog.lockCol "Protegido">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

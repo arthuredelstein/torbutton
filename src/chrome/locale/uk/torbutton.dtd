@@ -6,7 +6,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "Захист куки">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Клацніть для запуску Torbutton">
-<!ENTITY torbutton.prefs.restore_defaults "За Замовчуванням">
 <!ENTITY torbutton.cookiedialog.title "Керувати Захистом Куків">
 <!ENTITY torbutton.cookiedialog.lockCol "Захищено">
 <!ENTITY torbutton.cookiedialog.domainCol "Хост">

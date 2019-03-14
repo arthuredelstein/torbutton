@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "o">
 <!ENTITY torbutton.context_menu.new_circuit "Nowy obwód dla tej strony">
 <!ENTITY torbutton.context_menu.new_circuit_key "c">
-<!ENTITY torbutton.context_menu.preferences "Ustawienia bezpieczeństwa...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Ustawienia Sieci Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Sprawdź czy są aktualizacje Tor Browser...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "c">
 <!ENTITY torbutton.button.tooltip "Kliknij tutaj, aby uruchomić Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Ustawienia Bezpieczeństwa Przeglądarki Tor">
-<!ENTITY torbutton.prefs.restore_defaults "Przywróć domyślne">
-<!ENTITY torbutton.prefs.custom_warning "Niestandardowe preferencje przeglądarki spowodowały nietypowe ustawienia zabezpieczeń. Ze względów bezpieczeństwa i prywatności zalecamy wybranie jednego z domyślnych poziomów zabezpieczeń.">
 <!ENTITY torbutton.cookiedialog.title "Zarządzaj ochroną ciasteczek">
 <!ENTITY torbutton.cookiedialog.lockCol "Chronione">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

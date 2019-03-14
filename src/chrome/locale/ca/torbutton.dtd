@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nou circuit Tor per a aquest lloc">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Paràmetres de seguretat...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Preferències de la Xarxa Tor...7">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Cerca una actualització del navegador Tor...">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Feu clic per a iniciar Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Paràmetres de seguretat del navegador Tor">
-<!ENTITY torbutton.prefs.restore_defaults "Torna a les opcions per defecte">
-<!ENTITY torbutton.prefs.custom_warning "El navegador personalitzat ha obtingut uns paràmetres inusuals de seguretat. Per raons de privacitat i de seguretat, recomanem l'elecció d'un nivell de seguretat per defecte.">
 <!ENTITY torbutton.cookiedialog.title "Configura proteccions de les galetes">
 <!ENTITY torbutton.cookiedialog.lockCol "Protegit">
 <!ENTITY torbutton.cookiedialog.domainCol "Allotjador">

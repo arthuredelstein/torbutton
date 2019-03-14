@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Neuer Kanal für diese Seite">
 <!ENTITY torbutton.context_menu.new_circuit_key "K">
-<!ENTITY torbutton.context_menu.preferences "Sicherheitseinstellungen …">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor-Netzwerk-Einstellungen …">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Auf Tor-Browser-Aktualisierungen prüfen …">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klicken, um Torbutton zu aktivieren">
 <!ENTITY torbutton.prefs.security_settings "Tor-Browser-Sicherheitseinstellungen">
-<!ENTITY torbutton.prefs.restore_defaults "Standardeinstellungen wiederherstellen">
-<!ENTITY torbutton.prefs.custom_warning "Ihre benutzerdefinierten Browser-Einstellungen haben zu ungewöhnlichen Sicherheitseinstellungen geführt. Aus Gründen der Sicherheit und Privatsphäre empfehlen wir dir eine der vorgegebenen Sicherheitsstufen auszuwählen.">
 <!ENTITY torbutton.cookiedialog.title "Cookie-Schutz verwalten">
 <!ENTITY torbutton.cookiedialog.lockCol "Geschützt">
 <!ENTITY torbutton.cookiedialog.domainCol "Rechner">
@@ -27,8 +23,7 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neue Cookies nicht schützen">
 <!ENTITY torbutton.prefs.sec_caption "Sicherheitsstufe">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Mit dem Sicherheitsschieberegler kannst du bestimmte Browserfunktionen, die deinen Browser für mögliche Attacken anfälliger machen, deaktivieren.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard
-">
+<!ENTITY torbutton.prefs.sec_standard_label "Standard">
 <!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser und Webseiten Funktionen sind aktiviert.">
 <!ENTITY torbutton.prefs.sec_safer_label "Sicherer">
 <!ENTITY torbutton.prefs.sec_safer_description "Deaktiviert Webseiten-Funktionen, die oft gefährlich sind. Sorgt dafür, dass manche Seiten nicht mehr so gut funktionieren">

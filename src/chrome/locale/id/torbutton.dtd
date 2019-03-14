@@ -2,8 +2,6 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Sirkuit Tor Baru untuk Situs ini">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.preferences "Pengaturan Keamanan...">
-<!ENTITY torbutton.context_menu.preferences.key "S">
 <!ENTITY torbutton.context_menu.networksettings "Pengaturan Jaringan Tor…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Cek Versi Peramban Tor Terkini">
@@ -12,8 +10,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik untuk mengaktifkan TombolTor">
 <!ENTITY torbutton.prefs.security_settings "Pengaturan Keamanan Tor Browser">
-<!ENTITY torbutton.prefs.restore_defaults "Kembalikan Kestandar">
-<!ENTITY torbutton.prefs.custom_warning "Preferensi browser khusus anda telah membuat pengaturan keamanan yang tidak biasa. Untuk alasan keamanan dan privasi, kami menyarankan anda untuk memilih satu dari tingkat keamanan bawaan.">
 <!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
 <!ENTITY torbutton.cookiedialog.lockCol "Protected">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">

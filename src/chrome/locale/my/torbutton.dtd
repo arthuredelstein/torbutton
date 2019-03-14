@@ -6,7 +6,6 @@
 <!ENTITY torbutton.context_menu.cookieProtections "ကွတ်ကီး ကာကွယ်မှုများ">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbutton ကို အစပြုရန် နှိပ်ပါ။">
-<!ENTITY torbutton.prefs.restore_defaults " မူလအတိုင်း ပြန်ထားရန်">
 <!ENTITY torbutton.cookiedialog.title "ကွတ်ကီး ကာကွယ်မှုများကို စီမံခန့်ခွဲရန်">
 <!ENTITY torbutton.cookiedialog.lockCol "အကာအကွယ် လုပ်ထားသည်">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
