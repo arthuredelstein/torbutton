@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Pemutakhiran peramban Tor">
-<!ENTITY aboutTBUpdate.updated "Peramban Tor telah diperbarui.">
+<!ENTITY aboutTBUpdate.changelogTitle "Catatan Perubahan Tor Browser">
+<!ENTITY aboutTBUpdate.updated "Tor Browser telah diperbarui.">
 <!ENTITY aboutTBUpdate.linkPrefix "Untuk informasi paling terbaru mengenai rilisan ini,">
 <!ENTITY aboutTBUpdate.linkLabel  "kunjungi situs web kami">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Catatan Perubahan:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Circuit Display yang Baru dan Didesain ulang">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Tor circuit display telah dipindahkan dan ditingkatkan! Klik tombol Site&#160;Identity (ada di sebelah kiri URL bar) untuk melihat circuit display yang baru.">
-<!ENTITY aboutTBUpdate.learnMore "Pelajari lebih lanjut">
+<!ENTITY aboutTBUpdate.version "Versi">
+<!ENTITY aboutTBUpdate.releaseDate "Tanggal Rilis">
+<!ENTITY aboutTBUpdate.releaseNotes "Catatan Rilis">

@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Αναβάθμιση του Tor Browser">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Ο Tor Browser αναβαθμίστηκε.">
 <!ENTITY aboutTBUpdate.linkPrefix "Για τις πιο πρόσφατες πληροφορίες για αυτή την έκδοση,">
 <!ENTITY aboutTBUpdate.linkLabel  "επισκεφθείτε την ιστοσελίδα μας">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Αλλαγές:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Νέα, επανασχεδιασμένη παρουσίαση κυκλώματος">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Το κύκλωμα του Tor έχει αλλάξει τοποθεσία και βελτιώθηκε! Κάντε κλικ στη σελίδα&#160;Κουμπί ταυτότητας (βρίσκεται στην αριστερή πλευρά της γραμμής διεύθυνσης) για να δείτε την καινούρια παρουσίαση κυκλώματος.">
-<!ENTITY aboutTBUpdate.learnMore "Μάθετε περισσότερα">
+<!ENTITY aboutTBUpdate.version "Έκδοση">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">

@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Tor에 대해서">
 
+<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+
 <!ENTITY aboutTor.ready.label "은밀하게 탐색하십시오.">
 <!ENTITY aboutTor.ready2.label "당신은 온세상이 가장 은밀한 탐색의 경험을 준비가 되었습니다.">
 <!ENTITY aboutTor.failure.label "뭔가 잘못되었습니다!">

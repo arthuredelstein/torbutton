@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Tor Browser Update">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser wurde aktualisiert.">
 <!ENTITY aboutTBUpdate.linkPrefix "Für die aktuellsten Informationen zu diesem Release, ">
 <!ENTITY aboutTBUpdate.linkLabel  "besuche unsere Website">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Changelog:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Neu, Überarbeitete Circuit-Anzeige">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Die Tor-Circuit-Anzeige wurde verschoben und verbessert! Klicke auf den Knopf Site&#160;Identity (links in der URL-Leiste), um die neue Circuit-Anzeige zu sehen.">
-<!ENTITY aboutTBUpdate.learnMore "Mehr erfahren">
+<!ENTITY aboutTBUpdate.version "Version">
+<!ENTITY aboutTBUpdate.releaseDate "Erscheinungsdatum">
+<!ENTITY aboutTBUpdate.releaseNotes "Versionshinweise">

@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Tor-ბრაუზერის განახლება">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor-ბრაუზერის ცვლილებების ისტორია">
 <!ENTITY aboutTBUpdate.updated "Tor-ბრაუზერი განახლებულია.">
 <!ENTITY aboutTBUpdate.linkPrefix "ამ გამოშვების შესახებ უახლესი ინფორმაციის მისაღებად, ">
 <!ENTITY aboutTBUpdate.linkLabel  "ეწვიეთ ჩვენს ვებსაიტს">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "ცვლილებები:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "კავშირის წრედის არე განახლებული იერსახით">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Tor-ის კავშირის წრედის არემ ადგილი შეიცვალა და მეტად გაუმჯობესებულია! დაწკაპეთ საიტის&#160;ნამდვილობის (მისამართების ველის მარცხნივ განთავსებულ) აღმნიშვნელ ნიშანზე, განახლებული წრედის არეს გამოსაჩენად.">
-<!ENTITY aboutTBUpdate.learnMore "იხილეთ ვრცლად">
+<!ENTITY aboutTBUpdate.version "ვერსია">
+<!ENTITY aboutTBUpdate.releaseDate "გამოშვების თარიღი">
+<!ENTITY aboutTBUpdate.releaseNotes "გამოშვების შენიშვნები">

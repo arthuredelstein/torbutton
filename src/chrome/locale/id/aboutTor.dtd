@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Tentang Tor">
 
+<!ENTITY aboutTor.viewChangelog.label "Lihat Catatan Perubahan">
+
 <!ENTITY aboutTor.ready.label "Jelajahi. Secara Privat.">
 <!ENTITY aboutTor.ready2.label "Anda siap untuk pengalaman menjelajah yang paling privat di dunia.">
 <!ENTITY aboutTor.failure.label "Ada Masalah!">

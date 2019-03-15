@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "بروز رسانی مرورگر تور">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "مرورگر تور به‌روز شده است.">
 <!ENTITY aboutTBUpdate.linkPrefix "به منظور جدیدترین اطلاعات درباره‌ی این نسخه،">
 <!ENTITY aboutTBUpdate.linkLabel  "از وب‌سایت ما دیدن کنید">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "لیست تغییرات:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "نمایش جدید و دوباره طراحی شده‌ی جریان">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "نمایش جریان تور نقل مکان و بهبود یافت! بر روی دکمه ی هویت&#160;سایت کلیک کنید (که در سمت چپ نوار آدرس اینترنتی قرار دارد) تا نمایش جدید جریان را ببینید.">
-<!ENTITY aboutTBUpdate.learnMore "بیشتر بدانید">
+<!ENTITY aboutTBUpdate.version "نسخه">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "توضیحات انتشار">

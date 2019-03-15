@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "אודות Tor">
 
+<!ENTITY aboutTor.viewChangelog.label "הצג יומן שינויים">
+
 <!ENTITY aboutTor.ready.label "חקור. בפרטיות.">
 <!ENTITY aboutTor.ready2.label "אתה מוכן לחוויה של הגלישה הפרטית ביותר של העולם.">
 <!ENTITY aboutTor.failure.label "משהו השתבש!">

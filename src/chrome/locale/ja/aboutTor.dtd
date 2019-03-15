@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Tor について">
 
+<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+
 <!ENTITY aboutTor.ready.label "探索する。 プライベートに。">
 <!ENTITY aboutTor.ready2.label "世界で最もプライベートなブラウジングを体験する準備が整いました。">
 <!ENTITY aboutTor.failure.label "何かが間違っています！">

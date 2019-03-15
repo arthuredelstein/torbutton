@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Tor Hakkında">
 
+<!ENTITY aboutTor.viewChangelog.label "Değişiklik Günlüğünü Görüntüle">
+
 <!ENTITY aboutTor.ready.label "Keşfet. Gizlice.">
 <!ENTITY aboutTor.ready2.label "Dünyanın en kişisel web tarama deneyimine hazırsınız.">
 <!ENTITY aboutTor.failure.label "Bir Şeyler Ters Gitti!">

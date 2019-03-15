@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "עדכון דפדפן Tor">
+<!ENTITY aboutTBUpdate.changelogTitle "יומן שינויים של דפדפן Tor">
 <!ENTITY aboutTBUpdate.updated "דפדפן Tor עודכן.">
 <!ENTITY aboutTBUpdate.linkPrefix "למידע המעודכן ביותר לגבי שחרור זה, ">
 <!ENTITY aboutTBUpdate.linkLabel  "בקר באתר שלנו">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "יומן שינויים:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "תצוגה חדשה ומעוצבת מחדש של מעגל">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "תצוגת מעגל של Tor מוקמה מחדש ושופרה! לחץ על כפתור&#160;הזיהוי של אתרים (ממוקם בצד השמאלי של שורת הכתובת) כדי לראות את תצוגת המעגל החדשה.">
-<!ENTITY aboutTBUpdate.learnMore "למד עוד">
+<!ENTITY aboutTBUpdate.version "גרסה">
+<!ENTITY aboutTBUpdate.releaseDate "תאריך שחרור">
+<!ENTITY aboutTBUpdate.releaseNotes "הערות שחרור">

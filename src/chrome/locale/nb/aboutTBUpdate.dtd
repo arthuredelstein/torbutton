@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Oppdatering av Tor-nettleseren">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor-nettleseren har blitt oppdatert.">
 <!ENTITY aboutTBUpdate.linkPrefix "For den mest oppdaterte informasjonen om denne utgivelsen,">
 <!ENTITY aboutTBUpdate.linkLabel  "besøk vårt nettsted">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Endringslogg:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "New, Redesigned Circuit Display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
-<!ENTITY aboutTBUpdate.learnMore "Lær mer">
+<!ENTITY aboutTBUpdate.version "Versjon">
+<!ENTITY aboutTBUpdate.releaseDate "Utgivelsesdato">
+<!ENTITY aboutTBUpdate.releaseNotes "Versjonsnotater">

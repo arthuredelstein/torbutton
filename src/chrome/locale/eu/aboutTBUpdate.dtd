@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Tor nabigatzailearen eguneraketa">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor nabigatzailea eguneratu egin da.">
 <!ENTITY aboutTBUpdate.linkPrefix "Eguneraketa honen inguruko azken informazioa lortzeko,">
 <!ENTITY aboutTBUpdate.linkLabel  "ikusi ezazu gure webgunea">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Aldaketen zerrenda:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "New, Redesigned Circuit Display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
-<!ENTITY aboutTBUpdate.learnMore "Ikasi gehiago">
+<!ENTITY aboutTBUpdate.version "Bertsioa">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">

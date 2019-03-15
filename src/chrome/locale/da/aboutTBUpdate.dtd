@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Opdateringer til Tor Browser">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser er blevet opdateret.">
 <!ENTITY aboutTBUpdate.linkPrefix "For den mest aktuelle information om denne udgivelse,">
 <!ENTITY aboutTBUpdate.linkLabel  "Besøg vores webside">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Ændringslog:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Nyt, redesignet kredsløb-display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Tors kredsløb-display er blev flyttet og forbedret! Klik på stedets identitet-knap (findes på venstre side af URL-linjen) for at se det nye kredskøb-display.">
-<!ENTITY aboutTBUpdate.learnMore "Læs mere">
+<!ENTITY aboutTBUpdate.version "Version">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">

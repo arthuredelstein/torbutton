@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Tor Browser アップデート">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser アップデート完了">
 <!ENTITY aboutTBUpdate.linkPrefix "このリリースについての最新情報を入手するため、">
 <!ENTITY aboutTBUpdate.linkLabel  "我々のウェブサイトを見てください">
 <!ENTITY aboutTBUpdate.linkSuffix "。">
-<!ENTITY aboutTBUpdate.changeLogHeading "変更履歴">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "New, Redesigned Circuit Display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
-<!ENTITY aboutTBUpdate.learnMore "さらに詳しく">
+<!ENTITY aboutTBUpdate.version "バージョン">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "リリースノート">

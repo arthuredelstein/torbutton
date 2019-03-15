@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Nuashonrú Brabhsálaí Tor">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Nuashonraíodh Brabhsálaí Tor">
 <!ENTITY aboutTBUpdate.linkPrefix "Chun teacht ar an eolas is déanaí maidir leis an leagan seo, ">
 <!ENTITY aboutTBUpdate.linkLabel  "tabhair cuairt ar ár suíomh Gréasáin">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Logchomhad athruithe:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Dearadh Nua ar Thaispeántas an Chiorcaid">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Chuireamar feabhas ar thaispeántas an chiorcaid, agus tá sé in áit nua freisin! Cliceáil an cnaipe Eolas&#160;faoin&#160;suíomh (ar an taobh clé den bharra URL) chun an taispeántas nua a fheiceáil.">
-<!ENTITY aboutTBUpdate.learnMore "Tuilleadh Eolais">
+<!ENTITY aboutTBUpdate.version "Leagan">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">

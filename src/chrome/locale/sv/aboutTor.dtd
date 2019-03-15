@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Om Tor">
 
+<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+
 <!ENTITY aboutTor.ready.label "Utforska. Privat.">
 <!ENTITY aboutTor.ready2.label "Du är redo för världens mest privata surfupplevelse.">
 <!ENTITY aboutTor.failure.label "Någonting gick fel!">

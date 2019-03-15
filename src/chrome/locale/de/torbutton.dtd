@@ -23,7 +23,8 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neue Cookies nicht schützen">
 <!ENTITY torbutton.prefs.sec_caption "Sicherheitsstufe">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Mit dem Sicherheitsschieberegler kannst du bestimmte Browserfunktionen, die deinen Browser für mögliche Attacken anfälliger machen, deaktivieren.">
-<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_label "Standard
+">
 <!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser und Webseiten Funktionen sind aktiviert.">
 <!ENTITY torbutton.prefs.sec_safer_label "Sicherer">
 <!ENTITY torbutton.prefs.sec_safer_description "Deaktiviert Webseiten-Funktionen, die oft gefährlich sind. Sorgt dafür, dass manche Seiten nicht mehr so gut funktionieren">

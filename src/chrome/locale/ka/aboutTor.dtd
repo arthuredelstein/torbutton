@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Tor-ის შესახებ">
 
+<!ENTITY aboutTor.viewChangelog.label "ცვლილებების ნახვა">
+
 <!ENTITY aboutTor.ready.label "მოინახულეთ. უსაფრთხოდ.">
 <!ENTITY aboutTor.ready2.label "თქვენ მზად ხართ მსოფლიოში ყველაზე მეტად დაცული და პირადი ბრაუზერის გამოყენებისთვის.">
 <!ENTITY aboutTor.failure.label "რაღაც რიგზე ვერაა!">

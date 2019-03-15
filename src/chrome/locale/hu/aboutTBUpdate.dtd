@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Tor Browser Frissítés">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser frissítve.">
 <!ENTITY aboutTBUpdate.linkPrefix "Az erről a kiadásról szóló legfrissebb információkért">
 <!ENTITY aboutTBUpdate.linkLabel  "látogassa meg weboldalunkat">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Változások listája:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Új, áttervezett áramkör megjelenítés">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "A Tor áramkör megjelenítés áthelyezésre és fejlesztésre került. Kattintson az Oldal&#160;Identitás gombra (az URL sáv bal oldalánál) az új áramkör megjelenítés megtekintéséhez.">
-<!ENTITY aboutTBUpdate.learnMore "Tudjon meg többet">
+<!ENTITY aboutTBUpdate.version "Verzió">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Verziókövetési jegyzet">

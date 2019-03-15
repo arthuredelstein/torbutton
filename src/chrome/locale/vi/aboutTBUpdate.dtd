@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Nâng cấp trình duyệt Tor">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Trình duyệt Tor đã được cập nhật">
 <!ENTITY aboutTBUpdate.linkPrefix "Dành cho những thông tin cập nhật mới nhất về bản phát hành này,">
 <!ENTITY aboutTBUpdate.linkLabel  "đến thăm trang của chúng tôi">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Nhật ký thay đổi:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "New, Redesigned Circuit Display">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "The Tor circuit display has been relocated and improved! Click the Site&#160;Identity button (located on the left side of the URL bar) to see the new circuit display.">
-<!ENTITY aboutTBUpdate.learnMore "Learn More">
+<!ENTITY aboutTBUpdate.version "Phiên bản">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Ghi chú phát hành">

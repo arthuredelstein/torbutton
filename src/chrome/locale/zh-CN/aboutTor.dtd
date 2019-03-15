@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "关于 Tor">
 
+<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+
 <!ENTITY aboutTor.ready.label "私密浏览">
 <!ENTITY aboutTor.ready2.label "欢迎体验最私密的浏览。">
 <!ENTITY aboutTor.failure.label "出错了！">

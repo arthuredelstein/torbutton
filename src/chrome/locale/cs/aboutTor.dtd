@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "O Toru">
 
+<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+
 <!ENTITY aboutTor.ready.label "Prohlížejte v soukromí.">
 <!ENTITY aboutTor.ready2.label "Vše je připraveno pro maximální soukromí Vašeho prohlížení.">
 <!ENTITY aboutTor.failure.label "Něco se pokazilo!">

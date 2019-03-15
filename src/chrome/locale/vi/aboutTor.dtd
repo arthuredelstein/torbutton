@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Thông tin về Tor">
 
+<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+
 <!ENTITY aboutTor.ready.label "Truy cập Internet. Một cách riêng tư.">
 <!ENTITY aboutTor.ready2.label "Bạn đã sẵn sàng cho trải nghiệm duyệt web riêng tư nhất trên thế giới.">
 <!ENTITY aboutTor.failure.label "Có Lỗi Xảy Ra!">

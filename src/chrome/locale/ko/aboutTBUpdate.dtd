@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Tor 브라우저 업데이트">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor 브라우저가 업데이트되었습니다.">
 <!ENTITY aboutTBUpdate.linkPrefix "이번 업데이트에 대해 더 알고 싶으시면">
 <!ENTITY aboutTBUpdate.linkLabel  "저희 사이트를 방문해 주세요">
 <!ENTITY aboutTBUpdate.linkSuffix " ">
-<!ENTITY aboutTBUpdate.changeLogHeading "변경사항:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "서킷 표시가 일신하고 재설계했습니다">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Tor 서킷 표시를 이전하고 개량했습니다! 새 서킷 표시를 보려고 Site&#160;Identity 버튼 (URL 막대의 왼쪽) 클릭하십시오.">
-<!ENTITY aboutTBUpdate.learnMore "더 알아보기">
+<!ENTITY aboutTBUpdate.version "버젼">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "릴리즈 노트">

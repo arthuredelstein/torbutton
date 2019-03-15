@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Tor Browser Güncellemesi">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Değişiklik Günlüğü">
 <!ENTITY aboutTBUpdate.updated "Tor Browser güncellendi.">
 <!ENTITY aboutTBUpdate.linkPrefix "Bu sürüm hakkındaki güncelleme bilgilerinin çoğu ">
 <!ENTITY aboutTBUpdate.linkLabel  "web sitemizden edinilebilir">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Sürüm notları:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Yeni, Yeniden Tasarlanmış Devre Görünümü">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Tor devresi görünümünün konumu değiştirildi ve geliştirildi! Site Kimliği Düğmesine (adres çubuğunun sol tarafında bulunan) tıklayarak yeni devre görünümüne bakabilirsiniz.">
-<!ENTITY aboutTBUpdate.learnMore "Ayrıntılı Bilgi Alın">
+<!ENTITY aboutTBUpdate.version "Sürüm">
+<!ENTITY aboutTBUpdate.releaseDate "Yayım Tarihi">
+<!ENTITY aboutTBUpdate.releaseNotes "Yayım Notları">

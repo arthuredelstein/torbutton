@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "更新 Tor Browser">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser 更新完成。">
 <!ENTITY aboutTBUpdate.linkPrefix "有关此版本的最新信息，">
 <!ENTITY aboutTBUpdate.linkLabel  "访问我们的网站">
 <!ENTITY aboutTBUpdate.linkSuffix "。">
-<!ENTITY aboutTBUpdate.changeLogHeading "更新日志：">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "重新设计的全新线路显示">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Tor 线路显示移动了位置而且更进一步，点击站点与身份按钮（在地址栏的左边）来查看新的线路显示界面。">
-<!ENTITY aboutTBUpdate.learnMore "了解更多">
+<!ENTITY aboutTBUpdate.version "版本">
+<!ENTITY aboutTBUpdate.releaseDate "发布日期">
+<!ENTITY aboutTBUpdate.releaseNotes "发行说明">

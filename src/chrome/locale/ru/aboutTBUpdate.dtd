@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Обновление Tor Browser">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser обновлен.">
 <!ENTITY aboutTBUpdate.linkPrefix "Самая свежая информация об этой версии — ">
 <!ENTITY aboutTBUpdate.linkLabel  "на нашем сайте">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Журнал изменений:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Цепочка Tor отображается по-новому">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Цепочка узлов Tor теперь имеет другой, улучшенный вид. Нажмите на значок слева от адреса сайта, чтобы увидеть цепочку.">
-<!ENTITY aboutTBUpdate.learnMore "Подробнее">
+<!ENTITY aboutTBUpdate.version "Версия">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">

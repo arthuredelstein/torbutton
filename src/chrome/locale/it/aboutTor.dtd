@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Info su Tor">
 
+<!ENTITY aboutTor.viewChangelog.label "Vedi cronologia">
+
 <!ENTITY aboutTor.ready.label "Naviga. Privatamente.">
 <!ENTITY aboutTor.ready2.label "Sei pronto per l'esperienza di navigazione più privata al mondo.">
 <!ENTITY aboutTor.failure.label "Qualcosa è Andato Storto!">

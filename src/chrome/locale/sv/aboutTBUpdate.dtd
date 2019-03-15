@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Tor Browser-uppdatering">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser har uppdaterats.">
 <!ENTITY aboutTBUpdate.linkPrefix "För den senaste information om den här versionen,">
 <!ENTITY aboutTBUpdate.linkLabel  "besök vår hemsida">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Ändringslogg:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Ny, omformad kretsrutan">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Tor-kretsrutan har flyttats och förbättrats! Klicka på webbplatsen&#160;Identitetsknapp (ligger på vänster sida av webbadressfältet) för att se den nya kretsrutan.">
-<!ENTITY aboutTBUpdate.learnMore "Läs mer">
+<!ENTITY aboutTBUpdate.version "Version">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">

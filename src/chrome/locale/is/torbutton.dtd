@@ -31,7 +31,7 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Öruggast">
 <!ENTITY torbutton.prefs.sec_safest_description "Leyfir aðeins þá eiginleika vefsvæða sem krafist er fyrir beinan lestur (static sites) og grunnþjónustur. Þessar breytingar hafa áhrif á myndir, margmiðlunargögn og skriftur.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Með öruggustu stillingum:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Læra meira">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Fræðast frekar">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript er óvirkt á öllum ekki-HTTPS vefjum.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript er sjálfgefið óvirkt á öllum vefsvæðum.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Sumt letur og stærðfræðitákn eru óvirk.">

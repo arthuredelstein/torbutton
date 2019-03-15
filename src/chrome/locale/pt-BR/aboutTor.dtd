@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Sobre Tor">
 
+<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+
 <!ENTITY aboutTor.ready.label "Navegar. Com privacidade.">
 <!ENTITY aboutTor.ready2.label "Você está pronto para a maior experiência de navegação privada do mundo.">
 <!ENTITY aboutTor.failure.label "Alguma coisa deu errado!">

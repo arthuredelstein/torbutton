@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Uppfærsla Tor-vafra">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor-vafrinn var uppfærður.">
 <!ENTITY aboutTBUpdate.linkPrefix "Til að sjá allra nýjustu upplýsingar um þessa útgáfu,">
 <!ENTITY aboutTBUpdate.linkLabel  "heimsæktu vefsvæðið okkar">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Breytingaannáll:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Ný, endurhönnuð birting rása">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Birting rása í Tor hefur verið flutt á nýjan stað og endurhönnuð! Smelltu á  Vefsvæði&#160;Auðkenni hnappinn (vinstra megin við staðsetningarstikuna) til að sjá nýja framsetningu rása.">
-<!ENTITY aboutTBUpdate.learnMore "Fræðast frekar">
+<!ENTITY aboutTBUpdate.version "Útgáfa">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">

@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Aktualizacja przeglądarki Tor">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser została zaktualizowana.">
 <!ENTITY aboutTBUpdate.linkPrefix "Aby uzyskać najbardziej aktualne informacje o tym wydaniu,">
 <!ENTITY aboutTBUpdate.linkLabel  "odwiedź naszą stronę internetową">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Lista zmian:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Nowy, przeprojektowany wyświetlacz obwodu">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "Wyświetlacz obwodu Tor został przeniesiony i ulepszony! Kliknij przycisk Identyfikacja strony&#160;(znajdujący się po lewej stronie paska adresu URL), aby zobaczyć nowy widok obwodu.">
-<!ENTITY aboutTBUpdate.learnMore "Dowiedz się więcej">
+<!ENTITY aboutTBUpdate.version "Wersja">
+<!ENTITY aboutTBUpdate.releaseDate "Data wydania">
+<!ENTITY aboutTBUpdate.releaseNotes "Informacje o wydaniu">

@@ -1,10 +1,8 @@
-<!ENTITY aboutTBUpdate.title "Actualització del navegador Tor">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
 <!ENTITY aboutTBUpdate.updated "El navegador Tor s'ha actualitzat. ">
 <!ENTITY aboutTBUpdate.linkPrefix "Per la informació més actualitzada sobre aquesta versió,">
 <!ENTITY aboutTBUpdate.linkLabel  "visiteu el lloc web">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
-<!ENTITY aboutTBUpdate.changeLogHeading "Registre de canvis:">
-
-<!ENTITY aboutTBUpdate.circuitDisplayHeading "Nova pantalla de circuits redissenyats">
-<!ENTITY aboutTBUpdate.circuitDisplayDescription "La pantalla del circuit de Tor s'ha reubicat i millorat! Feu clic al botó de  Site&#160;Identity (situat a la part esquerra de la barra d'URL) per veure la nova pantalla del circuit.">
-<!ENTITY aboutTBUpdate.learnMore "Aprèn més">
+<!ENTITY aboutTBUpdate.version "Versió">
+<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseNotes "Notes de la versió">

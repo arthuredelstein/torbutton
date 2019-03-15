@@ -6,6 +6,8 @@
 
 <!ENTITY aboutTor.title "Σχετικά με το Tor">
 
+<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+
 <!ENTITY aboutTor.ready.label "Εξερευνήστε. Με ιδιωτικότητα.">
 <!ENTITY aboutTor.ready2.label "Είστε έτοιμος για την πιο ιδιωτική εμπειρία περιήγησης.">
 <!ENTITY aboutTor.failure.label "Κάτι πήγε στραβά!">
