@@ -1,3 +1,12 @@
+2.1.5
+ * Bug 25658: Replace security slider with security level UI
+ * Bug 28628: Change onboarding Security panel to open new Security Level panel
+ * Bug 29440: Update about:tor when Tor Browser is updated
+ * Bug 27478: Improved Torbutton icons for dark theme
+ * Bug 29021: Tell NoScript it is running within Tor Browser
+ * Bug 29239: Don't ship the Torbutton .xpi on mobile
+ * Translations update
+
 2.1.4
  * Bug 25702: Update Tor Browser icon to follow design guidelines
  * Bug 21805: Add click-to-play button for WebGL
