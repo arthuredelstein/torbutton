@@ -24,7 +24,7 @@ FILEMAP=( "aboutDialog.dtd:torbutton-aboutdialogdtd"
           "browserOnboarding.properties:torbutton-browseronboardingproperties"
           "torbutton.dtd:torbutton-torbuttondtd"
           "torbutton.properties:torbutton-torbuttonproperties"
-          "securityLevel.properties:torbutton-securityLevelproperties"
+          "securityLevel.properties:torbutton-securitylevelproperties"
          )
 
 # Verify that the FILEMAP contains an entry for each Torbutton file.
