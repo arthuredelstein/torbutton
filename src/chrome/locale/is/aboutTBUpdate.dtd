@@ -1,8 +1,8 @@
-<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
+<!ENTITY aboutTBUpdate.changelogTitle "Breytingaannáll Tor-vafrans">
 <!ENTITY aboutTBUpdate.updated "Tor-vafrinn var uppfærður.">
 <!ENTITY aboutTBUpdate.linkPrefix "Til að sjá allra nýjustu upplýsingar um þessa útgáfu,">
 <!ENTITY aboutTBUpdate.linkLabel  "heimsæktu vefsvæðið okkar">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.version "Útgáfa">
-<!ENTITY aboutTBUpdate.releaseDate "Release Date">
-<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">
+<!ENTITY aboutTBUpdate.releaseDate "Útgáfudagsetning">
+<!ENTITY aboutTBUpdate.releaseNotes "Útgáfuupplýsingar">

@@ -25,12 +25,12 @@
 <!ENTITY torbutton.prefs.sec_caption_tooltip "El control deslizante del nivel de seguridad te permite deshabilitar ciertas características del navegador que pueden hacerlo más vulnerable a tentativas de hackeo.">
 <!ENTITY torbutton.prefs.sec_standard_label "Estándar">
 <!ENTITY torbutton.prefs.sec_standard_description "Están habilitadas todas las características de Tor Browser y sitio web.">
-<!ENTITY torbutton.prefs.sec_safer_label "Más segura">
+<!ENTITY torbutton.prefs.sec_safer_label "Más seguro">
 <!ENTITY torbutton.prefs.sec_safer_description "Deshabilita características del sitio web que a menudo son peligrosas, lo que causa que algunos sitios pierdan funcionalidad.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "En la configuración 'más segura':">
-<!ENTITY torbutton.prefs.sec_safest_label "La más segura">
+<!ENTITY torbutton.prefs.sec_safest_label "El más seguro de todos">
 <!ENTITY torbutton.prefs.sec_safest_description "Sólo permite las características de sitio web requeridas para sitios estáticos y servicios básicos. Estos cambios afectan a imágenes, medios, y scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "En la configuración 'la más segura':">
+<!ENTITY torbutton.prefs.sec_safest_list_label "En la configuración de Nivel de seguridad 'El más seguro de todos':">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Conocer más">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript está deshabilitado en sitios no-HTTPS.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript está deshabilitado por defecto en todos los sitios.">
