@@ -47,6 +47,7 @@ locale torbutton el chrome/locale/el/
 locale torbutton en chrome/locale/en-US/
 locale torbutton eo chrome/locale/eo/
 locale torbutton es chrome/locale/es/
+locale torbutton es-AR chrome/locale/es-AR/
 locale torbutton et chrome/locale/et/
 locale torbutton eu chrome/locale/eu/
 locale torbutton fa chrome/locale/fa/
