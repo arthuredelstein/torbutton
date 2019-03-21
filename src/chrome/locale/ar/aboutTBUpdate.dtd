@@ -1,8 +1,8 @@
-<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
+<!ENTITY aboutTBUpdate.changelogTitle "سجل تغيرات متصفّح تور">
 <!ENTITY aboutTBUpdate.updated "تم تحديث متصفح تور.">
 <!ENTITY aboutTBUpdate.linkPrefix "للحصول على أحدث المعلومات حول هذا الإصدار،">
 <!ENTITY aboutTBUpdate.linkLabel  "زُر موقعنا">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.version "النسخة">
-<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseDate "تاريخ النشر">
 <!ENTITY aboutTBUpdate.releaseNotes "ملاحظات الإصدار">
