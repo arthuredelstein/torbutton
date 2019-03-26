@@ -17,7 +17,7 @@ let log = (level, msg) => logger.log(level, msg);
 // ## NoScript settings
 
 // Minimum and maximum capability states as controlled by NoScript.
-const max_caps = ["fetch", "font", "frame", "media", "object", "other", "script"];
+const max_caps = ["fetch", "font", "frame", "media", "object", "other", "script", "webgl"];
 const min_caps = ["frame", "other"];
 
 // Untrusted capabilities for [Standard, Safer, Safest] safety levels.
