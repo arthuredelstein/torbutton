@@ -7,6 +7,9 @@
  * Bug 29239: Don't ship the Torbutton .xpi on mobile
  * Translations update
 
+2.0.11
+ * Bug 29021: Tell NoScript it is running within Tor Browser
+
 2.1.4
  * Bug 25702: Update Tor Browser icon to follow design guidelines
  * Bug 21805: Add click-to-play button for WebGL
