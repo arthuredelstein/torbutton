@@ -49,7 +49,11 @@ let credentialsToNodeDataMap = {},
     knownCircuitIDs = {},
     // A mutable map that records the SOCKS credentials for the
     // latest channels for each browser.
-    browserToCredentialsMap = new Map();
+    browserToCredentialsMap = new Map(),
+    // A mutable map from stream id to .bit[.onion] domains
+    bitTargets = {},
+    // A mutable map from .bit[.onion] domains to .onion domains.
+    bitToOnionMap = {};
 
 // __trimQuotes(s)__.
 // Removes quotation marks around a quoted string.
@@ -126,6 +130,28 @@ let getCircuitStatusByID = async function (aController, circuitID) {
   return null;
 };
 
+// __collectBitTargets(aContoller)__.
+// Watches for STREAM NEW events. When a NEW event occurs, we will see
+// the stream's target domain. If that target is a .bit domain, then
+// we want to be sure to record this so we can later record if it is
+// remapped to a .onion domain.
+let collectBitTargets = function (aController) {
+  return aController.watchEvent(
+    "STREAM",
+    streamEvent => streamEvent.StreamStatus === "NEW",
+    async (streamEvent) => {
+      logger.eclog(3, "new streamEvent:" + JSON.stringify(streamEvent));
+      if (streamEvent && streamEvent.StreamID && streamEvent.Target) {
+        let targetDomain = streamEvent.Target.split(":")[0];
+        if (targetDomain.endsWith(".bit") ||
+            targetDomain.endsWith(".bit.onion")) {
+          bitTargets[streamEvent.StreamID] = Services.eTLD.getBaseDomainFromHost(targetDomain);
+          logger.eclog(3, "stream on .bit domain: " + targetDomain);
+        }
+      }
+    });
+};
+
 // __collectIsolationData(aController, updateUI)__.
 // Watches for STREAM SENTCONNECT events. When a SENTCONNECT event occurs, then
 // we assume isolation settings (SOCKS username+password) are now fixed for the
@@ -139,6 +165,15 @@ let collectIsolationData = function (aController, updateUI) {
     "STREAM",
     streamEvent => streamEvent.StreamStatus === "SENTCONNECT",
     async (streamEvent) => {
+      logger.eclog(3, "sentconnect streamEvent:" + JSON.stringify(streamEvent));
+      // Collect any stream target that might be an onion.
+      if (streamEvent && streamEvent.StreamID && streamEvent.Target) {
+        let targetDomain = streamEvent.Target.split(":")[0];
+	if (targetDomain.endsWith(".onion")) {
+          bitToOnionMap[bitTargets[streamEvent.StreamID]] = targetDomain;
+          logger.eclog(3, "mapped " + bitTargets[streamEvent.StreamID] + " to " + targetDomain);
+        }
+      }
       if (!knownCircuitIDs[streamEvent.CircuitID]) {
         logger.eclog(3, "streamEvent.CircuitID: " + streamEvent.CircuitID);
         knownCircuitIDs[streamEvent.CircuitID] = true;
@@ -299,12 +334,14 @@ let updateCircuitDisplay = function () {
          (i === 0 && nodeData[0].type !== "bridge") ?
            ["span", { class: "circuit-guard-info" }, uiString("guard")] : null);
     }
-    if (domain.endsWith(".onion")) {
+    logger.eclog(3, "bit to onion map:" + JSON.stringify(bitToOnionMap) + ", domain: " + domain);
+    let mappedOnion = bitToOnionMap[domain];
+    if (domain.endsWith(".onion") || mappedOnion) {
       for (let i = 0; i < 3; ++i) {
         li(uiString("relay"));
       }
     }
-    li(domain);
+    li(domain, " ", mappedOnion ? ["span", { class: "circuit-ip-address" }, mappedOnion] : null);
     // Hide the note about guards if we are using a bridge.
     document.getElementById("circuit-guard-note-container").style.display =
       (nodeData[0].type === "bridge") ? "none" : "block";
@@ -411,6 +448,7 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
       stopCollectingIsolationData = null,
       stopCollectingBrowserCredentials = null,
       stopEnsuringCorrectPopupDimensions = null,
+      stopCollectingBitTargets = null,
       stop = function() {
         syncDisplayWithSelectedTab(false);
         if (myController) {
@@ -423,6 +461,9 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
           if (stopEnsuringCorrectPopupDimensions) {
             stopEnsuringCorrectPopupDimensions();
           }
+	  if (stopCollectingBitTargets) {
+	    stopCollectingBitTargets();
+	  }
           myController = null;
         }
       },
@@ -437,6 +478,7 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
             stop();
           });
           syncDisplayWithSelectedTab(true);
+          stopCollectingBitTargets = collectBitTargets(myController);
           stopCollectingIsolationData = collectIsolationData(myController, updateCircuitDisplay);
           stopCollectingBrowserCredentials = collectBrowserCredentials();
           stopEnsuringCorrectPopupDimensions = ensureCorrectPopupDimensions();
