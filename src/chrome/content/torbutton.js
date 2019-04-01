@@ -12,7 +12,7 @@ const {AppConstants} = ChromeUtils.import("resource://gre/modules/AppConstants.j
 let { showDialog, show_torbrowser_manual } = Cu.import("resource://torbutton/modules/utils.js", {});
 let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
-let { bindPrefAndInit, observe } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -1898,8 +1898,6 @@ function torbutton_is_windowed(wind) {
     return true;
 }
 
-let stopOpenSecuritySettingsObserver;
-
 function showSecurityPreferencesPanel(chromeWindow) {
   const tabBrowser = chromeWindow.BrowserApp;
   let settingsTab = null;
@@ -1987,7 +1985,6 @@ function torbutton_new_window(event)
 function torbutton_close_window(event) {
     torbutton_window_pref_observer.unregister();
     torbutton_tor_check_observer.unregister();
-    stopOpenSecuritySettingsObserver();
 
     window.removeEventListener("sizemodechange", m_tb_resize_handler,
         false);
