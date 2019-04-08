@@ -871,7 +871,14 @@ function torbutton_new_circuit() {
         let urlOrigin = new URL(origin);
         let { hostname } = new URL(urlOrigin.searchParams.get('u'));
         if (hostname) {
-          firstPartyDomain = Services.eTLD.getBaseDomainFromHost(hostname) || firstPartyDomain;
+          try {
+            firstPartyDomain = Services.eTLD.getBaseDomainFromHost(hostname);
+          } catch (e) {
+            if (e.result == Cr.NS_ERROR_HOST_IS_IP_ADDRESS ||
+                e.result == Cr.NS_ERROR_INSUFFICIENT_DOMAIN_LEVELS) {
+              firstPartyDomain = hostname;
+            }
+          }
         }
       } catch (e) {
         torbutton_log(4, "Exception on new circuit" +e);
