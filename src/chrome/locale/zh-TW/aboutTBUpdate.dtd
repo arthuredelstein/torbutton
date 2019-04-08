@@ -1,8 +1,8 @@
-<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
+<!ENTITY aboutTBUpdate.changelogTitle "洋蔥路由瀏覽器變更記錄">
 <!ENTITY aboutTBUpdate.updated "洋蔥路由瀏覽器已經更新完成">
 <!ENTITY aboutTBUpdate.linkPrefix "本次釋出更新的最新資訊">
 <!ENTITY aboutTBUpdate.linkLabel  "參訪我們的網站">
 <!ENTITY aboutTBUpdate.linkSuffix "。">
 <!ENTITY aboutTBUpdate.version "版本">
-<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseDate "釋出日期">
 <!ENTITY aboutTBUpdate.releaseNotes "版本說明">
