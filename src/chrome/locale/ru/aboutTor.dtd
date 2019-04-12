@@ -6,7 +6,7 @@
 
 <!ENTITY aboutTor.title "О проекте Tor">
 
-<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+<!ENTITY aboutTor.viewChangelog.label "Посмотреть список изменений">
 
 <!ENTITY aboutTor.ready.label "Исследуйте. Приватно.">
 <!ENTITY aboutTor.ready2.label "Вы готовы к самому приватному просмотру веб-страниц в мире.">

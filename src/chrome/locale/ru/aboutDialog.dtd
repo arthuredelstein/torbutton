@@ -5,7 +5,7 @@
 
 <!ENTITY help.start              "Желаете помочь?">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
-<!ENTITY help.donateLink         "Пожертвовать">
+<!ENTITY help.donateLink         "Пожертвуйте">
 <!ENTITY help.or                 "или">
 <!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
 <!ENTITY help.getInvolvedLink    "присоединяйтесь">

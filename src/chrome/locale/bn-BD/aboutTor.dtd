@@ -4,44 +4,27 @@
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
 
-<!ENTITY aboutTor.title "Tor সম্পর্কে">
+<!ENTITY aboutTor.title "টর সম্পর্কে">
+
+<!ENTITY aboutTor.viewChangelog.label "পরিবর্তন দেখুন">
 
 <!ENTITY aboutTor.ready.label "এক্সপ্লোর. গোপনে.">
-<!ENTITY aboutTor.ready2.label "আপনি বিশ্বের সবচেয়ে ব্যক্তিগত ব্রাউজিং অভিজ্ঞতার জন্য প্রস্তুত ।">
-<!ENTITY aboutTor.failure.label "কিছু ভুল হয়েছে!">
-<!ENTITY aboutTor.failure2.label "টর এই ব্রাউজারে কাজ করছে না">
+<!ENTITY aboutTor.ready2.label "বিশ্বের সবচেয়ে ব্যক্তিগত ব্রাউজিং অভিজ্ঞতার জন্য আপনি এখন প্রস্তুত ।">
+<!ENTITY aboutTor.failure.label "কোন একটা সমস্যা হয়েছে!">
+<!ENTITY aboutTor.failure2.label "টর এই ব্রাউজারে কাজ করছে না।">
 
-<!ENTITY aboutTor.search.label "DuckDuckGo সঙ্গে অনুসন্ধান">
+<!ENTITY aboutTor.search.label "DuckDuckGo দিয়ে অনুসন্ধান">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
-<!ENTITY aboutTor.torbrowser_user_manual_questions.label "প্রশ্ন?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "আমাদের টর ব্রাউজারের ম্যানুয়াল পরীক্ষা করুন»">
+<!ENTITY aboutTor.torbrowser_user_manual_questions.label "প্রশ্ন আছে?">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "আমাদের টর ব্রাউজারের ম্যানুয়াল দেখুন »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "আমাদের টর ব্রাউজারের ম্যানুয়াল পরীক্ষা করুন»">
+<!ENTITY aboutTor.torbrowser_user_manual.label "টর ব্রাউজার ম্যানুয়াল">
 
-<!ENTITY aboutTor.tor_mission.label "টর প্রকল্পটি একটি মার্কিন 501 (c) (3) অলাভজনক প্রতিষ্ঠান, মানবাধিকার এবং মুক্ত এবং উন্মুক্ত উৎস সনদে এবং গোপনীয়তা প্রযুক্তিকে সমর্থন করে, তাদের নিষিদ্ধ সহজলভ্যতা এবং ব্যবহার এবং তাদের বৈজ্ঞানিক ও জনপ্রিয় বোঝাপড়া ।">
-<!ENTITY aboutTor.getInvolved.label "যুক্ত হোন»">
+<!ENTITY aboutTor.tor_mission.label "টর প্রকল্পটি একটি মার্কিন 501(c)(3) অলাভজনক প্রতিষ্ঠান, যা পরিচয় ও গোপনীয়তা রক্ষার বিনামূল্য ও ওপেন সোর্স প্রযুক্তির (free and open source anonymity and privacy technology) সৃষ্টি ও প্রসার, সেগুলোর অবাধ সহজলভ্যতা ও ব্যবহার সমর্থন, এবং সেগুলোকে বিজ্ঞানমনস্ক ব্যক্তিবর্গ ও সাধারণ জনগণের কাছে আরও বোধগম্য/সহজবোধ্য করে তোলার মাধ্যমে মানবাধিকার ও স্বাধীনতার অগ্রগতি ঘটায়।">
+<!ENTITY aboutTor.getInvolved.label "আপনিও যোগ দিন »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "টর থেকে সর্বশেষ খবর নিন সোজা আপনার ইনবক্সে ।">
+<!ENTITY aboutTor.newsletter.tagline "টর থেকে পাওয়া সর্বশেষ সব খবর সরাসরি আপনার ইনবক্সে দেখুন।">
 <!ENTITY aboutTor.newsletter.link_text "টর নিউজ-এর জন্য সাইন আপ করুন ।">
-
-<!ENTITY aboutTor.donationBanner.line1 "টর: সংখ্যাই শক্তি">
-
-<!ENTITY aboutTor.donationBanner.line2a "ছদ্মনাম বেশী ব্যবহারকারীর মধ্যে কার্যকরী।">
-<!ENTITY aboutTor.donationBanner.line2b "সার্বজনীন মানবাধিকারকে এগিয়ে নিন।  ">
-<!ENTITY aboutTor.donationBanner.line2c "স্বাধীনতার জন্য এগিয়ে আসুন ">
-<!ENTITY aboutTor.donationBanner.line2d "লাখো লোকের ব্যক্তিগত গোপনীয়তা রক্ষা করুন। ">
-<!ENTITY aboutTor.donationBanner.line2e "টরকে শক্তিশালী রাখুন। ">
-<!ENTITY aboutTor.donationBanner.line2f "আপনাদের সাহায্য দরকার! ">
-<!ENTITY aboutTor.donationBanner.line2g "Support internet freedom.">
-<!ENTITY aboutTor.donationBanner.line2h "Defend the open web.">
-<!ENTITY aboutTor.donationBanner.line2i "Support privacy and freedom online.">
-<!ENTITY aboutTor.donationBanner.line2j "Mozilla is matching every donation until 2019.">
-
-<!ENTITY aboutTor.donationBanner.line3 "অর্থ সাহায্য করুন, এবং মজিলা সমপরিমাণ সাহায্য করবে। ">
-<!ENTITY aboutTor.donationBanner.line3b "Give now, and your gift becomes twice as strong.">
-
-<!ENTITY aboutTor.donationBanner.buttonA "এখুনি দান করুন! ">
-<!ENTITY aboutTor.donationBanner.buttonB "আমাকেও সাথে নিন">

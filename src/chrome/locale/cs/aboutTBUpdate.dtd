@@ -1,8 +1,8 @@
-<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
+<!ENTITY aboutTBUpdate.changelogTitle "Změny v prohlížeči Tor">
 <!ENTITY aboutTBUpdate.updated "Prohlížeč Tor byl aktualizován.">
 <!ENTITY aboutTBUpdate.linkPrefix "Informace o tomto vydání najdete na ">
 <!ENTITY aboutTBUpdate.linkLabel  "naši webové stránce">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.version "Verze">
-<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseDate "Datum vydání">
 <!ENTITY aboutTBUpdate.releaseNotes "Poznámky k verzi">

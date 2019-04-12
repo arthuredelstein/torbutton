@@ -4,12 +4,12 @@
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.networksettings "Paramètres du réseau Tor">
 <!ENTITY torbutton.context_menu.networksettings.key "R">
-<!ENTITY torbutton.context_menu.downloadUpdate "Vérifier les mises à jour du navigateur Tor Browser">
+<!ENTITY torbutton.context_menu.downloadUpdate "Vérifier les mises à jour du Navigateur Tor">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "M">
 <!ENTITY torbutton.context_menu.cookieProtections "Protections des fichiers témoins…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "T">
 <!ENTITY torbutton.button.tooltip "Cliquer pour lancer BoutonTor">
-<!ENTITY torbutton.prefs.security_settings "Paramètres de sécurité du navigateur Tor Browser">
+<!ENTITY torbutton.prefs.security_settings "Paramètres de sécurité du Navigateur Tor">
 <!ENTITY torbutton.cookiedialog.title "Gérer les protections des fichiers témoins">
 <!ENTITY torbutton.cookiedialog.lockCol "Protégé">
 <!ENTITY torbutton.cookiedialog.domainCol "Hôte">
@@ -24,7 +24,7 @@
 <!ENTITY torbutton.prefs.sec_caption "Niveau de sécurité">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Le curseur de sécurité vous permet de désactiver certaines fonctions du navigateur qui pourraient le rendre plus vulnérable aux tentatives de piratage.">
 <!ENTITY torbutton.prefs.sec_standard_label "Normal">
-<!ENTITY torbutton.prefs.sec_standard_description "Toutes les fonctions du navigateur Tor Browser et des sites Web sont activées.">
+<!ENTITY torbutton.prefs.sec_standard_description "Toutes les fonctions du Navigateur Tor et des sites Web sont activées.">
 <!ENTITY torbutton.prefs.sec_safer_label "Plus sûr">
 <!ENTITY torbutton.prefs.sec_safer_description "Désactive les fonctions souvent dangereuses des sites Web, ce qui pourrait entraîner une perte de fonctionnalité de certains sites Web.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Au réglage Plus sûr :">

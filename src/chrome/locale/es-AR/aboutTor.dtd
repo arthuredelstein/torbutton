@@ -6,7 +6,7 @@
 
 <!ENTITY aboutTor.title "Acerca de Tor">
 
-<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+<!ENTITY aboutTor.viewChangelog.label "Ver registro de cambios">
 
 <!ENTITY aboutTor.ready.label "Explorá. Privadamente.">
 <!ENTITY aboutTor.ready2.label "Estás listo para la experiencia de navegación más privada del mundo.">
@@ -17,10 +17,10 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "¿Preguntas?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Revisá nuestro manual del Tor Browser »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Revisá nuestro manual del Navegador Tor »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Manual del Tor Browser">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Manual del Navegador Tor">
 
 <!ENTITY aboutTor.tor_mission.label "El proyecto Tor es una organización sin fines de lucro bajo las provisiones de la ley EUA 501(c)(3), cuya misión es avanzar los derechos y libertades humanas creando y desplegando tecnologías de anonimato y privacidad de fuente abierta, soportando su disponibilidad y uso irrestricto, y ampliando su entendimiento científico y popular.">
 <!ENTITY aboutTor.getInvolved.label "Involucrate »">

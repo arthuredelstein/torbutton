@@ -6,25 +6,25 @@
 
 <!ENTITY aboutTor.title "Over Tor">
 
-<!ENTITY aboutTor.viewChangelog.label "Bekijk wijzigingslogboek">
+<!ENTITY aboutTor.viewChangelog.label "Wijzigingslogboek bekijken">
 
 <!ENTITY aboutTor.ready.label "Onderzoek. Privé.">
-<!ENTITY aboutTor.ready2.label "Je bent klaar voor de meest private browsing ervaring van de wereld">
+<!ENTITY aboutTor.ready2.label "U bent klaar voor de meest private surfervaring ter wereld.">
 <!ENTITY aboutTor.failure.label "Er ging iets mis!">
 <!ENTITY aboutTor.failure2.label "Tor werkt niet in deze browser.">
 
-<!ENTITY aboutTor.search.label "Zoek met DuckDuckGo">
+<!ENTITY aboutTor.search.label "Zoeken met DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com/">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Vragen?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Bekijk onze Tor Browser Handleiding">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Bekijk onze Tor Browser-handleiding »">
 <!-- The next two entities are used within the browser's Help menu. -->
-<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Gebruikshandleiding">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "h">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser-handleiding">
 
-<!ENTITY aboutTor.tor_mission.label "Het Tor Project is een US 501(c)(3) goede-doelen organisatie die de Rechten en Vrijheden van de Mens bevordert door vrije open source anonimiteit en privacy technology te maken en toe te passen, hun ongerestricteerde beschikbaarheid en gebruik te ondersteunen, en hun wetenschappelijke en populaire begrip te bevorderen.">
-<!ENTITY aboutTor.getInvolved.label "Doe Mee">
+<!ENTITY aboutTor.tor_mission.label "Het Tor Project is een US 501(c)(3)-non-profitorganisatie die de rechten en vrijheden van de mens bevordert door vrije en open source anonimiteits- en privacytechnologie te maken en toe te passen, hun onbeperkte beschikbaarheid en gebruik te steunen, en hun wetenschappelijke en populaire begrip te bevorderen.">
+<!ENTITY aboutTor.getInvolved.label "Meedoen »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Krijg het laatste Tor nieuws regelrecht in jouw inbox.">
-<!ENTITY aboutTor.newsletter.link_text "Meld je aan voor Tor Nieuws.">
+<!ENTITY aboutTor.newsletter.tagline "Ontvang het laatste nieuws van Tor direct in uw postvak.">
+<!ENTITY aboutTor.newsletter.link_text "Meld u aan voor Tor News.">

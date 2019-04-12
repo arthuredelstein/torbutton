@@ -9,7 +9,7 @@
 <!ENTITY  trademarkInfo.part1   "ফায়ারফক্স এবং ফায়ারফক্স লোগো মোজিলা ফাউন্ডেশনের ট্রেডমার্ক।">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
-<!ENTITY plugins.installed.find "ইনস্টল করা সিস্টেম প্লাগইনগুলি লোড করতে ক্লিক করুন">
+<!ENTITY plugins.installed.find "সিস্টেমে ইন্সটল করা প্লাগিন লোড করতে ক্লিক করুন">
 <!ENTITY plugins.installed.enable "প্লাগইন সক্ষম করুন">
 <!ENTITY plugins.installed.disable "প্লাগইন বন্ধ করুন">
 <!ENTITY plugins.installed.disable.tip "সিস্টেম প্লাগইন লোডিং প্রতিরোধ করতে ক্লিক করুন">

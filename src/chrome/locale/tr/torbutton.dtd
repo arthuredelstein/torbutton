@@ -2,14 +2,14 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Bu Sitenin Tor Devresini Yenile">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.networksettings "Tor Ağ Ayarları...">
+<!ENTITY torbutton.context_menu.networksettings "Tor Ağı Ayarları...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Tor Browser Güncelleme Denetimi...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Çerez Koruması...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Torbutton uygulamasını başlatmak için tıklayın">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser Güvenlik Ayarları">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser Güvenlik Düzeyi Ayarı">
 <!ENTITY torbutton.cookiedialog.title "Çerez Koruması Yönetimi">
 <!ENTITY torbutton.cookiedialog.lockCol "Korunmuş">
 <!ENTITY torbutton.cookiedialog.domainCol "Sunucu">
