@@ -1,3 +1,14 @@
+2.1.6
+ * Bug 22538+22513: Fix new circuit button for error pages
+ * Bug 29825: Intelligently add new Security Level button to taskbar
+ * Bug 29903: No WebGL click-to-play on the standard security level
+ * Bug 27484: Improve navigation within onboarding (strings)
+ * Bug 29768: Introduce new features to users (strings)
+ * Bug 29943: Use locales in AB-CD scheme to match Mozilla
+ * Bug 26498: Add locale: es-AR
+ * Bug 29973: Remove remaining stopOpenSecuritySettingsObserver() pieces
+ * Translations update
+
 2.1.5
  * Bug 25658: Replace security slider with security level UI
  * Bug 28628: Change onboarding Security panel to open new Security Level panel
