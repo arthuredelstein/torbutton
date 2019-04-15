@@ -141,15 +141,6 @@ var torbutton_unique_pref_observer =
         if (topic != "nsPref:changed") return;
 
         switch (data) {
-            case "network.cookie.cookieBehavior":
-                let val = m_tb_prefs.getIntPref("network.cookie.cookieBehavior");
-                let firstparty_isolate = m_tb_prefs.getBoolPref("privacy.firstparty.isolate");
-                if (val == 0 && firstparty_isolate) // Allow all cookies
-                  m_tb_prefs.setBoolPref("privacy.firstparty.isolate", false);
-                else if (val == 1 && !firstparty_isolate) // Block third party cookies
-                  m_tb_prefs.setBoolPref("privacy.firstparty.isolate", true);
-                break;
-
             case "plugin.disable":
                 torbutton_toggle_plugins(
                         m_tb_prefs.getBoolPref("plugin.disable"));
@@ -1586,12 +1577,6 @@ function torbutton_update_fingerprinting_prefs() {
 
 function torbutton_update_isolation_prefs() {
     let isolate = m_tb_prefs.getBoolPref("privacy.firstparty.isolate");
-
-    if (isolate) {
-      m_tb_prefs.setIntPref("network.cookie.cookieBehavior", 1);
-    } else {
-      m_tb_prefs.setIntPref("network.cookie.cookieBehavior", 0);
-    }
 
     m_tb_prefs.setBoolPref("security.enable_tls_session_tickets", !isolate);
 
