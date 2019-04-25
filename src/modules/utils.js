@@ -2,10 +2,16 @@
 // Various helpful utility functions.
 
 // ### Shortcut
-const Cu = Components.utils;
+const { Cu: utils, Cr: results } = Components;
 
 // ### Import Mozilla Services
 Cu.import("resource://gre/modules/Services.jsm");
+
+// ### Import global URL
+Cu.importGlobalProperties(["URL"]);
+
+// ### About firstPartyDomain literal
+const k_tb_about_uri_first_party_domain = "about.ef2a7dd5-93bc-417f-a698-142c3116864f.mozilla";
 
 // ## Pref utils
 
@@ -212,7 +218,32 @@ var show_torbrowser_manual = () => {
   return availableLocales.indexOf(shortLocale) >= 0;
 }
 
+var getDomainForBrowser = (browser) => {
+  let firstPartyDomain = browser.contentPrincipal.originAttributes.firstPartyDomain;
+  // Bug 22538: For neterror or certerror, get firstPartyDomain causing it from the u param
+  if (firstPartyDomain === k_tb_about_uri_first_party_domain) {
+    let knownErrors = ["about:neterror", "about:certerror"];
+    let origin = browser.contentPrincipal.origin || '';
+    if (knownErrors.some(x => origin.startsWith(x))) {
+      try {
+        let urlOrigin = new URL(origin);
+        let { hostname } = new URL(urlOrigin.searchParams.get('u'));
+        if (hostname) {
+          try {
+            firstPartyDomain = Services.eTLD.getBaseDomainFromHost(hostname);
+          } catch (e) {
+            if (e.result == Cr.NS_ERROR_HOST_IS_IP_ADDRESS ||
+                e.result == Cr.NS_ERROR_INSUFFICIENT_DOMAIN_LEVELS) {
+              firstPartyDomain = hostname;
+            }
+          }
+        }
+      } catch (e) {}
+    }
+  }
+  return firstPartyDomain;
+};
 
 // Export utility functions for external use.
-let EXPORTED_SYMBOLS = ["bindPref", "bindPrefAndInit", "getEnv", "getLocale",
+let EXPORTED_SYMBOLS = ["bindPref", "bindPrefAndInit", "getEnv", "getLocale", "getDomainForBrowser",
                         "getPrefValue", "observe", "showDialog", "show_torbrowser_manual", "unescapeTorString"];
