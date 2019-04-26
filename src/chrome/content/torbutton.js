@@ -9,16 +9,19 @@
 
 let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
 const {AppConstants} = ChromeUtils.import("resource://gre/modules/AppConstants.jsm");
-let { showDialog, show_torbrowser_manual } = Cu.import("resource://torbutton/modules/utils.js", {});
-let { unescapeTorString } = Cu.import("resource://torbutton/modules/utils.js", {});
+let {
+  showDialog,
+  show_torbrowser_manual,
+  unescapeTorString,
+  bindPrefAndInit,
+  getDomainForBrowser,
+} = Cu.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
-let { bindPrefAndInit } = Cu.import("resource://torbutton/modules/utils.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
 const k_tb_last_update_check_pref = "extensions.torbutton.lastUpdateCheck";
 const k_tb_tor_check_failed_topic = "Torbutton:TorCheckFailed";
-const k_tb_about_uri_first_party_domain = "about.ef2a7dd5-93bc-417f-a698-142c3116864f.mozilla";
 
 var m_tb_prefs = Services.prefs;
 
@@ -851,31 +854,7 @@ function torbutton_send_ctrl_cmd(command) {
 
 // Bug 1506 P4: Needed for New IP Address
 function torbutton_new_circuit() {
-  let firstPartyDomain = gBrowser.contentPrincipal.originAttributes
-                                 .firstPartyDomain;
-  // Bug 22538: For neterror or certerror, get firstPartyDomain causing it from the u param
-  if (firstPartyDomain === k_tb_about_uri_first_party_domain) {
-    let knownErrors = ["about:neterror", "about:certerror"];
-    let origin = gBrowser.contentPrincipal.origin || '';
-    if (knownErrors.some(x => origin.startsWith(x))) {
-      try {
-        let urlOrigin = new URL(origin);
-        let { hostname } = new URL(urlOrigin.searchParams.get('u'));
-        if (hostname) {
-          try {
-            firstPartyDomain = Services.eTLD.getBaseDomainFromHost(hostname);
-          } catch (e) {
-            if (e.result == Cr.NS_ERROR_HOST_IS_IP_ADDRESS ||
-                e.result == Cr.NS_ERROR_INSUFFICIENT_DOMAIN_LEVELS) {
-              firstPartyDomain = hostname;
-            }
-          }
-        }
-      } catch (e) {
-        torbutton_log(4, "Exception on new circuit" +e);
-      }
-    }
-  }
+  let firstPartyDomain = getDomainForBrowser(gBrowser);
 
   let domainIsolator = Cc["@torproject.org/domain-isolator;1"]
                           .getService(Ci.nsISupports).wrappedJSObject;
