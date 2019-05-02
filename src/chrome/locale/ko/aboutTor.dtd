@@ -6,7 +6,7 @@
 
 <!ENTITY aboutTor.title "Tor에 대해서">
 
-<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+<!ENTITY aboutTor.viewChangelog.label "변경이력 보기">
 
 <!ENTITY aboutTor.ready.label "은밀하게 탐색하십시오.">
 <!ENTITY aboutTor.ready2.label "당신은 온세상이 가장 은밀한 탐색의 경험을 준비가 되었습니다.">
@@ -22,8 +22,8 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor 브라우저 설명서">
 
-<!ENTITY aboutTor.tor_mission.label "Tor 프로젝트는 자유와 인권증진에 기여하는 US 501(c)(3) 비영리 단체입니다. 이는 무료로 이용 가능한 오픈 소스 익명성과 사생활 보호기술을 개발하고 그 무제한적 이용을 지원하여 과학적 공적 이해로 나아갑니다.">
-<!ENTITY aboutTor.getInvolved.label "참여 »">
+<!ENTITY aboutTor.tor_mission.label "Tor 프로젝트는 자유와 인권증진에 기여하는 US 501(c)(3) 비영리 단체입니다. 이는 자유롭게 이용 가능하며 오픈 소스 익명성과 사생활 보호기술을 개발하고 그 무제한적으로 이용하도록 지원하여 과학적 공적 이해로 나아갑니다.">
+<!ENTITY aboutTor.getInvolved.label "참여하기 »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "최신의 Tor 뉴스를 받은 편지함에 곧장 받으십시오.">

@@ -6,7 +6,7 @@
 
 <!ENTITY aboutTor.title "A Tor-ról">
 
-<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+<!ENTITY aboutTor.viewChangelog.label "Változás log megtekintése">
 
 <!ENTITY aboutTor.ready.label "Fedezzen fel. Privátan.">
 <!ENTITY aboutTor.ready2.label "Készen áll a világ legprivátabb böngészési élményére.">

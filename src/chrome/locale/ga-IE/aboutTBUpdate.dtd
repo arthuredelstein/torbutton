@@ -1,8 +1,8 @@
-<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
+<!ENTITY aboutTBUpdate.changelogTitle "Logchomhad Athruithe Brabhsálaí Tor">
 <!ENTITY aboutTBUpdate.updated "Nuashonraíodh Brabhsálaí Tor">
 <!ENTITY aboutTBUpdate.linkPrefix "Chun teacht ar an eolas is déanaí maidir leis an leagan seo, ">
 <!ENTITY aboutTBUpdate.linkLabel  "tabhair cuairt ar ár suíomh Gréasáin">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.version "Leagan">
-<!ENTITY aboutTBUpdate.releaseDate "Release Date">
-<!ENTITY aboutTBUpdate.releaseNotes "Release Notes">
+<!ENTITY aboutTBUpdate.releaseDate "Dáta Foilsithe">
+<!ENTITY aboutTBUpdate.releaseNotes "Nótaí Eisiúna">

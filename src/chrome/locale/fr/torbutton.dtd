@@ -6,21 +6,21 @@
 <!ENTITY torbutton.context_menu.networksettings.key "R">
 <!ENTITY torbutton.context_menu.downloadUpdate "Vérifier les mises à jour du Navigateur Tor">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "M">
-<!ENTITY torbutton.context_menu.cookieProtections "Protections des fichiers témoins…">
+<!ENTITY torbutton.context_menu.cookieProtections "Protections des témoins…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "T">
 <!ENTITY torbutton.button.tooltip "Cliquer pour lancer BoutonTor">
 <!ENTITY torbutton.prefs.security_settings "Paramètres de sécurité du Navigateur Tor">
-<!ENTITY torbutton.cookiedialog.title "Gérer les protections des fichiers témoins">
+<!ENTITY torbutton.cookiedialog.title "Gérer les protections des témoins">
 <!ENTITY torbutton.cookiedialog.lockCol "Protégé">
 <!ENTITY torbutton.cookiedialog.domainCol "Hôte">
 <!ENTITY torbutton.cookiedialog.nameCol "Nom">
 <!ENTITY torbutton.cookiedialog.pathCol "Chemin">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protéger le fichier témoin">
-<!ENTITY torbutton.cookiedialog.removeCookie "Enlever le fichier témoin">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Déprotéger le fichier témoin">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Enlever tous les fichiers témoins non protégés">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protéger les nouveaux fichiers témoins">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ne pas protéger les nouveaux fichiers témoins">
+<!ENTITY torbutton.cookiedialog.protectCookie "Protéger le témoin">
+<!ENTITY torbutton.cookiedialog.removeCookie "Enlever le témoin">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Annuler la protection du témoin">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Les enlever tous, sauf les témoins protégés">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Protéger les nouveaux témoins">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ne pas protéger les nouveaux témoins">
 <!ENTITY torbutton.prefs.sec_caption "Niveau de sécurité">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Le curseur de sécurité vous permet de désactiver certaines fonctions du navigateur qui pourraient le rendre plus vulnérable aux tentatives de piratage.">
 <!ENTITY torbutton.prefs.sec_standard_label "Normal">

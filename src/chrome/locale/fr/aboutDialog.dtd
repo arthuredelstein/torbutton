@@ -1,7 +1,7 @@
 <!ENTITY project.start           "&brandShortName; est développé par">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "le &vendorShortName;">
-<!ENTITY project.end             ", une organisation sans but lucratif travaillant à la protection de vos renseignements personnels et de votre liberté en ligne.">
+<!ENTITY project.end             ", un organisme sans but lucratif qui s’efforce de protéger votre vie privée, vos données personnels et votre liberté en ligne.">
 
 <!ENTITY help.start              "Voulez-vous aider ?">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
@@ -15,5 +15,5 @@
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
 <!ENTITY bottomLinks.grow        "Aidez à la croissance du réseau Tor !">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
-<!ENTITY bottomLinks.license  "Informations de licence">
+<!ENTITY bottomLinks.license  "Renseignements relatifs à la licence">
 <!ENTITY tor.TrademarkStatement   "« Tor » et le « logo Oignon » sont des marques de commerce de « The Projet Tor, Inc. »">
