@@ -3,8 +3,9 @@
 // code directly. I don't see any of them as essential for 1506,
 // really.
 
-var m_tb_torlog = Components.classes["@torproject.org/torbutton-logger;1"]
-.getService(Components.interfaces.nsISupports).wrappedJSObject;
+// let { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm", {});
+var m_tb_torlog = Cc["@torproject.org/torbutton-logger;1"]
+.getService(Ci.nsISupports).wrappedJSObject;
 
 var m_tb_string_bundle = torbutton_get_stringbundle();
 
@@ -28,10 +29,8 @@ function torbutton_get_prefbranch(branch_name) {
     var o_branch = false;
 
     torbutton_log(1, "called get_prefbranch()");
-    o_prefs = Components.classes["@mozilla.org/preferences-service;1"]
-                        .getService(Components.interfaces.nsIPrefService);
-    if (!o_prefs)
-    {
+    o_prefs = Services.prefs;
+    if (!o_prefs) {
         torbutton_log(5, "Failed to get preferences-service!");
         return false;
     }
@@ -52,8 +51,7 @@ function torbutton_get_stringbundle()
     var o_stringbundle = false;
 
     try {
-        var oBundle = Components.classes["@mozilla.org/intl/stringbundle;1"]
-                                .getService(Components.interfaces.nsIStringBundleService);
+        var oBundle = Services.strings;
         o_stringbundle = oBundle.createBundle("chrome://torbutton/locale/torbutton.properties");
     } catch(err) {
         o_stringbundle = false;

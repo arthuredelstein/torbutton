@@ -13,31 +13,25 @@ const kMODULE_NAME = "Torbutton Logger";
 const kMODULE_CONTRACTID = "@torproject.org/torbutton-logger;1";
 const kMODULE_CID = Components.ID("f36d72c9-9718-4134-b550-e109638331d7");
 
-const Cr = Components.results;
-const Cc = Components.classes;
-const Ci = Components.interfaces;
-const Cu = Components.utils;
+ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
 
-Cu.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
-
-Cu.import("resource://gre/modules/Services.jsm");
+const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 function TorbuttonLogger() {
     // Register observer
-    Services.prefs.addObserver("extensions.torbutton", this, false);
+    Services.prefs.addObserver("extensions.torbutton", this);
 
     this.loglevel = Services.prefs.getIntPref("extensions.torbutton.loglevel");
     this.logmethod = Services.prefs.getIntPref("extensions.torbutton.logmethod");
 
     try {
-        var logMngr = Components.classes["@mozmonkey.com/debuglogger/manager;1"]
-            .getService(Components.interfaces.nsIDebugLoggerManager); 
+        var logMngr = Cc["@mozmonkey.com/debuglogger/manager;1"]
+            .getService(Ci.nsIDebugLoggerManager);
         this._debuglog = logMngr.registerLogger("torbutton");
     } catch (exErr) {
         this._debuglog = false;
     }
-    this._console = Components.classes["@mozilla.org/consoleservice;1"]
-        .getService(Components.interfaces.nsIConsoleService);
+    this._console = Services.console;
 
     // This JSObject is exported directly to chrome
     this.wrappedJSObject = this;
@@ -50,10 +44,10 @@ function TorbuttonLogger() {
  * Everything below is boring boilerplate and can probably be ignored.
  */
 
-const nsISupports = Components.interfaces.nsISupports;
-const nsIClassInfo = Components.interfaces.nsIClassInfo;
-const nsIComponentRegistrar = Components.interfaces.nsIComponentRegistrar;
-const nsIObserverService = Components.interfaces.nsIObserverService;
+const nsISupports = Ci.nsISupports;
+const nsIClassInfo = Ci.nsIClassInfo;
+const nsIComponentRegistrar = Ci.nsIComponentRegistrar;
+const nsIObserverService = Ci.nsIObserverService;
 
 const logString = { 1:"VERB", 2:"DBUG", 3: "INFO", 4:"NOTE", 5:"WARN" };
 
@@ -64,15 +58,7 @@ function padInt(i)
 
 TorbuttonLogger.prototype =
 {
-  QueryInterface: function(iid)
-  {
-    if (!iid.equals(nsIClassInfo) &&
-        !iid.equals(nsISupports)) {
-      Components.returnCode = Cr.NS_ERROR_NO_INTERFACE;
-      return null;
-    }
-    return this;
-  },
+  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIClassInfo]),
 
   wrappedJSObject: null,  // Initialized by constructor
 
@@ -176,7 +162,7 @@ TorbuttonLogger.prototype =
 * XPCOMUtils.generateNSGetFactory was introduced in Mozilla 2 (Firefox 4).
 * XPCOMUtils.generateNSGetModule is for Mozilla 1.9.2 (Firefox 3.6).
 */
-Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 if (XPCOMUtils.generateNSGetFactory)
     var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorbuttonLogger]);
 else

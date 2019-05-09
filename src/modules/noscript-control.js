@@ -1,17 +1,16 @@
 // # NoScript settings control (for binding to Security Slider)
 
-/* jshint esversion:6 */
-
 // ## Utilities
 
-const { utils: Cu } = Components;
-const { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
-const { LegacyExtensionContext } =
-      Cu.import("resource://gre/modules/LegacyExtensionsUtils.jsm", {});
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm", {});
 const { bindPref } =
-      Cu.import("resource://torbutton/modules/utils.js", {});
-let logger = Components.classes["@torproject.org/torbutton-logger;1"]
-    .getService(Components.interfaces.nsISupports).wrappedJSObject;
+      ChromeUtils.import("resource://torbutton/modules/utils.js", {});
+
+const { ExtensionUtils } = ChromeUtils.import("resource://gre/modules/ExtensionUtils.jsm");
+const { MessageChannel } = ChromeUtils.import("resource://gre/modules/MessageChannel.jsm");
+
+let logger = Cc["@torproject.org/torbutton-logger;1"]
+    .getService(Ci.nsISupports).wrappedJSObject;
 let log = (level, msg) => logger.log(level, msg);
 
 // ## NoScript settings
@@ -100,20 +99,28 @@ var initialize = () => {
   initialized = true;
 
   try {
-    // A mock extension object that can communicate with another extension
-    // via the WebExtensions sendMessage/onMessage mechanism.
-    let extensionContext = new LegacyExtensionContext({ id : noscriptID });
+    // LegacyExtensionContext is not there anymore. Using raw
+    // Services.mm.broadcastAsyncMessage mecanism to communicate with
+    // NoScript.
 
     // The component that handles WebExtensions' sendMessage.
-    let messageManager = extensionContext.messenger.messageManagers[0];
 
     // __setNoScriptSettings(settings)__.
     // NoScript listens for internal settings with onMessage. We can send
     // a new settings JSON object according to NoScript's
     // protocol and these are accepted! See the use of
     // `browser.runtime.onMessage.addListener(...)` in NoScript's bg/main.js.
+
+    // TODO: Is there a better way?
     let sendNoScriptSettings = settings =>
-        extensionContext.messenger.sendMessage(messageManager, settings, noscriptID);
+      Services.mm.broadcastAsyncMessage("MessageChannel:Messages", [{
+        messageName: "Extension:Message",
+        sender: { id: noscriptID, extensionId: noscriptID },
+        recipient: { extensionId: noscriptID },
+        data: new StructuredCloneHolder(settings),
+        channelId: ExtensionUtils.getUniqueId(),
+        responseType: MessageChannel.RESPONSE_NONE,
+      }]);
 
     // __setNoScriptSafetyLevel(safetyLevel)__.
     // Set NoScript settings according to a particular safety level
@@ -129,13 +136,20 @@ var initialize = () => {
 
     // Wait for the first message from NoScript to arrive, and then
     // bind the security_slider pref to the NoScript settings.
-    let messageListener = (a,b,c) => {
+    const listener = ({ data }) => {
+      for (const msg of data) {
+        if (msg.recipient.extensionId === noscriptID) {
+          messageListener(msg.data.deserialize({}), msg.sender);
+        }
+      }
+    };
+    let messageListener = (a, b, c) => {
       try {
-        log(3, `Message received from NoScript: ${JSON.stringify([a,b,c])}`);
+        log(3, `Message received from NoScript: ${JSON.stringify([a, b, c])}`);
         if (!["started", "pageshow"].includes(a.__meta.name)) {
           return;
         }
-        extensionContext.api.browser.runtime.onMessage.removeListener(messageListener);
+        Services.mm.removeMessageListener("MessageChannel:Messages", listener);
         let noscriptPersist = Services.prefs.getBoolPref("extensions.torbutton.noscript_persist", false);
         let noscriptInited = Services.prefs.getBoolPref("extensions.torbutton.noscript_inited", false);
         // Set the noscript safety level once if we have never run noscript
@@ -153,7 +167,7 @@ var initialize = () => {
         log(5, e.message);
       }
     };
-    extensionContext.api.browser.runtime.onMessage.addListener(messageListener);
+    Services.mm.addMessageListener("MessageChannel:Messages", listener);
     log(3, "Listening for message from NoScript.");
   } catch (e) {
     log(5, e.message);

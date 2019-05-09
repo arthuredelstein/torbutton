@@ -7,16 +7,20 @@
 // TODO: Double-check there are no strange exploits to defeat:
 //       http://kb.mozillazine.org/Links_to_local_pages_don%27t_work
 
-let { Services } = Cu.import("resource://gre/modules/Services.jsm", {});
-const {AppConstants} = ChromeUtils.import("resource://gre/modules/AppConstants.jsm");
+/* global torbutton_log, gBrowser, torbutton_safelog, CustomizableUI,
+   createTorCircuitDisplay, torbutton_get_property_string, gFindBarInitialized,
+   gFindBar, OpenBrowserWindow, PrivateBrowsingUtils, torbutton_get_stringbundle,
+   Services, AppConstants
+ */
+
 let {
   showDialog,
   show_torbrowser_manual,
   unescapeTorString,
   bindPrefAndInit,
   getDomainForBrowser,
-} = Cu.import("resource://torbutton/modules/utils.js", {});
-let SecurityPrefs = Cu.import("resource://torbutton/modules/security-prefs.js", {});
+} = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
+let SecurityPrefs = ChromeUtils.import("resource://torbutton/modules/security-prefs.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -44,8 +48,7 @@ var m_tb_control_host = null;        // Set if using TCP.
 var m_tb_control_pass = null;
 var m_tb_control_desc = null;        // For logging.
 
-var m_tb_domWindowUtils = window.QueryInterface(Ci.nsIInterfaceRequestor).
-                          getInterface(Ci.nsIDOMWindowUtils);
+var m_tb_domWindowUtils = window.windowUtils;
 
 // Bug 1506 P1: This object is only for updating the UI for toggling and style
 var torbutton_window_pref_observer =
@@ -91,9 +94,8 @@ var torbutton_unique_pref_observer =
         m_tb_prefs.addObserver("privacy.resistFingerprinting", this, false);
 
         // We observe xpcom-category-entry-added for plugins w/ Gecko-Content-Viewers
-        var observerService = Cc["@mozilla.org/observer-service;1"].
-            getService(Ci.nsIObserverService);
-        observerService.addObserver(this, "xpcom-category-entry-added", false);
+        var observerService = Services.obs;
+        observerService.addObserver(this, "xpcom-category-entry-added");
     },
 
     unregister: function()
@@ -106,8 +108,7 @@ var torbutton_unique_pref_observer =
         m_tb_prefs.removeObserver("privacy.firstparty.isolate", this);
         m_tb_prefs.removeObserver("privacy.resistFingerprinting", this);
 
-        var observerService = Cc["@mozilla.org/observer-service;1"].
-            getService(Ci.nsIObserverService);
+        var observerService = Services.obs;
         observerService.removeObserver(this, "xpcom-category-entry-added");
     },
 
@@ -165,11 +166,9 @@ var torbutton_unique_pref_observer =
 }
 
 var torbutton_tor_check_observer = {
-    register: function()
-    {
-        this._obsSvc = Cc["@mozilla.org/observer-service;1"]
-                         .getService(Ci.nsIObserverService);
-        this._obsSvc.addObserver(this, k_tb_tor_check_failed_topic, false);
+    register() {
+        this._obsSvc = Services.obs;
+        this._obsSvc.addObserver(this, k_tb_tor_check_failed_topic);
     },
 
     unregister: function()
@@ -189,22 +188,24 @@ var torbutton_tor_check_observer = {
 
         // If the user does not have an about:tor tab open in the front most
         // window, open one.
-        var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-              .getService(Components.interfaces.nsIWindowMediator);
+        var wm = Services.wm;
         var win = wm.getMostRecentWindow("navigator:browser");
         if (win == window) {
           let foundTab = false;
-          let tabBrowser = top.getBrowser();
+          let tabBrowser = top.gBrowser;
           for (let i = 0; !foundTab && (i < tabBrowser.browsers.length); ++i) {
             let b = tabBrowser.getBrowserAtIndex(i);
             foundTab = (b.currentURI.spec.toLowerCase() == "about:tor");
           }
 
-          if (!foundTab)
-            gBrowser.selectedTab = gBrowser.addTab("about:tor");
+          if (!foundTab) {
+            gBrowser.selectedTab = gBrowser.addTab("about:tor", {
+              triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(),
+            });
+          }
         }
       }
-    }
+    },
 };
 
 function torbutton_init_toolbutton()
@@ -268,8 +269,8 @@ function torbutton_init() {
     } catch(e) {}
 
     // Bug 1506 P4: These vars are very important for New Identity
-    var environ = Components.classes["@mozilla.org/process/environment;1"]
-                   .getService(Components.interfaces.nsIEnvironment);
+    var environ = Cc["@mozilla.org/process/environment;1"]
+                   .getService(Ci.nsIEnvironment);
 
     if (environ.exists("TOR_CONTROL_PASSWD")) {
         m_tb_control_pass = environ.get("TOR_CONTROL_PASSWD");
@@ -282,10 +283,12 @@ function torbutton_init() {
         } catch(e) {
             torbutton_log(4, 'unable to read authentication cookie');
         }
-    } else try {
+    } else {
+      try {
         // Try to get password from Tor Launcher.
         m_tb_control_pass = tlps.TorGetPassword(false);
-    } catch(e) {}
+      } catch (e) {}
+    }
 
     // Try to get the control port IPC file (an nsIFile) from Tor Launcher,
     // since Tor Launcher knows how to handle its own preferences and how to
@@ -341,9 +344,8 @@ function torbutton_init() {
         // This works only by setting the pref to `true` otherwise we get an
         // exception and nothing is happening.
         m_tb_prefs.setBoolPref("dom.quotaManager.testing", true);
-        Cc["@mozilla.org/dom/quota-manager-service;1"]
-          .getService(Ci.nsIQuotaManagerService).clear();
-      } catch(e) {
+        Services.qms.clear();
+      } catch (e) {
       } finally {
         m_tb_prefs.setBoolPref("dom.quotaManager.testing", orig_quota_test);
       }
@@ -503,8 +505,7 @@ function torbutton_confirm_plugins() {
 
   torbutton_log(3, "Confirming plugin usage.");
 
-  var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
-      .getService(Components.interfaces.nsIPromptService);
+  var prompts = Services.prompt;
 
   // Display two buttons, both with string titles.
   var flags = prompts.STD_YES_NO_BUTTONS + prompts.BUTTON_DELAY_ENABLE;
@@ -513,8 +514,7 @@ function torbutton_confirm_plugins() {
   var askAgainText = torbutton_get_property_string("torbutton.popup.never_ask_again");
   var askAgain = {value: false};
 
-  var wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-             .getService(Components.interfaces.nsIWindowMediator);
+  var wm = Services.wm;
   var win = wm.getMostRecentWindow("navigator:browser");
   var no_plugins = (prompts.confirmEx(win, "", message, flags, null, null, null,
       askAgainText, askAgain) == 1);
@@ -531,8 +531,6 @@ function torbutton_confirm_plugins() {
 
   // Now, if any tabs were open to about:addons, reload them. Our popup
   // messed up that page.
-  var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-                     .getService(Components.interfaces.nsIWindowMediator);
   var browserEnumerator = wm.getEnumerator("navigator:browser");
 
   // Check each browser instance for our URL
@@ -553,15 +551,13 @@ function torbutton_confirm_plugins() {
 }
 
 function torbutton_inform_about_tbb() {
-  var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
-      .getService(Components.interfaces.nsIPromptService);
+  var prompts = Services.prompt;
 
   var message = torbutton_get_property_string("torbutton.popup.prompt_torbrowser");
   var title = torbutton_get_property_string("torbutton.title.prompt_torbrowser");
   var checkbox = {value: false};
 
-  var sb = Components.classes["@mozilla.org/intl/stringbundle;1"]
-      .getService(Components.interfaces.nsIStringBundleService);
+  var sb = Services.strings;
   var browserstrings = sb.createBundle("chrome://browser/locale/browser.properties");
 
   var askagain = browserstrings.GetStringFromName("privateBrowsingNeverAsk");
@@ -761,14 +757,14 @@ function torbutton_socket_readline(input) {
 
 // Bug 1506 P4: Control port interaction. Needed for New Identity.
 function torbutton_read_authentication_cookie(path) {
-  var file = Components.classes['@mozilla.org/file/local;1']
-             .createInstance(Components.interfaces.nsIFile);
+  var file = Cc["@mozilla.org/file/local;1"]
+             .createInstance(Ci.nsIFile);
   file.initWithPath(path);
-  var fileStream = Components.classes['@mozilla.org/network/file-input-stream;1']
-                   .createInstance(Components.interfaces.nsIFileInputStream);
+  var fileStream = Cc["@mozilla.org/network/file-input-stream;1"]
+                   .createInstance(Ci.nsIFileInputStream);
   fileStream.init(file, 1, 0, false);
-  var binaryStream = Components.classes['@mozilla.org/binaryinputstream;1']
-                     .createInstance(Components.interfaces.nsIBinaryInputStream);
+  var binaryStream = Cc["@mozilla.org/binaryinputstream;1"]
+                     .createInstance(Ci.nsIBinaryInputStream);
   binaryStream.setInputStream(fileStream);
   var array = binaryStream.readByteArray(fileStream.available());
   binaryStream.close();
@@ -795,8 +791,7 @@ function torbutton_send_ctrl_cmd(command) {
   // suppressing/unsuppressing user initiated events in a window's document to
   // be sure that these events are not interfering with processing events being
   // in the event queue.
-  var thread = Cc["@mozilla.org/thread-manager;1"].
-               getService(Ci.nsIThreadManager).currentThread;
+  var thread = Services.tm.currentThread;
   m_tb_domWindowUtils.suppressEventHandling(true);
   while (thread.processNextEvent(false)) {}
   m_tb_domWindowUtils.suppressEventHandling(false);
@@ -871,15 +866,14 @@ function torbutton_new_identity() {
     // conditions leading to failures (see bug 11783 for an example).
     // TODO: Remove the Torbutton menu entry again once we have done our
     // security control redesign.
-    document.getElementById("torbutton-new-identity").disabled = true;
+    // document.getElementById("torbutton-new-identity").disabled = true;
     document.getElementById("menu_newIdentity").disabled = true;
     document.getElementById("appMenuNewIdentity").disabled = true;
 
     let shouldConfirm =  m_tb_prefs.getBoolPref("extensions.torbutton.confirm_newnym");
 
     if (shouldConfirm) {
-      let prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"]
-                      .getService(Ci.nsIPromptService);
+      let prompts = Services.prompt;
 
       // Display two buttons, both with string titles.
       let flags = prompts.STD_YES_NO_BUTTONS;
@@ -898,7 +892,7 @@ function torbutton_new_identity() {
       } else {
         // TODO: Remove the Torbutton menu entry again once we have done our
         // security control redesign.
-        document.getElementById("torbutton-new-identity").disabled = false;
+        // document.getElementById("torbutton-new-identity").disabled = false;
         document.getElementById("menu_newIdentity").disabled = false;
         document.getElementById("appMenuNewIdentity").disabled = false;
       }
@@ -910,11 +904,11 @@ function torbutton_new_identity() {
     // enabled (again).
     // TODO: Remove the Torbutton menu entry again once we have done our
     // security control redesign.
-    document.getElementById("torbutton-new-identity").disabled = false;
+    torbutton_log(5, "Unexpected error on new identity: " + e);
+    window.alert("Torbutton: Unexpected error on new identity: " + e);
+    // document.getElementById("torbutton-new-identity").disabled = false;
     document.getElementById("menu_newIdentity").disabled = false;
     document.getElementById("appMenuNewIdentity").disabled = false;
-    torbutton_log(5, "Unexpected error on new identity: "+e);
-    window.alert("Torbutton: Unexpected error on new identity: "+e);
   }
 }
 
@@ -941,7 +935,7 @@ function torbutton_new_identity() {
  */
 // Bug 1506 P4: Needed for New Identity.
 function torbutton_do_new_identity() {
-  var obsSvc = Components.classes["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
+  var obsSvc = Services.obs;
   torbutton_log(3, "New Identity: Disabling JS");
   torbutton_disable_all_js();
 
@@ -995,9 +989,9 @@ function torbutton_do_new_identity() {
 
   torbutton_log(3, "New Identity: Clearing HTTP Auth");
 
-  if(m_tb_prefs.getBoolPref('extensions.torbutton.clear_http_auth')) {
-      var auth = Components.classes["@mozilla.org/network/http-auth-manager;1"].
-          getService(Components.interfaces.nsIHttpAuthManager);
+  if (m_tb_prefs.getBoolPref("extensions.torbutton.clear_http_auth")) {
+      var auth = Cc["@mozilla.org/network/http-auth-manager;1"].
+          getService(Ci.nsIHttpAuthManager);
       auth.clearAll();
   }
 
@@ -1006,8 +1000,8 @@ function torbutton_do_new_identity() {
   // Clear all crypto auth tokens. This includes calls to PK11_LogoutAll(),
   // nsNSSComponent::LogoutAuthenticatedPK11() and clearing the SSL session
   // cache.
-  let sdr = Components.classes["@mozilla.org/security/sdr;1"].
-                       getService(Components.interfaces.nsISecretDecoderRing);
+  let sdr = Cc["@mozilla.org/security/sdr;1"].
+                       getService(Ci.nsISecretDecoderRing);
   sdr.logoutAndTeardown();
 
   // This clears the OCSP cache.
@@ -1047,8 +1041,7 @@ function torbutton_do_new_identity() {
   torbutton_log(3, "New Identity: Clearing Offline Cache");
 
   try {
-    const LoadContextInfo = Cc["@mozilla.org/load-context-info-factory;1"]
-      .getService(Ci.nsILoadContextInfoFactory);
+    const LoadContextInfo = Services.loadContextInfo;
 
     for (let contextInfo of [LoadContextInfo.default, LoadContextInfo.private]) {
       let appCacheStorage = Services.cache2.appCacheStorage(contextInfo, null);
@@ -1089,19 +1082,18 @@ function torbutton_do_new_identity() {
       // This works only by setting the pref to `true` otherwise we get an
       // exception and nothing is happening.
       m_tb_prefs.setBoolPref("dom.quotaManager.testing", true);
-      Cc["@mozilla.org/dom/quota-manager-service;1"]
-          .getService(Ci.nsIQuotaManagerService).clear();
-  } catch(e) {
-      torbutton_log(5, "Exception on storage clearing: "+e);
+      Services.qms.clear();
+  } catch (e) {
+      torbutton_log(5, "Exception on storage clearing: " + e);
   } finally {
       m_tb_prefs.setBoolPref("dom.quotaManager.testing", orig_quota_test);
   }
 
   torbutton_log(3, "New Identity: Clearing Cookies and DOM Storage");
 
-  if (m_tb_prefs.getBoolPref('extensions.torbutton.cookie_protections')) {
-    var selector = Components.classes["@torproject.org/cookie-jar-selector;1"]
-                    .getService(Components.interfaces.nsISupports)
+  if (m_tb_prefs.getBoolPref("extensions.torbutton.cookie_protections")) {
+    var selector = Cc["@torproject.org/cookie-jar-selector;1"]
+                    .getService(Ci.nsISupports)
                     .wrappedJSObject;
     // This emits "cookie-changed", "cleared", which kills DOM storage
     // and the safe browsing API key
@@ -1119,18 +1111,12 @@ function torbutton_do_new_identity() {
 
   // XXX: This may not clear zoom site-specific
   // browser.content.full-zoom
-  if (Ci.nsIContentPrefService2) {   // Firefox >= 20
-    XPCOMUtils.defineLazyModuleGetter(this, "PrivateBrowsingUtils",
-                            "resource://gre/modules/PrivateBrowsingUtils.jsm");
-    var pbCtxt = PrivateBrowsingUtils.privacyContextFromWindow(window);
-    var cps = Cc["@mozilla.org/content-pref/service;1"]
-                .getService(Ci.nsIContentPrefService2);
-    cps.removeAllDomains(pbCtxt);
-  } else {                           // Firefox < 20
-    var cps = Cc["@mozilla.org/content-pref/service;1"].
-        createInstance(Ci.nsIContentPrefService);
-    cps.removeGroupedPrefs();
-  }
+  ChromeUtils.defineModuleGetter(this, "PrivateBrowsingUtils",
+                          "resource://gre/modules/PrivateBrowsingUtils.jsm");
+  var pbCtxt = PrivateBrowsingUtils.privacyContextFromWindow(window);
+  var cps = Cc["@mozilla.org/content-pref/service;1"]
+              .getService(Ci.nsIContentPrefService2);
+  cps.removeAllDomains(pbCtxt);
 
   torbutton_log(3, "New Identity: Syncing prefs");
 
@@ -1139,8 +1125,7 @@ function torbutton_do_new_identity() {
 
   torbutton_log(3, "New Identity: Clearing permissions");
 
-  let pm = Cc["@mozilla.org/permissionmanager;1"].
-           getService(Ci.nsIPermissionManager);
+  let pm = Services.perms;
   pm.removeAll();
 
   // Clear the domain isolation state.
@@ -1234,8 +1219,7 @@ function torbutton_clear_image_caches()
       // Try to clear the private browsing cache.  To do so, we must locate
       // a content document that is contained within a private browsing window.
       let didClearPBCache = false;
-      let wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-                 .getService(Ci.nsIWindowMediator);
+      let wm = Services.wm;
       let enumerator = wm.getEnumerator("navigator:browser");
       while (!didClearPBCache && enumerator.hasMoreElements()) {
         let win = enumerator.getNext();
@@ -1243,7 +1227,7 @@ function torbutton_clear_image_caches()
         if (!browserDoc.hasAttribute("privatebrowsingmode"))
           continue;
 
-        let tabbrowser = win.getBrowser();
+        let tabbrowser = win.gBrowser;
         if (!tabbrowser)
           continue;
 
@@ -1372,8 +1356,7 @@ function torbutton_local_tor_check()
   if (socksAddr && socksAddr.startsWith("file:")) {
     // Convert the file URL to a file path.
     try {
-      let ioService = Cc["@mozilla.org/network/io-service;1"]
-                        .getService(Ci.nsIIOService);
+      let ioService = Services.io;
       let fph = ioService.getProtocolHandler("file")
                          .QueryInterface(Ci.nsIFileProtocolHandler);
       socksIPCPath = fph.getFileFromURLSpec(socksAddr).path;
@@ -1440,11 +1423,8 @@ function torbutton_local_tor_check()
 } // torbutton_local_tor_check
 
 
-function torbutton_initiate_remote_tor_check()
-{
-  let obsSvc = Cc["@mozilla.org/observer-service;1"]
-                 .getService(Ci.nsIObserverService);
-
+function torbutton_initiate_remote_tor_check() {
+  let obsSvc = Services.obs;
   try {
       let checkSvc = Cc["@torproject.org/torbutton-torCheckService;1"]
                        .getService(Ci.nsISupports).wrappedJSObject;
@@ -1573,13 +1553,12 @@ function torbutton_close_tabs_on_new_identity() {
 
   // TODO: muck around with browser.tabs.warnOnClose.. maybe..
   torbutton_log(3, "Closing tabs...");
-  let wm = Cc["@mozilla.org/appshell/window-mediator;1"]
-             .getService(Ci.nsIWindowMediator);
+  let wm = Services.wm;
   let enumerator = wm.getEnumerator("navigator:browser");
-  let windowsToClose = new Array();
+  let windowsToClose = [];
   while (enumerator.hasMoreElements()) {
     let win = enumerator.getNext();
-    let browser = win.getBrowser();
+    let browser = win.gBrowser;
     if (!browser) {
       torbutton_log(5, "No browser for possible closed window");
       continue;
@@ -1598,7 +1577,9 @@ function torbutton_close_tabs_on_new_identity() {
     }
 
     if (win == window) {
-      browser.addTab("about:blank");
+      browser.addTab("about:blank", {
+        triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(),
+      });
     } else {
       // It is a bad idea to alter the window list while iterating
       // over it, so add this window to an array and close it later.
@@ -1672,9 +1653,8 @@ function torbutton_open_cookie_dialog() {
 // Bug 1506 P4: Used by New Identity if cookie protections are
 // not in use.
 function torbutton_clear_cookies() {
-    torbutton_log(2, 'called torbutton_clear_cookies');
-    var cm = Components.classes["@mozilla.org/cookiemanager;1"]
-                    .getService(Components.interfaces.nsICookieManager);
+    torbutton_log(2, "called torbutton_clear_cookies");
+    var cm = Services.cookies;
 
     cm.removeAll();
 }
@@ -1692,7 +1672,7 @@ function torbutton_disable_browser_js(browser) {
             torbutton_log(3, "No content window to disable JS events.");
         else
             eventSuppressor = browser.contentWindow.
-                QueryInterface(Components.interfaces.nsIInterfaceRequestor).
+                QueryInterface(Ci.nsIInterfaceRequestor).
                        getInterface(Ci.nsIDOMWindowUtils);
     } catch(e) {
         torbutton_log(4, "Failed to disable JS events: "+e)
@@ -1718,8 +1698,8 @@ function torbutton_disable_browser_js(browser) {
 // Bug 1506 P3: The JS-killing bits of this are used by
 // New Identity as a defense-in-depth measure.
 function torbutton_disable_window_js(win) {
-    var browser = win.getBrowser();
-    if(!browser) {
+    var browser = win.gBrowser;
+    if (!browser) {
       torbutton_log(5, "No browser for plugin window...");
       return;
     }
@@ -1760,8 +1740,7 @@ function torbutton_disable_window_js(win) {
 // This is an ugly beast.. But unfortunately it has to be so..
 // Looping over all tabs twice is not somethign we wanna do..
 function torbutton_disable_all_js() {
-    var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-                       .getService(Components.interfaces.nsIWindowMediator);
+    var wm = Services.wm;
     var enumerator = wm.getEnumerator("navigator:browser");
     while(enumerator.hasMoreElements()) {
         var win = enumerator.getNext();
@@ -1817,8 +1796,8 @@ function torbutton_do_startup()
 {
     if(m_tb_prefs.getBoolPref("extensions.torbutton.startup")) {
         // Bug 1506: Still want to do this
-        torbutton_toggle_plugins(
-                m_tb_prefs.getBoolPref("plugin.disable"));
+        // torbutton_toggle_plugins(
+        //         m_tb_prefs.getBoolPref("plugin.disable"));
 
         // Bug 1506: Should probably be moved to an XPCOM component
         torbutton_do_main_window_startup();
@@ -1839,7 +1818,7 @@ function torbutton_do_startup()
         if (!m_tb_tbb && m_tb_prefs.getBoolPref("extensions.torbutton.prompt_torbrowser")) {
           var warning = torbutton_get_property_string("torbutton.popup.short_torbrowser");
           var title = torbutton_get_property_string("torbutton.title.prompt_torbrowser");
-          var prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+          var prompts = Services.prompt;
           prompts.alert(null, title, warning);
         }
 
@@ -1867,8 +1846,8 @@ function torbutton_new_tab(event)
 function torbutton_is_windowed(wind) {
     torbutton_log(3, "Window: (" + wind.outerWidth + "," + wind.outerHeight + ") ?= ("
                      + wind.screen.availWidth + "," + wind.screen.availHeight + ")");
-    if(wind.windowState == Components.interfaces.nsIDOMChromeWindow.STATE_MINIMIZED
-      || wind.windowState == Components.interfaces.nsIDOMChromeWindow.STATE_MAXIMIZED) {
+    if (wind.windowState == Ci.nsIDOMChromeWindow.STATE_MINIMIZED
+      || wind.windowState == Ci.nsIDOMChromeWindow.STATE_MAXIMIZED) {
         torbutton_log(2, "Window is minimized/maximized");
         return false;
     }
@@ -1904,8 +1883,9 @@ function showSecurityPreferencesPanel(chromeWindow) {
   if (settingsTab === null) {
       // Open up the settings panel in a new tab.
       tabBrowser.addTab(SECURITY_PREFERENCES_URI, {
-          'selected': true,
-          'parentId': tabBrowser.selectedTab.id
+          "selected": true,
+          "parentId": tabBrowser.selectedTab.id,
+          triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(),
       });
   } else {
       // Activate an existing settings panel tab.
@@ -1984,8 +1964,7 @@ function torbutton_close_window(event) {
     // But that is a major overhaul..
     if (m_tb_is_main_window) {
         torbutton_log(3, "Original window closed. Searching for another");
-        var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-            .getService(Components.interfaces.nsIWindowMediator);
+        var wm = Services.wm;
         var enumerator = wm.getEnumerator("navigator:browser");
         while(enumerator.hasMoreElements()) {
             var win = enumerator.getNext();
@@ -2016,9 +1995,8 @@ function torbutton_close_window(event) {
 
 
 function torbutton_open_network_settings() {
-  var obsSvc = Components.classes["@mozilla.org/observer-service;1"]
-                .getService(Ci.nsIObserverService);
-  obsSvc.notifyObservers(this, "TorOpenNetworkSettings", null);
+  var obsSvc = Services.obs;
+  obsSvc.notifyObservers(this, "TorOpenNetworkSettings");
 }
 
 
@@ -2032,14 +2010,7 @@ var m_tb_resize_date = null;
 // probably not for android.
 var torbutton_resizelistener =
 {
-  QueryInterface: function(aIID)
-  {
-   if (aIID.equals(Ci.nsIWebProgressListener) ||
-       aIID.equals(Ci.nsISupportsWeakReference) ||
-       aIID.equals(Ci.nsISupports))
-     return this;
-   throw Cr.NS_NOINTERFACE;
-  },
+  QueryInterface: ChromeUtils.generateQI(["nsIWebProgressListener", "nsISupportsWeakReference"]),
 
   onLocationChange: function(aProgress, aRequest, aURI) {},
   onStateChange: function(aProgress, aRequest, aFlag, aStatus) {
@@ -2072,10 +2043,8 @@ var torbutton_resizelistener =
               m_tb_resize_date = Date.now();
             }
 
-            let sb = torbutton_get_stringbundle();
             // No need to get "OK" translated again.
-            let sbSvc = Cc["@mozilla.org/intl/stringbundle;1"].
-              getService(Ci.nsIStringBundleService);
+            let sbSvc = Services.strings;
             let bundle = sbSvc.
               createBundle("chrome://global/locale/commonDialogs.properties");
             let button_label = bundle.GetStringFromName("OK");
@@ -2141,8 +2110,7 @@ var torbutton_resizelistener =
 function torbutton_get_current_accept_language_value(aURI)
 {
   try {
-    let ioService = Cc["@mozilla.org/network/io-service;1"]
-                      .getService(Ci.nsIIOService);
+    let ioService = Services.io;
     let channel = ioService.newChannelFromURI(aURI);
     let httpChannel = channel.QueryInterface(Ci.nsIHttpChannel);
     return httpChannel.getRequestHeader("Accept-Language");

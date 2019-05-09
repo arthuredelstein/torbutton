@@ -1,14 +1,8 @@
 // # Utils.js
 // Various helpful utility functions.
 
-// ### Shortcut
-const { Cu: utils, Cr: results } = Components;
-
 // ### Import Mozilla Services
-Cu.import("resource://gre/modules/Services.jsm");
-
-// ### Import global URL
-Cu.importGlobalProperties(["URL"]);
+const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // ### About firstPartyDomain literal
 const k_tb_about_uri_first_party_domain = "about.ef2a7dd5-93bc-417f-a698-142c3116864f.mozilla";
@@ -76,8 +70,8 @@ var observe = function (topic, callback) {
 
 // __env__.
 // Provides access to process environment variables.
-let env = Components.classes["@mozilla.org/process/environment;1"]
-            .getService(Components.interfaces.nsIEnvironment);
+let env = Cc["@mozilla.org/process/environment;1"]
+            .getService(Ci.nsIEnvironment);
 
 // __getEnv(name)__.
 // Reads the environment variable of the given name.
@@ -88,8 +82,8 @@ var getEnv = function (name) {
 // __getLocale
 // Reads the browser locale, the default locale is en-US.
 var getLocale = function() {
-  return Services.locale.getRequestedLocale() || "en-US";
-}
+  return Services.locale.requestedLocale || "en-US";
+};
 
 // ## Windows
 

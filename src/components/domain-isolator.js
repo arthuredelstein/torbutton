@@ -6,21 +6,19 @@
 // call earlier functions). The code file can be processed
 // with docco.js to provide clear documentation.
 
-/* jshint esversion: 6 */
-/* global Components, console, XPCOMUtils */
-
 // ### Abbreviations
-const Cc = Components.classes, Ci = Components.interfaces, Cu = Components.utils;
+
+const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // Make the logger available.
 let logger = Cc["@torproject.org/torbutton-logger;1"]
-               .getService(Components.interfaces.nsISupports).wrappedJSObject;
+               .getService(Ci.nsISupports).wrappedJSObject;
 
-let { ensureDefaultPrefs } = Cu.import("resource://torbutton/modules/default-prefs.js", {});
+let { ensureDefaultPrefs } = ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {});
 ensureDefaultPrefs();
 
 // Import Services object
-Cu.import("resource://gre/modules/Services.jsm");
+ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // Import crypto object (FF 37+).
 Cu.importGlobalProperties(["crypto"]);
@@ -82,6 +80,8 @@ tor.socksProxyCredentials = function (originalProxy, domain) {
                           proxy.port,
                           domain, // username
                           tor.noncesForDomains[domain], // password
+                          "", // aProxyAuthorizationHeader
+                          "", // aConnectionIsolationKey
                           proxy.flags,
                           proxy.failoverTimeout,
                           proxy.failoverProxy);
@@ -138,7 +138,6 @@ tor.isolateCircuitsByDomain = function () {
     }
     try {
       let channel = aChannel.QueryInterface(Ci.nsIChannel),
-          proxy = aProxy.QueryInterface(Ci.nsIProxyInfo),
           firstPartyDomain = channel.loadInfo.originAttributes.firstPartyDomain;
       if (firstPartyDomain === "") {
         firstPartyDomain = "--unknown--";
@@ -165,7 +164,7 @@ const kMODULE_CONTRACTID = "@torproject.org/domain-isolator;1";
 const kMODULE_CID = Components.ID("e33fd6d4-270f-475f-a96f-ff3140279f68");
 
 // Import XPCOMUtils object.
-Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 // DomainIsolator object.
 function DomainIsolator() {
@@ -174,7 +173,7 @@ function DomainIsolator() {
 
 // Firefox component requirements
 DomainIsolator.prototype = {
-  QueryInterface: XPCOMUtils.generateQI([Ci.nsISupports, Ci.nsIObserver]),
+  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIObserver]),
   classDescription: kMODULE_NAME,
   classID: kMODULE_CID,
   contractID: kMODULE_CONTRACTID,

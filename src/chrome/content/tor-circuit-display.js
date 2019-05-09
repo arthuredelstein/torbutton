@@ -26,18 +26,17 @@ let createTorCircuitDisplay = (function () {
 "use strict";
 
 // Mozilla utilities
-const { Cu : utils , Ci : interfaces } = Components.utils;
-Cu.import("resource://gre/modules/Services.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // Import the controller code.
-let { controller } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
+let { controller } = ChromeUtils.import("resource://torbutton/modules/tor-control-port.js", {});
 
 // Utility functions
-let { bindPrefAndInit, observe, getLocale, getDomainForBrowser } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { bindPrefAndInit, observe, getLocale, getDomainForBrowser } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 
 // Make the TorButton logger available.
 let logger = Cc["@torproject.org/torbutton-logger;1"]
-               .getService(Components.interfaces.nsISupports).wrappedJSObject;
+               .getService(Ci.nsISupports).wrappedJSObject;
 
 // ## Circuit/stream credentials and node monitoring
 
@@ -209,18 +208,13 @@ let uiString = function (shortName) {
   return torbuttonBundle.GetStringFromName("torbutton.circuit_display." + shortName);
 };
 
-// __regionBundle__.
-// A list of localized region (country) names.
-let regionBundle = Services.strings.createBundle(
-                     "chrome://global/locale/regionNames.properties");
-
 // __localizedCountryNameFromCode(countryCode)__.
 // Convert a country code to a localized country name.
 // Example: `'de'` -> `'Deutschland'` in German locale.
 let localizedCountryNameFromCode = function (countryCode) {
   if (!countryCode) return uiString("unknown_country");
   try {
-    return regionBundle.GetStringFromName(countryCode.toLowerCase());
+    return Services.intl.getRegionDisplayNames(undefined, [countryCode])[0];
   } catch (e) {
     return countryCode.toUpperCase();
   }
@@ -363,7 +357,7 @@ let setupGuardNote = function () {
              ["div", {},
               noteBefore, ["span", {class: "circuit-guard-name"}, name],
               noteAfter, " ",
-              ["span", {onclick: `gBrowser.selectedTab = gBrowser.addTab('https://support.torproject.org/${localeCode}/tbb/tbb-2/');`,
+              ["span", {onclick: `gBrowser.selectedTab = gBrowser.addTab('https://support.torproject.org/${localeCode}/tbb/tbb-2/', {triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal()});`,
                         class: "circuit-link"},
                learnMoreString]]);
 };

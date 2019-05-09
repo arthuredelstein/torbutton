@@ -19,15 +19,15 @@
 "use strict";
 
 // ### Mozilla Abbreviations
-let {classes: Cc, interfaces: Ci, results: Cr, Constructor: CC, utils: Cu } = Components;
+let { Constructor: CC } = Components;
 
 // ### Import Mozilla Services
-Cu.import("resource://gre/modules/Services.jsm");
+const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // __log__.
 // Logging function
 let logger = Cc["@torproject.org/torbutton-logger;1"]
-               .getService(Components.interfaces.nsISupports).wrappedJSObject;
+               .getService(Ci.nsISupports).wrappedJSObject;
 let log = x => logger.eclog(3, x.trimRight().replace(/\r\n/g, "\n"));
 
 // ### announce this file
@@ -42,8 +42,8 @@ let io = {};
 // given ipcFile or host and port.
 io.asyncSocketStreams = function (ipcFile, host, port) {
   let sts = Cc["@mozilla.org/network/socket-transport-service;1"]
-              .getService(Components.interfaces.nsISocketTransportService),
-	  UNBUFFERED = Ci.nsITransport.OPEN_UNBUFFERED;
+              .getService(Ci.nsISocketTransportService),
+      UNBUFFERED = Ci.nsITransport.OPEN_UNBUFFERED;
 
   // Create an instance of a socket transport.
   let socketTransport;

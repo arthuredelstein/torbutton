@@ -5,13 +5,11 @@
  * access to URLs (a potential proxy bypass vector).
  *************************************************************************/
 
-const Cc = Components.classes;
-const Ci = Components.interfaces;
-const Cu = Components.utils;
 
-Cu.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
+ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
 
-Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
+const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // Module specific constants
 const kMODULE_NAME = "Torbutton Drag and Drop Handler";
@@ -26,17 +24,15 @@ function DragDropFilter() {
   this.logger.log(3, "Component Load 0: New DragDropFilter.");
 
   try {
-    var observerService = Cc["@mozilla.org/observer-service;1"].
-        getService(Ci.nsIObserverService);
-    observerService.addObserver(this, "on-datatransfer-available", false);
-  } catch(e) {
+    Services.obs.addObserver(this, "on-datatransfer-available");
+  } catch (e) {
     this.logger.log(5, "Failed to register drag observer");
   }
 }
 
 DragDropFilter.prototype =
 {
-  QueryInterface: XPCOMUtils.generateQI([Ci.nsISupports, Ci.nsIObserver]),
+  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIObserver]),
 
   // make this an nsIClassInfo object
   flags: Ci.nsIClassInfo.DOM_OBJECT,

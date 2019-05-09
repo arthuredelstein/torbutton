@@ -18,11 +18,10 @@ const kMODULE_NAME = "Cookie Jar Selector";
 const kMODULE_CONTRACTID = "@torproject.org/cookie-jar-selector;1";
 const kMODULE_CID = Components.ID("e6204253-b690-4159-bfe8-d4eedab6b3be");
 
-const Cr = Components.results;
-const Cu = Components.utils;
-
-Cu.import("resource://torbutton/modules/default-prefs.js", {})
+ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {})
   .ensureDefaultPrefs();
+
+const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // XXX: Must match the definition in torcookie.js :/
 function Cookie(number,name,value,isDomain,host,rawHost,HttpOnly,path,isSecure,isSession,
@@ -42,73 +41,32 @@ function Cookie(number,name,value,isDomain,host,rawHost,HttpOnly,path,isSecure,i
 }
 
 function CookieJarSelector() {
-  var Cc = Components.classes;
-  var Ci = Components.interfaces;
+  this.logger = Cc["@torproject.org/torbutton-logger;1"]
+      .getService(Ci.nsISupports).wrappedJSObject;
 
-  this.logger = Components.classes["@torproject.org/torbutton-logger;1"]
-      .getService(Components.interfaces.nsISupports).wrappedJSObject;
+  this.logger.log(3, "Component Load 5: New CookieJarSelector " + kMODULE_CONTRACTID);
 
-  this.logger.log(3, "Component Load 5: New CookieJarSelector "+kMODULE_CONTRACTID);
-
-  this.prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
+  this.prefs = Services.prefs;
 
   var getProfileFile = function(filename) {
-    var loc = "ProfD";  // profile directory
-    var file = 
-      Cc["@mozilla.org/file/directory_service;1"]
-      .getService(Ci.nsIProperties)
+    var loc = "ProfD"; // profile directory
+    var file = Services.dirsvc
       .get(loc, Ci.nsIFile)
       .clone();
     file.append(filename); 
     return file;
   };
 
-  var copyProfileFile = function(src, dest) {
-    var srcfile = getProfileFile(src);    
-    var destfile = getProfileFile(dest);
-    if (srcfile.exists()) {
-      // XXX: Permissions issue with Vista roaming profiles? 
-      // Maybe file locking?
-      try {
-          if (destfile.exists()) {
-              destfile.remove(false);
-          }
-      } catch(e) {
-          this.logger.log(4, "Cookie file deletion exception: "+e);
-      }
-      try {
-          srcfile.copyTo(null, dest);
-      } catch(e) {
-          this.logger.log(5, "Cookie file copy exception: "+e);
-      }
-    }
-  };
-
-  var moveProfileFile = function(src, dest) { // FIXME: Why does this not work?
-    var srcfile = getProfileFile(src);    
-    var destfile = getProfileFile(dest);
-    if (srcfile.exists()) {
-      if (destfile.exists()) {
-        destfile.remove(false);
-      }
-      srcfile.moveTo(null, dest);
-    }
-  };
-
   this.clearCookies = function() {
     try {
-        Cc["@mozilla.org/cookiemanager;1"]
-            .getService(Ci.nsICookieManager)
-            .removeAll();
-    } catch(e) {
-        this.logger.log(4, "Cookie clearing exception: "+e);
+        Services.cookies.removeAll();
+    } catch (e) {
+        this.logger.log(4, "Cookie clearing exception: " + e);
     }
   };
 
   this._cookiesToJS = function(getSession) {
-    var cookieManager =
-      Cc["@mozilla.org/cookiemanager;1"]
-      .getService(Ci.nsICookieManager);
+    var cookieManager = Services.cookies;
     var cookiesEnum = cookieManager.enumerator;
     var cookiesAsJS = [];
     var count = 0;
@@ -353,7 +311,7 @@ function CookieJarSelector() {
         var nextCookie = enumerator.getNext();
         if (!nextCookie) break;
 
-        nextCookie = nextCookie.QueryInterface(Components.interfaces.nsICookie);
+        nextCookie = nextCookie.QueryInterface(Ci.nsICookie);
         for (var i = 0; i < protCookies.length; i++) {
           protcookie = protcookie || (nextCookie.host == protCookies[i].host &&
                                       nextCookie.name == protCookies[i].name &&
@@ -371,7 +329,7 @@ function CookieJarSelector() {
       }
       // Emit cookie-changed event. This instructs other components to clear their identifiers
       // (Specifically DOM storage and safe browsing, but possibly others)
-      var obsSvc = Components.classes["@mozilla.org/observer-service;1"].getService(nsIObserverService);
+      var obsSvc = Cc["@mozilla.org/observer-service;1"].getService(nsIObserverService);
       obsSvc.notifyObservers(this, "cookie-changed", "cleared");
     } catch (e) {
       this.logger.log(5, "Error deleting unprotected cookies: " + e);
@@ -410,10 +368,8 @@ function CookieJarSelector() {
   };
 
   // Check firefox version to know filename
-  var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
-      .getService(Components.interfaces.nsIXULAppInfo);
-  var versionChecker = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
-      .getService(Components.interfaces.nsIVersionComparator);
+  // var appInfo = Services.appinfo;
+  // var versionChecker = Services.vc;
 
   // This JSObject is exported directly to chrome
   this.wrappedJSObject = this;
@@ -424,15 +380,8 @@ function CookieJarSelector() {
   this.timerCallback = {
     cookie_changed: false,
 
-    QueryInterface: function(iid) {
-       if (!iid.equals(Component.interfaces.nsISupports) &&
-           !iid.equals(Component.interfaces.nsITimer)) {
-         Components.returnCode = Cr.NS_ERROR_NO_INTERFACE;
-         return null;
-       }
-       return this;
-    },
-    notify: function() {
+    QueryInterface: ChromeUtils.generateQI(["nsITimer"]),
+    notify() {
        // this refers to timerCallback object. use jarThis to reference
        // CookieJarSelector object.
        if(!this.cookie_changed) {
@@ -450,27 +399,18 @@ function CookieJarSelector() {
 
 }
 
-const nsISupports = Components.interfaces.nsISupports;
-const nsIClassInfo = Components.interfaces.nsIClassInfo;
-const nsIObserver = Components.interfaces.nsIObserver;
-const nsITimer = Components.interfaces.nsITimer;
-const nsIComponentRegistrar = Components.interfaces.nsIComponentRegistrar;
-const nsIObserverService = Components.interfaces.nsIObserverService;
-const nsICategoryManager = Components.interfaces.nsICategoryManager;
+const nsISupports = Ci.nsISupports;
+const nsIClassInfo = Ci.nsIClassInfo;
+const nsIObserver = Ci.nsIObserver;
+const nsITimer = Ci.nsITimer;
+const nsIComponentRegistrar = Ci.nsIComponentRegistrar;
+const nsIObserverService = Ci.nsIObserverService;
+const nsICategoryManager = Ci.nsICategoryManager;
 
 // Start1506: You may or may not care about this:
 CookieJarSelector.prototype =
 {
-  QueryInterface: function(iid)
-  {
-    if (!iid.equals(nsIClassInfo) &&
-        !iid.equals(nsIObserver) &&
-        !iid.equals(nsISupports)) {
-      Components.returnCode = Cr.NS_ERROR_NO_INTERFACE;
-      return null;
-    }
-    return this;
-  },
+  QueryInterface: ChromeUtils.generateQI(["nsIClassInfo", "nsIObserver"]),
 
   wrappedJSObject: null,  // Initialized by constructor
 
@@ -496,19 +436,18 @@ CookieJarSelector.prototype =
   observe : function(aSubject, aTopic, aData) {
        switch(aTopic) { 
         case "cookie-changed":
-            var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);          
+            var prefs = Services.prefs;
             this.timerCallback.cookie_changed = true;
-    
+
             if (aData == "added"
                 && prefs.getBoolPref("extensions.torbutton.cookie_auto_protect")
-                && !prefs.getBoolPref("extensions.torbutton.tor_memory_jar"))
-            {
-              this.addProtectedCookie(aSubject.QueryInterface(Components.interfaces.nsICookie2));//protect the new cookie!    
+                && !prefs.getBoolPref("extensions.torbutton.tor_memory_jar")) {
+              this.addProtectedCookie(aSubject.QueryInterface(Ci.nsICookie2));// protect the new cookie!
             }
             break;
         case "profile-after-change":
-            var obsSvc = Components.classes["@mozilla.org/observer-service;1"].getService(nsIObserverService);
-            obsSvc.addObserver(this, "cookie-changed", false);
+            var obsSvc = Cc["@mozilla.org/observer-service;1"].getService(nsIObserverService);
+            obsSvc.addObserver(this, "cookie-changed");
             // after profil loading, initialize a timer to call timerCallback
             // at a specified interval
             this.timer.initWithCallback(this.timerCallback, 60 * 1000, nsITimer.TYPE_REPEATING_SLACK); // 1 minute
@@ -517,7 +456,7 @@ CookieJarSelector.prototype =
        }
   },
 
-  timer:  Components.classes["@mozilla.org/timer;1"].createInstance(nsITimer),
+  timer:  Cc["@mozilla.org/timer;1"].createInstance(nsITimer),
 
 }
 
@@ -525,7 +464,7 @@ CookieJarSelector.prototype =
 * XPCOMUtils.generateNSGetFactory was introduced in Mozilla 2 (Firefox 4).
 * XPCOMUtils.generateNSGetModule is for Mozilla 1.9.2 (Firefox 3.6).
 */
-Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 if (XPCOMUtils.generateNSGetFactory)
     var NSGetFactory = XPCOMUtils.generateNSGetFactory([CookieJarSelector]);
 else

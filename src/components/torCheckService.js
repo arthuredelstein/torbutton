@@ -7,15 +7,12 @@
  * Tor check service
  *************************************************************************/
 
+const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
+
 // Module specific constants
 const kMODULE_NAME = "Torbutton Tor Check Service";
 const kMODULE_CONTRACTID = "@torproject.org/torbutton-torCheckService;1";
 const kMODULE_CID = Components.ID("5d57312b-5d8c-4169-b4af-e80d6a28a72e");
-
-const Cr = Components.results;
-const Cc = Components.classes;
-const Ci = Components.interfaces;
-const Cu = Components.utils;
 
 function TBTorCheckService() {
   this._logger = Cc["@torproject.org/torbutton-logger;1"]
@@ -28,15 +25,7 @@ function TBTorCheckService() {
 
 TBTorCheckService.prototype =
 {
-  QueryInterface: function(iid) {
-    if (!iid.equals(Ci.nsIClassInfo) &&
-        !iid.equals(Ci.nsISupports)) {
-      Components.returnCode = Cr.NS_ERROR_NO_INTERFACE;
-      return null;
-    }
-
-    return this;
-  },
+  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIClassInfo]),
 
   kCheckNotInitiated: 0, // Possible values for statusOfTorCheck.
   kCheckSuccessful: 1,
@@ -79,10 +68,8 @@ TBTorCheckService.prototype =
   {
     Cu.importGlobalProperties(["XMLHttpRequest"]);
     let req = new XMLHttpRequest();
-    let prefs =  Cc["@mozilla.org/preferences-service;1"]
-                   .getService(Ci.nsIPrefBranch);
-    let url = prefs.getCharPref("extensions.torbutton.test_url");
-    req.open('GET', url, aAsync);
+    let url = Services.prefs.getCharPref("extensions.torbutton.test_url");
+    req.open("GET", url, aAsync);
     req.channel.loadFlags |= Ci.nsIRequest.LOAD_BYPASS_CACHE;
     req.overrideMimeType("text/xml");
     req.timeout = 120000;  // Wait at most two minutes for a response.
@@ -140,8 +127,8 @@ TBTorCheckService.prototype =
       }
 
     return ret;
-  }
+  },
 };
 
-Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 var NSGetFactory = XPCOMUtils.generateNSGetFactory([TBTorCheckService]);

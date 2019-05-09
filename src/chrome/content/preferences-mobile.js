@@ -1,12 +1,12 @@
 // # Security Settings User Interface for Mobile
 
 // Utilities
-let { utils: Cu } = Components;
-let { getBoolPref, getIntPref, setBoolPref, setIntPref, getCharPref } =
-    Cu.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { getBoolPref, getIntPref, setBoolPref, setIntPref, getCharPref }
+  = Services.prefs;
 
 let { getLocale, show_torbrowser_manual } =
-    Cu.import("resource://torbutton/modules/utils.js", {});
+    ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 
 // Description elements have the follow names.
 const descNames =
@@ -64,7 +64,7 @@ function torbutton_set_learn_more_links() {
     locale = getLocale();
   }
   let links = linkNames.map(name => document.getElementById(name));
-  links.forEach(link => {;
+  links.forEach(link => {
     if (show_manual && locale != "") {
       link.href= "https:/tb-manual.torproject.org/" + locale +
         "/security-slider.html";
