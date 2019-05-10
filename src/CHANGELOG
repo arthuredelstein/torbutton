@@ -1,3 +1,9 @@
+2.1.7
+ * Bug 30388: Make sure the updated intermediate certificate keeps working
+
+2.0.13
+ * Bug 30388: Make sure the updated intermediate certificate is working
+
 2.1.6
  * Bug 22538+22513: Fix new circuit button for error pages
  * Bug 29825: Intelligently add new Security Level button to taskbar
