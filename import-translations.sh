@@ -12,7 +12,7 @@ BUNDLE_LOCALES="ar ca cs da de el es-AR es-ES fa fr ga-IE he hu id is it ja ka k
 # 26498 and #29257. Others might want to fix, build, and use it, though.
 BUNDLE_LOCALES="$BUNDLE_LOCALES eu bn-BD"
 
-LOCALE_DIR=../src/chrome/locale
+LOCALE_DIR=./chrome/locale
 
 # FILEMAP is an array of "localeFile:translationBranch" strings.
 FILEMAP=( "aboutDialog.dtd:torbutton-aboutdialogdtd"
