@@ -29,7 +29,7 @@
 <!ENTITY torbutton.prefs.sec_safer_description "Désactive les fonctions souvent dangereuses des sites Web, ce qui pourrait entraîner une perte de fonctionnalité de certains sites Web.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Au réglage Plus sûr :">
 <!ENTITY torbutton.prefs.sec_safest_label "Le plus sûr">
-<!ENTITY torbutton.prefs.sec_safest_description "Ne permettre que les fonctions de sites Web qui sont exigées pour les sites fixes et les services de base. Ces changements affectent les images, les médias et les scripts.">
+<!ENTITY torbutton.prefs.sec_safest_description "Ne permet que les fonctions de sites Web exigées pour les sites statiques et les services de base. Ces changements affectent les images, les médias et les scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Au réglage Le plus sûr :">
 <!ENTITY torbutton.prefs.sec_learn_more_label "En apprendre davantage">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript est désactivé pour les sites non HTTPS.">

@@ -16,4 +16,4 @@
 <!ENTITY bottomLinks.grow        "Aidez à la croissance du réseau Tor !">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
 <!ENTITY bottomLinks.license  "Renseignements relatifs à la licence">
-<!ENTITY tor.TrademarkStatement   "« Tor » et le « logo Oignon » sont des marques de commerce de « The Projet Tor, Inc. »">
+<!ENTITY tor.TrademarkStatement   "« Tor » et le « logo Onion » sont des marques de commerce de « The Projet Tor, Inc. »">
