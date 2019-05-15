@@ -1,3 +1,11 @@
+2.1.8
+ * Bug 30171: Don't sync cookie.cookieBehavior and firstparty.isolate
+ * Bug 30115: Map browser+domain to credentials to fix circuit display
+ * Bug 30497: Add Donate link to about:tor
+ * Bug 30069: Use slider and about:tor localizations on mobile
+ * Bug 30425: Revert armagadd-on-2.0 changes
+ * Translations update
+
 2.1.7
  * Bug 30388: Make sure the updated intermediate certificate keeps working
 
