@@ -28,3 +28,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Faigh an nuacht is déanaí maidir le Tor i do bhosca isteach.">
 <!ENTITY aboutTor.newsletter.link_text "Cláraigh le Nuachtlitir Tor.">
+<!ENTITY aboutTor.donationBanner.line2e "Cuir taca le Tor.">
+<!ENTITY aboutTor.donationBanner.buttonA "Tabhair síntiús airgid anois">

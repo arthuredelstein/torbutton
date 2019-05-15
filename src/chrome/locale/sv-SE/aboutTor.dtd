@@ -28,3 +28,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Få de senaste nyheterna från Tor direkt till din inkorg.">
 <!ENTITY aboutTor.newsletter.link_text "Anmäl dig till Tor-nyheter.">
+<!ENTITY aboutTor.donationBanner.line2e "Håll Tor stark.">
+<!ENTITY aboutTor.donationBanner.buttonA "Donera nu">

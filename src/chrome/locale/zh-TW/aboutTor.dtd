@@ -28,3 +28,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "將 Tor 的最新消息直接傳送到您的收件匣。">
 <!ENTITY aboutTor.newsletter.link_text "訂閱 Tor 的新資訊。">
+<!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
+<!ENTITY aboutTor.donationBanner.buttonA "立刻捐款">

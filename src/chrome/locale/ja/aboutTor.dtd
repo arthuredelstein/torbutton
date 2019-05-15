@@ -28,3 +28,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Torからの最新ニュースを受信トレイに。">
 <!ENTITY aboutTor.newsletter.link_text "Torニュースにを申し込む。">
+<!ENTITY aboutTor.donationBanner.line2e "Tor を強く保つ。">
+<!ENTITY aboutTor.donationBanner.buttonA "今すぐ寄付">

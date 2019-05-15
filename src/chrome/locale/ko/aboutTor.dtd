@@ -28,3 +28,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "최신의 Tor 뉴스를 받은 편지함에 곧장 받으십시오.">
 <!ENTITY aboutTor.newsletter.link_text "Tor 뉴스를 구독.">
+<!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
+<!ENTITY aboutTor.donationBanner.buttonA "Donate Now">

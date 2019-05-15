@@ -28,3 +28,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Tor ile ilgili son gelişmeler doğrudan e-posta kutunuza gelsin.">
 <!ENTITY aboutTor.newsletter.link_text "Tor Haber Bültenine Abone Olun">
+<!ENTITY aboutTor.donationBanner.line2e "Tor uygulamasının gücünü koruyalım.">
+<!ENTITY aboutTor.donationBanner.buttonA "Bağış Yapın">

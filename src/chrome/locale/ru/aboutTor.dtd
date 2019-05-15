@@ -28,3 +28,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Получайте последние новости Tor прямо на ваш почтовый ящик.">
 <!ENTITY aboutTor.newsletter.link_text "Подпишитесь на новости Tor.">
+<!ENTITY aboutTor.donationBanner.line2e "Сохраните Tor сильным.">
+<!ENTITY aboutTor.donationBanner.buttonA "Пожертвовать">

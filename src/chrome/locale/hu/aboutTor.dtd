@@ -28,3 +28,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Kapja meg a legfrissebb Tor híreket közvetlenül email fiókjába.">
 <!ENTITY aboutTor.newsletter.link_text "Iratkozzon fel a Tor hírekhez.">
+<!ENTITY aboutTor.donationBanner.line2e "Tartsuk a Tor-t erősnek.">
+<!ENTITY aboutTor.donationBanner.buttonA "Támogasson most">
