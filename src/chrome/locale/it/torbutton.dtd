@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript è disattivato in tutti i siti in modo predefinito.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Alcuni caratteri e simboli matematici sono disattivati.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Alcuni caratteri, icone, simboli matematici e immagini sono disattivati.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio e video (media HTML5) sono click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Nuovo circuito per questo sito">

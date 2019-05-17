@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "تعطل جافا سكربت مبدئيا على جميع المواقع.">
 <!ENTITY torbutton.prefs.sec_limit_typography "تعطّل بعض الخطوط والرموز الرياضية.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "تعطّل بعض الخطوط والأيقونات والرموز الرياضية والصور.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "الصوت والفيديو يحتاج للنقر لتشغيله.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "دائرة تور">
 <!ENTITY torbutton.circuit_display.new_circuit "دائرة تور جديدة لهذا الموقع">

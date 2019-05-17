@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript je ve výchozím nastavení vypnut na všech stránkách.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Některá písma a matematické symboly jsou zablokovány.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Některá písma, matematické symboly a obrázky jsou zablokovány.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio a video (HTML5 média) se přehrávají po kliknutí.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Tor okruh">
 <!ENTITY torbutton.circuit_display.new_circuit "Nový okruh Toru pro tuto stránku">

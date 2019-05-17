@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript está deshabilitado por defecto en todos los sitios.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Algunas fuentes y símbolos matemáticos están deshabilitados.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Algunas fuentes, iconos, símbolos matemáticos, e imágenes están deshabilitados.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio y vídeo (medios HTML5) son de tipo pulsar-para-reproducir.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Nuevo Circuito para este Sitio">

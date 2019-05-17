@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "جاوا اسکریپت به طور پیش فرض در تمامی سایت ها غیر فعال است.">
 <!ENTITY torbutton.prefs.sec_limit_typography "برخی از فونت ها و نمادهای ریاضی غیرفعال هستند">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "برخی از فونت ها، شمایل‌ها، علایم ریاضی و تصاویر از کار افتاده هستند.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "صدا و ویدیو ( HTML5 رسانه ) برای بازی کلیک می‌کنند.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "مدار تور">
 <!ENTITY torbutton.circuit_display.new_circuit "مدار جدید برای این سایت">

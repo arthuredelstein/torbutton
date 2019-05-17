@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "জাভাস্ক্রিপ্ট সব সাইটে ডিফল্ট দ্বারা নিষ্ক্রিয় করা হয়।">
 <!ENTITY torbutton.prefs.sec_limit_typography "কিছু ফন্ট এবং গণিত চিহ্ন অক্ষম আছে।">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "কিছু ফন্ট, আইকন, গণিত প্রতীক এবং ছবি অক্ষম রয়েছে।">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "অডিও এবং ভিডিও (HTML5 মিডিয়া) ক্লিক-টু-খেলা।">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "টর সার্কিট">
 <!ENTITY torbutton.circuit_display.new_circuit "এই সাইটের জন্য নতুন সার্কিট">

@@ -37,6 +37,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript ist standardmäßig auf allen Seiten deaktiviert.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Einige Schriftarten und mathematische Symbole sind deaktiviert.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Einige Schriftarten, Symbole, mathematische Symbole und Bilder sind deaktiviert.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio und Video (HTML5-Medien) müssen zur Wiedergabe angeklickt werden.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Tor Kanal">
 <!ENTITY torbutton.circuit_display.new_circuit "Neuen Kanal für diese Seite">

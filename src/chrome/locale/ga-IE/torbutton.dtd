@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "Tá JavaScript díchumasaithe ar gach suíomh de réir réamhshocraithe.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Tá roinnt clófhoirne agus siombailí matamaiticiúla díchumasaithe.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Tá roinnt clófhoirne, deilbhíní, siombailí matamaiticiúla, agus íomhánna díchumasaithe.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Caithfidh tú fuaimeanna agus físeáin (meáin HTML5) a chliceáil lena seinm.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Ciorcad Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Ciorcad Nua don Suíomh seo">

@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "자바 스크립트는 기본 설정으로 모든 사이트에서 비활성화 되어 있습니다.">
 <!ENTITY torbutton.prefs.sec_limit_typography "일부 글꼴이며 수학기호가 비활성화 됩니다.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "일부 글꼴이며 상징이며 수학기호며 사진이 비활성화 됩니다.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "오디오와 동영상(HTML5 media) 보려면 누르십시오.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "토르 서킷">
 <!ENTITY torbutton.circuit_display.new_circuit "이 사이트에서 새로운 서킷을 재구축">

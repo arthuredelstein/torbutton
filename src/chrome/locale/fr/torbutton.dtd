@@ -2,9 +2,9 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nouveau circuit Tor pour ce site">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.networksettings "Paramètres du réseau Tor">
+<!ENTITY torbutton.context_menu.networksettings "Paramètres du réseau Tor…">
 <!ENTITY torbutton.context_menu.networksettings.key "R">
-<!ENTITY torbutton.context_menu.downloadUpdate "Vérifier les mises à jour du Navigateur Tor">
+<!ENTITY torbutton.context_menu.downloadUpdate "Vérifier les mises à jour du Navigateur Tor…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "M">
 <!ENTITY torbutton.context_menu.cookieProtections "Protections des témoins…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "T">
@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript est désactivé par défaut pour tous les sites.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Certaines polices et certains symboles mathématiques sont désactivés.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Certaines polices, icônes, images et certains symboles mathématiques sont désactivés.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Le son et la vidéo (médias HTML5) sont « cliquer pour lire ».">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Circuit Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Nouveau circuit pour ce site">

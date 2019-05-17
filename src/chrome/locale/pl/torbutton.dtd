@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript jest domyślnie wyłączona na wszystkich stronach.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Niektóre fonty i symbole są wyłączone.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Niektóre fonty, ikony, symbole i obrazki są wyłączone.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Dźwięk i obraz (media HTML5) to &quot;kliknij, aby odtworzyć&quot;.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Obwód Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Nowy obwód dla tej strony">

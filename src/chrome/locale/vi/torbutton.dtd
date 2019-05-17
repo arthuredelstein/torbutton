@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript mặc định bị vô hiệu trên tất cả các trang.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Một số phông chữ và ký hiêu toán học bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Một số phông chữ, biểu tượng, và hình ảnh bị vô hiệu.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Âm thanh và video (HTML5 media) phải bấm-để-phát. ">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Mạch Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Mạch Tor mới cho trang này">

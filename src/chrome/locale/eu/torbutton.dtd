@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media) are click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Tor Zirkuitoa">
 <!ENTITY torbutton.circuit_display.new_circuit "Zirkuito berria Gune honetarako">

@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "El JavaScript està desactivat per defecte a tots els llocs.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Algunes fonts i símbols matemàtics estan desactivats. ">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Algunes fonts, icones, símbols matemàtics, i imatges estan desactivats. ">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "L'àudio i el vídeo (mitjans de comunicació HTML5) són click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
 <!ENTITY torbutton.circuit_display.title "Circuit de Tor">
 <!ENTITY torbutton.circuit_display.new_circuit " Circuit de Tor per a aquest lloc ">
