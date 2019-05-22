@@ -1826,6 +1826,9 @@ function torbutton_do_startup()
         // For charsets
         torbutton_update_fingerprinting_prefs();
 
+        // Bug 30565: sync browser.privatebrowsing.autostart with security.nocertdb
+        torbutton_update_disk_prefs();
+
         // #5758: Last ditch effort to keep Vanilla Torbutton users from totally
         // being pwnt.  This is a pretty darn ugly hack, too. But because of #5863,
         // we really don't care about preserving the user's values for this.
