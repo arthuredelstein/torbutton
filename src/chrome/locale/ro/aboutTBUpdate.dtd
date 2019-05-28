@@ -1,0 +1,8 @@
+<!ENTITY aboutTBUpdate.changelogTitle "Schimbări Tor Browser">
+<!ENTITY aboutTBUpdate.updated "Tor Browser a fost actualizat.">
+<!ENTITY aboutTBUpdate.linkPrefix "Pentru cele mai recente informații despre această versiune,">
+<!ENTITY aboutTBUpdate.linkLabel  "vizitați website-ul nostru">
+<!ENTITY aboutTBUpdate.linkSuffix " .">
+<!ENTITY aboutTBUpdate.version "Versiune">
+<!ENTITY aboutTBUpdate.releaseDate "Data lansării">
+<!ENTITY aboutTBUpdate.releaseNotes "Note de Lansare">
