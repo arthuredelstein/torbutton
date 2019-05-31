@@ -1,3 +1,7 @@
+2.1.10
+ * Bug 30565: sync nocertdb with privatebrowsing.autostart at startup
+ * Translations update
+
 2.1.9
  * Bug 30464: Add WebGL to safer descriptions
  * Translations update
