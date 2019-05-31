@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript გათიშულია ყველა საიტზე ნაგულისხმევად.">
 <!ENTITY torbutton.prefs.sec_limit_typography "შრიფტებისა და მათემატიკური სიმბოლოების ნაწილი გათიშულია.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "შრიფტების, ხატულების, მათემატიკური სიმბოლოებისა და სურათების ნაწილი გათიშულია.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "ხმოვანი და ვიდეოფაილები (HTML5), აგრეთვე WebGL ეშვება მხოლოდ დაწკაპებით.">
 <!ENTITY torbutton.circuit_display.title "Tor-წრედი">
 <!ENTITY torbutton.circuit_display.new_circuit "ახალი წრედი ამ საიტისთვის">

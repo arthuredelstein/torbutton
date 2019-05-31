@@ -9,7 +9,7 @@
 <!ENTITY aboutTor.viewChangelog.label "Ikusi Aldaketak">
 
 <!ENTITY aboutTor.ready.label "Esploratu. Pribatuki.">
-<!ENTITY aboutTor.ready2.label "You’re ready for the world’s most private browsing experience.">
+<!ENTITY aboutTor.ready2.label "Prest zaude munduko nabigazio esperientzia pribatuenerako.">
 <!ENTITY aboutTor.failure.label "Zerbait gaizki joan da!">
 <!ENTITY aboutTor.failure2.label "Tor ez da nabigatzaile honetan funtzionatzen ari.">
 
@@ -17,16 +17,16 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Galderarik?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Check our Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Aztertu gure Tor Browseren eskuliburua">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor nabigatzailearen eskuliburua">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project is a US 501(c)(3) non-profit organization advancing human rights and freedoms by creating and deploying free and open source anonymity and privacy technologies, supporting their unrestricted availability and use, and furthering their scientific and popular understanding.">
+<!ENTITY aboutTor.tor_mission.label "The Tor Project irabazi asmorik gabeko US 501(c)(3) erakunde bat da, anonimotasun eta pribatutasun teknologia libre eta kode irekikoak sortuz eta zabalduz giza eskubideak eta askatasunak sustatzen dituena, haien murrizketarik gabeko eskuragarritasuna eta erabilera babestuz, eta haien ulertze zientifiko eta herrikoia sustatuz.">
 <!ENTITY aboutTor.getInvolved.label "Hartu parte »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Get the latest news from Tor straight to your inbox.">
+<!ENTITY aboutTor.newsletter.tagline "Jaso Toren inguruko azken berriak zure sarrerako ontzian.">
 <!ENTITY aboutTor.newsletter.link_text "Harpidetu Tor berrietara">
-<!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
+<!ENTITY aboutTor.donationBanner.line2e "Mantendu Tor indartsu.">
 <!ENTITY aboutTor.donationBanner.buttonA "Egin dohaintza orain">

@@ -9,7 +9,7 @@
 <!ENTITY aboutTor.viewChangelog.label "Visualiser le journal des changements">
 
 <!ENTITY aboutTor.ready.label "Explorez, en toute confidentialité.">
-<!ENTITY aboutTor.ready2.label "Vous êtes prêts pour l’expérience de navigation la plus confidentielle au monde.">
+<!ENTITY aboutTor.ready2.label "Vous êtes prêt pour l’expérience de navigation la plus confidentielle au monde.">
 <!ENTITY aboutTor.failure.label "Un problème est survenu !">
 <!ENTITY aboutTor.failure2.label "Tor ne fonctionne pas dans ce navigateur.">
 

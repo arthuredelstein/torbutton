@@ -22,20 +22,20 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Cookie berriak babestu">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ez babestu cookie berririk">
 <!ENTITY torbutton.prefs.sec_caption "Segurtasun maila">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "The Security Slider lets you disable certain browser features that may make your browser more vulnerable to hacking attempts.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Segurtasun graduatzaileak nabigatzailearen ezaugarri batzuk ezgaitzea baimentzen dizu baina zure nabigatzailea ahulagoa izango da hackeatze saiakeren aurrean.">
 <!ENTITY torbutton.prefs.sec_standard_label "Estandarra">
 <!ENTITY torbutton.prefs.sec_standard_description "Tor Nabigatzailearen eta web-orriaren ezaugarri guztiak gaituta daude.">
 <!ENTITY torbutton.prefs.sec_safer_label "Seguruagoa">
-<!ENTITY torbutton.prefs.sec_safer_description "Disables website features that are often dangerous, causing some sites to lose functionality.">
+<!ENTITY torbutton.prefs.sec_safer_description "Askotan arriskutsuak diren webguneen ezaugarriak ezgaitzen ditu, gune batzuen funtzionalitatea galduz.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Ezarpenik seguruenean: ">
 <!ENTITY torbutton.prefs.sec_safest_label "Seguruena">
-<!ENTITY torbutton.prefs.sec_safest_description "Only allows website features required for static sites and basic services. These changes affect images, media, and scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "At the safest setting:">
+<!ENTITY torbutton.prefs.sec_safest_description "Gune estatikoek eta zerbitzuek behar dituzten ezaugarriak onartzen ditu soilik. Aldaketak hauek irudiei, mediari, eta scritpei eragiten diete.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Ezarpen seguruenean:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Gehiago jakin">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript ezgaituta dago HTTPS ez diren web-orrietan.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is disabled by default on all sites.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Some fonts and math symbols are disabled.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Some fonts, icons, math symbols, and images are disabled.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScripta ezgaituta dago gune guztietan.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Letra-mota eta ikur matematiko batzuk ezgaituta daude.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Letra-mota, ikono, ikur matematiko batzuk eta irudiak ezgaituta daude.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audioa eta bideoa (HTML5 media), eta WebGL erreproduzitzeko klikatu behar da.">
 <!ENTITY torbutton.circuit_display.title "Tor Zirkuitoa">
 <!ENTITY torbutton.circuit_display.new_circuit "Zirkuito berria Gune honetarako">

@@ -1,8 +1,8 @@
-<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Changelog">
+<!ENTITY aboutTBUpdate.changelogTitle "Nhật kí thay dổi trình duyệt Tor">
 <!ENTITY aboutTBUpdate.updated "Trình duyệt Tor đã được cập nhật">
 <!ENTITY aboutTBUpdate.linkPrefix "Dành cho những thông tin cập nhật mới nhất về bản phát hành này,">
 <!ENTITY aboutTBUpdate.linkLabel  "đến thăm trang của chúng tôi">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.version "Phiên bản">
-<!ENTITY aboutTBUpdate.releaseDate "Release Date">
+<!ENTITY aboutTBUpdate.releaseDate "Ngày giới thiệu">
 <!ENTITY aboutTBUpdate.releaseNotes "Ghi chú phát hành">

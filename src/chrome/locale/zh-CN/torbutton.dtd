@@ -1,10 +1,10 @@
 <!ENTITY torbutton.context_menu.new_identity "新身份">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.new_circuit "为此站点使用新 Tor 线路">
+<!ENTITY torbutton.context_menu.new_circuit "为此站点使用新的 Tor 链路">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.networksettings "Tor 网络设置…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "Tor Browser 检查更新…">
+<!ENTITY torbutton.context_menu.downloadUpdate "检查 Tor 浏览器的更新…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookie 保护…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
@@ -24,7 +24,7 @@
 <!ENTITY torbutton.prefs.sec_caption "安全等级">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "安全滑块可禁用某些浏览器功能，避免因这些功能导致的漏洞而受到攻击。">
 <!ENTITY torbutton.prefs.sec_standard_label "标准安全性">
-<!ENTITY torbutton.prefs.sec_standard_description "将启用所有Tor浏览器与网站功能。">
+<!ENTITY torbutton.prefs.sec_standard_description "将启用 Tor 浏览器和网站的所有功能。">
 <!ENTITY torbutton.prefs.sec_safer_label "中等安全性">
 <!ENTITY torbutton.prefs.sec_safer_description "禁用网站功能通常是危险的，这会导致一些站不能正常运作。">
 <!ENTITY torbutton.prefs.sec_safer_list_label "在中等安全性设置下：">
@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "在所有网站上默认禁用JavaScript。">
 <!ENTITY torbutton.prefs.sec_limit_typography "一些字体与数学符号被禁用。">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "一些字体，图标，数学符号与图片被禁用。">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
-<!ENTITY torbutton.circuit_display.title "tor链路">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "点击播放音频或视频（HTML5 媒体）和WebGL。">
+<!ENTITY torbutton.circuit_display.title "Tor 链路">
 <!ENTITY torbutton.circuit_display.new_circuit "为此站点使用新线路">

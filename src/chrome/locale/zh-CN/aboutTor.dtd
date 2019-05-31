@@ -9,7 +9,7 @@
 <!ENTITY aboutTor.viewChangelog.label "查看更新日志">
 
 <!ENTITY aboutTor.ready.label "私密浏览">
-<!ENTITY aboutTor.ready2.label "欢迎体验最私密的浏览。">
+<!ENTITY aboutTor.ready2.label "您将享受世界上最私密的浏览体验。">
 <!ENTITY aboutTor.failure.label "出错了！">
 <!ENTITY aboutTor.failure2.label "Tor 无法在该浏览器下运行。">
 
@@ -17,16 +17,16 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "有疑问？">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "查阅 Tor Browser 用户手册 »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "查阅 Tor 浏览器用户手册 »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser 用户手册">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor 浏览器用户手册">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project 是一家美国 501(c)(3) 非营利机构，致力于通过开发和部署自由且开放源代码的匿名和隐私技术，为其不受限制的可用性和使用提供支持，促进其在科研领域和大众的知名度来支持人权和自由。">
 <!ENTITY aboutTor.getInvolved.label "参与进来 »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "通过邮件获取 Tor 的最新消息。">
-<!ENTITY aboutTor.newsletter.link_text "注册 Tor 新闻列表">
+<!ENTITY aboutTor.newsletter.link_text "订阅 Tor 的最新动态。">
 <!ENTITY aboutTor.donationBanner.line2e "让 Tor 网络保持健壮。">
-<!ENTITY aboutTor.donationBanner.buttonA "现在就捐助">
+<!ENTITY aboutTor.donationBanner.buttonA "立即捐助">

@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript er sjálfgefið óvirkt á öllum vefsvæðum.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Sumt letur og stærðfræðitákn eru óvirk.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Sumt letur, táknmyndir, myndir og stærðfræðitákn eru óvirk.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Hljóð og myndskeið (HTML5-gagnamiðla) ásamt WebGL þarf að smella á til að spila.">
 <!ENTITY torbutton.circuit_display.title "Tor-rás">
 <!ENTITY torbutton.circuit_display.new_circuit "Ný rás fyrir þetta vefsvæði">
