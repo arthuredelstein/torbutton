@@ -1,19 +1,41 @@
-<!ENTITY torbutton.context_menu.new_identity "Identitate noua">
+<!ENTITY torbutton.context_menu.new_identity "Identitate nouă">
 <!ENTITY torbutton.context_menu.new_identity_key "l">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
-<!ENTITY torbutton.context_menu.downloadUpdate.key "A">
-<!ENTITY torbutton.context_menu.cookieProtections "Protectii Cookie-uri.">
+<!ENTITY torbutton.context_menu.new_circuit "Circuit Tor nou pentru acest site">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.networksettings "Configurare Rețea Tor...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Verifică dacă există actualizări pentru Tor Browser...">
+<!ENTITY torbutton.context_menu.downloadUpdate.key "U">
+<!ENTITY torbutton.context_menu.cookieProtections "Protecție Cookie...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Apasă pentru pornirea Torbutton">
-<!ENTITY torbutton.cookiedialog.title "Gestionează Protecţii Cookie">
+<!ENTITY torbutton.button.tooltip "Apasă pentru a inițializa Torbutton">
+<!ENTITY torbutton.prefs.security_settings "Setări Securitate Tor Browser">
+<!ENTITY torbutton.cookiedialog.title "Gestionare Protecţie Cookie">
 <!ENTITY torbutton.cookiedialog.lockCol "Protejat">
-<!ENTITY torbutton.cookiedialog.domainCol "Gazda">
+<!ENTITY torbutton.cookiedialog.domainCol "Gazdă">
 <!ENTITY torbutton.cookiedialog.nameCol "Nume">
-<!ENTITY torbutton.cookiedialog.pathCol "Cale">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protejeaza Cookie">
-<!ENTITY torbutton.cookiedialog.removeCookie "Indeparteaza Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Deprotejează Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Indeparteaza tot, mai putin protejat">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protejeaza Cookie-urile noi">
+<!ENTITY torbutton.cookiedialog.pathCol "Rută">
+<!ENTITY torbutton.cookiedialog.protectCookie "Protejare Cookie">
+<!ENTITY torbutton.cookiedialog.removeCookie "Eliminare Cookie">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Indepărtare protecție Cookie">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Eliminare totală, minus elemente protejate">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Protejare Cookie-uri noi">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nu proteja Cookie-urile noi">
+<!ENTITY torbutton.prefs.sec_caption "Nivel Securitate">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Opțiunea Security Slider îți permite să dezactivezi anumite caracteristici ale navigatorului care îl fac mai vulnerabil în fața atacurilor.">
+<!ENTITY torbutton.prefs.sec_standard_label "Standard">
+<!ENTITY torbutton.prefs.sec_standard_description "Toate facilitățile site-ului web și ale Tor Browser sunt active.">
+<!ENTITY torbutton.prefs.sec_safer_label "Mai sigur">
+<!ENTITY torbutton.prefs.sec_safer_description "Dezactivează facilități ale site-ului web care sunt deseori periculoase, provocând uneori pierderea funcționalității">
+<!ENTITY torbutton.prefs.sec_safer_list_label "La setarea mai sigură:">
+<!ENTITY torbutton.prefs.sec_safest_label "Cel mai sigur">
+<!ENTITY torbutton.prefs.sec_safest_description "Permite doar facilitățile necesare pentru site-uri simple și servicii de bază. Aceste modificări afectează imagini, media și scripturi.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "La setarea cea mai sigură:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Află mai mult">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript e dezactivat în site-uri non-HTTPS">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript e dezactivat implicit în toate site-urile.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Unele fonturi și simboluri matematice sunt dezactivate.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Unele fonturi, pictograme, simboluri matematice și imagini sunt dezactivate.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.circuit_display.title "Circuit Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "Circuit nou pentru acest site">
