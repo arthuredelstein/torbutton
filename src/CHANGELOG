@@ -1,3 +1,7 @@
+2.2
+ * Bug 30469: Add ro translation
+ * Translations update
+
 2.1.10
  * Bug 30565: sync nocertdb with privatebrowsing.autostart at startup
  * Translations update
