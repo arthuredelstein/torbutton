@@ -1039,16 +1039,7 @@ async function torbutton_do_new_identity() {
 
   torbutton_log(3, "New Identity: Clearing Cookies and DOM Storage");
 
-  if (m_tb_prefs.getBoolPref("extensions.torbutton.cookie_protections")) {
-    var selector = Cc["@torproject.org/cookie-jar-selector;1"]
-                    .getService(Ci.nsISupports)
-                    .wrappedJSObject;
-    // This emits "cookie-changed", "cleared", which kills DOM storage
-    // and the safe browsing API key
-    selector.clearUnprotectedCookies("tor");
-  } else {
-    torbutton_clear_cookies();
-  }
+  torbutton_clear_cookies();
 
   torbutton_log(3, "New Identity: Closing open connections");
 
@@ -1557,13 +1548,6 @@ function torbutton_check_protections()
     document.getElementById("torbutton-checkForUpdateSeparator").hidden = false;
     document.getElementById("torbutton-checkForUpdate").hidden = false;
   }
-
-  var cookie_pref = m_tb_prefs.getBoolPref("extensions.torbutton.cookie_protections");
-  document.getElementById("torbutton-cookie-protector").disabled = !cookie_pref;
-
-  // XXX: Bug 14632: The cookie dialog is useless in private browsing mode in FF31ESR
-  // See https://trac.torproject.org/projects/tor/ticket/10353 for more info.
-  document.getElementById("torbutton-cookie-protector").hidden = m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart");
 
   if (!m_tb_control_pass || (!m_tb_control_ipc_file && !m_tb_control_port)) {
     // TODO: Remove the Torbutton menu entry again once we have done our

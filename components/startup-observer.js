@@ -29,6 +29,22 @@ const kMODULE_NAME = "Startup";
 const kMODULE_CONTRACTID = "@torproject.org/startup-observer;1";
 const kMODULE_CID = Components.ID("06322def-6fde-4c06-aef6-47ae8e799629");
 
+function cleanupCookies() {
+  const migratedPref = "extensions.torbutton.cookiejar_migrated";
+  if (!Services.prefs.getBoolPref(migratedPref, false)) {
+    // Cleanup stored cookie-jar-selector json files
+    const profileFolder = Services.dirsvc.get("ProfD", Ci.nsIFile).clone();
+    for (const file of profileFolder.directoryEntries) {
+      if (file.leafName.match(/^(cookies|protected)-.*[.]json$/)) {
+        try {
+          file.remove(false);
+        } catch (e) {}
+      }
+    }
+    Services.prefs.setBoolPref(migratedPref, true);
+  }
+}
+
 function StartupObserver() {
     this.logger = Cc["@torproject.org/torbutton-logger;1"]
                     .getService(Ci.nsISupports).wrappedJSObject;
@@ -61,6 +77,8 @@ function StartupObserver() {
     } catch(e) {
       this.logger.log(4, "Early proxy change failed. Will try again at profile load. Error: "+e);
     }
+
+    cleanupCookies();
 
     // Using all possible locales so that we do not have to change this list every time we support
     // a new one.

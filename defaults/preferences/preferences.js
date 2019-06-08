@@ -26,8 +26,6 @@ pref("extensions.torbutton.inserted_security_level",false);
 pref("extensions.torbutton.maximize_warnings_remaining", 3);
 
 // Security prefs:
-pref("extensions.torbutton.cookie_protections",true);
-pref("extensions.torbutton.cookie_auto_protect",false);
 pref("extensions.torbutton.clear_http_auth",true);
 pref("extensions.torbutton.close_newnym",true);
 pref("extensions.torbutton.resize_new_windows",false);
