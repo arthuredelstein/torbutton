@@ -40,8 +40,6 @@ var m_tb_confirming_plugins = false;
 var m_tb_window_height = window.outerHeight;
 var m_tb_window_width = window.outerWidth;
 
-var m_tb_tbb = false;
-
 var m_tb_control_ipc_file = null;    // Set if using IPC (UNIX domain socket).
 var m_tb_control_port = null;        // Set if using TCP.
 var m_tb_control_host = null;        // Set if using TCP.
@@ -247,7 +245,6 @@ function torbutton_init() {
     var cur_version;
     try {
       cur_version = m_tb_prefs.getCharPref("torbrowser.version");
-      m_tb_tbb = true;
       torbutton_log(3, "This is a Tor Browser");
     } catch(e) {
       torbutton_log(3, "This is not a Tor Browser: "+e);
@@ -488,25 +485,6 @@ function torbutton_confirm_plugins() {
   }
 }
 
-function torbutton_inform_about_tbb() {
-  var prompts = Services.prompt;
-
-  var message = torbutton_get_property_string("torbutton.popup.prompt_torbrowser");
-  var title = torbutton_get_property_string("torbutton.title.prompt_torbrowser");
-  var checkbox = {value: false};
-
-  var sb = Services.strings;
-  var browserstrings = sb.createBundle("chrome://browser/locale/browser.properties");
-
-  var askagain = browserstrings.GetStringFromName("privateBrowsingNeverAsk");
-
-  var response = prompts.alertCheck(null, title, message, askagain, checkbox);
-
-  // Update preferences to reflect their response and to prevent the prompt from
-  // being displayed again.
-  m_tb_prefs.setBoolPref("extensions.torbutton.prompt_torbrowser", !checkbox.value);
-}
-
 // Bug 1506 P2: It might be nice to let people move the button around, I guess?
 function torbutton_get_toolbutton() {
     var o_toolbutton = false;
@@ -580,7 +558,7 @@ function torbutton_check_for_update() {
 // Bug 1506 P4: Checking for Tor Browser updates is pretty important,
 // probably even as a fallback if we ever do get a working updater.
 function torbutton_do_async_versioncheck() {
-  if (!m_tb_tbb || !m_tb_prefs.getBoolPref("extensions.torbutton.versioncheck_enabled")) {
+  if (!m_tb_prefs.getBoolPref("extensions.torbutton.versioncheck_enabled")) {
     return;
   }
 
@@ -1405,21 +1383,19 @@ function torbutton_tor_check_ok()
 //
 // toggles plugins: true for disabled, false for enabled
 function torbutton_toggle_plugins(disable_plugins) {
-  if (m_tb_tbb) {
-    var PH=Cc["@mozilla.org/plugin/host;1"].getService(Ci.nsIPluginHost);
-    var P=PH.getPluginTags({});
-    for(var i=0; i<P.length; i++) {
-        if ("enabledState" in P[i]) { // FF24
-          // FIXME: DOCDOC the reasoning for the isDisabled check, or remove it.
-          var isDisabled = (P[i].enabledState == Ci.nsIPluginTag.STATE_DISABLED);
-          if (!isDisabled && disable_plugins)
-            P[i].enabledState = Ci.nsIPluginTag.STATE_DISABLED;
-          else if (isDisabled && !disable_plugins)
-            P[i].enabledState = Ci.nsIPluginTag.STATE_CLICKTOPLAY;
-        } else if (P[i].disabled != disable_plugins) { // FF17
-          P[i].disabled=disable_plugins;
-        }
-    }
+  var PH=Cc["@mozilla.org/plugin/host;1"].getService(Ci.nsIPluginHost);
+  var P=PH.getPluginTags({});
+  for(var i=0; i<P.length; i++) {
+      if ("enabledState" in P[i]) { // FF24
+        // FIXME: DOCDOC the reasoning for the isDisabled check, or remove it.
+        var isDisabled = (P[i].enabledState == Ci.nsIPluginTag.STATE_DISABLED);
+        if (!isDisabled && disable_plugins)
+          P[i].enabledState = Ci.nsIPluginTag.STATE_DISABLED;
+        else if (isDisabled && !disable_plugins)
+          P[i].enabledState = Ci.nsIPluginTag.STATE_CLICKTOPLAY;
+      } else if (P[i].disabled != disable_plugins) { // FF17
+        P[i].disabled=disable_plugins;
+      }
   }
 }
 
@@ -1434,7 +1410,7 @@ function torbutton_update_disk_prefs() {
     // No way to clear this beast during New Identity. Leave it off.
     //m_tb_prefs.setBoolPref("dom.indexedDB.enabled", !mode);
 
-    if (m_tb_tbb) m_tb_prefs.setBoolPref("permissions.memory_only", mode);
+    m_tb_prefs.setBoolPref("permissions.memory_only", mode);
 
     // Third party abuse. Leave it off for now.
     //m_tb_prefs.setBoolPref("browser.cache.offline.enable", !mode);
@@ -1534,10 +1510,6 @@ function torbutton_check_protections()
     // security control redesign.
     document.getElementById("menu_newIdentity").disabled = true;
     document.getElementById("appMenuNewIdentity").disabled = true;
-  }
-
-  if (!m_tb_tbb && m_tb_prefs.getBoolPref("extensions.torbutton.prompt_torbrowser")) {
-      torbutton_inform_about_tbb();
   }
 }
 
@@ -1698,23 +1670,6 @@ function torbutton_do_startup()
 
         // Bug 30565: sync browser.privatebrowsing.autostart with security.nocertdb
         torbutton_update_disk_prefs();
-
-        // #5758: Last ditch effort to keep Vanilla Torbutton users from totally
-        // being pwnt.  This is a pretty darn ugly hack, too. But because of #5863,
-        // we really don't care about preserving the user's values for this.
-        if (!m_tb_tbb) {
-            // Bug 1506 P5: You have to set these two for non-TBB Firefoxen
-            m_tb_prefs.setBoolPref("network.websocket.enabled", false);
-            m_tb_prefs.setBoolPref("dom.indexedDB.enabled", false);
-        }
-
-        // Still need this in case people shove this thing back into FF
-        if (!m_tb_tbb && m_tb_prefs.getBoolPref("extensions.torbutton.prompt_torbrowser")) {
-          var warning = torbutton_get_property_string("torbutton.popup.short_torbrowser");
-          var title = torbutton_get_property_string("torbutton.title.prompt_torbrowser");
-          var prompts = Services.prompt;
-          prompts.alert(null, title, warning);
-        }
 
         // For general pref fixups to handle pref damage in older versions
         torbutton_fixup_old_prefs();

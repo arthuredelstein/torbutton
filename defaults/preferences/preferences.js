@@ -42,7 +42,6 @@ pref("extensions.torbutton@torproject.org.getAddons.cache.enabled", false);
 pref("extensions.torbutton.security_slider", 4);
 pref("extensions.torbutton.security_custom", false);
 
-pref("extensions.torbutton.prompt_torbrowser", true);
 pref("extensions.torbutton.confirm_plugins", true);
 pref("extensions.torbutton.confirm_newnym", true);
 
