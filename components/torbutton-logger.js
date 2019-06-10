@@ -13,8 +13,6 @@ const kMODULE_NAME = "Torbutton Logger";
 const kMODULE_CONTRACTID = "@torproject.org/torbutton-logger;1";
 const kMODULE_CID = Components.ID("f36d72c9-9718-4134-b550-e109638331d7");
 
-ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
-
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 

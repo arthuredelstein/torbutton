@@ -15,9 +15,6 @@ const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm
 let logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Ci.nsISupports).wrappedJSObject;
 
-let { ensureDefaultPrefs } = ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {});
-ensureDefaultPrefs();
-
 // Import crypto object (FF 37+).
 Cu.importGlobalProperties(["crypto"]);
 

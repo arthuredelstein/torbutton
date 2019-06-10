@@ -21,7 +21,6 @@ XPCOMUtils.defineLazyModuleGetters(this, {
   L10nRegistry: "resource://gre/modules/L10nRegistry.jsm",
 });
 
-ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
 let NoScriptControl = ChromeUtils.import("resource://torbutton/modules/noscript-control.js", {});
 
 // Module specific constants

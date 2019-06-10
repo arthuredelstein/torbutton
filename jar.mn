@@ -6,7 +6,6 @@ torbutton.jar:
 
  content/       (chrome/content/*)
  components/    (components/*)
- defaults/      (defaults/*)
  modules/       (modules/*)
  skin/          (chrome/skin/*)
 
