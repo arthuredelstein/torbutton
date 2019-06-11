@@ -537,26 +537,6 @@ function torbutton_notify_if_update_needed() {
     setOrClearAttribute(item, "tbUpdateNeeded", updateNeeded);
 }
 
-function torbutton_check_for_update() {
-    // Open the update prompt in the correct mode.  The update state
-    // checks used here were adapted from isPending() and isApplied() in
-    // Mozilla's browser/base/content/aboutDialog.js code.
-    let updateMgr = Cc["@mozilla.org/updates/update-manager;1"]
-                     .getService(Ci.nsIUpdateManager);
-    let update = updateMgr.activeUpdate;
-    let updateState = (update) ? update.state : undefined;
-    let pendingStates = [ "pending", "pending-service",
-                          "applied", "applied-service" ];
-    let isPending = (updateState && (pendingStates.indexOf(updateState) >= 0));
-
-    let prompter = Cc["@mozilla.org/updates/update-prompt;1"]
-                     .createInstance(Ci.nsIUpdatePrompt);
-    if (isPending)
-        prompter.showUpdateDownloaded(update, false);
-    else
-        prompter.checkForUpdates();
-}
-
 // Bug 1506 P4: Checking for Tor Browser updates is pretty important,
 // probably even as a fallback if we ever do get a working updater.
 function torbutton_do_async_versioncheck() {
@@ -1482,39 +1462,6 @@ function torbutton_close_tabs_on_new_identity() {
   torbutton_log(3, "Closed all tabs");
 }
 
-// Bug 1506 P2: This code is only important for disabling
-// New Identity where it is not supported (ie no control port).
-function torbutton_check_protections()
-{
-  var env = Cc["@mozilla.org/process/environment;1"]
-              .getService(Ci.nsIEnvironment);
-
-  // Bug 14100: check for the existence of an environment variable
-  // in order to toggle the visibility of networksettings menuitem
-  if (env.exists("TOR_NO_DISPLAY_NETWORK_SETTINGS"))
-    document.getElementById("torbutton-networksettings").hidden = true;
-  else
-    document.getElementById("torbutton-networksettings").hidden = false;
-
-  // Bug 21091: check for the existence of an environment variable
-  // in order to toggle the visibility of the torbutton-checkForUpdate
-  // menuitem and its separator.
-  if (env.exists("TOR_HIDE_UPDATE_CHECK_UI")) {
-    document.getElementById("torbutton-checkForUpdateSeparator").hidden = true;
-    document.getElementById("torbutton-checkForUpdate").hidden = true;
-  } else {
-    document.getElementById("torbutton-checkForUpdateSeparator").hidden = false;
-    document.getElementById("torbutton-checkForUpdate").hidden = false;
-  }
-
-  if (!m_tb_control_pass || (!m_tb_control_ipc_file && !m_tb_control_port)) {
-    // TODO: Remove the Torbutton menu entry again once we have done our
-    // security control redesign.
-    document.getElementById("menu_newIdentity").disabled = true;
-    document.getElementById("appMenuNewIdentity").disabled = true;
-  }
-}
-
 // -------------- HISTORY & COOKIES ---------------------
 
 // Bug 1506 P4: Used by New Identity if cookie protections are
@@ -1843,13 +1790,6 @@ function torbutton_close_window(event) {
     }
 }
 
-
-function torbutton_open_network_settings() {
-  var obsSvc = Services.obs;
-  obsSvc.notifyObservers(this, "TorOpenNetworkSettings");
-}
-
-
 window.addEventListener('load',torbutton_new_window,false);
 window.addEventListener('unload', torbutton_close_window, false);
 
@@ -1955,60 +1895,6 @@ var torbutton_resizelistener =
   onStatusChange: function(aProgress, aRequest, stat, message) {},
   onSecurityChange: function() {}
 };
-
-// aURI should be an http or https nsIURI object.
-function torbutton_get_current_accept_language_value(aURI)
-{
-  try {
-    let ioService = Services.io;
-    let channel = ioService.newChannelFromURI(aURI);
-    let httpChannel = channel.QueryInterface(Ci.nsIHttpChannel);
-    return httpChannel.getRequestHeader("Accept-Language");
-  } catch (e) {}
-
-  return null;
-}
-
-// Take URL strings the user has specified for a homepage
-// and normalize it so it looks like a real URL.
-function torbutton_normalize_homepage_url_string(aURLString)
-{
-  if (!aURLString) return null;
-  if (typeof aURLString !== "string") return null;
-  let url;
-  try {
-    url = new URL(aURLString);
-  } catch (e) {
-    try {
-      url = new URL("http://" + aURLString);
-    } catch (e) {
-      return null;
-    }
-  }
-  return url.href;
-}
-
-function torbutton_is_homepage_url(aURI)
-{
-  if (!aURI)
-    return false;
-
-  let homePageURLs;
-  let choice = m_tb_prefs.getIntPref("browser.startup.page");
-  if ((1 == choice) || (3 == choice)) try {
-     // A homepage may be used at startup. Get the values and check against
-     // aURI.spec.
-     homePageURLs = m_tb_prefs.getComplexValue("browser.startup.homepage",
-                                               Ci.nsIPrefLocalizedString).data;
-  } catch (e) {}
-
-  if (!homePageURLs)
-    return false;
-
-  let urls = homePageURLs.split('|')
-               .map(torbutton_normalize_homepage_url_string);
-  return (urls.indexOf(aURI.spec) >= 0);
-}
 
 // Makes sure the item in the Help Menu and the link in about:tor
 // for the Tor Browser User Manual are only visible when
