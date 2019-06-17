@@ -32,7 +32,7 @@ const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 let { controller } = ChromeUtils.import("resource://torbutton/modules/tor-control-port.js", {});
 
 // Utility functions
-let { bindPrefAndInit, observe, getLocale, getDomainForBrowser } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
+let { bindPrefAndInit, observe, getLocale, getDomainForBrowser, torbutton_get_property_string } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 
 // Make the TorButton logger available.
 let logger = Cc["@torproject.org/torbutton-logger;1"]
@@ -204,15 +204,10 @@ let collectBrowserCredentials = function () {
 
 // ## User interface
 
-// __torbuttonBundle__.
-// Bundle of localized strings for torbutton UI.
-let torbuttonBundle = Services.strings.createBundle(
-                        "chrome://torbutton/locale/torbutton.properties");
-
 // __uiString__.
 // Read the localized strings for this UI.
 let uiString = function (shortName) {
-  return torbuttonBundle.GetStringFromName("torbutton.circuit_display." + shortName);
+  return torbutton_get_property_string("torbutton.circuit_display." + shortName);
 };
 
 // __localizedCountryNameFromCode(countryCode)__.

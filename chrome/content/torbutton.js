@@ -1,3 +1,9 @@
+// window globals
+var torbutton_init;
+var torbutton_new_circuit;
+var torbutton_new_identity;
+
+(() => {
 // Bug 1506 P1-P5: This is the main Torbutton overlay file. Much needs to be
 // preserved here, but in an ideal world, most of this code should perhaps be
 // moved into an XPCOM service, and much can also be tossed. See also
@@ -7,18 +13,20 @@
 // TODO: Double-check there are no strange exploits to defeat:
 //       http://kb.mozillazine.org/Links_to_local_pages_don%27t_work
 
-/* global torbutton_log, gBrowser, torbutton_safelog, CustomizableUI,
-   createTorCircuitDisplay, torbutton_get_property_string, gFindBarInitialized,
-   gFindBar, OpenBrowserWindow, PrivateBrowsingUtils, torbutton_get_stringbundle,
+/* global gBrowser, CustomizableUI,
+   createTorCircuitDisplay, gFindBarInitialized,
+   gFindBar, OpenBrowserWindow, PrivateBrowsingUtils,
    Services, AppConstants
  */
 
 let {
-  showDialog,
   show_torbrowser_manual,
   unescapeTorString,
   bindPrefAndInit,
   getDomainForBrowser,
+  torbutton_safelog,
+  torbutton_log,
+  torbutton_get_property_string,
 } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = ChromeUtils.import("resource://torbutton/modules/security-prefs.js", {});
 let { configureControlPortModule } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
@@ -32,14 +40,9 @@ var m_tb_prefs = Services.prefs;
 
 // status
 var m_tb_wasinited = false;
-var m_tb_plugin_string = false;
 var m_tb_is_main_window = false;
-var m_tb_hidden_browser = false;
 
 var m_tb_confirming_plugins = false;
-
-var m_tb_window_height = window.outerHeight;
-var m_tb_window_width = window.outerWidth;
 
 var m_tb_control_ipc_file = null;    // Set if using IPC (UNIX domain socket).
 var m_tb_control_port = null;        // Set if using TCP.
@@ -232,7 +235,7 @@ function torbutton_is_mobile() {
 // Bug 1506 P2-P4: This code sets some version variables that are irrelevant.
 // It does read out some important environment variables, though. It is
 // called once per browser window.. This might belong in a component.
-function torbutton_init() {
+torbutton_init = function() {
     torbutton_log(3, 'called init()');
 
     SecurityPrefs.initialize();
@@ -746,7 +749,7 @@ function torbutton_send_ctrl_cmd(command) {
 }
 
 // Bug 1506 P4: Needed for New IP Address
-function torbutton_new_circuit() {
+torbutton_new_circuit = function() {
   let firstPartyDomain = getDomainForBrowser(gBrowser.selectedBrowser);
 
   let domainIsolator = Cc["@torproject.org/domain-isolator;1"]
@@ -758,7 +761,7 @@ function torbutton_new_circuit() {
 }
 
 // Bug 1506 P4: Needed for New Identity.
-async function torbutton_new_identity() {
+torbutton_new_identity = async function() {
   try {
     // Make sure that we can only click once on New Identiy to avoid race
     // conditions leading to failures (see bug 11783 for an example).
@@ -1720,9 +1723,6 @@ function torbutton_new_window(event)
       return;
     }
 
-    m_tb_window_height = window.outerHeight;
-    m_tb_window_width = window.outerWidth;
-
     if (!m_tb_wasinited) {
         torbutton_init();
     }
@@ -1906,5 +1906,5 @@ function torbutton_init_user_manual_links() {
     torbutton_abouttor_message_handler.updateAllOpenPages();
   });
 }
-
+})();
 //vim:set ts=4

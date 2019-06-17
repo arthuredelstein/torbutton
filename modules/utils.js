@@ -239,6 +239,58 @@ var getDomainForBrowser = (browser) => {
   return fpd;
 };
 
+var m_tb_torlog = Cc["@torproject.org/torbutton-logger;1"]
+.getService(Ci.nsISupports).wrappedJSObject;
+
+var m_tb_string_bundle = torbutton_get_stringbundle();
+
+function torbutton_safelog(nLevel, sMsg, scrub) {
+    m_tb_torlog.safe_log(nLevel, sMsg, scrub);
+    return true;
+}
+
+function torbutton_log(nLevel, sMsg) {
+    m_tb_torlog.log(nLevel, sMsg);
+
+    // So we can use it in boolean expressions to determine where the
+    // short-circuit is..
+    return true;
+}
+
+// load localization strings
+function torbutton_get_stringbundle()
+{
+    var o_stringbundle = false;
+
+    try {
+        var oBundle = Services.strings;
+        o_stringbundle = oBundle.createBundle("chrome://torbutton/locale/torbutton.properties");
+    } catch(err) {
+        o_stringbundle = false;
+    }
+    if (!o_stringbundle) {
+        torbutton_log(5, 'ERROR (init): failed to find torbutton-bundle');
+    }
+
+    return o_stringbundle;
+}
+
+function torbutton_get_property_string(propertyname)
+{
+    try {
+        if (!m_tb_string_bundle) {
+            m_tb_string_bundle = torbutton_get_stringbundle();
+        }
+
+        return m_tb_string_bundle.GetStringFromName(propertyname);
+    } catch(e) {
+        torbutton_log(4, "Unlocalized string "+propertyname);
+    }
+
+    return propertyname;
+}
+
 // Export utility functions for external use.
 let EXPORTED_SYMBOLS = ["bindPref", "bindPrefAndInit", "getEnv", "getLocale", "getDomainForBrowser",
-                        "getPrefValue", "observe", "showDialog", "show_torbrowser_manual", "unescapeTorString"];
+                        "getPrefValue", "observe", "showDialog", "show_torbrowser_manual", "unescapeTorString",
+                        "torbutton_safelog", "torbutton_log", "torbutton_get_property_string"];

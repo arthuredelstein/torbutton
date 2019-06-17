@@ -16,6 +16,8 @@ const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 const { PromptUtils } = ChromeUtils.import("resource://gre/modules/SharedPromptUtils.jsm");
 
+let { torbutton_get_property_string } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
+
 // Module specific constants
 const kMODULE_NAME = "Torbutton External App Handler";
 const kCONTRACT_ID = "@torproject.org/torbutton-extAppBlocker;1";
@@ -82,13 +84,13 @@ ExternalAppBlocker.prototype =
       parentWin = Services.wm.getMostRecentWindow("navigator:browser");
     }
 
-    let title = parentWin.torbutton_get_property_string("torbutton.popup.external.title");
-    let app = parentWin.torbutton_get_property_string("torbutton.popup.external.app");
-    let note = parentWin.torbutton_get_property_string("torbutton.popup.external.note");
-    let suggest = parentWin.torbutton_get_property_string("torbutton.popup.external.suggest");
-    let launch = parentWin.torbutton_get_property_string("torbutton.popup.launch");
-    let cancel = parentWin.torbutton_get_property_string("torbutton.popup.cancel");
-    let dontask = parentWin.torbutton_get_property_string("torbutton.popup.dontask");
+    let title = torbutton_get_property_string("torbutton.popup.external.title");
+    let app = torbutton_get_property_string("torbutton.popup.external.app");
+    let note = torbutton_get_property_string("torbutton.popup.external.note");
+    let suggest = torbutton_get_property_string("torbutton.popup.external.suggest");
+    let launch = torbutton_get_property_string("torbutton.popup.launch");
+    let cancel = torbutton_get_property_string("torbutton.popup.cancel");
+    let dontask = torbutton_get_property_string("torbutton.popup.dontask");
 
     let args = {
       promptType:       "confirmEx",
