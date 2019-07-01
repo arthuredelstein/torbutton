@@ -1527,14 +1527,6 @@ function torbutton_update_disk_prefs() {
     // Third party abuse. Leave it off for now.
     //m_tb_prefs.setBoolPref("browser.cache.offline.enable", !mode);
 
-    if (mode) {
-        m_tb_prefs.setIntPref("network.cookie.lifetimePolicy", 2);
-        m_tb_prefs.setIntPref("browser.download.manager.retention", 1);
-    } else {
-        m_tb_prefs.setIntPref("network.cookie.lifetimePolicy", 0);
-        m_tb_prefs.setIntPref("browser.download.manager.retention", 2);
-    }
-
     // Force prefs to be synced to disk
     Services.prefs.savePrefFile(null);
 }
