@@ -22,6 +22,7 @@ const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion"
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
 const k_tb_last_update_check_pref = "extensions.torbutton.lastUpdateCheck";
 const k_tb_tor_check_failed_topic = "Torbutton:TorCheckFailed";
+const k_tb_donation_banner_countdown = "extensions.torbutton.donation_banner_countdown3";
 
 var m_tb_prefs = Services.prefs;
 
@@ -217,6 +218,14 @@ function torbutton_init_toolbutton()
     }
 }
 
+// Show the donation banner a finite number of times.
+function torbutton_donation_banner_countdown() {
+  let count = m_tb_prefs.getIntPref(k_tb_donation_banner_countdown, 0);
+  if (count > 0) {
+    m_tb_prefs.setIntPref(k_tb_donation_banner_countdown, count - 1);
+  }
+}
+
 function torbutton_is_mobile() {
     return Services.appinfo.OS === "Android";
 }
@@ -329,6 +338,10 @@ function torbutton_init() {
     // Add about:tor IPC message listener.
     window.messageManager.addMessageListener("AboutTor:Loaded",
                                    torbutton_abouttor_message_handler);
+    window.messageManager.addMessageListener("AboutTor:HideDonationBanner",
+                                   torbutton_abouttor_message_handler);
+
+    torbutton_donation_banner_countdown();
 
     setupPreferencesForMobile();
 
@@ -443,6 +456,10 @@ var torbutton_abouttor_message_handler = {
       case "AboutTor:Loaded":
         aMessage.target.messageManager.sendAsyncMessage("AboutTor:ChromeData",
                                                     this.getChromeData(true));
+        break;
+      case "AboutTor:HideDonationBanner":
+        torbutton_log(5, "message AboutTor:HideDonationBanner received");
+        m_tb_prefs.setIntPref(k_tb_donation_banner_countdown, 0);
         break;
     }
   },
