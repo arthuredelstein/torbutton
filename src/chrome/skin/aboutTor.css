@@ -137,6 +137,12 @@ body:not([showmanual]) .showForManual {
   margin-top: 10vh;
 }
 
+/* Reducing this on mobile to avoid vertical overflow
+ * on small screens when showing donation banner */
+body[mobile] #bottom {
+  margin-top: 3vh;
+}
+
 #bottom p {
   font-size: 10px;
   text-align: start;
@@ -302,6 +308,83 @@ body:not([showmanual]) .showForManual {
   width: 100px;
   height: 50px;
   border-radius: 50px 50px 0 0;
+}
+
+/* Donation Banner
+ * While this banner is present, we need to
+ * offset the elements normally at the top of
+ * the window.
+ */
+
+#donation-banner {
+  display: flex;
+  align-items: stretch;
+  background-color: white;
+  color: var(--abouttor-bg-toron-color);
+  font-size: 16px;
+  height: 70px;
+  justify-content: center;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  transform: translateY(-70px);
+  transition: transform 200ms;
+  z-index: 1;
+  padding-right:38px;
+}
+
+body[mobile] #donation-banner {
+  font-size: 14px;
+}
+
+body[show-donation-banner="true"] #donation-banner {
+  transform: translateY(0px);
+  transition: transform 0ms;
+}
+
+#donation-banner-message {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#donation-banner-message a {
+  color: var(--abouttor-bg-toron-color);
+}
+
+#donation-banner-icon {
+  background: url('chrome://torbutton/skin/icon_monthly_donors.png') no-repeat center center;
+  background-size: contain;
+  background-position: bottom;
+  height: 56px;
+  margin: 14px 16px 0px 16px;
+  width: 65px;
+}
+
+#donation-banner-closer {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  height: 22px;
+  justify-content: center;
+  margin: 4px;
+  padding: 4px;
+  position: absolute;
+  offset-inline-end: 0px;
+  top: 0px;
+  width: 22px;
+  -moz-user-select: none;
+}
+
+#donation-banner-closer:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+body[show-donation-banner="true"] #onboarding-overlay-button-container,
+body[show-donation-banner="true"] .torcontent-container {
+  margin-top: 72px;
 }
 
 /*
