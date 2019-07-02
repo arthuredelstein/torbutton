@@ -1,19 +1,41 @@
-<!ENTITY torbutton.context_menu.new_identity "New Identity">
+<!ENTITY torbutton.context_menu.new_identity "Нов идентитет">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
-<!ENTITY torbutton.context_menu.downloadUpdate.key "Z">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
+<!ENTITY torbutton.context_menu.new_circuit "Нов Tor круг за оваа страна">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.networksettings "Тор мрежни поставки...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Провери за нова верзија на Tor Browser...">
+<!ENTITY torbutton.context_menu.downloadUpdate.key "U">
+<!ENTITY torbutton.context_menu.cookieProtections "Заштита за колаче...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Кликнете за иницирање на Torbutton">
-<!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
-<!ENTITY torbutton.cookiedialog.lockCol "Protected">
-<!ENTITY torbutton.cookiedialog.domainCol "Host">
-<!ENTITY torbutton.cookiedialog.nameCol "Name">
-<!ENTITY torbutton.cookiedialog.pathCol "Path">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protect Cookie">
-<!ENTITY torbutton.cookiedialog.removeCookie "Remove Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Unprotect Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
+<!ENTITY torbutton.button.tooltip "Кликнете за иницијализирање на Torbutton">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser безбедносни поставки">
+<!ENTITY torbutton.cookiedialog.title "Уреди ги заштитите за колаче">
+<!ENTITY torbutton.cookiedialog.lockCol "Заштитено">
+<!ENTITY torbutton.cookiedialog.domainCol "Хост">
+<!ENTITY torbutton.cookiedialog.nameCol "Име">
+<!ENTITY torbutton.cookiedialog.pathCol "Патека">
+<!ENTITY torbutton.cookiedialog.protectCookie "Заштити колаче">
+<!ENTITY torbutton.cookiedialog.removeCookie "Избриши колаче">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Отстрани заштита на колаче">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Избриши ги сите освен заштитените">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Заштити ги новите колачиња">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Не ги штити новите колачиња">
+<!ENTITY torbutton.prefs.sec_caption "Безбедносно ниво">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Безбедносниот лизгач ви овозможува да исклучите дадени прелистувачки можности кои можат да го направат вашиот прелистувач поранлив на хакерски напади.">
+<!ENTITY torbutton.prefs.sec_standard_label "Стандардно">
+<!ENTITY torbutton.prefs.sec_standard_description "Сите можности на Tor Browser и веб страните се овозможени.">
+<!ENTITY torbutton.prefs.sec_safer_label "Побезбедно">
+<!ENTITY torbutton.prefs.sec_safer_description "Оневозможува можности на веб страните кои често се опасни, предизвикувајќи некои страни да ја изгубат функционалноста.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "На побезбедна поставка:">
+<!ENTITY torbutton.prefs.sec_safest_label "Најбезбедно">
+<!ENTITY torbutton.prefs.sec_safest_description "Дозволува само можности на веб страните потребни за статичните страни и основните услужни сервиси. Овие измени влијаат на сликите, разни мултимедијални датотеки, и на скрптите.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "На најбезбедна поставка:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Научи повеќе">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript е оневозможен на не-HTTPS веб страните.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript е стандардно оневозможен на сите веб страни.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Некои фонтови и математички симболи се оневозможени.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Некои фонтови, икони, математички симболи, и слики се оневозможени.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Аудио и видео (HTML5 медиа), и WebGL се кликни-да-пуштиш.">
+<!ENTITY torbutton.circuit_display.title "Tor круг">
+<!ENTITY torbutton.circuit_display.new_circuit "Нов круг за оваа веб страна">
