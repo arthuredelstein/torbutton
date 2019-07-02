@@ -30,3 +30,6 @@
 <!ENTITY aboutTor.newsletter.link_text "Meld u aan voor Tor News.">
 <!ENTITY aboutTor.donationBanner.line2e "Houd Tor sterk.">
 <!ENTITY aboutTor.donationBanner.buttonA "Nu doneren">
+
+<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
+<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">

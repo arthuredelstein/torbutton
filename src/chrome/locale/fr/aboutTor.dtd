@@ -30,3 +30,6 @@
 <!ENTITY aboutTor.newsletter.link_text "Inscrivez-vous aux nouvelles de Tor">
 <!ENTITY aboutTor.donationBanner.line2e "Assurez la robustesse de Tor.">
 <!ENTITY aboutTor.donationBanner.buttonA "Faites un don maintenant">
+
+<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
+<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">

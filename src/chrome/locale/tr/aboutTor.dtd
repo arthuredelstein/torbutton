@@ -8,7 +8,7 @@
 
 <!ENTITY aboutTor.viewChangelog.label "Değişiklik Günlüğünü Görüntüle">
 
-<!ENTITY aboutTor.ready.label "Keşfet. Gizlice.">
+<!ENTITY aboutTor.ready.label "Keşfedin. Gizlice.">
 <!ENTITY aboutTor.ready2.label "Dünyanın en kişisel web tarama deneyimine hazırsınız.">
 <!ENTITY aboutTor.failure.label "Bir Şeyler Ters Gitti!">
 <!ENTITY aboutTor.failure2.label "Tor bu tarayıcı ile çalışmıyor.">
@@ -17,16 +17,19 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Sorularınız mı var?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tor Browser Rehberine Bakın">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tor Browser Rehberine Bakabilirsiniz">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Rehberi">
 
-<!ENTITY aboutTor.tor_mission.label "Tor Projesi, US 501(c)(3) koşullarına uygun olarak, özgür ve açık kaynaklı anonimlik ve kişisel gizlilik teknolojileri geliştirerek insan hakları ve özgürlüklerini ileriye götürmeyi, bu teknolojilerin bilimsel ve kültürel olarak bilinirliğini arttırmayı ve herkes tarafından erişebilmesini sağlamak amacıyla çalışan, kar amacı gütmeyen bir kuruluştur.">
+<!ENTITY aboutTor.tor_mission.label "Tor Projesi, US 501(c)(3) koşullarına göre, özgür ve açık kaynaklı anonimlik ve kişisel gizlilik teknolojileri geliştirerek insan hakları ve özgürlüklerini ileriye götürmeyi, bu teknolojilerin bilimsel ve kültürel olarak bilinirliğini arttırmayı ve herkes tarafından erişebilmesini sağlamak amacıyla çalışan, kar amacı gütmeyen bir kuruluştur.">
 <!ENTITY aboutTor.getInvolved.label "Katkıda Bulunun »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "Tor ile ilgili son gelişmeler doğrudan e-posta kutunuza gelsin.">
-<!ENTITY aboutTor.newsletter.link_text "Tor Haber Bültenine Abone Olun">
-<!ENTITY aboutTor.donationBanner.line2e "Tor uygulamasının gücünü koruyalım.">
+<!ENTITY aboutTor.newsletter.link_text "Tor Duyurularına Abone Olun">
+<!ENTITY aboutTor.donationBanner.line2e "Tor uygulamasının gücünü koruyun.">
 <!ENTITY aboutTor.donationBanner.buttonA "Bağış Yapın">
+
+<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
+<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">

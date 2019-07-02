@@ -27,6 +27,9 @@
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "通过邮件获取 Tor 的最新消息。">
-<!ENTITY aboutTor.newsletter.link_text "订阅 Tor 的最新动态。">
+<!ENTITY aboutTor.newsletter.link_text "订阅 Tor 的最新动态">
 <!ENTITY aboutTor.donationBanner.line2e "让 Tor 网络保持健壮。">
 <!ENTITY aboutTor.donationBanner.buttonA "立即捐助">
+
+<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
+<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">

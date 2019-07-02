@@ -30,3 +30,6 @@
 <!ENTITY aboutTor.newsletter.link_text "Cláraigh le Nuachtlitir Tor.">
 <!ENTITY aboutTor.donationBanner.line2e "Cuir taca le Tor.">
 <!ENTITY aboutTor.donationBanner.buttonA "Tabhair síntiús airgid anois">
+
+<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
+<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">

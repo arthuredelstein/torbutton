@@ -30,3 +30,6 @@
 <!ENTITY aboutTor.newsletter.link_text "გამოიწერეთ Tor-ის სიახლეები.">
 <!ENTITY aboutTor.donationBanner.line2e "შეინარჩუნეთ Tor ძლიერი.">
 <!ENTITY aboutTor.donationBanner.buttonA "გაიღეთ თანხა">
+
+<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
+<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">
