@@ -1,3 +1,9 @@
+2.2.1
+ * Bug 30577: Add Fundraising Banner
+ * Bug 31041: Stop syncing network.cookie.lifetimePolicy
+ * Bug 30468: Add mk locale
+ * Translations update
+
 2.2
  * Bug 30469: Add ro translation
  * Translations update
