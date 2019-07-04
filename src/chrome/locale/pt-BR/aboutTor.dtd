@@ -22,15 +22,15 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Manual do Navegador Tor">
 
-<!ENTITY aboutTor.tor_mission.label "O Projeto Tor é uma organização sem fins lucrativos dos EUA 501 (c) (3) que promove direitos humanos e liberdades, criando e implantando tecnologias de privacidade e anonimato, de fonte aberta e livre, apoiando sua disponibilidade e uso irrestritos e promovendo seu entendimento científico e popular">
+<!ENTITY aboutTor.tor_mission.label "O Projeto Tor é uma organização sem fins lucrativos dos EUA 501 (c) (3) que promove direitos humanos e liberdades, criando e implementando tecnologias de privacidade e anonimato, de código aberto e livre, apoiando a sua disponibilidade e uso irrestrito e promovendo o seu entendimento científico e popular">
 <!ENTITY aboutTor.getInvolved.label "Envolva-se »
 ">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "Receba as últimas notícias do Tor diretamente na sua caixa de e-mail.">
 <!ENTITY aboutTor.newsletter.link_text "Inscreva-se para receber Notícias do Tor.">
-<!ENTITY aboutTor.donationBanner.line2e "Manter a força do Tor.">
+<!ENTITY aboutTor.donationBanner.line2e "Fortaleça o Tor.">
 <!ENTITY aboutTor.donationBanner.buttonA "Doar Agora">
 
-<!ENTITY aboutTor.donationBanner3.line1 "Doações mensais automáticas mantem Tor forte.">
-<!ENTITY aboutTor.donationBanner3.line2 "Se torne hoje um Defensor da Privacidade.">
+<!ENTITY aboutTor.donationBanner3.line1 "Doações mensais automáticas fortalecem o Tor.">
+<!ENTITY aboutTor.donationBanner3.line2 "Torne-se hoje um Defensor da Privacidade.">
