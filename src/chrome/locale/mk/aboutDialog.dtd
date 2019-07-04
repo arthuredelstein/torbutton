@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; е создаден од">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "the &vendorShortName;">
+<!ENTITY project.end             ", кој е непрофитен и кој работи за вашата онлајн приватност и слобода.">
+
+<!ENTITY help.start              "Сакате да помогнете?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Донирај">
+<!ENTITY help.or                 "или">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "приклучи се">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Прашања?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Помогнете Тор мрежата да расте!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Лиценца">
+<!ENTITY tor.TrademarkStatement   "'Tor' и 'Onion Logo' се регистрирани трговски марки на Tor Project, Inc.">
