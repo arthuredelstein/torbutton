@@ -173,7 +173,7 @@ function DomainIsolator() {
 
 // Firefox component requirements
 DomainIsolator.prototype = {
-  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIObserver]),
+  QueryInterface: ChromeUtils.generateQI([Ci.nsIObserver]),
   classDescription: kMODULE_NAME,
   classID: kMODULE_CID,
   contractID: kMODULE_CONTRACTID,

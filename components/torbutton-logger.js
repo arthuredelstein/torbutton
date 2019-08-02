@@ -58,7 +58,7 @@ function padInt(i)
 
 TorbuttonLogger.prototype =
 {
-  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIClassInfo]),
+  QueryInterface: ChromeUtils.generateQI([Ci.nsIClassInfo]),
 
   wrappedJSObject: null,  // Initialized by constructor
 

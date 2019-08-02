@@ -25,7 +25,7 @@ function TBTorCheckService() {
 
 TBTorCheckService.prototype =
 {
-  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIClassInfo]),
+  QueryInterface: ChromeUtils.generateQI([Ci.nsIClassInfo]),
 
   kCheckNotInitiated: 0, // Possible values for statusOfTorCheck.
   kCheckSuccessful: 1,

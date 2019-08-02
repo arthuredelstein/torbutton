@@ -32,7 +32,7 @@ function DragDropFilter() {
 
 DragDropFilter.prototype =
 {
-  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIObserver]),
+  QueryInterface: ChromeUtils.generateQI([Ci.nsIObserver]),
 
   // make this an nsIClassInfo object
   flags: Ci.nsIClassInfo.DOM_OBJECT,

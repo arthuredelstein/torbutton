@@ -33,7 +33,7 @@ ExternalAppBlocker.prototype =
 {
   _helperAppLauncher: undefined,
 
-  QueryInterface: ChromeUtils.generateQI([Ci.nsISupports, Ci.nsIObserver,
+  QueryInterface: ChromeUtils.generateQI([Ci.nsIObserver,
                                          Ci.nsIHelperAppWarningDialog]),
 
   // make this an nsIClassInfo object
