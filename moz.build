@@ -3,7 +3,7 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-JAR_MANIFESTS += ['src/jar.mn']
+JAR_MANIFESTS += ['jar.mn']
 JS_PREFERENCE_FILES += [
-    'src/defaults/preferences/preferences.js',
+    'defaults/preferences/preferences.js',
 ]

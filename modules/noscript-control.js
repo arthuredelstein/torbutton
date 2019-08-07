@@ -1,0 +1,178 @@
+// # NoScript settings control (for binding to Security Slider)
+
+// ## Utilities
+
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm", {});
+const { bindPref } =
+      ChromeUtils.import("resource://torbutton/modules/utils.js", {});
+
+const { ExtensionUtils } = ChromeUtils.import("resource://gre/modules/ExtensionUtils.jsm");
+const { MessageChannel } = ChromeUtils.import("resource://gre/modules/MessageChannel.jsm");
+
+let logger = Cc["@torproject.org/torbutton-logger;1"]
+    .getService(Ci.nsISupports).wrappedJSObject;
+let log = (level, msg) => logger.log(level, msg);
+
+// ## NoScript settings
+
+// Minimum and maximum capability states as controlled by NoScript.
+const max_caps = ["fetch", "font", "frame", "media", "object", "other", "script", "webgl"];
+const min_caps = ["frame", "other"];
+
+// Untrusted capabilities for [Standard, Safer, Safest] safety levels.
+const untrusted_caps = [
+  max_caps, // standard safety: neither http nor https
+  ["frame", "font", "object", "other"], // safer: http
+  min_caps, // safest: neither http nor https
+];
+
+// Default capabilities for [Standard, Safer, Safest] safety levels.
+const default_caps = [
+  max_caps, // standard: both http and https
+  ["fetch", "font", "frame", "object", "other", "script"], // safer: https only
+  min_caps, // safest: both http and https
+];
+
+// __noscriptSettings(safetyLevel)__.
+// Produces NoScript settings with policy according to
+// the safetyLevel which can be:
+// 0 = Standard, 1 = Safer, 2 = Safest
+//
+// At the "Standard" safety level, we leave all sites at
+// default with maximal capabilities. Essentially no content
+// is blocked.
+//
+// At "Safer", we set all http sites to untrusted,
+// and all https sites to default. Scripts are only permitted
+// on https sites. Neither type of site is supposed to allow
+// media, but both allow fonts (as we used in legacy NoScript).
+//
+// At "Safest", all sites are at default with minimal
+// capabilities. Most things are blocked.
+let noscriptSettings = safetyLevel => (
+  {
+    "__meta": {
+      "name": "updateSettings",
+      "recipientInfo": null
+    },
+    "policy": {
+      "DEFAULT": {
+        "capabilities": default_caps[safetyLevel],
+        "temp": false
+      },
+      "TRUSTED": {
+        "capabilities": max_caps,
+        "temp": false
+      },
+      "UNTRUSTED": {
+        "capabilities": untrusted_caps[safetyLevel],
+        "temp": false
+      },
+      "sites": {
+        "trusted": [],
+        "untrusted": [[], ["http:"], []][safetyLevel],
+        "custom": {},
+        "temp": []
+      },
+      "enforced": true,
+      "autoAllowTop": false
+    },
+   "isTorBrowser": true,
+   "tabId": -1
+  });
+
+// ## Communications
+
+// The extension ID for NoScript (WebExtension)
+const noscriptID = "{73a6fe31-595d-460b-a920-fcc0f8843232}";
+
+// Ensure binding only occurs once.
+let initialized = false;
+
+// __initialize()__.
+// The main function that binds the NoScript settings to the security
+// slider pref state.
+var initialize = () => {
+  if (initialized) {
+    return;
+  }
+  initialized = true;
+
+  try {
+    // LegacyExtensionContext is not there anymore. Using raw
+    // Services.mm.broadcastAsyncMessage mecanism to communicate with
+    // NoScript.
+
+    // The component that handles WebExtensions' sendMessage.
+
+    // __setNoScriptSettings(settings)__.
+    // NoScript listens for internal settings with onMessage. We can send
+    // a new settings JSON object according to NoScript's
+    // protocol and these are accepted! See the use of
+    // `browser.runtime.onMessage.addListener(...)` in NoScript's bg/main.js.
+
+    // TODO: Is there a better way?
+    let sendNoScriptSettings = settings =>
+      Services.mm.broadcastAsyncMessage("MessageChannel:Messages", [{
+        messageName: "Extension:Message",
+        sender: { id: noscriptID, extensionId: noscriptID },
+        recipient: { extensionId: noscriptID },
+        data: new StructuredCloneHolder(settings),
+        channelId: ExtensionUtils.getUniqueId(),
+        responseType: MessageChannel.RESPONSE_NONE,
+      }]);
+
+    // __setNoScriptSafetyLevel(safetyLevel)__.
+    // Set NoScript settings according to a particular safety level
+    // (security slider level): 0 = Standard, 1 = Safer, 2 = Safest
+    let setNoScriptSafetyLevel = safetyLevel =>
+        sendNoScriptSettings(noscriptSettings(safetyLevel));
+
+    // __securitySliderToSafetyLevel(sliderState)__.
+    // Converts the "extensions.torbutton.security_slider" pref value
+    // to a "safety level" value: 0 = Standard, 1 = Safer, 2 = Safest
+    let securitySliderToSafetyLevel = sliderState =>
+        [undefined, 2, 1, 1, 0][sliderState];
+
+    // Wait for the first message from NoScript to arrive, and then
+    // bind the security_slider pref to the NoScript settings.
+    const listener = ({ data }) => {
+      for (const msg of data) {
+        if (msg.recipient.extensionId === noscriptID) {
+          messageListener(msg.data.deserialize({}), msg.sender);
+        }
+      }
+    };
+    let messageListener = (a, b, c) => {
+      try {
+        log(3, `Message received from NoScript: ${JSON.stringify([a, b, c])}`);
+        if (!["started", "pageshow"].includes(a.__meta.name)) {
+          return;
+        }
+        Services.mm.removeMessageListener("MessageChannel:Messages", listener);
+        let noscriptPersist = Services.prefs.getBoolPref("extensions.torbutton.noscript_persist", false);
+        let noscriptInited = Services.prefs.getBoolPref("extensions.torbutton.noscript_inited", false);
+        // Set the noscript safety level once if we have never run noscript
+        // before, or if we are not allowing noscript per-site settings to be
+        // persisted between browser sessions. Otherwise make sure that the
+        // security slider position, if changed, will rewrite the noscript
+        // settings.
+        bindPref("extensions.torbutton.security_slider",
+                 sliderState => setNoScriptSafetyLevel(securitySliderToSafetyLevel(sliderState)),
+                 !noscriptPersist || !noscriptInited);
+        if (!noscriptInited) {
+          Services.prefs.setBoolPref("extensions.torbutton.noscript_inited", true);
+        }
+      } catch (e) {
+        log(5, e.message);
+      }
+    };
+    Services.mm.addMessageListener("MessageChannel:Messages", listener);
+    log(3, "Listening for message from NoScript.");
+  } catch (e) {
+    log(5, e.message);
+  }
+};
+
+// Export initialize() function for external use.
+let EXPORTED_SYMBOLS = ["initialize"];
