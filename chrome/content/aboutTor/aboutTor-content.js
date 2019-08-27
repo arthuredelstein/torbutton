@@ -14,11 +14,9 @@
  *   AboutTor:ChromeData      privileged data        chrome -> content
  */
 
-var {classes: Cc, interfaces: Ci, utils: Cu} = Components;
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
-
-Cu.import("resource://gre/modules/Services.jsm");
-let { bindPrefAndInit, show_torbrowser_manual } = Cu.import("resource://torbutton/modules/utils.js", {});
+let { bindPrefAndInit, show_torbrowser_manual } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 
 
 var AboutTorListener = {
@@ -139,9 +137,7 @@ var AboutTorListener = {
     // Display the Tor Browser product name and version.
     try {
       const kBrandBundle = "chrome://branding/locale/brand.properties";
-      let brandBundle = Cc["@mozilla.org/intl/stringbundle;1"]
-                          .getService(Ci.nsIStringBundleService)
-                          .createBundle(kBrandBundle);
+      let brandBundle = Services.strings.createBundle(kBrandBundle);
       let productName = brandBundle.GetStringFromName("brandFullName");
       let tbbVersion = Services.prefs.getCharPref("torbrowser.version");
       let elem = content.document.getElementById("torbrowser-version");

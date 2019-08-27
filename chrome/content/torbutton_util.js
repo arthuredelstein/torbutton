@@ -3,7 +3,6 @@
 // code directly. I don't see any of them as essential for 1506,
 // really.
 
-// let { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm", {});
 var m_tb_torlog = Cc["@torproject.org/torbutton-logger;1"]
 .getService(Ci.nsISupports).wrappedJSObject;
 

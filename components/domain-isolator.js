@@ -8,7 +8,8 @@
 
 // ### Abbreviations
 
-const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 // Make the logger available.
 let logger = Cc["@torproject.org/torbutton-logger;1"]
@@ -16,9 +17,6 @@ let logger = Cc["@torproject.org/torbutton-logger;1"]
 
 let { ensureDefaultPrefs } = ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {});
 ensureDefaultPrefs();
-
-// Import Services object
-ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // Import crypto object (FF 37+).
 Cu.importGlobalProperties(["crypto"]);
@@ -162,9 +160,6 @@ tor.isolateCircuitsByDomain = function () {
 const kMODULE_NAME = "TorBrowser Domain Isolator";
 const kMODULE_CONTRACTID = "@torproject.org/domain-isolator;1";
 const kMODULE_CID = Components.ID("e33fd6d4-270f-475f-a96f-ff3140279f68");
-
-// Import XPCOMUtils object.
-const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 // DomainIsolator object.
 function DomainIsolator() {

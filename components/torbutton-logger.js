@@ -15,7 +15,8 @@ const kMODULE_CID = Components.ID("f36d72c9-9718-4134-b550-e109638331d7");
 
 ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
 
-const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 function TorbuttonLogger() {
     // Register observer
@@ -44,10 +45,7 @@ function TorbuttonLogger() {
  * Everything below is boring boilerplate and can probably be ignored.
  */
 
-const nsISupports = Ci.nsISupports;
 const nsIClassInfo = Ci.nsIClassInfo;
-const nsIComponentRegistrar = Ci.nsIComponentRegistrar;
-const nsIObserverService = Ci.nsIObserverService;
 
 const logString = { 1:"VERB", 2:"DBUG", 3: "INFO", 4:"NOTE", 5:"WARN" };
 
@@ -162,7 +160,6 @@ TorbuttonLogger.prototype =
 * XPCOMUtils.generateNSGetFactory was introduced in Mozilla 2 (Firefox 4).
 * XPCOMUtils.generateNSGetModule is for Mozilla 1.9.2 (Firefox 3.6).
 */
-const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 if (XPCOMUtils.generateNSGetFactory)
     var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorbuttonLogger]);
 else

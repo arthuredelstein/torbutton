@@ -8,8 +8,8 @@
 
 ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
 
-const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
-const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // Module specific constants
 const kMODULE_NAME = "Torbutton Drag and Drop Handler";

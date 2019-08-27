@@ -100,7 +100,7 @@ var initialize = () => {
 
   try {
     // LegacyExtensionContext is not there anymore. Using raw
-    // Services.mm.broadcastAsyncMessage mecanism to communicate with
+    // Services.cpmm.sendAsyncMessage mechanism to communicate with
     // NoScript.
 
     // The component that handles WebExtensions' sendMessage.
@@ -113,7 +113,7 @@ var initialize = () => {
 
     // TODO: Is there a better way?
     let sendNoScriptSettings = settings =>
-      Services.mm.broadcastAsyncMessage("MessageChannel:Messages", [{
+      Services.cpmm.sendAsyncMessage("MessageChannel:Messages", [{
         messageName: "Extension:Message",
         sender: { id: noscriptID, extensionId: noscriptID },
         recipient: { extensionId: noscriptID },

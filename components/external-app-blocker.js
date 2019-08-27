@@ -12,9 +12,9 @@
  * handle an URL (e.g., when the user clicks on a mailto: URL).
  *************************************************************************/
 
-const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
-const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
-const {PromptUtils} = ChromeUtils.import("resource://gre/modules/SharedPromptUtils.jsm");
+const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { PromptUtils } = ChromeUtils.import("resource://gre/modules/SharedPromptUtils.jsm");
 
 // Module specific constants
 const kMODULE_NAME = "Torbutton External App Handler";
@@ -33,8 +33,7 @@ ExternalAppBlocker.prototype =
 {
   _helperAppLauncher: undefined,
 
-  QueryInterface: ChromeUtils.generateQI([Ci.nsIObserver,
-                                         Ci.nsIHelperAppWarningDialog]),
+  QueryInterface: ChromeUtils.generateQI([Ci.nsIObserver, Ci.nsIHelperAppWarningDialog]),
 
   // make this an nsIClassInfo object
   flags: Ci.nsIClassInfo.DOM_OBJECT,

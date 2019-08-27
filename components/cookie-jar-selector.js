@@ -21,9 +21,9 @@ const kMODULE_CID = Components.ID("e6204253-b690-4159-bfe8-d4eedab6b3be");
 ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {})
   .ensureDefaultPrefs();
 
-const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
-// XXX: Must match the definition in torcookie.js :/
 function Cookie(number,name,value,isDomain,host,rawHost,HttpOnly,path,isSecure,isSession,
                 expires,isProtected) {
   this.number = number;
@@ -88,9 +88,7 @@ function CookieJarSelector() {
         if (typeof(cookiesAsJS) == "undefined" || !cookiesAsJS)
             return;
 
-        var cookieManager =
-            Cc["@mozilla.org/cookiemanager;1"]
-            .getService(Ci.nsICookieManager2);
+        var cookieManager = Services.cookies;
 
         for (var i = 0; i < cookiesAsJS.length; i++) {
             var cookie = cookiesAsJS[i];
@@ -299,9 +297,7 @@ function CookieJarSelector() {
         this.clearCookies();
         return;
       }
-      var cookiemanager =
-        Cc["@mozilla.org/cookiemanager;1"]
-        .getService(Ci.nsICookieManager2);
+      var cookiemanager = Services.cookies;
 
       var enumerator = cookiemanager.enumerator;
       var count = 0;
@@ -329,7 +325,7 @@ function CookieJarSelector() {
       }
       // Emit cookie-changed event. This instructs other components to clear their identifiers
       // (Specifically DOM storage and safe browsing, but possibly others)
-      var obsSvc = Cc["@mozilla.org/observer-service;1"].getService(nsIObserverService);
+      var obsSvc = Services.obs;
       obsSvc.notifyObservers(this, "cookie-changed", "cleared");
     } catch (e) {
       this.logger.log(5, "Error deleting unprotected cookies: " + e);
@@ -367,10 +363,6 @@ function CookieJarSelector() {
     this.logger.log(2, "Cookies reloaded");
   };
 
-  // Check firefox version to know filename
-  // var appInfo = Services.appinfo;
-  // var versionChecker = Services.vc;
-
   // This JSObject is exported directly to chrome
   this.wrappedJSObject = this;
 
@@ -399,13 +391,9 @@ function CookieJarSelector() {
 
 }
 
-const nsISupports = Ci.nsISupports;
 const nsIClassInfo = Ci.nsIClassInfo;
 const nsIObserver = Ci.nsIObserver;
 const nsITimer = Ci.nsITimer;
-const nsIComponentRegistrar = Ci.nsIComponentRegistrar;
-const nsIObserverService = Ci.nsIObserverService;
-const nsICategoryManager = Ci.nsICategoryManager;
 
 // Start1506: You may or may not care about this:
 CookieJarSelector.prototype =
@@ -446,7 +434,7 @@ CookieJarSelector.prototype =
             }
             break;
         case "profile-after-change":
-            var obsSvc = Cc["@mozilla.org/observer-service;1"].getService(nsIObserverService);
+            var obsSvc = Services.obs;
             obsSvc.addObserver(this, "cookie-changed");
             // after profil loading, initialize a timer to call timerCallback
             // at a specified interval
@@ -464,7 +452,6 @@ CookieJarSelector.prototype =
 * XPCOMUtils.generateNSGetFactory was introduced in Mozilla 2 (Firefox 4).
 * XPCOMUtils.generateNSGetModule is for Mozilla 1.9.2 (Firefox 3.6).
 */
-const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 if (XPCOMUtils.generateNSGetFactory)
     var NSGetFactory = XPCOMUtils.generateNSGetFactory([CookieJarSelector]);
 else

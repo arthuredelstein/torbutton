@@ -7,7 +7,8 @@
  * Tor check service
  *************************************************************************/
 
-const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 // Module specific constants
 const kMODULE_NAME = "Torbutton Tor Check Service";
@@ -130,5 +131,4 @@ TBTorCheckService.prototype =
   },
 };
 
-const {XPCOMUtils} = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 var NSGetFactory = XPCOMUtils.generateNSGetFactory([TBTorCheckService]);

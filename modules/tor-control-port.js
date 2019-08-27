@@ -22,7 +22,7 @@
 let { Constructor: CC } = Components;
 
 // ### Import Mozilla Services
-const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // __log__.
 // Logging function

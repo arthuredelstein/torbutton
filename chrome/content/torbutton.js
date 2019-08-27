@@ -200,9 +200,7 @@ var torbutton_tor_check_observer = {
           }
 
           if (!foundTab) {
-            gBrowser.selectedTab = gBrowser.addTab("about:tor", {
-              triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(),
-            });
+            gBrowser.selectedTab = gBrowser.addTrustedTab("about:tor");
           }
         }
       }
@@ -883,7 +881,6 @@ function torbutton_new_identity() {
     // conditions leading to failures (see bug 11783 for an example).
     // TODO: Remove the Torbutton menu entry again once we have done our
     // security control redesign.
-    // document.getElementById("torbutton-new-identity").disabled = true;
     document.getElementById("menu_newIdentity").disabled = true;
     document.getElementById("appMenuNewIdentity").disabled = true;
 
@@ -909,7 +906,6 @@ function torbutton_new_identity() {
       } else {
         // TODO: Remove the Torbutton menu entry again once we have done our
         // security control redesign.
-        // document.getElementById("torbutton-new-identity").disabled = false;
         document.getElementById("menu_newIdentity").disabled = false;
         document.getElementById("appMenuNewIdentity").disabled = false;
       }
@@ -923,7 +919,6 @@ function torbutton_new_identity() {
     // security control redesign.
     torbutton_log(5, "Unexpected error on new identity: " + e);
     window.alert("Torbutton: Unexpected error on new identity: " + e);
-    // document.getElementById("torbutton-new-identity").disabled = false;
     document.getElementById("menu_newIdentity").disabled = false;
     document.getElementById("appMenuNewIdentity").disabled = false;
   }
@@ -1575,7 +1570,7 @@ function torbutton_close_tabs_on_new_identity() {
 
     let tabCount = browser.browsers.length;
     torbutton_log(3, "Tab count for window: " + tabCount);
-    let tabsToRemove = new Array();
+    let tabsToRemove = [];
     for (let i = 0; i < tabCount; i++) {
       let tab = browser.getTabForBrowser(browser.browsers[i]);
       if (!tab) {
@@ -1586,9 +1581,7 @@ function torbutton_close_tabs_on_new_identity() {
     }
 
     if (win == window) {
-      browser.addTab("about:blank", {
-        triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(),
-      });
+      browser.addWebTab("about:blank");
     } else {
       // It is a bad idea to alter the window list while iterating
       // over it, so add this window to an array and close it later.
@@ -1641,7 +1634,6 @@ function torbutton_check_protections()
   if (!m_tb_control_pass || (!m_tb_control_ipc_file && !m_tb_control_port)) {
     // TODO: Remove the Torbutton menu entry again once we have done our
     // security control redesign.
-    document.getElementById("torbutton-new-identity").disabled = true;
     document.getElementById("menu_newIdentity").disabled = true;
     document.getElementById("appMenuNewIdentity").disabled = true;
   }
@@ -1649,12 +1641,6 @@ function torbutton_check_protections()
   if (!m_tb_tbb && m_tb_prefs.getBoolPref("extensions.torbutton.prompt_torbrowser")) {
       torbutton_inform_about_tbb();
   }
-}
-
-// Bug 1506 P2: I think cookie protections is a neat feature.
-function torbutton_open_cookie_dialog() {
-  showDialog(window, 'chrome://torbutton/content/torcookiedialog.xul',
-             'Cookie Protections', 'centerscreen,chrome,dialog,modal,resizable');
 }
 
 // -------------- HISTORY & COOKIES ---------------------
@@ -1680,9 +1666,7 @@ function torbutton_disable_browser_js(browser) {
         if (!browser.contentWindow)
             torbutton_log(3, "No content window to disable JS events.");
         else
-            eventSuppressor = browser.contentWindow.
-                QueryInterface(Ci.nsIInterfaceRequestor).
-                       getInterface(Ci.nsIDOMWindowUtils);
+            eventSuppressor = browser.contentWindow.windowUtils;
     } catch(e) {
         torbutton_log(4, "Failed to disable JS events: "+e)
     }
@@ -1805,8 +1789,8 @@ function torbutton_do_startup()
 {
     if(m_tb_prefs.getBoolPref("extensions.torbutton.startup")) {
         // Bug 1506: Still want to do this
-        // torbutton_toggle_plugins(
-        //         m_tb_prefs.getBoolPref("plugin.disable"));
+        torbutton_toggle_plugins(
+                m_tb_prefs.getBoolPref("plugin.disable"));
 
         // Bug 1506: Should probably be moved to an XPCOM component
         torbutton_do_main_window_startup();
@@ -1894,10 +1878,9 @@ function showSecurityPreferencesPanel(chromeWindow) {
 
   if (settingsTab === null) {
       // Open up the settings panel in a new tab.
-      tabBrowser.addTab(SECURITY_PREFERENCES_URI, {
+      tabBrowser.addTrustedTab(SECURITY_PREFERENCES_URI, {
           "selected": true,
           "parentId": tabBrowser.selectedTab.id,
-          triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(),
       });
   } else {
       // Activate an existing settings panel tab.

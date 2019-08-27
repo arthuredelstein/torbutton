@@ -2,7 +2,7 @@
 // Various helpful utility functions.
 
 // ### Import Mozilla Services
-const {Services} = ChromeUtils.import("resource://gre/modules/Services.jsm");
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // ### About firstPartyDomain literal
 const k_tb_about_uri_first_party_domain = "about.ef2a7dd5-93bc-417f-a698-142c3116864f.mozilla";
