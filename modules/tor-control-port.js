@@ -472,7 +472,7 @@ info.bridgeParser = function(bridgeLine) {
   // Several bridge types have a similar format:
   } else {
     result.type = tokens[0];
-    if (["flashproxy", "fte", "meek", "obfs3", "obfs4", "scramblesuit",
+    if (["flashproxy", "fte", "meek", "meek_lite", "obfs3", "obfs4", "scramblesuit",
           "snowflake"].indexOf(result.type) >= 0) {
       [result.address, result.ID] = tokens.slice(1);
     }
