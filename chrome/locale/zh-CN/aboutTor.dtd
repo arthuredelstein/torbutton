@@ -30,6 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "订阅 Tor 的最新动态">
 <!ENTITY aboutTor.donationBanner.line2e "让 Tor 网络保持健壮。">
 <!ENTITY aboutTor.donationBanner.buttonA "立即捐助">
-
-<!ENTITY aboutTor.donationBanner3.line1 "每月自动捐款来使 Tor 保持健壮。">
-<!ENTITY aboutTor.donationBanner3.line2 "即刻就成为隐私的捍卫者。">
