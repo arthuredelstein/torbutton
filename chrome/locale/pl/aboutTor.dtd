@@ -20,9 +20,9 @@
 <!ENTITY aboutTor.torbrowser_user_manual_link.label "Sprawdź naszą instrukcje korzystania z przeglądarki Tor »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Instrukcja korzystania z Tor Browser">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Instrukcja korzystania z Przeglądarki Tor">
 
-<!ENTITY aboutTor.tor_mission.label "Projekt Tor jest organizacją non-profit US 501(c)(3), poszerzającą prawa człowieka i wolności tworząc darmowe i open-source technologie anonimowości i prywatności, wspierając ich nierestryktowaną dostępność i użycie i promuje ich naukowe i popularne zrozumienie.">
+<!ENTITY aboutTor.tor_mission.label "Projekt Tor jest organizacją non-profit US 501(c)(3), wspierającą prawa człowieka i wolności. W jego ramach tworzone są darmowe i otwarte technologie chroniące anonimowość i prywatność. Tor wspiera ich nieograniczoną dostępność i użycie oraz popularyzuje je w świecie nauki i życiu codziennym. ">
 <!ENTITY aboutTor.getInvolved.label "Zaangażuj się »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
@@ -32,4 +32,4 @@
 <!ENTITY aboutTor.donationBanner.buttonA "Wesprzyj teraz">
 
 <!ENTITY aboutTor.donationBanner3.line1 "Automatyczne comiesięczne darowizny trzymają Tora silnym.">
-<!ENTITY aboutTor.donationBanner3.line2 "Zostań dzisiaj Obrońcą Prywatności.">
+<!ENTITY aboutTor.donationBanner3.line2 "Zostań już teraz Obrońcą Prywatności.">

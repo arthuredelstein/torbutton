@@ -9,7 +9,7 @@
 <!ENTITY aboutTor.viewChangelog.label "檢視變更記錄">
 
 <!ENTITY aboutTor.ready.label "探索。隱密。">
-<!ENTITY aboutTor.ready2.label "您已準備好使用全世界最私密的瀏覽體驗。">
+<!ENTITY aboutTor.ready2.label "您已能夠體驗全世界最私密的網路瀏覽。">
 <!ENTITY aboutTor.failure.label "發生錯誤！">
 <!ENTITY aboutTor.failure2.label "Tor 無法在此瀏覽器中運作。">
 
@@ -22,14 +22,14 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "洋蔥路由瀏覽器手冊">
 
-<!ENTITY aboutTor.tor_mission.label "Tor Project 是一個美國 501(c)(3) 非營利組織，致力於透過開發和部署自由與開放原始碼的匿名和隱私技術，為其不受限制的可用性和使用提供支持，促進其在科學領域和大眾的知名度來支持人權和自由。">
+<!ENTITY aboutTor.tor_mission.label "Tor Project 是一個美國 501(c)(3) 非營利組織，致力於透過開發和部署自由與開放原始碼的匿名和隱私技術，支援無限制的可用性和使用，以促進科學領域和大眾對相關技術的理解。">
 <!ENTITY aboutTor.getInvolved.label "加入我們 »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "將 Tor 的最新消息直接傳送到您的收件匣。">
 <!ENTITY aboutTor.newsletter.link_text "訂閱 Tor 的新資訊。">
-<!ENTITY aboutTor.donationBanner.line2e "讓 Tor 強壯。">
+<!ENTITY aboutTor.donationBanner.line2e "使 Tor 更加茁壯。">
 <!ENTITY aboutTor.donationBanner.buttonA "立刻捐款">
 
-<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
-<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">
+<!ENTITY aboutTor.donationBanner3.line1 "每月自動捐款，使 Tor 更加茁壯。">
+<!ENTITY aboutTor.donationBanner3.line2 "從今天開始，成為隱私守衛員吧！">

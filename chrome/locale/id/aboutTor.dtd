@@ -11,25 +11,25 @@
 <!ENTITY aboutTor.ready.label "Jelajahi. Secara Privat.">
 <!ENTITY aboutTor.ready2.label "Anda siap untuk pengalaman menjelajah yang paling privat di dunia.">
 <!ENTITY aboutTor.failure.label "Ada Masalah!">
-<!ENTITY aboutTor.failure2.label "Tor tidak dapat digunakan di peramban ini.">
+<!ENTITY aboutTor.failure2.label "Tor tidak dapat digunakan diperamban ini.">
 
 <!ENTITY aboutTor.search.label "Cari dengan DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Pertanyaan?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Periksa Tor Browser Manual kami »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Periksa Manual Tor Browser kami »">
 <!-- The next two entities are used within the browser's Help menu. -->
-<!ENTITY aboutTor.torbrowser_user_manual.accesskey "m">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Manual ">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Manual Tor Browser">
 
-<!ENTITY aboutTor.tor_mission.label "The Tor Project adalah US 501(c)(3) organisasi nirlaba yang bertujuan  memajukan hak asasi manusia dan kebebasan dengan membuat dan menyebarkan teknologi anominitas dan privasi yang bebas dan terbuka dan mendukung keberadaan dan penggunaannya, dan meningkatkan pemahamannya dalam hal ilmiah dan populer.">
+<!ENTITY aboutTor.tor_mission.label "The Tor Project adalah US 501(c)(3) organisasi nirlaba yang bertujuan memajukan hak asasi manusia dan kebebasan dengan membuat dan menyebarkan teknologi anominitas dan privasi yang bebas dan terbuka, mendukung keberadaan dan penggunaannya, dan meningkatkan pemahamannya ilmiah dan populernya.">
 <!ENTITY aboutTor.getInvolved.label "Ikut Terlibat »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/terlibat/relawan.html.id">
 
-<!ENTITY aboutTor.newsletter.tagline "Dapatkan berita Tor terbaru langsung ke inbox Anda.">
+<!ENTITY aboutTor.newsletter.tagline "Dapatkan berita Tor terbaru langsung dipos-el Anda.">
 <!ENTITY aboutTor.newsletter.link_text "Daftar untuk mendapatkan Berita Tor.">
-<!ENTITY aboutTor.donationBanner.line2e "Keep Tor strong.">
+<!ENTITY aboutTor.donationBanner.line2e "Bantu Tor tetap kuat.">
 <!ENTITY aboutTor.donationBanner.buttonA "Donasi Sekarang">
 
-<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
-<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">
+<!ENTITY aboutTor.donationBanner3.line1 "Donasi bulanan otomatis untuk membantu Tor tetap kuat.">
+<!ENTITY aboutTor.donationBanner3.line2 "Jadilah Pahlawan Privasi hari ini.">

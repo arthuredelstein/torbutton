@@ -17,10 +17,10 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Spørsmål?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Sjekk vår Tor Browser Manual »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Sjekk vår Tor Nettleser Håndbok »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor-nettleseren Håndbok">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Nettleser Håndbok">
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project er en US 501(c)(3) ideell organisasjon som fremmer menneskerettigheter og friheter ved å skape og distribuere anonymisering og personvernteknologi for fri og åpen kildekode, som støtter deres ubegrensede tilgjengelighet og bruk, og fremmer sin vitenskapelige og populære forståelse.">
 <!ENTITY aboutTor.getInvolved.label "Bli involvert »">
@@ -31,5 +31,5 @@
 <!ENTITY aboutTor.donationBanner.line2e "Hold Tor sterk.">
 <!ENTITY aboutTor.donationBanner.buttonA "Donér nå">
 
-<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
-<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">
+<!ENTITY aboutTor.donationBanner3.line1 "Automatisk månedlig donasjoner gjør Tor sterk.">
+<!ENTITY aboutTor.donationBanner3.line2 "Bli en Kjemper for Privatliv i dag.">

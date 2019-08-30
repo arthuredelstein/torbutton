@@ -6,7 +6,7 @@
 
 <!ENTITY aboutTor.title "Thông tin về Tor">
 
-<!ENTITY aboutTor.viewChangelog.label "View Changelog">
+<!ENTITY aboutTor.viewChangelog.label "Xem nhật kí thay dổi">
 
 <!ENTITY aboutTor.ready.label "Truy cập Internet. Một cách riêng tư.">
 <!ENTITY aboutTor.ready2.label "Bạn đã sẵn sàng cho trải nghiệm duyệt web riêng tư nhất trên thế giới.">
@@ -31,5 +31,5 @@
 <!ENTITY aboutTor.donationBanner.line2e "Giữ cho Tor trở nên mạnh mẽ.">
 <!ENTITY aboutTor.donationBanner.buttonA "Đóng góp Ngay bây giờ">
 
-<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
-<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">
+<!ENTITY aboutTor.donationBanner3.line1 "Tự động donate hàng tháng để giữ cho Tor lớn mạnh.">
+<!ENTITY aboutTor.donationBanner3.line2 "Trở thành một người bảo vệ quyền riêng tư ngày hôm nay.">

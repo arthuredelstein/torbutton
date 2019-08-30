@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "すべてのサイトで JavaScript が無効化されます。">
 <!ENTITY torbutton.prefs.sec_limit_typography "いくつかのフォントと数学記号が無効化されます。">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "いくつかのアイコン、数学記号および画像が無効化されます。">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "オーディオ、ビデオ(HTML5メディア)、WebGLはクリックすると再生されます。">
 <!ENTITY torbutton.circuit_display.title "Tor サーキット">
 <!ENTITY torbutton.circuit_display.new_circuit "このサイトに新しいサーキットを使用する">

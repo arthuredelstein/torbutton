@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "A JavaScript alapértelmezetten tiltott minden oldalon.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Néhány betűtípus és matematikai szimbólum tiltásra került.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Néhány betűtípus, ikon és matematikai szimbólum és a képek tiltásra kerültek.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Az audió és videó (HTML5 média) és a WebGL kattintásra indul.">
 <!ENTITY torbutton.circuit_display.title "Tor áramkör">
 <!ENTITY torbutton.circuit_display.new_circuit "Új Tor áramkör ehhez az oldalhoz">

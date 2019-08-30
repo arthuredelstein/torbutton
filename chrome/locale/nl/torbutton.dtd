@@ -6,21 +6,21 @@
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Controleer op updates voor de Tor-browser...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie Beveiligingen">
+<!ENTITY torbutton.context_menu.cookieProtections "Cookiebeschermingen…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik hier om Tor-knop te initialiseren">
 <!ENTITY torbutton.prefs.security_settings "Tor-browser Beveiligingsinstellingen">
-<!ENTITY torbutton.cookiedialog.title "Beheer Cookie Beveiligingen">
-<!ENTITY torbutton.cookiedialog.lockCol "Beveiligd">
+<!ENTITY torbutton.cookiedialog.title "Cookiebeschermingen beheren">
+<!ENTITY torbutton.cookiedialog.lockCol "Beschermd">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
 <!ENTITY torbutton.cookiedialog.nameCol "Naam">
 <!ENTITY torbutton.cookiedialog.pathCol "Pad">
-<!ENTITY torbutton.cookiedialog.protectCookie "Cookie beveiligen">
+<!ENTITY torbutton.cookiedialog.protectCookie "Cookie beschermen">
 <!ENTITY torbutton.cookiedialog.removeCookie "Cookie verwijderen">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Cookie beveiliging opheffen">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Alle cookies, met uitzondering van de beveiligde, verwijderen">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Beveilig nieuwe cookies">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beveilig nieuwe cookies niet">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Cookiebescherming opheffen">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Alle behalve beschermde verwijderen">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Nieuwe cookies beschermen">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nieuwe cookies niet beschermen">
 <!ENTITY torbutton.prefs.sec_caption "Beveiligingsniveau">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "De beveiligingsschuifbalk laat je toe sommige functies uit te schakelen die je browser mogelijk blootstellen aan beveiligingsrisico's.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standaard">
@@ -36,6 +36,6 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "Javascript zijn standaard uitgeschakeld op alle sites.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Sommige lettertypen en wiskundige symbolen zijn uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Sommige lettertypen, pictogrammen, wiskundige symbolen en afbeeldingen zijn uitgeschakeld.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio en video (HTML5-media) en WebGL zijn klikken-voor-afspelen.">
 <!ENTITY torbutton.circuit_display.title "Torcircuit">
 <!ENTITY torbutton.circuit_display.new_circuit "Nieuw circuit voor deze website">

@@ -8,7 +8,7 @@
 
 <!ENTITY aboutTor.viewChangelog.label "الإطلاع على سجل التغيرات">
 
-<!ENTITY aboutTor.ready.label "تصفح بهوية خفية">
+<!ENTITY aboutTor.ready.label "تصفح بكل خصوصية.">
 <!ENTITY aboutTor.ready2.label "أنت جاهز الآن لتجربة التصفح الأكثر خصوصية في العالم.">
 <!ENTITY aboutTor.failure.label "حدث خطأ ما!">
 <!ENTITY aboutTor.failure2.label "تور لا يعمل في هذا المتصفح.">
@@ -31,5 +31,5 @@
 <!ENTITY aboutTor.donationBanner.line2e "حافظ على قوة تور.">
 <!ENTITY aboutTor.donationBanner.buttonA "تبرع الآن">
 
-<!ENTITY aboutTor.donationBanner3.line1 "Automatic monthly donations keep Tor strong.">
-<!ENTITY aboutTor.donationBanner3.line2 "Become a Defender of Privacy today.">
+<!ENTITY aboutTor.donationBanner3.line1 "تبرعات شهرية أتوماتيكية حافظ على Tor قويا.">
+<!ENTITY aboutTor.donationBanner3.line2 "اصبح مدافعا عن الخصوصية اليوم.">

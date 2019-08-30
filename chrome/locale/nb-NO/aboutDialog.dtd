@@ -1,9 +1,9 @@
-<!ENTITY project.start           "&amp;bransShortName; blir utviklet av">
+<!ENTITY project.start           "&brandShortName; blir utviklet av">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "&vendorShortName;">
 <!ENTITY project.end             ", en veldedig organisasjon som jobber for å forsvare ditt personvern og din frihet på nett.">
 
-<!ENTITY help.start              "Vil du bidra?">
+<!ENTITY help.start              "Vil du hjelpe?">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
 <!ENTITY help.donateLink         "Doner">
 <!ENTITY help.or                 "eller">

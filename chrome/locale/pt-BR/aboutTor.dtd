@@ -8,7 +8,7 @@
 
 <!ENTITY aboutTor.viewChangelog.label "Visualizar o registro de mudanças">
 
-<!ENTITY aboutTor.ready.label "Navegar. Com privacidade.">
+<!ENTITY aboutTor.ready.label "Explore. Com privacidade.">
 <!ENTITY aboutTor.ready2.label "Você está pronto para a maior experiência de navegação privada do mundo.">
 <!ENTITY aboutTor.failure.label "Alguma coisa deu errado!">
 <!ENTITY aboutTor.failure2.label "Tor não está funcionando neste navegador. ">
@@ -29,8 +29,8 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Receba as últimas notícias do Tor diretamente na sua caixa de e-mail.">
 <!ENTITY aboutTor.newsletter.link_text "Inscreva-se para receber Notícias do Tor.">
-<!ENTITY aboutTor.donationBanner.line2e "Fortaleça o Tor.">
-<!ENTITY aboutTor.donationBanner.buttonA "Doar Agora">
+<!ENTITY aboutTor.donationBanner.line2e "Mantenha o Tor forte.">
+<!ENTITY aboutTor.donationBanner.buttonA "Doe Agora">
 
 <!ENTITY aboutTor.donationBanner3.line1 "Doações mensais automáticas fortalecem o Tor.">
-<!ENTITY aboutTor.donationBanner3.line2 "Torne-se hoje um Defensor da Privacidade.">
+<!ENTITY aboutTor.donationBanner3.line2 "Torne-se um(a) Defensor(a) da Privacidade hoje.">
