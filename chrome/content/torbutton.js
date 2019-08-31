@@ -1861,9 +1861,10 @@ function showSecurityPreferencesPanel(chromeWindow) {
 
   if (settingsTab === null) {
       // Open up the settings panel in a new tab.
-      tabBrowser.addTrustedTab(SECURITY_PREFERENCES_URI, {
+      tabBrowser.addTab(SECURITY_PREFERENCES_URI, {
           "selected": true,
           "parentId": tabBrowser.selectedTab.id,
+          triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(),
       });
   } else {
       // Activate an existing settings panel tab.
