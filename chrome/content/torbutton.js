@@ -850,7 +850,7 @@ function torbutton_send_ctrl_cmd(command) {
 
 // Bug 1506 P4: Needed for New IP Address
 function torbutton_new_circuit() {
-  let firstPartyDomain = getDomainForBrowser(gBrowser);
+  let firstPartyDomain = getDomainForBrowser(gBrowser.selectedBrowser);
 
   let domainIsolator = Cc["@torproject.org/domain-isolator;1"]
                           .getService(Ci.nsISupports).wrappedJSObject;

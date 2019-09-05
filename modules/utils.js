@@ -4,9 +4,6 @@
 // ### Import Mozilla Services
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
-// ### About firstPartyDomain literal
-const k_tb_about_uri_first_party_domain = "about.ef2a7dd5-93bc-417f-a698-142c3116864f.mozilla";
-
 // ## Pref utils
 
 // __prefs__. A shortcut to Mozilla Services.prefs.
@@ -212,30 +209,34 @@ var show_torbrowser_manual = () => {
   return availableLocales.indexOf(shortLocale) >= 0;
 }
 
-var getDomainForBrowser = (browser) => {
-  let firstPartyDomain = browser.contentPrincipal.originAttributes.firstPartyDomain;
-  // Bug 22538: For neterror or certerror, get firstPartyDomain causing it from the u param
-  if (firstPartyDomain === k_tb_about_uri_first_party_domain) {
-    let knownErrors = ["about:neterror", "about:certerror"];
-    let origin = browser.contentPrincipal.origin || '';
-    if (knownErrors.some(x => origin.startsWith(x))) {
-      try {
-        let urlOrigin = new URL(origin);
-        let { hostname } = new URL(urlOrigin.searchParams.get('u'));
-        if (hostname) {
-          try {
-            firstPartyDomain = Services.eTLD.getBaseDomainFromHost(hostname);
-          } catch (e) {
-            if (e.result == Cr.NS_ERROR_HOST_IS_IP_ADDRESS ||
-                e.result == Cr.NS_ERROR_INSUFFICIENT_DOMAIN_LEVELS) {
-              firstPartyDomain = hostname;
-            }
-          }
-        }
-      } catch (e) {}
+var getFPDFromHost = (hostname) => {
+  try {
+    return Services.eTLD.getBaseDomainFromHost(hostname);
+  } catch (e) {
+    if (e.result == Cr.NS_ERROR_HOST_IS_IP_ADDRESS ||
+        e.result == Cr.NS_ERROR_INSUFFICIENT_DOMAIN_LEVELS) {
+      return hostname;
     }
   }
-  return firstPartyDomain;
+  return null;
+}
+
+// Assuming this is called with gBrowser.selectedBrowser
+var getDomainForBrowser = (browser) => {
+  let fpd = browser.contentPrincipal.originAttributes.firstPartyDomain;
+  // Bug 31562: For neterror or certerror, get the original URL from
+  // browser.currentURI and use it to calculate the firstPartyDomain.
+  let knownErrors = ["about:neterror", "about:certerror"];
+  let documentURI = browser.documentURI;
+  if (documentURI && documentURI.schemeIs('about') &&
+      knownErrors.some(x => documentURI.spec.startsWith(x))) {
+    let knownSchemes = ["http", "https", "ftp"];
+    let currentURI = browser.currentURI;
+    if (currentURI && knownSchemes.some(x => currentURI.schemeIs(x))) {
+      fpd = getFPDFromHost(currentURI.host) || fpd;
+    }
+  }
+  return fpd;
 };
 
 // Export utility functions for external use.
