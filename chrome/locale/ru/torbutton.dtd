@@ -31,11 +31,19 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Наиболее безопасные">
 <!ENTITY torbutton.prefs.sec_safest_description "Разрешены только функции веб-сайтов, требующиеся для статических сайтов и основных сервисов. Эти изменения влияют на изображения, медиа и скрипты.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "При самых безопасных настройках:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Подробнее">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Узнать больше">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only " JavaScript отключен на всех не HTTPS сайтах. ">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript отключен по умолчанию на всех сайтах.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Некоторые шрифты и математические символы отключены.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Некоторые шрифты, значки, математические символы и изображения отключены.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Аудио, видео (медиа HTML5) и WebGL проигрываются при нажатии.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Пользовательский">
+<!ENTITY torbutton.prefs.sec_overview "Отключите веб-функции, которые могут использоваться для атаки на вашу безопасность и анонимность.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Уровень безопасности : Стандартный">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Уровень безопасности : Более безопасный">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Уровень безопасности : Наиболее безопасный">
+<!ENTITY torbutton.prefs.sec_custom_summary "Ваши настройки браузера привели к необычным параметрам безопасности. По соображениям безопасности и приватности мы рекомендуем выбрать один из уровней безопасности по умолчанию.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Восстановить значения по умолчанию">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Дополнительные настройки безопасности...">
 <!ENTITY torbutton.circuit_display.title "Схема Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Новая схема для этого Сайта">

@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "一些字体与数学符号被禁用。">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "一些字体，图标，数学符号与图片被禁用。">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "点击播放音频或视频（HTML5 媒体）和WebGL。">
+<!ENTITY torbutton.prefs.sec_custom_warning "自定义">
+<!ENTITY torbutton.prefs.sec_overview "禁用部分能影响你安全和匿名性的互联网功能。">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "安全等级：标准">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "安全等级：较安全">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "安全等级：最安全">
+<!ENTITY torbutton.prefs.sec_custom_summary "您自定义的浏览器设置导致了不安全的安全设置。出于安全和隐私考虑，我们建议您选择一个默认的安全级别。">
+<!ENTITY torbutton.prefs.sec_restore_defaults "恢复默认设置">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "高级安全选项…">
 <!ENTITY torbutton.circuit_display.title "Tor 链路">
 <!ENTITY torbutton.circuit_display.new_circuit "为此站点使用新线路">

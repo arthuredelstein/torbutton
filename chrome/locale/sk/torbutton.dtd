@@ -17,3 +17,4 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Obnoviť predvolené">

@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Algunas fuentes y símbolos matemáticos están deshabilitados.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Algunas fuentes, iconos, símbolos matemáticos, e imágenes están deshabilitados.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio y vídeo (HTML5 media), y WebGL son click-to-play.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Personalizado">
+<!ENTITY torbutton.prefs.sec_overview "Deshabilita ciertas funciones web que se pueden usar para atacar tu seguridad y anonimato.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Nivel de seguridad: Estándar">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Nivel de seguridad: Más seguro">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Nivel de seguridad: El más seguro de todos">
+<!ENTITY torbutton.prefs.sec_custom_summary "Tus preferencias personalizadas para el navegador han resultado en una configuración de seguridad inusual. Por motivos de seguridad y privacidad, te recomendamos uno de los de los niveles de seguridad predeterminados.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Restaurar valores predeterminados">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Configuración de seguridad avanzada ...">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Nuevo Circuito para este Sitio">

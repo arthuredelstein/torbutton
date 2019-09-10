@@ -21,21 +21,29 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "全部刪除，但受保護">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "保護新的 Cookie">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "不保護新的 Cookie">
-<!ENTITY torbutton.prefs.sec_caption "安全等級">
+<!ENTITY torbutton.prefs.sec_caption "安全性等級">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "此安全性調整滑棒會關閉某些瀏覽器的功能，導致您的瀏覽器更容易遭受駭客攻擊。">
 <!ENTITY torbutton.prefs.sec_standard_label "標準">
-<!ENTITY torbutton.prefs.sec_standard_description "所有瀏覽器與網站的功能都啟用">
+<!ENTITY torbutton.prefs.sec_standard_description "啟用 Tor 瀏覽器及網站的所有功能。">
 <!ENTITY torbutton.prefs.sec_safer_label "較安全">
 <!ENTITY torbutton.prefs.sec_safer_description "停用某些功能,因為其有危險,會造成部份網站失能">
 <!ENTITY torbutton.prefs.sec_safer_list_label "在較安全設定:">
 <!ENTITY torbutton.prefs.sec_safest_label "最安全">
 <!ENTITY torbutton.prefs.sec_safest_description "只同意靜態網站和基本服務的網站功能.這些變動會影響圖片,媒體和腳本.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "在最安全設定:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "繼續閱讀">
+<!ENTITY torbutton.prefs.sec_learn_more_label "了解更多">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "所有非HTTPS網站會預設停用JavaScript ">
 <!ENTITY torbutton.prefs.sec_js_disabled "所有網站會預設停用JavaScript ">
 <!ENTITY torbutton.prefs.sec_limit_typography "有些字型與數學符號被停用。">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "有些字型、圖示、數學符號與圖片被停用。">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "聲音和影片（HTML5 媒體），和 WebGL 要點擊播放。">
+<!ENTITY torbutton.prefs.sec_custom_warning "自定義">
+<!ENTITY torbutton.prefs.sec_overview "停用特定的網頁功能，其可用以損害您的安全性及匿名性。">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "安全性等級：標準">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "安全性等級：更安全">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "安全性等級：最安全">
+<!ENTITY torbutton.prefs.sec_custom_summary "您的瀏覽器個人化設定可能會造成安全性的疑慮。基於個人網路安全與隱私的考量，建議您選用預設的安全性層級選項。">
+<!ENTITY torbutton.prefs.sec_restore_defaults "恢復到預設值">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "進階安全性設定…">
 <!ENTITY torbutton.circuit_display.title "Tor 迴路">
 <!ENTITY torbutton.circuit_display.new_circuit "建立新的迴路來連接上此網站">

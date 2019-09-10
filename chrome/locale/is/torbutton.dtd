@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Sumt letur og stærðfræðitákn eru óvirk.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Sumt letur, táknmyndir, myndir og stærðfræðitákn eru óvirk.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Hljóð og myndskeið (HTML5-gagnamiðla) ásamt WebGL þarf að smella á til að spila.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Sérsniðið">
+<!ENTITY torbutton.prefs.sec_overview "Gera ýmsa eiginleika vefsíðna óvirka, sem hægt væri að nota til árása á öryggi þitt og gagnaleynd.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Öryggisstig: Staðlað">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Öryggisstig: Öruggara">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Öryggisstig: Öruggast">
+<!ENTITY torbutton.prefs.sec_custom_summary "Sérsniðnar kjörstillingar vafrans þíns valda mjög óvenjulegum öryggisstillingum. Til að uppfylla sem best öryggi og gagnaleynd, mælum við með því að þú veljir eitt af sjálfgefnum öryggisstigum.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Frumstilla á sjálfgefið">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Ítarlegar öryggisstillingar…">
 <!ENTITY torbutton.circuit_display.title "Tor-rás">
 <!ENTITY torbutton.circuit_display.new_circuit "Ný rás fyrir þetta vefsvæði">

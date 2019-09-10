@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Některá písma a matematické symboly jsou zablokovány.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Některá písma, matematické symboly a obrázky jsou zablokovány.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio, video (HTML5 média) a WebGL se přehrávají po kliknutí.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Vlastní">
+<!ENTITY torbutton.prefs.sec_overview "Vypnout některé webové funkce, které mohou být zneužity k ohrožení vaší bezpečnosti a anonymity.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Úroveň zabezpečení: běžná">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Úroveň zabezpečení: bezpečnější">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Úroveň zabezpečení: nejbezpečnější">
+<!ENTITY torbutton.prefs.sec_custom_summary "Vaše nastavení prohlížeče neodpovídá standardnímu nastavení zabezpečení. Z důvodu ochrany soukromí a zvýšení bezpečnosti vám doporučujeme vybrat si jednu z výchozích bezpečnostních úrovní.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Obnovit výchozí">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Rozšířená bezpečnostní nastavení…">
 <!ENTITY torbutton.circuit_display.title "Tor okruh">
 <!ENTITY torbutton.circuit_display.new_circuit "Nový okruh Toru pro tuto stránku">

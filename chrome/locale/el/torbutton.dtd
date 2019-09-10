@@ -31,11 +31,19 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Ασφαλέστατο">
 <!ENTITY torbutton.prefs.sec_safest_description "Επιτρέπει μόνο τις παροχές ιστοσελίδας που απαιτούνται για βασικές ιστοσελίδες και υπηρεσίες. Αυτό επηρεάζει εικόνες, μέσα και scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Στην πιο ασφαλή ρύθμιση:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Μάθετε περισσότερα">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Μάθε περισσότερα">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Η JavaScript είναι απενεργοποιημένη σε ιστότοπους που δεν είναι HTTPS.">
 <!ENTITY torbutton.prefs.sec_js_disabled "Η JavaScript είναι απενεργοποιημένη σε όλους τους ιστότοπους ως προεπιλογή.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Μερικές γραμματοσειρές και μαθηματικά σύμβολα είναι απενεργοποιημένα.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Ορισμένες γραμματοσειρές, εικονίδια, μαθηματικά σύμβολα και εικόνες είναι απενεργοποιημένα.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Προσαρμογή ">
+<!ENTITY torbutton.prefs.sec_overview "Απενεργοποιήστε ορισμένα χαρακτηριστικά του διαδικτύου που μπορεί να χρησιμοποιηθούν για επιθέσεις εναντίον της ασφάλειας και της ανωνυμίας σας.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Επίπεδο ασφαλείας: Βασικό">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Επίπεδο ασφαλείας: Ασφαλέστερο">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Επίπεδο ασφαλείας: Ασφαλέστατο">
+<!ENTITY torbutton.prefs.sec_custom_summary "Οι προσαρμοσμένες προτιμήσεις του browser σας έχουν οδηγήσει σε ασυνήθιστες ρυθμίσεις ασφάλειας. Για λόγους ασφαλείας και ιδιωτικότητας, προτείνουμε να επιλέξετε ένα από τα προεπιλεγμένα επίπεδα ασφάλειας.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Επαναφορά προεπιλογών">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Ρυθμίσεις ασφαλείας για προχωρημένους...">
 <!ENTITY torbutton.circuit_display.title "Κύκλωμα Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Νέο κύκλωμα για αυτή την ιστοσελίδα">

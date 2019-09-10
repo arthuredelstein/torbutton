@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Một số phông chữ và ký hiêu toán học bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Một số phông chữ, biểu tượng, và hình ảnh bị vô hiệu.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Tùy chỉnh">
+<!ENTITY torbutton.prefs.sec_overview "Disable certain web features that can be used to attack your security and anonymity.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Security Level : Standard">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Security Level : Safer">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Security Level : Safest">
+<!ENTITY torbutton.prefs.sec_custom_summary "Những điều chỉnh trong trình duyệt của bạn vừa tạo ra những lỗi bảo mật bất thường. Vì những lý do bảo mật và riêng tư, chúng tôi khuyến cáo bạn chọn những cấp độ bảo mật mặc định khác.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Khôi phục trạng thái mặc định">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Advanced Security Settings…">
 <!ENTITY torbutton.circuit_display.title "Mạch Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Mạch Tor mới cho trang này">

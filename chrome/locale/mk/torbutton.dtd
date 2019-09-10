@@ -26,10 +26,10 @@
 <!ENTITY torbutton.prefs.sec_standard_label "Стандардно">
 <!ENTITY torbutton.prefs.sec_standard_description "Сите можности на Tor Browser и веб страните се овозможени.">
 <!ENTITY torbutton.prefs.sec_safer_label "Побезбедно">
-<!ENTITY torbutton.prefs.sec_safer_description "Оневозможува можности на веб страните кои често се опасни, предизвикувајќи некои страни да ја изгубат функционалноста.">
+<!ENTITY torbutton.prefs.sec_safer_description "Оневозможува можности на веб страните кои често се опасни, сепак воедно предизвикувајќи некои веб страни да ја изгубат функционалноста.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "На побезбедна поставка:">
 <!ENTITY torbutton.prefs.sec_safest_label "Најбезбедно">
-<!ENTITY torbutton.prefs.sec_safest_description "Дозволува само можности на веб страните потребни за статичните страни и основните услужни сервиси. Овие измени влијаат на сликите, разни мултимедијални датотеки, и на скрптите.">
+<!ENTITY torbutton.prefs.sec_safest_description "Дозволува само можности на веб страните потребни за статичните страни и основните услужни сервиси. Овие измени влијаат на сликите, разни мултимедијални датотеки, и скрипти.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "На најбезбедна поставка:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Научи повеќе">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript е оневозможен на не-HTTPS веб страните.">
@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Некои фонтови и математички симболи се оневозможени.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Некои фонтови, икони, математички симболи, и слики се оневозможени.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Аудио и видео (HTML5 медиа), и WebGL се кликни-да-пуштиш.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Прилагодено">
+<!ENTITY torbutton.prefs.sec_overview "Оневозможи одредени веб можности кои можат да бидат користени за напад врз вашата безбедност и анонимност.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Безбедносно ниво: Стандардно">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Безбедносно ниво: Побезбедно">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Безбедносно ниво: Најбезбедно">
+<!ENTITY torbutton.prefs.sec_custom_summary "Вашите прилагодени својства на прелистувачот резултираа со невообичаени безбедносни поставки. Од причини поврзани со безбедноста и приватноста, ви препорачуваме да ги изберете почетните безбедносни нивоа.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Врати на стандардно">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Напредни Безбедносни Поставки">
 <!ENTITY torbutton.circuit_display.title "Tor круг">
 <!ENTITY torbutton.circuit_display.new_circuit "Нов круг за оваа веб страна">

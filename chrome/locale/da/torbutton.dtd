@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Nogle skrifttyper og matematiksymboler er deaktiverede.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Nogle skrifttyper, ikoner, matematiksymboler og billeder er deaktiveret.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Lyd og video (HTML5-medier) og WebGL er klik-for-at-afspille.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Brugerdefineret">
+<!ENTITY torbutton.prefs.sec_overview "Deaktivér bestemte webfunktionaliteter som kan bruges til angribe din sikkerhed og anonymitet.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Sikkerhedsniveau : Standard">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Sikkerhedsniveau : Mere sikker">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Sikkerhedsniveau : Mest sikker">
+<!ENTITY torbutton.prefs.sec_custom_summary "Dine tilpassede browserpræferencer har resulterede i usædvanlige sikkerhedsindstillinger. Pga. sikkerheds- og privatlivsårsagen, anbefaler vi at du vælger en af standardsikkerhedsniveauerne.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Gendan Standarder">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Avancerede sikkerhedsindstillinger…">
 <!ENTITY torbutton.circuit_display.title "Tor-kredsløb">
 <!ENTITY torbutton.circuit_display.new_circuit "Nyt kredsløb til dette sted">

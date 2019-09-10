@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Bazı yazı türleri ve matematik simgeleri devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Bazı yazı türleri, simgeler, matematik simgeleri ve görseller devre dışı bırakılır.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Ses ve görüntü (HTML5 ortamı) ve WebGL tıklayıp oynatılabilir.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Özel">
+<!ENTITY torbutton.prefs.sec_overview "Güvenlik ve anonimliğinize saldırmak için kullanılacak belirli web özelliklerini devre dışı bırakır.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Güvenlik Düzeyi : Standart">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Güvenlik Düzeyi : Daha Güvenli">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Güvenlik Düzeyi : En Güvenli">
+<!ENTITY torbutton.prefs.sec_custom_summary "Tarayıcınız standart olmayan özel güvenlik düzeyi ayarları kullanıyor. Güvenlik ve gizliliğinizi korumak için aşağıdaki varsayılan güvenlik ayarı düzeylerinden birini seçmeniz önerilir.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Varsayılanlara Sıfırla">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Gelişmiş Güvenlik Düzeyi Ayarları…">
 <!ENTITY torbutton.circuit_display.title "Tor Devresi">
 <!ENTITY torbutton.circuit_display.new_circuit "Bu Sitenin Devresini Yenile">

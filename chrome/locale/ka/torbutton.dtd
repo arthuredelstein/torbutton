@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "შრიფტებისა და მათემატიკური სიმბოლოების ნაწილი გათიშულია.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "შრიფტების, ხატულების, მათემატიკური სიმბოლოებისა და სურათების ნაწილი გათიშულია.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "ხმოვანი და ვიდეოფაილები (HTML5), აგრეთვე WebGL ეშვება მხოლოდ დაწკაპებით.">
+<!ENTITY torbutton.prefs.sec_custom_warning "მითითებული">
+<!ENTITY torbutton.prefs.sec_overview "გაითიშება შესაძლებლობების ნაწილი, რომლებიც უსაფრთხოებაზე შეტევებისა და პირადი მონაცემების ხელყოფისთვის შეიძლება გამოიყენონ.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "უსაფრთხოების დონე : ჩვეულებრივი">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "უსაფრთხოების დონე : მეტად დაცული">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "უსაფრთხოების დონე : სრულიად დაცული">
+<!ENTITY torbutton.prefs.sec_custom_summary "თქვენ მიერ მითითებული პარამეტრები ბრაუზერში, არაა მისაღები უსაფრთხოებისთვის. პირადი მონაცემების სათანადოდ დაცვის უზრუნველსაყოფად, გირჩევთ შეარჩიოთ უსაფრთხოების ნაგულისხმევი დონეებიდან რომელიმე.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "ნაგულისხმევის აღდგენა">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "უსაფრთხოების დამატებითი პარამ.">
 <!ENTITY torbutton.circuit_display.title "Tor-წრედი">
 <!ENTITY torbutton.circuit_display.new_circuit "ახალი წრედი ამ საიტისთვის">

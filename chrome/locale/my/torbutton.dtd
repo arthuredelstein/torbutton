@@ -17,3 +17,4 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "အားလုံးကို ဖယ်ထုတ်ပါ။ သို့သော် အကာအကွယ် လုပ်ထားသည်">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "ကွတ်ကီးသစ်များကို ကာကွယ်ရန်">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "ကွတ်ကီးသစ်များကို ကာကွယ်ခြင်း မပြုရန်">
+<!ENTITY torbutton.prefs.sec_restore_defaults " မူလအတိုင်း ပြန်ထားရန်">

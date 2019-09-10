@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Noen skrifter og mattesymboler er avskrudd.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Noen skrifter, ikoner, mattesymboler og bilder er avskrudd.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Lyd og video (HTML5 media), og WebGL er klikk-å-spille.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Egendefinert">
+<!ENTITY torbutton.prefs.sec_overview "Deaktiver visse webfunksjoner som kan brukes til å angripe sikkerheten din og anonymiteten.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Sikkerhetsnivå: Standard">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Sikkerhetsnivå: Sikrere">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Sikkerhetsnivå: Sikreste">
+<!ENTITY torbutton.prefs.sec_custom_summary "Dine nettleserinnstillinger har ført med seg uvanlige sikkerhetsvalg. Av sikkerhet- og personverns-hensyn anbefaler vi at du velger en av de forvalgte sikkerhetsnivåene.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Gjenopprett forvalg">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Avanserte sikkerhetsinnstillinger...">
 <!ENTITY torbutton.circuit_display.title "Tor Krets">
 <!ENTITY torbutton.circuit_display.new_circuit "Ny Krets for denne siden">

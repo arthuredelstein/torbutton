@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Vissa typsnitt och matte symboler är inaktiverade.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Vissa typsnitt, ikoner, matte symboler och bilder är inaktiverade.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Ljud och video (HTML5-media) och WebGL är klicka-för-att-spela.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Anpassad">
+<!ENTITY torbutton.prefs.sec_overview "Inaktivera vissa webbfunktioner som kan användas för att attackera din säkerhet och anonymitet.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Säkerhetsnivå : Standard">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Säkerhetsnivå : Säkrare">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Säkerhetsnivå: Säkrast">
+<!ENTITY torbutton.prefs.sec_custom_summary "Dina anpassade webbläsarinställningar har resulterat i ovanliga säkerhetsinställningar. Av säkerhets- och integritetsskäl rekommenderar vi att du använder en av de fördefinierade säkerhetsnivåerna.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Återställ standard">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Avancerade säkerhetsinställningar…">
 <!ENTITY torbutton.circuit_display.title "Tor-krets">
 <!ENTITY torbutton.circuit_display.new_circuit "Ny krets för denna webbplats">

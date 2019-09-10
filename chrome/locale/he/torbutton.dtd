@@ -23,12 +23,12 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "אל תגן על עוגיות חדשות">
 <!ENTITY torbutton.prefs.sec_caption "רמת אבטחה">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "מחוון האבטחה נותן לך להשבית תכונות דפדפן מסוימות אשר עלולות לעשות את הדפדפן שלך יותר פגיע לנסיונות פיצוח.">
-<!ENTITY torbutton.prefs.sec_standard_label "תקני">
-<!ENTITY torbutton.prefs.sec_standard_description "כל המאפיינים של דפדפן Tor ומאפייני אתר מושבתים.">
-<!ENTITY torbutton.prefs.sec_safer_label "בטוח יותר">
+<!ENTITY torbutton.prefs.sec_standard_label "תקנית">
+<!ENTITY torbutton.prefs.sec_standard_description "כל המאפיינים של דפדפן Tor ומאפייני אתר מאופשרים.">
+<!ENTITY torbutton.prefs.sec_safer_label "בטוחה יותר">
 <!ENTITY torbutton.prefs.sec_safer_description "משבית מאפייני אתר שמסוכנים לעיתים קרובות, מה שגורם למספר אתרים לאבד תפקודיות.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "בהגדרה הבטוחה יותר:">
-<!ENTITY torbutton.prefs.sec_safest_label "הכי בטוח">
+<!ENTITY torbutton.prefs.sec_safest_label "הכי בטוחה">
 <!ENTITY torbutton.prefs.sec_safest_description "מתיר רק למאפייני אתר הדרושים עבור אתרים נייחים ושירותים יסודיים. שינויים אלו משפיעים על תמונות, מדיה ותסריטים.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "בהגדרה הבטוחה ביותר:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "למד עוד">
@@ -36,6 +36,14 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript מושבת כברירת מחדל בכל האתרים.">
 <!ENTITY torbutton.prefs.sec_limit_typography "מספר גופנים וסמלים מתמטיים מושבתים.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "מספר גופנים, צלמיות, סמלים מתמטיים ותמונות מושבתים.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "שמע ווידיאו (מדית HTML5) ו־WebGL הם לחץ־כדי־לנגן.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "שמע, וידיאו (מדית HTML5) ו־WebGL הם לחץ־כדי־לנגן.">
+<!ENTITY torbutton.prefs.sec_custom_warning "מותאמת אישית">
+<!ENTITY torbutton.prefs.sec_overview "השבת מאפייני אתר מסוימים אשר יכולים לשמש כדי לתקוף את אבטחתך ואלמוניותך.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "רמת אבטחה: תקנית">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "רמת אבטחה: בטוחה יותר">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "רמת אבטחה: הכי בטוחה">
+<!ENTITY torbutton.prefs.sec_custom_summary "העדפות הדפדפן המותאמות שלך נבעו מהגדרות אבטחה בלתי שגרתיות. מטעמי אבטחה ופרטיות, אנו ממליצים לך לבחור באחת מרמות האבטחה של ברירת המחדל.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "שחזר ברירות מחדל">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "הגדרות אבטחה מתקדמות...">
 <!ENTITY torbutton.circuit_display.title "מעגל Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "מעגל חדש עבור אתר זה">

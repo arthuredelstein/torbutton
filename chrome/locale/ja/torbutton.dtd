@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "いくつかのフォントと数学記号が無効化されます。">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "いくつかのアイコン、数学記号および画像が無効化されます。">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "オーディオ、ビデオ(HTML5メディア)、WebGLはクリックすると再生されます。">
+<!ENTITY torbutton.prefs.sec_custom_warning "カスタム">
+<!ENTITY torbutton.prefs.sec_overview "セキュリティと匿名性を攻撃するために利用されるあるウェブ機能を無効にする。">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "セキュリティレベル：標準">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "セキュリティレベル：やや安全">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "セキュリティレベル：最も安全">
+<!ENTITY torbutton.prefs.sec_custom_summary "あなたのブラウザーにおけるカスタム設定はセキュリティ結果に影響を及ぼしません。セキュリティとプライバシーに関してはデフォルトのセキュリティレベルのひとつを選択することをおすすめいたします。">
+<!ENTITY torbutton.prefs.sec_restore_defaults "デフォルトにもどす">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "詳細セキュリティ設定...">
 <!ENTITY torbutton.circuit_display.title "Tor サーキット">
 <!ENTITY torbutton.circuit_display.new_circuit "このサイトに新しいサーキットを使用する">

@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Tá roinnt clófhoirne agus siombailí matamaiticiúla díchumasaithe.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Tá roinnt clófhoirne, deilbhíní, siombailí matamaiticiúla, agus íomhánna díchumasaithe.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Saincheaptha">
+<!ENTITY torbutton.prefs.sec_overview "Díchumasaigh gnéithe áirithe a d'fhéadfaí a úsáid chun ionsaí a dhéanamh ort nó d'aitheantas a nochtadh.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Leibhéal Slándála: Gnáthleibhéal">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Leibhéal Slándála: Níos Sábháilte">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Leibhéal Slándála: Is Sábháilte">
+<!ENTITY torbutton.prefs.sec_custom_summary "Tá socruithe slándála an bhrabhsálaí as an ngnáth faoi láthair, mar thoradh ar do chuid sainroghanna.  Ar chúiseanna slándála agus príobháideachais, molaimid duit ceann de na leibhéil slándála réamhshocraithe a roghnú.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Fill ar na Réamhshocruithe">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Ardsocruithe Slándála...">
 <!ENTITY torbutton.circuit_display.title "Ciorcad Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Ciorcad Nua don Suíomh seo">

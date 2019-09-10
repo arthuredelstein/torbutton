@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Letra-mota eta ikur matematiko batzuk ezgaituta daude.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Letra-mota, ikono, ikur matematiko batzuk eta irudiak ezgaituta daude.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audioa eta bideoa (HTML5 media), eta WebGL erreproduzitzeko klikatu behar da.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Pertsonalizatua">
+<!ENTITY torbutton.prefs.sec_overview "Disable certain web features that can be used to attack your security and anonymity.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Security Level : Standard">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Security Level : Safer">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Security Level : Safest">
+<!ENTITY torbutton.prefs.sec_custom_summary "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Lehenetsiak berrezarri">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Advanced Security Settings…">
 <!ENTITY torbutton.circuit_display.title "Tor Zirkuitoa">
 <!ENTITY torbutton.circuit_display.new_circuit "Zirkuito berria Gune honetarako">

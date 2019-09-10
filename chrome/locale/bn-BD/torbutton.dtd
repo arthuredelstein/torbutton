@@ -28,14 +28,22 @@
 <!ENTITY torbutton.prefs.sec_safer_label "নিরাপদ">
 <!ENTITY torbutton.prefs.sec_safer_description "ওয়েবসাইটের বৈশিষ্ট্যগুলি প্রায়ই বিপজ্জনক করে, যা কিছু সাইটগুলি কার্যকারিতা হারাতে বাধা দেয়।">
 <!ENTITY torbutton.prefs.sec_safer_list_label "নিরাপদ সেটিংসে:">
-<!ENTITY torbutton.prefs.sec_safest_label "নিরাপদ">
+<!ENTITY torbutton.prefs.sec_safest_label "সবচে’ নিরাপদ">
 <!ENTITY torbutton.prefs.sec_safest_description "শুধুমাত্র স্থায়ী সাইট এবং মৌলিক পরিষেবাগুলির জন্য প্রয়োজনীয় ওয়েবসাইট বৈশিষ্ট্যগুলি মঞ্জুরি দেয় এই পরিবর্তনগুলি ইমেজ, মিডিয়া এবং স্ক্রিপ্টগুলি প্রভাবিত করে।">
 <!ENTITY torbutton.prefs.sec_safest_list_label "নিরাপদ সেটিং এ:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "আরও জানুন">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Non-HTTPS সাইটগুলিতে জাভাস্ক্রিপ্ট অক্ষম করা আছে।">
-<!ENTITY torbutton.prefs.sec_js_disabled "জাভাস্ক্রিপ্ট সব সাইটে ডিফল্ট দ্বারা নিষ্ক্রিয় করা হয়।">
+<!ENTITY torbutton.prefs.sec_js_disabled "স্বয়ংক্রিয়ভাবে সকল সাইটে জাভাস্ক্রিপ্ট নিষ্ক্রিয়কৃত।">
 <!ENTITY torbutton.prefs.sec_limit_typography "কিছু ফন্ট এবং গণিত চিহ্ন অক্ষম আছে।">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "কিছু ফন্ট, আইকন, গণিত প্রতীক এবং ছবি অক্ষম রয়েছে।">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "অডিও ও ভিডিও (এইচটিএমএল৫ মিডিয়া) এবং ওয়েবজিএলসমুহ ক্লিক করে সচল করুন">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "অডিও ও ভিডিও (এইচটিএমএল5 মিডিয়া) এবং ওয়েবজিএলসমুহ ক্লিক করে সচল করুন">
+<!ENTITY torbutton.prefs.sec_custom_warning "পছন্দসই">
+<!ENTITY torbutton.prefs.sec_overview "আপনার নিরাপত্তা এবং গোপনীয়তা আক্রমণ করতে ব্যবহার করা যেতে পারে এমন কিছু ওয়েব বৈশিষ্ট্য অক্ষম করুন।">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "নিরাপত্তা স্তর: স্ট্যান্ডার্ড">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "নিরাপত্তা স্তর: নিরাপদ">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "নিরাপত্তা স্তর: সবচে’ নিরাপদ">
+<!ENTITY torbutton.prefs.sec_custom_summary "আপনার কাস্টম ব্রাউজারের পছন্দগুলির কারণে অস্বাভাবিক নিরাপত্তা সেটিংস দেখা দিয়েছে নিরাপত্তা এবং গোপনীয়তার কারণে, আমরা আপনাকে ডিফল্ট নিরাপত্তা স্তরগুলির একটি চয়ন করার সুপারিশ করি।">
+<!ENTITY torbutton.prefs.sec_restore_defaults "স্বয়ংক্রিয় সেটিংসগুলি পুনঃস্থাপন করুন">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "উন্নত নিরাপত্তা সেটিংস ...">
 <!ENTITY torbutton.circuit_display.title "টর সার্কিট">
 <!ENTITY torbutton.circuit_display.new_circuit "এই সাইটের জন্য নতুন সার্কিট">

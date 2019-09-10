@@ -17,3 +17,4 @@
 <!ENTITY torbutton.cookiedialog.removeAllBut "Noņemt visas, izņemot aizsargātās">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Aizsargāt jaunās sīkdatnes">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neaizsargāt jaunās sīkdatnes">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Atjaunot noklusējuma vērtības">

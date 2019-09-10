@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Unele fonturi și simboluri matematice sunt dezactivate.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Unele fonturi, pictograme, simboluri matematice și imagini sunt dezactivate.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Fișierele audio și video (HTML5 media) și WebGL sunt pot fi redate la clic.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Personalizat">
+<!ENTITY torbutton.prefs.sec_overview "Dezactivează anuminte facilități web care pot fi folosite pentru a-ți ataca securitatea și anonimitatea.\n">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Nivel Securitate: Normal">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Nivel Securitate: Sigur">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Nivel Securitate: Prudent">
+<!ENTITY torbutton.prefs.sec_custom_summary "Preferințele dvs. de browser personalizate au avut ca rezultat setări de securitate neobișnuite. Din motive de securitate și confidențialitate, vă recomandăm să alegeți una dintre nivelurile de securitate implicite.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Revenire la Setările Inițiale">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Setări Avansate de Securitate...">
 <!ENTITY torbutton.circuit_display.title "Circuit Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Circuit nou pentru acest site">

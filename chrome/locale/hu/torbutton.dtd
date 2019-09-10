@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Néhány betűtípus és matematikai szimbólum tiltásra került.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Néhány betűtípus, ikon és matematikai szimbólum és a képek tiltásra kerültek.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Az audió és videó (HTML5 média) és a WebGL kattintásra indul.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Egyéni">
+<!ENTITY torbutton.prefs.sec_overview "Néhány web szolgáltatás kikapcsolása, amit támadhatja biztonságát és anonimitását.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Biztonsági szint: Normál">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Biztonsági szint: Biztonságosabb">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Biztonsági szint: Legbiztonságosabb">
+<!ENTITY torbutton.prefs.sec_custom_summary "Az Ön által eszközölt egyéni böngészői beállítások eredményeképp biztonsági kockázatok merülhetnek fel. Biztonsági és adatvédelmi szempontokból kérjük válasszon az alapértelmezett biztonsági szintek közül.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Alapértelmezések visszaállítása">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Speciális biztonsági beállítások...">
 <!ENTITY torbutton.circuit_display.title "Tor áramkör">
 <!ENTITY torbutton.circuit_display.new_circuit "Új Tor áramkör ehhez az oldalhoz">

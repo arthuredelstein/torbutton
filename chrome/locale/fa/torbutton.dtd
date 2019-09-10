@@ -25,10 +25,10 @@
 <!ENTITY torbutton.prefs.sec_caption_tooltip "نوار لغزنده امنیتی به شما اجازه می‌دهد که مشخصه‌های خاص مرورگر را غیرفعال کنید که ممکن است مرورگر شما را در برابر تلاش‌های هک آسیب‌پذیر سازد.">
 <!ENTITY torbutton.prefs.sec_standard_label "استاندارد">
 <!ENTITY torbutton.prefs.sec_standard_description "همه مرورگر تور و ویژگی‌های وبسایت به کار انداخته شده‌اند.">
-<!ENTITY torbutton.prefs.sec_safer_label "ایمن تر ">
+<!ENTITY torbutton.prefs.sec_safer_label "ایمن تر">
 <!ENTITY torbutton.prefs.sec_safer_description "از کار انداختن ویژگی‌های وبسایت که اغلب خطرناک هستند و باعث از دست رفتن برخی سایت‌ها می‌شوند.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "تنظیم مکانی امن‌تر:">
-<!ENTITY torbutton.prefs.sec_safest_label "ایمن ترین ">
+<!ENTITY torbutton.prefs.sec_safest_label "ایمن ترین">
 <!ENTITY torbutton.prefs.sec_safest_description "تنها اجازه می‌دهد که ویژگی‌های وبسایت برای سایت‌های ایستا و خدمات پایه مورد نیاز باشد. این تغییرات بر تصاویر، رسانه‌ها و متن تاثیر می‌گذارند.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "تنظیم امن‌ترین مکان">
 <!ENTITY torbutton.prefs.sec_learn_more_label "اطلاعات بیشتر">
@@ -37,5 +37,13 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "برخی از فونت ها و نمادهای ریاضی غیرفعال هستند">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "برخی از فونت ها، شمایل‌ها، علایم ریاضی و تصاویر از کار افتاده هستند.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "صدا و تصویر (رسانه HTML5) و WebGL قابل باز شدن با کلیک هستند.">
+<!ENTITY torbutton.prefs.sec_custom_warning "تنظیم خاص">
+<!ENTITY torbutton.prefs.sec_overview "بعضی خصیصه‌های وب را که می‌تواند جهت تعرض به امنیت و گمنامی شما مورد استفاده قرار گیرد غیر فعال نمایید.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "سطح امنیت: استاندارد">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "سطح امنیت: ایمن‌تر">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "سطح امنیت: ایمن‌ترین">
+<!ENTITY torbutton.prefs.sec_custom_summary "تنظیمات سفارشی شما در مرورگر منجر به تغییرات غیر معمول در تنظیمات امنیتی شده است.برای امن نگه داشتن حریم خصوصی خود ما پیشنهاد میکنیم یکی از تنظیمات پیشفرض امنیتی را انتخاب کنید. ">
+<!ENTITY torbutton.prefs.sec_restore_defaults "بازگردانی تنظیمات اولیه">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "تنظیمات پیشرفته امنیت ...">
 <!ENTITY torbutton.circuit_display.title "مدار تور">
 <!ENTITY torbutton.circuit_display.new_circuit "مدار جدید برای این سایت">
