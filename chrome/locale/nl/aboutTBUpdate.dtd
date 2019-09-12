@@ -1,8 +1,8 @@
-<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser-changelog">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor Browser-wijzigingslog">
 <!ENTITY aboutTBUpdate.updated "Tor Browser is bijgewerkt.">
 <!ENTITY aboutTBUpdate.linkPrefix "Bezoek ">
 <!ENTITY aboutTBUpdate.linkLabel  "onze website">
 <!ENTITY aboutTBUpdate.linkSuffix " voor de meest actuele informatie over deze release.">
 <!ENTITY aboutTBUpdate.version "Versie">
-<!ENTITY aboutTBUpdate.releaseDate "Releasedatum">
+<!ENTITY aboutTBUpdate.releaseDate "Uitgavedatum">
 <!ENTITY aboutTBUpdate.releaseNotes "Uitgaveopmerkingen">

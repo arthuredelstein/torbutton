@@ -26,10 +26,10 @@
 <!ENTITY torbutton.prefs.sec_standard_label "Standaard">
 <!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser- en websitefuncties zijn ingeschakeld.">
 <!ENTITY torbutton.prefs.sec_safer_label "Veiliger">
-<!ENTITY torbutton.prefs.sec_safer_description "Uitgeschakelde websitefuncties die zijn meestal gevaarlijk, waardoor sommige sites functionaliteit vaak verliezen.">
+<!ENTITY torbutton.prefs.sec_safer_description "Schakelt websitefuncties uit die vaak gevaarlijk zijn, waardoor sommige websites functionaliteit verliezen.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Op de veiliger instelling:">
 <!ENTITY torbutton.prefs.sec_safest_label "Veiligste">
-<!ENTITY torbutton.prefs.sec_safest_description "Alleen websitefuncties toestaan die vereist zijn voor statische sites en basis diensten. Deze wijzigingen zijn van invloed op afbeeldingen, media en scripts.">
+<!ENTITY torbutton.prefs.sec_safest_description "Alleen websitefuncties toestaan die voor statische websites en basisservices zijn vereist. Deze wijzigingen zijn van invloed op afbeeldingen, media en scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Op de veiligste instelling:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Leer Meer">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript zijn uitgeschakeld op non-HTTP sites.">

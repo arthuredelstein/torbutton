@@ -6,7 +6,7 @@
 
 <!ENTITY aboutTor.title "Over Tor">
 
-<!ENTITY aboutTor.viewChangelog.label "Wijzigingslog bekijken">
+<!ENTITY aboutTor.viewChangelog.label "Wijzigingslogboek bekijken">
 
 <!ENTITY aboutTor.ready.label "Verken. Privé.">
 <!ENTITY aboutTor.ready2.label "U bent klaar voor de meest private surfervaring ter wereld.">
@@ -19,10 +19,10 @@
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Vragen?">
 <!ENTITY aboutTor.torbrowser_user_manual_link.label "Bekijk onze Tor Browser-handleiding »">
 <!-- The next two entities are used within the browser's Help menu. -->
-<!ENTITY aboutTor.torbrowser_user_manual.accesskey "h">
+<!ENTITY aboutTor.torbrowser_user_manual.accesskey "H">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser-handleiding">
 
-<!ENTITY aboutTor.tor_mission.label "Het Tor Project is een US 501(c)(3)-non-profitorganisatie die de rechten en vrijheden van de mens bevordert door vrije en open source anonimiteits- en privacytechnologie te maken en toe te passen, hun onbeperkte beschikbaarheid en gebruik te steunen, en hun wetenschappelijke en populaire begrip te bevorderen.">
+<!ENTITY aboutTor.tor_mission.label "Het Tor Project is een 501(c)(3)-organisatie zonder winstoogmerk gevestigd in de VS die rechten en vrijheden van de mens bevordert door vrije en open-broncode anonimiteits- en privacytechnologieën te ontwikkelen en te implementeren, de onbeperkte beschikbaarheid en het gebruik ervan te steunen, en het begrip ervoor in de wetenschap en bij het algemeen publiek te bevorderen.">
 <!ENTITY aboutTor.getInvolved.label "Meedoen »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
