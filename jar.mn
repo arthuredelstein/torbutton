@@ -60,6 +60,8 @@ torbutton.jar:
  locale/ka/ (chrome/locale/ka/*)
 % locale torbutton ko %locale/ko/
  locale/ko/ (chrome/locale/ko/*)
+% locale torbutton mk %locale/mk/
+ locale/mk/ (chrome/locale/mk/*)
 % locale torbutton nb-NO %locale/nb-NO/
  locale/nb-NO/ (chrome/locale/nb-NO/*)
 % locale torbutton nl %locale/nl/
