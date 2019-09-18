@@ -312,7 +312,7 @@ body:not([showmanual]) .showForManual {
   display: none;
 }
 
-body[mobile] #torbrowser-info,
+body[mobile] #torbrowser-changelog-link,
 body[mobile] .searchbox,
 body[mobile] .top .heading2,
 body[mobile] #manual,
