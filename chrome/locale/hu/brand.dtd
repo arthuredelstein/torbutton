@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "A Firefox és a Firefox logó a Mozilla Foundation védjegyei.">
+<!ENTITY  trademarkInfo.part1   "A 'Tor' és az 'Onion Logo' a Tor Project, Inc. bejegyzett védjegyei.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Kattintson  telepített böngésző pluginek betltéséhez">

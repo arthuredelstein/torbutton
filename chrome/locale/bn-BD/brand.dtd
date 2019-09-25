@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "টর ব্রাউজার">
 <!ENTITY  brandFullName         "টর ব্রাউজার">
 <!ENTITY  vendorShortName       "টর প্রকল্প">
-<!ENTITY  trademarkInfo.part1   "ফায়ারফক্স এবং ফায়ারফক্স লোগো মোজিলা ফাউন্ডেশনের ট্রেডমার্ক।">
+<!ENTITY  trademarkInfo.part1   "'টর' এবং 'ওয়ানিয়ান লোগো' টর প্রজেক্ট, ইনক। এর নিবন্ধিত ট্রেডমার্ক">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "সিস্টেমে ইন্সটল করা প্লাগিন লোড করতে ক্লিক করুন">

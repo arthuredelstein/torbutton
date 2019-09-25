@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "O Firefox και το λογότυπο Firefox είναι εμπορικά σήματα του Mozilla Foundation.">
+<!ENTITY  trademarkInfo.part1   "Το 'Tor' και το 'Onion Logo' είναι εγγεγραμένα λογότυπα του Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Κάντε κλικ για να φορτώσετε εγκατεστημένα πρόσθετα συστήματος">

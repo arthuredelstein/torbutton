@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor-Browser">
 <!ENTITY  brandFullName         "Tor-Browser">
 <!ENTITY  vendorShortName       "Tor-Projekt">
-<!ENTITY  trademarkInfo.part1   "Firefox und die Firefox-Logos sind Warenzeichen der Mozilla Foundation.">
+<!ENTITY  trademarkInfo.part1   "»Tor« und das »Zwiebel-Logo« sind eingetragene Warenzeichen von Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Klicke, um System-Erweiterungen zu laden">

@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Proiectul Tor">
-<!ENTITY  trademarkInfo.part1   "Firefox si logo-urile Firefox sunt mărci înregistrate ale Mozilla Foundation.">
+<!ENTITY  trademarkInfo.part1   "'Tor' și 'Logo-ul Onion' sunt mărci înregistrate ale Proiectului Tor, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Apăsați pentru a încărca extensiile de sistem instalate">

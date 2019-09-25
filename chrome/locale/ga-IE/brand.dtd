@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Brabhsálaí Tor">
 <!ENTITY  brandFullName         "Brabhsálaí Tor">
 <!ENTITY  vendorShortName       "Tionscadal Tor">
-<!ENTITY  trademarkInfo.part1   "Is trádmharcanna de chuid Fondúireacht Mozilla 'Firefox' agus lógónna Firefox.">
+<!ENTITY  trademarkInfo.part1   "Is trádmharcanna de chuid Tor Project, Inc. iad 'Tor' agus an 'Onion Logo'">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Cliceáil chun forlíontáin an chórais a lódáil">

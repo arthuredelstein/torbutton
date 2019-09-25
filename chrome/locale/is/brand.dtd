@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor-vafrinn">
 <!ENTITY  brandFullName         "Tor-vafrinn">
 <!ENTITY  vendorShortName       "Tor-verkefnið">
-<!ENTITY  trademarkInfo.part1   "Firefox og Firefox merkin eru vörumerki Mozilla Foundation.">
+<!ENTITY  trademarkInfo.part1   "'Tor' og 'Laukmerkið' (Onion Logo) eru skráð vörumerki Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Smelltu til að hlaða inn uppsettum kerfisviðbótum">

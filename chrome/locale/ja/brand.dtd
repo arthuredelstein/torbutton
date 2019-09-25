@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "FirefoxおよびFirefoxのロゴはMozilla財団の登録商標です。">
+<!ENTITY  trademarkInfo.part1   "'Tor' と 'Onion Logo' は Tor Project, Inc. の登録商標です。">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "クリックするとインストールされたシステムプラグインをロードします。">

@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor-ბრაუზერი">
 <!ENTITY  brandFullName         "Tor-ბრაუზერი">
 <!ENTITY  vendorShortName       "Tor-პროექტი">
-<!ENTITY  trademarkInfo.part1   "Firefox და მისი ლოგოები წარმოადგენს Mozilla-ს ფონდის სავაჭრო ნიშნებს.">
+<!ENTITY  trademarkInfo.part1   "„Tor“ და „Onion Logo“ წარმოადგენს Tor Project Inc-ის კუთვნილ სავაჭრო ნიშნებს.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "დააწკაპეთ დაყენებული სისტემური მოდულების ჩასატვირთად">

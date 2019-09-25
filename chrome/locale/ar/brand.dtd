@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "متصفح تور">
 <!ENTITY  brandFullName         "متصفح تور">
 <!ENTITY  vendorShortName       "مشروع تور">
-<!ENTITY  trademarkInfo.part1   "فايرفوكس وشعارات فايرفوكس علامات تجارية مسجلة لمؤسسة موزيلا.">
+<!ENTITY  trademarkInfo.part1   "&quot;تور&quot; و &quot;شعار البصلة&quot; علامات تجارية مسجلة باسم شركة مشروع تور المحدودة">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "اضغط لتحميل الإضافات المثبتة على المتصفح">

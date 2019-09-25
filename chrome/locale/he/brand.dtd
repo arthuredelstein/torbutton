@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "דפדפן Tor">
 <!ENTITY  brandFullName         "דפדפן Tor">
 <!ENTITY  vendorShortName       "מיזם Tor">
-<!ENTITY  trademarkInfo.part1   "Firefox וסמליליו הינם סימנים מסחריים רשומים בבעלות קרן Mozilla.">
+<!ENTITY  trademarkInfo.part1   "'Tor' ו'סמליל הבצל' הם סימנים מסחריים רשומים של Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "לחץ לטעינת תוספי מערכת מותקנים">

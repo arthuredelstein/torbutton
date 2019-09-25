@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "洋蔥路由瀏覽器">
 <!ENTITY  brandFullName         "洋蔥路由瀏覽器">
 <!ENTITY  vendorShortName       "洋蔥路由專案">
-<!ENTITY  trademarkInfo.part1   "Firefox 與 Firefox 標誌是 Mozilla 基金會的註冊商標。">
+<!ENTITY  trademarkInfo.part1   "「Tor」和「Onion Logo」皆是 Tor Project, Inc 的註冊商標。">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "點擊以載入已安裝的系統外掛">

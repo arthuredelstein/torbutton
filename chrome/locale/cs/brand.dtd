@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Prohlížeč Tor">
 <!ENTITY  brandFullName         "Prohlížeč Tor">
 <!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox a loga Firefoxu jsou ochrannou známkou Mozilla Foundation.">
+<!ENTITY  trademarkInfo.part1   "&quot;Tor&quot; a &quot;Onion logo&quot; jsou registrované ochranné známky společnosti Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Klepnutím načtete nainstalované systémové zásuvné moduly">

@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox 与 Firefox 图标为 Mozilla Foundation 的商标。">
+<!ENTITY  trademarkInfo.part1   "“Tor”和“Onion Logo”是 Tor Project, Inc 的注册商标。">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "点击加载已安装的系统插件">

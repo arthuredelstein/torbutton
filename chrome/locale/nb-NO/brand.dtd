@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor-nettleseren">
 <!ENTITY  brandFullName         "Tor-nettleseren">
 <!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "Firefox og Firefox-logene er varemarker tilhørende Mozilla-stiftelsen.">
+<!ENTITY  trademarkInfo.part1   "&quot;Tor&quot; og &quot;Løk-logoen&quot; er registrerte varemerker tilhørende the Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Klikk for å laste inn installerte systemtillegg">

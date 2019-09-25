@@ -15,8 +15,11 @@
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
-XPCOMUtils.defineLazyModuleGetter(this, "FileUtils",
-                                  "resource://gre/modules/FileUtils.jsm");
+XPCOMUtils.defineLazyModuleGetters(this, {
+  FileUtils: "resource://gre/modules/FileUtils.jsm",
+  FileSource: "resource://gre/modules/L10nRegistry.jsm",
+  L10nRegistry: "resource://gre/modules/L10nRegistry.jsm",
+});
 
 ChromeUtils.import("resource://torbutton/modules/default-prefs.js", {}).ensureDefaultPrefs();
 let NoScriptControl = ChromeUtils.import("resource://torbutton/modules/noscript-control.js", {});
@@ -58,6 +61,26 @@ function StartupObserver() {
     } catch(e) {
       this.logger.log(4, "Early proxy change failed. Will try again at profile load. Error: "+e);
     }
+
+    // Using all possible locales so that we do not have to change this list every time we support
+    // a new one.
+    const allLocales = [
+      "en-US", "ach", "af", "an", "ar", "ast", "az", "be", "bg", "bn", "br", "bs", "ca", "cak",
+      "crh", "cs", "cy", "da", "de", "dsb", "el", "en-CA", "en-GB", "eo", "es-AR", "es-CL",
+      "es-ES", "es-MX", "et", "eu", "fa", "ff", "fi", "fr", "fy-NL", "ga-IE", "gd", "gl", "gn",
+      "gu-IN", "he", "hi-IN", "hr", "hsb", "hu", "hy-AM", "ia", "id", "is", "it", "ja",
+      "ja-JP-mac", "ka", "kab", "kk", "km", "kn", "ko", "lij", "lo", "lt", "ltg", "lv", "mk", "mr",
+      "ms", "my", "nb-NO", "ne-NP", "nl", "nn-NO", "oc", "pa-IN", "pl", "pt-BR", "pt-PT", "rm",
+      "ro", "ru", "si", "sk", "sl", "son", "sq", "sr", "sv-SE", "ta", "te", "th", "tl", "tr",
+      "trs", "uk", "ur", "uz", "vi", "wo", "xh", "zh-CN", "zh-TW"
+    ];
+    let torSource = new FileSource(
+      "torbutton",
+      allLocales,
+      "resource://torbutton/locale/{locale}/",
+      true, // skip this FileSource locales when computing Services.locale.availableLocales
+    );
+    L10nRegistry.registerSource(torSource);
 }
 
 StartupObserver.prototype = {
