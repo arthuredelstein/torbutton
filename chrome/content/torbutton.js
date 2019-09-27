@@ -50,6 +50,20 @@ var m_tb_control_desc = null;        // For logging.
 
 var m_tb_domWindowUtils = window.windowUtils;
 
+async function clearData(flags) {
+  return new Promise((resolve, reject) => {
+    Services.clearData.deleteData(flags, {
+      onDataDeleted(code) {
+        if (code === Cr.NS_OK) {
+          resolve();
+        } else {
+          reject(new Error(`Error deleting data with flags ${flags}: ${code}`));
+        }
+      },
+    });
+  });
+}
+
 // Bug 1506 P1: This object is only for updating the UI for toggling and style
 var torbutton_window_pref_observer =
 {
@@ -791,7 +805,7 @@ function torbutton_new_circuit() {
 }
 
 // Bug 1506 P4: Needed for New Identity.
-function torbutton_new_identity() {
+async function torbutton_new_identity() {
   try {
     // Make sure that we can only click once on New Identiy to avoid race
     // conditions leading to failures (see bug 11783 for an example).
@@ -818,7 +832,7 @@ function torbutton_new_identity() {
       m_tb_prefs.setBoolPref("extensions.torbutton.confirm_newnym", !askAgain.value);
 
       if (confirmed) {
-        torbutton_do_new_identity();
+        await torbutton_do_new_identity();
       } else {
         // TODO: Remove the Torbutton menu entry again once we have done our
         // security control redesign.
@@ -826,7 +840,7 @@ function torbutton_new_identity() {
         document.getElementById("appMenuNewIdentity").disabled = false;
       }
     } else {
-        torbutton_do_new_identity();
+        await torbutton_do_new_identity();
     }
   } catch(e) {
     // If something went wrong make sure we have the New Identity button
@@ -854,7 +868,10 @@ function torbutton_new_identity() {
  *      i. clear content prefs
  *      j. permissions
  *      k. site security settings (e.g. HSTS)
- *      l. IndexedDB and asmjscache storage
+ *      l. IndexedDB and other DOM storage
+ *      m. plugin data
+ *      n. media devices
+ *      o. predictor network data
  *   3. Sends tor the NEWNYM signal to get a new circuit
  *   4. Opens a new window with the default homepage
  *   5. Closes this window
@@ -862,7 +879,7 @@ function torbutton_new_identity() {
  * XXX: intermediate SSL certificates are not cleared.
  */
 // Bug 1506 P4: Needed for New Identity.
-function torbutton_do_new_identity() {
+async function torbutton_do_new_identity() {
   var obsSvc = Services.obs;
   torbutton_log(3, "New Identity: Disabling JS");
   torbutton_disable_all_js();
@@ -1004,17 +1021,20 @@ function torbutton_do_new_identity() {
   }
 
   torbutton_log(3, "New Identity: Clearing storage");
+  torbutton_log(3, "New Identity: Clearing plugin data");
+  torbutton_log(3, "New Identity: Clearing media devices");
+  torbutton_log(3, "New Identity: Clearing predictor network data");
 
-  let orig_quota_test = m_tb_prefs.getBoolPref("dom.quotaManager.testing");
   try {
-      // This works only by setting the pref to `true` otherwise we get an
-      // exception and nothing is happening.
-      m_tb_prefs.setBoolPref("dom.quotaManager.testing", true);
-      Services.qms.clear();
+    await clearData(
+      Services.clearData.CLEAR_DOM_STORAGES |
+      Services.clearData.CLEAR_PLUGIN_DATA |
+      Services.clearData.CLEAR_MEDIA_DEVICES |
+      Services.clearData.CLEAR_PREDICTOR_NETWORK_DATA
+    );
   } catch (e) {
-      torbutton_log(5, "Exception on storage clearing: " + e);
-  } finally {
-      m_tb_prefs.setBoolPref("dom.quotaManager.testing", orig_quota_test);
+    torbutton_log(5, "Exception on storage clearing: " + e);
+    window.alert("Torbutton: Unexpected error during storage clearing: " + e);
   }
 
   torbutton_log(3, "New Identity: Clearing Cookies and DOM Storage");
