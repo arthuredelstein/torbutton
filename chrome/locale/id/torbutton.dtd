@@ -29,11 +29,11 @@
 <!ENTITY torbutton.prefs.sec_safer_description "Menonaktifkan fitur-fitur situs web yang sering berbahaya, ini akan membuat beberapa situs kehilangan fungsionalitas.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Di pengaturan yang lebih aman:">
 <!ENTITY torbutton.prefs.sec_safest_label "Paling aman">
-<!ENTITY torbutton.prefs.sec_safest_description "Hanya mengizinkan fitur-fitur situs web yang diperlukan untuk menjalankan situs web statis dan layanan dasar. Perubahan ini mempengaruhi gambar, media, dan skrip.">
+<!ENTITY torbutton.prefs.sec_safest_description "Hanya menjalankan fitur-fitur situs yang diperlukan untuk menjalankan situs web statis dan servis dasar. Perubahan ini mempengaruhi gambar, media, dan skrip.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Di pengaturan yang paling aman:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Pelajari Selengkapnya">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Pelajari lebih lanjut">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript dinonaktifkan di semua situs non-HTTPS.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript dinonaktifkan secara bawaan di semua situs.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript dinonaktifkan secara default di semua situs.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Beberapa font dan simbol matematika dinonaktifkan.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Beberapa font, icon, simbol matematika, dan gambar dinonaktifkan.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio dan video (media HTML5), dan WebGL dijalankan saat diklik.">

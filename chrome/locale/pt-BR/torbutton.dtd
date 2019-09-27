@@ -31,7 +31,7 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Segurança máxima">
 <!ENTITY torbutton.prefs.sec_safest_description "Apenas permitir os recursos dos websites necessários para sites estáticos e serviços básicos. Essas mudanças afetam imagens, mídias e scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "No nível de segurança máxima:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Saber mais">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Aprenda mais">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript está desativado em todos os sites sem HTTPS.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript está desativado por padrão em todos os sites.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Algumas fontes e símbolos matemáticos estão desativados.">

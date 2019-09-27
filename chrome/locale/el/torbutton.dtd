@@ -31,7 +31,7 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Ασφαλέστατο">
 <!ENTITY torbutton.prefs.sec_safest_description "Επιτρέπει μόνο τις παροχές ιστοσελίδας που απαιτούνται για βασικές ιστοσελίδες και υπηρεσίες. Αυτό επηρεάζει εικόνες, μέσα και scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Στην πιο ασφαλή ρύθμιση:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Μάθε περισσότερα">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Μάθετε περισσότερα">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Η JavaScript είναι απενεργοποιημένη σε ιστότοπους που δεν είναι HTTPS.">
 <!ENTITY torbutton.prefs.sec_js_disabled "Η JavaScript είναι απενεργοποιημένη σε όλους τους ιστότοπους ως προεπιλογή.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Μερικές γραμματοσειρές και μαθηματικά σύμβολα είναι απενεργοποιημένα.">

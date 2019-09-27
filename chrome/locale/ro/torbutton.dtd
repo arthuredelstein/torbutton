@@ -38,7 +38,8 @@
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Unele fonturi, pictograme, simboluri matematice și imagini sunt dezactivate.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Fișierele audio și video (HTML5 media) și WebGL sunt pot fi redate la clic.">
 <!ENTITY torbutton.prefs.sec_custom_warning "Personalizat">
-<!ENTITY torbutton.prefs.sec_overview "Dezactivează anuminte facilități web care pot fi folosite pentru a-ți ataca securitatea și anonimitatea.\n">
+<!ENTITY torbutton.prefs.sec_overview "Dezactivează anuminte facilități web care pot fi folosite pentru a-ți ataca securitatea și anonimitatea.
+">
 <!ENTITY torbutton.prefs.sec_standard_tooltip "Nivel Securitate: Normal">
 <!ENTITY torbutton.prefs.sec_safer_tooltip "Nivel Securitate: Sigur">
 <!ENTITY torbutton.prefs.sec_safest_tooltip "Nivel Securitate: Prudent">

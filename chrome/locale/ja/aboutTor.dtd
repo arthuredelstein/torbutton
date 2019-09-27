@@ -22,11 +22,11 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser マニュアル">
 
-<!ENTITY aboutTor.tor_mission.label "Torプロジェクトはフリーオープンソース匿名性やプライバシーソフトウェアの開発と展開によって人権や自由の向上に尽力するUS 501(c)(3)非営利団体である。ソフトウェアへの無制限アクセスと利用をサポート、そしてその科学的と国民の理解を深めたいと思います。">
-<!ENTITY aboutTor.getInvolved.label "参加しよう！»">
+<!ENTITY aboutTor.tor_mission.label "Tor Project はフリー・オープンソースの匿名性技術・プライバシー技術の開発と展開によって人権と自由を向上し、その制限されない有効性と利用を支援し、また、人々の正確な理解を促進している US 501(c)(3) 非営利団体です。">
+<!ENTITY aboutTor.getInvolved.label "参加しよう »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "Torからの最新ニュースを受信トレイに。">
-<!ENTITY aboutTor.newsletter.link_text "Torニュースにを申し込む。">
+<!ENTITY aboutTor.newsletter.tagline "Tor からの最新ニュースを受信トレイに。">
+<!ENTITY aboutTor.newsletter.link_text "Tor ニュースに申し込む。">
 <!ENTITY aboutTor.donationBanner.line2e "Tor を強く保つ。">
 <!ENTITY aboutTor.donationBanner.buttonA "今すぐ寄付">

@@ -31,7 +31,7 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Наиболее безопасные">
 <!ENTITY torbutton.prefs.sec_safest_description "Разрешены только функции веб-сайтов, требующиеся для статических сайтов и основных сервисов. Эти изменения влияют на изображения, медиа и скрипты.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "При самых безопасных настройках:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Узнать больше">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Подробнее">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only " JavaScript отключен на всех не HTTPS сайтах. ">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript отключен по умолчанию на всех сайтах.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Некоторые шрифты и математические символы отключены.">

@@ -38,12 +38,12 @@
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Certaines polices, icônes, images et certains symboles mathématiques sont désactivés.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Le son et la vidéo (médias HTML5) ainsi que WebGL sont « cliquer pour lire ».">
 <!ENTITY torbutton.prefs.sec_custom_warning "Personnalisé">
-<!ENTITY torbutton.prefs.sec_overview "Désactive certaines fonctions Web qui peuvent être utilisées pour attaquer votre sécurité et votre anonymat.">
+<!ENTITY torbutton.prefs.sec_overview "Désactives certaines fonctions Web qui peuvent être utilisées pour attaquer votre sécurité et votre anonymat.">
 <!ENTITY torbutton.prefs.sec_standard_tooltip "Niveau de sécurité : normal">
 <!ENTITY torbutton.prefs.sec_safer_tooltip "Niveau de sécurité : plus sûr">
 <!ENTITY torbutton.prefs.sec_safest_tooltip "Niveau de sécurité : le plus sûr">
 <!ENTITY torbutton.prefs.sec_custom_summary "Les préférences personnalisées de votre navigateur ont entraîné des paramètres de sécurité inhabituels. Pour des raisons de sécurité et de protection des données personnelles, nous vous recommandons de choisir un des niveaux de sécurité par défaut.">
 <!ENTITY torbutton.prefs.sec_restore_defaults "Rétablir les paramètres par défaut">
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Paramètres de sécurité avancés…">
-<!ENTITY torbutton.circuit_display.title "Circuit Tor">
+<!ENTITY torbutton.circuit_display.title "Circuit Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Nouveau circuit pour ce site">

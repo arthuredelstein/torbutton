@@ -25,13 +25,13 @@
 <!ENTITY torbutton.prefs.sec_caption_tooltip "El control lliscant de seguretat permet deshabilitar característiques del navegador que poden permetre vulnerabilitats en atemptats de furoners.">
 <!ENTITY torbutton.prefs.sec_standard_label "Estàndard">
 <!ENTITY torbutton.prefs.sec_standard_description "Totes les característiques del buscador Tor i de la pàgina web estan actives.">
-<!ENTITY torbutton.prefs.sec_safer_label "Més segur">
+<!ENTITY torbutton.prefs.sec_safer_label "Més segur.">
 <!ENTITY torbutton.prefs.sec_safer_description "Desactivar les funcions del lloc web que sovint són perilloses, pot fent que alguns llocs perden funcionalitat.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "A la configuració més segura:">
 <!ENTITY torbutton.prefs.sec_safest_label "més segur">
 <!ENTITY torbutton.prefs.sec_safest_description "Només es permeten funcions del lloc web requerides per a llocs estàtics i serveis bàsics. Aquests canvis afecten imatges, mitjans de comunicació i scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "A la configuració més segura:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Aprèn més">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Apreneu-ne més">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "El JavaScript està desactivat per defecte en tots els llocs no-HTTPS">
 <!ENTITY torbutton.prefs.sec_js_disabled "El JavaScript està desactivat per defecte a tots els llocs.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Algunes fonts i símbols matemàtics estan desactivats. ">

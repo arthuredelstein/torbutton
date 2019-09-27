@@ -31,7 +31,7 @@
 <!ENTITY torbutton.prefs.sec_safest_label "الأكثر أمنا">
 <!ENTITY torbutton.prefs.sec_safest_description "اسمح فقط بالخصائص المطلوبة للمواقع غير الديناميكية والخدمات الأساسية. تؤثر هذه التغييرات على الصور والوسائط والنصوص البرمجية.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "في الإعداد الأكثر أمنا:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "تعرف على المزيد">
+<!ENTITY torbutton.prefs.sec_learn_more_label "تعرّف على المزيد">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "تعطل جافا سكربت  على المواقع التي لا تستخدم HTTPS">
 <!ENTITY torbutton.prefs.sec_js_disabled "تعطل جافا سكربت مبدئيا على جميع المواقع.">
 <!ENTITY torbutton.prefs.sec_limit_typography "تعطّل بعض الخطوط والرموز الرياضية.">
