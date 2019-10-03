@@ -336,22 +336,6 @@ function torbutton_init() {
 
     setupPreferencesForMobile();
 
-    // XXX: Get rid of the cached asmjs (or IndexedDB) files on disk in case we
-    // don't allow things saved to disk. This is an ad-hoc fix to work around
-    // #19417. Once this is properly solved we should remove this code again.
-    if (m_tb_prefs.getBoolPref("browser.privatebrowsing.autostart")) {
-      let orig_quota_test = m_tb_prefs.getBoolPref("dom.quotaManager.testing");
-      try {
-        // This works only by setting the pref to `true` otherwise we get an
-        // exception and nothing is happening.
-        m_tb_prefs.setBoolPref("dom.quotaManager.testing", true);
-        Services.qms.clear();
-      } catch (e) {
-      } finally {
-        m_tb_prefs.setBoolPref("dom.quotaManager.testing", orig_quota_test);
-      }
-    }
-
     // listen for our toolbar button being added so we can initialize it
     torbutton_init_toolbutton();
 

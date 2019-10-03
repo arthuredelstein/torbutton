@@ -27,6 +27,7 @@ const kSecuritySettings = {
   "mathml.disabled" :                         [,  true,  true,  true,  false],
   "gfx.font_rendering.opentype_svg.enabled" : [,  false, false, false, true ],
   "svg.disabled" :                            [,  true,  false, false, false],
+  "javascript.options.asmjs" :                [,  false, false, false, true ],
 };
 
 // The Security Settings prefs in question.
