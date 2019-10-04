@@ -345,60 +345,6 @@ function torbutton_init() {
     torbutton_log(1, "registering Tor check observer");
     torbutton_tor_check_observer.register();
 
-    // Add torbutton and security level buttons to the bar.
-    // This should maybe be in the startup function, but we want to add
-    // the button to the panel before it's state (color) is set..
-    let insertedButton = m_tb_prefs.getBoolPref("extensions.torbutton.inserted_button");
-    let insertedSecurityLevel = m_tb_prefs.getBoolPref("extensions.torbutton.inserted_security_level");
-    if (!insertedButton || !insertedSecurityLevel) {
-      try {
-        // ESR31-style toolbar is handled by the existing compiled-in pref.
-        // We also need to prevent first-run toolbar reorg (#13378), so we
-        // reset this toolbar state on first-run.
-        try {
-          // get serialized toolbar state
-          let uiCustomizationStateJSON = m_tb_prefs.getStringPref("browser.uiCustomization.state");
-          let uiCustomizationState = JSON.parse(uiCustomizationStateJSON);
-
-          let placeButtonAfterUrlbar = function(navBar, buttonId) {
-            torbutton_log(3, 'placing ' + buttonId);
-            // try and remove button if it's present
-            let buttonIndex = navBar.indexOf(buttonId);
-            if (buttonIndex != -1) {
-              navBar.splice(buttonIndex, 1);
-            }
-            // if urlbar isn't present (which *shouldn't* be possible),
-            // inserts button at the beginning of the toolbar (since urlbarIndex will be -1)
-            let urlbarIndex = navBar.indexOf("urlbar-container");
-            buttonIndex = urlbarIndex + 1;
-            navBar.splice(buttonIndex, 0, buttonId);
-          };
-
-          // array of navbar elements
-          let navBar = uiCustomizationState["placements"]["nav-bar"];
-          placeButtonAfterUrlbar(navBar, "security-level-button");
-          placeButtonAfterUrlbar(navBar, "torbutton-button");
-
-          // serialize back into pref
-          uiCustomizationStateJSON = JSON.stringify(uiCustomizationState, null, 0);
-          m_tb_prefs.setStringPref("browser.uiCustomization.state", uiCustomizationStateJSON);
-        } catch(e) {
-          torbutton_log(4, 'error updating toolbar, reverting to default : ' + e);
-          // reverts the serialized toolbar state to default set in Tor Browser
-          m_tb_prefs.clearUserPref("browser.uiCustomization.state");
-        }
-        // reverts toolbar state to firefox defaults
-        CustomizableUI.reset();
-        // 'restores' toolbar state from serialized state in "browser.uiCustomization.state"
-        CustomizableUI.undoReset();
-        torbutton_log(3, 'toolbar updated');
-        m_tb_prefs.setBoolPref("extensions.torbutton.inserted_button", true);
-        m_tb_prefs.setBoolPref("extensions.torbutton.inserted_security_level", true);
-      } catch(e) {
-        torbutton_log(4, 'failed to update the toolbar : ' + e);
-      }
-    }
-
     torbutton_update_toolbutton();
     torbutton_notify_if_update_needed();
 
