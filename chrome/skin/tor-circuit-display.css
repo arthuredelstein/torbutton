@@ -12,13 +12,15 @@ and lines drawn between them to represent Tor network inter-relay connections.
   background-position: 1em 1em;
   background-repeat: no-repeat;
   background-size: 24px auto;
-  background-color: rgba(255,255,255,0.15);
   background-blend-mode: overlay;
   cursor: default;
   padding: 0.5em 0px 0.5em;
   padding-inline-end: 1em;
   padding-inline-start: calc(2em + 24px);
   width: 100%;
+  -moz-context-properties: fill, fill-opacity;
+  fill: currentColor;
+  fill-opacity: .6;
 }
 
 #circuit-display-content:-moz-locale-dir(rtl) {
@@ -26,7 +28,6 @@ and lines drawn between them to represent Tor network inter-relay connections.
 }
 
 #circuit-reload-content {
-  background-color: #f7f7f7;
   cursor: default;
   padding: 1em 0px 1em;
   padding-inline-end: 3em;
@@ -57,7 +58,7 @@ ul#circuit-display-nodes {
 
 /* Hide default bullets, and draw our own bullets */
 ul#circuit-display-nodes li {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2715%27%20height%3D%2740%27%3E%3Cg%20style%3D%27stroke%3A%234a4a4a%3Bstroke-width%3A3px%3Bfill%3Awhite%3B%27%3E%3Cline%20x1%3D%2750%25%27%20y1%3D%270%25%27%20x2%3D%2750%25%27%20y2%3D%27100%25%27%2F%3E%3Ccircle%20cx%3D%2750%25%27%20cy%3D%2750%25%27%20r%3D%274.5%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
+  background-image: url(chrome://torbutton/skin/tor-circuit-line.svg);
   background-position: left center;
   background-repeat: no-repeat;
   list-style: none;
@@ -70,17 +71,22 @@ ul#circuit-display-nodes li:dir(rtl) {
 }
 
 ul#circuit-display-nodes li:first-child {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2715%27%20height%3D%2740%27%3E%3Cg%20style%3D%27stroke%3A%234a4a4a%3Bstroke-width%3A3px%3Bfill%3Awhite%3B%27%3E%3Cline%20x1%3D%2750%25%27%20y1%3D%2750%25%27%20x2%3D%2750%25%27%20y2%3D%27100%25%27%2F%3E%3Ccircle%20cx%3D%2750%25%27%20cy%3D%2750%25%27%20r%3D%274.5%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
+  background-image: url(chrome://torbutton/skin/tor-circuit-line-first.svg);
 }
 
 ul#circuit-display-nodes li:last-child {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2715%27%20height%3D%2740%27%3E%3Cg%20style%3D%27stroke%3A%234a4a4a%3Bstroke-width%3A3px%3Bfill%3Awhite%3B%27%3E%3Cline%20x1%3D%2750%25%27%20y1%3D%270%25%27%20x2%3D%2750%25%27%20y2%3D%2750%25%27%2F%3E%3Ccircle%20cx%3D%2750%25%27%20cy%3D%2750%25%27%20r%3D%274.5%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
+  background-image: url(chrome://torbutton/skin/tor-circuit-line-last.svg);
 }
 
 .circuit-guard-help {
   -moz-context-properties: fill, stroke;
   fill: #6200a4;
   stroke: #6200a4;
+}
+
+.circuit-guard-help:-moz-lwtheme-brighttext {
+  fill: #D476FF;
+  stroke: #D476FF;
 }
 
 .circuit-ip-address {
@@ -94,6 +100,10 @@ ul#circuit-display-nodes li:last-child {
   font-weight: bold;
   color: #6200a4;
   padding-inline-start: 3px;
+}
+
+.circuit-guard-info:-moz-lwtheme-brighttext {
+  color:#D476FF;
 }
 
 #circuit-reload-button {
@@ -128,9 +138,18 @@ ul#circuit-display-nodes li:last-child {
   color: #6200a4;
 }
 
+.circuit-guard-name:-moz-lwtheme-brighttext {
+  color:#D476FF;
+}
+
 .circuit-link {
   cursor: pointer;
   color: #0000ee;
+}
+
+
+.circuit-link:-moz-lwtheme-brighttext {
+  color: #A9A9A9;
 }
 
 .circuit-link:hover {

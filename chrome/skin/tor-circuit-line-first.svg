@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="40">
+  <g stroke="#9a9a9a" stroke-width="3" fill="white">
+    <line x1='50%' y1='50%' x2='50%' y2='100%'/>
+    <circle cx='50%' cy='50%' r='4.5'/>
+  </g>
+</svg>
