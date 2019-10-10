@@ -6,7 +6,7 @@
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
 <!ENTITY  vendorShortName       "Tor Projesi">
-<!ENTITY  trademarkInfo.part1   "'Tor' ve 'Onion Logo' Tor Project, Inc. tarafından tescillenmiş markalardır.">
+<!ENTITY  trademarkInfo.part1   "'Tor' ve 'Onion Logo' Tor Project, Inc. tarafından tescil edilmiş markalardır.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Kurulmuş sistem uygulama eklerini yüklemek için tıklayın">

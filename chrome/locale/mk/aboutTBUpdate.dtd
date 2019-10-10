@@ -1,7 +1,7 @@
 <!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Листа на промени">
 <!ENTITY aboutTBUpdate.updated "Tor Browser е ажуриран.">
 <!ENTITY aboutTBUpdate.linkPrefix "За најнови информации за оваа верзија,">
-<!ENTITY aboutTBUpdate.linkLabel  "посетете ја нашата веб страна">
+<!ENTITY aboutTBUpdate.linkLabel  " посетете ја нашата веб страна">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.version "Верзија">
 <!ENTITY aboutTBUpdate.releaseDate "Датум на издавање">

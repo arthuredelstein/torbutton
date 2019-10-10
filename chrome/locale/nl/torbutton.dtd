@@ -4,12 +4,12 @@
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.networksettings "Tor-netwerkinstellingen…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "Controleer op updates voor de Tor-browser...">
+<!ENTITY torbutton.context_menu.downloadUpdate "Controleren op Tor Browser-update…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookiebeschermingen…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Klik hier om Tor-knop te initialiseren">
-<!ENTITY torbutton.prefs.security_settings "Tor-browser Beveiligingsinstellingen">
+<!ENTITY torbutton.button.tooltip "Klik om Torbutton te initialiseren">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser-beveiligingsinstellingen">
 <!ENTITY torbutton.cookiedialog.title "Cookiebeschermingen beheren">
 <!ENTITY torbutton.cookiedialog.lockCol "Beschermd">
 <!ENTITY torbutton.cookiedialog.domainCol "Host">
@@ -22,7 +22,7 @@
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Nieuwe cookies beschermen">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Nieuwe cookies niet beschermen">
 <!ENTITY torbutton.prefs.sec_caption "Beveiligingsniveau">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "De beveiligingsschuifbalk laat je toe sommige functies uit te schakelen die je browser mogelijk blootstellen aan beveiligingsrisico's.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Via de beveiligingsschuifbalk kunt u bepaalde browserfuncties uitschakelen die uw browser kwetsbaarder maken voor hackpogingen.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standaard">
 <!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser- en websitefuncties zijn ingeschakeld.">
 <!ENTITY torbutton.prefs.sec_safer_label "Veiliger">
@@ -31,9 +31,9 @@
 <!ENTITY torbutton.prefs.sec_safest_label "Veiligste">
 <!ENTITY torbutton.prefs.sec_safest_description "Alleen websitefuncties toestaan die voor statische websites en basisservices zijn vereist. Deze wijzigingen zijn van invloed op afbeeldingen, media en scripts.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Op de veiligste instelling:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Leer Meer">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript zijn uitgeschakeld op non-HTTP sites.">
-<!ENTITY torbutton.prefs.sec_js_disabled "Javascript zijn standaard uitgeschakeld op alle sites.">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Meer info">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript is uitgeschakeld op niet-HTTPS-websites.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript is standaard uitgeschakeld op alle websites.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Sommige lettertypen en wiskundige symbolen zijn uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Sommige lettertypen, pictogrammen, wiskundige symbolen en afbeeldingen zijn uitgeschakeld.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio en video (HTML5-media) en WebGL zijn klikken-voor-afspelen.">

@@ -2,14 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShorterName      "Tor Browser">
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "‘Tor’ en het ‘Onion-logo’ zijn geregistreerde handelsmerken van het Tor Project, Inc.">
+<!ENTITY  brandShorterName      "Tor-browser">
+<!ENTITY  brandShortName        "Tor-browser">
+<!ENTITY  brandFullName         "Tor-browser">
+<!ENTITY  vendorShortName       "Tor-project">
+<!ENTITY  trademarkInfo.part1   "‘Tor’ en het ‘Onion-logo’ zijn geregistreerde handelsmerken van Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
-<!ENTITY plugins.installed.find "Klik om geïnstalleerde systeemplug-ins te laden">
+<!ENTITY plugins.installed.find "Klik om de geïnstalleerde systeemplug-ins te laden">
 <!ENTITY plugins.installed.enable "Plug-ins inschakelen">
 <!ENTITY plugins.installed.disable "Plug-ins uitschakelen">
 <!ENTITY plugins.installed.disable.tip "Klik om het laden van systeemplug-ins te voorkomen">
