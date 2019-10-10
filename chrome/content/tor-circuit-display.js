@@ -290,8 +290,13 @@ let updateCircuitDisplay = function () {
     for (let i = 0; i < nodeData.length; ++i) {
       let relayText;
       if (nodeData[i].type === "bridge") {
-        relayText = uiString("tor_bridge") +
-          ((nodeData[i].bridgeType !== "vanilla") ? `: ${nodeData[i].bridgeType}` : "");
+        relayText = uiString("tor_bridge");
+        let bridgeType = nodeData[i].bridgeType;
+        if (bridgeType === "meek_lite") {
+          relayText += ": meek";
+        } else if (bridgeType !== "vanilla") {
+          relayText += ": " + bridgeType;
+        }
       } else {
         relayText = localizedCountryNameFromCode(nodeData[i].countryCode);
       }
