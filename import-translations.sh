@@ -42,7 +42,7 @@ do
     fi
   done
 
-  if [ $IS_FILE_IN_MAP -eq 0 ];
+  if [ $IS_FILE_IN_MAP -eq 0 -a $DEST_FILE != "onboarding.properties" ];
   then
     echo "Please add $DEST_FILE to FILEMAP." 1>&2
     FILES_ARE_MISSING=1
