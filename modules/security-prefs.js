@@ -4,6 +4,11 @@
 
 let { getBoolPref, setBoolPref, getIntPref, setIntPref } =
     ChromeUtils.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
+
+// Used for detecting the current system architecture
+let { XPCOMABI } =
+    Cu.import("resource://gre/modules/Services.jsm", {}).Services.appinfo;
+
 let { bindPref, bindPrefAndInit } =
     ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 let logger = Cc["@torproject.org/torbutton-logger;1"]
@@ -33,6 +38,7 @@ const kSecuritySettings = {
 // The Security Settings prefs in question.
 const kSliderPref = "extensions.torbutton.security_slider";
 const kCustomPref = "extensions.torbutton.security_custom";
+const kSliderMigration = "extensions.torbutton.security_slider_migration";
 
 // ### Prefs
 
@@ -48,8 +54,8 @@ var write_setting_to_prefs = function (settingIndex) {
 // __read_setting_from_prefs()__.
 // Read the current pref values, and decide if any of our
 // security settings matches. Otherwise return null.
-var read_setting_from_prefs = function () {
-  let prefNames = Object.keys(kSecuritySettings);
+var read_setting_from_prefs = function (prefNames) {
+  prefNames = prefNames || Object.keys(kSecuritySettings);
   for (let settingIndex of [1, 2, 3, 4]) {
     let possibleSetting = true;
     // For the given settingIndex, check if all current pref values
@@ -127,6 +133,24 @@ var initialize = function () {
       getIntPref("extensions.torbutton.security_slider") === 3) {
     setIntPref("extensions.torbutton.security_slider", 2);
     write_setting_to_prefs(2);
+  }
+
+  // Revert #31616 and #31140 fixes
+  if (getIntPref(kSliderMigration, 0) < 1) {
+    // If the security settings level and the prefs that we did not change
+    // have the default value, reset to default security level.
+    const prefNames = [
+      "media.webaudio.enabled",
+      "mathml.disabled",
+      "gfx.font_rendering.opentype_svg.enabled",
+      "svg.disabled"
+    ];
+    if (getBoolPref(kCustomPref) && XPCOMABI.split("-")[0] == "aarch64" &&
+        getIntPref(kSliderPref) === 4 &&
+        read_setting_from_prefs(prefNames) === 4) {
+      setBoolPref(kCustomPref, false);
+    }
+    setIntPref(kSliderMigration, 1);
   }
   log(4, "security-prefs.js initialization complete");
 };
