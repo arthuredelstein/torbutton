@@ -1,6 +1,6 @@
 <!ENTITY torbutton.context_menu.new_identity "Nouvelle identité">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.new_circuit "Nouveau circuit Tor pour ce site">
+<!ENTITY torbutton.context_menu.new_circuit "Nouveau circuit Tor pour ce site">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.networksettings "Paramètres du réseau Tor…">
 <!ENTITY torbutton.context_menu.networksettings.key "R">
