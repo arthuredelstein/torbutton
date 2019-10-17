@@ -459,6 +459,9 @@ info.streamStatusParser = function (text) {
                                   "CircuitID", "Target"]);
 };
 
+
+// TODO: fix this parsing logic to handle bridgeLine correctly
+// fingerprint/id is an optional parameter
 // __info.bridgeParser(bridgeLine)__.
 // Takes a single line from a `getconf bridge` result and returns
 // a map containing the bridge's type, address, and ID.

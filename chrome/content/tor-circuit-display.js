@@ -84,12 +84,19 @@ let nodeDataForID = async function (controller, id) {
       result.ip = bridge.address.split(":")[0];
     } catch (e) { }
   } else {
-    result.type = "default";
-    // Get the IP address for the given node ID.
-     try {
-       let statusMap = await controller.getInfo("ns/id/" + id);
-       result.ip = statusMap.IP;
-     } catch (e) { }
+    // either dealing with a relay, or a bridge whose fingerprint is not saved in torrc
+    try {
+      let statusMap = await controller.getInfo("ns/id/" + id);
+      result.type = "default";
+      result.ip = statusMap.IP;
+    } catch (e) {
+      // getInfo will throw if the given id is not a relay
+      // this probably means we are dealing with a user-provided bridge with no fingerprint
+      result.type = "bridge";
+      // we don't know the ip or type, so leave blank
+      result.ip = "";
+      result.bridgeType = "";
+    }
   }
   if (result.ip) {
     // Get the country code for the node's IP address.
@@ -294,10 +301,11 @@ let updateCircuitDisplay = function () {
         let bridgeType = nodeData[i].bridgeType;
         if (bridgeType === "meek_lite") {
           relayText += ": meek";
-        } else if (bridgeType !== "vanilla") {
+        }
+        else if (bridgeType !== "vanilla" && bridgeType !== "") {
           relayText += ": " + bridgeType;
         }
-      } else {
+      } else if (nodeData[i].type == "default") {
         relayText = localizedCountryNameFromCode(nodeData[i].countryCode);
       }
       let ip = nodeData[i].ip.startsWith("0.") ? "" : nodeData[i].ip;
