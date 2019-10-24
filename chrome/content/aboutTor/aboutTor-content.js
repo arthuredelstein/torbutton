@@ -128,6 +128,13 @@ var AboutTorListener = {
       elem.appendChild(content.document.createTextNode(productName + ' '
                        + tbbVersion));
     } catch (e) {}
+
+    content.document
+      .getElementById("ey2019_donate")
+      .setAttribute(
+        "href",
+        `https://www.torproject.org/donate/donate-tbi-${aLocale}`
+      );
   }
 };
 

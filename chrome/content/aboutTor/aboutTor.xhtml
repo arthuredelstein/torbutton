@@ -20,9 +20,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Security-Policy" content="default-src chrome: resource:; script-src chrome: resource: 'unsafe-inline';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src chrome: resource:; script-src chrome: resource: 'unsafe-inline'; font-src data:;" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>&aboutTor.title;</title>
+  <link rel="stylesheet" type="text/css" media="all"
+        href="resource://torbutton-assets/aboutTorFonts.css"/>
   <link rel="stylesheet" type="text/css" media="all"
         href="resource://torbutton-assets/aboutTor.css"/>
 <script type="text/javascript">
@@ -34,7 +36,7 @@ window.addEventListener("pageshow", function() {
 ]]>
 </script>
 </head>
-<body dir="&locale.dir;">
+<body dir="&locale.dir;" ey2019="yes">
   <div class="torcontent-container">
     <div id="torbrowser-info">
       <div id="torbrowser-version"/>
@@ -42,10 +44,24 @@ window.addEventListener("pageshow", function() {
     </div>
     <img class="torcontent-logo" src="resource://torbutton-assets/torbrowser_mobile_logo.png"/>
     <div id="torstatus" class="top">
-      <div class="hideIfTorOff hideIfHasBeenUpdated torstatus-container">
+      <div class="hideIfTorOff hideIfHasBeenUpdated hideIfEY2019 torstatus-container">
         <div class="heading1">&aboutTor.ready.label;</div>
         <br/>
         <div class="heading2">&aboutTor.ready2.label;</div>
+      </div>
+      <div class="hideIfTorOff hideIfHasBeenUpdated showIfEY2019 torstatus-container">
+        <div id="ey2019_banner">
+          <div id="ey2019_1">
+            <p id="ey2019_tracking">&aboutTor.ey2019.tracking;</p>
+          </div>
+          <div id="ey2019_2">
+            <h1 id="ey2019_takeback">&aboutTor.ey2019.takeback;</h1>
+          </div>
+          <div id="ey2019_3">
+            <a id="ey2019_donate" href="https://www.torproject.org/donate/donate-tbi-default">&aboutTor.donationBanner.buttonA;</a>
+            <p id="ey2019_mozilla">&aboutTor.ey2019.mozilla;</p>
+          </div>
+        </div>
       </div>
       <div class="showIfHasBeenUpdated torstatus-container">
         <div class="heading1">&aboutTBUpdate.updated;</div>
