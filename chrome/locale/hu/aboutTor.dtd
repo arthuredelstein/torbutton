@@ -30,3 +30,8 @@
 <!ENTITY aboutTor.newsletter.link_text "Iratkozzon fel a Tor hírekhez.">
 <!ENTITY aboutTor.donationBanner.line2e "Tartsuk meg a Tor-t erősnek.">
 <!ENTITY aboutTor.donationBanner.buttonA "Támogasson most">
+
+<!-- End of year 2019 Fundraising campaign -->
+<!ENTITY aboutTor.ey2019.mozilla "Adjon ma és a Mozilla is annyival támogat.">
+<!ENTITY aboutTor.ey2019.tracking "A követés, megfigyelés és cenzúra széles körben elterjedt online.">
+<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">

@@ -30,3 +30,8 @@
 <!ENTITY aboutTor.newsletter.link_text "订阅 Tor 的最新动态">
 <!ENTITY aboutTor.donationBanner.line2e "让 Tor 网络保持健壮。">
 <!ENTITY aboutTor.donationBanner.buttonA "立即捐助">
+
+<!-- End of year 2019 Fundraising campaign -->
+<!ENTITY aboutTor.ey2019.mozilla "现在捐款， Mozilla 会匹配你的捐赠。">
+<!ENTITY aboutTor.ey2019.tracking "跟踪，监视和审查在网上广泛存在。">
+<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">

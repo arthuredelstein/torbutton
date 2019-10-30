@@ -30,3 +30,8 @@
 <!ENTITY aboutTor.newsletter.link_text "Registrer deg for Tor Nyheter.">
 <!ENTITY aboutTor.donationBanner.line2e "Hold Tor sterk.">
 <!ENTITY aboutTor.donationBanner.buttonA "Donér nå">
+
+<!-- End of year 2019 Fundraising campaign -->
+<!ENTITY aboutTor.ey2019.mozilla "Give today, and Mozilla will match your donation.">
+<!ENTITY aboutTor.ey2019.tracking "Tracking, surveillance, and censorship are widespread online.">
+<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">

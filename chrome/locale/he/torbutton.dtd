@@ -6,9 +6,9 @@
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "בדוק אחר עדכון לדפדפן Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "הגנת עוגיות...">
+<!ENTITY torbutton.context_menu.cookieProtections "הגנות עוגיות...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "לחץ בכדי לאתחל את Torbutton">
+<!ENTITY torbutton.button.tooltip "לחץ כדי לאתחל את Torbutton">
 <!ENTITY torbutton.prefs.security_settings "הגדרות אבטחה של דפדפן Tor">
 <!ENTITY torbutton.cookiedialog.title "נהל הגנות עוגיות">
 <!ENTITY torbutton.cookiedialog.lockCol "מוגן">
@@ -23,12 +23,12 @@
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "אל תגן על עוגיות חדשות">
 <!ENTITY torbutton.prefs.sec_caption "רמת אבטחה">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "מחוון האבטחה נותן לך להשבית תכונות דפדפן מסוימות אשר עלולות לעשות את הדפדפן שלך יותר פגיע לנסיונות פיצוח.">
-<!ENTITY torbutton.prefs.sec_standard_label "תקני">
+<!ENTITY torbutton.prefs.sec_standard_label "תקנית">
 <!ENTITY torbutton.prefs.sec_standard_description "כל המאפיינים של דפדפן Tor ומאפייני אתר מושבתים.">
-<!ENTITY torbutton.prefs.sec_safer_label "בטוח יותר">
+<!ENTITY torbutton.prefs.sec_safer_label "בטוחה יותר">
 <!ENTITY torbutton.prefs.sec_safer_description "משבית מאפייני אתר שמסוכנים לעיתים קרובות, מה שגורם למספר אתרים לאבד תפקודיות.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "בהגדרה הבטוחה יותר:">
-<!ENTITY torbutton.prefs.sec_safest_label "הכי בטוח">
+<!ENTITY torbutton.prefs.sec_safest_label "הכי בטוחה">
 <!ENTITY torbutton.prefs.sec_safest_description "מתיר רק למאפייני אתר הדרושים עבור אתרים נייחים ושירותים יסודיים. שינויים אלו משפיעים על תמונות, מדיה ותסריטים.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "בהגדרה הבטוחה ביותר:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "למד עוד">

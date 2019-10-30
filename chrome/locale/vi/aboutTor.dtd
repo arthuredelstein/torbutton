@@ -30,3 +30,8 @@
 <!ENTITY aboutTor.newsletter.link_text "Đăng kí nhận tin tức từ Tor.">
 <!ENTITY aboutTor.donationBanner.line2e "Giữ cho Tor trở nên mạnh mẽ.">
 <!ENTITY aboutTor.donationBanner.buttonA "Đóng góp Ngay bây giờ">
+
+<!-- End of year 2019 Fundraising campaign -->
+<!ENTITY aboutTor.ey2019.mozilla "Hãy đóng góp ngay hôm nay, và Mozilla sẽ đóng góp tương ứng với phần của bạn.">
+<!ENTITY aboutTor.ey2019.tracking "Tracking, surveillance, and censorship are widespread online.">
+<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">

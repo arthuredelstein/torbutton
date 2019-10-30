@@ -9,7 +9,7 @@
 <!ENTITY  trademarkInfo.part1   "'Tor' i 'Onion Logo' són marques registrades per Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
-<!ENTITY plugins.installed.find "Cliqueu per carregar els complements de sistema instal·lats">
-<!ENTITY plugins.installed.enable "Activa els complements">
-<!ENTITY plugins.installed.disable "Desactiva els complements">
-<!ENTITY plugins.installed.disable.tip "Clicqueu per evitar que es carreguin els complements de sistema">
+<!ENTITY plugins.installed.find "Feu clic per carregar els connectors del sistema instal·lats">
+<!ENTITY plugins.installed.enable "Activa els connectors">
+<!ENTITY plugins.installed.disable "Desactiva els connectors">
+<!ENTITY plugins.installed.disable.tip "Feu clic per impedir que es carreguin els connectors del sistema">

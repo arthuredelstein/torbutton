@@ -30,3 +30,8 @@
 <!ENTITY aboutTor.newsletter.link_text "Inscrivez-vous aux nouvelles de Tor">
 <!ENTITY aboutTor.donationBanner.line2e "Assurez la robustesse de Tor.">
 <!ENTITY aboutTor.donationBanner.buttonA "Faites un don maintenant">
+
+<!-- End of year 2019 Fundraising campaign -->
+<!ENTITY aboutTor.ey2019.mozilla "Faites un don aujourd’hui et Mozilla fera un don équivalent.">
+<!ENTITY aboutTor.ey2019.tracking "Le pistage, la surveillance et la censure sont très répandus sur Internet.">
+<!ENTITY aboutTor.ey2019.takeback "Avec Tor, réappropriez-vous Internet.">

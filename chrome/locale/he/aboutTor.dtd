@@ -30,3 +30,8 @@
 <!ENTITY aboutTor.newsletter.link_text "הירשם עבור חדשות Tor.">
 <!ENTITY aboutTor.donationBanner.line2e "שמור על Tor חזק.">
 <!ENTITY aboutTor.donationBanner.buttonA "תרום עכשיו">
+
+<!-- End of year 2019 Fundraising campaign -->
+<!ENTITY aboutTor.ey2019.mozilla "תן היום, ו־Mozilla תשווה את תרומתך.">
+<!ENTITY aboutTor.ey2019.tracking "מעקב, ציתות וצנזורה נפוצים ברשת.">
+<!ENTITY aboutTor.ey2019.takeback "קח בחזרה את האינטרנט עם Tor">

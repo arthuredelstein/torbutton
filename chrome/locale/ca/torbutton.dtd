@@ -2,7 +2,7 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nou circuit Tor per a aquest lloc">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.networksettings "Preferències de la Xarxa Tor...7">
+<!ENTITY torbutton.context_menu.networksettings "Configuració de la xarxa Tor…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Cerca una actualització del navegador Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "A">
@@ -10,40 +10,40 @@
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Feu clic per a iniciar Torbutton">
 <!ENTITY torbutton.prefs.security_settings "Paràmetres de seguretat del navegador Tor">
-<!ENTITY torbutton.cookiedialog.title "Configura proteccions de les galetes">
+<!ENTITY torbutton.cookiedialog.title "Gestiona les proteccions de les galetes">
 <!ENTITY torbutton.cookiedialog.lockCol "Protegit">
 <!ENTITY torbutton.cookiedialog.domainCol "Allotjador">
 <!ENTITY torbutton.cookiedialog.nameCol "Nom">
 <!ENTITY torbutton.cookiedialog.pathCol "Camí">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protegir les galetes">
-<!ENTITY torbutton.cookiedialog.removeCookie "Suprimir galetes">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Galetes sense protecció">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Suprimir totes amb protecció">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protegir noves galetes">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "No protegir noves galetes">
+<!ENTITY torbutton.cookiedialog.protectCookie "Protegeix la galeta">
+<!ENTITY torbutton.cookiedialog.removeCookie "Elimina la galeta">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "No protegeixis la galeta">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Elimina-les totes menys les protegides">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Protegeix les galetes noves">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "No protegeixis les galetes noves">
 <!ENTITY torbutton.prefs.sec_caption "Nivell de seguretat">
-<!ENTITY torbutton.prefs.sec_caption_tooltip "El control lliscant de seguretat permet deshabilitar característiques del navegador que poden permetre vulnerabilitats en atemptats de furoners.">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "El control lliscant de seguretat permet desactivar certes funcions del navegador que poden fer que sigui més vulnerable als intents d'atac de furoners.">
 <!ENTITY torbutton.prefs.sec_standard_label "Estàndard">
-<!ENTITY torbutton.prefs.sec_standard_description "Totes les característiques del buscador Tor i de la pàgina web estan actives.">
-<!ENTITY torbutton.prefs.sec_safer_label "Més segur.">
-<!ENTITY torbutton.prefs.sec_safer_description "Desactivar les funcions del lloc web que sovint són perilloses, pot fent que alguns llocs perden funcionalitat.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "A la configuració més segura:">
-<!ENTITY torbutton.prefs.sec_safest_label "més segur">
-<!ENTITY torbutton.prefs.sec_safest_description "Només es permeten funcions del lloc web requerides per a llocs estàtics i serveis bàsics. Aquests canvis afecten imatges, mitjans de comunicació i scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "A la configuració més segura:">
-<!ENTITY torbutton.prefs.sec_learn_more_label "Apreneu-ne més">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "El JavaScript està desactivat per defecte en tots els llocs no-HTTPS">
-<!ENTITY torbutton.prefs.sec_js_disabled "El JavaScript està desactivat per defecte a tots els llocs.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Algunes fonts i símbols matemàtics estan desactivats. ">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Algunes fonts, icones, símbols matemàtics, i imatges estan desactivats. ">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "L'àudio, el vídeo (mitjans de comunicació HTML5) i WebGL són click-to-play. ">
-<!ENTITY torbutton.prefs.sec_custom_warning "Personalitza">
-<!ENTITY torbutton.prefs.sec_overview "Deshabiliteu certes funcions web que es puguin fer servir per atacar la vostra seguretat i el vostre anonimat.">
-<!ENTITY torbutton.prefs.sec_standard_tooltip "Nivell de seguretat: estàndard">
-<!ENTITY torbutton.prefs.sec_safer_tooltip "Nivell de seguretat: més segur">
-<!ENTITY torbutton.prefs.sec_safest_tooltip "Nivell de seguretat: el més segur">
-<!ENTITY torbutton.prefs.sec_custom_summary "El navegador personalitzat ha obtingut uns paràmetres inusuals de seguretat. Per raons de privacitat i de seguretat, recomanem l'elecció d'un nivell de seguretat per defecte.">
-<!ENTITY torbutton.prefs.sec_restore_defaults "Torna a les opcions per defecte">
-<!ENTITY torbutton.prefs.sec_advanced_security_settings "Configuració de seguretat avançada...">
+<!ENTITY torbutton.prefs.sec_standard_description "Totes les funcions del navegador Tor i dels llocs web estan activades.">
+<!ENTITY torbutton.prefs.sec_safer_label "Més seguretat">
+<!ENTITY torbutton.prefs.sec_safer_description "Desactiva les funcions dels llocs web que sovint són perilloses, pot fer que alguns llocs perdin funcionalitat.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "En la configuració de més seguretat:">
+<!ENTITY torbutton.prefs.sec_safest_label "Màxima seguretat">
+<!ENTITY torbutton.prefs.sec_safest_description "Només es permeten les funcions dels llocs web necessàries per a llocs estàtics i serveis bàsics. Aquests canvis afecten les imatges, el contingut multimèdia i els scripts.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "En la configuració de màxima seguretat:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Més informació">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "El JavaScript està desactivat per defecte en tots els llocs que no són HTTPS">
+<!ENTITY torbutton.prefs.sec_js_disabled "El JavaScript està desactivat per defecte en tots els llocs.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Es desactiven alguns tipus de lletra i símbols matemàtics. ">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Es desactiven alguns tipus de lletra, icones, símbols matemàtics i imatges. ">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "L'àudio i vídeo (contingut multimèdia HTML5) i WebGL són de tipus «clic per a reproduir». ">
+<!ENTITY torbutton.prefs.sec_custom_warning "Personalitzat">
+<!ENTITY torbutton.prefs.sec_overview "Desactiva certes funcions web que es poden fer servir per atacar la vostra seguretat i el vostre anonimat.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Nivell de seguretat: Estàndard">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Nivell de seguretat: Més seguretat">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Nivell de seguretat: Màxima seguretat">
+<!ENTITY torbutton.prefs.sec_custom_summary "Les preferències personalitzades del navegador que heu triat fan que la configuració de seguretat sigui poc habitual. Per raons de privadesa i seguretat, recomanem que trieu un nivell de seguretat per defecte.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Restaura els valors per defecte">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Configuració de seguretat avançada…">
 <!ENTITY torbutton.circuit_display.title "Circuit de Tor">
-<!ENTITY torbutton.circuit_display.new_circuit " Circuit de Tor per a aquest lloc ">
+<!ENTITY torbutton.circuit_display.new_circuit "Circuit nou per a aquest lloc">
