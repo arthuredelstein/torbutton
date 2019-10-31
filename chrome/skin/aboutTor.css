@@ -396,6 +396,7 @@ body[ey2019] .torcontent-logo {
   text-align: left;
 }
 
+#ey2019_donate_mobile,
 #ey2019_donate {
   border: 3px solid blueViolet;
   background: black;
@@ -411,6 +412,7 @@ body[ey2019] .torcontent-logo {
   vertical-align: super;
 }
 
+#ey2019_donate_mobile,
 #ey2019_donate:hover {
   background: blueViolet;
   color: black;
@@ -442,5 +444,13 @@ body[ey2019] #torstatus {
 
 body:not([ey2019]) .showIfEY2019,
 body[ey2019] .hideIfEY2019 {
+  display: none;
+}
+
+body:not([mobile]) #ey2019_donate_mobile {
+  display: none;
+}
+
+body[mobile] #ey2019_donate {
   display: none;
 }
