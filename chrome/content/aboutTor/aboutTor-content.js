@@ -141,6 +141,10 @@ var AboutTorListener = {
     content.document
       .getElementById(ey2019_elem_id)
       .setAttribute("href", ey2019_locale_url);
+
+    content.document
+      .getElementById(ey2019_elem_id + "_bottom")
+      .setAttribute("href", ey2019_locale_url);
   }
 };
 

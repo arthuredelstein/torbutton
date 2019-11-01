@@ -447,10 +447,12 @@ body[ey2019] .hideIfEY2019 {
   display: none;
 }
 
-body:not([mobile]) #ey2019_donate_mobile {
+body:not([mobile]) #ey2019_donate_mobile,
+body:not([mobile]) #ey2019_donate_mobile_bottom {
   display: none;
 }
 
-body[mobile] #ey2019_donate {
+body[mobile] #ey2019_donate,
+body[mobile] #ey2019_donate_bottom {
   display: none;
 }
