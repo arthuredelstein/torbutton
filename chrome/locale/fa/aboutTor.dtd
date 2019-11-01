@@ -4,34 +4,34 @@
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
 
-<!ENTITY aboutTor.title "درباره‌ی تور">
+<!ENTITY aboutTor.title "درباره‌ی Tor">
 
 <!ENTITY aboutTor.viewChangelog.label "دیدن گزارش تغییرات">
 
 <!ENTITY aboutTor.ready.label "کاوش. خصوصی.">
 <!ENTITY aboutTor.ready2.label "شما برای تجربه خصوصی‌ترین مرور اینترنت در جهان آماده هستید.">
 <!ENTITY aboutTor.failure.label "خطایی پیش آمده است!">
-<!ENTITY aboutTor.failure2.label "تور با این مرورگر کار نمی‌کند.">
+<!ENTITY aboutTor.failure2.label "Tor با این مرورگر کار نمی‌کند.">
 
 <!ENTITY aboutTor.search.label "جستجو توسط داک‌داک‌گو">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "سوالات؟">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "بررسی راهنمای مرورگر تور »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "بررسی راهنمای مرورگر Tor »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "راهنمای مرورگر تور">
+<!ENTITY aboutTor.torbrowser_user_manual.label "راهنمای مرورگر Tor">
 
-<!ENTITY aboutTor.tor_mission.label "پروژه‌ی تور یک سازمان غیرانتفاعی US 501(c)(3) برای پیشبرد حقوق بشر و آزادی با ایجاد و استقرار تکنولوژی‌های گمنامی متن باز و حریم خصوصی است که از در دسترس بودن نامحدود و استفاده و پیشرفت درک علمی و عمومی بشر حمایت می‌کند.">
+<!ENTITY aboutTor.tor_mission.label "پروژه‌ی Tor یک سازمان غیرانتفاعی US 501(c)(3) برای پیشبرد حقوق بشر و آزادی با ایجاد و استقرار تکنولوژی‌های گمنامی متن باز و حریم خصوصی است که از در دسترس بودن نامحدود و استفاده و پیشرفت درک علمی و عمومی بشر حمایت می‌کند.">
 <!ENTITY aboutTor.getInvolved.label "دریافت مشارکت »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
-<!ENTITY aboutTor.newsletter.tagline "آخرین اخبار تور را در صندوق ورودی خود دریافت کنید.">
-<!ENTITY aboutTor.newsletter.link_text "ثبت‌نام برای اخبار تور.">
-<!ENTITY aboutTor.donationBanner.line2e "تور را محکم نگه دارید.">
+<!ENTITY aboutTor.newsletter.tagline "آخرین اخبار Tor را در صندوق ورودی خود دریافت کنید.">
+<!ENTITY aboutTor.newsletter.link_text "ثبت‌نام برای اخبار Tor.">
+<!ENTITY aboutTor.donationBanner.line2e "Tor را محکم نگه دارید.">
 <!ENTITY aboutTor.donationBanner.buttonA "اکنون اهداء کنید">
 
 <!-- End of year 2019 Fundraising campaign -->
 <!ENTITY aboutTor.ey2019.mozilla "امروز کمک کنید و موزیلا با کمک مالی شما همراهی می‌کند.">
-<!ENTITY aboutTor.ey2019.tracking "Tracking, surveillance, and censorship are widespread online.">
-<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">
+<!ENTITY aboutTor.ey2019.tracking "ردیابی ، نظارت و سانسور به صورت آنلاین گسترده است.">
+<!ENTITY aboutTor.ey2019.takeback "اینترنت را با Tor برگردانید">
