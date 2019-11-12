@@ -21,6 +21,7 @@ let {
   getDomainForBrowser,
 } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 let SecurityPrefs = ChromeUtils.import("resource://torbutton/modules/security-prefs.js", {});
+let { configureControlPortModule } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
 const k_tb_browser_update_needed_pref = "extensions.torbutton.updateNeeded";
@@ -334,6 +335,9 @@ function torbutton_init() {
         }
     }
 
+    configureControlPortModule(m_tb_control_ipc_file, m_tb_control_host,
+                               m_tb_control_port, m_tb_control_pass);
+
     // Add about:tor IPC message listener.
     window.messageManager.addMessageListener("AboutTor:Loaded",
                                    torbutton_abouttor_message_handler);
@@ -353,9 +357,7 @@ function torbutton_init() {
     torbutton_notify_if_update_needed();
 
     try {
-        createTorCircuitDisplay(m_tb_control_ipc_file, m_tb_control_host,
-                                m_tb_control_port, m_tb_control_pass,
-                               "extensions.torbutton.display_circuit");
+        createTorCircuitDisplay("extensions.torbutton.display_circuit");
     } catch(e) {
         torbutton_log(4, "Error creating the tor circuit display " + e);
     }

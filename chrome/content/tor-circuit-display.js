@@ -6,9 +6,8 @@
 // with docco.js to produce pretty documentation.
 //
 // This script is to be embedded in torbutton.xul. It defines a single global
-// function, createTorCircuitDisplay(ipcFile, host, port, password), which
-// activates the automatic Tor circuit display for the current tab and any
-// future tabs.
+// function, createTorCircuitDisplay(), which activates the automatic Tor
+// circuit display for the current tab and any future tabs.
 //
 // See https://trac.torproject.org/8641
 
@@ -16,11 +15,12 @@
 /* global document, gBrowser, Components */
 
 // ### Main function
-// __createTorCircuitDisplay(ipcFile, host, port, password, enablePrefName)__.
+// __createTorCircuitDisplay(enablePrefName)__.
 // The single function that prepares tor circuit display. Connects to a tor
-// control port with the given ipcFile or host plus port, and password, and
-// binds to a named bool pref whose value determines whether the circuit display
-// is enabled or disabled.
+// control port using information provided to the control port module via
+// a previous call to configureControlPortModule(), and binds to a named
+// bool pref whose value determines whether the circuit display is enabled
+// or disabled.
 let createTorCircuitDisplay = (function () {
 
 "use strict";
@@ -415,11 +415,11 @@ let ensureCorrectPopupDimensions = function () {
 
 // ## Main function
 
-// __setupDisplay(ipcFile, host, port, password, enablePrefName)__.
+// __setupDisplay(enablePrefName)__.
 // Once called, the Tor circuit display will be started whenever
 // the "enablePref" is set to true, and stopped when it is set to false.
 // A reference to this function (called createTorCircuitDisplay) is exported as a global.
-let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
+let setupDisplay = function (enablePrefName) {
   setupGuardNote();
   let myController = null,
       stopCollectingIsolationData = null,
@@ -442,8 +442,7 @@ let setupDisplay = function (ipcFile, host, port, password, enablePrefName) {
       },
       start = function () {
         if (!myController) {
-          myController = controller(ipcFile, host, port || 9151, password,
-                function (err) {
+          myController = controller(function (err) {
             // An error has occurred.
             logger.eclog(5, err);
             logger.eclog(5, "Disabling tor display circuit because of an error.");

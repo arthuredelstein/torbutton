@@ -7,10 +7,15 @@
 //
 // To import the module, use
 //
-//  let { controller } = Components.utils.import("path/to/tor-control-port.js", {});
+//  let { configureControlPortModule, controller } =
+//                Components.utils.import("path/to/tor-control-port.js", {});
+//
+// See the second-to-last function defined in this file:
+//   configureControlPortModule(ipcFile, host, port, password)
+// for usage of the configureControlPortModule function.
 //
 // See the last function defined in this file:
-//   controller(ipcFile, host, port, password, onError)
+//   controller(onError)
 // for usage of the controller function.
 
 /* jshint esnext: true */
@@ -229,7 +234,16 @@ io.matchRepliesToCommands = function (asyncSend, dispatcher) {
     let [command, replyCallback, errorCallback] = commandQueue.shift();
     if (message.match(/^2/) && replyCallback) replyCallback(message);
     if (message.match(/^[45]/) && errorCallback) {
-      errorCallback(new Error(command + " -> " + message));
+      let myErr = new Error(command + " -> " + message);
+      // Add Tor-specific information to the Error object.
+      let idx = message.indexOf(' ');
+      if (idx > 0) {
+        myErr.torStatusCode = message.substring(0, idx);
+        myErr.torMessage = message.substring(idx);
+      } else {
+        myErr.torStatusCode = message;
+      }
+      errorCallback(myErr);
     }
   });
   // Create and return a version of sendCommand that returns a Promise.
@@ -562,6 +576,24 @@ info.getConf = function (aControlSocket, key) {
                        .then(info.getMultipleResponseValues);
 };
 
+// ## onionAuth
+// A namespace for functions related to tor's ONION_CLIENT_AUTH_* commands.
+let onionAuth = {};
+
+// __onionAuth.add(controlSocket, hsAddress, b64PrivateKey, nickname, isPermanent)__.
+// Sends a ONION_CLIENT_AUTH_ADD command to add a private key to the
+// Tor configuration.
+onionAuth.add = function (aControlSocket, hsAddress, b64PrivateKey,
+                          nickname, isPermanent) {
+  const keyType = "x25519";
+  let cmd = `onion_client_auth_add ${hsAddress} ${keyType}:${b64PrivateKey}`;
+  if (nickname)
+    cmd += ` ClientName=${nickname}`;
+  if (isPermanent)
+    cmd += " Flags=Permanent";
+  return aControlSocket.sendCommand(cmd);
+};
+
 // ## event
 // Handlers for events
 
@@ -617,6 +649,9 @@ tor.controller = function (ipcFile, host, port, password, onError) {
       isOpen = true;
   return { getInfo : key => info.getInfo(socket, key),
            getConf : key => info.getConf(socket, key),
+           onionAuthAdd : (hsAddress, b64PrivateKey, nickname, isPermanent) =>
+                            onionAuth.add(socket, hsAddress, b64PrivateKey,
+                                          nickname, isPermanent),
            watchEvent : (type, filter, onData) =>
                           event.watchEvent(socket, type, filter, onData),
            isOpen : () => isOpen,
@@ -626,29 +661,53 @@ tor.controller = function (ipcFile, host, port, password, onError) {
 
 // ## Export
 
-// __controller(ipcFile, host, port, password, onError)__.
-// Instantiates and returns a controller object connected to a tor ControlPort
-// on ipcFile or at host:port, authenticating with the given password, if
-// the controller doesn't yet exist. Otherwise returns the existing controller
-// to the given ipcFile or host:port.
+let controlPortInfo = {};
+
+// __configureControlPortModule(ipcFile, host, port, password)__.
+// Sets Tor control port connection parameters to be used in future calls to
+// the controller() function. Example:
+//     configureControlPortModule(undefined, "127.0.0.1", 9151, "MyPassw0rd");
+var configureControlPortModule = function (ipcFile, host, port, password) {
+  controlPortInfo.ipcFile = ipcFile;
+  controlPortInfo.host = host;
+  controlPortInfo.port = port || 9151;
+  controlPortInfo.password = password;
+};
+
+// __controller(onError)__.
+// Instantiates and returns a controller object that is connected and
+// authenticated to a Tor ControlPort using the connection parameters
+// provided in the most recent call to configureControlPortModule(), if
+// the controller doesn't yet exist. Otherwise returns the existing
+// controller to the given ipcFile or host:port.
 // onError is called with an error object as its single argument whenever
 // an error occurs. Example:
 //
 //     // Get the controller
-//     let c = controller(undefined, "127.0.0.1", 9151, "MyPassw0rd",
+//     let c = controller(
 //                    function (error) { console.log(error.message || error); });
 //     // Send command and receive `250` reply or error message in a promise:
 //     let replyPromise = c.getInfo("ip-to-country/16.16.16.16");
 //     // Close the controller permanently
 //     c.close();
-var controller = function (ipcFile, host, port, password, onError) {
-  let dest = (ipcFile) ? "unix:" + ipcFile.path : host + ":" + port,
-      maybeController = tor.controllerCache[dest];
-  return (tor.controllerCache[dest] =
-           (maybeController && maybeController.isOpen()) ?
-             maybeController :
-             tor.controller(ipcFile, host, port, password, onError));
+var controller = function (onError) {
+  if (!controlPortInfo.ipcFile && !controlPortInfo.host)
+    throw new Error("Please call configureControlPortModule first");
+
+  const dest = (controlPortInfo.ipcFile)
+               ? `unix:${controlPortInfo.ipcFile.path}`
+               : `${controlPortInfo.host}:${controlPortInfo.port}`;
+  const maybeController = tor.controllerCache[dest];
+  if (maybeController && maybeController.isOpen())
+    return maybeController;
+
+  tor.controllerCache[dest] = tor.controller(controlPortInfo.ipcFile,
+                                             controlPortInfo.host,
+                                             controlPortInfo.port,
+                                             controlPortInfo.password,
+                                             onError);
+  return tor.controllerCache[dest];
 };
 
-// Export the controller function for external use.
-var EXPORTED_SYMBOLS = ["controller"];
+// Export functions for external use.
+var EXPORTED_SYMBOLS = ["configureControlPortModule", "controller"];
