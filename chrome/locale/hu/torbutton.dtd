@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Speciális biztonsági beállítások...">
 <!ENTITY torbutton.circuit_display.title "Tor áramkör">
 <!ENTITY torbutton.circuit_display.new_circuit "Új Tor áramkör ehhez az oldalhoz">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

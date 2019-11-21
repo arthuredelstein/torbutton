@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "উন্নত নিরাপত্তা সেটিংস ...">
 <!ENTITY torbutton.circuit_display.title "টর সার্কিট">
 <!ENTITY torbutton.circuit_display.new_circuit "এই সাইটের জন্য নতুন সার্কিট">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

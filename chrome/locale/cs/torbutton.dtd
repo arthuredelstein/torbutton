@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Rozšířená bezpečnostní nastavení…">
 <!ENTITY torbutton.circuit_display.title "Tor okruh">
 <!ENTITY torbutton.circuit_display.new_circuit "Nový okruh Toru pro tuto stránku">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

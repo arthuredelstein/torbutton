@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "უსაფრთხოების დამატებითი პარამ.">
 <!ENTITY torbutton.circuit_display.title "Tor-წრედი">
 <!ENTITY torbutton.circuit_display.new_circuit "ახალი წრედი ამ საიტისთვის">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "გახსენით onion-მომსახურების კლიენტის დამოწმების არე">

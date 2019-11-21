@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "إعدادات الأمن المتقدمة ...">
 <!ENTITY torbutton.circuit_display.title "دائرة تور">
 <!ENTITY torbutton.circuit_display.new_circuit "دائرة تور جديدة لهذا الموقع">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

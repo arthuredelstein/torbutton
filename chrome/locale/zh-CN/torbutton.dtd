@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "高级安全选项…">
 <!ENTITY torbutton.circuit_display.title "Tor 链路">
 <!ENTITY torbutton.circuit_display.new_circuit "为此站点使用新线路">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

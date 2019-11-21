@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "고급 보안 설정">
 <!ENTITY torbutton.circuit_display.title "토르 서킷">
 <!ENTITY torbutton.circuit_display.new_circuit "이 사이트에서 새로운 서킷을 재구축">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

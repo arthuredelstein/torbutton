@@ -1,6 +1,6 @@
 <!ENTITY aboutTBUpdate.changelogTitle "Tor Browser Değişiklik Günlüğü">
 <!ENTITY aboutTBUpdate.updated "Tor Browser güncellendi.">
-<!ENTITY aboutTBUpdate.linkPrefix "Bu sürüm hakkındaki güncel bilgileri ">
+<!ENTITY aboutTBUpdate.linkPrefix "Bu sürüm hakkındaki güncel bilgiler ">
 <!ENTITY aboutTBUpdate.linkLabel  "web sitemizden edinilebilir">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.version "Sürüm">

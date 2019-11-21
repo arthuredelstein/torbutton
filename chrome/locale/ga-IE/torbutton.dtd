@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Ardsocruithe Slándála...">
 <!ENTITY torbutton.circuit_display.title "Ciorcad Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Ciorcad Nua don Suíomh seo">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

@@ -1,11 +1,11 @@
 <!ENTITY torbutton.context_menu.new_identity "Nieuwe identiteit">
-<!ENTITY torbutton.context_menu.new_identity_key "I">
+<!ENTITY torbutton.context_menu.new_identity_key "d">
 <!ENTITY torbutton.context_menu.new_circuit "Nieuw Tor-circuit voor deze website">
-<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.new_circuit_key "c">
 <!ENTITY torbutton.context_menu.networksettings "Tor-netwerkinstellingen…">
-<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.networksettings.key "n">
 <!ENTITY torbutton.context_menu.downloadUpdate "Controleren op Tor Browser-update…">
-<!ENTITY torbutton.context_menu.downloadUpdate.key "U">
+<!ENTITY torbutton.context_menu.downloadUpdate.key "u">
 <!ENTITY torbutton.context_menu.cookieProtections "Cookiebeschermingen…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik om Torbutton te initialiseren">
@@ -45,5 +45,8 @@
 <!ENTITY torbutton.prefs.sec_custom_summary "Uw aangepaste browservoorkeuren hebben tot ongebruikelijke beveiligingsinstellingen geleid. Uit veiligheids- en privacyoverwegingen raden we aan een van de standaard beveiligingsniveaus te kiezen.">
 <!ENTITY torbutton.prefs.sec_restore_defaults "Standaardwaarden herstellen">
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Geavanceerde beveiligingsinstellingen…">
-<!ENTITY torbutton.circuit_display.title "Torcircuit">
+<!ENTITY torbutton.circuit_display.title "Tor-circuit">
 <!ENTITY torbutton.circuit_display.new_circuit "Nieuw circuit voor deze website">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Clientauthenticatieprompt voor onion-service openen">

@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Pengaturan Keamanan Lanjutan...">
 <!ENTITY torbutton.circuit_display.title "Sirkuit Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Sirkuit Baru untuk Situs Ini">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

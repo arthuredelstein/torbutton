@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Erweiterte Sicherheitseinstellungen …">
 <!ENTITY torbutton.circuit_display.title "Tor Kanal">
 <!ENTITY torbutton.circuit_display.new_circuit "Neuen Kanal für diese Seite">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

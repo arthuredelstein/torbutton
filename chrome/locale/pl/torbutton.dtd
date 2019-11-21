@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Zaawansowane ustawienia zabezpieczeń…">
 <!ENTITY torbutton.circuit_display.title "Obwód Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Nowy obwód dla tej strony">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

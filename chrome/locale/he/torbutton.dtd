@@ -2,11 +2,11 @@
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "נתיב Tor חדש לאתר זה">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
-<!ENTITY torbutton.context_menu.networksettings "הגדרות רשת Tor...">
+<!ENTITY torbutton.context_menu.networksettings "הגדרות רשת Tor…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "בדוק אחר עדכון לדפדפן Tor...">
+<!ENTITY torbutton.context_menu.downloadUpdate "בדוק אחר עדכון לדפדפן Tor…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "הגנות עוגיות...">
+<!ENTITY torbutton.context_menu.cookieProtections "הגנות עוגיות…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "לחץ כדי לאתחל את Torbutton">
 <!ENTITY torbutton.prefs.security_settings "הגדרות אבטחה של דפדפן Tor">
@@ -44,6 +44,9 @@
 <!ENTITY torbutton.prefs.sec_safest_tooltip "רמת אבטחה: הכי בטוחה">
 <!ENTITY torbutton.prefs.sec_custom_summary "העדפות הדפדפן המותאמות שלך נבעו מהגדרות אבטחה בלתי שגרתיות. מטעמי אבטחה ופרטיות, אנו ממליצים לך לבחור באחת מרמות האבטחה של ברירת המחדל.">
 <!ENTITY torbutton.prefs.sec_restore_defaults "שחזר ברירות מחדל">
-<!ENTITY torbutton.prefs.sec_advanced_security_settings "הגדרות אבטחה מתקדמות...">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "הגדרות אבטחה מתקדמות…">
 <!ENTITY torbutton.circuit_display.title "מעגל Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "מעגל חדש עבור אתר זה">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "פתח ידוע אימות לקוח של שירות בצל">

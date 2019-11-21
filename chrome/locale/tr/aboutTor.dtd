@@ -17,10 +17,10 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Sorularınız mı var?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tor Browser Rehberine Bakabilirsiniz">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tor Browser rehberine bakabilirsiniz">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Rehberi">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser rehberi">
 
 <!ENTITY aboutTor.tor_mission.label "Tor Projesi, US 501(c)(3) koşullarına göre, özgür ve açık kaynaklı anonimlik ve kişisel gizlilik teknolojileri geliştirerek insan hakları ve özgürlüklerini ileriye götürmeyi, bu teknolojilerin bilimsel ve kültürel olarak bilinirliğini arttırmayı ve herkes tarafından erişebilmesini sağlamak amacıyla çalışan, kar amacı gütmeyen bir kuruluştur.">
 <!ENTITY aboutTor.getInvolved.label "Katkıda Bulunun »">

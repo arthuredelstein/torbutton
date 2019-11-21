@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Avanserte sikkerhetsinnstillinger...">
 <!ENTITY torbutton.circuit_display.title "Tor Krets">
 <!ENTITY torbutton.circuit_display.new_circuit "Ny Krets for denne siden">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

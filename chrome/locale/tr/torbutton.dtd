@@ -1,6 +1,6 @@
-<!ENTITY torbutton.context_menu.new_identity "Kimliği Yenile">
+<!ENTITY torbutton.context_menu.new_identity "Kimliği yenile">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.new_circuit "Bu Sitenin Tor Devresini Yenile">
+<!ENTITY torbutton.context_menu.new_circuit "Bu sitenin Tor devresini yenile">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
 <!ENTITY torbutton.context_menu.networksettings "Tor Ağı Ayarları...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
@@ -47,3 +47,6 @@
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Gelişmiş Güvenlik Düzeyi Ayarları…">
 <!ENTITY torbutton.circuit_display.title "Tor Devresi">
 <!ENTITY torbutton.circuit_display.new_circuit "Bu Sitenin Devresini Yenile">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Onion hizmeti istemi kimlik doğrulama penceresini aç">
