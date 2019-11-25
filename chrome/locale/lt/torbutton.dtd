@@ -1,20 +1,52 @@
 <!ENTITY torbutton.context_menu.new_identity "Nauja tapatybė">
-<!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
+<!ENTITY torbutton.context_menu.new_identity_key "T">
+<!ENTITY torbutton.context_menu.new_circuit "Nauja Tor grandinė šiai svetainei">
+<!ENTITY torbutton.context_menu.new_circuit_key "G">
+<!ENTITY torbutton.context_menu.networksettings "Tor tinklo nustatymai…">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Tikrinti ar yra Tor Browser atnaujinimų…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "Slapukų apsaugos">
-<!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Paspauskite kad aktyvuoti Torbutton">
-<!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
-<!ENTITY torbutton.cookiedialog.lockCol "Protected">
-<!ENTITY torbutton.cookiedialog.domainCol "Host">
+<!ENTITY torbutton.context_menu.cookieProtections "Slapukų apsaugos…">
+<!ENTITY torbutton.context_menu.cookieProtections.key "P">
+<!ENTITY torbutton.button.tooltip "Spustelėkite, kad aktyvuotumėte Torbutton">
+<!ENTITY torbutton.prefs.security_settings "Tor Browser saugumo nustatymai">
+<!ENTITY torbutton.cookiedialog.title "Tvarkyti slapukų apsaugas">
+<!ENTITY torbutton.cookiedialog.lockCol "Apsaugotas">
+<!ENTITY torbutton.cookiedialog.domainCol "Serveris">
 <!ENTITY torbutton.cookiedialog.nameCol "Pavadinimas">
-<!ENTITY torbutton.cookiedialog.pathCol "Path">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protect Cookie">
-<!ENTITY torbutton.cookiedialog.removeCookie "Remove Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Unprotect Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
-<!ENTITY torbutton.prefs.sec_restore_defaults "Atstatyti numatytuosius">
+<!ENTITY torbutton.cookiedialog.pathCol "Kelias">
+<!ENTITY torbutton.cookiedialog.protectCookie "Apsaugoti slapuką">
+<!ENTITY torbutton.cookiedialog.removeCookie "Šalinti slapuką">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Neapsaugoti slapuko">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Šalinti visus, išskyrus apsaugotus">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Apsaugoti naujus slapukus">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Neapsaugoti naujų slapukų">
+<!ENTITY torbutton.prefs.sec_caption "Saugumo lygmuo">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Saugumo slankiklis leidžia jums išjungti tam tikras naršyklės ypatybes, kurios gali padaryti jūsų naršyklę labiau pažeidžiamą bandymams įsibrauti.">
+<!ENTITY torbutton.prefs.sec_standard_label "Standartinis">
+<!ENTITY torbutton.prefs.sec_standard_description "Visos Tor Browser ir internetinių svetainių ypatybės yra įjungtos.">
+<!ENTITY torbutton.prefs.sec_safer_label "Saugesnis">
+<!ENTITY torbutton.prefs.sec_safer_description "Išjungia tas internetinių svetainių ypatybes, kurios, dažnai, būna pavojingos, dėl to kai kurios svetainės gali prarasti funkcionalumą.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Saugesniame nustatyme:">
+<!ENTITY torbutton.prefs.sec_safest_label "Saugiausias">
+<!ENTITY torbutton.prefs.sec_safest_description "Leidžia tik tas internetinių svetainių ypatybes, kurios yra reikalingos statinėms svetainėms bei pagrindinėms paslaugoms. Šie pakeitimai paveikia paveikslus, medija ir scenarijus.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Saugiausiame nustatyme:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Sužinoti daugiau">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript yra išjungtas ne HTTPS svetainėse.">
+<!ENTITY torbutton.prefs.sec_js_disabled "Pagal numatymą, Javascript yra išjungtas visose svetainėse.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Kai kurie šriftai ir matematiniai simboliai yra išjungti.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Kai kurie šriftai, piktogramos, matematiniai simboliai ir paveikslai yra išjungti.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Garsas ir vaizdas (HTML5 medija), bei WebGL yra atkuriami tik spustelėjus.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Tinkintas">
+<!ENTITY torbutton.prefs.sec_overview "Išjungia tam tikras saityno ypatybes, kurios gali būti panaudotos užpulti jūsų saugumą ar anonimiškumą.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Saugumo lygmuo : Standartinis">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Saugumo lygmuo : Saugesnis">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Saugumo lygmuo : Saugiausias">
+<!ENTITY torbutton.prefs.sec_custom_summary "Jūsų pasirinktinės naršyklės nuostatos sąlygojo neįprastus saugumo nustatymus. Dėl saugumo ir privatumo priežasčių, rekomenduojame jums pasirinkti vieną iš numatytųjų saugumo lygių.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Atkurti numatytuosius">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Išplėstiniai saugumo nustatymai…">
+<!ENTITY torbutton.circuit_display.title "Tor grandinė">
+<!ENTITY torbutton.circuit_display.new_circuit "Nauja grandinė šiai svetainei">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Atidarykite onion paslaugos kliento autentifikavimo eilutę">

@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; kuria ">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "&vendorShortName;">
+<!ENTITY project.end             ", ne pelno siekianti organizacija, dirbanti tam, kad apsaugotų jūsų privatumą ir laisvę internete.">
+
+<!ENTITY help.start              "Norite padėti?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Paaukokite">
+<!ENTITY help.or                 " arba ">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "įsitraukite">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Klausimai?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Padėkite Tor tinklui augti!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Licencijavimo informacija">
+<!ENTITY tor.TrademarkStatement   "&quot;Tor&quot; ir &quot;Onion logotipas&quot; yra registruoti Tor Project, Inc. prekių ženklai.">
