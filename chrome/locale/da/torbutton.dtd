@@ -49,4 +49,4 @@
 <!ENTITY torbutton.circuit_display.new_circuit "Nyt kredsløb til dette sted">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Åbn prompt til klientautentifikation af oniontjeneste">

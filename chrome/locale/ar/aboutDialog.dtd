@@ -1,19 +1,19 @@
-<!ENTITY project.start           "طوّر &brandShortName;">
+<!ENTITY project.start           " تطوير: &brandShortName;">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "&vendorShortName;">
-<!ENTITY project.end             "، مؤسسة غير هادفة للربح تعمل على حماية خصوصيتك وحريتك على الإنترنت.">
+<!ENTITY project.end             "، مؤسسة غير هادفة للرّبح تعمل على حماية الخصوصيّة والحرّية على الإنترنت.">
 
 <!ENTITY help.start              "هل ترغب في المساعدة؟">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
 <!ENTITY help.donateLink         "تبرّع">
 <!ENTITY help.or                 "أو">
 <!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
-<!ENTITY help.getInvolvedLink    "شارك">
+<!ENTITY help.getInvolvedLink    "شاركوا">
 <!ENTITY help.end                "!">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
 <!ENTITY bottomLinks.questions   "أية أسئلة؟">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
-<!ENTITY bottomLinks.grow        "ساعد شبكة تور على النمو.">
+<!ENTITY bottomLinks.grow        "ساعدوا شبكة تور على النّمو!">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
 <!ENTITY bottomLinks.license  "معلومات الترخيص">
-<!ENTITY tor.TrademarkStatement   "&quot;تور&quot; و &quot;شعار البصلة&quot; علامات تجارية مسجلة باسم شركة مشروع تور المحدودة">
+<!ENTITY tor.TrademarkStatement   "&quot;تور&quot; و &quot;شعار البصلة&quot; هي علامات تجاريّة مسجّلة باسم مشروع تور المحدودة">
