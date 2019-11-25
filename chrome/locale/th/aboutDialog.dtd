@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; พัฒนาโดย">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "the &vendorShortName;">
+<!ENTITY project.end             "เป็นองค์กรไม่แสวงหาผลกำไรที่ทำงานเพื่อปกป้องความเป็นส่วนตัวและอิสรภาพของคุณทางออนไลน์">
+
+<!ENTITY help.start              "อยากช่วยเหลือหรือไม่">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "บริจาค">
+<!ENTITY help.or                 "หรือ">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "เข้ามามีส่วนร่วม">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "คำถาม?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "ช่วยให้เครือข่ายทอร์เติบโต!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "ข้อมูลลิขสิทธิ์">
+<!ENTITY tor.TrademarkStatement   "'Tor 'และ' Onion Logo 'เป็นเครื่องหมายการค้าจดทะเบียนของโครงการ Tor Project, Inc.">

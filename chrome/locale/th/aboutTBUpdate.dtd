@@ -1,0 +1,8 @@
+<!ENTITY aboutTBUpdate.changelogTitle "บันทึกการเปลี่ยนแปลงของ Tor Browser">
+<!ENTITY aboutTBUpdate.updated "Tor Browser ถูกอัปเดตแล้ว">
+<!ENTITY aboutTBUpdate.linkPrefix "สำหรับข้อมูลที่อัปเดตที่สุดของการเผยแพร่ครั้งนี้">
+<!ENTITY aboutTBUpdate.linkLabel  "ดูเว็บไซต์ของเรา">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.version "รุ่น">
+<!ENTITY aboutTBUpdate.releaseDate "วันที่เผยแพร่">
+<!ENTITY aboutTBUpdate.releaseNotes "หมายเหตุการเผยแพร่">

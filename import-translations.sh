@@ -2,7 +2,7 @@
 
 # This var comes from the TBB locale list.
 # XXX: Find some way to keep this, tor-launcher, and Tor Browser in sync
-BUNDLE_LOCALES="ar ca cs da de el es-AR es-ES fa fr ga-IE he hu id is it ja ka ko lt nb-NO mk ms nl pl pt-BR ro ru sv-SE tr vi zh-CN zh-TW"
+BUNDLE_LOCALES="ar ca cs da de el es-AR es-ES fa fr ga-IE he hu id is it ja ka ko lt nb-NO mk ms nl pl pt-BR ro ru sv-SE th tr vi zh-CN zh-TW"
 
 # XXX: Basque (eu) by request in #10687.
 # This is not used for official builds, but should remain so Basque XPIs can be

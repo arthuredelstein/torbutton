@@ -1,19 +1,52 @@
 <!ENTITY torbutton.context_menu.new_identity "สร้างตัวตนใหม่">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
-<!ENTITY torbutton.context_menu.downloadUpdate.key "A">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
+<!ENTITY torbutton.context_menu.new_circuit "วงจร Tor ใหม่สำหรับไซต์นี้">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.networksettings "ตั้งค่าเครือข่าย Tor">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "ตรวจสอบสถานะการปรับรุ่น Tor Browser">
+<!ENTITY torbutton.context_menu.downloadUpdate.key "U">
+<!ENTITY torbutton.context_menu.cookieProtections "การป้องกันคุกกี้">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Click to initialize Torbutton">
-<!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
-<!ENTITY torbutton.cookiedialog.lockCol "Protected">
-<!ENTITY torbutton.cookiedialog.domainCol "Host">
-<!ENTITY torbutton.cookiedialog.nameCol "Name">
-<!ENTITY torbutton.cookiedialog.pathCol "Path">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protect Cookie">
-<!ENTITY torbutton.cookiedialog.removeCookie "Remove Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Unprotect Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
+<!ENTITY torbutton.button.tooltip "คลิกเพื่อเริ่มใช้ Torbutton">
+<!ENTITY torbutton.prefs.security_settings "ตั้งค่าความปลอดภัย Tor Browser">
+<!ENTITY torbutton.cookiedialog.title "จัดการป้องกัน Cookie">
+<!ENTITY torbutton.cookiedialog.lockCol "ถูกป้องกันอยู่">
+<!ENTITY torbutton.cookiedialog.domainCol "โฮสต์">
+<!ENTITY torbutton.cookiedialog.nameCol "ชื่อ">
+<!ENTITY torbutton.cookiedialog.pathCol "เส้นทาง">
+<!ENTITY torbutton.cookiedialog.protectCookie "การป้องกันคุกกี้">
+<!ENTITY torbutton.cookiedialog.removeCookie "นำคุกกี้ออก">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "คุกกี้ที่ไม่ถูกป้องกัน">
+<!ENTITY torbutton.cookiedialog.removeAllBut "ลบทั้งหมดแต่ป้องกันเอาไว้">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "ป้องกันคุกกี้ใหม่">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "ไม่ต้องป้องกันคุกกี้ใหม่">
+<!ENTITY torbutton.prefs.sec_caption "ระดับความปลอดภัย">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "สไลเดอร์สำหรับความปลอดภัยทำให้คุณปิดคุณสมบัติบางส่วนของเบราว์เซอร์ที่ทำให้บราวเซอร์ของคุณเสี่ยงต่อความพยายามที่จะแฮ็ค">
+<!ENTITY torbutton.prefs.sec_standard_label "มาตรฐาน">
+<!ENTITY torbutton.prefs.sec_standard_description "เปิดใช้งานคุณสมบัติของเบราว์เซอร์ Tor และเว็บไซต์ทั้งหมด">
+<!ENTITY torbutton.prefs.sec_safer_label "ปลอดภัยกว่า">
+<!ENTITY torbutton.prefs.sec_safer_description "ปิดคุณสมบัติเว็บไซต์มักจะมีความเสี่ยง ทำให้บางเว็บไซต์สูญเสียฟังก์ชันการใช้งาน ">
+<!ENTITY torbutton.prefs.sec_safer_list_label "การตั้งค่าที่ปลอดภัยกว่า">
+<!ENTITY torbutton.prefs.sec_safest_label "ปลอดภัยที่สุด">
+<!ENTITY torbutton.prefs.sec_safest_description "อนุญาตให้เปิดคุณสมบัติเว็บไซต์เท่าที่จำเป็นสำหรับทำให้เว็บไซต์เสถียรและทำงานพื้นฐานได้ ความเปลี่ยนแปลงเหล่านี้จะมีผลต่อรูปภาพ ข้อมูล และสคริปต์">
+<!ENTITY torbutton.prefs.sec_safest_list_label "การตั้งค่าที่ปลอดภัยที่สุด">
+<!ENTITY torbutton.prefs.sec_learn_more_label "เรียนรู้เพิ่มเติม">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript ถูกปิดบนไซต์ที่ไม่ใช่ HTTPS">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript ถูกระงับโดยปริยายสำหรับทุกไซต์">
+<!ENTITY torbutton.prefs.sec_limit_typography "แบบอักษรและสัญลักษณ์ทางคณิตศาสตร์บางอย่างถูกปิดใช้งาน">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "แบบอักษร ไอคอน สัญลักษณ์ทางคณิตศาสตร์ และรูปภาพบางอย่างถูกปิดใช้งาน ">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "คลิกเพื่อเล่นเสียงและวิดีโอ (HTML 5 มีเดีย) และ WebGL ">
+<!ENTITY torbutton.prefs.sec_custom_warning "กำหนดเอง">
+<!ENTITY torbutton.prefs.sec_overview "ปิดใช้งานคุณลักษณะบางอย่างของ เว็บ ที่สามารถใช้เพื่อ การโจมตี ความปลอดภัย และ ความเป็นนิรนาม">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "ระดับความปลอดภัย มาตรฐาน">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "ระดับ ความปลอดภัย : ปลอดภัยยิ่งขึ้น">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "ระดับ ความปลอดภัย : ปลอดภัยที่สุด">
+<!ENTITY torbutton.prefs.sec_custom_summary "การตั้งค่าเบราว์เซอร์ที่กำหนดเองของคุณส่งผลให้เกิดการตั้งค่าที่ไม่ความปลอดภัย เพื่อเหตุผลด้านความปลอดภัยและความเป็นส่วนตัวเรา ขอแนะนำให้คุณเลือกหนึ่งในระดับความปลอดภัยค่าเริ่มต้น">
+<!ENTITY torbutton.prefs.sec_restore_defaults "กลับสู่ค่ามาตรฐาน">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "การตั้งค่าความปลอดภัยชั้นสูง">
+<!ENTITY torbutton.circuit_display.title "การเชื่องโยง Tor ">
+<!ENTITY torbutton.circuit_display.new_circuit "แหล่งเชื่อมโยงข้อมูลใหม่สำหรับเว็บไซต์นี้">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">

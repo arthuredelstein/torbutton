@@ -79,6 +79,8 @@ torbutton.jar:
  locale/ru/ (chrome/locale/ru/*)
 % locale torbutton sv-SE %locale/sv-SE/
  locale/sv-SE/ (chrome/locale/sv-SE/*)
+% locale torbutton th %locale/th/
+ locale/th/ (chrome/locale/th/*)
 % locale torbutton tr %locale/tr/
  locale/tr/ (chrome/locale/tr/*)
 % locale torbutton vi %locale/vi/
