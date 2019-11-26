@@ -1,0 +1,8 @@
+<!ENTITY aboutTBUpdate.changelogTitle "Log Perubahan Pelayar Tor">
+<!ENTITY aboutTBUpdate.updated "Pelayar Tor telah dikemaskinikan.">
+<!ENTITY aboutTBUpdate.linkPrefix "Untuk dapatkan maklumat terkini berkenaan keluaran ini.">
+<!ENTITY aboutTBUpdate.linkLabel  "lawati laman sesawang kami">
+<!ENTITY aboutTBUpdate.linkSuffix ".">
+<!ENTITY aboutTBUpdate.version "Versi">
+<!ENTITY aboutTBUpdate.releaseDate "Tarikh Keluaran">
+<!ENTITY aboutTBUpdate.releaseNotes "Nota Keluaran">

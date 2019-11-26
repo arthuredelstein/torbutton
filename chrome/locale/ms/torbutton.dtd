@@ -1,19 +1,52 @@
-<!ENTITY torbutton.context_menu.new_identity "New Identity">
+<!ENTITY torbutton.context_menu.new_identity "Identiti Baharu">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
-<!ENTITY torbutton.context_menu.networksettings "Open Network Settings…">
-<!ENTITY torbutton.context_menu.downloadUpdate "Download Tor Browser Bundle Update...">
+<!ENTITY torbutton.context_menu.new_circuit "Litar Tor baharu untuk Laman ini">
+<!ENTITY torbutton.context_menu.new_circuit_key "C">
+<!ENTITY torbutton.context_menu.networksettings "Tetapan Rangkaian Tor...">
+<!ENTITY torbutton.context_menu.networksettings.key "N">
+<!ENTITY torbutton.context_menu.downloadUpdate "Periksa untuk dapatkan Kemaskini Pelayar Tor...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie Protections">
+<!ENTITY torbutton.context_menu.cookieProtections "Perlindungan Kuki...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Click to initialize Torbutton">
-<!ENTITY torbutton.cookiedialog.title "Manage Cookie Protections">
-<!ENTITY torbutton.cookiedialog.lockCol "Protected">
-<!ENTITY torbutton.cookiedialog.domainCol "Host">
-<!ENTITY torbutton.cookiedialog.nameCol "Name">
-<!ENTITY torbutton.cookiedialog.pathCol "Path">
-<!ENTITY torbutton.cookiedialog.protectCookie "Protect Cookie">
-<!ENTITY torbutton.cookiedialog.removeCookie "Remove Cookie">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Unprotect Cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Remove All But Protected">
-<!ENTITY torbutton.cookiedialog.saveAllCookies "Protect New Cookies">
-<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Do Not Protect New Cookies">
+<!ENTITY torbutton.button.tooltip "Klik untuk mengawalkan Torbutton">
+<!ENTITY torbutton.prefs.security_settings "Tetapan Keselamatan Pelayar Tor">
+<!ENTITY torbutton.cookiedialog.title "Urus Perlindungan Kuki">
+<!ENTITY torbutton.cookiedialog.lockCol "Dilindungi">
+<!ENTITY torbutton.cookiedialog.domainCol "Hos">
+<!ENTITY torbutton.cookiedialog.nameCol "Nama">
+<!ENTITY torbutton.cookiedialog.pathCol "Laluan">
+<!ENTITY torbutton.cookiedialog.protectCookie "Lindung Kuki">
+<!ENTITY torbutton.cookiedialog.removeCookie "Buang Kuki">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Kuki Tidak Dilindungi">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Buang Semua Kecuali Dilindungi">
+<!ENTITY torbutton.cookiedialog.saveAllCookies "Lindungi Kuki Baharu">
+<!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Jangan Lindungi Kuki Baharu">
+<!ENTITY torbutton.prefs.sec_caption "Tahap Keselamatan">
+<!ENTITY torbutton.prefs.sec_caption_tooltip "Pelaras Keselamatan membolehkan anda lumpuhkan beberapa fitur pelayar yang mana ia menjadikan pelayar anda mudah terdedah dengan serangan penggodaman.">
+<!ENTITY torbutton.prefs.sec_standard_label "Piawai">
+<!ENTITY torbutton.prefs.sec_standard_description "Semua Pelayar Tor dan fitur laman sesawang telah dibenarkan.">
+<!ENTITY torbutton.prefs.sec_safer_label "Lebih Selamat">
+<!ENTITY torbutton.prefs.sec_safer_description "Fitur-fitur laman sesawang yang dilumpuhkan biasanya merbahaya, boleh menyebabkan beberapa laman kehilangan kefungsiannya.">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Pada tetapan lebih selamat:">
+<!ENTITY torbutton.prefs.sec_safest_label "Paling Selamat">
+<!ENTITY torbutton.prefs.sec_safest_description "Hanya benarkan fitur-fitur laman sesawang yang diperlukan untuk laman-laman statik dan perkhidmatan asas. Perubahan ini dapat menjejaskan imej, media dan skrip.">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Pada tetapan paling selamat:">
+<!ENTITY torbutton.prefs.sec_learn_more_label "Ketahui lebih lanjut">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Skrip Java dilumpuhkan pada laman-laman bukan-HTTPS.">
+<!ENTITY torbutton.prefs.sec_js_disabled "Skrip Java dilumpuhkan secara lalai untuk semua laman.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Sesetengah fon dan simbol matematik dilumpuhkan.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Sesetengah fon, ikon, simbol matematik, dan imej dilumpuhkan.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio dan video (media HTML5) dan WebGL adalah klik-untuk-dimainkan.">
+<!ENTITY torbutton.prefs.sec_custom_warning "Suai">
+<!ENTITY torbutton.prefs.sec_overview "Lumpuhkan beberapa fitur sesawang yang boleh digunakan untuk menyerang keselamatan dan keawanamaan anda.">
+<!ENTITY torbutton.prefs.sec_standard_tooltip "Tahap Keselamatan: Piawai">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Tahap Keselamatan : Lebih Selamat">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Tahap Keselamatan : Paling Selamat">
+<!ENTITY torbutton.prefs.sec_custom_summary "Keutamaan pelayar suai anda telah menyebabkan tetapan keselamatan luar jangkaan. Atas sebab keselamatan dan kerahsiaan, kami sarankan anda memilih salah satu daripada tahap keselamatan lalai yang ada.">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Pulih Lalai">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Tetapan Keselamatan Lanjutan...">
+<!ENTITY torbutton.circuit_display.title "Litar Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "Lihat baharu untuk Laman ini">
+
+<!-- Onion services strings.  Strings are kept here for ease of translation. -->
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Buka bisikan pengesahihan klien perkhidmatan onion">

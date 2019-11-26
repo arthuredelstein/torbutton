@@ -2,7 +2,14 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
-<!ENTITY  trademarkInfo.part1   "'Tor' and the 'Onion Logo' are registered trademarks of the Tor Project, Inc.">
+<!ENTITY  brandShorterName      "Pelayar Tor">
+<!ENTITY  brandShortName        "Pelayar Tor">
+<!ENTITY  brandFullName         "Pelayar Tor">
+<!ENTITY  vendorShortName       "Projek Tor">
+<!ENTITY  trademarkInfo.part1   "'Tor' dan 'Logo Onion' adalah cap dagangan berdaftar bagi Projek Tor, Inc.">
+
+<!-- The following strings are for bug #10280's UI. We place them here for our translators -->
+<!ENTITY plugins.installed.find "Klik untuk muat pemalam sistem terpasang">
+<!ENTITY plugins.installed.enable "Benarkan pemalam">
+<!ENTITY plugins.installed.disable "Lumpuhkan pemalam">
+<!ENTITY plugins.installed.disable.tip "Klik untuk elak memuatkan pemalam sistem">

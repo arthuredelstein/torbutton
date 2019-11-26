@@ -1,0 +1,19 @@
+<!ENTITY project.start           "&brandShortName; dibangunkan oleh">
+<!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
+<!ENTITY project.tpoLink         "&vendorShortName;">
+<!ENTITY project.end             ", sebuah usaha tidak berasaskan keuntungan untuk melindungi kerahsiaan dan kebebasan atas talian anda.">
+
+<!ENTITY help.start              "Mahu membantu?">
+<!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
+<!ENTITY help.donateLink         "Derma">
+<!ENTITY help.or                 "atau">
+<!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
+<!ENTITY help.getInvolvedLink    "sertai">
+<!ENTITY help.end                "!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
+<!ENTITY bottomLinks.questions   "Ada Pertanyaan?">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
+<!ENTITY bottomLinks.grow        "Bantulah Pembangunan Rangkaian Tor!">
+<!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
+<!ENTITY bottomLinks.license  "Maklumat Pelesenan">
+<!ENTITY tor.TrademarkStatement   "'Tor' dan 'Logo Onion' adalah cap dagangan berdaftar bagi Projek Tor, Inc.">
