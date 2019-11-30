@@ -1,5 +1,5 @@
 <!--
-   - Copyright (c) 2019, The Tor Project, Inc.
+   - Copyright (c) 2018, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -22,16 +22,16 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "V">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser naudotojo vadovas">
 
-<!ENTITY aboutTor.tor_mission.label "Tor Project yra JAV 501(c)(3) ne pelno organizacija remianti žmogaus teises ir laisves, kurianti ir diegianti laisvas ir atvirojo kodo anonimiškumo ir privatumo technologijas, palaikanti jų neribotą prieinamumą ir naudojimą bei mokslinį ir visuotinį supratimą.">
+<!ENTITY aboutTor.tor_mission.label "Tor Project yra JAV 501(c)(3) ne pelno organizacija remianti žmogaus teises ir laisves, kurianti ir diegianti laisvas ir atvirojo kodo anonimiškumo bei privatumo technologijas, palaikanti jų neribotą prieinamumą ir naudojimą bei mokslinį ir visuotinį supratimą.">
 <!ENTITY aboutTor.getInvolved.label "Įsitraukite »">
 <!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "Gaukite naujienas iš Tor tiesiai į savo pašto dėžutę.">
 <!ENTITY aboutTor.newsletter.link_text "Užsisakykite Tor naujienas.">
 <!ENTITY aboutTor.donationBanner.line2e "Išlaikykite Tor stiprų.">
-<!ENTITY aboutTor.donationBanner.buttonA "Paremkite dabar">
+<!ENTITY aboutTor.donationBanner.buttonA "Paaukokite dabar">
 
 <!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Paremkite šiandien ir Mozilla paaukos tiek pat, kiek ir jūs.">
+<!ENTITY aboutTor.ey2019.mozilla "Paaukokite šiandien ir Mozilla paaukos tiek pat, kiek ir jūs.">
 <!ENTITY aboutTor.ey2019.tracking "Sekimas, stebėjimas ir cenzūra internete yra plačiai paplitę.">
 <!ENTITY aboutTor.ey2019.takeback "Susigrąžinkite internetą naudodami Tor.">

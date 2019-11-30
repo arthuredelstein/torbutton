@@ -1,7 +1,7 @@
 <!ENTITY aboutTBUpdate.changelogTitle "Tor Browser keitinių žurnalas">
-<!ENTITY aboutTBUpdate.updated "Tor Browser atnaujinta.">
+<!ENTITY aboutTBUpdate.updated "Tor Naršyklė atnaujinta.">
 <!ENTITY aboutTBUpdate.linkPrefix "Norėdami sužinoti naujausią informaciją apie šią laida, ">
-<!ENTITY aboutTBUpdate.linkLabel  "apsilankykite mūsų svetainėje">
+<!ENTITY aboutTBUpdate.linkLabel  "apsilankykite mūsų internetinėje svetainėje">
 <!ENTITY aboutTBUpdate.linkSuffix ".">
 <!ENTITY aboutTBUpdate.version "Versija">
 <!ENTITY aboutTBUpdate.releaseDate "Laidos data">

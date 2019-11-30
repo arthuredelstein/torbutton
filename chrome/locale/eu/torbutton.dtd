@@ -38,11 +38,11 @@
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Letra-mota, ikono, ikur matematiko batzuk eta irudiak ezgaituta daude.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audioa eta bideoa (HTML5 media), eta WebGL erreproduzitzeko klikatu behar da.">
 <!ENTITY torbutton.prefs.sec_custom_warning "Pertsonalizatua">
-<!ENTITY torbutton.prefs.sec_overview "Disable certain web features that can be used to attack your security and anonymity.">
+<!ENTITY torbutton.prefs.sec_overview "Ezgaitu zure segurtasuna eta anonimotasuna erasotzeko erabili daitezkeen web ezaugarri batzuk.">
 <!ENTITY torbutton.prefs.sec_standard_tooltip "Segurtasun maila : Estandarra">
 <!ENTITY torbutton.prefs.sec_safer_tooltip "Segurtasun maila : Seguruagoa">
 <!ENTITY torbutton.prefs.sec_safest_tooltip "Segurtasun maila : Seguruena">
-<!ENTITY torbutton.prefs.sec_custom_summary "Your custom browser preferences have resulted in unusual security settings. For security and privacy reasons, we recommend you choose one of the default security levels.">
+<!ENTITY torbutton.prefs.sec_custom_summary "Zure nabigatzailearen hobespenek segurtasun ezarpen ezohikoak izatea eragin dute. Segurtasun eta pribatutasun arrazoiak direla medio, gomendatzen dizugu segurtasun maila lehenetsitako bat aukeratzea.">
 <!ENTITY torbutton.prefs.sec_restore_defaults "Lehenetsiak berrezarri">
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Segurtasun ezarpen aurreratuak…">
 <!ENTITY torbutton.circuit_display.title "Tor Zirkuitoa">

@@ -1,4 +1,4 @@
-<!ENTITY project.start           "&brandShortName; kuria ">
+<!ENTITY project.start           "&brandShortName; plėtoja ">
 <!-- LOCALIZATION NOTE (project.tpoLink): This is a link title that links to https://www.torproject.org -->
 <!ENTITY project.tpoLink         "&vendorShortName;">
 <!ENTITY project.end             ", ne pelno siekianti organizacija, dirbanti tam, kad apsaugotų jūsų privatumą ir laisvę internete.">

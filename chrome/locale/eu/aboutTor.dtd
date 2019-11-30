@@ -32,6 +32,6 @@
 <!ENTITY aboutTor.donationBanner.buttonA "Egin dohaintza orain">
 
 <!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Give today, and Mozilla will match your donation.">
-<!ENTITY aboutTor.ey2019.tracking "Tracking, surveillance, and censorship are widespread online.">
-<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">
+<!ENTITY aboutTor.ey2019.mozilla "Dohaintza egin gaur, eta Mozillak emandakoa berdinduko du.">
+<!ENTITY aboutTor.ey2019.tracking "Jarraipena, jagoletza eta zentsura oso hedatuta daune online.">
+<!ENTITY aboutTor.ey2019.takeback "Berreskuratu Internet-a Torri esker">

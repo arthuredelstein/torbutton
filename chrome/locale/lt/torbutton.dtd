@@ -4,12 +4,12 @@
 <!ENTITY torbutton.context_menu.new_circuit_key "G">
 <!ENTITY torbutton.context_menu.networksettings "Tor tinklo nustatymai…">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
-<!ENTITY torbutton.context_menu.downloadUpdate "Tikrinti ar yra Tor Browser atnaujinimų…">
+<!ENTITY torbutton.context_menu.downloadUpdate "Tikrinti, ar yra Tor Naršyklės atnaujinimų…">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Slapukų apsaugos…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "P">
 <!ENTITY torbutton.button.tooltip "Spustelėkite, kad aktyvuotumėte Torbutton">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser saugumo nustatymai">
+<!ENTITY torbutton.prefs.security_settings "Tor Naršyklės saugumo nustatymai">
 <!ENTITY torbutton.cookiedialog.title "Tvarkyti slapukų apsaugas">
 <!ENTITY torbutton.cookiedialog.lockCol "Apsaugotas">
 <!ENTITY torbutton.cookiedialog.domainCol "Serveris">
@@ -24,7 +24,7 @@
 <!ENTITY torbutton.prefs.sec_caption "Saugumo lygmuo">
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Saugumo slankiklis leidžia jums išjungti tam tikras naršyklės ypatybes, kurios gali padaryti jūsų naršyklę labiau pažeidžiamą bandymams įsibrauti.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standartinis">
-<!ENTITY torbutton.prefs.sec_standard_description "Visos Tor Browser ir internetinių svetainių ypatybės yra įjungtos.">
+<!ENTITY torbutton.prefs.sec_standard_description "Visos Tor Naršyklės ir internetinių svetainių ypatybės yra įjungtos.">
 <!ENTITY torbutton.prefs.sec_safer_label "Saugesnis">
 <!ENTITY torbutton.prefs.sec_safer_description "Išjungia tas internetinių svetainių ypatybes, kurios, dažnai, būna pavojingos, dėl to kai kurios svetainės gali prarasti funkcionalumą.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Saugesniame nustatyme:">
