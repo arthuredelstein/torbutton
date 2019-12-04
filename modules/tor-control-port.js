@@ -580,15 +580,21 @@ info.getConf = function (aControlSocket, key) {
 // A namespace for functions related to tor's ONION_CLIENT_AUTH_* commands.
 let onionAuth = {};
 
-// __onionAuth.add(controlSocket, hsAddress, b64PrivateKey, nickname, isPermanent)__.
+// __onionAuth.add(controlSocket, hsAddress, b64PrivateKey, isPermanent)__.
 // Sends a ONION_CLIENT_AUTH_ADD command to add a private key to the
 // Tor configuration.
 onionAuth.add = function (aControlSocket, hsAddress, b64PrivateKey,
-                          nickname, isPermanent) {
+                          isPermanent) {
+  if (!utils.isString(hsAddress)) {
+    return utils.rejectPromise("hsAddress argument should be a string");
+  }
+
+  if (!utils.isString(b64PrivateKey)) {
+    return utils.rejectPromise("b64PrivateKey argument should be a string");
+  }
+
   const keyType = "x25519";
   let cmd = `onion_client_auth_add ${hsAddress} ${keyType}:${b64PrivateKey}`;
-  if (nickname)
-    cmd += ` ClientName=${nickname}`;
   if (isPermanent)
     cmd += " Flags=Permanent";
   return aControlSocket.sendCommand(cmd);
@@ -649,9 +655,9 @@ tor.controller = function (ipcFile, host, port, password, onError) {
       isOpen = true;
   return { getInfo : key => info.getInfo(socket, key),
            getConf : key => info.getConf(socket, key),
-           onionAuthAdd : (hsAddress, b64PrivateKey, nickname, isPermanent) =>
+           onionAuthAdd : (hsAddress, b64PrivateKey, isPermanent) =>
                             onionAuth.add(socket, hsAddress, b64PrivateKey,
-                                          nickname, isPermanent),
+                                          isPermanent),
            watchEvent : (type, filter, onData) =>
                           event.watchEvent(socket, type, filter, onData),
            isOpen : () => isOpen,
