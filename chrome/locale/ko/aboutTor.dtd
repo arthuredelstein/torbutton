@@ -1,5 +1,5 @@
 <!--
-   - Copyright (c) 2018, The Tor Project, Inc.
+   - Copyright (c) 2019, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "Tor 프로젝트는 자유와 인권증진에 기여하는 US 501(c)(3) 비영리 단체입니다. 이는 자유롭게 이용 가능하며 오픈 소스 익명성과 사생활 보호기술을 개발하고 그 무제한적으로 이용하도록 지원하여 과학적 공적 이해로 나아갑니다.">
 <!ENTITY aboutTor.getInvolved.label "참여하기 »">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "최신의 Tor 뉴스를 받은 편지함에 곧장 받으십시오.">
 <!ENTITY aboutTor.newsletter.link_text "Tor 뉴스를 구독.">

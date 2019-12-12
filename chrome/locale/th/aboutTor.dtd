@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "โปรเจค Tor เป็นขององค์กรไม่แสวงหาผลกำไรที่ทำงานเพื่อส่งเสริมสิทธิมนุษยชนและเสรีภาพ โดยการสร้างและบริการเทคโนโลยีที่ฟรี เน้นความเป็นนิรนามและโอเพนซอร์ส และส่งเสริมความเป็นส่วนตัว เพื่อสนับสนุนการใช้งานที่ไม่ต้องถูกจำกัด และสร้างความเข้าใจในสาธารณะให้กว้างขึ้น">
 <!ENTITY aboutTor.getInvolved.label "มาร่วมกับเรา">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.th">
 
 <!ENTITY aboutTor.newsletter.tagline "ส่งตรงข่าวสารเกี่ยวกับ Tor ไปยังกล่องจดหมายของคุณ">
 <!ENTITY aboutTor.newsletter.link_text "สมัครรับข่าวสารเกี่ยวกับ Tor">

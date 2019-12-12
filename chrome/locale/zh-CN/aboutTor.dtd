@@ -1,5 +1,5 @@
 <!--
-   - Copyright (c) 2018, The Tor Project, Inc.
+   - Copyright (c) 2019, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project 是一家美国 501(c)(3) 非营利机构，致力于通过开发和部署自由且开放源代码的匿名和隐私技术，为其不受限制的可用性和使用提供支持，促进其在科研领域和大众的知名度来支持人权和自由。">
 <!ENTITY aboutTor.getInvolved.label "参与进来 »">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "通过邮件获取 Tor 的最新消息。">
 <!ENTITY aboutTor.newsletter.link_text "订阅 Tor 的最新动态">

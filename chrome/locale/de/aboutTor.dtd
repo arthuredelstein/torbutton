@@ -1,5 +1,5 @@
 <!--
-   - Copyright (c) 2018, The Tor Project, Inc.
+   - Copyright (c) 2019, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "Projekt Tor ist eine in den USA als &quot;The Tor Project&quot; US 501(c)(3) registrierte nicht-kommerzielle Organisation für Menschenrechte und Freiheit, die freie und quelloffene Technologien für Anonymität und Privatsphäre entwickelt und bereitstellt und die Forschung und das öffentliche Verständnis auf diesen Gebieten voranbringt.">
 <!ENTITY aboutTor.getInvolved.label "Mach mit »">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "Erhalte die neuesten Nachrichten von Tor direkt in den Posteingang.">
 <!ENTITY aboutTor.newsletter.link_text "Tor-Nachrichten abonnieren.">

@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "Tor Project yra JAV 501(c)(3) ne pelno organizacija remianti žmogaus teises ir laisves, kurianti ir diegianti laisvas ir atvirojo kodo anonimiškumo bei privatumo technologijas, palaikanti jų neribotą prieinamumą ir naudojimą bei mokslinį ir visuotinį supratimą.">
 <!ENTITY aboutTor.getInvolved.label "Įsitraukite »">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "Gaukite naujienas iš Tor tiesiai į savo pašto dėžutę.">
 <!ENTITY aboutTor.newsletter.link_text "Užsisakykite Tor naujienas.">

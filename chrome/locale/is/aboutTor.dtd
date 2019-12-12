@@ -1,5 +1,5 @@
 <!--
-   - Copyright (c) 2018, The Tor Project, Inc.
+   - Copyright (c) 2019, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "Tor-verkefnið er skráð sem bandarísk US 501(c)(3) sjálfboðaliðasamtök án gróðamarkmiða, samtök sem hafa mannréttindi og frelsi að leiðarljósi og stefna að þeim markmiðum með gerð og útbreiðslu á tækni til verndar persónuupplýsinga. Sú tækni eigi að vera öllum frjáls og heimil til notkunar, vera opin til skoðunar, enda sé eitt markmiðanna að stuðla að bættum almennum og vísindalegum skilningi á þessum málum.">
 <!ENTITY aboutTor.getInvolved.label "Taktu þátt »">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "Fáðu nýjustu fréttir af Tor beint í pósthólfið þitt.">
 <!ENTITY aboutTor.newsletter.link_text "Skráðu þig til að fá Tor-fréttir.">

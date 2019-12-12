@@ -110,9 +110,11 @@ var AboutTorListener = {
   },
 
   onLocaleChange: function(aLocale) {
-    // Set Tor Browser manual link.
+    // Set localized Tor Browser manual and "Get Involved" links.
     content.document.getElementById("manualLink").href =
                             "https://tb-manual.torproject.org/" + aLocale;
+    content.document.getElementById("getInvolvedLink").href =
+                            "https://community.torproject.org/" + aLocale;
 
     // Display the Tor Browser product name and version.
     try {

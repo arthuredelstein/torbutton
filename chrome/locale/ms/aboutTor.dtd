@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "Projek Tor ialah organisasi bukan-berasaskan-keuntungan US 501(c)(3) yang melindungi hak-hak kemanusian dan kebebasan dengan mencipta dan menghasilkan teknologi keawanamaan dan kerahsiaan bebas dan bersumber-terbuka, menyokong ketersediaan dan penggunaan tanpa-had, dan melanjutkan kesefahaman saintifik dan popular mereka.">
 <!ENTITY aboutTor.getInvolved.label "Sertai »">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "Dapatkan berita terkini Tor yang terus ke dalam kotak mel anda.">
 <!ENTITY aboutTor.newsletter.link_text "Daftar untuk dapatkan Berita Tor.">

@@ -1,5 +1,5 @@
 <!--
-   - Copyright (c) 2018, The Tor Project, Inc.
+   - Copyright (c) 2019, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "The Tor Project adalah US 501(c)(3) organisasi nirlaba yang bertujuan memajukan hak asasi manusia dan kebebasan dengan membuat dan menyebarkan teknologi anominitas dan privasi yang bebas dan terbuka, mendukung keberadaan dan penggunaannya, dan meningkatkan pemahamannya ilmiah dan populernya.">
 <!ENTITY aboutTor.getInvolved.label "Ikut Terlibat »">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/terlibat/relawan.html.id">
 
 <!ENTITY aboutTor.newsletter.tagline "Dapatkan berita Tor terbaru langsung dipos-el Anda.">
 <!ENTITY aboutTor.newsletter.link_text "Daftar untuk mendapatkan Berita Tor.">

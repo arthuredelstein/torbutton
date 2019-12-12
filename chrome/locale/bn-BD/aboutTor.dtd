@@ -1,5 +1,5 @@
 <!--
-   - Copyright (c) 2018, The Tor Project, Inc.
+   - Copyright (c) 2019, The Tor Project, Inc.
    - See LICENSE for licensing information.
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
@@ -24,7 +24,6 @@
 
 <!ENTITY aboutTor.tor_mission.label "টর প্রকল্পটি একটি মার্কিন 501(c)(3) অলাভজনক প্রতিষ্ঠান, যা পরিচয় ও গোপনীয়তা রক্ষার বিনামূল্য ও ওপেন সোর্স প্রযুক্তির (free and open source anonymity and privacy technology) সৃষ্টি ও প্রসার, সেগুলোর অবাধ সহজলভ্যতা ও ব্যবহার সমর্থন, এবং সেগুলোকে বিজ্ঞানমনস্ক ব্যক্তিবর্গ ও সাধারণ জনগণের কাছে আরও বোধগম্য/সহজবোধ্য করে তোলার মাধ্যমে মানবাধিকার ও স্বাধীনতার অগ্রগতি ঘটায়।">
 <!ENTITY aboutTor.getInvolved.label "আপনিও যোগ দিন »">
-<!ENTITY aboutTor.getInvolved.link "https://www.torproject.org/getinvolved/volunteer.html.en">
 
 <!ENTITY aboutTor.newsletter.tagline "টর থেকে পাওয়া সর্বশেষ সব খবর সরাসরি আপনার ইনবক্সে দেখুন।">
 <!ENTITY aboutTor.newsletter.link_text "টর নিউজ-এর জন্য সাইন আপ করুন ।">
