@@ -30,6 +30,7 @@ const kSecuritySettings = {
   "javascript.options.native_regexp" :        [,  false, false, false, true ],
   "media.webaudio.enabled" :                  [,  false, false, false, true ],
   "mathml.disabled" :                         [,  true,  true,  true,  false],
+  "gfx.font_rendering.graphite.enabled" :     [,  false, false, false, true ],
   "gfx.font_rendering.opentype_svg.enabled" : [,  false, false, false, true ],
   "svg.disabled" :                            [,  true,  false, false, false],
   "javascript.options.asmjs" :                [,  false, false, false, true ],
