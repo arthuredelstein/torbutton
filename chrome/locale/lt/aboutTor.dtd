@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Užsisakykite Tor naujienas.">
 <!ENTITY aboutTor.donationBanner.line2e "Išlaikykite Tor stiprų.">
 <!ENTITY aboutTor.donationBanner.buttonA "Paaukokite dabar">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Paaukokite šiandien ir Mozilla paaukos tiek pat, kiek ir jūs.">
-<!ENTITY aboutTor.ey2019.tracking "Sekimas, stebėjimas ir cenzūra internete yra plačiai paplitę.">
-<!ENTITY aboutTor.ey2019.takeback "Susigrąžinkite internetą naudodami Tor.">

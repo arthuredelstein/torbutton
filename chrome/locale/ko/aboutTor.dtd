@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Tor 뉴스를 구독.">
 <!ENTITY aboutTor.donationBanner.line2e "Tor 를 강하게 유지하기.">
 <!ENTITY aboutTor.donationBanner.buttonA "기부하기">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Give today, and Mozilla will match your donation.">
-<!ENTITY aboutTor.ey2019.tracking "Tracking, surveillance, and censorship are widespread online.">
-<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">

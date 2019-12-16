@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Cláraigh le Nuachtlitir Tor.">
 <!ENTITY aboutTor.donationBanner.line2e "Cuir taca le Tor.">
 <!ENTITY aboutTor.donationBanner.buttonA "Tabhair síntiús airgid anois">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Tabhair síntiús airgid inniu agus tabharfaidh Mozilla an méid céanna arís dúinn.">
-<!ENTITY aboutTor.ey2019.tracking "Tracking, surveillance, and censorship are widespread online.">
-<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">

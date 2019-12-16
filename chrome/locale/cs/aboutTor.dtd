@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Přihlaste se k odběru zpravodaje Toru.">
 <!ENTITY aboutTor.donationBanner.line2e "Pomozte Toru sílit.">
 <!ENTITY aboutTor.donationBanner.buttonA "Přispějte">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Přispějte hned a Mozilla vás dar zdvojnásobí.">
-<!ENTITY aboutTor.ey2019.tracking "Tracking, surveillance, and censorship are widespread online.">
-<!ENTITY aboutTor.ey2019.takeback "Take back the Internet with Tor">

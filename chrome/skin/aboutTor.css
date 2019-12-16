@@ -95,7 +95,7 @@ a {
   min-height: 92px;
 }
 
-body:not([ey2019]) .top {
+.top {
   white-space: nowrap;
 }
 
@@ -344,115 +344,4 @@ body[mobile] .onion-pattern-container {
   z-index: -1; /* ensure that circles do not block access to clickable links */
   position: absolute;
   bottom: 0px;
-}
-
-/* End of year 2019 Fundraising campaign */
-body[toron][ey2019] {
-  background-color: black;
-}
-
-body[ey2019] .searchbox form {
-  width: 500px;
-  margin: 3px auto 0px auto;
-  text-align: left;
-}
-
-body[ey2019] .torcontent-logo {
-  display: none!important;
-}
-
-#ey2019_1 {
-  margin-bottom: 30px;
-}
-
-#ey2019_2 {
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-#ey2019_3 {
-  padding-bottom: 30px;
-  text-align: left;
-}
-
-#ey2019_tracking {
-  color: lime;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  text-align: left;
-  max-width: 305px;
-}
-
-#ey2019_takeback {
-  color: lime;
-  font-family: 'LeagueGothic', sans-serif;
-  font-size: 60px;
-  line-height: 52px;
-  text-transform: uppercase;
-  width: 245px;
-  font-synthesis: style;
-  text-align: left;
-}
-
-#ey2019_donate_mobile,
-#ey2019_donate {
-  border: 3px solid blueViolet;
-  background: black;
-  color: white;
-  padding: 0.2em 0.8em;
-  text-transform: uppercase;
-  font-size: 1.5em;
-  font-family: 'LeagueGothic', sans-serif;
-  text-decoration: none;
-  display: inline-block;
-  margin-left: 5px;
-  margin-right: 35px;
-  vertical-align: super;
-}
-
-#ey2019_donate_mobile,
-#ey2019_donate:hover {
-  background: blueViolet;
-  color: black;
-}
-
-#ey2019_mozilla {
-  color: white;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 14px;
-  font-weight: 400;
-  display: inline-block;
-  max-width: 300px;
-  text-align: left;
-  margin-top: 10px;
-}
-
-#ey2019_banner {
-  background-image: url('Take_Back_Monochrome_purple.png');
-  background-size: contain;
-  background-position: 90% 100%;
-  background-repeat: no-repeat;
-  max-width: 540px;
-  margin: 0 auto;
-}
-
-body[ey2019] #torstatus {
-  margin-top: 40px;
-}
-
-body:not([ey2019]) .showIfEY2019,
-body[ey2019] .hideIfEY2019 {
-  display: none;
-}
-
-body:not([mobile]) #ey2019_donate_mobile,
-body:not([mobile]) #ey2019_donate_mobile_bottom {
-  display: none;
-}
-
-body[mobile] #ey2019_donate,
-body[mobile] #ey2019_donate_bottom {
-  display: none;
 }

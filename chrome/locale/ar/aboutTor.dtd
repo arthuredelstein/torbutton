@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "اشترك للحصول على أخبار تور.">
 <!ENTITY aboutTor.donationBanner.line2e "حافظ على قوة تور.">
 <!ENTITY aboutTor.donationBanner.buttonA "تبرع الآن">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "تبرع اليوم، وستجاريك موزيلا وتبرع بنفس المبلغ.">
-<!ENTITY aboutTor.ey2019.tracking "ينتشر التّتبُّع والرقابة والحجب على صعيد واسع في الانترنت">
-<!ENTITY aboutTor.ey2019.takeback "استعد السيطرة على الانترنت مع تور Tor">

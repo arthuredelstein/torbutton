@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Tor Duyurularına Abone Olun">
 <!ENTITY aboutTor.donationBanner.line2e "Tor uygulamasının gücünü koruyun.">
 <!ENTITY aboutTor.donationBanner.buttonA "Bağış Yapın">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Bugün yaptığınız her bağış kadar Mozilla da bağış yapacak.">
-<!ENTITY aboutTor.ey2019.tracking "Çevrimiçi izleme, gözetim ve sansür uygulamaları yaygındır.">
-<!ENTITY aboutTor.ey2019.takeback "Tor kullanın İnterneti geri alın.">

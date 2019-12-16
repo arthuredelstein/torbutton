@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Inscríbete en Tor News.">
 <!ENTITY aboutTor.donationBanner.line2e "Mantén fuerte a Tor.">
 <!ENTITY aboutTor.donationBanner.buttonA "Dona ahora.">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Dona hoy, y Mozilla igualará tu donación.">
-<!ENTITY aboutTor.ey2019.tracking "El rastreo, la vigilancia y la censura están muy extendidos en línea.">
-<!ENTITY aboutTor.ey2019.takeback "Recupera Internet con Tor.">

@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Пријавете се за Tor Вести.">
 <!ENTITY aboutTor.donationBanner.line2e "Чувај го Tor силен.">
 <!ENTITY aboutTor.donationBanner.buttonA "Донирај сега">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Донирај денес, и Mozilla ќе ја поврзе Вашата донација.">
-<!ENTITY aboutTor.ey2019.tracking "Следењето, надзорот, и цензурата се раширени насекаде низ Интернетот.">
-<!ENTITY aboutTor.ey2019.takeback "Вратете го назад вашиот Интернет со Tor">

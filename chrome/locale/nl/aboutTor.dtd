@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Meld u aan voor de Tor-nieuwsbrief.">
 <!ENTITY aboutTor.donationBanner.line2e "Houd Tor sterk.">
 <!ENTITY aboutTor.donationBanner.buttonA "Doneer nu">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Geef vandaag, en Mozilla geeft hetzelfde bedrag.">
-<!ENTITY aboutTor.ey2019.tracking "Volgen, toezicht en censuur zijn wijdverspreid online.">
-<!ENTITY aboutTor.ey2019.takeback "Pak het internet terug met Tor">

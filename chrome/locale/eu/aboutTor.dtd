@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "Harpidetu Tor berrietara">
 <!ENTITY aboutTor.donationBanner.line2e "Mantendu Tor indartsu.">
 <!ENTITY aboutTor.donationBanner.buttonA "Egin dohaintza orain">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "Dohaintza egin gaur, eta Mozillak emandakoa berdinduko du.">
-<!ENTITY aboutTor.ey2019.tracking "Jarraipena, jagoletza eta zentsura oso hedatuta daune online.">
-<!ENTITY aboutTor.ey2019.takeback "Berreskuratu Internet-a Torri esker">

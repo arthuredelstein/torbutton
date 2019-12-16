@@ -127,24 +127,6 @@ var AboutTorListener = {
       elem.appendChild(content.document.createTextNode(productName + ' '
                        + tbbVersion));
     } catch (e) {}
-
-    let ey2019_elem_id = "ey2019_donate";
-    let ey2019_locale_url =
-        `https://www.torproject.org/donate/donate-tbi-${aLocale}`;
-
-    if (content.document.body.getAttribute("mobile")) {
-      ey2019_elem_id = "ey2019_donate_mobile";
-      ey2019_locale_url =
-        `https://www.torproject.org/donate/donate-tbi-mobile-${aLocale}`;
-    }
-
-    content.document
-      .getElementById(ey2019_elem_id)
-      .setAttribute("href", ey2019_locale_url);
-
-    content.document
-      .getElementById(ey2019_elem_id + "_bottom")
-      .setAttribute("href", ey2019_locale_url);
   }
 };
 

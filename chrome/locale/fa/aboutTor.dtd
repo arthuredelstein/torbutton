@@ -30,8 +30,3 @@
 <!ENTITY aboutTor.newsletter.link_text "ثبت‌نام برای اخبار Tor.">
 <!ENTITY aboutTor.donationBanner.line2e "Tor را محکم نگه دارید.">
 <!ENTITY aboutTor.donationBanner.buttonA "اکنون اهداء کنید">
-
-<!-- End of year 2019 Fundraising campaign -->
-<!ENTITY aboutTor.ey2019.mozilla "امروز کمک کنید و موزیلا با کمک مالی شما همراهی می‌کند.">
-<!ENTITY aboutTor.ey2019.tracking "ردیابی ، نظارت و سانسور به صورت آنلاین گسترده است.">
-<!ENTITY aboutTor.ey2019.takeback "اینترنت را با Tor برگردانید">
