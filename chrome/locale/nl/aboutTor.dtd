@@ -22,7 +22,7 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "H">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Tor-browserhandleiding">
 
-<!ENTITY aboutTor.tor_mission.label "Het Tor-project is een 501(c)(3)-non-profitorganisatie in de VS die rechten en vrijheden van de mens bevordert door het ontwikkelen en implementeren van vrije anonimiteits- en privacytechnologieën, de onbeperkte beschikbaarheid en het gebruik ervan te steunen, en het begrip ervan in de wetenschap en bij het algemeen publiek te bevorderen.">
+<!ENTITY aboutTor.tor_mission.label "Het Tor Project is een 501(c)(3)-non-profitorganisatie in de VS die rechten en vrijheden van de mens bevordert door vrije en open source anonimiteits- en privacytechnologieën te ontwikkelen en te implementeren, de onbeperkte beschikbaarheid en het gebruik ervan te steunen, en het begrip ervan in de wetenschap en bij het algemeen publiek te bevorderen.">
 <!ENTITY aboutTor.getInvolved.label "Doe mee »">
 
 <!ENTITY aboutTor.newsletter.tagline "Ontvang het laatste nieuws van Tor direct in uw postvak.">

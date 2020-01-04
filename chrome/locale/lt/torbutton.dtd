@@ -29,7 +29,7 @@
 <!ENTITY torbutton.prefs.sec_safer_description "Išjungia tas internetinių svetainių ypatybes, kurios, dažnai, būna pavojingos, dėl to kai kurios svetainės gali prarasti funkcionalumą.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "Saugesniame nustatyme:">
 <!ENTITY torbutton.prefs.sec_safest_label "Saugiausias">
-<!ENTITY torbutton.prefs.sec_safest_description "Leidžia tik tas internetinių svetainių ypatybes, kurios yra reikalingos statinėms svetainėms bei pagrindinėms paslaugoms. Šie pakeitimai paveikia paveikslus, medija ir scenarijus.">
+<!ENTITY torbutton.prefs.sec_safest_description "Leidžia tik tas internetinių svetainių ypatybes, kurios yra reikalingos statinėms svetainėms bei pagrindinėms paslaugoms. Šie pakeitimai paveikia paveikslus, mediją ir scenarijus.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "Saugiausiame nustatyme:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Sužinoti daugiau">
 <!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript yra išjungtas ne HTTPS svetainėse.">
@@ -49,4 +49,4 @@
 <!ENTITY torbutton.circuit_display.new_circuit "Nauja grandinė šiai svetainei">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Atidarykite onion paslaugos kliento autentifikavimo eilutę">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Atverkite onion paslaugos kliento tapatybės nustatymo užklausą">

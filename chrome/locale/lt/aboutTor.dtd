@@ -17,10 +17,10 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Turite klausimų?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Peržiūrėkite mūsų Tor Browser naudotojo vadovą »">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Peržiūrėkite mūsų Tor Naršyklės naudotojo vadovą »">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "V">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser naudotojo vadovas">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Naršyklės naudotojo vadovas">
 
 <!ENTITY aboutTor.tor_mission.label "Tor Project yra JAV 501(c)(3) ne pelno organizacija remianti žmogaus teises ir laisves, kurianti ir diegianti laisvas ir atvirojo kodo anonimiškumo bei privatumo technologijas, palaikanti jų neribotą prieinamumą ir naudojimą bei mokslinį ir visuotinį supratimą.">
 <!ENTITY aboutTor.getInvolved.label "Įsitraukite »">

@@ -49,4 +49,4 @@
 <!ENTITY torbutton.circuit_display.new_circuit "为此站点使用新线路">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "打开洋葱服务客户端认证提示">

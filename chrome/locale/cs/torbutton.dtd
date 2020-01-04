@@ -1,6 +1,6 @@
-<!ENTITY torbutton.context_menu.new_identity "Nova identita">
+<!ENTITY torbutton.context_menu.new_identity "Nová identita">
 <!ENTITY torbutton.context_menu.new_identity_key "i">
-<!ENTITY torbutton.context_menu.new_circuit "Nový okruh Toru pro tuto stránku">
+<!ENTITY torbutton.context_menu.new_circuit "Nový řetězec sítí Tor k této stránce">
 <!ENTITY torbutton.context_menu.new_circuit_key "o">
 <!ENTITY torbutton.context_menu.networksettings "Nastavení sítě Tor...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">
@@ -45,8 +45,8 @@
 <!ENTITY torbutton.prefs.sec_custom_summary "Vaše nastavení prohlížeče neodpovídá standardnímu nastavení zabezpečení. Z důvodu ochrany soukromí a zvýšení bezpečnosti vám doporučujeme vybrat si jednu z výchozích bezpečnostních úrovní.">
 <!ENTITY torbutton.prefs.sec_restore_defaults "Obnovit výchozí">
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Rozšířená bezpečnostní nastavení…">
-<!ENTITY torbutton.circuit_display.title "Tor okruh">
-<!ENTITY torbutton.circuit_display.new_circuit "Nový okruh Toru pro tuto stránku">
+<!ENTITY torbutton.circuit_display.title "Řetězec sítí Tor">
+<!ENTITY torbutton.circuit_display.new_circuit "Nový řetězec sítí Tor k této stránce">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Otevřít výzvu k ověření klienta služby onion">
