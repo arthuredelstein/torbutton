@@ -1,5 +1,6 @@
 content torbutton chrome/content/
 resource torbutton ./
+resource torbutton-abouttor resource://torbutton/content/aboutTor/resources/ contentaccessible=yes
 resource torbutton-assets resource://torbutton/chrome/skin/ contentaccessible=yes
 
 # browser branding
