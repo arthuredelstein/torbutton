@@ -5,7 +5,7 @@
 <!ENTITY  brandShorterName      "Tor Browser">
 <!ENTITY  brandShortName        "Tor Browser">
 <!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Проект Tor">
+<!ENTITY  vendorShortName       "Tor Project">
 <!ENTITY  trademarkInfo.part1   "'Tor' и логотип 'Onion' являются зарегистрированными торговыми марками Tor Project, Inc.">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->

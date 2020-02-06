@@ -4,16 +4,16 @@
    - vim: set sw=2 sts=2 ts=8 et syntax=xml:
   -->
 
-<!ENTITY aboutTor.title "О проекте Tor">
+<!ENTITY aboutTor.title "О Tor">
 
-<!ENTITY aboutTor.viewChangelog.label "Посмотреть список изменений">
+<!ENTITY aboutTor.viewChangelog.label "Список изменений">
 
 <!ENTITY aboutTor.ready.label "Исследуйте. Приватно.">
 <!ENTITY aboutTor.ready2.label "Вы готовы к самому приватному просмотру веб-страниц в мире.">
 <!ENTITY aboutTor.failure.label "Что-то пошло не так!">
 <!ENTITY aboutTor.failure2.label "Tor не работает в этом браузере.">
 
-<!ENTITY aboutTor.search.label "Поиск с помощью сервиса DuckDuckGo">
+<!ENTITY aboutTor.search.label "Поиск с помощью DuckDuckGo">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Вопросы?">
@@ -26,6 +26,6 @@
 <!ENTITY aboutTor.getInvolved.label "Присоединяйтесь »">
 
 <!ENTITY aboutTor.newsletter.tagline "Получайте последние новости Tor прямо на ваш почтовый ящик.">
-<!ENTITY aboutTor.newsletter.link_text "Подпишитесь на новости Tor.">
-<!ENTITY aboutTor.donationBanner.line2e "Сохраните Tor сильным.">
+<!ENTITY aboutTor.newsletter.link_text "Подпишитесь на новости Tor">
+<!ENTITY aboutTor.donationBanner.line2e "Поддержите Tor.">
 <!ENTITY aboutTor.donationBanner.buttonA "Пожертвовать">
