@@ -236,7 +236,9 @@ let showCircuitDisplay = function (show) {
 // and returns nested xml element objects.
 let xmlTree = function xmlTree (ns, data) {
   let [type, attrs, ...children] = data;
-  let element = document.createElementNS(ns, type);
+  let element = type.startsWith("html:")
+    ? document.createXULElement(type)
+    : document.createElementNS(ns, type);
   for (let [key, val] of Object.entries(attrs)) {
     element.setAttribute(key, val);
   }
@@ -308,12 +310,40 @@ let updateCircuitDisplay = function () {
          (i === 0 && nodeData[0].type !== "bridge") ?
            ["span", { class: "circuit-guard-info" }, uiString("guard")] : null);
     }
+
+    let domainParts = [];
     if (domain.endsWith(".onion")) {
       for (let i = 0; i < 3; ++i) {
         li(uiString("relay"));
       }
+      if (domain.length > 22) {
+        domainParts.push(domain.slice(0, 7), "…", domain.slice(-12));
+      } else {
+        domainParts.push(domain);
+      }
+    } else {
+      domainParts.push(domain);
     }
-    li(domain);
+
+    // We use a XUL html:span element so that the tooltiptext is displayed.
+    li([
+      "html:span",
+      {
+        class: "circuit-onion",
+        onclick: `
+          this.classList.add("circuit-onion-copied");
+          Cc[
+            "@mozilla.org/widget/clipboardhelper;1"
+          ].getService(Ci.nsIClipboardHelper).copyString(this.getAttribute("data-onion"))
+        `,
+        "data-onion": domain,
+        "data-text-clicktocopy": torbutton_get_property_string("torbutton.circuit_display.click_to_copy"),
+        "data-text-copied": torbutton_get_property_string("torbutton.circuit_display.copied"),
+        tooltiptext: domain,
+      },
+      ...domainParts,
+    ]);
+
     // Hide the note about guards if we are using a bridge.
     document.getElementById("circuit-guard-note-container").style.display =
       (nodeData[0].type === "bridge") ? "none" : "block";
