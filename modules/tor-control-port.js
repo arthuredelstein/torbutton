@@ -580,6 +580,26 @@ info.getConf = function (aControlSocket, key) {
 // A namespace for functions related to tor's ONION_CLIENT_AUTH_* commands.
 let onionAuth = {};
 
+onionAuth.keyInfoStringsFromMessage = utils.extractor(/^250-CLIENT\s+(.+)$/gmi);
+
+onionAuth.keyInfoObjectsFromMessage = function(message) {
+  let keyInfoStrings = onionAuth.keyInfoStringsFromMessage(message);
+  return keyInfoStrings.map(infoStr => utils.listMapData(infoStr,
+                                            ["hsAddress", "typeAndKey"]));
+}
+
+// __onionAuth.viewKeys()__.
+// Sends a ONION_CLIENT_AUTH_VIEW command to retrieve the list of private keys.
+// Returns a promise that is fulfilled with an array of key info objects which
+// contain the following properties:
+//   hsAddress
+//   typeAndKey
+//   Flags (e.g., "Permanent")
+onionAuth.viewKeys = function (aControlSocket) {
+  let cmd = "onion_client_auth_view";
+  return aControlSocket.sendCommand(cmd).then(onionAuth.keyInfoObjectsFromMessage);
+};
+
 // __onionAuth.add(controlSocket, hsAddress, b64PrivateKey, isPermanent)__.
 // Sends a ONION_CLIENT_AUTH_ADD command to add a private key to the
 // Tor configuration.
@@ -599,6 +619,19 @@ onionAuth.add = function (aControlSocket, hsAddress, b64PrivateKey,
     cmd += " Flags=Permanent";
   return aControlSocket.sendCommand(cmd);
 };
+
+// __onionAuth.remove(controlSocket, hsAddress)__.
+// Sends a ONION_CLIENT_AUTH_REMOVE command to remove a private key from the
+// Tor configuration.
+onionAuth.remove = function (aControlSocket, hsAddress) {
+  if (!utils.isString(hsAddress)) {
+    return utils.rejectPromise("hsAddress argument should be a string");
+  }
+
+  let cmd = `onion_client_auth_remove ${hsAddress}`;
+  return aControlSocket.sendCommand(cmd);
+};
+
 
 // ## event
 // Handlers for events
@@ -655,9 +688,12 @@ tor.controller = function (ipcFile, host, port, password, onError) {
       isOpen = true;
   return { getInfo : key => info.getInfo(socket, key),
            getConf : key => info.getConf(socket, key),
+           onionAuthViewKeys : () => onionAuth.viewKeys(socket),
            onionAuthAdd : (hsAddress, b64PrivateKey, isPermanent) =>
                             onionAuth.add(socket, hsAddress, b64PrivateKey,
                                           isPermanent),
+           onionAuthRemove : (hsAddress) =>
+                               onionAuth.remove(socket, hsAddress),
            watchEvent : (type, filter, onData) =>
                           event.watchEvent(socket, type, filter, onData),
            isOpen : () => isOpen,
