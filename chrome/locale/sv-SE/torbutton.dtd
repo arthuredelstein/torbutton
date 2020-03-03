@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Öppna onion-tjänstklientens autentiseringsangivning">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Kom ihåg den här nyckeln">

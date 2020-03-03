@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Onion hizmeti istemi kimlik doğrulama penceresini aç">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Bu anahtar anımsansın">

@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Onion 서비스 클라이언트 인증 프롬프트 열기">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">

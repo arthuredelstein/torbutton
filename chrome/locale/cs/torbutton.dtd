@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Otevřít výzvu k ověření klienta služby onion">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">

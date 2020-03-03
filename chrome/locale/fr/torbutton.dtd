@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Ouvrir l’invite d’authentification du client du service onion">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Mémoriser cette clé">

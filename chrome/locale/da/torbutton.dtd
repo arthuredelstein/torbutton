@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Åbn prompt til klientautentifikation af oniontjeneste">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Husk nøglen">

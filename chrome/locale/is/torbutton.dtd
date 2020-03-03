@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Opna glugga fyrir auðkenningu biðlaraforrits fyrir onion-þjónustu">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Mundu þennan lykil">

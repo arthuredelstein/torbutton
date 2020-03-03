@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Aufforderung zur Bestätigung an verfügbares Onion-Dienst-Klienten-Programm">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Diesen Schlüssel merken">

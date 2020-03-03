@@ -50,3 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "オニオンサービスのクライアント認証プロンプトを開く">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "このキーを忘れないで、覚えておいてください。">
