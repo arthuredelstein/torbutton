@@ -51,4 +51,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "Deschideți promptul de autentificare a clientului de serviciu onion">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Țineți minte această cheie">
