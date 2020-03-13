@@ -35,6 +35,7 @@ const kSecuritySettings = {
   "svg.disabled" :                            [,  true,  false, false, false],
   "javascript.options.asmjs" :                [,  false, false, false, true ],
   "javascript.options.wasm" :                 [,  false, false, false, true ],
+  "javascript.enabled" :                      [,  false, true,  true,  true ],
 };
 
 // The Security Settings prefs in question.
