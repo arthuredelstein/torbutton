@@ -1,6 +1,6 @@
 <!ENTITY torbutton.context_menu.new_identity "Ny identitet">
 <!ENTITY torbutton.context_menu.new_identity_key "N">
-<!ENTITY torbutton.context_menu.new_circuit "Ny Tor-krets för den här webbplatsen">
+<!ENTITY torbutton.context_menu.new_circuit "Ny Tor-krets för denna webbplats">
 <!ENTITY torbutton.context_menu.new_circuit_key "S">
 <!ENTITY torbutton.context_menu.networksettings "Tor-nätverksinställningar...">
 <!ENTITY torbutton.context_menu.networksettings.key "N">

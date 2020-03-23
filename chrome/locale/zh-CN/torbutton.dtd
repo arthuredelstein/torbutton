@@ -50,4 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "打开洋葱服务客户端认证提示">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "记住此密钥">

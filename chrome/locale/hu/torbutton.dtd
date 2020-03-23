@@ -49,5 +49,5 @@
 <!ENTITY torbutton.circuit_display.new_circuit "Új Tor áramkör ehhez az oldalhoz">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Az onion szerviz kliens authentikációs prompt megnyitása">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Jegyezd meg ezt a kulcsot">

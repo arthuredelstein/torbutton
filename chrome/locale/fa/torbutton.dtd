@@ -50,4 +50,4 @@
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "اعلان احراز هویت مشتری در سرویس Onion را باز کن">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "این کلید را به خاطر بسپار">
