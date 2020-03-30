@@ -27,5 +27,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Tor ile ilgili son gelişmeler doğrudan e-posta kutunuza gelsin.">
 <!ENTITY aboutTor.newsletter.link_text "Tor Duyurularına Abone Olun">
-<!ENTITY aboutTor.donationBanner.line2e "Tor uygulamasının gücünü koruyun.">
+<!ENTITY aboutTor.donationBanner.freeToUse "Tor is free to use because of donations from people like you.">
 <!ENTITY aboutTor.donationBanner.buttonA "Bağış Yapın">

@@ -27,5 +27,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Fáðu nýjustu fréttir af Tor beint í pósthólfið þitt.">
 <!ENTITY aboutTor.newsletter.link_text "Skráðu þig til að fá Tor-fréttir.">
-<!ENTITY aboutTor.donationBanner.line2e "Höldum Tor sterku">
+<!ENTITY aboutTor.donationBanner.freeToUse "Tor is free to use because of donations from people like you.">
 <!ENTITY aboutTor.donationBanner.buttonA "Styrkja núna">

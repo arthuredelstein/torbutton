@@ -1,4 +1,4 @@
-<!ENTITY torbutton.context_menu.new_identity "Nova identitat">
+<!ENTITY torbutton.context_menu.new_identity "Identitat nova">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nou circuit Tor per a aquest lloc">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
@@ -12,7 +12,7 @@
 <!ENTITY torbutton.prefs.security_settings "Paràmetres de seguretat del navegador Tor">
 <!ENTITY torbutton.cookiedialog.title "Gestiona les proteccions de les galetes">
 <!ENTITY torbutton.cookiedialog.lockCol "Protegit">
-<!ENTITY torbutton.cookiedialog.domainCol "Allotjador">
+<!ENTITY torbutton.cookiedialog.domainCol "Amfitrió">
 <!ENTITY torbutton.cookiedialog.nameCol "Nom">
 <!ENTITY torbutton.cookiedialog.pathCol "Camí">
 <!ENTITY torbutton.cookiedialog.protectCookie "Protegeix la galeta">
@@ -49,5 +49,5 @@
 <!ENTITY torbutton.circuit_display.new_circuit "Circuit nou per a aquest lloc">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Obre l'indicador d'autenticació del client del servei ceba">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Recorda aquesta clau">

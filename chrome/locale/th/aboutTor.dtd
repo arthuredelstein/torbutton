@@ -27,5 +27,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "ส่งตรงข่าวสารเกี่ยวกับ Tor ไปยังกล่องจดหมายของคุณ">
 <!ENTITY aboutTor.newsletter.link_text "สมัครรับข่าวสารเกี่ยวกับ Tor">
-<!ENTITY aboutTor.donationBanner.line2e "ทำให้ Tor เข็มแข็งขึ้น">
+<!ENTITY aboutTor.donationBanner.freeToUse "Tor is free to use because of donations from people like you.">
 <!ENTITY aboutTor.donationBanner.buttonA "ร่วมบริจาค">

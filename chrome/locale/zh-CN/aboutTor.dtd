@@ -27,5 +27,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "通过邮件获取 Tor 的最新消息。">
 <!ENTITY aboutTor.newsletter.link_text "订阅 Tor 的最新动态">
-<!ENTITY aboutTor.donationBanner.line2e "让 Tor 网络保持健壮。">
+<!ENTITY aboutTor.donationBanner.freeToUse "Tor is free to use because of donations from people like you.">
 <!ENTITY aboutTor.donationBanner.buttonA "立即捐助">
