@@ -73,7 +73,7 @@ ExternalAppBlocker.prototype =
   /*
    * The _showPrompt() implementation uses some XUL and JS that is part of the
    * browser's confirmEx() implementation. Specifically, _showPrompt() depends
-   * on chrome://global/content/commonDialog.xul as well as some of the code
+   * on chrome://global/content/commonDialog.xhtml as well as some of the code
    * in resource://gre/modules/SharedPromptUtils.jsm.
    */
   _showPrompt: function(aWindowContext) {
@@ -107,7 +107,7 @@ ExternalAppBlocker.prototype =
     };
 
     let propBag = PromptUtils.objectToPropBag(args);
-    let uri = "chrome://global/content/commonDialog.xul";
+    let uri = "chrome://global/content/commonDialog.xhtml";
     let promptWin = Services.ww.openWindow(parentWin, uri, "_blank",
                                     "centerscreen,chrome,titlebar", propBag);
     promptWin.addEventListener("load", aEvent => {

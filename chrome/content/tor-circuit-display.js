@@ -5,7 +5,7 @@
 // call earlier functions). The file can be processed
 // with docco.js to produce pretty documentation.
 //
-// This script is to be embedded in torbutton.xul. It defines a single global
+// This script is to be embedded in torbutton.xhtml. It defines a single global
 // function, createTorCircuitDisplay(), which activates the automatic Tor
 // circuit display for the current tab and any future tabs.
 //
