@@ -55,7 +55,7 @@ io.asyncSocketStreams = function (ipcFile, host, port) {
   if (ipcFile) {
     socketTransport = sts.createUnixDomainTransport(ipcFile);
   } else {
-    socketTransport = sts.createTransport(null, 0, host, port, null);
+    socketTransport = sts.createTransport([], host, port, null);
   }
 
   // Open unbuffered asynchronous outputStream.

@@ -704,7 +704,7 @@ function torbutton_send_ctrl_cmd(command) {
     if (m_tb_control_ipc_file) {
       socket = sts.createUnixDomainTransport(m_tb_control_ipc_file);
     } else {
-      socket = sts.createTransport(null, 0, m_tb_control_host,
+      socket = sts.createTransport([], m_tb_control_host,
                                    m_tb_control_port, null);
     }
 
