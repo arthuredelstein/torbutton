@@ -7,6 +7,10 @@
 <!ENTITY  brandFullName         "Trình duyệt Tor">
 <!ENTITY  vendorShortName       "Dự án Tor">
 <!ENTITY  trademarkInfo.part1   "'Tor' và logo Củ hành là thương hiệu đã được đăng ký của Tor Project, Inc.">
+<!-- LOCALIZATION NOTE (brandProductName):
+   This brand name can be used in messages where the product name needs to
+   remain unchanged across different versions (Nightly, Beta, etc.). -->
+<!ENTITY  brandProductName      "Trình duyệt Tor">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Bấm chuột để tải những những chương trình gắn thêm vào hệ thống đã được cài đặt">

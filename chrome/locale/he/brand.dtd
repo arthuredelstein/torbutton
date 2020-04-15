@@ -7,6 +7,10 @@
 <!ENTITY  brandFullName         "דפדפן Tor">
 <!ENTITY  vendorShortName       "מיזם Tor">
 <!ENTITY  trademarkInfo.part1   "'Tor' ו'סמליל הבצל' הם סימנים מסחריים רשומים של Tor Project, Inc.">
+<!-- LOCALIZATION NOTE (brandProductName):
+   This brand name can be used in messages where the product name needs to
+   remain unchanged across different versions (Nightly, Beta, etc.). -->
+<!ENTITY  brandProductName      "דפדפן Tor">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "לחץ לטעינת תוספי מערכת מותקנים">

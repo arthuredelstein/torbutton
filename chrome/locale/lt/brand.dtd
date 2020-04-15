@@ -7,6 +7,10 @@
 <!ENTITY  brandFullName         "Tor Naršyklė">
 <!ENTITY  vendorShortName       "Tor projektas">
 <!ENTITY  trademarkInfo.part1   "&quot;Tor&quot; ir &quot;Onion logotipas&quot; yra registruoti Tor Project, Inc. prekių ženklai.">
+<!-- LOCALIZATION NOTE (brandProductName):
+   This brand name can be used in messages where the product name needs to
+   remain unchanged across different versions (Nightly, Beta, etc.). -->
+<!ENTITY  brandProductName      "Tor Naršyklė">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Spustelėkite, kad įkeltumėte įdiegtus sistemos papildinius">

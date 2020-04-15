@@ -7,6 +7,10 @@
 <!ENTITY  brandFullName         "টর ব্রাউজার">
 <!ENTITY  vendorShortName       "টর প্রকল্প">
 <!ENTITY  trademarkInfo.part1   "'টর' এবং 'ওয়ানিয়ান লোগো' টর প্রজেক্ট, ইনক। এর নিবন্ধিত ট্রেডমার্ক">
+<!-- LOCALIZATION NOTE (brandProductName):
+   This brand name can be used in messages where the product name needs to
+   remain unchanged across different versions (Nightly, Beta, etc.). -->
+<!ENTITY  brandProductName      "টর ব্রাউজার">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "সিস্টেমে ইন্সটল করা প্লাগিন লোড করতে ক্লিক করুন">

@@ -7,6 +7,10 @@
 <!ENTITY  brandFullName         "Navegador Tor">
 <!ENTITY  vendorShortName       "Proyecto Tor">
 <!ENTITY  trademarkInfo.part1   "'Tor' y el 'Onion Logo' son marcas registradas del Tor Project, Inc.">
+<!-- LOCALIZATION NOTE (brandProductName):
+   This brand name can be used in messages where the product name needs to
+   remain unchanged across different versions (Nightly, Beta, etc.). -->
+<!ENTITY  brandProductName      "Navegador Tor">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Clic para cargar complementos del sistema instalados">

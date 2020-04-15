@@ -7,6 +7,10 @@
 <!ENTITY  brandFullName         "Tor-ბრაუზერი">
 <!ENTITY  vendorShortName       "Tor-პროექტი">
 <!ENTITY  trademarkInfo.part1   "„Tor“ და „Onion Logo“ წარმოადგენს Tor Project Inc-ის კუთვნილ სავაჭრო ნიშნებს.">
+<!-- LOCALIZATION NOTE (brandProductName):
+   This brand name can be used in messages where the product name needs to
+   remain unchanged across different versions (Nightly, Beta, etc.). -->
+<!ENTITY  brandProductName      "Tor-ბრაუზერი">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "დააწკაპეთ დაყენებული სისტემური მოდულების ჩასატვირთად">

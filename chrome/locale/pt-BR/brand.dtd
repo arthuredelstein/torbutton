@@ -7,6 +7,10 @@
 <!ENTITY  brandFullName         "Navegador Tor">
 <!ENTITY  vendorShortName       "Projeto Tor">
 <!ENTITY  trademarkInfo.part1   "'Tor' e 'Logo da Cebola' são marcas registradas do Projeto Tor,  Inc.">
+<!-- LOCALIZATION NOTE (brandProductName):
+   This brand name can be used in messages where the product name needs to
+   remain unchanged across different versions (Nightly, Beta, etc.). -->
+<!ENTITY  brandProductName      "Navegador Tor">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Clique para carregar os plugins de sistema instalados">

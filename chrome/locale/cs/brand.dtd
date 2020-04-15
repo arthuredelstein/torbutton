@@ -7,6 +7,10 @@
 <!ENTITY  brandFullName         "Prohlížeč Tor">
 <!ENTITY  vendorShortName       "Tor Project">
 <!ENTITY  trademarkInfo.part1   "Tor a logo Onion jsou ochrannými známkami společnosti Tor Project, Inc.">
+<!-- LOCALIZATION NOTE (brandProductName):
+   This brand name can be used in messages where the product name needs to
+   remain unchanged across different versions (Nightly, Beta, etc.). -->
+<!ENTITY  brandProductName      "Prohlížeč Tor">
 
 <!-- The following strings are for bug #10280's UI. We place them here for our translators -->
 <!ENTITY plugins.installed.find "Klepnutím načtete nainstalované systémové zásuvné moduly">
