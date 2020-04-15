@@ -7,6 +7,6 @@
 -brand-full-name = Tor-nettleseren
 # This brand name can be used in messages where the product name needs to
 # remain unchanged across different versions (Nightly, Beta, etc.).
--brand-product-name = Tor-nettleseren
+-brand-product-name = Tor Browser
 -vendor-short-name = Tor Project
-trademarkInfo = &quot;Tor&quot; og &quot;Løk-logoen&quot; er registrerte varemerker tilhørende the Tor Project, Inc.
+trademarkInfo = 'Tor' og 'Løk-logoen' er registrerte varemerker tilhørende the Tor Project, Inc.

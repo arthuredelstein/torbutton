@@ -7,6 +7,6 @@
 -brand-full-name = متصفح تور
 # This brand name can be used in messages where the product name needs to
 # remain unchanged across different versions (Nightly, Beta, etc.).
--brand-product-name = متصفح تور
+-brand-product-name = متصفح Tor
 -vendor-short-name = مشروع تور
-trademarkInfo = &quot;تور&quot; و &quot;شعار البصلة&quot; علامات تجارية مسجلة باسم شركة مشروع تور المحدودة
+trademarkInfo = 'تور' و 'شعار البصلة' علامات تجارية مسجلة باسم شركة مشروع تور المحدودة

@@ -9,4 +9,4 @@
 # remain unchanged across different versions (Nightly, Beta, etc.).
 -brand-product-name = Prohlížeč Tor
 -vendor-short-name = Tor Project
-trademarkInfo = &quot;Tor&quot; a &quot;Onion logo&quot; jsou registrované ochranné známky společnosti Tor Project, Inc.
+trademarkInfo = Tor a logo Onion jsou ochrannými známkami společnosti Tor Project, Inc.

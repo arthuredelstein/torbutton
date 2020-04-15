@@ -8,5 +8,5 @@
 # This brand name can be used in messages where the product name needs to
 # remain unchanged across different versions (Nightly, Beta, etc.).
 -brand-product-name = Tor Browser
--vendor-short-name = Tor-projektet
-trademarkInfo = &quot;Tor&quot; og &quot;løg-logoet&quot; er registrerede varemærker tilhørende Tor Project, Inc.
+-vendor-short-name = Tor-projekt
+trademarkInfo = 'Tor' og 'løg-logoet' er registrerede varemærker tilhørende Tor Project, Inc.

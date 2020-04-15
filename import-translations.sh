@@ -64,6 +64,7 @@ else
 fi
 
 # Update each translated file for each locale.
+(
 echo "Locales: $BUNDLE_LOCALES"
 cd translation
 for KEYVAL in "${FILEMAP[@]}"; do
@@ -86,4 +87,40 @@ for KEYVAL in "${FILEMAP[@]}"; do
         -e 's/\&amp;vendorShortName;/\&vendorShortName;/g'			\
         $i/"$SRCFILE" > ../$LOCALE_DIR/$i/"$DEST_FILE"
   done
+done
+)
+
+# Autogenerate tor-browser-brand.ftl based on brand.properties
+# and brand.dtd.
+REGEX_ENTITY='<!ENTITY +([^" ]+) +"(.+)">';
+for LOCALE in $BUNDLE_LOCALES;
+do
+  BRAND_PATH="$LOCALE_DIR/$LOCALE/brand.properties"
+  BRAND_DTD_PATH="$LOCALE_DIR/$LOCALE/brand.dtd"
+  TOR_BRAND_PATH="$(dirname "$BRAND_PATH")/branding/tor-browser-brand.ftl"
+
+  BRAND_SHORTER_NAME="$(sed -n -e '/^brandShorterName/p' $BRAND_PATH | cut -d= -f2)"
+  BRAND_SHORT_NAME="$(sed -n -e '/^brandShortName/p' $BRAND_PATH | cut -d= -f2)"
+  BRAND_FULL_NAME="$(sed -n -e '/^brandFullName/p' $BRAND_PATH | cut -d= -f2)"
+  BRAND_PRODUCT_NAME="$(sed -n -e '/^brandProductName/p' $BRAND_PATH | cut -d= -f2)"
+  VENDOR_SHORT_NAME="$(sed -n -e '/^vendorShortName/p' $BRAND_PATH | cut -d= -f2)"
+  TRADEMARK_INFO='{ " " }'
+  if [[ "$(sed -n -e '/trademarkInfo/p' $BRAND_DTD_PATH)" =~ $REGEX_ENTITY ]]
+  then
+    # Replace some HTML entities (now just &quot;) for tor-browser-brand.ftl.
+    TRADEMARK_INFO="${BASH_REMATCH[2]//&quot;/\'}"
+  fi
+
+  echo "# For Tor Browser, we use a new file (different than the brand.ftl file" > $TOR_BRAND_PATH
+  echo "# that is used by Firefox) to avoid picking up the -brand-short-name values" >> $TOR_BRAND_PATH
+  echo "# that Mozilla includes in the Firefox language packs." >> $TOR_BRAND_PATH
+  echo "" >> $TOR_BRAND_PATH
+  echo "-brand-shorter-name = $BRAND_SHORTER_NAME" >> $TOR_BRAND_PATH
+  echo "-brand-short-name = $BRAND_SHORT_NAME" >> $TOR_BRAND_PATH
+  echo "-brand-full-name = $BRAND_FULL_NAME" >> $TOR_BRAND_PATH
+  echo "# This brand name can be used in messages where the product name needs to" >> $TOR_BRAND_PATH
+  echo "# remain unchanged across different versions (Nightly, Beta, etc.)." >> $TOR_BRAND_PATH
+  echo "-brand-product-name = $BRAND_PRODUCT_NAME" >> $TOR_BRAND_PATH
+  echo "-vendor-short-name = $VENDOR_SHORT_NAME" >> $TOR_BRAND_PATH
+  echo "trademarkInfo = $TRADEMARK_INFO" >> $TOR_BRAND_PATH
 done

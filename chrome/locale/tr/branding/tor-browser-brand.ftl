@@ -9,4 +9,4 @@
 # remain unchanged across different versions (Nightly, Beta, etc.).
 -brand-product-name = Tor Browser
 -vendor-short-name = Tor Projesi
-trademarkInfo = 'Tor' ve 'Onion Logo' Tor Project, Inc. tarafından tescillenmiş markalardır.
+trademarkInfo = 'Tor' ve 'Onion Logo' Tor Project, Inc. tarafından tescil edilmiş markalardır.

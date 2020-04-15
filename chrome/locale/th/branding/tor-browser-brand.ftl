@@ -8,5 +8,5 @@
 # This brand name can be used in messages where the product name needs to
 # remain unchanged across different versions (Nightly, Beta, etc.).
 -brand-product-name = Tor Browser
--vendor-short-name = Tor Project
-trademarkInfo = 'Tor' and the 'Onion Logo' are registered trademarks of the Tor Project, Inc.
+-vendor-short-name = โครงการ Tor
+trademarkInfo = 'Tor 'และ' Onion Logo 'เป็นเครื่องหมายการค้าจดทะเบียนของโครงการ Tor Project, Inc.

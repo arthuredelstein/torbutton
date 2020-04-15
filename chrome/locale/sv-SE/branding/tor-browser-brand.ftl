@@ -9,4 +9,4 @@
 # remain unchanged across different versions (Nightly, Beta, etc.).
 -brand-product-name = Tor Browser
 -vendor-short-name = Tor-projektet
-trademarkInfo = 'Tor' och 'Onion Logotypen' är registerade varumärken av Tor Project, Inc.
+trademarkInfo = 'Tor' och 'Onion-logotypen' är registerade varumärken av Tor Project, Inc.

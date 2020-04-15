@@ -7,6 +7,6 @@
 -brand-full-name = Tor Browser
 # This brand name can be used in messages where the product name needs to
 # remain unchanged across different versions (Nightly, Beta, etc.).
--brand-product-name = Tor Browser
+-brand-product-name = Peramban Tor
 -vendor-short-name = Proyek Tor
 trademarkInfo = 'Tor' dan 'Logo Onion' adalah merek dagang terdaftar Tor Project, Inc.
