@@ -25,23 +25,23 @@
 <!ENTITY torbutton.prefs.sec_caption_tooltip "Suwak poziomu bezpieczeństwa pozwala na wyłączenie pewnych funkcji przeglądarki, które mogą uczynić ten program bardziej narażonym na próby ataku hakerskiego.">
 <!ENTITY torbutton.prefs.sec_standard_label "Standardowy">
 <!ENTITY torbutton.prefs.sec_standard_description "Wszystkie funkcje Przeglądarki Tor i strony zostały włączone.">
-<!ENTITY torbutton.prefs.sec_safer_label "Bezpieczniej">
-<!ENTITY torbutton.prefs.sec_safer_description "Wyłącza funkcje witryny, które często są niebezpieczne, co powoduje, że niektóre witryny tracą funkcjonalność.">
+<!ENTITY torbutton.prefs.sec_safer_label "Bezpieczniejszy">
+<!ENTITY torbutton.prefs.sec_safer_description "Wyłącza te funkcje witryn, które często mogą być niebezpieczne. Powoduje to, że niektóre witryny mogą nie działać poprawnie.">
 <!ENTITY torbutton.prefs.sec_safer_list_label "W bezpieczniejszych ustawieniach:">
 <!ENTITY torbutton.prefs.sec_safest_label "Najbezpieczniejszy">
 <!ENTITY torbutton.prefs.sec_safest_description "Pozwala tylko na funkcje serwisu wymagane w przypadku witryn statycznych i podstawowych usług. Te zmiany dotyczą obrazów, multimediów i skryptów.">
 <!ENTITY torbutton.prefs.sec_safest_list_label "W najbezpieczniejszych ustawieniach:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Dowiedz się więcej">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Obsługa skryptów Java na stronach bez HTTPS jest wyłączona.">
-<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript jest domyślnie wyłączona na wszystkich stronach.">
-<!ENTITY torbutton.prefs.sec_limit_typography "Niektóre fonty i symbole są wyłączone.">
-<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Niektóre fonty, ikony, symbole i obrazki są wyłączone.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio i wideo (media HTML5) i WebGL kliknij, aby odtworzyć.">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "Obsługa JavaScript na stronach nie używających HTTPS jest wyłączona.">
+<!ENTITY torbutton.prefs.sec_js_disabled "JavaScript jest domyślnie wyłączony na wszystkich stronach.">
+<!ENTITY torbutton.prefs.sec_limit_typography "Niektóre czcionki i symbole matematyczne są wyłączone.">
+<!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Niektóre czcionki, ikony, symbole matematyczne oraz obrazki są wyłączone.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio i wideo (HTML5) oraz WebGL wymagają kliknięcia celem odtworzenia.">
 <!ENTITY torbutton.prefs.sec_custom_warning "Dowolne">
-<!ENTITY torbutton.prefs.sec_overview "Wyłącz niektóre funkcje internetowe, które mogą zostać użyte do zaatakowania Twojego bezpieczeństwa i anonimowości.">
+<!ENTITY torbutton.prefs.sec_overview "Wyłącz niektóre funkcje, które mogą zostać użyte do zaatakowania Twojego bezpieczeństwa i anonimowości.">
 <!ENTITY torbutton.prefs.sec_standard_tooltip "Poziom bezpieczeństwa: Standardowy">
-<!ENTITY torbutton.prefs.sec_safer_tooltip "Poziom bezpieczeństwa: bezpieczniejszy">
-<!ENTITY torbutton.prefs.sec_safest_tooltip "Poziom bezpieczeństwa: najbezpieczniejszy">
+<!ENTITY torbutton.prefs.sec_safer_tooltip "Poziom bezpieczeństwa: Bezpieczniejszy">
+<!ENTITY torbutton.prefs.sec_safest_tooltip "Poziom bezpieczeństwa: Najbezpieczniejszy">
 <!ENTITY torbutton.prefs.sec_custom_summary "Niestandardowe preferencje przeglądarki spowodowały nietypowe ustawienia zabezpieczeń. Ze względów bezpieczeństwa i prywatności zalecamy wybranie jednego z domyślnych poziomów zabezpieczeń.">
 <!ENTITY torbutton.prefs.sec_restore_defaults "Przywróć domyślne">
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Zaawansowane ustawienia zabezpieczeń…">

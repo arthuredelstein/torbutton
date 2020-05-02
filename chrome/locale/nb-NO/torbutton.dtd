@@ -8,7 +8,7 @@
 <!ENTITY torbutton.context_menu.downloadUpdate.key "U">
 <!ENTITY torbutton.context_menu.cookieProtections "Informasjonskapsels-beskyttelse…">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
-<!ENTITY torbutton.button.tooltip "Klikk for å igangsette Torbutton">
+<!ENTITY torbutton.button.tooltip "Klikk for å igangsette Tor-knappen">
 <!ENTITY torbutton.prefs.security_settings "Sikkerhetsinnstillinger for Tor-nettleseren">
 <!ENTITY torbutton.cookiedialog.title "Administrer beskyttelse av informasjonskapsler">
 <!ENTITY torbutton.cookiedialog.lockCol "Beskyttet">
@@ -17,7 +17,7 @@
 <!ENTITY torbutton.cookiedialog.pathCol "Rute">
 <!ENTITY torbutton.cookiedialog.protectCookie "Beskytt Informasjonskapsel">
 <!ENTITY torbutton.cookiedialog.removeCookie "Fjern Informasjonskapsel">
-<!ENTITY torbutton.cookiedialog.unprotectCookie "Ikke Beskytt Informasjonskapsel">
+<!ENTITY torbutton.cookiedialog.unprotectCookie "Ikke beskytt informasjonskapsel">
 <!ENTITY torbutton.cookiedialog.removeAllBut "Fjern alle bortsett fra beskyttede">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beskytt nye informasjonskapsler">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Ikke beskytt nye informasjonskapsler">
@@ -45,9 +45,9 @@
 <!ENTITY torbutton.prefs.sec_custom_summary "Dine nettleserinnstillinger har ført med seg uvanlige sikkerhetsvalg. Av sikkerhet- og personverns-hensyn anbefaler vi at du velger en av de forvalgte sikkerhetsnivåene.">
 <!ENTITY torbutton.prefs.sec_restore_defaults "Gjenopprett forvalg">
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Avanserte sikkerhetsinnstillinger...">
-<!ENTITY torbutton.circuit_display.title "Tor Krets">
-<!ENTITY torbutton.circuit_display.new_circuit "Ny Krets for denne siden">
+<!ENTITY torbutton.circuit_display.title "Tor-krets">
+<!ENTITY torbutton.circuit_display.new_circuit "Ny krets for denne siden">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Åpne løk-tjeneste klient autentiserings-ledetekst">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Husk denne nøkkelen">

@@ -12,4 +12,4 @@
 <!ENTITY plugins.installed.find "Klik for at indlæse installerede systemplugins">
 <!ENTITY plugins.installed.enable "Aktivér plugins">
 <!ENTITY plugins.installed.disable "Deaktivér plugins">
-<!ENTITY plugins.installed.disable.tip "Klik for at undgå indlæsning af systemplugins">
+<!ENTITY plugins.installed.disable.tip "Klik for at forhindre indlæsning af systemplugins">

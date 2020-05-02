@@ -15,5 +15,5 @@
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
 <!ENTITY bottomLinks.grow        "Hjælp Tor-netværket med at vokse!">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
-<!ENTITY bottomLinks.license  "Licens Information">
+<!ENTITY bottomLinks.license  "Licensinformation">
 <!ENTITY tor.TrademarkStatement   "&quot;Tor&quot; og &quot;løg-logoet&quot; er registrerede varemærker tilhørende Tor Project, Inc.">

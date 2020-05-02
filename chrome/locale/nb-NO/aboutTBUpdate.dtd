@@ -1,5 +1,5 @@
-<!ENTITY aboutTBUpdate.changelogTitle "Tor Nettleser Endringslogg">
-<!ENTITY aboutTBUpdate.updated "Tor Nettleser har blitt oppdatert.">
+<!ENTITY aboutTBUpdate.changelogTitle "Tor-nettleseren sin endringslogg">
+<!ENTITY aboutTBUpdate.updated "Tor-nettleseren har blitt oppdatert.">
 <!ENTITY aboutTBUpdate.linkPrefix "For den mest oppdaterte informasjonen om denne utgivelsen,">
 <!ENTITY aboutTBUpdate.linkLabel  "besøk vårt nettsted">
 <!ENTITY aboutTBUpdate.linkSuffix ".">

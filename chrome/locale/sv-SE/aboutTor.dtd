@@ -25,7 +25,7 @@
 <!ENTITY aboutTor.tor_mission.label "Tor-projektet är en amerikansk 501(c)(3) ideell organisation som främjar mänskliga rättigheter och friheter genom att skapa och distribuera anonymitets- och sekretessteknik med fri och öppen källkod, stödja deras obegränsade tillgänglighet och användning och främja deras vetenskapliga och populära förståelse.">
 <!ENTITY aboutTor.getInvolved.label "Engagera dig »">
 
-<!ENTITY aboutTor.newsletter.tagline "Få de senaste nyheterna från Tor direkt till din inkorg.">
+<!ENTITY aboutTor.newsletter.tagline "Få de senaste nyheterna från Tor direkt i din inkorg.">
 <!ENTITY aboutTor.newsletter.link_text "Anmäl dig till Tor-nyheter.">
 <!ENTITY aboutTor.donationBanner.freeToUse "Tor är gratis att använda på grund av donationer från människor som du.">
 <!ENTITY aboutTor.donationBanner.buttonA "Donera nu">

@@ -6,11 +6,11 @@
 <!ENTITY torbutton.context_menu.networksettings.key "N">
 <!ENTITY torbutton.context_menu.downloadUpdate "Søg efter opdateringer til Tor Browser...">
 <!ENTITY torbutton.context_menu.downloadUpdate.key "O">
-<!ENTITY torbutton.context_menu.cookieProtections "Cookie-beskyttelser...">
+<!ENTITY torbutton.context_menu.cookieProtections "Cookiebeskyttelser...">
 <!ENTITY torbutton.context_menu.cookieProtections.key "C">
 <!ENTITY torbutton.button.tooltip "Klik for at starte Torbutton">
-<!ENTITY torbutton.prefs.security_settings "Tor Browser-sikkerhedsindstillinger">
-<!ENTITY torbutton.cookiedialog.title "Håndtér Cookie-beskyttelser">
+<!ENTITY torbutton.prefs.security_settings "Sikkerhedsindstillinger for Tor Browser">
+<!ENTITY torbutton.cookiedialog.title "Håndtér cookiebeskyttelser">
 <!ENTITY torbutton.cookiedialog.lockCol "Beskyttet">
 <!ENTITY torbutton.cookiedialog.domainCol "Vært">
 <!ENTITY torbutton.cookiedialog.nameCol "Navn">
@@ -18,7 +18,7 @@
 <!ENTITY torbutton.cookiedialog.protectCookie "Beskyt cookie">
 <!ENTITY torbutton.cookiedialog.removeCookie "Fjern cookie">
 <!ENTITY torbutton.cookiedialog.unprotectCookie "Fjern beskyttelse af cookie">
-<!ENTITY torbutton.cookiedialog.removeAllBut "Fjern alle pånær beskyttede">
+<!ENTITY torbutton.cookiedialog.removeAllBut "Fjern alle, undtagen beskyttede">
 <!ENTITY torbutton.cookiedialog.saveAllCookies "Beskyt nye cookies">
 <!ENTITY torbutton.cookiedialog.doNotSaveAllCookies "Beskyt ikke nye cookies">
 <!ENTITY torbutton.prefs.sec_caption "Sikkerhedsniveau">
@@ -27,12 +27,12 @@
 <!ENTITY torbutton.prefs.sec_standard_description "Alle Tor Browser- og webstedsfunktionaliteter er aktiveret.">
 <!ENTITY torbutton.prefs.sec_safer_label "Mere sikker">
 <!ENTITY torbutton.prefs.sec_safer_description "Deaktiverer webstedsfunktionaliteter som ofte er farlige, hvilket kan gøre at nogle steder mister deres funktionalitet.">
-<!ENTITY torbutton.prefs.sec_safer_list_label "Ved mere sikker-indstillingen:">
+<!ENTITY torbutton.prefs.sec_safer_list_label "Ved indstillingen mere sikker:">
 <!ENTITY torbutton.prefs.sec_safest_label "Mest sikker">
 <!ENTITY torbutton.prefs.sec_safest_description "Tillader kun webstedsfunktionaliteter som kræves til statiske steder og grundlæggende tjenester. Ændringerne påvirker billeder, medier og scripts.">
-<!ENTITY torbutton.prefs.sec_safest_list_label "Ved mest sikker-indstillingen:">
+<!ENTITY torbutton.prefs.sec_safest_list_label "Ved indstillingen mest sikker:">
 <!ENTITY torbutton.prefs.sec_learn_more_label "Lær mere">
-<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript er deaktiveret på ikke-HTTPS steder.">
+<!ENTITY torbutton.prefs.sec_js_on_https_sites_only "JavaScript er deaktiveret på steder som ikke bruger HTTPS.">
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript er som standard deaktiveret på alle steder.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Nogle skrifttyper og matematiksymboler er deaktiverede.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Nogle skrifttyper, ikoner, matematiksymboler og billeder er deaktiveret.">
@@ -43,7 +43,7 @@
 <!ENTITY torbutton.prefs.sec_safer_tooltip "Sikkerhedsniveau : Mere sikker">
 <!ENTITY torbutton.prefs.sec_safest_tooltip "Sikkerhedsniveau : Mest sikker">
 <!ENTITY torbutton.prefs.sec_custom_summary "Dine tilpassede browserpræferencer har resulterede i usædvanlige sikkerhedsindstillinger. Pga. sikkerheds- og privatlivsårsagen, anbefaler vi at du vælger en af standardsikkerhedsniveauerne.">
-<!ENTITY torbutton.prefs.sec_restore_defaults "Gendan Standarder">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Gendan standarder">
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "Avancerede sikkerhedsindstillinger…">
 <!ENTITY torbutton.circuit_display.title "Tor-kredsløb">
 <!ENTITY torbutton.circuit_display.new_circuit "Nyt kredsløb til dette sted">
