@@ -146,7 +146,7 @@ var initialize = () => {
     let messageListener = (a, b, c) => {
       try {
         log(3, `Message received from NoScript: ${JSON.stringify([a, b, c])}`);
-        if (!["started", "pageshow"].includes(a.__meta.name)) {
+        if (a.__meta.name !== "started") {
           return;
         }
         Services.mm.removeMessageListener("MessageChannel:Messages", listener);
