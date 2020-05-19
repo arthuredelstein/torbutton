@@ -49,5 +49,5 @@
 <!ENTITY torbutton.circuit_display.new_circuit "Nuevo circuito para este sitio">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Solicitud de autenticación de cliente del servicio abierto de Onion">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Recuerda esta llave">
