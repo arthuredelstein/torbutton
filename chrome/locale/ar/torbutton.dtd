@@ -49,5 +49,5 @@
 <!ENTITY torbutton.circuit_display.new_circuit "دائرة تور جديدة لهذا الموقع">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "فتح مُنبّه استيثاق على عميل خدمة البصلة  أو Onion Service">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "فتح نافذة عميل توثيق لخدمة Onion">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "تذكر هذا المفتاح">
