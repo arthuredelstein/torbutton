@@ -36,7 +36,7 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "Η JavaScript είναι απενεργοποιημένη σε όλους τους ιστότοπους ως προεπιλογή.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Μερικές γραμματοσειρές και μαθηματικά σύμβολα είναι απενεργοποιημένα.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Ορισμένες γραμματοσειρές, εικονίδια, μαθηματικά σύμβολα και εικόνες είναι απενεργοποιημένα.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio and video (HTML5 media), and WebGL are click-to-play.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Αναπαραγωγή ήχου και βίντεο (πολυμέσα HTML5) και WebGL με ένα κλικ.">
 <!ENTITY torbutton.prefs.sec_custom_warning "Προσαρμογή ">
 <!ENTITY torbutton.prefs.sec_overview "Απενεργοποιήστε ορισμένα χαρακτηριστικά του διαδικτύου που μπορεί να χρησιμοποιηθούν για επιθέσεις εναντίον της ασφάλειας και της ανωνυμίας σας.">
 <!ENTITY torbutton.prefs.sec_standard_tooltip "Επίπεδο ασφαλείας: Βασικό">
@@ -49,5 +49,5 @@
 <!ENTITY torbutton.circuit_display.new_circuit "Νέο κύκλωμα για αυτή την ιστοσελίδα">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Open onion service client authentication prompt">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Remember this key">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Εκτέλεση εντολής αυθεντικοποίησης client υπηρεσίας onion">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Απομνημόνευση κλειδιού">

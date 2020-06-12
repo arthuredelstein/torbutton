@@ -46,8 +46,8 @@
 <!ENTITY torbutton.prefs.sec_restore_defaults "デフォルトにもどす">
 <!ENTITY torbutton.prefs.sec_advanced_security_settings "詳細セキュリティ設定…">
 <!ENTITY torbutton.circuit_display.title "Tor サーキット">
-<!ENTITY torbutton.circuit_display.new_circuit "このサイトに新しいサーキットを使う">
+<!ENTITY torbutton.circuit_display.new_circuit "このサイト用のサーキットを再構築">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
 <!ENTITY torbutton.onionServices.authPrompt.tooltip "オニオンサービスのクライアント認証プロンプトを開く">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "このキーを忘れないで、覚えておいてください。">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "この鍵を忘れないで、覚えておいてください。">

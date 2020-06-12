@@ -8,10 +8,10 @@
 
 <!ENTITY aboutTor.viewChangelog.label "変更履歴を表示">
 
-<!ENTITY aboutTor.ready.label "探索する。 プライベートに。">
-<!ENTITY aboutTor.ready2.label "世界で最もプライベートなブラウジングを体験する準備が整いました。">
+<!ENTITY aboutTor.ready.label "プライベートなブラウジングを開始">
+<!ENTITY aboutTor.ready2.label "世界で最もプライベートなブラウジングを行うための準備が完了しました。">
 <!ENTITY aboutTor.failure.label "何かが間違っています！">
-<!ENTITY aboutTor.failure2.label "Tor は、このブラウザでは動作しません。">
+<!ENTITY aboutTor.failure2.label "Tor は、現在このブラウザで動作していません。">
 
 <!ENTITY aboutTor.search.label "DuckDuckGo で検索">
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
@@ -27,5 +27,5 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Tor からの最新ニュースを受信トレイに。">
 <!ENTITY aboutTor.newsletter.link_text "Tor ニュースに申し込む。">
-<!ENTITY aboutTor.donationBanner.freeToUse "Tor is free to use because of donations from people like you.">
+<!ENTITY aboutTor.donationBanner.freeToUse "Tor は皆さんからの寄付に支えられています。">
 <!ENTITY aboutTor.donationBanner.buttonA "今すぐ寄付">
