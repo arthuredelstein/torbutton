@@ -3,7 +3,7 @@
 <!ENTITY project.tpoLink         "&vendorShortName; によって開発されました。">
 <!ENTITY project.end             "あなたのオンラインでのプライバシーと自由を守る非営利団体です。">
 
-<!ENTITY help.start              "支援に興味がありますか？">
+<!ENTITY help.start              "支援しますか?">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
 <!ENTITY help.donateLink         "寄付">
 <!ENTITY help.or                 "や">

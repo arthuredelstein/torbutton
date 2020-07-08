@@ -5,7 +5,7 @@
 <!ENTITY  brandShorterName      "Le Navigateur Tor">
 <!ENTITY  brandShortName        "Le Navigateur Tor">
 <!ENTITY  brandFullName         "Le Navigateur Tor">
-<!ENTITY  vendorShortName       "Le Projet Tor">
+<!ENTITY  vendorShortName       "Le Projet Tor">
 <!ENTITY  trademarkInfo.part1   "« Tor » et le « logo Onion » sont des marques de commerce de « The Projet Tor, Inc. »">
 <!-- LOCALIZATION NOTE (brandProductName):
    This brand name can be used in messages where the product name needs to

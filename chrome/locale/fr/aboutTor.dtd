@@ -22,7 +22,7 @@
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "G">
 <!ENTITY aboutTor.torbrowser_user_manual.label "Guide d’utilisation du Navigateur Tor">
 
-<!ENTITY aboutTor.tor_mission.label "Le Projet Tor est un organisme sans but lucratif US 501(c)(3) qui fait progresser les droits de la personne et les libertés en créant et en déployant des technologies gratuites d’anonymat et de protection de la vie privée et des données personnelles, à code source ouvert. Nous soutenons leur disponibilité et leur utilisation sans restriction, et promouvons une meilleure compréhension scientifique et populaire.">
+<!ENTITY aboutTor.tor_mission.label "Le Projet Tor est un organisme sans but lucratif US 501(c)(3) qui fait progresser les droits de la personne et les libertés en créant et en déployant des technologies gratuites d’anonymat et de protection de la vie privée et des données personnelles, à code source ouvert. Nous soutenons leur disponibilité et leur utilisation sans restriction, et promouvons une meilleure compréhension scientifique et populaire.">
 <!ENTITY aboutTor.getInvolved.label "Impliquez-vous »">
 
 <!ENTITY aboutTor.newsletter.tagline "Obtenez les dernières nouvelles au sujet de Tor directement dans votre boîte de réception.">
