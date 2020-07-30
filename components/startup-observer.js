@@ -16,6 +16,10 @@ const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
 XPCOMUtils.defineLazyModuleGetters(this, {
+  ComponentUtils: "resource://gre/modules/ComponentUtils.jsm",
+});
+
+XPCOMUtils.defineLazyModuleGetters(this, {
   FileUtils: "resource://gre/modules/FileUtils.jsm",
   FileSource: "resource://gre/modules/L10nRegistry.jsm",
   L10nRegistry: "resource://gre/modules/L10nRegistry.jsm",
@@ -205,4 +209,7 @@ StartupObserver.prototype = {
   _xpcom_categories: [{category:"profile-after-change"}],
 };
 
-var NSGetFactory = XPCOMUtils.generateNSGetFactory([StartupObserver]);
+// Assign factory to global object.
+const NSGetFactory = XPCOMUtils.generateNSGetFactory
+  ? XPCOMUtils.generateNSGetFactory([StartupObserver])
+  : ComponentUtils.generateNSGetFactory([StartupObserver]);

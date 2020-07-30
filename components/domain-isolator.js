@@ -11,6 +11,10 @@
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
+XPCOMUtils.defineLazyModuleGetters(this, {
+  ComponentUtils: "resource://gre/modules/ComponentUtils.jsm",
+});
+
 // Make the logger available.
 let logger = Cc["@torproject.org/torbutton-logger;1"]
                .getService(Ci.nsISupports).wrappedJSObject;
@@ -199,4 +203,6 @@ DomainIsolator.prototype = {
 };
 
 // Assign factory to global object.
-const NSGetFactory = XPCOMUtils.generateNSGetFactory([DomainIsolator]);
+const NSGetFactory = XPCOMUtils.generateNSGetFactory
+  ? XPCOMUtils.generateNSGetFactory([DomainIsolator])
+  : ComponentUtils.generateNSGetFactory([DomainIsolator]);
