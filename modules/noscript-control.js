@@ -9,6 +9,58 @@ const { bindPref } =
 const { ExtensionUtils } = ChromeUtils.import("resource://gre/modules/ExtensionUtils.jsm");
 const { MessageChannel } = ChromeUtils.import("resource://gre/modules/MessageChannel.jsm");
 
+const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
+
+XPCOMUtils.defineLazyModuleGetters(this, {
+  ExtensionParent: "resource://gre/modules/ExtensionParent.jsm",
+});
+
+async function waitForExtensionMessage(extensionId, checker = () => {}) {
+  const { torWaitForExtensionMessage } = ExtensionParent;
+  if (torWaitForExtensionMessage) {
+    return torWaitForExtensionMessage(extensionId, checker);
+  }
+
+  // Old messaging <= 78
+  return new Promise(resolve => {
+    const listener = ({ data }) => {
+      for (const msg of data) {
+        if (msg.recipient.extensionId === extensionId) {
+          const deserialized = msg.data.deserialize({});
+          if (checker(deserialized)) {
+            Services.mm.removeMessageListener(
+              "MessageChannel:Messages",
+              listener
+            );
+            resolve(deserialized);
+          }
+        }
+      }
+    };
+    Services.mm.addMessageListener("MessageChannel:Messages", listener);
+  });
+}
+
+async function sendExtensionMessage(extensionId, message) {
+  const { torSendExtensionMessage } = ExtensionParent;
+  if (torSendExtensionMessage) {
+    return torSendExtensionMessage(extensionId, message);
+  }
+
+  // Old messaging <= 78
+  Services.cpmm.sendAsyncMessage("MessageChannel:Messages", [
+    {
+      messageName: "Extension:Message",
+      sender: { id: extensionId, extensionId },
+      recipient: { extensionId },
+      data: new StructuredCloneHolder(message),
+      channelId: ExtensionUtils.getUniqueId(),
+      responseType: MessageChannel.RESPONSE_NONE,
+    },
+  ]);
+  return undefined;
+}
+
 let logger = Cc["@torproject.org/torbutton-logger;1"]
     .getService(Ci.nsISupports).wrappedJSObject;
 let log = (level, msg) => logger.log(level, msg);
@@ -113,20 +165,13 @@ var initialize = () => {
 
     // TODO: Is there a better way?
     let sendNoScriptSettings = settings =>
-      Services.cpmm.sendAsyncMessage("MessageChannel:Messages", [{
-        messageName: "Extension:Message",
-        sender: { id: noscriptID, extensionId: noscriptID },
-        recipient: { extensionId: noscriptID },
-        data: new StructuredCloneHolder(settings),
-        channelId: ExtensionUtils.getUniqueId(),
-        responseType: MessageChannel.RESPONSE_NONE,
-      }]);
+      sendExtensionMessage(noscriptID, settings);
 
     // __setNoScriptSafetyLevel(safetyLevel)__.
     // Set NoScript settings according to a particular safety level
     // (security slider level): 0 = Standard, 1 = Safer, 2 = Safest
     let setNoScriptSafetyLevel = safetyLevel =>
-        sendNoScriptSettings(noscriptSettings(safetyLevel));
+      sendNoScriptSettings(noscriptSettings(safetyLevel));
 
     // __securitySliderToSafetyLevel(sliderState)__.
     // Converts the "extensions.torbutton.security_slider" pref value
@@ -136,20 +181,9 @@ var initialize = () => {
 
     // Wait for the first message from NoScript to arrive, and then
     // bind the security_slider pref to the NoScript settings.
-    const listener = ({ data }) => {
-      for (const msg of data) {
-        if (msg.recipient.extensionId === noscriptID) {
-          messageListener(msg.data.deserialize({}), msg.sender);
-        }
-      }
-    };
-    let messageListener = (a, b, c) => {
+    let messageListener = a => {
       try {
-        log(3, `Message received from NoScript: ${JSON.stringify([a, b, c])}`);
-        if (a.__meta.name !== "started") {
-          return;
-        }
-        Services.mm.removeMessageListener("MessageChannel:Messages", listener);
+        log(3, `Message received from NoScript: ${JSON.stringify([a])}`);
         let noscriptPersist = Services.prefs.getBoolPref("extensions.torbutton.noscript_persist", false);
         let noscriptInited = Services.prefs.getBoolPref("extensions.torbutton.noscript_inited", false);
         // Set the noscript safety level once if we have never run noscript
@@ -167,7 +201,9 @@ var initialize = () => {
         log(5, e.message);
       }
     };
-    Services.mm.addMessageListener("MessageChannel:Messages", listener);
+    waitForExtensionMessage(noscriptID, a => a.__meta.name === "started").then(
+      messageListener
+    );
     log(3, "Listening for message from NoScript.");
   } catch (e) {
     log(5, e.message);
