@@ -97,7 +97,11 @@ function StartupObserver() {
       "resource://torbutton/locale/{locale}/",
       true, // skip this FileSource locales when computing Services.locale.availableLocales
     );
-    L10nRegistry.registerSource(torSource);
+    if (L10nRegistry.registerSources) {
+      L10nRegistry.registerSources([torSource]);
+    } else {
+      L10nRegistry.registerSource(torSource);
+    }
 }
 
 StartupObserver.prototype = {
