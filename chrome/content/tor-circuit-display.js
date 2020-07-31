@@ -445,6 +445,10 @@ let ensureCorrectPopupDimensions = function () {
 // the "enablePref" is set to true, and stopped when it is set to false.
 // A reference to this function (called createTorCircuitDisplay) is exported as a global.
 let setupDisplay = function (enablePrefName) {
+  // From 79 on the identity popup is initialized lazily
+  if (gIdentityHandler._initializePopup) {
+    gIdentityHandler._initializePopup();
+  }
   setupGuardNote();
   let myController = null,
       stopCollectingIsolationData = null,
