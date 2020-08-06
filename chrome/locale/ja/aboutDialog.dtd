@@ -9,11 +9,11 @@
 <!ENTITY help.or                 "や">
 <!-- LOCALIZATION NOTE (help.getInvolvedLink): This is a link title that links to https://www.torproject.org/getinvolved/volunteer.html.en -->
 <!ENTITY help.getInvolvedLink    "参加">
-<!ENTITY help.end                "で支援してください！">
+<!ENTITY help.end                "で支援してください!">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/docs/trademark-faq.html.en -->
-<!ENTITY bottomLinks.questions   "質問がありますか？">
+<!ENTITY bottomLinks.questions   "質問がありますか?">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to https://www.torproject.org/getinvolved/relays -->
-<!ENTITY bottomLinks.grow        "Tor ネットワークを育てましょう！">
+<!ENTITY bottomLinks.grow        "Tor ネットワークを育てましょう!">
 <!-- LOCALIZATION NOTE (bottom.questions): This is a link title that links to about:license -->
 <!ENTITY bottomLinks.license  "ライセンス情報">
-<!ENTITY tor.TrademarkStatement   "'Tor' と 'Onion Logo' は Tor Project, Inc. の登録商標です。">
+<!ENTITY tor.TrademarkStatement   "「Tor」と「Onion Logo」は Tor Project, Inc. の登録商標です。">
