@@ -16,6 +16,10 @@ const kMODULE_CID = Components.ID("f36d72c9-9718-4134-b550-e109638331d7");
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
+XPCOMUtils.defineLazyModuleGetters(this, {
+  ComponentUtils: "resource://gre/modules/ComponentUtils.jsm",
+});
+
 function TorbuttonLogger() {
     // Register observer
     Services.prefs.addObserver("extensions.torbutton", this);
@@ -154,11 +158,7 @@ TorbuttonLogger.prototype =
   }
 }
 
-/**
-* XPCOMUtils.generateNSGetFactory was introduced in Mozilla 2 (Firefox 4).
-* XPCOMUtils.generateNSGetModule is for Mozilla 1.9.2 (Firefox 3.6).
-*/
-if (XPCOMUtils.generateNSGetFactory)
-    var NSGetFactory = XPCOMUtils.generateNSGetFactory([TorbuttonLogger]);
-else
-    var NSGetModule = XPCOMUtils.generateNSGetModule([TorbuttonLogger]);
+// Assign factory to global object.
+const NSGetFactory = XPCOMUtils.generateNSGetFactory
+  ? XPCOMUtils.generateNSGetFactory([TorbuttonLogger])
+  : ComponentUtils.generateNSGetFactory([TorbuttonLogger]);

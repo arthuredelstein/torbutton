@@ -10,6 +10,10 @@
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 
+XPCOMUtils.defineLazyModuleGetters(this, {
+  ComponentUtils: "resource://gre/modules/ComponentUtils.jsm",
+});
+
 // Module specific constants
 const kMODULE_NAME = "Torbutton Tor Check Service";
 const kMODULE_CONTRACTID = "@torproject.org/torbutton-torCheckService;1";
@@ -131,4 +135,7 @@ TBTorCheckService.prototype =
   },
 };
 
-var NSGetFactory = XPCOMUtils.generateNSGetFactory([TBTorCheckService]);
+// Assign factory to global object.
+const NSGetFactory = XPCOMUtils.generateNSGetFactory
+  ? XPCOMUtils.generateNSGetFactory([TBTorCheckService])
+  : ComponentUtils.generateNSGetFactory([TBTorCheckService]);

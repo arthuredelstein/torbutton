@@ -16,6 +16,10 @@ const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 const { PromptUtils } = ChromeUtils.import("resource://gre/modules/SharedPromptUtils.jsm");
 
+XPCOMUtils.defineLazyModuleGetters(this, {
+  ComponentUtils: "resource://gre/modules/ComponentUtils.jsm",
+});
+
 let { torbutton_get_property_string } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 
 // Module specific constants
@@ -131,4 +135,7 @@ ExternalAppBlocker.prototype =
   },
 };
 
-var NSGetFactory = XPCOMUtils.generateNSGetFactory([ExternalAppBlocker]);
+// Assign factory to global object.
+const NSGetFactory = XPCOMUtils.generateNSGetFactory
+  ? XPCOMUtils.generateNSGetFactory([ExternalAppBlocker])
+  : ComponentUtils.generateNSGetFactory([ExternalAppBlocker]);

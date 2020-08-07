@@ -9,6 +9,10 @@
 const { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
+XPCOMUtils.defineLazyModuleGetters(this, {
+  ComponentUtils: "resource://gre/modules/ComponentUtils.jsm",
+});
+
 // Module specific constants
 const kMODULE_NAME = "Torbutton Drag and Drop Handler";
 const kCONTRACT_ID = "@torproject.org/torbutton-dragDropFilter;1";
@@ -79,4 +83,7 @@ DragDropFilter.prototype =
   }
 };
 
-var NSGetFactory = XPCOMUtils.generateNSGetFactory([DragDropFilter]);
+// Assign factory to global object.
+const NSGetFactory = XPCOMUtils.generateNSGetFactory
+  ? XPCOMUtils.generateNSGetFactory([DragDropFilter])
+  : ComponentUtils.generateNSGetFactory([DragDropFilter]);
