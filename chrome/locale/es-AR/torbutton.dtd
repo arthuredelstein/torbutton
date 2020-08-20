@@ -36,9 +36,9 @@
 <!ENTITY torbutton.prefs.sec_js_disabled "JavaScript está deshabilitado por defecto en todos los sitios.">
 <!ENTITY torbutton.prefs.sec_limit_typography "Algunos tipos de letra y símbolos matemáticos están deshabilitados.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Algunos tipos de letra, iconos, símbolos matemáticos e imágenes están deshabilitados.">
-<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio y video (medios HTML5) son cliquear-para-reproducir.">
+<!ENTITY torbutton.prefs.sec_click_to_play_media "Audio y video (medios HTML5), y WebGL, deberán ser cliqueados para reproducirlos.">
 <!ENTITY torbutton.prefs.sec_custom_warning "Personalizado">
-<!ENTITY torbutton.prefs.sec_overview "Deshabilita ciertas funciones web que pueden usarse para atacar su seguridad y anonimato.">
+<!ENTITY torbutton.prefs.sec_overview "Deshabilita ciertas funciones web que pueden usarse para atacar tu seguridad y anonimato.">
 <!ENTITY torbutton.prefs.sec_standard_tooltip "Nivel de Seguridad: Estándar">
 <!ENTITY torbutton.prefs.sec_safer_tooltip "Nivel de Seguridad: Más Seguro">
 <!ENTITY torbutton.prefs.sec_safest_tooltip "Nivel de Seguridad: El más Seguro">
@@ -49,5 +49,5 @@
 <!ENTITY torbutton.circuit_display.new_circuit "Nuevo circuito para este sitio">
 
 <!-- Onion services strings.  Strings are kept here for ease of translation. -->
-<!ENTITY torbutton.onionServices.authPrompt.tooltip "Solicitud de autenticación de cliente del servicio abierto de Onion">
-<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Recuerda esta llave">
+<!ENTITY torbutton.onionServices.authPrompt.tooltip "Abrir espera de comando para autenticación de cliente de servicio onion">
+<!ENTITY torbutton.onionServices.authPrompt.persistCheckboxLabel "Recuerda esta clave">
