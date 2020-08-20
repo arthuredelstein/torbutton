@@ -4,11 +4,6 @@
 
 let { getBoolPref, setBoolPref, getIntPref, setIntPref, clearUserPref } =
     ChromeUtils.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
-
-// Used for detecting the current system architecture
-let { XPCOMABI } =
-    Cu.import("resource://gre/modules/Services.jsm", {}).Services.appinfo;
-
 let { bindPref, bindPrefAndInit } =
     ChromeUtils.import("resource://torbutton/modules/utils.js", {});
 let logger = Cc["@torproject.org/torbutton-logger;1"]
@@ -34,7 +29,6 @@ const kSecuritySettings = {
   "svg.disabled" :                            [,  true,  false, false, false],
   "javascript.options.asmjs" :                [,  false, false, false, true ],
   "javascript.options.wasm" :                 [,  false, false, false, true ],
-  "javascript.enabled" :                      [,  false, true,  true,  true ],
 };
 
 // The Security Settings prefs in question.
@@ -137,22 +131,16 @@ var initialize = function () {
     write_setting_to_prefs(2);
   }
 
-  // Revert #31616 and #31140 fixes
-  if (getIntPref(kSliderMigration, 0) < 1) {
-    // If the security settings level and the prefs that we did not change
-    // have the default value, reset to default security level.
-    const prefNames = [
-      "mathml.disabled",
-      "gfx.font_rendering.opentype_svg.enabled",
-      "svg.disabled"
-    ];
-    if (getBoolPref(kCustomPref) && XPCOMABI.split("-")[0] == "aarch64" &&
-        getIntPref(kSliderPref) === 4 &&
-        read_setting_from_prefs(prefNames) === 4) {
-      setBoolPref(kCustomPref, false);
+  // Revert #33613 fix
+  if (getIntPref(kSliderMigration, 0) < 2) {
+    // We can't differentiate between users having flipped `javascript.enabled`
+    // to `false` before it got governed by the security settings vs. those who
+    // had it flipped due to #33613. Reset the preference for everyone.
+    if (getIntPref(kSliderPref) === 1) {
+      setBoolPref("javascript.enabled", true);
     }
     clearUserPref("media.webaudio.enabled");
-    setIntPref(kSliderMigration, 1);
+    setIntPref(kSliderMigration, 2);
   }
   log(4, "security-prefs.js initialization complete");
 };
