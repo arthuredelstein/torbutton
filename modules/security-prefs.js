@@ -2,7 +2,7 @@
 
 // ### Utilities
 
-let { getBoolPref, setBoolPref, getIntPref, setIntPref } =
+let { getBoolPref, setBoolPref, getIntPref, setIntPref, clearUserPref } =
     ChromeUtils.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
 
 // Used for detecting the current system architecture
@@ -28,7 +28,6 @@ const kSecuritySettings = {
   "javascript.options.ion" :                  [,  false, false, false, true ],
   "javascript.options.baselinejit" :          [,  false, false, false, true ],
   "javascript.options.native_regexp" :        [,  false, false, false, true ],
-  "media.webaudio.enabled" :                  [,  false, false, false, true ],
   "mathml.disabled" :                         [,  true,  true,  true,  false],
   "gfx.font_rendering.graphite.enabled" :     [,  false, false, false, true ],
   "gfx.font_rendering.opentype_svg.enabled" : [,  false, false, false, true ],
@@ -143,7 +142,6 @@ var initialize = function () {
     // If the security settings level and the prefs that we did not change
     // have the default value, reset to default security level.
     const prefNames = [
-      "media.webaudio.enabled",
       "mathml.disabled",
       "gfx.font_rendering.opentype_svg.enabled",
       "svg.disabled"
@@ -153,6 +151,7 @@ var initialize = function () {
         read_setting_from_prefs(prefNames) === 4) {
       setBoolPref(kCustomPref, false);
     }
+    clearUserPref("media.webaudio.enabled");
     setIntPref(kSliderMigration, 1);
   }
   log(4, "security-prefs.js initialization complete");
