@@ -760,15 +760,18 @@ torbutton_new_circuit = function() {
   gBrowser.reloadWithFlags(Ci.nsIWebNavigation.LOAD_FLAGS_BYPASS_CACHE);
 }
 
+let newIdentityInProgress = false;
+
 // Bug 1506 P4: Needed for New Identity.
 torbutton_new_identity = async function() {
   try {
-    // Make sure that we can only click once on New Identiy to avoid race
+    // Ignore if there's a New Identity in progress to avoid race
     // conditions leading to failures (see bug 11783 for an example).
-    // TODO: Remove the Torbutton menu entry again once we have done our
-    // security control redesign.
-    document.getElementById("menu_newIdentity").disabled = true;
-    document.getElementById("appMenuNewIdentity").disabled = true;
+    if (newIdentityInProgress) {
+      return;
+    }
+
+    newIdentityInProgress = true;
 
     let shouldConfirm =  m_tb_prefs.getBoolPref("extensions.torbutton.confirm_newnym");
 
@@ -789,14 +792,9 @@ torbutton_new_identity = async function() {
 
       if (confirmed) {
         await torbutton_do_new_identity();
-      } else {
-        // TODO: Remove the Torbutton menu entry again once we have done our
-        // security control redesign.
-        document.getElementById("menu_newIdentity").disabled = false;
-        document.getElementById("appMenuNewIdentity").disabled = false;
       }
     } else {
-        await torbutton_do_new_identity();
+      await torbutton_do_new_identity();
     }
   } catch(e) {
     // If something went wrong make sure we have the New Identity button
@@ -805,8 +803,8 @@ torbutton_new_identity = async function() {
     // security control redesign.
     torbutton_log(5, "Unexpected error on new identity: " + e);
     window.alert("Torbutton: Unexpected error on new identity: " + e);
-    document.getElementById("menu_newIdentity").disabled = false;
-    document.getElementById("appMenuNewIdentity").disabled = false;
+  } finally {
+    newIdentityInProgress = false;
   }
 }
 
