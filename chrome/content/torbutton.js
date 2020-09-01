@@ -28,7 +28,6 @@ let {
   torbutton_log,
   torbutton_get_property_string,
 } = ChromeUtils.import("resource://torbutton/modules/utils.js", {});
-let SecurityPrefs = ChromeUtils.import("resource://torbutton/modules/security-prefs.js", {});
 let { configureControlPortModule } = Cu.import("resource://torbutton/modules/tor-control-port.js", {});
 
 const k_tb_last_browser_version_pref = "extensions.torbutton.lastBrowserVersion";
@@ -237,8 +236,6 @@ function torbutton_is_mobile() {
 // called once per browser window.. This might belong in a component.
 torbutton_init = function() {
     torbutton_log(3, 'called init()');
-
-    SecurityPrefs.initialize();
 
     if (m_tb_wasinited) {
         return;

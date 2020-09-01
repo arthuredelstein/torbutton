@@ -26,6 +26,7 @@ XPCOMUtils.defineLazyModuleGetters(this, {
 });
 
 let NoScriptControl = ChromeUtils.import("resource://torbutton/modules/noscript-control.js", {});
+let SecurityPrefs = ChromeUtils.import("resource://torbutton/modules/security-prefs.js", {});
 
 // Module specific constants
 const kMODULE_NAME = "Startup";
@@ -192,8 +193,10 @@ StartupObserver.prototype = {
         // but only for hackish reasons.
         this._prefs.setBoolPref("extensions.torbutton.startup", true);
 
-	// We need to listen for NoScript before it starts.
+        // We need to listen for NoScript before it starts.
         NoScriptControl.initialize();
+
+        SecurityPrefs.initialize();
 
         this.setProxySettings();
       }
