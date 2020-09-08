@@ -6,30 +6,36 @@ Each bullet in the circuit node list is supposed to represent a Tor circuit node
 and lines drawn between them to represent Tor network inter-relay connections.
 */
 
-
-#circuit-display-content {
-  background-image: url(chrome://torbutton/skin/torbutton.svg);
-  background-position: 1em 1em;
-  background-repeat: no-repeat;
-  background-size: 24px auto;
-  background-blend-mode: overlay;
-  cursor: default;
-  padding: 0.5em 0px 0.5em;
-  padding-inline-end: 1em;
-  padding-inline-start: calc(2em + 24px);
-  width: 100%;
-  -moz-context-properties: fill, fill-opacity;
-  fill: currentColor;
-  fill-opacity: .6;
+#circuit-display-headline {
+  margin: 0;
 }
 
-#circuit-display-content:-moz-locale-dir(rtl) {
-  background-position: calc(100% - 1em) 1em;
+#circuit-display-header {
+  background-image: url(chrome://torbutton/skin/torbutton.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 16px auto;
+  -moz-context-properties: fill, fill-opacity;
+  fill: currentColor;
+  /* icon indent + 16px icon width + 6px description margin
+     (total of 12px margin with the native 6px description margin) */
+  padding-inline: calc(2em + 22px) 1em;
+  /* 16px icon width + 12px margin */
+  padding-inline-start: 28px;
+}
+
+#circuit-display-header:-moz-locale-dir(rtl) {
+  background-position-x: right;
+}
+
+#circuit-display-content {
+  padding-inline: 2em 1em;
+  padding-block: 1em;
 }
 
 #circuit-reload-content {
   cursor: default;
-  padding: 1em 0px 1em;
+  padding: 0 0 1em;
   padding-inline-end: 3em;
   padding-inline-start: calc(2em + 24px);
   width: 100%;
@@ -47,13 +53,10 @@ and lines drawn between them to represent Tor network inter-relay connections.
 
 /* Format the circuit node list. */
 ul#circuit-display-nodes {
- /* font-family: Arial; */
-  font-size: 16px;
   line-height: 26px;
- /* color: black;*/
-  margin-top: 4px;
-  margin-bottom: 2px;
-  padding-inline-start: 4px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  padding-inline-start: 28px;
 }
 
 /* Hide default bullets, and draw our own bullets */

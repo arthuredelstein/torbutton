@@ -409,7 +409,7 @@ let ensureCorrectPopupDimensions = function () {
       let stack = document.querySelector("#identity-popup-multiView .panel-viewstack");
       let view2 = document.getElementById("identity-popup-mainView");
       if (view && stack && view2) {
-        let newWidth = Math.max(...[...view2.children].map(el => el.clientWidth)) + 10;
+        let newWidth = Math.max(...[...view2.children].map(el => el.clientWidth));
         let newHeight = stack.clientHeight;
         stack.setAttribute("width", newWidth);
         view2.style.minWidth = view2.style.maxWidth = newWidth + "px";
