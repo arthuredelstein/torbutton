@@ -3,7 +3,7 @@
 <!ENTITY project.tpoLink         "le &vendorShortName;">
 <!ENTITY project.end             ", un organisme sans but lucratif qui s’efforce de protéger votre vie privée, vos données personnels et votre liberté en ligne.">
 
-<!ENTITY help.start              "Voulez-vous aider ?">
+<!ENTITY help.start              "Souhaitez-vous aider ?">
 <!-- LOCALIZATION NOTE (help.donate): This is a link title that links to https://www.torproject.org/donate/donate.html.en -->
 <!ENTITY help.donateLink         "Faites un don">
 <!ENTITY help.or                 "ou">
