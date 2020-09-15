@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "Inscrivez-vous aux nouvelles de Tor">
 <!ENTITY aboutTor.donationBanner.freeToUse "Tor peut être utilisé gratuitement grâce aux dons de personnes telles que vous.">
 <!ENTITY aboutTor.donationBanner.buttonA "Faites un don maintenant">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "টর নিউজ-এর জন্য সাইন আপ করুন ।">
 <!ENTITY aboutTor.donationBanner.freeToUse "Tor is free to use because of donations from people like you.">
 <!ENTITY aboutTor.donationBanner.buttonA "এখুনি দান করুন! ">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "გამოიწერეთ Tor-ის სიახლეები.">
 <!ENTITY aboutTor.donationBanner.freeToUse "Tor უფასოა, თქვენნაირი ადამიანების შემოწირულობების დამსახურებით.">
 <!ENTITY aboutTor.donationBanner.buttonA "გაიღეთ თანხა">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

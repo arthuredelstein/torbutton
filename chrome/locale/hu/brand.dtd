@@ -2,10 +2,10 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShorterName      "Tor Browser">
-<!ENTITY  brandShortName        "Tor Browser">
-<!ENTITY  brandFullName         "Tor Browser">
-<!ENTITY  vendorShortName       "Tor Project">
+<!ENTITY  brandShorterName      "Tor Böngésző">
+<!ENTITY  brandShortName        "Tor Böngésző">
+<!ENTITY  brandFullName         "Tor Böngésző">
+<!ENTITY  vendorShortName       "Tor Projekt">
 <!ENTITY  trademarkInfo.part1   "A 'Tor' és az 'Onion Logo' a Tor Project, Inc. bejegyzett védjegyei.">
 <!-- LOCALIZATION NOTE (brandProductName):
    This brand name can be used in messages where the product name needs to

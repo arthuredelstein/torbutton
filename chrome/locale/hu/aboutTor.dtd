@@ -17,10 +17,10 @@
 <!ENTITY aboutTor.searchDDGPost.link "https://duckduckgo.com">
 
 <!ENTITY aboutTor.torbrowser_user_manual_questions.label "Kérdések?">
-<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tekintse meg a Tor Browser Útmutatónkat">
+<!ENTITY aboutTor.torbrowser_user_manual_link.label "Tekintse meg a Tor Böngésző Útmutatónkat">
 <!-- The next two entities are used within the browser's Help menu. -->
 <!ENTITY aboutTor.torbrowser_user_manual.accesskey "M">
-<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Browser Útmutató">
+<!ENTITY aboutTor.torbrowser_user_manual.label "Tor Böngésző Útmutató">
 
 <!ENTITY aboutTor.tor_mission.label "A Tor Project egy a US 501(c)(3) szerinti non-profit szervezet, amely az emberi jogokért és szabadságért harcol, nyílt forráskódú anonimitás és adatvédelmi technológiák fejlesztésével és terjesztésével, támogatva azok korlátlan elérhetőségét és használatát, támogassák a tudományos ás általános megértésüket.">
 <!ENTITY aboutTor.getInvolved.label "Vegyen részt">
@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "Iratkozzon fel a Tor hírekhez.">
 <!ENTITY aboutTor.donationBanner.freeToUse "A Tor ingyenes az Önhöz hasonló személyek támogatásai miatt.">
 <!ENTITY aboutTor.donationBanner.buttonA "Támogasson most">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

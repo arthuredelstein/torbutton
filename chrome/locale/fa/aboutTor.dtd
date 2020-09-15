@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "ثبت‌نام برای اخبار Tor.">
 <!ENTITY aboutTor.donationBanner.freeToUse "تور برای استفاده رایگان بوده و این به خاطر افرادی مانند شما می باشد.">
 <!ENTITY aboutTor.donationBanner.buttonA "اکنون اهداء کنید">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

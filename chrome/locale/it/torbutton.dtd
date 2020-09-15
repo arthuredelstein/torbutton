@@ -1,4 +1,4 @@
-<!ENTITY torbutton.context_menu.new_identity "Nuova identità">
+<!ENTITY torbutton.context_menu.new_identity "Nuova Identità">
 <!ENTITY torbutton.context_menu.new_identity_key "I">
 <!ENTITY torbutton.context_menu.new_circuit "Nuovo Circuito Tor per questo Sito">
 <!ENTITY torbutton.context_menu.new_circuit_key "C">
@@ -37,14 +37,14 @@
 <!ENTITY torbutton.prefs.sec_limit_typography "Alcuni caratteri e simboli matematici sono disattivati.">
 <!ENTITY torbutton.prefs.sec_limit_graphics_and_typography "Alcuni caratteri, icone, simboli matematici e immagini sono disattivati.">
 <!ENTITY torbutton.prefs.sec_click_to_play_media "Audio, video (media HTML5) e WebGL sono click-to-play.">
-<!ENTITY torbutton.prefs.sec_custom_warning "Personalizzata">
+<!ENTITY torbutton.prefs.sec_custom_warning "Personalizzato">
 <!ENTITY torbutton.prefs.sec_overview "Disabilita alcune funzionalità web che possono essere utilizzate per attaccare la tua sicurezza e anonimato.">
 <!ENTITY torbutton.prefs.sec_standard_tooltip "Livello di sicurezza: Standard">
 <!ENTITY torbutton.prefs.sec_safer_tooltip "Livello di sicurezza: Più sicuro">
 <!ENTITY torbutton.prefs.sec_safest_tooltip "Livello di sicurezza: Il più sicuro">
 <!ENTITY torbutton.prefs.sec_custom_summary "Le tue impostazioni personalizzate del browser sembrano avere preferenze di sicurezza insolite. Per motivi di sicurezza e privacy, ti consigliamo di scegliere uno dei livelli di sicurezza predefiniti.">
-<!ENTITY torbutton.prefs.sec_restore_defaults "Ripristina impostazioni iniziali">
-<!ENTITY torbutton.prefs.sec_advanced_security_settings "Impostazioni di sicurezza avanzate...">
+<!ENTITY torbutton.prefs.sec_restore_defaults "Ripristina Impostazioni Iniziali">
+<!ENTITY torbutton.prefs.sec_advanced_security_settings "Impostazioni di Sicurezza Avanzate...">
 <!ENTITY torbutton.circuit_display.title "Circuito Tor">
 <!ENTITY torbutton.circuit_display.new_circuit "Nuovo circuito per questo sito">
 

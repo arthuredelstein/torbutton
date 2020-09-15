@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "הירשם עבור חדשות Tor.">
 <!ENTITY aboutTor.donationBanner.freeToUse "Tor חינמי לשימוש בגלל תרומות מאנשים כמוך.">
 <!ENTITY aboutTor.donationBanner.buttonA "תרום עכשיו">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

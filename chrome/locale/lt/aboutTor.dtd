@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "Užsisakykite Tor naujienas.">
 <!ENTITY aboutTor.donationBanner.freeToUse "Tor yra nemokamas naudoti dėl paaukojimų iš tokių žmonių kaip jūs.">
 <!ENTITY aboutTor.donationBanner.buttonA "Paaukokite dabar">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

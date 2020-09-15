@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "Skráðu þig til að fá Tor-fréttir.">
 <!ENTITY aboutTor.donationBanner.freeToUse "Öllum er frjálst að nota Tor vegna styrkja frá fólki eins og þér.">
 <!ENTITY aboutTor.donationBanner.buttonA "Styrkja núna">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

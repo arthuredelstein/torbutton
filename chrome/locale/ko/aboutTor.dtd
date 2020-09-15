@@ -29,3 +29,7 @@
 <!ENTITY aboutTor.newsletter.link_text "Tor 뉴스를 구독.">
 <!ENTITY aboutTor.donationBanner.freeToUse "Tor는 바로 당신과 같은 사람들의 기부 덕분에 자유롭게 사용할 수 있습니다.">
 <!ENTITY aboutTor.donationBanner.buttonA "기부하기">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">

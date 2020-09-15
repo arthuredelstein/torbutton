@@ -27,5 +27,9 @@
 
 <!ENTITY aboutTor.newsletter.tagline "Faigh an nuacht is déanaí maidir le Tor i do bhosca isteach.">
 <!ENTITY aboutTor.newsletter.link_text "Cláraigh le Nuachtlitir Tor.">
-<!ENTITY aboutTor.donationBanner.freeToUse "Tor is free to use because of donations from people like you.">
+<!ENTITY aboutTor.donationBanner.freeToUse "Tá Tor saor in aisce a bhuí le bronntanais airgid ó dhaoine cosúil leatsa.">
 <!ENTITY aboutTor.donationBanner.buttonA "Tabhair síntiús airgid anois">
+
+<!-- End of year 2020 Fundraising campaign -->
+<!ENTITY aboutTor.ey2020.useamask "Use a mask, use Tor.">
+<!ENTITY aboutTor.ey2020.resistsurveillance "Resist the surveillance pandemic.">
