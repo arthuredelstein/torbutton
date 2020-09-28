@@ -408,11 +408,13 @@ let ensureCorrectPopupDimensions = function () {
       let view = document.querySelector("#identity-popup-multiView .panel-viewcontainer");
       let stack = document.querySelector("#identity-popup-multiView .panel-viewstack");
       let view2 = document.getElementById("identity-popup-mainView");
-      if (view && stack && view2) {
-        let newWidth = Math.max(...[...view2.children].map(el => el.clientWidth));
+      let header = document.getElementById("identity-popup-mainView-panel-header");
+      if (view && stack && view2 && header) {
+        let newWidth = Math.max(...[...view2.querySelectorAll("*")].map(el => el.clientWidth));
         let newHeight = stack.clientHeight;
         stack.setAttribute("width", newWidth);
         view2.style.minWidth = view2.style.maxWidth = newWidth + "px";
+        header.style.minWidth = header.style.maxWidth = newWidth + "px";
         view.setAttribute("width", newWidth);
         view.setAttribute("height", newHeight);
       }
@@ -422,11 +424,13 @@ let ensureCorrectPopupDimensions = function () {
     let view = document.querySelector("#identity-popup-multiView .panel-viewcontainer");
     let stack = document.querySelector("#identity-popup-multiView .panel-viewstack");
     let view2 = document.getElementById("identity-popup-mainView");
-    if (view && stack && view2) {
+    let header = document.getElementById("identity-popup-mainView-panel-header");
+    if (view && stack && view2 && header) {
       view.removeAttribute("width");
       view.removeAttribute("height");
       stack.removeAttribute("width");
       view2.style.minWidth = view2.style.maxWidth = "";
+      header.style.minWidth = header.style.maxWidth = "";
     }
   };
   let popupMenu = document.getElementById("identity-popup");
